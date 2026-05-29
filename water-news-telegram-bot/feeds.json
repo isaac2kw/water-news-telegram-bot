@@ -16,11 +16,11 @@
     "url": "https://iwa-network.org/feed/"
   },
   {
-    "name": "Veolia Newsroom",
-    "url": "https://www.veolia.com/en/rss.xml"
+    "name": "WaterNewsWire",
+    "url": "https://waternewswire.com/feeds/main.xml"
   },
   {
-    "name": "Xylem Newsroom",
-    "url": "https://www.xylem.com/en-us/rss.xml"
+    "name": "WaterNewsWire Full Text",
+    "url": "https://waternewswire.com/feeds/full-text.xml"
   }
 ]
