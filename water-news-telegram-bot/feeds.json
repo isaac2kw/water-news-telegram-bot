@@ -1,0 +1,26 @@
+[
+  {
+    "name": "WaterWorld",
+    "url": "https://www.waterworld.com/rss.xml"
+  },
+  {
+    "name": "Water Online",
+    "url": "https://www.wateronline.com/rss"
+  },
+  {
+    "name": "Smart Water Magazine",
+    "url": "https://smartwatermagazine.com/rss.xml"
+  },
+  {
+    "name": "IWA",
+    "url": "https://iwa-network.org/feed/"
+  },
+  {
+    "name": "Veolia Newsroom",
+    "url": "https://www.veolia.com/en/rss.xml"
+  },
+  {
+    "name": "Xylem Newsroom",
+    "url": "https://www.xylem.com/en-us/rss.xml"
+  }
+]
