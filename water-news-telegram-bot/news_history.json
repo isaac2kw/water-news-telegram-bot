@@ -344,5 +344,32 @@
       "funding",
       "investment"
     ]
+  },
+  {
+    "date": "2026-06-01",
+    "title": "Malaysia to surpass 2040 renewable energy target by 2031",
+    "ko_title": "말레이시아, 2031년까지 재생에너지 목표 초과 달성",
+    "brief": "말레이시아가 2031년까지 2040년 재생에너지 목표를 초과 달성할 것으로 보입니다. 대규모 태양광 입찰과 강력한 정책이 주요 요인입니다.",
+    "summary": "말레이시아는 2040년까지 18.43GW의 재생에너지 용량 목표를 설정했으나, 2031년까지 이를 초과 달성할 것으로 예상됩니다. 이는 대규모 태양광 입찰과 강력한 정책 프레임워크, 접근 가능한 금융 지원, 그리고 그리드 통합 및 저장 용량의 개선 덕분입니다. GlobalData의 보고서에 따르면, 말레이시아의 재생에너지 용량은 2025년 약 6.9GW에서 2035년에는 약 31.5GW로 증가할 것으로 보입니다. 이러한 발전은 수처리 산업에도 긍정적인 영향을 미칠 수 있습니다.",
+    "why_important": "재생에너지의 증가는 수처리 산업의 지속 가능성을 높이는 데 기여할 수 있습니다. 이는 시장의 변화와 기술 발전에 중요한 영향을 미칠 것으로 보입니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "말레이시아"
+    ],
+    "companies": [],
+    "technologies": [
+      "재생에너지",
+      "태양광"
+    ],
+    "policy_alert": "",
+    "source": "WaterNewsWire Full Text",
+    "link": "https://waternewswire.com/news/2026/malaysia-renewable-energy-2040-target-2031-globaldata",
+    "score": 19,
+    "keywords": [
+      "tender",
+      "contract",
+      "expansion",
+      "investment"
+    ]
   }
 ]
