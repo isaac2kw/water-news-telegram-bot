@@ -71,9 +71,14 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
+          
+          git pull --rebase origin main
+          
           git add sent_links.json news_history.json ../docs
+          
           git commit -m "Update water news reports" || echo "No changes to commit"
-          git push
+          
+          git push origin main
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
