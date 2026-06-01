@@ -21,6 +21,11 @@ OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
 MAX_ITEMS = int(os.getenv("MAX_ITEMS", "8"))
 MIN_SCORE = int(os.getenv("MIN_SCORE", "8"))
 
+BACKFILL_MODE = os.getenv("BACKFILL_MODE", "false").lower() == "true"
+BACKFILL_START_DATE = os.getenv("BACKFILL_START_DATE", "")
+BACKFILL_END_DATE = os.getenv("BACKFILL_END_DATE", "")
+SEND_TELEGRAM = os.getenv("SEND_TELEGRAM", "true").lower() == "true"
+
 BASE_DIR = Path(__file__).resolve().parent
 REPO_ROOT = BASE_DIR.parent
 FEEDS_FILE = BASE_DIR / "feeds.json"
@@ -41,7 +46,6 @@ KEYWORDS = {
     "pvdf": 8,
     "ultrafiltration": 8,
     "microfiltration": 8,
-
     "wastewater": 8,
     "sewage": 8,
     "sewer": 6,
@@ -52,13 +56,11 @@ KEYWORDS = {
     "wwtp": 8,
     "water treatment": 7,
     "drinking water": 5,
-
     "pfas": 10,
     "nutrient removal": 6,
     "nitrogen": 4,
     "phosphorus": 4,
     "ammonia": 4,
-
     "tender": 5,
     "contract": 5,
     "award": 5,
@@ -69,7 +71,6 @@ KEYWORDS = {
     "demonstration": 5,
     "funding": 4,
     "investment": 4,
-
     "veolia": 8,
     "suez": 8,
     "xylem": 8,
@@ -83,7 +84,6 @@ KEYWORDS = {
     "dupont": 7,
     "filmtec": 7,
     "kubota": 7,
-
     "상하수도": 10,
     "하수처리": 10,
     "폐수처리": 10,
@@ -191,6 +191,7 @@ TECH_EMOJIS = {
 def load_json(path, default):
     if not path.exists():
         return default
+
     try:
         return json.loads(path.read_text(encoding="utf-8"))
     except Exception:
@@ -204,9 +205,11 @@ def save_json(path, data):
 def clean_text(text):
     if not text:
         return ""
+
     text = re.sub(r"<[^>]+>", " ", text)
     text = html.unescape(text)
     text = re.sub(r"\s+", " ", text).strip()
+
     return text
 
 
@@ -246,6 +249,31 @@ def get_domain(url):
         return ""
 
 
+def parse_entry_date(entry):
+    parsed = entry.get("published_parsed") or entry.get("updated_parsed")
+
+    if parsed:
+        try:
+            return datetime(*parsed[:6], tzinfo=timezone.utc).astimezone(KST).strftime("%Y-%m-%d")
+        except Exception:
+            pass
+
+    return datetime.now(KST).strftime("%Y-%m-%d")
+
+
+def in_backfill_range(date_str):
+    if not BACKFILL_MODE:
+        return True
+
+    if BACKFILL_START_DATE and date_str < BACKFILL_START_DATE:
+        return False
+
+    if BACKFILL_END_DATE and date_str > BACKFILL_END_DATE:
+        return False
+
+    return True
+
+
 def fetch_articles():
     feeds = load_json(FEEDS_FILE, [])
     articles = []
@@ -259,10 +287,14 @@ def fetch_articles():
 
         parsed = feedparser.parse(url)
 
-        for entry in parsed.entries[:40]:
+        for entry in parsed.entries[:60]:
             title = clean_text(entry.get("title", ""))
             link = entry.get("link", "")
             summary = clean_text(entry.get("summary", ""))
+            published_date = parse_entry_date(entry)
+
+            if not in_backfill_range(published_date):
+                continue
 
             score, matched = score_article(title, summary)
 
@@ -270,6 +302,7 @@ def fetch_articles():
                 continue
 
             articles.append({
+                "date": published_date,
                 "title": title,
                 "link": link,
                 "summary": summary[:900],
@@ -303,6 +336,7 @@ def add_country_flag(country):
         return ""
 
     flag = flag_for_country(country)
+
     if flag:
         return f"{flag} {country}"
 
@@ -371,6 +405,7 @@ def openai_json(prompt, fallback):
 
         resp.raise_for_status()
         data = resp.json()
+
         return json.loads(data["choices"][0]["message"]["content"])
 
     except Exception as e:
@@ -408,6 +443,7 @@ def openai_text(prompt, fallback):
 
         resp.raise_for_status()
         data = resp.json()
+
         return data["choices"][0]["message"]["content"].strip()
 
     except Exception as e:
@@ -482,12 +518,12 @@ def get_pages_base_url():
 
 def save_news_history(articles):
     history = load_json(HISTORY_FILE, [])
-    today = datetime.now(KST).strftime("%Y-%m-%d")
 
     existing = set((item.get("date"), item.get("link")) for item in history)
 
     for a in articles:
-        key = (today, a.get("link"))
+        article_date = a.get("date") or datetime.now(KST).strftime("%Y-%m-%d")
+        key = (article_date, a.get("link"))
 
         if key in existing:
             continue
@@ -495,7 +531,7 @@ def save_news_history(articles):
         ai = a["ai"]
 
         history.append({
-            "date": today,
+            "date": article_date,
             "title": a.get("title", ""),
             "ko_title": ai.get("ko_title", ""),
             "brief": ai.get("brief", ""),
@@ -529,6 +565,49 @@ def filter_month_items(history):
     month_key = datetime.now(KST).strftime("%Y-%m")
 
     return [x for x in history if x.get("date", "").startswith(month_key)]
+
+
+def filter_items_by_month(history, month_key):
+    return [x for x in history if x.get("date", "").startswith(month_key)]
+
+
+def get_month_weeks(month_key):
+    items = []
+    year, month = map(int, month_key.split("-"))
+
+    current = datetime(year, month, 1, tzinfo=KST)
+
+    while current.month == month:
+        iso = current.isocalendar()
+        week_key = f"{iso.year}-W{iso.week:02d}"
+
+        if week_key not in items:
+            items.append(week_key)
+
+        current += timedelta(days=1)
+
+    return items
+
+
+def filter_items_by_iso_week(history, week_key):
+    result = []
+
+    for x in history:
+        date_str = x.get("date", "")
+
+        if not date_str:
+            continue
+
+        try:
+            dt = datetime.strptime(date_str, "%Y-%m-%d").replace(tzinfo=KST)
+            iso = dt.isocalendar()
+
+            if f"{iso.year}-W{iso.week:02d}" == week_key:
+                result.append(x)
+        except Exception:
+            continue
+
+    return result
 
 
 def build_period_one_line(title, items):
@@ -624,24 +703,6 @@ def build_trend_report_text(title, items, report_type):
     return openai_text(prompt, "보고서를 생성할 수 없습니다.")
 
 
-def count_items(items, field):
-    result = {}
-
-    for x in items:
-        values = x.get(field, [])
-
-        if isinstance(values, str):
-            values = [values]
-
-        for v in values:
-            if not v:
-                continue
-
-            result[v] = result.get(v, 0) + 1
-
-    return sorted(result.items(), key=lambda x: x[1], reverse=True)
-
-
 def make_html_page(title, body_html, path):
     path.mkdir(parents=True, exist_ok=True)
 
@@ -678,6 +739,7 @@ def make_html_page(title, body_html, path):
 </body>
 </html>
 """
+
     (path / "index.html").write_text(html_doc, encoding="utf-8")
 
 
@@ -747,6 +809,34 @@ def create_period_report(period_type, items):
 
     base_url = get_pages_base_url()
     return f"{base_url}/{url_path}" if base_url else url_path
+
+
+def create_backfill_period_reports(history):
+    if not BACKFILL_MODE or not BACKFILL_START_DATE:
+        return
+
+    month_key = BACKFILL_START_DATE[:7]
+
+    for week_key in get_month_weeks(month_key):
+        week_items = filter_items_by_iso_week(history, week_key)
+
+        if not week_items:
+            continue
+
+        title = f"{week_key} 상하수도·수처리 주간 업계 동향"
+        report_text = build_trend_report_text(title, week_items, "weekly")
+        report_dir = WEEKLY_DIR / week_key
+        body = f'<section class="summary">{html.escape(report_text)}</section>'
+        make_html_page(title, body, report_dir)
+
+    month_items = filter_items_by_month(history, month_key)
+
+    if month_items:
+        title = f"{month_key} 상하수도·수처리 월간 업계 동향"
+        report_text = build_trend_report_text(title, month_items, "monthly")
+        report_dir = MONTHLY_DIR / month_key
+        body = f'<section class="summary">{html.escape(report_text)}</section>'
+        make_html_page(title, body, report_dir)
 
 
 def update_docs_index(daily_url, weekly_url, monthly_url):
@@ -923,6 +1013,8 @@ def main():
 
     history = save_news_history(selected_articles)
 
+    create_backfill_period_reports(history)
+
     week_items = filter_week_items(history)
     month_items = filter_month_items(history)
 
@@ -944,7 +1036,8 @@ def main():
         monthly_one_line,
     )
 
-    send_telegram(telegram_text)
+    if SEND_TELEGRAM:
+        send_telegram(telegram_text)
 
     sent = load_json(SENT_FILE, [])
     sent_links = set(sent)
