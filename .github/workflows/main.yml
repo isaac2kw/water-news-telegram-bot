@@ -44,6 +44,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -71,13 +73,11 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          
-          git pull --rebase origin main
-          
+
           git add sent_links.json news_history.json ../docs
-          
           git commit -m "Update water news reports" || echo "No changes to commit"
-          
+
+          git pull --rebase --autostash origin main
           git push origin main
 
       - name: Upload Pages artifact
