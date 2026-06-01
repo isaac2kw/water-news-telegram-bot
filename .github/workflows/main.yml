@@ -3,13 +3,20 @@ name: Daily Water News Telegram Bot
 on:
   workflow_dispatch:
   schedule:
+    # GitHub Actions cron uses UTC. 22:00 UTC = 07:00 KST.
     - cron: "0 22 * * *"
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  run-bot:
+  build:
     runs-on: ubuntu-latest
 
     defaults:
@@ -32,14 +39,33 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          MAX_ITEMS: "10"
-          MIN_SCORE: "6"
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: "gpt-4o-mini"
+          MAX_ITEMS: "8"
+          MIN_SCORE: "8"
         run: python main.py
 
-      - name: Commit sent links
+      - name: Commit generated files
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add sent_links.json
-          git commit -m "Update sent links" || echo "No changes to commit"
+          git add sent_links.json ../docs
+          git commit -m "Update daily water news report" || echo "No changes to commit"
           git push
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
