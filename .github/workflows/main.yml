@@ -49,8 +49,8 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add sent_links.json ../docs
-          git commit -m "Update daily water news report" || echo "No changes to commit"
+          git add sent_links.json news_history.json ../docs
+          git commit -m "Update daily water news reports" || echo "No changes to commit"
           git push
 
       - name: Upload Pages artifact
