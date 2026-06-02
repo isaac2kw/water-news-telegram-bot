@@ -5,35 +5,265 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>상하수도·수처리 뉴스 브리핑</title>
   <style>
-    body { font-family: Arial, "Noto Sans KR", sans-serif; margin:0; background:#f6f8fb; color:#1f2937; line-height:1.65; }
-    header { background:#163b73; color:white; padding:30px 36px; }
-    main { max-width:980px; margin:28px auto; padding:0 18px; }
-    h1 { margin:0 0 8px; font-size:28px; }
-    h2 { margin:26px 0 10px; font-size:22px; }
-    h3 { margin:18px 0 6px; font-size:17px; }
-    .card { background:white; border:1px solid #e5e7eb; border-radius:14px; padding:22px; margin-bottom:18px; box-shadow:0 1px 2px rgba(0,0,0,.04); }
-    .summary { white-space:pre-wrap; background:white; border:1px solid #e5e7eb; border-radius:14px; padding:22px; margin-bottom:22px; }
-    .pill { display:inline-block; background:#e0f2fe; color:#075985; border-radius:999px; padding:3px 10px; font-size:13px; margin-right:6px; }
-    .meta { color:#6b7280; font-size:13px; }
-    .why { background:#fff7ed; border-left:4px solid #f97316; padding:10px 12px; }
-    .brief { background:#f9fafb; border-left:4px solid #163b73; padding:10px 12px; }
-    a { color:#1d4ed8; }
+    :root {
+      --bg:#f4f7fb;
+      --panel:#ffffff;
+      --ink:#0f172a;
+      --muted:#64748b;
+      --line:#e2e8f0;
+      --brand:#0f4c81;
+      --brand-dark:#0b3157;
+      --brand-soft:#e0f2fe;
+      --accent:#0284c7;
+      --warn:#fff7ed;
+    }
+    * { box-sizing:border-box; }
+    body {
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:Arial, "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+      line-height:1.65;
+    }
+    a { color:#1d4ed8; text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .topbar {
+      position:sticky;
+      top:0;
+      z-index:20;
+      background:linear-gradient(135deg, var(--brand-dark), var(--brand));
+      color:#fff;
+      border-bottom:1px solid rgba(255,255,255,.14);
+    }
+    .topbar-inner {
+      max-width:1480px;
+      margin:0 auto;
+      padding:18px 24px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+    .brand {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:#fff;
+      font-size:20px;
+      font-weight:800;
+      letter-spacing:-.02em;
+    }
+    .brand:hover { text-decoration:none; }
+    .top-date { font-size:13px; color:#dbeafe; white-space:nowrap; }
+    .layout {
+      max-width:1480px;
+      margin:0 auto;
+      padding:24px;
+      display:grid;
+      grid-template-columns:280px minmax(0, 1fr) 230px;
+      gap:22px;
+      align-items:start;
+    }
+    .side-nav {
+      position:sticky;
+      top:82px;
+      max-height:calc(100vh - 108px);
+      overflow:auto;
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px;
+      box-shadow:0 8px 22px rgba(15,23,42,.05);
+    }
+    .nav-home {
+      display:block;
+      padding:10px 12px;
+      border-radius:12px;
+      color:var(--ink);
+      font-weight:800;
+      background:#f8fafc;
+      border:1px solid var(--line);
+      margin-bottom:14px;
+    }
+    .nav-section-title {
+      margin:16px 0 7px;
+      font-size:12px;
+      font-weight:800;
+      color:#475569;
+      text-transform:uppercase;
+      letter-spacing:.02em;
+    }
+    .nav-link {
+      display:block;
+      padding:7px 9px;
+      border-radius:10px;
+      color:#334155;
+      font-size:13px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .nav-link:hover, .nav-home:hover { background:var(--brand-soft); text-decoration:none; }
+    .nav-link.active, .nav-home.active { background:#dbeafe; color:#0f4c81; font-weight:800; }
+    .nav-empty { color:var(--muted); font-size:12px; padding:6px 2px; }
+    .content { min-width:0; }
+    .hero {
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:28px;
+      margin-bottom:20px;
+      box-shadow:0 8px 22px rgba(15,23,42,.05);
+    }
+    .hero h1 { margin:0; font-size:30px; line-height:1.25; letter-spacing:-.03em; }
+    .hero .subtitle { margin-top:10px; color:var(--muted); font-size:15px; }
+    .card {
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:22px;
+      margin-bottom:18px;
+      box-shadow:0 4px 14px rgba(15,23,42,.045);
+    }
+    .card h2 { margin:4px 0 10px; font-size:22px; line-height:1.35; letter-spacing:-.02em; }
+    .card h3 { margin:20px 0 8px; font-size:16px; }
+    .report-body {
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:26px;
+      margin-bottom:18px;
+      box-shadow:0 4px 14px rgba(15,23,42,.045);
+    }
+    .report-body h1, .report-body h2, .report-body h3 { letter-spacing:-.02em; }
+    .report-body h1 { font-size:26px; }
+    .report-body h2 { font-size:22px; margin-top:28px; padding-top:6px; }
+    .report-body h3 { font-size:18px; margin-top:24px; }
+    .report-body p { margin:9px 0; }
+    .report-body ul, .report-body ol { padding-left:22px; }
+    .report-body li { margin:6px 0; }
+    .meta { color:var(--muted); font-size:13px; }
+    .pill {
+      display:inline-block;
+      background:var(--brand-soft);
+      color:#075985;
+      border-radius:999px;
+      padding:3px 10px;
+      font-size:13px;
+      margin:2px 6px 2px 0;
+      font-weight:700;
+    }
+    .brief { background:#f8fafc; border-left:4px solid var(--brand); padding:11px 13px; border-radius:0 10px 10px 0; }
+    .why { background:var(--warn); border-left:4px solid #f97316; padding:11px 13px; border-radius:0 10px 10px 0; }
+    .toc {
+      position:sticky;
+      top:82px;
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px;
+      box-shadow:0 8px 22px rgba(15,23,42,.05);
+    }
+    .toc-title { font-size:13px; font-weight:800; color:#475569; margin-bottom:8px; }
+    .toc a { display:block; color:#334155; font-size:13px; padding:6px 0; border-bottom:1px solid #f1f5f9; }
+    .toc-empty { color:var(--muted); font-size:12px; }
+    .dashboard-grid { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:14px; margin-bottom:18px; }
+    .dash-card { background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:18px; box-shadow:0 4px 14px rgba(15,23,42,.04); }
+    .dash-card h2 { font-size:17px; margin:0 0 10px; }
+    .dash-card a { display:block; margin:6px 0; font-size:14px; }
+    @media (max-width:1180px) {
+      .layout { grid-template-columns:250px minmax(0, 1fr); }
+      .toc { display:none; }
+    }
+    @media (max-width:820px) {
+      .topbar-inner { align-items:flex-start; flex-direction:column; }
+      .layout { display:block; padding:14px; }
+      .side-nav { position:relative; top:auto; max-height:none; margin-bottom:16px; }
+      .hero { padding:22px; }
+      .hero h1 { font-size:24px; }
+      .dashboard-grid { grid-template-columns:1fr; }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>상하수도·수처리 뉴스 브리핑</h1>
-    <div>자동 생성 보고서</div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="/water-news-telegram-bot/">💧 상하수도·수처리 뉴스 브리핑</a>
+      <div class="top-date">2026-06-02 11:00 KST</div>
+    </div>
   </header>
-  <main>
-    
+  <div class="layout">
+    <nav class="side-nav">
+<a class="nav-home active" href="/water-news-telegram-bot/">홈</a>
+<div class="nav-section-title">일일 상세 보고서</div>
+<a class="nav-link " href="/water-news-telegram-bot/reports/2026-06-02/">2026-06-02 (화)</a>
+<a class="nav-link " href="/water-news-telegram-bot/reports/2026-06-01/">2026-06-01 (월)</a>
+<a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-21/">2026-05-21 (목)</a>
+<a class="nav-link " href="/water-news-telegram-bot/reports/2026-04-09/">2026-04-09 (목)</a>
+<a class="nav-link " href="/water-news-telegram-bot/reports/2026-03-31/">2026-03-31 (화)</a>
+<a class="nav-link " href="/water-news-telegram-bot/reports/2026-03-10/">2026-03-10 (화)</a>
+<a class="nav-link " href="/water-news-telegram-bot/reports/2026-02-20/">2026-02-20 (금)</a>
+<a class="nav-link " href="/water-news-telegram-bot/reports/2026-02-18/">2026-02-18 (수)</a>
+<a class="nav-link " href="/water-news-telegram-bot/reports/2025-02-27/">2025-02-27 (목)</a>
+<a class="nav-link " href="/water-news-telegram-bot/reports/2025-02-25/">2025-02-25 (화)</a>
+<a class="nav-link " href="/water-news-telegram-bot/reports/2025-01-16/">2025-01-16 (목)</a>
+<a class="nav-link " href="/water-news-telegram-bot/reports/2024-12-30/">2024-12-30 (월)</a>
+<a class="nav-link " href="/water-news-telegram-bot/reports/2024-12-09/">2024-12-09 (월)</a>
+<a class="nav-link " href="/water-news-telegram-bot/reports/2024-12-06/">2024-12-06 (금)</a>
+<a class="nav-link " href="/water-news-telegram-bot/reports/2024-11-25/">2024-11-25 (월)</a>
+<div class="nav-section-title">주간 업계 동향</div>
+<a class="nav-link " href="/water-news-telegram-bot/weekly/2026-W23/">2026-W23 (06.01~06.07)</a>
+<a class="nav-link " href="/water-news-telegram-bot/weekly/2026-W21/">2026-W21 (05.18~05.24)</a>
+<a class="nav-link " href="/water-news-telegram-bot/weekly/2026-W15/">2026-W15 (04.06~04.12)</a>
+<a class="nav-link " href="/water-news-telegram-bot/weekly/2026-W14/">2026-W14 (03.30~04.05)</a>
+<a class="nav-link " href="/water-news-telegram-bot/weekly/2026-W11/">2026-W11 (03.09~03.15)</a>
+<a class="nav-link " href="/water-news-telegram-bot/weekly/2026-W08/">2026-W08 (02.16~02.22)</a>
+<a class="nav-link " href="/water-news-telegram-bot/weekly/2025-W09/">2025-W09 (02.24~03.02)</a>
+<a class="nav-link " href="/water-news-telegram-bot/weekly/2025-W03/">2025-W03 (01.13~01.19)</a>
+<a class="nav-link " href="/water-news-telegram-bot/weekly/2025-W01/">2025-W01 (12.30~01.05)</a>
+<a class="nav-link " href="/water-news-telegram-bot/weekly/2024-W50/">2024-W50 (12.09~12.15)</a>
+<a class="nav-link " href="/water-news-telegram-bot/weekly/2024-W49/">2024-W49 (12.02~12.08)</a>
+<a class="nav-link " href="/water-news-telegram-bot/weekly/2024-W48/">2024-W48 (11.25~12.01)</a>
+<div class="nav-section-title">월간 업계 동향</div>
+<a class="nav-link " href="/water-news-telegram-bot/monthly/2026-06/">2026년 06월</a>
+<a class="nav-link " href="/water-news-telegram-bot/monthly/2026-05/">2026년 05월</a>
+<a class="nav-link " href="/water-news-telegram-bot/monthly/2026-04/">2026년 04월</a>
+<a class="nav-link " href="/water-news-telegram-bot/monthly/2026-03/">2026년 03월</a>
+<a class="nav-link " href="/water-news-telegram-bot/monthly/2026-02/">2026년 02월</a>
+<a class="nav-link " href="/water-news-telegram-bot/monthly/2025-02/">2025년 02월</a>
+<a class="nav-link " href="/water-news-telegram-bot/monthly/2025-01/">2025년 01월</a>
+<a class="nav-link " href="/water-news-telegram-bot/monthly/2024-12/">2024년 12월</a>
+<a class="nav-link " href="/water-news-telegram-bot/monthly/2024-11/">2024년 11월</a>
+</nav>
+    <main class="content">
+      <section class="hero">
+        <h1>상하수도·수처리 뉴스 브리핑</h1>
+        <div class="subtitle">일일 상세보고서, 주간 리포트, 월간 리포트를 날짜별로 누적 저장합니다.</div>
+      </section>
+      
+    <section class="dashboard-grid">
+      <div class="dash-card">
+        <h2>일일 상세 보고서</h2>
+        <a href="/water-news-telegram-bot/reports/2026-06-02/">2026-06-02 (화) 상세 분석 보고서</a><a href="/water-news-telegram-bot/reports/2026-06-01/">2026-06-01 (월) 상세 분석 보고서</a><a href="/water-news-telegram-bot/reports/2026-05-21/">2026-05-21 (목) 상세 분석 보고서</a><a href="/water-news-telegram-bot/reports/2026-04-09/">2026-04-09 (목) 상세 분석 보고서</a><a href="/water-news-telegram-bot/reports/2026-03-31/">2026-03-31 (화) 상세 분석 보고서</a><a href="/water-news-telegram-bot/reports/2026-03-10/">2026-03-10 (화) 상세 분석 보고서</a><a href="/water-news-telegram-bot/reports/2026-02-20/">2026-02-20 (금) 상세 분석 보고서</a><a href="/water-news-telegram-bot/reports/2026-02-18/">2026-02-18 (수) 상세 분석 보고서</a>
+      </div>
+      <div class="dash-card">
+        <h2>주간 업계 동향</h2>
+        <a href="/water-news-telegram-bot/weekly/2026-W23/">2026-W23 (06.01~06.07)</a><a href="/water-news-telegram-bot/weekly/2026-W21/">2026-W21 (05.18~05.24)</a><a href="/water-news-telegram-bot/weekly/2026-W15/">2026-W15 (04.06~04.12)</a><a href="/water-news-telegram-bot/weekly/2026-W14/">2026-W14 (03.30~04.05)</a><a href="/water-news-telegram-bot/weekly/2026-W11/">2026-W11 (03.09~03.15)</a><a href="/water-news-telegram-bot/weekly/2026-W08/">2026-W08 (02.16~02.22)</a>
+      </div>
+      <div class="dash-card">
+        <h2>월간 업계 동향</h2>
+        <a href="/water-news-telegram-bot/monthly/2026-06/">2026년 06월 월간 업계 동향</a><a href="/water-news-telegram-bot/monthly/2026-05/">2026년 05월 월간 업계 동향</a><a href="/water-news-telegram-bot/monthly/2026-04/">2026년 04월 월간 업계 동향</a><a href="/water-news-telegram-bot/monthly/2026-03/">2026년 03월 월간 업계 동향</a><a href="/water-news-telegram-bot/monthly/2026-02/">2026년 02월 월간 업계 동향</a><a href="/water-news-telegram-bot/monthly/2025-02/">2025년 02월 월간 업계 동향</a>
+      </div>
+    </section>
     <section class="card">
-      <h2>최신 보고서</h2>
-      <p><a href="https://isaac2kw.github.io/water-news-telegram-bot/reports/2026-06-02/">2026-06-02 상세 분석 보고서</a></p>
-      <p><a href="https://isaac2kw.github.io/water-news-telegram-bot/weekly/2026-W23/">주간 업계 동향</a></p>
-      <p><a href="https://isaac2kw.github.io/water-news-telegram-bot/monthly/2026-06/">월간 업계 동향</a></p>
+      <h2>최신 바로가기</h2>
+      <p><a href="https://isaac2kw.github.io/water-news-telegram-bot/reports/2026-06-02/">최신 일일 상세 분석 보고서</a></p>
+      <p><a href="https://isaac2kw.github.io/water-news-telegram-bot/weekly/2026-W23/">최신 주간 업계 동향</a></p>
+      <p><a href="https://isaac2kw.github.io/water-news-telegram-bot/monthly/2026-06/">최신 월간 업계 동향</a></p>
     </section>
     
-  </main>
+    </main>
+    <aside class="toc"><div class="toc-title">목차</div><a href="#daily">일일 상세 보고서</a><a href="#weekly">주간 업계 동향</a><a href="#monthly">월간 업계 동향</a></aside>
+  </div>
 </body>
 </html>
