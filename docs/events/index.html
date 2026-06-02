@@ -36,7 +36,7 @@
       border-bottom:1px solid rgba(255,255,255,.14);
     }
     .topbar-inner {
-      max-width:1480px;
+      max-width:1880px;
       margin:0 auto;
       padding:18px 24px;
       display:flex;
@@ -56,11 +56,11 @@
     .brand:hover { text-decoration:none; }
     .top-date { font-size:13px; color:#dbeafe; white-space:nowrap; }
     .layout {
-      max-width:1480px;
+      max-width:1880px;
       margin:0 auto;
       padding:24px;
       display:grid;
-      grid-template-columns:280px minmax(0, 1fr) 230px;
+      grid-template-columns:260px minmax(0, 1fr) 210px;
       gap:22px;
       align-items:start;
     }
@@ -190,11 +190,25 @@
     .toc a { display:block; color:#334155; font-size:13px; padding:6px 0; border-bottom:1px solid #f1f5f9; }
     .toc-empty { color:var(--muted); font-size:12px; }
     .dashboard-grid { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:14px; margin-bottom:18px; }
+    .news-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:18px; }
+    .news-card { min-height:420px; }
+    .headline-title { font-weight:800; color:#0f172a; }
+    .headline-list li { margin:10px 0 14px; padding-bottom:10px; border-bottom:1px solid #f1f5f9; }
+    .headline-specs { display:inline-block; margin-top:4px; padding:3px 8px; border-radius:999px; background:#f0f9ff; color:#075985; font-size:12px; font-weight:700; }
+    .event-mini-grid { display:grid; grid-template-columns:repeat(5, minmax(0,1fr)); gap:14px; }
+    .event-mini-card { border:1px solid var(--line); border-radius:16px; padding:14px; background:#fff; }
+    .event-mini-card h3 { margin:8px 0 6px; font-size:15px; line-height:1.35; }
+    .event-grade { display:inline-block; padding:3px 9px; border-radius:999px; font-size:12px; font-weight:900; color:#fff; background:#64748b; }
+    .grade-S { background:#7c3aed; }
+    .grade-A { background:#2563eb; }
+    .grade-B { background:#64748b; }
     .dash-card { background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:18px; box-shadow:0 4px 14px rgba(15,23,42,.04); }
     .dash-card h2 { font-size:17px; margin:0 0 10px; }
     .dash-card a { display:block; margin:6px 0; font-size:14px; }
     @media (max-width:1180px) {
-      .layout { grid-template-columns:250px minmax(0, 1fr); }
+      .layout { grid-template-columns:240px minmax(0, 1fr); }
+      .news-grid { grid-template-columns:1fr; }
+      .event-mini-grid { grid-template-columns:repeat(2, minmax(0,1fr)); }
       .toc { display:none; }
       .stat-grid { grid-template-columns:repeat(2, minmax(0,1fr)); }
     }
@@ -206,6 +220,8 @@
       .hero h1 { font-size:24px; }
       .dashboard-grid { grid-template-columns:1fr; }
       .stat-grid { grid-template-columns:1fr; }
+      .news-grid { grid-template-columns:1fr; }
+      .event-mini-grid { grid-template-columns:1fr; }
     }
   </style>
 </head>
@@ -213,7 +229,7 @@
   <header class="topbar">
     <div class="topbar-inner">
       <a class="brand" href="/water-news-telegram-bot/">💧 상하수도·수처리 뉴스 브리핑</a>
-      <div class="top-date">2026-06-02 16:57 KST</div>
+      <div class="top-date">2026-06-02 17:54 KST</div>
     </div>
   </header>
   <div class="layout">
@@ -239,6 +255,7 @@
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-03-10/">2026-03-10 (화)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-02-20/">2026-02-20 (금)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-02-18/">2026-02-18 (수)</a>
+<a class="nav-link " href="/water-news-telegram-bot/reports/2025-12-05/">2025-12-05 (금)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2025-08-04/">2025-08-04 (월)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2025-04-15/">2025-04-15 (화)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2025-02-27/">2025-02-27 (목)</a>
@@ -256,6 +273,7 @@
 <a class="nav-link " href="/water-news-telegram-bot/reports/2015-08-05/">2015-08-05 (수)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2015-03-01/">2015-03-01 (일)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2014-10-24/">2014-10-24 (금)</a>
+<a class="nav-link " href="/water-news-telegram-bot/reports/2011-07-05/">2011-07-05 (화)</a>
 </details>
 <div class="nav-section-title">주간 업계 동향</div>
 <a class="nav-link " href="/water-news-telegram-bot/weekly/2026-W23/">2026-W23 (06.01~06.07)</a>
@@ -268,6 +286,7 @@
 <a class="nav-link " href="/water-news-telegram-bot/weekly/2026-W14/">2026-W14 (03.30~04.05)</a>
 <a class="nav-link " href="/water-news-telegram-bot/weekly/2026-W11/">2026-W11 (03.09~03.15)</a>
 <a class="nav-link " href="/water-news-telegram-bot/weekly/2026-W08/">2026-W08 (02.16~02.22)</a>
+<a class="nav-link " href="/water-news-telegram-bot/weekly/2025-W49/">2025-W49 (12.01~12.07)</a>
 <a class="nav-link " href="/water-news-telegram-bot/weekly/2025-W32/">2025-W32 (08.04~08.10)</a>
 <a class="nav-link " href="/water-news-telegram-bot/weekly/2025-W16/">2025-W16 (04.14~04.20)</a>
 <a class="nav-link " href="/water-news-telegram-bot/weekly/2025-W09/">2025-W09 (02.24~03.02)</a>
@@ -284,6 +303,7 @@
 <a class="nav-link " href="/water-news-telegram-bot/weekly/2015-W32/">2015-W32 (08.03~08.09)</a>
 <a class="nav-link " href="/water-news-telegram-bot/weekly/2015-W09/">2015-W09 (02.23~03.01)</a>
 <a class="nav-link " href="/water-news-telegram-bot/weekly/2014-W43/">2014-W43 (10.20~10.26)</a>
+<a class="nav-link " href="/water-news-telegram-bot/weekly/2011-W27/">2011-W27 (07.04~07.10)</a>
 </details>
 <div class="nav-section-title">월간 업계 동향</div>
 <a class="nav-link " href="/water-news-telegram-bot/monthly/2026-06/">2026년 06월</a>
@@ -291,8 +311,9 @@
 <a class="nav-link " href="/water-news-telegram-bot/monthly/2026-04/">2026년 04월</a>
 <a class="nav-link " href="/water-news-telegram-bot/monthly/2026-03/">2026년 03월</a>
 <a class="nav-link " href="/water-news-telegram-bot/monthly/2026-02/">2026년 02월</a>
-<a class="nav-link " href="/water-news-telegram-bot/monthly/2025-08/">2025년 08월</a>
+<a class="nav-link " href="/water-news-telegram-bot/monthly/2025-12/">2025년 12월</a>
 <details class="nav-more"><summary>더보기</summary>
+<a class="nav-link " href="/water-news-telegram-bot/monthly/2025-08/">2025년 08월</a>
 <a class="nav-link " href="/water-news-telegram-bot/monthly/2025-04/">2025년 04월</a>
 <a class="nav-link " href="/water-news-telegram-bot/monthly/2025-02/">2025년 02월</a>
 <a class="nav-link " href="/water-news-telegram-bot/monthly/2025-01/">2025년 01월</a>
@@ -306,6 +327,7 @@
 <a class="nav-link " href="/water-news-telegram-bot/monthly/2015-08/">2015년 08월</a>
 <a class="nav-link " href="/water-news-telegram-bot/monthly/2015-03/">2015년 03월</a>
 <a class="nav-link " href="/water-news-telegram-bot/monthly/2014-10/">2014년 10월</a>
+<a class="nav-link " href="/water-news-telegram-bot/monthly/2011-07/">2011년 07월</a>
 </details>
 <div class="nav-section-title">바로가기</div>
 <a class="nav-link " href="/water-news-telegram-bot/sources/">정보 출처</a>

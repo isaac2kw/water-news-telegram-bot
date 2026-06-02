@@ -36,7 +36,7 @@
       border-bottom:1px solid rgba(255,255,255,.14);
     }
     .topbar-inner {
-      max-width:1480px;
+      max-width:1880px;
       margin:0 auto;
       padding:18px 24px;
       display:flex;
@@ -56,11 +56,11 @@
     .brand:hover { text-decoration:none; }
     .top-date { font-size:13px; color:#dbeafe; white-space:nowrap; }
     .layout {
-      max-width:1480px;
+      max-width:1880px;
       margin:0 auto;
       padding:24px;
       display:grid;
-      grid-template-columns:280px minmax(0, 1fr) 230px;
+      grid-template-columns:260px minmax(0, 1fr) 210px;
       gap:22px;
       align-items:start;
     }
@@ -190,11 +190,25 @@
     .toc a { display:block; color:#334155; font-size:13px; padding:6px 0; border-bottom:1px solid #f1f5f9; }
     .toc-empty { color:var(--muted); font-size:12px; }
     .dashboard-grid { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:14px; margin-bottom:18px; }
+    .news-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:18px; }
+    .news-card { min-height:420px; }
+    .headline-title { font-weight:800; color:#0f172a; }
+    .headline-list li { margin:10px 0 14px; padding-bottom:10px; border-bottom:1px solid #f1f5f9; }
+    .headline-specs { display:inline-block; margin-top:4px; padding:3px 8px; border-radius:999px; background:#f0f9ff; color:#075985; font-size:12px; font-weight:700; }
+    .event-mini-grid { display:grid; grid-template-columns:repeat(5, minmax(0,1fr)); gap:14px; }
+    .event-mini-card { border:1px solid var(--line); border-radius:16px; padding:14px; background:#fff; }
+    .event-mini-card h3 { margin:8px 0 6px; font-size:15px; line-height:1.35; }
+    .event-grade { display:inline-block; padding:3px 9px; border-radius:999px; font-size:12px; font-weight:900; color:#fff; background:#64748b; }
+    .grade-S { background:#7c3aed; }
+    .grade-A { background:#2563eb; }
+    .grade-B { background:#64748b; }
     .dash-card { background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:18px; box-shadow:0 4px 14px rgba(15,23,42,.04); }
     .dash-card h2 { font-size:17px; margin:0 0 10px; }
     .dash-card a { display:block; margin:6px 0; font-size:14px; }
     @media (max-width:1180px) {
-      .layout { grid-template-columns:250px minmax(0, 1fr); }
+      .layout { grid-template-columns:240px minmax(0, 1fr); }
+      .news-grid { grid-template-columns:1fr; }
+      .event-mini-grid { grid-template-columns:repeat(2, minmax(0,1fr)); }
       .toc { display:none; }
       .stat-grid { grid-template-columns:repeat(2, minmax(0,1fr)); }
     }
@@ -206,6 +220,8 @@
       .hero h1 { font-size:24px; }
       .dashboard-grid { grid-template-columns:1fr; }
       .stat-grid { grid-template-columns:1fr; }
+      .news-grid { grid-template-columns:1fr; }
+      .event-mini-grid { grid-template-columns:1fr; }
     }
   </style>
 </head>
@@ -213,7 +229,7 @@
   <header class="topbar">
     <div class="topbar-inner">
       <a class="brand" href="/water-news-telegram-bot/">💧 상하수도·수처리 뉴스 브리핑</a>
-      <div class="top-date">2026-06-02 16:57 KST</div>
+      <div class="top-date">2026-06-02 17:54 KST</div>
     </div>
   </header>
   <div class="layout">
@@ -239,6 +255,7 @@
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-03-10/">2026-03-10 (화)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-02-20/">2026-02-20 (금)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-02-18/">2026-02-18 (수)</a>
+<a class="nav-link " href="/water-news-telegram-bot/reports/2025-12-05/">2025-12-05 (금)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2025-08-04/">2025-08-04 (월)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2025-04-15/">2025-04-15 (화)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2025-02-27/">2025-02-27 (목)</a>
@@ -256,6 +273,7 @@
 <a class="nav-link " href="/water-news-telegram-bot/reports/2015-08-05/">2015-08-05 (수)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2015-03-01/">2015-03-01 (일)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2014-10-24/">2014-10-24 (금)</a>
+<a class="nav-link " href="/water-news-telegram-bot/reports/2011-07-05/">2011-07-05 (화)</a>
 </details>
 <div class="nav-section-title">주간 업계 동향</div>
 <a class="nav-link " href="/water-news-telegram-bot/weekly/2026-W23/">2026-W23 (06.01~06.07)</a>
@@ -268,6 +286,7 @@
 <a class="nav-link " href="/water-news-telegram-bot/weekly/2026-W14/">2026-W14 (03.30~04.05)</a>
 <a class="nav-link " href="/water-news-telegram-bot/weekly/2026-W11/">2026-W11 (03.09~03.15)</a>
 <a class="nav-link " href="/water-news-telegram-bot/weekly/2026-W08/">2026-W08 (02.16~02.22)</a>
+<a class="nav-link " href="/water-news-telegram-bot/weekly/2025-W49/">2025-W49 (12.01~12.07)</a>
 <a class="nav-link " href="/water-news-telegram-bot/weekly/2025-W32/">2025-W32 (08.04~08.10)</a>
 <a class="nav-link " href="/water-news-telegram-bot/weekly/2025-W16/">2025-W16 (04.14~04.20)</a>
 <a class="nav-link " href="/water-news-telegram-bot/weekly/2025-W09/">2025-W09 (02.24~03.02)</a>
@@ -284,6 +303,7 @@
 <a class="nav-link " href="/water-news-telegram-bot/weekly/2015-W32/">2015-W32 (08.03~08.09)</a>
 <a class="nav-link " href="/water-news-telegram-bot/weekly/2015-W09/">2015-W09 (02.23~03.01)</a>
 <a class="nav-link " href="/water-news-telegram-bot/weekly/2014-W43/">2014-W43 (10.20~10.26)</a>
+<a class="nav-link " href="/water-news-telegram-bot/weekly/2011-W27/">2011-W27 (07.04~07.10)</a>
 </details>
 <div class="nav-section-title">월간 업계 동향</div>
 <a class="nav-link " href="/water-news-telegram-bot/monthly/2026-06/">2026년 06월</a>
@@ -291,8 +311,9 @@
 <a class="nav-link " href="/water-news-telegram-bot/monthly/2026-04/">2026년 04월</a>
 <a class="nav-link " href="/water-news-telegram-bot/monthly/2026-03/">2026년 03월</a>
 <a class="nav-link " href="/water-news-telegram-bot/monthly/2026-02/">2026년 02월</a>
-<a class="nav-link " href="/water-news-telegram-bot/monthly/2025-08/">2025년 08월</a>
+<a class="nav-link " href="/water-news-telegram-bot/monthly/2025-12/">2025년 12월</a>
 <details class="nav-more"><summary>더보기</summary>
+<a class="nav-link " href="/water-news-telegram-bot/monthly/2025-08/">2025년 08월</a>
 <a class="nav-link " href="/water-news-telegram-bot/monthly/2025-04/">2025년 04월</a>
 <a class="nav-link " href="/water-news-telegram-bot/monthly/2025-02/">2025년 02월</a>
 <a class="nav-link " href="/water-news-telegram-bot/monthly/2025-01/">2025년 01월</a>
@@ -306,6 +327,7 @@
 <a class="nav-link " href="/water-news-telegram-bot/monthly/2015-08/">2015년 08월</a>
 <a class="nav-link " href="/water-news-telegram-bot/monthly/2015-03/">2015년 03월</a>
 <a class="nav-link " href="/water-news-telegram-bot/monthly/2014-10/">2014년 10월</a>
+<a class="nav-link " href="/water-news-telegram-bot/monthly/2011-07/">2011년 07월</a>
 </details>
 <div class="nav-section-title">바로가기</div>
 <a class="nav-link " href="/water-news-telegram-bot/sources/">정보 출처</a>
@@ -315,41 +337,26 @@
     <main class="content">
       <section class="hero">
         <h1>2026-03-31 상하수도·수처리 상세 분석 보고서</h1>
-        <div class="subtitle">당일 기사 우선, 부족 시 최근 3일 이내 관련 기사까지 포함합니다. 뉴스 게시판용 기사는 다른 날짜 보고서와 중복될 수 있습니다.</div>
+        <div class="subtitle">당일 기사만 사용합니다. 같은 내용의 중복 기사는 자동 제외합니다.</div>
       </section>
       
         <section class="card" id="article-1">
-          <p class="meta">#1 · 2026-03-31 · WaterNewsWire Full Text · 점수 38</p>
+          <p class="meta">#1 · 2026-03-31 · WaterNewsWire Full Text · 점수 49</p>
           <h2>💧 알파라발, 2026 글로벌 물 회의에서 물 전환 논의 주도</h2>
           <p><span class="pill">재이용수</span></p>
-          <p class="brief">알파라발이 2026 글로벌 물 회의에서 물 재이용과 혁신을 주제로 논의합니다. 물 보안 문제 해결을 위한 협력과 행동이 강조됩니다.</p>
+          <p class="brief">알파라발이 2026 글로벌 물 회의에서 물 재이용과 혁신을 주제로 논의합니다. 물 재이용은 산업과 도시의 물 안전 전략에서 점점 더 중요해지고 있습니다.</p>
           <h3>내용 요약</h3>
-          <p>유럽에서 물 재이용 비율이 7%에 불과하고, 전 세계적으로 절반의 폐수가 처리되지 않는 상황에서 물 보안 문제가 심각해지고 있습니다. 2026년 마드리드에서 열리는 글로벌 물 회의에서 알파라발은 혁신과 협력을 통해 물 전환을 가속화하고 산업의 운영 회복력을 강화하는 방안을 논의할 예정입니다. 알파라발은 규제 기준을 충족하는 것을 넘어, 개별 폐수의 원천에서 적극적으로 처리하여 물 재이용과 자원 회수를 촉진하는 접근 방식을 지지하고 있습니다. 이러한 논의는 수처리 산업의 지속 가능성과 효율성을 높이는 데 중요한 역할을 할 것입니다.</p>
+          <p>2026년 마드리드에서 열리는 글로벌 물 회의에서 알파라발은 물 전환을 가속화하기 위한 혁신과 협력의 대화를 주도합니다. 현재 유럽에서 물 재이용 비율이 7%에 불과하며, 전 세계적으로 절반의 하수는 여전히 처리되지 않고 있습니다. 알파라발은 규제 기준을 충족하는 것을 넘어, 개별 폐수 흐름을 원천에서 처리하여 물 재이용과 자원 회수를 더욱 효과적으로 할 것을 주장하고 있습니다. 이는 수처리 산업의 지속 가능성을 높이는 데 기여할 것으로 기대됩니다.</p>
           <h3>왜 중요한가?</h3>
-          <p class="why">물 재이용은 산업과 지방 정부의 물 보안 전략에서 점점 더 중심적인 역할을 하고 있습니다. 이는 시장의 지속 가능성과 규제 준수 측면에서 매우 중요합니다.</p>
+          <p class="why">물 재이용은 산업과 도시의 물 안전을 위한 핵심 전략으로 자리잡고 있습니다. 이는 수처리 기술의 발전과 함께 규제 변화에 대응하기 위한 중요한 기회입니다.</p>
           <p class="meta">국가: 🇪🇸 스페인</p>
           <p class="meta">기업: 알파라발</p>
-          <p class="meta">기술: 물 재이용, 폐수, 막</p>
+          <p class="meta">기술: 물 재이용, 수처리</p>
           <p><a href="https://waternewswire.com/news/2026/alfa-laval-global-water-summit-2026-madrid-water-reuse-innovation-strategy" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
         </section>
         
-        <section class="card" id="article-2">
-          <p class="meta">#2 · 2026-03-30 · Google News Korea 재이용수 PFAS · 점수 26</p>
-          <h2>💧 美 공공 하수처리장에 韓 기술 첫 진출</h2>
-          <p><span class="pill">프로젝트/수주</span></p>
-          <p class="brief">한국 기업이 미국 공공 하수처리장에 기술을 처음으로 수출했습니다. 이는 한국 수처리 기술의 국제적 경쟁력을 보여주는 사례입니다.</p>
-          <h3>내용 요약</h3>
-          <p>한국의 한 기업이 미국의 공공 하수처리장에 수처리 기술을 성공적으로 수출했습니다. 이로 인해 한국의 하수처리 기술이 해외 시장에 진출하는 중요한 이정표가 되었습니다. 해당 기술은 효율적인 하수 처리와 재이용수 생산에 기여할 것으로 기대됩니다. 이는 한국 수처리 산업의 글로벌 경쟁력을 강화하는 데 중요한 역할을 할 것입니다.</p>
-          <h3>왜 중요한가?</h3>
-          <p class="why">이 사건은 한국 수처리 기술의 국제적 확장을 의미하며, 향후 해외 프로젝트 수주에 긍정적인 영향을 미칠 것으로 예상됩니다. 이는 한국 기업들이 글로벌 시장에서 경쟁력을 갖추는 데 중요한 사례입니다.</p>
-          <p class="meta">국가: 🇺🇸 미국</p>
-          <p class="meta">기업: 한국 기업</p>
-          <p class="meta">기술: 하수처리, 재이용수</p>
-          <p><a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE83VS1KRWk1V0RfQ0dWUnhWZUd2SWRuOFA3VDJ3bkpESEtiZkJTTUNYUXBCNkVoa25fekRualhlSVZOWlVLTXRORW14clctU2VNTkxTUHh6Z2NNZ9IBVEFVX3lxTFB2M2Zxd3dlTlRJb0tpcFQySWZPUHB0dWZIdHNVX2FNSGo0OEhqdlBBbVcwWDVrZGJvbjBxR0JSNmEzWjc0U1BRNTNhSFk1V3l0UnBYYQ?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
-        </section>
-        
     </main>
-    <aside class="toc"><div class="toc-title">목차</div><a href="#article-1">기사 1</a><a href="#article-2">기사 2</a></aside>
+    <aside class="toc"><div class="toc-title">목차</div><a href="#article-1">기사 1</a></aside>
   </div>
 </body>
 </html>
