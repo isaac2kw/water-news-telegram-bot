@@ -9,6 +9,7 @@ from urllib.parse import urlparse
 
 import feedparser
 import requests
+import markdown
 
 
 KST = timezone(timedelta(hours=9))
@@ -703,8 +704,168 @@ def build_trend_report_text(title, items, report_type):
     return openai_text(prompt, "보고서를 생성할 수 없습니다.")
 
 
-def make_html_page(title, body_html, path):
+
+def markdown_to_html(text):
+    if not text:
+        return ""
+
+    return markdown.markdown(
+        text,
+        extensions=["extra", "nl2br", "sane_lists"],
+        output_format="html5",
+    )
+
+
+def get_site_base_path():
+    repo = os.getenv("GITHUB_REPOSITORY", "")
+
+    if "/" in repo:
+        return "/" + repo.split("/", 1)[1].strip("/") + "/"
+
+    return "/"
+
+
+def rel_url(path_text):
+    base = get_site_base_path().rstrip("/")
+    path_text = str(path_text).lstrip("/")
+
+    if not path_text:
+        return base + "/"
+
+    return f"{base}/{path_text}"
+
+
+def week_range_label(week_key):
+    try:
+        year = int(week_key.split("-W", 1)[0])
+        week = int(week_key.split("-W", 1)[1])
+        start = datetime.fromisocalendar(year, week, 1).replace(tzinfo=KST)
+        end = start + timedelta(days=6)
+        return f"{start.strftime('%m.%d')}~{end.strftime('%m.%d')}"
+    except Exception:
+        return ""
+
+
+def month_label(month_key):
+    try:
+        year, month = month_key.split("-", 1)
+        return f"{year}년 {int(month):02d}월"
+    except Exception:
+        return month_key
+
+
+def get_week_key_from_date(date_str):
+    try:
+        dt = datetime.strptime(date_str, "%Y-%m-%d").replace(tzinfo=KST)
+        iso = dt.isocalendar()
+        return f"{iso.year}-W{iso.week:02d}"
+    except Exception:
+        return ""
+
+
+def get_date_label(date_str):
+    try:
+        dt = datetime.strptime(date_str, "%Y-%m-%d")
+        weekday = ["월", "화", "수", "목", "금", "토", "일"][dt.weekday()]
+        return f"{date_str} ({weekday})"
+    except Exception:
+        return date_str
+
+
+def list_existing_report_keys():
+    history = load_json(HISTORY_FILE, [])
+
+    daily_keys = set()
+    weekly_keys = set()
+    monthly_keys = set()
+
+    for item in history:
+        date_str = item.get("date", "")
+        if re.match(r"^\d{4}-\d{2}-\d{2}$", date_str):
+            daily_keys.add(date_str)
+            week_key = get_week_key_from_date(date_str)
+            if week_key:
+                weekly_keys.add(week_key)
+            monthly_keys.add(date_str[:7])
+
+    if REPORTS_DIR.exists():
+        for p in REPORTS_DIR.iterdir():
+            if p.is_dir() and (p / "index.html").exists():
+                daily_keys.add(p.name)
+
+    if WEEKLY_DIR.exists():
+        for p in WEEKLY_DIR.iterdir():
+            if p.is_dir() and (p / "index.html").exists():
+                weekly_keys.add(p.name)
+
+    if MONTHLY_DIR.exists():
+        for p in MONTHLY_DIR.iterdir():
+            if p.is_dir() and (p / "index.html").exists():
+                monthly_keys.add(p.name)
+
+    daily = sorted(daily_keys, reverse=True)[:90]
+    weekly = sorted(weekly_keys, reverse=True)[:52]
+    monthly = sorted(monthly_keys, reverse=True)[:36]
+
+    return daily, weekly, monthly
+
+
+def build_left_nav(active_url=""):
+    daily, weekly, monthly = list_existing_report_keys()
+
+    def active_class(url):
+        return "active" if active_url.strip("/") == url.strip("/") else ""
+
+    parts = []
+    parts.append('<nav class="side-nav">')
+    parts.append(f'<a class="nav-home {active_class("")}" href="{rel_url("")}">홈</a>')
+
+    parts.append('<div class="nav-section-title">일일 상세 보고서</div>')
+    if daily:
+        for key in daily[:45]:
+            url = f"reports/{key}/"
+            parts.append(f'<a class="nav-link {active_class(url)}" href="{rel_url(url)}">{html.escape(get_date_label(key))}</a>')
+    else:
+        parts.append('<div class="nav-empty">아직 생성된 일일 보고서가 없습니다.</div>')
+
+    parts.append('<div class="nav-section-title">주간 업계 동향</div>')
+    if weekly:
+        for key in weekly[:26]:
+            label = week_range_label(key)
+            label_text = f"{key} ({label})" if label else key
+            url = f"weekly/{key}/"
+            parts.append(f'<a class="nav-link {active_class(url)}" href="{rel_url(url)}">{html.escape(label_text)}</a>')
+    else:
+        parts.append('<div class="nav-empty">아직 생성된 주간 리포트가 없습니다.</div>')
+
+    parts.append('<div class="nav-section-title">월간 업계 동향</div>')
+    if monthly:
+        for key in monthly[:24]:
+            url = f"monthly/{key}/"
+            parts.append(f'<a class="nav-link {active_class(url)}" href="{rel_url(url)}">{html.escape(month_label(key))}</a>')
+    else:
+        parts.append('<div class="nav-empty">아직 생성된 월간 리포트가 없습니다.</div>')
+
+    parts.append('</nav>')
+    return "\n".join(parts)
+
+
+def build_toc(toc_items):
+    if not toc_items:
+        return '<aside class="toc"><div class="toc-title">목차</div><div class="toc-empty">표시할 목차가 없습니다.</div></aside>'
+
+    links = []
+    for item_id, label in toc_items:
+        links.append(f'<a href="#{html.escape(item_id)}">{html.escape(label)}</a>')
+
+    return f'<aside class="toc"><div class="toc-title">목차</div>{"".join(links)}</aside>'
+
+
+def make_html_page(title, body_html, path, active_url="", subtitle="", toc_items=None):
     path.mkdir(parents=True, exist_ok=True)
+    toc_items = toc_items or []
+    nav_html = build_left_nav(active_url)
+    toc_html = build_toc(toc_items)
 
     html_doc = f"""<!doctype html>
 <html lang="ko">
@@ -713,29 +874,204 @@ def make_html_page(title, body_html, path):
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{html.escape(title)}</title>
   <style>
-    body {{ font-family: Arial, "Noto Sans KR", sans-serif; margin:0; background:#f6f8fb; color:#1f2937; line-height:1.65; }}
-    header {{ background:#163b73; color:white; padding:30px 36px; }}
-    main {{ max-width:980px; margin:28px auto; padding:0 18px; }}
-    h1 {{ margin:0 0 8px; font-size:28px; }}
-    h2 {{ margin:26px 0 10px; font-size:22px; }}
-    h3 {{ margin:18px 0 6px; font-size:17px; }}
-    .card {{ background:white; border:1px solid #e5e7eb; border-radius:14px; padding:22px; margin-bottom:18px; box-shadow:0 1px 2px rgba(0,0,0,.04); }}
-    .summary {{ white-space:pre-wrap; background:white; border:1px solid #e5e7eb; border-radius:14px; padding:22px; margin-bottom:22px; }}
-    .pill {{ display:inline-block; background:#e0f2fe; color:#075985; border-radius:999px; padding:3px 10px; font-size:13px; margin-right:6px; }}
-    .meta {{ color:#6b7280; font-size:13px; }}
-    .why {{ background:#fff7ed; border-left:4px solid #f97316; padding:10px 12px; }}
-    .brief {{ background:#f9fafb; border-left:4px solid #163b73; padding:10px 12px; }}
-    a {{ color:#1d4ed8; }}
+    :root {{
+      --bg:#f4f7fb;
+      --panel:#ffffff;
+      --ink:#0f172a;
+      --muted:#64748b;
+      --line:#e2e8f0;
+      --brand:#0f4c81;
+      --brand-dark:#0b3157;
+      --brand-soft:#e0f2fe;
+      --accent:#0284c7;
+      --warn:#fff7ed;
+    }}
+    * {{ box-sizing:border-box; }}
+    body {{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:Arial, "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+      line-height:1.65;
+    }}
+    a {{ color:#1d4ed8; text-decoration:none; }}
+    a:hover {{ text-decoration:underline; }}
+    .topbar {{
+      position:sticky;
+      top:0;
+      z-index:20;
+      background:linear-gradient(135deg, var(--brand-dark), var(--brand));
+      color:#fff;
+      border-bottom:1px solid rgba(255,255,255,.14);
+    }}
+    .topbar-inner {{
+      max-width:1480px;
+      margin:0 auto;
+      padding:18px 24px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }}
+    .brand {{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:#fff;
+      font-size:20px;
+      font-weight:800;
+      letter-spacing:-.02em;
+    }}
+    .brand:hover {{ text-decoration:none; }}
+    .top-date {{ font-size:13px; color:#dbeafe; white-space:nowrap; }}
+    .layout {{
+      max-width:1480px;
+      margin:0 auto;
+      padding:24px;
+      display:grid;
+      grid-template-columns:280px minmax(0, 1fr) 230px;
+      gap:22px;
+      align-items:start;
+    }}
+    .side-nav {{
+      position:sticky;
+      top:82px;
+      max-height:calc(100vh - 108px);
+      overflow:auto;
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px;
+      box-shadow:0 8px 22px rgba(15,23,42,.05);
+    }}
+    .nav-home {{
+      display:block;
+      padding:10px 12px;
+      border-radius:12px;
+      color:var(--ink);
+      font-weight:800;
+      background:#f8fafc;
+      border:1px solid var(--line);
+      margin-bottom:14px;
+    }}
+    .nav-section-title {{
+      margin:16px 0 7px;
+      font-size:12px;
+      font-weight:800;
+      color:#475569;
+      text-transform:uppercase;
+      letter-spacing:.02em;
+    }}
+    .nav-link {{
+      display:block;
+      padding:7px 9px;
+      border-radius:10px;
+      color:#334155;
+      font-size:13px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }}
+    .nav-link:hover, .nav-home:hover {{ background:var(--brand-soft); text-decoration:none; }}
+    .nav-link.active, .nav-home.active {{ background:#dbeafe; color:#0f4c81; font-weight:800; }}
+    .nav-empty {{ color:var(--muted); font-size:12px; padding:6px 2px; }}
+    .content {{ min-width:0; }}
+    .hero {{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:28px;
+      margin-bottom:20px;
+      box-shadow:0 8px 22px rgba(15,23,42,.05);
+    }}
+    .hero h1 {{ margin:0; font-size:30px; line-height:1.25; letter-spacing:-.03em; }}
+    .hero .subtitle {{ margin-top:10px; color:var(--muted); font-size:15px; }}
+    .card {{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:22px;
+      margin-bottom:18px;
+      box-shadow:0 4px 14px rgba(15,23,42,.045);
+    }}
+    .card h2 {{ margin:4px 0 10px; font-size:22px; line-height:1.35; letter-spacing:-.02em; }}
+    .card h3 {{ margin:20px 0 8px; font-size:16px; }}
+    .report-body {{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:26px;
+      margin-bottom:18px;
+      box-shadow:0 4px 14px rgba(15,23,42,.045);
+    }}
+    .report-body h1, .report-body h2, .report-body h3 {{ letter-spacing:-.02em; }}
+    .report-body h1 {{ font-size:26px; }}
+    .report-body h2 {{ font-size:22px; margin-top:28px; padding-top:6px; }}
+    .report-body h3 {{ font-size:18px; margin-top:24px; }}
+    .report-body p {{ margin:9px 0; }}
+    .report-body ul, .report-body ol {{ padding-left:22px; }}
+    .report-body li {{ margin:6px 0; }}
+    .meta {{ color:var(--muted); font-size:13px; }}
+    .pill {{
+      display:inline-block;
+      background:var(--brand-soft);
+      color:#075985;
+      border-radius:999px;
+      padding:3px 10px;
+      font-size:13px;
+      margin:2px 6px 2px 0;
+      font-weight:700;
+    }}
+    .brief {{ background:#f8fafc; border-left:4px solid var(--brand); padding:11px 13px; border-radius:0 10px 10px 0; }}
+    .why {{ background:var(--warn); border-left:4px solid #f97316; padding:11px 13px; border-radius:0 10px 10px 0; }}
+    .toc {{
+      position:sticky;
+      top:82px;
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px;
+      box-shadow:0 8px 22px rgba(15,23,42,.05);
+    }}
+    .toc-title {{ font-size:13px; font-weight:800; color:#475569; margin-bottom:8px; }}
+    .toc a {{ display:block; color:#334155; font-size:13px; padding:6px 0; border-bottom:1px solid #f1f5f9; }}
+    .toc-empty {{ color:var(--muted); font-size:12px; }}
+    .dashboard-grid {{ display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:14px; margin-bottom:18px; }}
+    .dash-card {{ background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:18px; box-shadow:0 4px 14px rgba(15,23,42,.04); }}
+    .dash-card h2 {{ font-size:17px; margin:0 0 10px; }}
+    .dash-card a {{ display:block; margin:6px 0; font-size:14px; }}
+    @media (max-width:1180px) {{
+      .layout {{ grid-template-columns:250px minmax(0, 1fr); }}
+      .toc {{ display:none; }}
+    }}
+    @media (max-width:820px) {{
+      .topbar-inner {{ align-items:flex-start; flex-direction:column; }}
+      .layout {{ display:block; padding:14px; }}
+      .side-nav {{ position:relative; top:auto; max-height:none; margin-bottom:16px; }}
+      .hero {{ padding:22px; }}
+      .hero h1 {{ font-size:24px; }}
+      .dashboard-grid {{ grid-template-columns:1fr; }}
+    }}
   </style>
 </head>
 <body>
-  <header>
-    <h1>{html.escape(title)}</h1>
-    <div>자동 생성 보고서</div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="{rel_url("")}">💧 상하수도·수처리 뉴스 브리핑</a>
+      <div class="top-date">{datetime.now(KST).strftime('%Y-%m-%d %H:%M KST')}</div>
+    </div>
   </header>
-  <main>
-    {body_html}
-  </main>
+  <div class="layout">
+    {nav_html}
+    <main class="content">
+      <section class="hero">
+        <h1>{html.escape(title)}</h1>
+        {f'<div class="subtitle">{html.escape(subtitle)}</div>' if subtitle else ''}
+      </section>
+      {body_html}
+    </main>
+    {toc_html}
+  </div>
 </body>
 </html>
 """
@@ -743,69 +1079,169 @@ def make_html_page(title, body_html, path):
     (path / "index.html").write_text(html_doc, encoding="utf-8")
 
 
-def create_daily_report(articles):
-    today = datetime.now(KST).strftime("%Y-%m-%d")
-    report_dir = REPORTS_DIR / today
+def normalize_display_item(item):
+    if "ai" in item:
+        ai = item.get("ai", {})
+        return {
+            "date": item.get("date", ""),
+            "title": item.get("title", ""),
+            "ko_title": ai.get("ko_title", item.get("title", "")),
+            "brief": ai.get("brief", ""),
+            "summary": ai.get("summary", ""),
+            "why_important": ai.get("why_important", ""),
+            "category": ai.get("category", guess_category(item)),
+            "countries": ai.get("countries", []),
+            "companies": ai.get("companies", []),
+            "technologies": ai.get("technologies", item.get("matched", [])),
+            "policy_alert": ai.get("policy_alert", ""),
+            "source": item.get("source", ""),
+            "link": item.get("link", ""),
+            "score": item.get("score", 0),
+        }
 
+    return {
+        "date": item.get("date", ""),
+        "title": item.get("title", ""),
+        "ko_title": item.get("ko_title", item.get("title", "")),
+        "brief": item.get("brief", ""),
+        "summary": item.get("summary", ""),
+        "why_important": item.get("why_important", ""),
+        "category": item.get("category", ""),
+        "countries": item.get("countries", []),
+        "companies": item.get("companies", []),
+        "technologies": item.get("technologies", item.get("keywords", [])),
+        "policy_alert": item.get("policy_alert", ""),
+        "source": item.get("source", ""),
+        "link": item.get("link", ""),
+        "score": item.get("score", 0),
+    }
+
+
+def build_article_cards(items):
     cards = []
 
-    for i, a in enumerate(articles, 1):
-        ai = a["ai"]
-        countries = " ".join(add_country_flag(c) for c in ai.get("countries", []))
-        companies = ", ".join(ai.get("companies", []))
-        techs = ", ".join(ai.get("technologies", []))
-        emoji = emoji_for_category(ai.get("category", ""), ai.get("technologies", []))
+    for i, raw in enumerate(items, 1):
+        a = normalize_display_item(raw)
+        countries = " ".join(add_country_flag(c) for c in a.get("countries", []))
+        companies = ", ".join(a.get("companies", []))
+        techs = ", ".join(a.get("technologies", []))
+        emoji = emoji_for_category(a.get("category", ""), a.get("technologies", []))
+        source_text = a.get("source", "") or "출처 미확인"
+        date_text = a.get("date", "") or "날짜 미확인"
 
         cards.append(f"""
-        <section class="card">
-          <p class="meta">#{i} · {html.escape(a.get('source', ''))} · 점수 {a.get('score', 0)}</p>
-          <h2>{emoji} {html.escape(ai.get('ko_title', ''))}</h2>
-          <p><span class="pill">{html.escape(ai.get('category', ''))}</span></p>
-          <p class="brief">{html.escape(ai.get('brief', ''))}</p>
+        <section class="card" id="article-{i}">
+          <p class="meta">#{i} · {html.escape(date_text)} · {html.escape(source_text)} · 점수 {html.escape(str(a.get('score', 0)))}</p>
+          <h2>{emoji} {html.escape(a.get('ko_title', '') or a.get('title', ''))}</h2>
+          <p><span class="pill">{html.escape(a.get('category', '') or '분류 없음')}</span></p>
+          <p class="brief">{html.escape(a.get('brief', '') or '요약 정보가 없습니다.')}</p>
           <h3>내용 요약</h3>
-          <p>{html.escape(ai.get('summary', ''))}</p>
+          <p>{html.escape(a.get('summary', '') or '상세 요약 정보가 없습니다.')}</p>
           <h3>왜 중요한가?</h3>
-          <p class="why">{html.escape(ai.get('why_important', ''))}</p>
+          <p class="why">{html.escape(a.get('why_important', '') or '중요도 분석 정보가 없습니다.')}</p>
           <p class="meta">국가: {html.escape(countries or '-')}</p>
           <p class="meta">기업: {html.escape(companies or '-')}</p>
           <p class="meta">기술: {html.escape(techs or '-')}</p>
-          <p><a href="{html.escape(a.get('link', ''))}" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
+          {f'<p><a href="{html.escape(a.get("link", ""))}" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>' if a.get("link") else ''}
         </section>
         """)
 
+    return "".join(cards)
+
+
+def get_recent_daily_items(target_date, selected_articles, history, max_days=3, limit=12):
+    try:
+        target_dt = datetime.strptime(target_date, "%Y-%m-%d").replace(tzinfo=KST)
+    except Exception:
+        target_dt = datetime.now(KST)
+
+    allowed_dates = set((target_dt - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(max_days))
+    pool = []
+
+    for item in selected_articles:
+        item_date = item.get("date", target_date)
+        if item_date in allowed_dates:
+            pool.append(item)
+
+    for item in history:
+        if item.get("date", "") in allowed_dates:
+            pool.append(item)
+
+    dedup = {}
+    for item in sorted(pool, key=lambda x: x.get("score", 0), reverse=True):
+        key = item.get("link") or item.get("ko_title") or item.get("title")
+        if key and key not in dedup:
+            dedup[key] = item
+
+    return list(dedup.values())[:limit]
+
+
+def create_daily_report(articles, history=None, target_date=None):
+    history = history or []
+    today = target_date or datetime.now(KST).strftime("%Y-%m-%d")
+    report_dir = REPORTS_DIR / today
+
+    display_items = get_recent_daily_items(today, articles, history, max_days=3, limit=max(10, MAX_ITEMS))
+
     title = f"{today} 상하수도·수처리 상세 분석 보고서"
+    subtitle = "당일 기사 우선, 부족 시 최근 3일 이내 관련 기사까지 포함합니다. 뉴스 게시판용 기사는 다른 날짜 보고서와 중복될 수 있습니다."
+    active_url = f"reports/{today}/"
+    toc_items = [(f"article-{i}", f"기사 {i}") for i in range(1, min(len(display_items), 12) + 1)]
 
-    if cards:
-        body = "".join(cards)
+    if display_items:
+        body = build_article_cards(display_items)
     else:
-        body = '<section class="card">오늘 기준 필터 조건에 맞는 뉴스가 없습니다.</section>'
+        body = '<section class="card">최근 3일 기준 필터 조건에 맞는 뉴스가 없습니다.</section>'
 
-    make_html_page(title, body, report_dir)
+    make_html_page(title, body, report_dir, active_url=active_url, subtitle=subtitle, toc_items=toc_items)
 
     base_url = get_pages_base_url()
     return f"{base_url}/reports/{today}/" if base_url else f"reports/{today}/"
 
 
-def create_period_report(period_type, items):
+def create_period_report(period_type, items, key=None):
     now = datetime.now(KST)
 
     if period_type == "weekly":
-        iso = now.isocalendar()
-        key = f"{iso.year}-W{iso.week:02d}"
+        if not key:
+            iso = now.isocalendar()
+            key = f"{iso.year}-W{iso.week:02d}"
+        period_label = week_range_label(key)
         title = f"{key} 상하수도·수처리 주간 업계 동향"
+        subtitle = f"기간: {period_label}" if period_label else "주간 누적 동향"
         report_dir = WEEKLY_DIR / key
         report_text = build_trend_report_text(title, items, "weekly")
         url_path = f"weekly/{key}/"
+        toc_items = [
+            ("executive-summary", "Executive Summary"),
+            ("countries", "주요 국가"),
+            ("companies", "주요 기업"),
+            ("technologies", "주요 기술"),
+            ("policy", "규제/정책"),
+            ("articles", "주요 기사"),
+        ]
     else:
-        key = now.strftime("%Y-%m")
-        title = f"{key} 상하수도·수처리 월간 업계 동향"
+        if not key:
+            key = now.strftime("%Y-%m")
+        title = f"{month_label(key)} 상하수도·수처리 월간 업계 동향"
+        subtitle = f"기간: {key}-01 ~ {key}-말일"
         report_dir = MONTHLY_DIR / key
         report_text = build_trend_report_text(title, items, "monthly")
         url_path = f"monthly/{key}/"
+        toc_items = [
+            ("executive-summary", "Executive Summary"),
+            ("keywords", "이달의 키워드"),
+            ("countries", "국가별 동향"),
+            ("companies", "기업별 동향"),
+            ("technologies", "기술별 동향"),
+            ("projects", "주요 프로젝트"),
+            ("policy", "규제/정책"),
+        ]
 
-    body = f'<section class="summary">{html.escape(report_text)}</section>'
+    report_html = markdown_to_html(report_text)
+    body = f'<section class="report-body">{report_html}</section>'
 
-    make_html_page(title, body, report_dir)
+    make_html_page(title, body, report_dir, active_url=url_path, subtitle=subtitle, toc_items=toc_items)
 
     base_url = get_pages_base_url()
     return f"{base_url}/{url_path}" if base_url else url_path
@@ -823,39 +1259,79 @@ def create_backfill_period_reports(history):
         if not week_items:
             continue
 
-        title = f"{week_key} 상하수도·수처리 주간 업계 동향"
-        report_text = build_trend_report_text(title, week_items, "weekly")
-        report_dir = WEEKLY_DIR / week_key
-        body = f'<section class="summary">{html.escape(report_text)}</section>'
-        make_html_page(title, body, report_dir)
+        create_period_report("weekly", week_items, key=week_key)
 
     month_items = filter_items_by_month(history, month_key)
 
     if month_items:
-        title = f"{month_key} 상하수도·수처리 월간 업계 동향"
-        report_text = build_trend_report_text(title, month_items, "monthly")
-        report_dir = MONTHLY_DIR / month_key
-        body = f'<section class="summary">{html.escape(report_text)}</section>'
-        make_html_page(title, body, report_dir)
+        create_period_report("monthly", month_items, key=month_key)
+
+
+def create_recent_daily_history_pages(history, selected_articles):
+    dates = sorted({x.get("date", "") for x in history if re.match(r"^\d{4}-\d{2}-\d{2}$", x.get("date", ""))}, reverse=True)
+
+    for date_key in dates[:14]:
+        if date_key == datetime.now(KST).strftime("%Y-%m-%d"):
+            continue
+        create_daily_report(selected_articles, history, target_date=date_key)
 
 
 def update_docs_index(daily_url, weekly_url, monthly_url):
     DOCS_DIR.mkdir(parents=True, exist_ok=True)
     (DOCS_DIR / ".nojekyll").write_text("", encoding="utf-8")
 
-    today = datetime.now(KST).strftime("%Y-%m-%d")
+    daily, weekly, monthly = list_existing_report_keys()
+
+    latest_daily = daily[:8]
+    latest_weekly = weekly[:6]
+    latest_monthly = monthly[:6]
+
+    daily_links = "".join(
+        f'<a href="{rel_url(f"reports/{key}/")}">{html.escape(get_date_label(key))} 상세 분석 보고서</a>'
+        for key in latest_daily
+    ) or '<p class="meta">아직 생성된 일일 보고서가 없습니다.</p>'
+
+    weekly_links = "".join(
+        f'<a href="{rel_url(f"weekly/{key}/")}">{html.escape(key)} {html.escape(f"({week_range_label(key)})" if week_range_label(key) else "")}</a>'
+        for key in latest_weekly
+    ) or '<p class="meta">아직 생성된 주간 리포트가 없습니다.</p>'
+
+    monthly_links = "".join(
+        f'<a href="{rel_url(f"monthly/{key}/")}">{html.escape(month_label(key))} 월간 업계 동향</a>'
+        for key in latest_monthly
+    ) or '<p class="meta">아직 생성된 월간 리포트가 없습니다.</p>'
 
     body = f"""
+    <section class="dashboard-grid">
+      <div class="dash-card">
+        <h2>일일 상세 보고서</h2>
+        {daily_links}
+      </div>
+      <div class="dash-card">
+        <h2>주간 업계 동향</h2>
+        {weekly_links}
+      </div>
+      <div class="dash-card">
+        <h2>월간 업계 동향</h2>
+        {monthly_links}
+      </div>
+    </section>
     <section class="card">
-      <h2>최신 보고서</h2>
-      <p><a href="{html.escape(daily_url)}">{today} 상세 분석 보고서</a></p>
-      <p><a href="{html.escape(weekly_url)}">주간 업계 동향</a></p>
-      <p><a href="{html.escape(monthly_url)}">월간 업계 동향</a></p>
+      <h2>최신 바로가기</h2>
+      <p><a href="{html.escape(daily_url)}">최신 일일 상세 분석 보고서</a></p>
+      <p><a href="{html.escape(weekly_url)}">최신 주간 업계 동향</a></p>
+      <p><a href="{html.escape(monthly_url)}">최신 월간 업계 동향</a></p>
     </section>
     """
 
-    make_html_page("상하수도·수처리 뉴스 브리핑", body, DOCS_DIR)
-
+    make_html_page(
+        "상하수도·수처리 뉴스 브리핑",
+        body,
+        DOCS_DIR,
+        active_url="",
+        subtitle="일일 상세보고서, 주간 리포트, 월간 리포트를 날짜별로 누적 저장합니다.",
+        toc_items=[("daily", "일일 상세 보고서"), ("weekly", "주간 업계 동향"), ("monthly", "월간 업계 동향")],
+    )
 
 def build_policy_alerts(articles):
     alerts = []
@@ -1014,6 +1490,7 @@ def main():
     history = save_news_history(selected_articles)
 
     create_backfill_period_reports(history)
+    create_recent_daily_history_pages(history, selected_articles)
 
     week_items = filter_week_items(history)
     month_items = filter_month_items(history)
@@ -1021,7 +1498,7 @@ def main():
     weekly_one_line = build_period_one_line("이번 주 상하수도·수처리 동향", week_items)
     monthly_one_line = build_period_one_line("이번 달 상하수도·수처리 동향", month_items)
 
-    daily_url = create_daily_report(selected_articles)
+    daily_url = create_daily_report(selected_articles, history)
     weekly_url = create_period_report("weekly", week_items)
     monthly_url = create_period_report("monthly", month_items)
 
