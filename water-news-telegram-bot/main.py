@@ -5,7 +5,7 @@ import html
 import time
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import urlparse, quote_plus
 
 import feedparser
 import requests
@@ -189,6 +189,204 @@ TECH_EMOJIS = {
 }
 
 
+# v2 확장 키워드: MBR, 수처리용 분리막, 국내 동향, 학회·전시회 중심.
+KEYWORDS.update({
+    "submerged membrane": 10,
+    "submerged mbr": 10,
+    "immersed membrane": 9,
+    "immersed mbr": 10,
+    "aerobic mbr": 8,
+    "anaerobic mbr": 8,
+    "anMBR": 8,
+    "flat sheet membrane": 7,
+    "ceramic membrane": 8,
+    "polymeric membrane": 7,
+    "membrane fouling": 10,
+    "biofouling": 8,
+    "fouling control": 8,
+    "air scouring": 8,
+    "backwash": 7,
+    "relaxation": 6,
+    "clean-in-place": 7,
+    "cip": 7,
+    "tss": 4,
+    "mlss": 6,
+    "srt": 5,
+    "hrt": 5,
+    "tmp": 7,
+    "flux": 6,
+    "permeability": 6,
+    "permeate": 5,
+    "filtrate": 5,
+    "sidestream mbr": 8,
+    "membrane module": 8,
+    "membrane cassette": 8,
+    "hollow-fiber membrane": 9,
+    "water korea": 7,
+    "awwa": 6,
+    "wef": 6,
+    "weftec": 8,
+    "iwa mtc": 8,
+    "aquatech": 7,
+    "water exhibition": 6,
+    "conference": 4,
+    "symposium": 4,
+    "막여과": 10,
+    "막분리": 9,
+    "막공정": 9,
+    "막오염": 10,
+    "분리막 오염": 10,
+    "파울링": 10,
+    "막세정": 9,
+    "공기세정": 8,
+    "역세": 7,
+    "역세척": 8,
+    "투과수": 6,
+    "여과수": 6,
+    "투과유속": 7,
+    "막면적": 6,
+    "막모듈": 9,
+    "막 카세트": 8,
+    "침지식": 9,
+    "침지형": 9,
+    "평막": 7,
+    "세라믹막": 8,
+    "고분자막": 7,
+    "중공사": 10,
+    "중공사막": 10,
+    "분리막 생물반응조": 10,
+    "막분리활성슬러지": 10,
+    "활성슬러지": 7,
+    "질산화": 6,
+    "탈질": 6,
+    "생물학적 처리": 6,
+    "총인": 5,
+    "총질소": 5,
+    "방류수질": 7,
+    "하수재이용": 9,
+    "물재이용": 9,
+    "물 재이용": 9,
+    "한국막학회": 8,
+    "상하수도협회": 7,
+    "물환경학회": 7,
+    "워터코리아": 7,
+})
+
+NEGATIVE_PATTERNS.extend([
+    r"battery separator",
+    r"separator film",
+    r"lithium",
+    r"lithium[- ]?ion",
+    r"solid[- ]?state battery",
+    r"\bev\b",
+    r"electric vehicle",
+    r"\bess\b",
+    r"electrolyte",
+    r"semiconductor",
+    r"\boled\b",
+    r"display",
+    r"dialysis",
+    r"hemodialysis",
+    r"medical membrane",
+    r"blood purification",
+    r"automotive stock",
+    r"defense stock",
+    r"renewable energy target",
+    r"grid energy storage",
+    r"healthcare network",
+    r"community healthcare",
+    r"cleantech automotive",
+    r"배터리",
+    r"2차전지",
+    r"이차전지",
+    r"전고체",
+    r"전해질",
+    r"리튬",
+    r"전기차",
+    r"전기 자동차",
+    r"에너지저장",
+    r"에너지 저장",
+    r"반도체",
+    r"디스플레이",
+    r"혈액투석",
+    r"인공장기",
+    r"의료용",
+    r"헬스케어",
+    r"건강 네트워크",
+    r"재생에너지 목표",
+    r"태양광 입찰",
+])
+
+DOMESTIC_SOURCE_HINTS = [
+    "Naver News Korea", "Google News Korea", "Bing News Korea",
+    "워터저널", "Water Journal", "한국막학회", "Korean Membrane Society",
+    "한국상하수도협회", "KWWA", "WATIS", "Water Korea",
+    "환경부", "K-water", "한국환경공단", "산업일보", "에너지데일리",
+]
+
+SOURCE_CATALOG = [
+    {"group": "국내 전문매체", "name": "워터저널", "url": "https://www.waterjournal.co.kr/", "status": "웹/기사 소스"},
+    {"group": "국내 전문매체", "name": "산업일보", "url": "https://www.industrynews.co.kr/", "status": "웹/기사 소스"},
+    {"group": "국내 전문매체", "name": "에너지데일리 환경·수처리", "url": "https://www.energydaily.co.kr/news/articleList.html?sc_section_code=S1N6&view_type=sm", "status": "웹/기사 소스"},
+    {"group": "국내 학회·협회", "name": "한국막학회", "url": "https://www.membrane.or.kr/", "status": "학회/행사 소스"},
+    {"group": "국내 학회·협회", "name": "한국상하수도협회", "url": "https://www.kwwa.or.kr/kr/main.do", "status": "협회/정책 소스"},
+    {"group": "국내 학회·협회", "name": "한국물환경학회", "url": "https://www.kswe.or.kr/", "status": "학회 소스"},
+    {"group": "국내 학회·협회", "name": "대한환경공학회", "url": "https://www.kosenv.or.kr/", "status": "학회 소스"},
+    {"group": "국내 학회·협회", "name": "대한상하수도학회", "url": "https://www.ksww.or.kr/", "status": "학회 소스"},
+    {"group": "국내 정부·공공", "name": "환경부", "url": "https://www.me.go.kr", "status": "정책 소스"},
+    {"group": "국내 정부·공공", "name": "한국환경공단", "url": "https://www.keco.or.kr", "status": "공공 소스"},
+    {"group": "국내 정부·공공", "name": "K-water", "url": "https://www.kwater.or.kr", "status": "공공 소스"},
+    {"group": "국내 정부·공공", "name": "국가상수도정보시스템 WATIS", "url": "https://www.watis.or.kr/web/user/main.do", "status": "공공 소스"},
+    {"group": "국내 전시회", "name": "Water Korea", "url": "https://waterkorea.kr/", "status": "전시회 소스"},
+    {"group": "해외 전문매체", "name": "WaterWorld", "url": "https://www.waterworld.com/rss.xml", "status": "RSS 활성"},
+    {"group": "해외 전문매체", "name": "Water Online", "url": "https://www.wateronline.com/rss", "status": "RSS 활성"},
+    {"group": "해외 전문매체", "name": "Smart Water Magazine", "url": "https://smartwatermagazine.com/rss.xml", "status": "RSS 활성"},
+    {"group": "해외 전문매체", "name": "IWA", "url": "https://iwa-network.org/feed/", "status": "RSS 활성"},
+    {"group": "해외 전문매체", "name": "WaterNewsWire", "url": "https://waternewswire.com/feeds/main.xml", "status": "RSS 활성"},
+    {"group": "해외 전문매체", "name": "Global Water Intelligence", "url": "https://www.globalwaterintel.com/", "status": "웹/유료기사 중심"},
+    {"group": "해외 학회·협회", "name": "International Desalination Association", "url": "https://idadesal.org", "status": "학회/행사 소스"},
+    {"group": "해외 학회·협회", "name": "European Membrane Society", "url": "https://www.emsoc.eu", "status": "학회 소스"},
+    {"group": "기업 뉴스룸", "name": "Veolia", "url": "https://www.veolia.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸", "name": "SUEZ", "url": "https://www.suez.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸", "name": "Toray Water Solutions", "url": "https://www.toraywater.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸", "name": "DuPont Water Solutions", "url": "https://www.dupont.com/water.html", "status": "기업 소스"},
+    {"group": "기업 뉴스룸", "name": "Mitsubishi Heavy Industries", "url": "https://www.mhi.com/news", "status": "기업 소스"},
+    {"group": "검색엔진", "name": "Google News RSS", "url": "https://news.google.com/rss", "status": "RSS 활성"},
+    {"group": "검색엔진", "name": "Bing News RSS", "url": "https://www.bing.com/news/search?format=RSS", "status": "RSS 활성"},
+    {"group": "검색엔진", "name": "Naver News", "url": "https://search.naver.com/search.naver?where=news", "status": "검색 링크 표시"},
+    {"group": "검색엔진", "name": "Yahoo Japan News", "url": "https://news.yahoo.co.jp/", "status": "검색 링크 표시"},
+    {"group": "검색엔진", "name": "Yandex", "url": "https://yandex.com/search/", "status": "검색 링크 표시"},
+    {"group": "검색엔진", "name": "Baidu", "url": "https://www.baidu.com/", "status": "검색 링크 표시"},
+]
+
+SEARCH_QUERY_CONFIG = [
+    {"name": "Google News Korea 상하수도", "engine": "google", "region": "domestic", "query": "상하수도 OR 수처리 OR 하수처리 OR 폐수처리 -배터리 -2차전지 -반도체"},
+    {"name": "Google News Korea 막여과 MBR", "engine": "google", "region": "domestic", "query": "막여과 OR 분리막 OR MBR OR 중공사막 수처리 -배터리 -2차전지 -리튬"},
+    {"name": "Google News Korea 재이용수 PFAS", "engine": "google", "region": "domestic", "query": "재이용수 OR PFAS OR 하수재이용 OR 정수장 OR 하수처리장"},
+    {"name": "Google News Global Water", "engine": "google", "region": "global", "query": '"water treatment" OR wastewater OR "water reuse" OR PFAS'},
+    {"name": "Google News Global Membrane MBR", "engine": "google", "region": "global", "query": '"membrane filtration" OR MBR OR "membrane bioreactor" OR ultrafiltration -battery -lithium -semiconductor'},
+    {"name": "Bing News Korea 상하수도", "engine": "bing", "region": "domestic", "query": "상하수도 수처리 하수처리 폐수처리 -배터리 -2차전지"},
+    {"name": "Bing News Korea 막여과 MBR", "engine": "bing", "region": "domestic", "query": "막여과 분리막 MBR 중공사막 수처리 -배터리 -반도체"},
+    {"name": "Bing News Global MBR", "engine": "bing", "region": "global", "query": "water treatment wastewater MBR membrane bioreactor PFAS -battery -lithium"},
+]
+
+EVENT_CATALOG = [
+    {"grade": "S", "name": "WEFTEC", "scope": "해외", "location": "미국", "date": "매년 9~10월", "scale": "대규모/메이저", "url": "https://www.weftec.org/", "note": "북미 최대급 물환경·하수처리 전시회"},
+    {"grade": "S", "name": "Aquatech Amsterdam", "scope": "해외", "location": "네덜란드 암스테르담", "date": "격년 개최", "scale": "대규모/메이저", "url": "https://www.aquatechtrade.com/", "note": "글로벌 수처리 전시회"},
+    {"grade": "S", "name": "Singapore International Water Week", "scope": "해외", "location": "싱가포르", "date": "격년 개최", "scale": "대규모/메이저", "url": "https://www.siww.com.sg/", "note": "아시아권 메이저 물산업 행사"},
+    {"grade": "A", "name": "IWA World Water Congress & Exhibition", "scope": "해외", "location": "국가별 순환", "date": "격년 개최", "scale": "대규모/메이저", "url": "https://iwa-network.org/events/", "note": "IWA 대표 국제 학회·전시"},
+    {"grade": "A", "name": "IWA Membrane Technology Conference", "scope": "해외", "location": "국가별 순환", "date": "비정기/학회 일정 확인 필요", "scale": "전문 메이저", "url": "https://iwa-network.org/events/", "note": "수처리용 멤브레인 전문 학회"},
+    {"grade": "A", "name": "Water Korea", "scope": "국내", "location": "한국", "date": "매년", "scale": "국내 메이저", "url": "https://waterkorea.kr/", "note": "국내 상하수도 대표 전시회"},
+    {"grade": "B", "name": "한국막학회 춘계학술대회", "scope": "국내", "location": "한국", "date": "매년 상반기", "scale": "전문 학회", "url": "https://www.membrane.or.kr/", "note": "분리막 전문 학술행사"},
+    {"grade": "B", "name": "한국막학회 추계학술대회", "scope": "국내", "location": "한국", "date": "매년 하반기", "scale": "전문 학회", "url": "https://www.membrane.or.kr/", "note": "분리막 전문 학술행사"},
+    {"grade": "B", "name": "대한상하수도학회 학술발표회", "scope": "국내", "location": "한국", "date": "학회 일정 확인 필요", "scale": "전문 학회", "url": "https://www.ksww.or.kr/", "note": "상하수도 분야 학술행사"},
+    {"grade": "B", "name": "한국물환경학회 학술대회", "scope": "국내", "location": "한국", "date": "학회 일정 확인 필요", "scale": "전문 학회", "url": "https://www.kswe.or.kr/", "note": "물환경·수질 분야 학술행사"},
+]
+
+INCLUDE_KEYWORDS_PUBLIC = sorted(KEYWORDS.keys())
+EXCLUDE_PATTERNS_PUBLIC = NEGATIVE_PATTERNS
+
+
 def load_json(path, default):
     if not path.exists():
         return default
@@ -275,13 +473,101 @@ def in_backfill_range(date_str):
     return True
 
 
+def google_news_rss_url(query, hl="ko", gl="KR", ceid="KR:ko"):
+    return f"https://news.google.com/rss/search?q={quote_plus(query)}&hl={hl}&gl={gl}&ceid={ceid}"
+
+
+def bing_news_rss_url(query):
+    return f"https://www.bing.com/news/search?q={quote_plus(query)}&format=RSS"
+
+
+def build_search_rss_feeds():
+    if os.getenv("ENABLE_SEARCH_RSS", "true").lower() != "true":
+        return []
+
+    feeds = []
+
+    for item in SEARCH_QUERY_CONFIG:
+        engine = item.get("engine")
+        query = item.get("query", "")
+        name = item.get("name", "Search RSS")
+        region = item.get("region", "")
+
+        if not query:
+            continue
+
+        if engine == "google":
+            if region == "global":
+                url = google_news_rss_url(query, hl="en", gl="US", ceid="US:en")
+            else:
+                url = google_news_rss_url(query, hl="ko", gl="KR", ceid="KR:ko")
+        elif engine == "bing":
+            url = bing_news_rss_url(query)
+        else:
+            continue
+
+        feeds.append({
+            "name": name,
+            "url": url,
+            "region": region,
+            "type": "search_rss",
+        })
+
+    return feeds
+
+
+def merge_feed_sources():
+    configured = load_json(FEEDS_FILE, [])
+
+    if not isinstance(configured, list):
+        configured = []
+
+    feeds = []
+    seen = set()
+
+    for feed in configured + build_search_rss_feeds():
+        url = feed.get("url")
+        if not url or url in seen:
+            continue
+        seen.add(url)
+        feeds.append(feed)
+
+    return feeds
+
+
+def is_domestic_article(article):
+    source = article.get("source", "")
+    domain = article.get("domain", "")
+    countries = article.get("countries", []) or []
+    title = article.get("title", "")
+    summary = article.get("summary", "")
+
+    combined = f"{source} {domain} {' '.join(countries)} {title} {summary}".lower()
+
+    if "한국" in countries or "south korea" in combined or "korea" in combined:
+        return True
+
+    if domain.endswith(".kr") or ".kr/" in domain:
+        return True
+
+    for hint in DOMESTIC_SOURCE_HINTS:
+        if hint.lower() in combined:
+            return True
+
+    korean_hits = ["상하수도", "하수처리", "폐수처리", "수처리", "막여과", "중공사막", "환경부", "한국수자원공사", "한국환경공단"]
+    return any(k in f"{title} {summary}" for k in korean_hits)
+
+
 def fetch_articles():
-    feeds = load_json(FEEDS_FILE, [])
+    feeds = merge_feed_sources()
     articles = []
+    rss_sleep = float(os.getenv("RSS_SLEEP_SECONDS", "0.35"))
 
     for feed in feeds:
         name = feed.get("name", "Unknown")
         url = feed.get("url")
+        feed_region = feed.get("region", "")
+        feed_type = feed.get("type", "rss")
 
         if not url:
             continue
@@ -291,7 +577,7 @@ def fetch_articles():
         for entry in parsed.entries[:60]:
             title = clean_text(entry.get("title", ""))
             link = entry.get("link", "")
-            summary = clean_text(entry.get("summary", ""))
+            summary = clean_text(entry.get("summary", "") or entry.get("description", ""))
             published_date = parse_entry_date(entry)
 
             if not in_backfill_range(published_date):
@@ -302,7 +588,7 @@ def fetch_articles():
             if score < MIN_SCORE:
                 continue
 
-            articles.append({
+            article = {
                 "date": published_date,
                 "title": title,
                 "link": link,
@@ -311,15 +597,21 @@ def fetch_articles():
                 "domain": get_domain(link),
                 "score": score,
                 "matched": matched,
-            })
+                "region": feed_region,
+                "source_type": feed_type,
+            }
 
-        time.sleep(1)
+            article["domestic"] = is_domestic_article(article)
+            articles.append(article)
+
+        time.sleep(rss_sleep)
 
     dedup = {}
 
     for a in sorted(articles, key=lambda x: x["score"], reverse=True):
-        if a["link"] and a["link"] not in dedup:
-            dedup[a["link"]] = a
+        key = a.get("link") or f"{a.get('title')}::{a.get('source')}"
+        if key and key not in dedup:
+            dedup[key] = a
 
     return list(dedup.values())
 
@@ -356,21 +648,48 @@ def emoji_for_category(category, technologies=None):
 
 def guess_category(article):
     keys = set(k.lower() for k in article.get("matched", []))
+    text = f"{article.get('title', '')} {article.get('summary', '')}".lower()
 
-    if "pfas" in keys:
+    if "pfas" in keys or "pfas" in text:
         return "PFAS/오염물"
 
-    if "mbr" in keys or "membrane" in keys or "membrane bioreactor" in keys:
+    if (
+        "mbr" in keys
+        or "membrane bioreactor" in keys
+        or "분리막 생물반응조" in keys
+        or "막분리활성슬러지" in keys
+        or "mbr" in text
+    ):
         return "분리막/MBR"
+
+    if (
+        "membrane" in keys
+        or "hollow fiber" in keys
+        or "ultrafiltration" in keys
+        or "microfiltration" in keys
+        or "막여과" in keys
+        or "중공사막" in keys
+        or "분리막" in keys
+    ):
+        return "분리막/막여과"
+
+    if {"conference", "symposium", "water korea", "weftec", "aquatech", "iwa mtc", "한국막학회", "워터코리아"} & keys:
+        return "학회/전시회"
 
     if {"tender", "contract", "award", "expansion", "upgrade", "pilot", "commissioning"} & keys:
         return "프로젝트/수주"
 
-    if {"veolia", "xylem", "toray", "asahi kasei", "pentair", "kovalus", "suez"} & keys:
+    if {"veolia", "xylem", "toray", "asahi kasei", "pentair", "kovalus", "suez", "dupont", "kubota"} & keys:
         return "기업동향"
 
-    if {"water reuse", "reclaimed water"} & keys:
+    if {"water reuse", "reclaimed water", "재이용수", "물재이용", "물 재이용", "하수재이용"} & keys:
         return "재이용수"
+
+    if {"desalination", "ro", "nf", "담수화", "역삼투"} & keys:
+        return "담수화/RO"
+
+    if {"환경부", "regulation", "funding"} & keys:
+        return "규제/정책"
 
     return "수처리 산업동향"
 
@@ -474,7 +793,7 @@ def summarize_article(article):
 - summary: 상세 보고서용 요약. 4~6문장. 배경, 주요 내용, 수처리 산업 관련성을 포함. 기사에 없는 수치나 사실을 만들지 말 것.
 - why_important: 왜 중요한가. 2문장. 시장, 규제, 기술, 프로젝트 관점 중 관련 있는 이유를 설명. 추측이면 '추측입니다'라고 명시.
 - category: 아래 중 하나만 선택.
-  PFAS/오염물, 재이용수, 분리막/MBR, 산업폐수, 담수화, 프로젝트/수주, 기업동향, 규제/정책, 수처리 산업동향
+  PFAS/오염물, 재이용수, 분리막/MBR, 분리막/막여과, 산업폐수, 담수화/RO, 프로젝트/수주, 기업동향, 규제/정책, 학회/전시회, 수처리 산업동향
 - countries: 기사에 명시된 국가명 배열. 예: ["미국", "중국"]. 없으면 [].
 - companies: 기사에 명시된 기업명 배열. 없으면 [].
 - technologies: 기사에 명시된 기술/키워드 배열. 예: ["PFAS", "Water Reuse", "MBR"].
@@ -547,6 +866,9 @@ def save_news_history(articles):
             "link": a.get("link", ""),
             "score": a.get("score", 0),
             "keywords": a.get("matched", []),
+            "domestic": a.get("domestic", False),
+            "region": a.get("region", ""),
+            "source_type": a.get("source_type", ""),
         })
 
     history = history[-1500:]
@@ -810,6 +1132,36 @@ def list_existing_report_keys():
     return daily, weekly, monthly
 
 
+
+def split_visible_hidden(items, visible_count):
+    return items[:visible_count], items[visible_count:]
+
+
+def build_nav_group(title, items, visible_count, url_builder, label_builder, active_class):
+    parts = [f'<div class="nav-section-title">{html.escape(title)}</div>']
+
+    if not items:
+        parts.append('<div class="nav-empty">아직 생성된 항목이 없습니다.</div>')
+        return parts
+
+    visible, hidden = split_visible_hidden(items, visible_count)
+
+    for key in visible:
+        url = url_builder(key)
+        label = label_builder(key)
+        parts.append(f'<a class="nav-link {active_class(url)}" href="{rel_url(url)}">{html.escape(label)}</a>')
+
+    if hidden:
+        parts.append('<details class="nav-more"><summary>더보기</summary>')
+        for key in hidden:
+            url = url_builder(key)
+            label = label_builder(key)
+            parts.append(f'<a class="nav-link {active_class(url)}" href="{rel_url(url)}">{html.escape(label)}</a>')
+        parts.append('</details>')
+
+    return parts
+
+
 def build_left_nav(active_url=""):
     daily, weekly, monthly = list_existing_report_keys()
 
@@ -820,31 +1172,41 @@ def build_left_nav(active_url=""):
     parts.append('<nav class="side-nav">')
     parts.append(f'<a class="nav-home {active_class("")}" href="{rel_url("")}">홈</a>')
 
-    parts.append('<div class="nav-section-title">일일 상세 보고서</div>')
-    if daily:
-        for key in daily[:45]:
-            url = f"reports/{key}/"
-            parts.append(f'<a class="nav-link {active_class(url)}" href="{rel_url(url)}">{html.escape(get_date_label(key))}</a>')
-    else:
-        parts.append('<div class="nav-empty">아직 생성된 일일 보고서가 없습니다.</div>')
+    parts.extend(build_nav_group(
+        "일일 상세 보고서",
+        daily,
+        5,
+        lambda key: f"reports/{key}/",
+        lambda key: get_date_label(key),
+        active_class,
+    ))
 
-    parts.append('<div class="nav-section-title">주간 업계 동향</div>')
-    if weekly:
-        for key in weekly[:26]:
-            label = week_range_label(key)
-            label_text = f"{key} ({label})" if label else key
-            url = f"weekly/{key}/"
-            parts.append(f'<a class="nav-link {active_class(url)}" href="{rel_url(url)}">{html.escape(label_text)}</a>')
-    else:
-        parts.append('<div class="nav-empty">아직 생성된 주간 리포트가 없습니다.</div>')
+    parts.extend(build_nav_group(
+        "주간 업계 동향",
+        weekly,
+        5,
+        lambda key: f"weekly/{key}/",
+        lambda key: f"{key} ({week_range_label(key)})" if week_range_label(key) else key,
+        active_class,
+    ))
 
-    parts.append('<div class="nav-section-title">월간 업계 동향</div>')
-    if monthly:
-        for key in monthly[:24]:
-            url = f"monthly/{key}/"
-            parts.append(f'<a class="nav-link {active_class(url)}" href="{rel_url(url)}">{html.escape(month_label(key))}</a>')
-    else:
-        parts.append('<div class="nav-empty">아직 생성된 월간 리포트가 없습니다.</div>')
+    parts.extend(build_nav_group(
+        "월간 업계 동향",
+        monthly,
+        6,
+        lambda key: f"monthly/{key}/",
+        lambda key: month_label(key),
+        active_class,
+    ))
+
+    parts.append('<div class="nav-section-title">바로가기</div>')
+    quick_links = [
+        ("sources/", "정보 출처"),
+        ("filters/", "필터링 기준"),
+        ("events/", "학회·전시회 일정"),
+    ]
+    for url, label in quick_links:
+        parts.append(f'<a class="nav-link {active_class(url)}" href="{rel_url(url)}">{html.escape(label)}</a>')
 
     parts.append('</nav>')
     return "\n".join(parts)
@@ -975,6 +1337,28 @@ def make_html_page(title, body_html, path, active_url="", subtitle="", toc_items
     .nav-link:hover, .nav-home:hover {{ background:var(--brand-soft); text-decoration:none; }}
     .nav-link.active, .nav-home.active {{ background:#dbeafe; color:#0f4c81; font-weight:800; }}
     .nav-empty {{ color:var(--muted); font-size:12px; padding:6px 2px; }}
+    .nav-more summary {{
+      cursor:pointer;
+      color:#0f4c81;
+      font-size:13px;
+      font-weight:800;
+      padding:7px 9px;
+      border-radius:10px;
+      background:#f8fafc;
+      margin-top:4px;
+    }}
+    .nav-more[open] summary {{ background:#dbeafe; }}
+    .stat-grid {{ display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:14px; margin-bottom:18px; }}
+    .stat-card {{ background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:18px; box-shadow:0 4px 14px rgba(15,23,42,.04); }}
+    .stat-value {{ font-size:28px; font-weight:900; color:#0f4c81; line-height:1.2; }}
+    .stat-label {{ color:var(--muted); font-size:13px; margin-top:6px; }}
+    .headline-list {{ margin:0; padding-left:18px; }}
+    .headline-list li {{ margin:8px 0; }}
+    .source-table {{ width:100%; border-collapse:collapse; font-size:14px; }}
+    .source-table th, .source-table td {{ border-bottom:1px solid var(--line); padding:9px 8px; text-align:left; vertical-align:top; }}
+    .source-table th {{ color:#475569; background:#f8fafc; }}
+    .tag-cloud {{ display:flex; flex-wrap:wrap; gap:8px; }}
+    .tag-cloud span {{ display:inline-block; background:#f1f5f9; border:1px solid var(--line); border-radius:999px; padding:5px 10px; font-size:13px; }}
     .content {{ min-width:0; }}
     .hero {{
       background:var(--panel);
@@ -1043,6 +1427,7 @@ def make_html_page(title, body_html, path, active_url="", subtitle="", toc_items
     @media (max-width:1180px) {{
       .layout {{ grid-template-columns:250px minmax(0, 1fr); }}
       .toc {{ display:none; }}
+      .stat-grid {{ grid-template-columns:repeat(2, minmax(0,1fr)); }}
     }}
     @media (max-width:820px) {{
       .topbar-inner {{ align-items:flex-start; flex-direction:column; }}
@@ -1051,6 +1436,7 @@ def make_html_page(title, body_html, path, active_url="", subtitle="", toc_items
       .hero {{ padding:22px; }}
       .hero h1 {{ font-size:24px; }}
       .dashboard-grid {{ grid-template-columns:1fr; }}
+      .stat-grid {{ grid-template-columns:1fr; }}
     }}
   </style>
 </head>
@@ -1276,15 +1662,209 @@ def create_recent_daily_history_pages(history, selected_articles):
         create_daily_report(selected_articles, history, target_date=date_key)
 
 
+
+def article_is_domestic(item):
+    if item.get("domestic"):
+        return True
+
+    countries = item.get("countries", []) or []
+    if "한국" in countries or "대한민국" in countries:
+        return True
+
+    source = item.get("source", "")
+    domain = get_domain(item.get("link", ""))
+
+    test_text = f"{source} {domain} {item.get('title','')} {item.get('ko_title','')} {item.get('summary','')}"
+    if domain.endswith(".kr") or ".kr/" in domain:
+        return True
+
+    return any(hint.lower() in test_text.lower() for hint in DOMESTIC_SOURCE_HINTS)
+
+
+def get_dashboard_items(history, limit=5):
+    sorted_items = sorted(history, key=lambda x: (x.get("date", ""), x.get("score", 0)), reverse=True)
+
+    global_items = []
+    domestic_items = []
+
+    seen_global = set()
+    seen_domestic = set()
+
+    for item in sorted_items:
+        key = item.get("link") or item.get("ko_title") or item.get("title")
+        if not key:
+            continue
+
+        if article_is_domestic(item):
+            if key not in seen_domestic:
+                domestic_items.append(item)
+                seen_domestic.add(key)
+        else:
+            if key not in seen_global:
+                global_items.append(item)
+                seen_global.add(key)
+
+        if len(global_items) >= limit and len(domestic_items) >= limit:
+            break
+
+    return global_items[:limit], domestic_items[:limit]
+
+
+def build_headline_list(items):
+    if not items:
+        return '<p class="meta">표시할 뉴스가 아직 없습니다.</p>'
+
+    parts = ['<ol class="headline-list">']
+    for item in items:
+        title = item.get("ko_title") or item.get("title") or "제목 없음"
+        source = item.get("source", "출처 미확인")
+        date = item.get("date", "")
+        link = item.get("link", "")
+        category = item.get("category", "")
+        label = f"{title} <span class='meta'>· {html.escape(date)} · {html.escape(source)} · {html.escape(category)}</span>"
+        if link:
+            parts.append(f'<li><a href="{html.escape(link)}" target="_blank" rel="noopener noreferrer">{label}</a></li>')
+        else:
+            parts.append(f'<li>{label}</li>')
+    parts.append("</ol>")
+    return "\n".join(parts)
+
+
+def build_event_preview(limit=5):
+    rows = []
+    for item in EVENT_CATALOG[:limit]:
+        rows.append(
+            f"<tr><td>{html.escape(item['grade'])}</td><td>{html.escape(item['name'])}</td><td>{html.escape(item['location'])}</td><td>{html.escape(item['date'])}</td><td>{html.escape(item['scale'])}</td></tr>"
+        )
+
+    return f"""
+    <table class="source-table">
+      <thead><tr><th>등급</th><th>행사</th><th>장소</th><th>일정</th><th>규모</th></tr></thead>
+      <tbody>{''.join(rows)}</tbody>
+    </table>
+    <p><a href="{rel_url('events/')}">전체 학회·전시회 일정 보기</a></p>
+    """
+
+
+def create_sources_page():
+    groups = {}
+    for item in SOURCE_CATALOG:
+        groups.setdefault(item["group"], []).append(item)
+
+    sections = []
+    for group, items in groups.items():
+        rows = []
+        for item in items:
+            rows.append(
+                f"<tr><td>{html.escape(item['name'])}</td><td><a href='{html.escape(item['url'])}' target='_blank' rel='noopener noreferrer'>{html.escape(item['url'])}</a></td><td>{html.escape(item['status'])}</td></tr>"
+            )
+        sections.append(f"""
+        <section class="card" id="{html.escape(group)}">
+          <h2>{html.escape(group)}</h2>
+          <table class="source-table">
+            <thead><tr><th>출처</th><th>URL</th><th>상태</th></tr></thead>
+            <tbody>{''.join(rows)}</tbody>
+          </table>
+        </section>
+        """)
+
+    make_html_page(
+        "정보 출처",
+        "".join(sections),
+        DOCS_DIR / "sources",
+        active_url="sources/",
+        subtitle="RSS 활성 소스, 웹 참고 소스, 검색엔진 소스를 구분해 정리합니다.",
+        toc_items=[(group, group) for group in groups.keys()],
+    )
+
+
+def create_filters_page():
+    include_html = '<div class="tag-cloud">' + ''.join(f"<span>{html.escape(k)}</span>" for k in INCLUDE_KEYWORDS_PUBLIC) + '</div>'
+    exclude_html = '<div class="tag-cloud">' + ''.join(f"<span>{html.escape(k)}</span>" for k in EXCLUDE_PATTERNS_PUBLIC) + '</div>'
+
+    body = f"""
+    <section class="card" id="include">
+      <h2>포함 키워드</h2>
+      <p class="meta">아래 키워드가 제목·요약에 포함되면 점수가 올라갑니다. MBR, 막여과, 중공사막, 막오염, TMP, Flux 등 수처리용 멤브레인 키워드를 확장했습니다.</p>
+      {include_html}
+    </section>
+    <section class="card" id="exclude">
+      <h2>제외 키워드</h2>
+      <p class="meta">배터리 분리막, 반도체, 의료용 멤브레인, 자동차/방산 주식 등 수처리와 직접성이 낮은 항목을 제외합니다.</p>
+      {exclude_html}
+    </section>
+    """
+
+    make_html_page(
+        "필터링 기준",
+        body,
+        DOCS_DIR / "filters",
+        active_url="filters/",
+        subtitle="수집 기사 선별에 사용하는 포함/제외 키워드입니다.",
+        toc_items=[("include", "포함 키워드"), ("exclude", "제외 키워드")],
+    )
+
+
+def create_events_page():
+    rows = []
+    for item in EVENT_CATALOG:
+        rows.append(
+            f"<tr><td>{html.escape(item['grade'])}</td><td><a href='{html.escape(item['url'])}' target='_blank' rel='noopener noreferrer'>{html.escape(item['name'])}</a></td><td>{html.escape(item['scope'])}</td><td>{html.escape(item['location'])}</td><td>{html.escape(item['date'])}</td><td>{html.escape(item['scale'])}</td><td>{html.escape(item['note'])}</td></tr>"
+        )
+
+    body = f"""
+    <section class="card" id="events">
+      <h2>국내·해외 멤브레인/수처리 학회·전시회</h2>
+      <table class="source-table">
+        <thead><tr><th>등급</th><th>행사</th><th>구분</th><th>장소</th><th>일정</th><th>규모</th><th>비고</th></tr></thead>
+        <tbody>{''.join(rows)}</tbody>
+      </table>
+      <p class="meta">정확한 개최일·시간·부스 규모는 각 공식 홈페이지 공지를 기준으로 확인해야 합니다.</p>
+    </section>
+    """
+
+    make_html_page(
+        "학회·전시회 일정",
+        body,
+        DOCS_DIR / "events",
+        active_url="events/",
+        subtitle="국내외 수처리·멤브레인 업계 주요 학회와 전시회입니다.",
+        toc_items=[("events", "행사 목록")],
+    )
+
+
+def create_static_info_pages():
+    create_sources_page()
+    create_filters_page()
+    create_events_page()
+
+
 def update_docs_index(daily_url, weekly_url, monthly_url):
     DOCS_DIR.mkdir(parents=True, exist_ok=True)
     (DOCS_DIR / ".nojekyll").write_text("", encoding="utf-8")
 
+    history = load_json(HISTORY_FILE, [])
     daily, weekly, monthly = list_existing_report_keys()
 
-    latest_daily = daily[:8]
-    latest_weekly = weekly[:6]
+    latest_daily = daily[:5]
+    latest_weekly = weekly[:5]
     latest_monthly = monthly[:6]
+
+    global_items, domestic_items = get_dashboard_items(history, limit=5)
+
+    total_count = len(history)
+    domestic_count = sum(1 for x in history if article_is_domestic(x))
+    global_count = max(total_count - domestic_count, 0)
+    source_count = len(SOURCE_CATALOG)
+
+    stats = f"""
+    <section class="stat-grid">
+      <div class="stat-card"><div class="stat-value">{total_count}</div><div class="stat-label">누적 기사</div></div>
+      <div class="stat-card"><div class="stat-value">{domestic_count}</div><div class="stat-label">국내 기사</div></div>
+      <div class="stat-card"><div class="stat-value">{global_count}</div><div class="stat-label">해외 기사</div></div>
+      <div class="stat-card"><div class="stat-value">{source_count}</div><div class="stat-label">관리 출처</div></div>
+    </section>
+    """
 
     daily_links = "".join(
         f'<a href="{rel_url(f"reports/{key}/")}">{html.escape(get_date_label(key))} 상세 분석 보고서</a>'
@@ -1302,7 +1882,9 @@ def update_docs_index(daily_url, weekly_url, monthly_url):
     ) or '<p class="meta">아직 생성된 월간 리포트가 없습니다.</p>'
 
     body = f"""
-    <section class="dashboard-grid">
+    {stats}
+
+    <section class="dashboard-grid" id="reports">
       <div class="dash-card">
         <h2>일일 상세 보고서</h2>
         {daily_links}
@@ -1316,11 +1898,28 @@ def update_docs_index(daily_url, weekly_url, monthly_url):
         {monthly_links}
       </div>
     </section>
-    <section class="card">
-      <h2>최신 바로가기</h2>
-      <p><a href="{html.escape(daily_url)}">최신 일일 상세 분석 보고서</a></p>
-      <p><a href="{html.escape(weekly_url)}">최신 주간 업계 동향</a></p>
-      <p><a href="{html.escape(monthly_url)}">최신 월간 업계 동향</a></p>
+
+    <section class="dashboard-grid" id="headlines">
+      <div class="dash-card">
+        <h2>세계 주요 뉴스 TOP 5</h2>
+        {build_headline_list(global_items)}
+      </div>
+      <div class="dash-card">
+        <h2>국내 주요 뉴스 TOP 5</h2>
+        {build_headline_list(domestic_items)}
+      </div>
+      <div class="dash-card">
+        <h2>학회·전시회 일정</h2>
+        {build_event_preview(limit=5)}
+      </div>
+    </section>
+
+    <section class="card" id="source-filter">
+      <h2>출처 및 필터링 기준</h2>
+      <p>수집 출처와 필터링 키워드를 별도 페이지로 공개합니다.</p>
+      <p><a href="{rel_url('sources/')}">정보 출처 보기</a></p>
+      <p><a href="{rel_url('filters/')}">필터링 기준 보기</a></p>
+      <p><a href="{rel_url('events/')}">학회·전시회 일정 보기</a></p>
     </section>
     """
 
@@ -1329,9 +1928,10 @@ def update_docs_index(daily_url, weekly_url, monthly_url):
         body,
         DOCS_DIR,
         active_url="",
-        subtitle="일일 상세보고서, 주간 리포트, 월간 리포트를 날짜별로 누적 저장합니다.",
-        toc_items=[("daily", "일일 상세 보고서"), ("weekly", "주간 업계 동향"), ("monthly", "월간 업계 동향")],
+        subtitle="국내·해외 수처리 뉴스, 멤브레인/MBR 동향, 학회·전시회 일정을 누적 관리합니다.",
+        toc_items=[("reports", "보고서"), ("headlines", "주요 뉴스"), ("source-filter", "출처/필터")],
     )
+
 
 def build_policy_alerts(articles):
     alerts = []
@@ -1502,6 +2102,7 @@ def main():
     weekly_url = create_period_report("weekly", week_items)
     monthly_url = create_period_report("monthly", month_items)
 
+    create_static_info_pages()
     update_docs_index(daily_url, weekly_url, monthly_url)
 
     telegram_text = build_telegram_message(
