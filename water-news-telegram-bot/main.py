@@ -387,6 +387,17 @@ INCLUDE_KEYWORDS_PUBLIC = sorted(KEYWORDS.keys())
 EXCLUDE_PATTERNS_PUBLIC = NEGATIVE_PATTERNS
 
 
+TOP_NEWS_LIMIT = 10
+DAILY_REPORT_LOOKBACK_DAYS = 1
+
+SPEC_VALUE_PATTERNS = [
+    r"\d{1,3}(?:,\d{3})*(?:\.\d+)?\s*(?:m3/day|m³/day|㎥/일|m3\/d|MLD|MGD|톤/일|ton/day|tons/day)",
+    r"\d{1,3}(?:,\d{3})*(?:\.\d+)?\s*(?:억원|백만원|million|billion|USD|KRW|달러)",
+    r"\d{1,3}(?:,\d{3})*(?:\.\d+)?\s*(?:LMH|m/d|bar|kPa|mg/L|ppm|%)",
+    r"\d{1,3}(?:,\d{3})*(?:\.\d+)?\s*(?:명|visitors|attendees|exhibitors|개사|booths)",
+]
+
+
 def load_json(path, default):
     if not path.exists():
         return default
@@ -558,6 +569,96 @@ def is_domestic_article(article):
     return any(k in f"{title} {summary}" for k in korean_hits)
 
 
+
+def normalize_for_similarity(text):
+    text = clean_text(text or "").lower()
+    text = re.sub(r"https?://\S+", " ", text)
+    text = re.sub(r"[^0-9a-zA-Z가-힣]+", " ", text)
+    tokens = [t for t in text.split() if len(t) >= 2]
+    stopwords = {
+        "뉴스", "기사", "발표", "추진", "관련", "통해", "대한", "위한", "및", "the", "and", "for", "with", "from",
+        "water", "news", "report", "says", "announces", "announced"
+    }
+    return [t for t in tokens if t not in stopwords]
+
+
+def token_similarity(a, b):
+    ta = set(normalize_for_similarity(a))
+    tb = set(normalize_for_similarity(b))
+    if not ta or not tb:
+        return 0.0
+    return len(ta & tb) / max(1, min(len(ta), len(tb)))
+
+
+def article_similarity(a, b):
+    a_text = f"{a.get('ko_title','')} {a.get('title','')} {a.get('brief','')} {a.get('summary','')}"
+    b_text = f"{b.get('ko_title','')} {b.get('title','')} {b.get('brief','')} {b.get('summary','')}"
+    return token_similarity(a_text, b_text)
+
+
+def article_identity_key(item):
+    link = item.get("link", "")
+    if link:
+        return link.strip().lower()
+    title = item.get("ko_title") or item.get("title") or ""
+    return " ".join(normalize_for_similarity(title))[:160]
+
+
+def dedupe_similar_articles(items, limit=None, threshold=0.70):
+    result = []
+    seen_keys = set()
+
+    ordered = sorted(items, key=lambda x: (x.get("score", 0), x.get("date", "")), reverse=True)
+    for item in ordered:
+        key = article_identity_key(item)
+        if key and key in seen_keys:
+            continue
+
+        duplicate = False
+        for existing in result:
+            if article_similarity(item, existing) >= threshold:
+                duplicate = True
+                break
+
+        if duplicate:
+            continue
+
+        result.append(item)
+        if key:
+            seen_keys.add(key)
+
+        if limit and len(result) >= limit:
+            break
+
+    return result
+
+
+def extract_numeric_specs_from_text(text):
+    specs = []
+    text = clean_text(text or "")
+    for pattern in SPEC_VALUE_PATTERNS:
+        for match in re.findall(pattern, text, flags=re.IGNORECASE):
+            value = str(match).strip()
+            if value and value not in specs:
+                specs.append(value)
+    return specs[:8]
+
+
+def merge_specs(*values):
+    specs = []
+    for value in values:
+        if isinstance(value, list):
+            candidates = value
+        elif isinstance(value, str):
+            candidates = extract_numeric_specs_from_text(value)
+        else:
+            candidates = []
+        for candidate in candidates:
+            candidate = str(candidate).strip()
+            if candidate and candidate not in specs:
+                specs.append(candidate)
+    return specs[:10]
+
 def fetch_articles():
     feeds = merge_feed_sources()
     articles = []
@@ -599,6 +700,7 @@ def fetch_articles():
                 "matched": matched,
                 "region": feed_region,
                 "source_type": feed_type,
+                "specs": extract_numeric_specs_from_text(f"{title} {summary}"),
             }
 
             article["domestic"] = is_domestic_article(article)
@@ -606,15 +708,7 @@ def fetch_articles():
 
         time.sleep(rss_sleep)
 
-    dedup = {}
-
-    for a in sorted(articles, key=lambda x: x["score"], reverse=True):
-        key = a.get("link") or f"{a.get('title')}::{a.get('source')}"
-        if key and key not in dedup:
-            dedup[key] = a
-
-    return list(dedup.values())
-
+    return dedupe_similar_articles(articles, threshold=0.70)
 
 def flag_for_country(country):
     if not country:
@@ -771,6 +865,7 @@ def openai_text(prompt, fallback):
 
 
 def summarize_article(article):
+    fallback_specs = extract_numeric_specs_from_text(f"{article.get('title','')} {article.get('summary','')}")
     fallback = {
         "ko_title": article["title"],
         "brief": article["summary"][:220] if article["summary"] else "RSS 제목 기준으로 선별되었습니다. 상세 내용은 원문 확인이 필요합니다.",
@@ -781,6 +876,7 @@ def summarize_article(article):
         "companies": [],
         "technologies": article.get("matched", []),
         "policy_alert": "",
+        "specs": fallback_specs,
     }
 
     prompt = f"""
@@ -798,6 +894,11 @@ def summarize_article(article):
 - companies: 기사에 명시된 기업명 배열. 없으면 [].
 - technologies: 기사에 명시된 기술/키워드 배열. 예: ["PFAS", "Water Reuse", "MBR"].
 - policy_alert: 규제/정책 알림이면 1문장 작성. 아니면 빈 문자열.
+- specs: 기사에 명시된 수치·사양 배열. 처리장 용량, m3/day, m³/day, 톤/일, MLD, MGD, 사업비, CAPEX, 막면적, Flux, TMP, MLSS, HRT, SRT, 참석자 규모 등. 기사에 없으면 []. 절대 만들지 말 것.
+
+중요:
+- 처리장, 정수장, 하수처리장, 공장, 프로젝트, 전시회, 학회가 나오면 장소·날짜·규모·용량·사업비 등 숫자 정보를 우선 추출하세요.
+- 수치가 기사에 없으면 specs는 []로 두세요.
 
 원문 제목: {article['title']}
 출처: {article['source']}
@@ -807,6 +908,7 @@ RSS 요약: {article['summary']}
 """.strip()
 
     parsed = openai_json(prompt, fallback)
+    parsed_specs = parsed.get("specs", fallback["specs"]) or []
 
     return {
         "ko_title": parsed.get("ko_title", fallback["ko_title"]),
@@ -818,8 +920,8 @@ RSS 요약: {article['summary']}
         "companies": parsed.get("companies", fallback["companies"]) or [],
         "technologies": parsed.get("technologies", fallback["technologies"]) or [],
         "policy_alert": parsed.get("policy_alert", fallback["policy_alert"]) or "",
+        "specs": merge_specs(parsed_specs, fallback_specs, article.get("title", ""), article.get("summary", "")),
     }
-
 
 def get_pages_base_url():
     explicit = os.getenv("PAGES_BASE_URL")
@@ -862,6 +964,7 @@ def save_news_history(articles):
             "companies": ai.get("companies", []),
             "technologies": ai.get("technologies", []),
             "policy_alert": ai.get("policy_alert", ""),
+            "specs": merge_specs(ai.get("specs", []), a.get("specs", []), a.get("title", ""), a.get("summary", "")),
             "source": a.get("source", ""),
             "link": a.get("link", ""),
             "score": a.get("score", 0),
@@ -1267,7 +1370,7 @@ def make_html_page(title, body_html, path, active_url="", subtitle="", toc_items
       border-bottom:1px solid rgba(255,255,255,.14);
     }}
     .topbar-inner {{
-      max-width:1480px;
+      max-width:1880px;
       margin:0 auto;
       padding:18px 24px;
       display:flex;
@@ -1287,11 +1390,11 @@ def make_html_page(title, body_html, path, active_url="", subtitle="", toc_items
     .brand:hover {{ text-decoration:none; }}
     .top-date {{ font-size:13px; color:#dbeafe; white-space:nowrap; }}
     .layout {{
-      max-width:1480px;
+      max-width:1880px;
       margin:0 auto;
       padding:24px;
       display:grid;
-      grid-template-columns:280px minmax(0, 1fr) 230px;
+      grid-template-columns:260px minmax(0, 1fr) 210px;
       gap:22px;
       align-items:start;
     }}
@@ -1421,11 +1524,25 @@ def make_html_page(title, body_html, path, active_url="", subtitle="", toc_items
     .toc a {{ display:block; color:#334155; font-size:13px; padding:6px 0; border-bottom:1px solid #f1f5f9; }}
     .toc-empty {{ color:var(--muted); font-size:12px; }}
     .dashboard-grid {{ display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:14px; margin-bottom:18px; }}
+    .news-grid {{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:18px; }}
+    .news-card {{ min-height:420px; }}
+    .headline-title {{ font-weight:800; color:#0f172a; }}
+    .headline-list li {{ margin:10px 0 14px; padding-bottom:10px; border-bottom:1px solid #f1f5f9; }}
+    .headline-specs {{ display:inline-block; margin-top:4px; padding:3px 8px; border-radius:999px; background:#f0f9ff; color:#075985; font-size:12px; font-weight:700; }}
+    .event-mini-grid {{ display:grid; grid-template-columns:repeat(5, minmax(0,1fr)); gap:14px; }}
+    .event-mini-card {{ border:1px solid var(--line); border-radius:16px; padding:14px; background:#fff; }}
+    .event-mini-card h3 {{ margin:8px 0 6px; font-size:15px; line-height:1.35; }}
+    .event-grade {{ display:inline-block; padding:3px 9px; border-radius:999px; font-size:12px; font-weight:900; color:#fff; background:#64748b; }}
+    .grade-S {{ background:#7c3aed; }}
+    .grade-A {{ background:#2563eb; }}
+    .grade-B {{ background:#64748b; }}
     .dash-card {{ background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:18px; box-shadow:0 4px 14px rgba(15,23,42,.04); }}
     .dash-card h2 {{ font-size:17px; margin:0 0 10px; }}
     .dash-card a {{ display:block; margin:6px 0; font-size:14px; }}
     @media (max-width:1180px) {{
-      .layout {{ grid-template-columns:250px minmax(0, 1fr); }}
+      .layout {{ grid-template-columns:240px minmax(0, 1fr); }}
+      .news-grid {{ grid-template-columns:1fr; }}
+      .event-mini-grid {{ grid-template-columns:repeat(2, minmax(0,1fr)); }}
       .toc {{ display:none; }}
       .stat-grid {{ grid-template-columns:repeat(2, minmax(0,1fr)); }}
     }}
@@ -1437,6 +1554,8 @@ def make_html_page(title, body_html, path, active_url="", subtitle="", toc_items
       .hero h1 {{ font-size:24px; }}
       .dashboard-grid {{ grid-template-columns:1fr; }}
       .stat-grid {{ grid-template-columns:1fr; }}
+      .news-grid {{ grid-template-columns:1fr; }}
+      .event-mini-grid {{ grid-template-columns:1fr; }}
     }}
   </style>
 </head>
@@ -1468,6 +1587,7 @@ def make_html_page(title, body_html, path, active_url="", subtitle="", toc_items
 def normalize_display_item(item):
     if "ai" in item:
         ai = item.get("ai", {})
+        specs = merge_specs(ai.get("specs", []), item.get("specs", []), item.get("title", ""), item.get("summary", ""))
         return {
             "date": item.get("date", ""),
             "title": item.get("title", ""),
@@ -1480,11 +1600,14 @@ def normalize_display_item(item):
             "companies": ai.get("companies", []),
             "technologies": ai.get("technologies", item.get("matched", [])),
             "policy_alert": ai.get("policy_alert", ""),
+            "specs": specs,
             "source": item.get("source", ""),
             "link": item.get("link", ""),
             "score": item.get("score", 0),
+            "domestic": item.get("domestic", False),
         }
 
+    specs = merge_specs(item.get("specs", []), item.get("title", ""), item.get("summary", ""))
     return {
         "date": item.get("date", ""),
         "title": item.get("title", ""),
@@ -1497,11 +1620,12 @@ def normalize_display_item(item):
         "companies": item.get("companies", []),
         "technologies": item.get("technologies", item.get("keywords", [])),
         "policy_alert": item.get("policy_alert", ""),
+        "specs": specs,
         "source": item.get("source", ""),
         "link": item.get("link", ""),
         "score": item.get("score", 0),
+        "domestic": item.get("domestic", False),
     }
-
 
 def build_article_cards(items):
     cards = []
@@ -1535,7 +1659,7 @@ def build_article_cards(items):
     return "".join(cards)
 
 
-def get_recent_daily_items(target_date, selected_articles, history, max_days=3, limit=12):
+def get_recent_daily_items(target_date, selected_articles, history, max_days=DAILY_REPORT_LOOKBACK_DAYS, limit=12):
     try:
         target_dt = datetime.strptime(target_date, "%Y-%m-%d").replace(tzinfo=KST)
     except Exception:
@@ -1547,37 +1671,30 @@ def get_recent_daily_items(target_date, selected_articles, history, max_days=3, 
     for item in selected_articles:
         item_date = item.get("date", target_date)
         if item_date in allowed_dates:
-            pool.append(item)
+            pool.append(normalize_display_item(item))
 
     for item in history:
         if item.get("date", "") in allowed_dates:
-            pool.append(item)
+            pool.append(normalize_display_item(item))
 
-    dedup = {}
-    for item in sorted(pool, key=lambda x: x.get("score", 0), reverse=True):
-        key = item.get("link") or item.get("ko_title") or item.get("title")
-        if key and key not in dedup:
-            dedup[key] = item
-
-    return list(dedup.values())[:limit]
-
+    return dedupe_similar_articles(pool, limit=limit, threshold=0.70)
 
 def create_daily_report(articles, history=None, target_date=None):
     history = history or []
     today = target_date or datetime.now(KST).strftime("%Y-%m-%d")
     report_dir = REPORTS_DIR / today
 
-    display_items = get_recent_daily_items(today, articles, history, max_days=3, limit=max(10, MAX_ITEMS))
+    display_items = get_recent_daily_items(today, articles, history, max_days=DAILY_REPORT_LOOKBACK_DAYS, limit=max(10, MAX_ITEMS))
 
     title = f"{today} 상하수도·수처리 상세 분석 보고서"
-    subtitle = "당일 기사 우선, 부족 시 최근 3일 이내 관련 기사까지 포함합니다. 뉴스 게시판용 기사는 다른 날짜 보고서와 중복될 수 있습니다."
+    subtitle = "당일 기사만 사용합니다. 같은 내용의 중복 기사는 자동 제외합니다."
     active_url = f"reports/{today}/"
     toc_items = [(f"article-{i}", f"기사 {i}") for i in range(1, min(len(display_items), 12) + 1)]
 
     if display_items:
         body = build_article_cards(display_items)
     else:
-        body = '<section class="card">최근 3일 기준 필터 조건에 맞는 뉴스가 없습니다.</section>'
+        body = '<section class="card">당일 기준 필터 조건에 맞는 뉴스가 없습니다.</section>'
 
     make_html_page(title, body, report_dir, active_url=active_url, subtitle=subtitle, toc_items=toc_items)
 
@@ -1681,34 +1798,23 @@ def article_is_domestic(item):
     return any(hint.lower() in test_text.lower() for hint in DOMESTIC_SOURCE_HINTS)
 
 
-def get_dashboard_items(history, limit=5):
-    sorted_items = sorted(history, key=lambda x: (x.get("date", ""), x.get("score", 0)), reverse=True)
+def get_dashboard_items(history, limit=TOP_NEWS_LIMIT):
+    normalized = [normalize_display_item(x) for x in history]
+    sorted_items = sorted(normalized, key=lambda x: (x.get("date", ""), x.get("score", 0)), reverse=True)
 
-    global_items = []
-    domestic_items = []
-
-    seen_global = set()
-    seen_domestic = set()
+    global_pool = []
+    domestic_pool = []
 
     for item in sorted_items:
-        key = item.get("link") or item.get("ko_title") or item.get("title")
-        if not key:
-            continue
-
         if article_is_domestic(item):
-            if key not in seen_domestic:
-                domestic_items.append(item)
-                seen_domestic.add(key)
+            domestic_pool.append(item)
         else:
-            if key not in seen_global:
-                global_items.append(item)
-                seen_global.add(key)
+            global_pool.append(item)
 
-        if len(global_items) >= limit and len(domestic_items) >= limit:
-            break
+    global_items = dedupe_similar_articles(global_pool, limit=limit, threshold=0.70)
+    domestic_items = dedupe_similar_articles(domestic_pool, limit=limit, threshold=0.70)
 
-    return global_items[:limit], domestic_items[:limit]
-
+    return global_items, domestic_items
 
 def build_headline_list(items):
     if not items:
@@ -1716,35 +1822,41 @@ def build_headline_list(items):
 
     parts = ['<ol class="headline-list">']
     for item in items:
-        title = item.get("ko_title") or item.get("title") or "제목 없음"
-        source = item.get("source", "출처 미확인")
-        date = item.get("date", "")
-        link = item.get("link", "")
-        category = item.get("category", "")
-        label = f"{title} <span class='meta'>· {html.escape(date)} · {html.escape(source)} · {html.escape(category)}</span>"
+        a = normalize_display_item(item)
+        title = a.get("ko_title") or a.get("title") or "제목 없음"
+        source = a.get("source", "출처 미확인")
+        date = a.get("date", "")
+        link = a.get("link", "")
+        category = a.get("category", "")
+        specs = a.get("specs", []) or []
+        specs_html = ""
+        if specs:
+            specs_html = "<div class='headline-specs'>" + " · ".join(html.escape(str(x)) for x in specs[:4]) + "</div>"
+        meta = f"<span class='meta'> · {html.escape(date)} · {html.escape(source)} · {html.escape(category)}</span>"
         if link:
-            parts.append(f'<li><a href="{html.escape(link)}" target="_blank" rel="noopener noreferrer">{label}</a></li>')
+            parts.append(f'<li><a href="{html.escape(link)}" target="_blank" rel="noopener noreferrer"><span class="headline-title">{html.escape(title)}</span></a>{meta}{specs_html}</li>')
         else:
-            parts.append(f'<li>{label}</li>')
+            parts.append(f'<li><span class="headline-title">{html.escape(title)}</span>{meta}{specs_html}</li>')
     parts.append("</ol>")
     return "\n".join(parts)
 
-
 def build_event_preview(limit=5):
-    rows = []
+    cards = []
     for item in EVENT_CATALOG[:limit]:
-        rows.append(
-            f"<tr><td>{html.escape(item['grade'])}</td><td>{html.escape(item['name'])}</td><td>{html.escape(item['location'])}</td><td>{html.escape(item['date'])}</td><td>{html.escape(item['scale'])}</td></tr>"
-        )
+        cards.append(f"""
+        <article class="event-mini-card">
+          <div class="event-grade grade-{html.escape(item['grade'])}">{html.escape(item['grade'])}급</div>
+          <h3>{html.escape(item['name'])}</h3>
+          <p class="meta">{html.escape(item['scope'])} · {html.escape(item['location'])} · {html.escape(item['date'])}</p>
+          <p>{html.escape(item['note'])}</p>
+          <p class="meta">규모: {html.escape(item['scale'])}</p>
+        </article>
+        """)
 
     return f"""
-    <table class="source-table">
-      <thead><tr><th>등급</th><th>행사</th><th>장소</th><th>일정</th><th>규모</th></tr></thead>
-      <tbody>{''.join(rows)}</tbody>
-    </table>
+    <div class="event-mini-grid">{''.join(cards)}</div>
     <p><a href="{rel_url('events/')}">전체 학회·전시회 일정 보기</a></p>
     """
-
 
 def create_sources_page():
     groups = {}
@@ -1839,18 +1951,21 @@ def create_static_info_pages():
     create_events_page()
 
 
+def build_today_detail_preview(history, limit=TOP_NEWS_LIMIT):
+    today = datetime.now(KST).strftime("%Y-%m-%d")
+    today_items = [normalize_display_item(x) for x in history if x.get("date") == today]
+    today_items = dedupe_similar_articles(today_items, limit=limit, threshold=0.70)
+    if not today_items:
+        return '<p class="meta">오늘 날짜로 누적된 상세 기사 제목이 아직 없습니다.</p>'
+    return build_headline_list(today_items)
+
+
 def update_docs_index(daily_url, weekly_url, monthly_url):
     DOCS_DIR.mkdir(parents=True, exist_ok=True)
     (DOCS_DIR / ".nojekyll").write_text("", encoding="utf-8")
 
     history = load_json(HISTORY_FILE, [])
-    daily, weekly, monthly = list_existing_report_keys()
-
-    latest_daily = daily[:5]
-    latest_weekly = weekly[:5]
-    latest_monthly = monthly[:6]
-
-    global_items, domestic_items = get_dashboard_items(history, limit=5)
+    global_items, domestic_items = get_dashboard_items(history, limit=TOP_NEWS_LIMIT)
 
     total_count = len(history)
     domestic_count = sum(1 for x in history if article_is_domestic(x))
@@ -1866,60 +1981,49 @@ def update_docs_index(daily_url, weekly_url, monthly_url):
     </section>
     """
 
-    daily_links = "".join(
-        f'<a href="{rel_url(f"reports/{key}/")}">{html.escape(get_date_label(key))} 상세 분석 보고서</a>'
-        for key in latest_daily
-    ) or '<p class="meta">아직 생성된 일일 보고서가 없습니다.</p>'
-
-    weekly_links = "".join(
-        f'<a href="{rel_url(f"weekly/{key}/")}">{html.escape(key)} {html.escape(f"({week_range_label(key)})" if week_range_label(key) else "")}</a>'
-        for key in latest_weekly
-    ) or '<p class="meta">아직 생성된 주간 리포트가 없습니다.</p>'
-
-    monthly_links = "".join(
-        f'<a href="{rel_url(f"monthly/{key}/")}">{html.escape(month_label(key))} 월간 업계 동향</a>'
-        for key in latest_monthly
-    ) or '<p class="meta">아직 생성된 월간 리포트가 없습니다.</p>'
-
     body = f"""
     {stats}
 
-    <section class="dashboard-grid" id="reports">
-      <div class="dash-card">
-        <h2>일일 상세 보고서</h2>
-        {daily_links}
-      </div>
-      <div class="dash-card">
-        <h2>주간 업계 동향</h2>
-        {weekly_links}
-      </div>
-      <div class="dash-card">
-        <h2>월간 업계 동향</h2>
-        {monthly_links}
-      </div>
+    <section class="card" id="today-detail">
+      <h2>오늘의 상세 분석 기사</h2>
+      <p class="meta">당일 일일 상세 보고서에 포함되는 기사 제목입니다. 중복 내용은 자동 제외합니다.</p>
+      {build_today_detail_preview(history, limit=TOP_NEWS_LIMIT)}
+      <p><a href="{html.escape(daily_url)}">오늘 상세 분석 보고서 전체 보기</a></p>
     </section>
 
-    <section class="dashboard-grid" id="headlines">
-      <div class="dash-card">
-        <h2>세계 주요 뉴스 TOP 5</h2>
+    <section class="news-grid" id="headlines">
+      <div class="dash-card news-card">
+        <h2>세계 주요 뉴스 TOP 10</h2>
         {build_headline_list(global_items)}
       </div>
-      <div class="dash-card">
-        <h2>국내 주요 뉴스 TOP 5</h2>
+      <div class="dash-card news-card">
+        <h2>국내 주요 뉴스 TOP 10</h2>
         {build_headline_list(domestic_items)}
-      </div>
-      <div class="dash-card">
-        <h2>학회·전시회 일정</h2>
-        {build_event_preview(limit=5)}
       </div>
     </section>
 
-    <section class="card" id="source-filter">
-      <h2>출처 및 필터링 기준</h2>
-      <p>수집 출처와 필터링 키워드를 별도 페이지로 공개합니다.</p>
-      <p><a href="{rel_url('sources/')}">정보 출처 보기</a></p>
-      <p><a href="{rel_url('filters/')}">필터링 기준 보기</a></p>
-      <p><a href="{rel_url('events/')}">학회·전시회 일정 보기</a></p>
+    <section class="card" id="events-preview">
+      <h2>국내·해외 학회 및 전시회 일정</h2>
+      <p class="meta">행사 성격, 위치, 일정, 규모 등급과 비고를 함께 표시합니다.</p>
+      {build_event_preview(limit=5)}
+    </section>
+
+    <section class="dashboard-grid" id="source-filter">
+      <div class="dash-card">
+        <h2>정보 출처</h2>
+        <p>RSS, 검색엔진, 국내외 학회·협회, 기업 뉴스룸을 구분해 정리합니다.</p>
+        <p><a href="{rel_url('sources/')}">정보 출처 보기</a></p>
+      </div>
+      <div class="dash-card">
+        <h2>필터링 기준</h2>
+        <p>MBR, 막여과, PFAS, 재이용수 등 포함 키워드와 배터리·반도체 제외 키워드를 공개합니다.</p>
+        <p><a href="{rel_url('filters/')}">필터링 기준 보기</a></p>
+      </div>
+      <div class="dash-card">
+        <h2>보고서 바로가기</h2>
+        <p><a href="{html.escape(weekly_url)}">최신 주간 업계 동향</a></p>
+        <p><a href="{html.escape(monthly_url)}">최신 월간 업계 동향</a></p>
+      </div>
     </section>
     """
 
@@ -1929,9 +2033,8 @@ def update_docs_index(daily_url, weekly_url, monthly_url):
         DOCS_DIR,
         active_url="",
         subtitle="국내·해외 수처리 뉴스, 멤브레인/MBR 동향, 학회·전시회 일정을 누적 관리합니다.",
-        toc_items=[("reports", "보고서"), ("headlines", "주요 뉴스"), ("source-filter", "출처/필터")],
+        toc_items=[("today-detail", "오늘 상세 기사"), ("headlines", "주요 뉴스"), ("events-preview", "학회·전시회"), ("source-filter", "출처/필터")],
     )
-
 
 def build_policy_alerts(articles):
     alerts = []
