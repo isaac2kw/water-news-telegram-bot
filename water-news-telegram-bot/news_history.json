@@ -3513,5 +3513,82 @@
     "domestic": true,
     "region": "domestic",
     "source_type": "search_rss"
+  },
+  {
+    "date": "2026-06-02",
+    "title": "Toray introduces ultrafiltration membrane designed to reduce biofouling in wastewater reuse",
+    "ko_title": "Toray, 재이용수용 저오염 UF 막 출시",
+    "brief": "Toray가 하·폐수 재이용용 F-HFUG Series ultrafiltration membrane module을 공개했다. 0.005-micrometer 기공으로 biopolymer 통과와 후단 RO biofouling 저감을 겨냥한다.",
+    "summary": "Toray는 하·폐수 재이용 공정용 F-HFUG Series ultrafiltration membrane module을 선보였다고 밝혔다. 이번 제품은 0.005-micrometer pore size를 적용해 biopolymer의 막 통과를 줄이고, 후단 reverse osmosis 공정의 fouling 부담을 낮추는 데 초점을 맞췄다. 이는 재이용수 공정에서 UF가 RO 전처리로 쓰이는 일반적인 흐름과 맞닿아 있으며, 막 오염 저감은 운영 안정성과 세정 주기 측면에서 중요한 이슈다. 기사에 따르면 핵심 차별점은 wastewater reuse 용도에서 biofouling 저감을 겨냥한 설계라는 점이다. 수처리 산업 측면에서는 재이용수 확대와 함께 전처리 성능을 높여 RO 운영 리스크를 줄이려는 기술 경쟁의 한 사례로 볼 수 있다.",
+    "why_important": "재이용수 시장에서는 UF 전처리의 성능이 후단 RO의 운영비와 안정성에 직접 연결되므로, biofouling 저감형 막 제품 출시는 기술 경쟁력 측면에서 중요하다. 프로젝트 관점에서도 wastewater reuse 설비의 전처리 사양 선택에 영향을 줄 수 있지만, 실제 적용 확대 여부는 추가 성능 검증이 필요하므로 일부 평가는 추측입니다.",
+    "category": "분리막/막여과",
+    "countries": [],
+    "companies": [
+      "Toray"
+    ],
+    "technologies": [
+      "Ultrafiltration",
+      "Wastewater Reuse",
+      "Biofouling",
+      "Reverse Osmosis",
+      "Membrane Module"
+    ],
+    "policy_alert": "",
+    "specs": [
+      "0.005-micrometer pore size"
+    ],
+    "source": "Bing News Global UF MF",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a2120462ba045dda2c4f8fbe7757d7e&url=https%3a%2f%2fwww.dairyfoods.com%2farticles%2f99167-toray-introduces-ultrafiltration-membrane-designed-to-reduce-biofouling-in-wastewater-reuse&c=9496410966415004977&mkt=en-us",
+    "score": 57,
+    "keywords": [
+      "membrane",
+      "ultrafiltration",
+      "wastewater",
+      "water reuse",
+      "toray",
+      "biofouling",
+      "membrane module"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "search_rss"
+  },
+  {
+    "date": "2026-04-24",
+    "title": "SUEZ and Salinity Solutions launch the first industrial pilot of Hybrid Batch Reverse Osmosis for municipal wastewater reuse in Béziers - SUEZ Group",
+    "ko_title": "SUEZ, Béziers서 하수 재이용 HBRO 실증",
+    "brief": "SUEZ와 Salinity Solutions가 Béziers에서 도시 하수 재이용용 Hybrid Batch Reverse Osmosis 산업 파일럿을 시작했다. 하수 재이용 분야에서 RO 기반 공정의 적용성과 성능을 검증하는 사례로 주목된다.",
+    "summary": "SUEZ와 Salinity Solutions는 Béziers에서 도시 하수 재이용을 위한 Hybrid Batch Reverse Osmosis 산업 파일럿을 개시했다고 밝혔다. 이번 발표는 municipal wastewater reuse에 RO 기반 신기술을 적용하는 실증 단계라는 점이 핵심이다. 기사 제목과 RSS 요약 기준으로, 프로젝트는 파일럿 성격의 산업 실증이며 상용 대규모 플랜트 수주나 준공 발표는 아니다. 수처리 산업 측면에서는 재이용수 확대와 함께 고도처리·막공정 기술의 경제성 및 운영성 검증 흐름과 맞닿아 있다. 다만 제공된 정보에는 처리용량, 투자비, 운전 조건 등 구체 사양은 제시되지 않았다.",
+    "why_important": "하수 재이용 시장에서 새로운 RO 운전 방식의 산업 실증은 향후 기술 상용화와 프로젝트 적용 가능성을 가늠하는 기준이 될 수 있다. 특히 SUEZ와 Salinity Solutions의 협력은 재이용수 및 담수화/RO 인접 시장에서 기술 포트폴리오 경쟁에 영향을 줄 수 있으나, 구체적 사업 파급효과는 추측입니다.",
+    "category": "재이용수",
+    "countries": [
+      "프랑스"
+    ],
+    "companies": [
+      "SUEZ",
+      "Salinity Solutions"
+    ],
+    "technologies": [
+      "wastewater reuse",
+      "municipal wastewater reuse",
+      "Hybrid Batch Reverse Osmosis",
+      "RO",
+      "pilot"
+    ],
+    "policy_alert": "",
+    "specs": [],
+    "source": "Google News Global Desalination",
+    "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQRTdOWkNvWFVsaWlKLTY5emQ5bFBrQWRpQVRUZnZuRlNRTWpBTUN0b0JoaEtrZFcxX1RVdTRCNnBmdkNrSm5NQjdNcHJNV3U1cFZ4MHA0aUUwd3FmcUJ4RjMwa0VPM3NxYW1fdlFRSWQybHN1TXFNaDVaYmdRREZEcVM5QVZnRmM3bnQ0NlRQckUwMUFHbm4wODNDNjgxaDAtREZQV2UwWFhSdw?oc=5",
+    "score": 37,
+    "keywords": [
+      "wastewater",
+      "water reuse",
+      "pilot",
+      "suez",
+      "cip"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "search_rss"
   }
 ]
