@@ -6,6 +6,7 @@ import time
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from urllib.parse import urlparse, quote_plus
+from difflib import SequenceMatcher
 
 import feedparser
 import requests
@@ -389,6 +390,29 @@ EXCLUDE_PATTERNS_PUBLIC = NEGATIVE_PATTERNS
 
 TOP_NEWS_LIMIT = 10
 DAILY_REPORT_LOOKBACK_DAYS = 1
+DASHBOARD_YEAR_WINDOW = 2
+
+COMPANY_ENGLISH_MAP = {
+    "토레이": "Toray",
+    "도레이": "Toray",
+    "알파라발": "Alfa Laval",
+    "베올리아": "Veolia",
+    "수에즈": "SUEZ",
+    "자일럼": "Xylem",
+    "듀폰": "DuPont",
+    "미쓰비시": "Mitsubishi",
+    "미쓰비시중공업": "Mitsubishi Heavy Industries",
+    "쿠보타": "Kubota",
+    "에코니티": "Econity",
+    "코오롱": "Kolon",
+    "롯데케미칼": "Lotte Chemical",
+    "웅진케미칼": "Woongjin Chemical",
+    "아사히카세이": "Asahi Kasei",
+    "아사히 카세이": "Asahi Kasei",
+    "펜테어": "Pentair",
+    "코발루스": "Kovalus",
+    "에보닉": "Evonik",
+}
 
 SPEC_VALUE_PATTERNS = [
     r"\d{1,3}(?:,\d{3})*(?:\.\d+)?\s*(?:m3/day|m³/day|㎥/일|m3\/d|MLD|MGD|톤/일|ton/day|tons/day)",
@@ -570,14 +594,95 @@ def is_domestic_article(article):
 
 
 
+def replace_company_names_with_english(text):
+    if not text:
+        return ""
+    out = str(text)
+    for ko, en in COMPANY_ENGLISH_MAP.items():
+        out = out.replace(ko, en)
+    return out
+
+
+def normalize_company_list(companies):
+    result = []
+    for c in companies or []:
+        name = replace_company_names_with_english(str(c).strip())
+        if name and name not in result:
+            result.append(name)
+    return result
+
+
+def parse_date_safe(date_str):
+    try:
+        return datetime.strptime(str(date_str), "%Y-%m-%d").replace(tzinfo=KST)
+    except Exception:
+        return None
+
+
+def is_recent_dashboard_item(item):
+    dt = parse_date_safe(item.get("date", ""))
+    if not dt:
+        return False
+    current_year = datetime.now(KST).year
+    return dt.year >= current_year - (DASHBOARD_YEAR_WINDOW - 1)
+
+
+def dashboard_sort_score(item):
+    dt = parse_date_safe(item.get("date", ""))
+    now = datetime.now(KST)
+    if dt:
+        age_days = max((now - dt).days, 0)
+        recency_bonus = max(0, 730 - age_days) / 730 * 100
+        date_key = dt.strftime("%Y-%m-%d")
+    else:
+        recency_bonus = 0
+        date_key = ""
+    return (recency_bonus + float(item.get("score", 0)), date_key)
+
+
+def extract_date_context_from_text(*values):
+    text = " ".join(str(v or "") for v in values)
+    text = clean_text(text)
+    patterns = [
+        r"20\d{2}[./-]\d{1,2}[./-]\d{1,2}",
+        r"20\d{2}\s*년\s*\d{1,2}\s*월\s*\d{1,2}\s*일",
+        r"20\d{2}\s*년\s*\d{1,2}\s*월",
+        r"\d{1,2}\s*월\s*\d{1,2}\s*일",
+        r"\d{1,2}/\d{1,2}/20\d{2}",
+        r"(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\.?\s+\d{1,2},?\s+20\d{2}",
+    ]
+    found = []
+    for pattern in patterns:
+        for m in re.findall(pattern, text, flags=re.IGNORECASE):
+            value = re.sub(r"\s+", " ", str(m)).strip()
+            if value and value not in found:
+                found.append(value)
+    return found[:5]
+
+
+def get_article_date_context(item):
+    explicit = item.get("date_context") or item.get("event_date") or item.get("article_date_context")
+    if isinstance(explicit, list):
+        explicit = ", ".join(str(x) for x in explicit if x)
+    if explicit:
+        return str(explicit)
+    extracted = extract_date_context_from_text(item.get("title", ""), item.get("ko_title", ""), item.get("summary", ""), item.get("brief", ""))
+    if extracted:
+        return ", ".join(extracted)
+    if item.get("date"):
+        return f"기사 기준일: {item.get('date')}"
+    return "일정 정보 확인 필요"
+
+
 def normalize_for_similarity(text):
-    text = clean_text(text or "").lower()
+    text = replace_company_names_with_english(clean_text(text or "")).lower()
     text = re.sub(r"https?://\S+", " ", text)
+    text = re.sub(r"20\d{2}|\d{1,2}월|\d{1,2}일|\d+", " ", text)
     text = re.sub(r"[^0-9a-zA-Z가-힣]+", " ", text)
     tokens = [t for t in text.split() if len(t) >= 2]
     stopwords = {
-        "뉴스", "기사", "발표", "추진", "관련", "통해", "대한", "위한", "및", "the", "and", "for", "with", "from",
-        "water", "news", "report", "says", "announces", "announced"
+        "뉴스", "기사", "발표", "추진", "관련", "통해", "대한", "위한", "및", "으로", "에서", "하고", "하는", "된다", "선정", "공개", "실시", "도입", "개발", "시장", "전망", "성장",
+        "the", "and", "for", "with", "from", "into", "about", "water", "news", "report", "says", "announces", "announced", "launches", "released", "market", "growth"
     }
     return [t for t in tokens if t not in stopwords]
 
@@ -593,22 +698,29 @@ def token_similarity(a, b):
 def article_similarity(a, b):
     a_text = f"{a.get('ko_title','')} {a.get('title','')} {a.get('brief','')} {a.get('summary','')}"
     b_text = f"{b.get('ko_title','')} {b.get('title','')} {b.get('brief','')} {b.get('summary','')}"
-    return token_similarity(a_text, b_text)
+    token_score = token_similarity(a_text, b_text)
+    title_a = " ".join(normalize_for_similarity(f"{a.get('ko_title','')} {a.get('title','')}"))
+    title_b = " ".join(normalize_for_similarity(f"{b.get('ko_title','')} {b.get('title','')}"))
+    seq_score = SequenceMatcher(None, title_a, title_b).ratio() if title_a and title_b else 0.0
+    return max(token_score, seq_score)
 
 
 def article_identity_key(item):
+    title = item.get("ko_title") or item.get("title") or ""
+    title_key = " ".join(normalize_for_similarity(title))[:120]
+    if title_key:
+        return title_key
     link = item.get("link", "")
     if link:
         return link.strip().lower()
-    title = item.get("ko_title") or item.get("title") or ""
-    return " ".join(normalize_for_similarity(title))[:160]
+    return ""
 
 
-def dedupe_similar_articles(items, limit=None, threshold=0.70):
+def dedupe_similar_articles(items, limit=None, threshold=0.58):
     result = []
     seen_keys = set()
 
-    ordered = sorted(items, key=lambda x: (x.get("score", 0), x.get("date", "")), reverse=True)
+    ordered = sorted(items, key=dashboard_sort_score, reverse=True)
     for item in ordered:
         key = article_identity_key(item)
         if key and key in seen_keys:
@@ -891,9 +1003,10 @@ def summarize_article(article):
 - category: 아래 중 하나만 선택.
   PFAS/오염물, 재이용수, 분리막/MBR, 분리막/막여과, 산업폐수, 담수화/RO, 프로젝트/수주, 기업동향, 규제/정책, 학회/전시회, 수처리 산업동향
 - countries: 기사에 명시된 국가명 배열. 예: ["미국", "중국"]. 없으면 [].
-- companies: 기사에 명시된 기업명 배열. 없으면 [].
+- companies: 기사에 명시된 기업명 배열. 없으면 []. 기업명은 가능한 공식 영문명으로 작성. 예: Toray, Econity, Veolia, DuPont.
 - technologies: 기사에 명시된 기술/키워드 배열. 예: ["PFAS", "Water Reuse", "MBR"].
 - policy_alert: 규제/정책 알림이면 1문장 작성. 아니면 빈 문자열.
+- date_context: 기사에 명시된 발표일, 개최일, 사업 일정, 준공일, 개발 발표 시점, 입찰 일정이 있으면 작성. 없으면 기사 발행일 기준으로 작성.
 - specs: 기사에 명시된 수치·사양 배열. 처리장 용량, m3/day, m³/day, 톤/일, MLD, MGD, 사업비, CAPEX, 막면적, Flux, TMP, MLSS, HRT, SRT, 참석자 규모 등. 기사에 없으면 []. 절대 만들지 말 것.
 
 중요:
@@ -1590,16 +1703,17 @@ def normalize_display_item(item):
         specs = merge_specs(ai.get("specs", []), item.get("specs", []), item.get("title", ""), item.get("summary", ""))
         return {
             "date": item.get("date", ""),
-            "title": item.get("title", ""),
-            "ko_title": ai.get("ko_title", item.get("title", "")),
-            "brief": ai.get("brief", ""),
-            "summary": ai.get("summary", ""),
-            "why_important": ai.get("why_important", ""),
+            "title": replace_company_names_with_english(item.get("title", "")),
+            "ko_title": replace_company_names_with_english(ai.get("ko_title", item.get("title", ""))),
+            "brief": replace_company_names_with_english(ai.get("brief", "")),
+            "summary": replace_company_names_with_english(ai.get("summary", "")),
+            "why_important": replace_company_names_with_english(ai.get("why_important", "")),
             "category": ai.get("category", guess_category(item)),
             "countries": ai.get("countries", []),
-            "companies": ai.get("companies", []),
+            "companies": normalize_company_list(ai.get("companies", [])),
             "technologies": ai.get("technologies", item.get("matched", [])),
             "policy_alert": ai.get("policy_alert", ""),
+            "date_context": ai.get("date_context", get_article_date_context(item)),
             "specs": specs,
             "source": item.get("source", ""),
             "link": item.get("link", ""),
@@ -1610,16 +1724,17 @@ def normalize_display_item(item):
     specs = merge_specs(item.get("specs", []), item.get("title", ""), item.get("summary", ""))
     return {
         "date": item.get("date", ""),
-        "title": item.get("title", ""),
-        "ko_title": item.get("ko_title", item.get("title", "")),
-        "brief": item.get("brief", ""),
-        "summary": item.get("summary", ""),
-        "why_important": item.get("why_important", ""),
+        "title": replace_company_names_with_english(item.get("title", "")),
+        "ko_title": replace_company_names_with_english(item.get("ko_title", item.get("title", ""))),
+        "brief": replace_company_names_with_english(item.get("brief", "")),
+        "summary": replace_company_names_with_english(item.get("summary", "")),
+        "why_important": replace_company_names_with_english(item.get("why_important", "")),
         "category": item.get("category", ""),
         "countries": item.get("countries", []),
-        "companies": item.get("companies", []),
+        "companies": normalize_company_list(item.get("companies", [])),
         "technologies": item.get("technologies", item.get("keywords", [])),
         "policy_alert": item.get("policy_alert", ""),
+        "date_context": item.get("date_context", get_article_date_context(item)),
         "specs": specs,
         "source": item.get("source", ""),
         "link": item.get("link", ""),
@@ -1641,8 +1756,9 @@ def build_article_cards(items):
 
         cards.append(f"""
         <section class="card" id="article-{i}">
-          <p class="meta">#{i} · {html.escape(date_text)} · {html.escape(source_text)} · 점수 {html.escape(str(a.get('score', 0)))}</p>
+          <p class="meta">#{i} · 기사일: {html.escape(date_text)} · {html.escape(source_text)} · 점수 {html.escape(str(a.get('score', 0)))}</p>
           <h2>{emoji} {html.escape(a.get('ko_title', '') or a.get('title', ''))}</h2>
+          <p class="meta">발표/일정: {html.escape(a.get('date_context', '') or get_article_date_context(a))}</p>
           <p><span class="pill">{html.escape(a.get('category', '') or '분류 없음')}</span></p>
           <p class="brief">{html.escape(a.get('brief', '') or '요약 정보가 없습니다.')}</p>
           <h3>내용 요약</h3>
@@ -1800,7 +1916,9 @@ def article_is_domestic(item):
 
 def get_dashboard_items(history, limit=TOP_NEWS_LIMIT):
     normalized = [normalize_display_item(x) for x in history]
-    sorted_items = sorted(normalized, key=lambda x: (x.get("date", ""), x.get("score", 0)), reverse=True)
+    recent_items = [x for x in normalized if is_recent_dashboard_item(x)]
+    pool_source = recent_items if recent_items else normalized
+    sorted_items = sorted(pool_source, key=dashboard_sort_score, reverse=True)
 
     global_pool = []
     domestic_pool = []
@@ -1811,8 +1929,8 @@ def get_dashboard_items(history, limit=TOP_NEWS_LIMIT):
         else:
             global_pool.append(item)
 
-    global_items = dedupe_similar_articles(global_pool, limit=limit, threshold=0.70)
-    domestic_items = dedupe_similar_articles(domestic_pool, limit=limit, threshold=0.70)
+    global_items = dedupe_similar_articles(global_pool, limit=limit, threshold=0.55)
+    domestic_items = dedupe_similar_articles(domestic_pool, limit=limit, threshold=0.55)
 
     return global_items, domestic_items
 
@@ -1832,7 +1950,8 @@ def build_headline_list(items):
         specs_html = ""
         if specs:
             specs_html = "<div class='headline-specs'>" + " · ".join(html.escape(str(x)) for x in specs[:4]) + "</div>"
-        meta = f"<span class='meta'> · {html.escape(date)} · {html.escape(source)} · {html.escape(category)}</span>"
+        date_context = a.get("date_context", "") or get_article_date_context(a)
+        meta = f"<span class='meta'> · 기사일 {html.escape(date)} · 발표/일정 {html.escape(date_context)} · {html.escape(source)} · {html.escape(category)}</span>"
         if link:
             parts.append(f'<li><a href="{html.escape(link)}" target="_blank" rel="noopener noreferrer"><span class="headline-title">{html.escape(title)}</span></a>{meta}{specs_html}</li>')
         else:
@@ -1982,8 +2101,6 @@ def update_docs_index(daily_url, weekly_url, monthly_url):
     """
 
     body = f"""
-    {stats}
-
     <section class="card" id="today-detail">
       <h2>오늘의 상세 분석 기사</h2>
       <p class="meta">당일 일일 상세 보고서에 포함되는 기사 제목입니다. 중복 내용은 자동 제외합니다.</p>
@@ -2006,6 +2123,11 @@ def update_docs_index(daily_url, weekly_url, monthly_url):
       <h2>국내·해외 학회 및 전시회 일정</h2>
       <p class="meta">행사 성격, 위치, 일정, 규모 등급과 비고를 함께 표시합니다.</p>
       {build_event_preview(limit=5)}
+    </section>
+
+    <section class="card" id="collection-stats">
+      <h2>수집 현황</h2>
+      {stats}
     </section>
 
     <section class="dashboard-grid" id="source-filter">
@@ -2033,7 +2155,7 @@ def update_docs_index(daily_url, weekly_url, monthly_url):
         DOCS_DIR,
         active_url="",
         subtitle="국내·해외 수처리 뉴스, 멤브레인/MBR 동향, 학회·전시회 일정을 누적 관리합니다.",
-        toc_items=[("today-detail", "오늘 상세 기사"), ("headlines", "주요 뉴스"), ("events-preview", "학회·전시회"), ("source-filter", "출처/필터")],
+        toc_items=[("today-detail", "오늘 상세 기사"), ("headlines", "주요 뉴스"), ("events-preview", "학회·전시회"), ("collection-stats", "수집 현황"), ("source-filter", "출처/필터")],
     )
 
 def build_policy_alerts(articles):
