@@ -1,26 +1,108 @@
 [
   {
+    "category": "global_media",
+    "region": "global",
     "name": "WaterWorld",
     "url": "https://www.waterworld.com/rss.xml"
   },
   {
+    "category": "global_media",
+    "region": "global",
     "name": "Water Online",
     "url": "https://www.wateronline.com/rss"
   },
   {
+    "category": "global_media",
+    "region": "global",
     "name": "Smart Water Magazine",
     "url": "https://smartwatermagazine.com/rss.xml"
   },
   {
+    "category": "global_association",
+    "region": "global",
     "name": "IWA",
     "url": "https://iwa-network.org/feed/"
   },
   {
+    "category": "global_media",
+    "region": "global",
     "name": "WaterNewsWire",
     "url": "https://waternewswire.com/feeds/main.xml"
   },
   {
+    "category": "global_media",
+    "region": "global",
     "name": "WaterNewsWire Full Text",
     "url": "https://waternewswire.com/feeds/full-text.xml"
+  },
+  {
+    "category": "search_rss",
+    "engine": "google_news",
+    "region": "domestic",
+    "name": "Google News Korea 상하수도",
+    "url": "https://news.google.com/rss/search?q=%EC%83%81%ED%95%98%EC%88%98%EB%8F%84+OR+%EC%88%98%EC%B2%98%EB%A6%AC+OR+%ED%95%98%EC%88%98%EC%B2%98%EB%A6%AC+OR+%ED%8F%90%EC%88%98%EC%B2%98%EB%A6%AC+-%EB%B0%B0%ED%84%B0%EB%A6%AC+-2%EC%B0%A8%EC%A0%84%EC%A7%80+-%EB%B0%98%EB%8F%84%EC%B2%B4&hl=ko&gl=KR&ceid=KR:ko"
+  },
+  {
+    "category": "search_rss",
+    "engine": "google_news",
+    "region": "domestic",
+    "name": "Google News Korea 막여과 MBR",
+    "url": "https://news.google.com/rss/search?q=%EB%A7%89%EC%97%AC%EA%B3%BC+OR+%EB%B6%84%EB%A6%AC%EB%A7%89+OR+MBR+OR+%EC%A4%91%EA%B3%B5%EC%82%AC%EB%A7%89+%EC%88%98%EC%B2%98%EB%A6%AC+-%EB%B0%B0%ED%84%B0%EB%A6%AC+-2%EC%B0%A8%EC%A0%84%EC%A7%80+-%EB%A6%AC%ED%8A%AC&hl=ko&gl=KR&ceid=KR:ko"
+  },
+  {
+    "category": "search_rss",
+    "engine": "google_news",
+    "region": "domestic",
+    "name": "Google News Korea 재이용수 PFAS",
+    "url": "https://news.google.com/rss/search?q=%EC%9E%AC%EC%9D%B4%EC%9A%A9%EC%88%98+OR+PFAS+OR+%ED%95%98%EC%88%98%EC%9E%AC%EC%9D%B4%EC%9A%A9+OR+%EC%A0%95%EC%88%98%EC%9E%A5+OR+%ED%95%98%EC%88%98%EC%B2%98%EB%A6%AC%EC%9E%A5&hl=ko&gl=KR&ceid=KR:ko"
+  },
+  {
+    "category": "search_rss",
+    "engine": "google_news",
+    "region": "global",
+    "name": "Google News Global Water",
+    "url": "https://news.google.com/rss/search?q=%22water+treatment%22+OR+wastewater+OR+%22water+reuse%22+OR+PFAS&hl=en&gl=US&ceid=US:en"
+  },
+  {
+    "category": "search_rss",
+    "engine": "google_news",
+    "region": "global",
+    "name": "Google News Global Membrane MBR",
+    "url": "https://news.google.com/rss/search?q=%22membrane+filtration%22+OR+MBR+OR+%22membrane+bioreactor%22+OR+ultrafiltration+-battery+-lithium+-semiconductor&hl=en&gl=US&ceid=US:en"
+  },
+  {
+    "category": "search_rss",
+    "engine": "google_news",
+    "region": "global",
+    "name": "Google News Japan Water Membrane",
+    "url": "https://news.google.com/rss/search?q=%E6%B0%B4%E5%87%A6%E7%90%86+OR+%E8%86%9C%E5%88%86%E9%9B%A2+OR+MBR+OR+%E4%B8%8B%E6%B0%B4%E5%87%A6%E7%90%86+OR+%E5%86%8D%E5%88%A9%E7%94%A8%E6%B0%B4+-%E9%9B%BB%E6%B1%A0+-%E5%8D%8A%E5%B0%8E%E4%BD%93&hl=ja&gl=JP&ceid=JP:ja"
+  },
+  {
+    "category": "search_rss",
+    "engine": "bing_news",
+    "region": "domestic",
+    "name": "Bing News Korea 상하수도",
+    "url": "https://www.bing.com/news/search?q=%EC%83%81%ED%95%98%EC%88%98%EB%8F%84+%EC%88%98%EC%B2%98%EB%A6%AC+%ED%95%98%EC%88%98%EC%B2%98%EB%A6%AC+%ED%8F%90%EC%88%98%EC%B2%98%EB%A6%AC+-%EB%B0%B0%ED%84%B0%EB%A6%AC+-2%EC%B0%A8%EC%A0%84%EC%A7%80&format=RSS"
+  },
+  {
+    "category": "search_rss",
+    "engine": "bing_news",
+    "region": "domestic",
+    "name": "Bing News Korea 막여과 MBR",
+    "url": "https://www.bing.com/news/search?q=%EB%A7%89%EC%97%AC%EA%B3%BC+%EB%B6%84%EB%A6%AC%EB%A7%89+MBR+%EC%A4%91%EA%B3%B5%EC%82%AC%EB%A7%89+%EC%88%98%EC%B2%98%EB%A6%AC+-%EB%B0%B0%ED%84%B0%EB%A6%AC+-%EB%B0%98%EB%8F%84%EC%B2%B4&format=RSS"
+  },
+  {
+    "category": "search_rss",
+    "engine": "bing_news",
+    "region": "global",
+    "name": "Bing News Global MBR",
+    "url": "https://www.bing.com/news/search?q=water+treatment+wastewater+MBR+membrane+bioreactor+PFAS+-battery+-lithium&format=RSS"
+  },
+  {
+    "category": "search_rss",
+    "engine": "bing_news",
+    "region": "global",
+    "name": "Bing News Global Membrane Reuse",
+    "url": "https://www.bing.com/news/search?q=membrane+filtration+water+reuse+wastewater+treatment+desalination+-battery+-semiconductor&format=RSS"
   }
 ]
