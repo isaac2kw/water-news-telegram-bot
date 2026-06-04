@@ -326,32 +326,83 @@ DOMESTIC_SOURCE_HINTS = [
 ]
 
 SOURCE_CATALOG = [
+    # 국내 전문매체 / 산업지
     {"group": "국내 전문매체", "name": "워터저널", "url": "https://www.waterjournal.co.kr/", "status": "웹/기사 소스"},
     {"group": "국내 전문매체", "name": "산업일보", "url": "https://www.industrynews.co.kr/", "status": "웹/기사 소스"},
     {"group": "국내 전문매체", "name": "에너지데일리 환경·수처리", "url": "https://www.energydaily.co.kr/news/articleList.html?sc_section_code=S1N6&view_type=sm", "status": "웹/기사 소스"},
+    {"group": "국내 전문매체", "name": "투데이에너지", "url": "https://www.todayenergy.kr/", "status": "웹/기사 소스"},
+    {"group": "국내 전문매체", "name": "환경일보", "url": "https://www.hkbs.co.kr/", "status": "웹/기사 소스"},
+    {"group": "국내 전문매체", "name": "환경미디어", "url": "https://www.ecomedia.co.kr/", "status": "웹/기사 소스"},
+
+    # 국내 학회·협회
     {"group": "국내 학회·협회", "name": "한국막학회", "url": "https://www.membrane.or.kr/", "status": "학회/행사 소스"},
     {"group": "국내 학회·협회", "name": "한국상하수도협회", "url": "https://www.kwwa.or.kr/kr/main.do", "status": "협회/정책 소스"},
     {"group": "국내 학회·협회", "name": "한국물환경학회", "url": "https://www.kswe.or.kr/", "status": "학회 소스"},
     {"group": "국내 학회·협회", "name": "대한환경공학회", "url": "https://www.kosenv.or.kr/", "status": "학회 소스"},
     {"group": "국내 학회·협회", "name": "대한상하수도학회", "url": "https://www.ksww.or.kr/", "status": "학회 소스"},
+
+    # 국내 정부·공공
     {"group": "국내 정부·공공", "name": "환경부", "url": "https://www.me.go.kr", "status": "정책 소스"},
     {"group": "국내 정부·공공", "name": "한국환경공단", "url": "https://www.keco.or.kr", "status": "공공 소스"},
     {"group": "국내 정부·공공", "name": "K-water", "url": "https://www.kwater.or.kr", "status": "공공 소스"},
     {"group": "국내 정부·공공", "name": "국가상수도정보시스템 WATIS", "url": "https://www.watis.or.kr/web/user/main.do", "status": "공공 소스"},
+    {"group": "국내 정부·공공", "name": "물산업플랫폼", "url": "https://www.water.or.kr/", "status": "공공 소스"},
     {"group": "국내 전시회", "name": "Water Korea", "url": "https://waterkorea.kr/", "status": "전시회 소스"},
+
+    # 해외 전문매체 / 기관
     {"group": "해외 전문매체", "name": "WaterWorld", "url": "https://www.waterworld.com/rss.xml", "status": "RSS 활성"},
     {"group": "해외 전문매체", "name": "Water Online", "url": "https://www.wateronline.com/rss", "status": "RSS 활성"},
     {"group": "해외 전문매체", "name": "Smart Water Magazine", "url": "https://smartwatermagazine.com/rss.xml", "status": "RSS 활성"},
     {"group": "해외 전문매체", "name": "IWA", "url": "https://iwa-network.org/feed/", "status": "RSS 활성"},
     {"group": "해외 전문매체", "name": "WaterNewsWire", "url": "https://waternewswire.com/feeds/main.xml", "status": "RSS 활성"},
+    {"group": "해외 전문매체", "name": "WaterNewsWire Full Text", "url": "https://waternewswire.com/feeds/full-text.xml", "status": "RSS 활성"},
+    {"group": "해외 전문매체", "name": "Water Technology", "url": "https://www.water-technology.net/", "status": "웹/기사 소스"},
     {"group": "해외 전문매체", "name": "Global Water Intelligence", "url": "https://www.globalwaterintel.com/", "status": "웹/유료기사 중심"},
+    {"group": "해외 학회·협회", "name": "Water Environment Federation", "url": "https://www.wef.org/", "status": "협회/행사 소스"},
+    {"group": "해외 학회·협회", "name": "American Water Works Association", "url": "https://www.awwa.org/", "status": "협회/행사 소스"},
     {"group": "해외 학회·협회", "name": "International Desalination Association", "url": "https://idadesal.org", "status": "학회/행사 소스"},
     {"group": "해외 학회·협회", "name": "European Membrane Society", "url": "https://www.emsoc.eu", "status": "학회 소스"},
-    {"group": "기업 뉴스룸", "name": "Veolia", "url": "https://www.veolia.com", "status": "기업 소스"},
-    {"group": "기업 뉴스룸", "name": "SUEZ", "url": "https://www.suez.com", "status": "기업 소스"},
-    {"group": "기업 뉴스룸", "name": "Toray Water Solutions", "url": "https://www.toraywater.com", "status": "기업 소스"},
-    {"group": "기업 뉴스룸", "name": "DuPont Water Solutions", "url": "https://www.dupont.com/water.html", "status": "기업 소스"},
-    {"group": "기업 뉴스룸", "name": "Mitsubishi Heavy Industries", "url": "https://www.mhi.com/news", "status": "기업 소스"},
+
+    # 글로벌 수처리·분리막 핵심 기업
+    {"group": "기업 뉴스룸 - 글로벌 핵심", "name": "Veolia Water Technologies", "url": "https://www.veoliawatertechnologies.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 핵심", "name": "SUEZ", "url": "https://www.suez.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 핵심", "name": "Toray Industries", "url": "https://www.toray.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 핵심", "name": "Toray Water Solutions", "url": "https://www.toraywater.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 핵심", "name": "DuPont Water Solutions", "url": "https://www.dupont.com/water.html", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 핵심", "name": "Hydranautics", "url": "https://membranes.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 핵심", "name": "Nitto", "url": "https://www.nitto.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 핵심", "name": "Kovalus Separation Solutions", "url": "https://www.kovalus.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 핵심", "name": "Kubota", "url": "https://www.kubota.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 핵심", "name": "Mitsubishi Chemical Aqua Solutions", "url": "https://www.mcas.co.jp", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 핵심", "name": "Mitsubishi Heavy Industries", "url": "https://www.mhi.com/news", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 핵심", "name": "Asahi Kasei Microza", "url": "https://www.asahi-kasei.com/microza/", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 핵심", "name": "LG Chem Water Solutions", "url": "https://www.lgwatersolutions.com", "status": "기업 소스"},
+
+    # 글로벌 멤브레인/수처리 유관 기업
+    {"group": "기업 뉴스룸 - 글로벌 유관", "name": "Pentair X-Flow", "url": "https://www.pentair.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 유관", "name": "Pall Water", "url": "https://www.pall.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 유관", "name": "NX Filtration", "url": "https://www.nxfiltration.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 유관", "name": "Synder Filtration", "url": "https://synderfiltration.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 유관", "name": "Applied Membranes", "url": "https://www.appliedmembranes.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 유관", "name": "Axeon Water Technologies", "url": "https://www.axeonwater.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 유관", "name": "Alfa Laval", "url": "https://www.alfalaval.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 유관", "name": "Xylem", "url": "https://www.xylem.com", "status": "기업 소스"},
+
+    # 중국계 수처리·막 기업
+    {"group": "기업 뉴스룸 - 중국", "name": "Litree", "url": "https://www.litree.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 중국", "name": "OriginWater", "url": "https://www.originwater.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 중국", "name": "Vontron", "url": "https://www.vontron.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 중국", "name": "Scinor", "url": "https://www.scinor.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 중국", "name": "Memstar", "url": "https://www.memstar.com", "status": "기업 소스"},
+
+    # 국내 경쟁사·유관 기업
+    {"group": "기업 뉴스룸 - 국내", "name": "Econity", "url": "https://www.econity.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 국내", "name": "Kolon Industries", "url": "https://www.kolonindustries.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 국내", "name": "BKT", "url": "https://www.bkt21.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 국내", "name": "GS E&C", "url": "https://www.gsenc.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 국내", "name": "Doosan Enerbility", "url": "https://www.doosanenerbility.com", "status": "기업 소스"},
+
+    # 검색엔진
     {"group": "검색엔진", "name": "Google News RSS", "url": "https://news.google.com/rss", "status": "RSS 활성"},
     {"group": "검색엔진", "name": "Bing News RSS", "url": "https://www.bing.com/news/search?format=RSS", "status": "RSS 활성"},
     {"group": "검색엔진", "name": "Naver News", "url": "https://search.naver.com/search.naver?where=news", "status": "검색 링크 표시"},
@@ -361,14 +412,53 @@ SOURCE_CATALOG = [
 ]
 
 SEARCH_QUERY_CONFIG = [
-    {"name": "Google News Korea 상하수도", "engine": "google", "region": "domestic", "query": "상하수도 OR 수처리 OR 하수처리 OR 폐수처리 -배터리 -2차전지 -반도체"},
-    {"name": "Google News Korea 막여과 MBR", "engine": "google", "region": "domestic", "query": "막여과 OR 분리막 OR MBR OR 중공사막 수처리 -배터리 -2차전지 -리튬"},
+    # 국내 일반 동향
+    {"name": "Google News Korea 상하수도", "engine": "google", "region": "domestic", "query": "상하수도 OR 수처리 OR 하수처리 OR 폐수처리 -배터리 -2차전지 -반도체 -전기차"},
+    {"name": "Google News Korea 막여과 MBR", "engine": "google", "region": "domestic", "query": "막여과 OR 분리막 OR MBR OR 중공사막 수처리 -배터리 -2차전지 -리튬 -반도체"},
     {"name": "Google News Korea 재이용수 PFAS", "engine": "google", "region": "domestic", "query": "재이용수 OR PFAS OR 하수재이용 OR 정수장 OR 하수처리장"},
-    {"name": "Google News Global Water", "engine": "google", "region": "global", "query": '"water treatment" OR wastewater OR "water reuse" OR PFAS'},
-    {"name": "Google News Global Membrane MBR", "engine": "google", "region": "global", "query": '"membrane filtration" OR MBR OR "membrane bioreactor" OR ultrafiltration -battery -lithium -semiconductor'},
-    {"name": "Bing News Korea 상하수도", "engine": "bing", "region": "domestic", "query": "상하수도 수처리 하수처리 폐수처리 -배터리 -2차전지"},
+    {"name": "Google News Korea 학회 전시회", "engine": "google", "region": "domestic", "query": "한국막학회 OR 워터코리아 OR 상하수도협회 OR 물환경학회 OR 대한환경공학회"},
+
+    # 국내 사이트 지정 검색
+    {"name": "Google Site WaterJournal", "engine": "google", "region": "domestic", "query": "site:waterjournal.co.kr 수처리 OR 하수처리 OR 막여과 OR MBR"},
+    {"name": "Google Site Membrane Korea", "engine": "google", "region": "domestic", "query": "site:membrane.or.kr 분리막 OR 막여과 OR MBR OR 학술대회"},
+    {"name": "Google Site KWWA", "engine": "google", "region": "domestic", "query": "site:kwwa.or.kr 상하수도 OR 물산업 OR 하수처리 OR 정수"},
+    {"name": "Google Site WaterKorea", "engine": "google", "region": "domestic", "query": "site:waterkorea.kr 워터코리아 OR 수처리 OR 상하수도"},
+    {"name": "Google Site WATIS", "engine": "google", "region": "domestic", "query": "site:watis.or.kr 상수도 OR 정수장 OR 수처리"},
+    {"name": "Google Site K-water", "engine": "google", "region": "domestic", "query": "site:kwater.or.kr 수처리 OR 물재이용 OR 정수장 OR 하수"},
+
+    # 글로벌 일반 동향
+    {"name": "Google News Global Water", "engine": "google", "region": "global", "query": '"water treatment" OR wastewater OR "water reuse" OR PFAS -battery -lithium -EV'},
+    {"name": "Google News Global Membrane MBR", "engine": "google", "region": "global", "query": '"membrane filtration" OR MBR OR "membrane bioreactor" OR ultrafiltration -battery -lithium -semiconductor -dialysis'},
+    {"name": "Google News Global PFAS", "engine": "google", "region": "global", "query": 'PFAS "water treatment" OR PFAS "drinking water" OR PFAS wastewater'},
+    {"name": "Google News Global Water Reuse", "engine": "google", "region": "global", "query": '"water reuse" OR "reclaimed water" OR "wastewater reuse"'},
+    {"name": "Google News Global Desalination", "engine": "google", "region": "global", "query": 'desalination OR reverse osmosis OR "RO membrane" -battery -hydrogen'},
+
+    # Bing 보조 검색
+    {"name": "Bing News Korea 상하수도", "engine": "bing", "region": "domestic", "query": "상하수도 수처리 하수처리 폐수처리 -배터리 -2차전지 -전기차"},
     {"name": "Bing News Korea 막여과 MBR", "engine": "bing", "region": "domestic", "query": "막여과 분리막 MBR 중공사막 수처리 -배터리 -반도체"},
-    {"name": "Bing News Global MBR", "engine": "bing", "region": "global", "query": "water treatment wastewater MBR membrane bioreactor PFAS -battery -lithium"},
+    {"name": "Bing News Global MBR", "engine": "bing", "region": "global", "query": "water treatment wastewater MBR membrane bioreactor PFAS -battery -lithium -semiconductor"},
+    {"name": "Bing News Global UF MF", "engine": "bing", "region": "global", "query": "ultrafiltration microfiltration membrane wastewater water reuse -battery -dialysis"},
+
+    # 기업 지정 검색 - 글로벌 핵심
+    {"name": "Google Company Toray", "engine": "google", "region": "global", "query": "Toray membrane water treatment OR Toray MBR OR Toray ultrafiltration"},
+    {"name": "Google Company DuPont Water", "engine": "google", "region": "global", "query": "DuPont Water Solutions membrane OR ultrafiltration OR PFAS"},
+    {"name": "Google Company Hydranautics", "engine": "google", "region": "global", "query": "Hydranautics membrane water treatment OR reverse osmosis"},
+    {"name": "Google Company LG Chem Water", "engine": "google", "region": "global", "query": "LG Chem Water Solutions membrane OR reverse osmosis"},
+    {"name": "Google Company Kubota MBR", "engine": "google", "region": "global", "query": "Kubota MBR wastewater membrane"},
+    {"name": "Google Company Mitsubishi membrane", "engine": "google", "region": "global", "query": "Mitsubishi membrane water treatment OR MBR"},
+    {"name": "Google Company Asahi Kasei Microza", "engine": "google", "region": "global", "query": "Asahi Kasei Microza membrane water treatment"},
+    {"name": "Google Company Veolia", "engine": "google", "region": "global", "query": "Veolia water technologies membrane OR MBR OR wastewater"},
+    {"name": "Google Company SUEZ", "engine": "google", "region": "global", "query": "SUEZ water technologies membrane OR MBR OR wastewater"},
+    {"name": "Google Company Kovalus", "engine": "google", "region": "global", "query": "Kovalus membrane water treatment OR wastewater"},
+    {"name": "Google Company NX Filtration", "engine": "google", "region": "global", "query": "NX Filtration membrane water treatment OR hollow fiber"},
+
+    # 기업 지정 검색 - 국내/중국
+    {"name": "Google Company Econity", "engine": "google", "region": "domestic", "query": "Econity OR 에코니티 MBR OR 분리막 OR 수처리"},
+    {"name": "Google Company Kolon", "engine": "google", "region": "domestic", "query": "Kolon OR 코오롱 분리막 수처리 OR 막여과"},
+    {"name": "Google Company Litree", "engine": "google", "region": "global", "query": "Litree membrane water treatment ultrafiltration"},
+    {"name": "Google Company OriginWater", "engine": "google", "region": "global", "query": "OriginWater membrane MBR wastewater"},
+    {"name": "Google Company Scinor", "engine": "google", "region": "global", "query": "Scinor membrane water treatment ultrafiltration"},
+    {"name": "Google Company Vontron", "engine": "google", "region": "global", "query": "Vontron membrane water treatment reverse osmosis"},
 ]
 
 EVENT_CATALOG = [
@@ -400,18 +490,36 @@ COMPANY_ENGLISH_MAP = {
     "수에즈": "SUEZ",
     "자일럼": "Xylem",
     "듀폰": "DuPont",
+    "하이드라나우틱스": "Hydranautics",
+    "니토": "Nitto",
+    "코발루스": "Kovalus",
+    "코크": "Koch",
     "미쓰비시": "Mitsubishi",
     "미쓰비시중공업": "Mitsubishi Heavy Industries",
+    "미쓰비시케미칼": "Mitsubishi Chemical",
     "쿠보타": "Kubota",
     "에코니티": "Econity",
     "코오롱": "Kolon",
+    "코오롱인더스트리": "Kolon Industries",
     "롯데케미칼": "Lotte Chemical",
     "웅진케미칼": "Woongjin Chemical",
     "아사히카세이": "Asahi Kasei",
     "아사히 카세이": "Asahi Kasei",
+    "마이크로자": "Microza",
     "펜테어": "Pentair",
-    "코발루스": "Kovalus",
+    "팔": "Pall",
+    "싸인더": "Synder Filtration",
+    "신더": "Synder Filtration",
+    "엔엑스필트레이션": "NX Filtration",
     "에보닉": "Evonik",
+    "리트리": "Litree",
+    "오리진워터": "OriginWater",
+    "본트론": "Vontron",
+    "싸이노어": "Scinor",
+    "시노어": "Scinor",
+    "멤스타": "Memstar",
+    "두산에너빌리티": "Doosan Enerbility",
+    "지에스건설": "GS E&C",
 }
 
 SPEC_VALUE_PATTERNS = [
