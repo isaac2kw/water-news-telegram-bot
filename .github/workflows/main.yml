@@ -18,11 +18,10 @@ on:
       send_telegram:
         description: "Send Telegram message"
         required: false
-        default: "false"
+        default: "true"
 
   schedule:
-    # GitHub Actions cron uses UTC.
-    # 22:00 UTC = 07:00 KST.
+    # 07:00 KST = 22:00 UTC (previous day)
     - cron: "0 22 * * *"
 
 permissions:
@@ -31,15 +30,12 @@ permissions:
   id-token: write
 
 concurrency:
-  group: daily-water-news-${{ github.ref }}
+  group: "pages"
   cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    env:
-      TZ: Asia/Seoul
 
     defaults:
       run:
@@ -59,48 +55,23 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Prepare generated file paths
-        run: |
-          mkdir -p ../docs/reports
-          mkdir -p ../docs/weekly
-          mkdir -p ../docs/monthly
-
-          if [ ! -f news_history.json ]; then
-            echo "[]" > news_history.json
-          fi
-
-          if [ ! -f sent_links.json ]; then
-            echo "[]" > sent_links.json
-          fi
-
-      - name: Show trigger information
-        run: |
-          echo "GitHub event name: ${{ github.event_name }}"
-          echo "KST now:"
-          date
-          echo "Backfill mode: ${{ github.event_name == 'workflow_dispatch' && inputs.backfill_mode || 'false' }}"
-          echo "Backfill start date: ${{ github.event_name == 'workflow_dispatch' && inputs.backfill_start_date || '' }}"
-          echo "Backfill end date: ${{ github.event_name == 'workflow_dispatch' && inputs.backfill_end_date || '' }}"
-          echo "Send telegram: ${{ github.event_name == 'schedule' && 'true' || inputs.send_telegram }}"
-
       - name: Run news bot
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
           OPENAI_MODEL: "gpt-4o-mini"
-          MAX_ITEMS: "30"
-          MIN_SCORE: "8"
 
-          BACKFILL_MODE: ${{ github.event_name == 'workflow_dispatch' && inputs.backfill_mode || 'false' }}
-          BACKFILL_START_DATE: ${{ github.event_name == 'workflow_dispatch' && inputs.backfill_start_date || '' }}
-          BACKFILL_END_DATE: ${{ github.event_name == 'workflow_dispatch' && inputs.backfill_end_date || '' }}
+          MAX_ITEMS: "50"
+          MIN_SCORE: "10"
 
-          # Scheduled run always sends Telegram.
-          # Manual run follows the workflow_dispatch input.
-          SEND_TELEGRAM: ${{ github.event_name == 'schedule' && 'true' || inputs.send_telegram }}
+          BACKFILL_MODE: ${{ github.event.inputs.backfill_mode || 'false' }}
+          BACKFILL_START_DATE: ${{ github.event.inputs.backfill_start_date || '' }}
+          BACKFILL_END_DATE: ${{ github.event.inputs.backfill_end_date || '' }}
 
-          TZ: Asia/Seoul
+          SEND_TELEGRAM: ${{ github.event.inputs.send_telegram || 'true' }}
+
         run: python main.py
 
       - name: Commit generated files
@@ -108,49 +79,21 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
 
-          git status
+          git add sent_links.json news_history.json ../docs
 
-          git add -A ../docs
+          git commit -m "Update water news reports" || echo "No changes to commit"
 
-          if [ -f sent_links.json ]; then
-            git add sent_links.json
-          fi
-
-          if [ -f news_history.json ]; then
-            git add news_history.json
-          fi
-
-          if git diff --cached --quiet; then
-            echo "No changes to commit"
-            exit 0
-          fi
-
-          git commit -m "Update water news reports"
-
-          for i in 1 2 3; do
-            echo "Push attempt $i"
-
-            git pull --rebase --autostash origin main
-
-            if git push origin HEAD:main; then
-              echo "Push succeeded"
-              exit 0
-            fi
-
-            echo "Push failed. Retrying after 10 seconds..."
-            sleep 10
-          done
-
-          echo "Push failed after 3 attempts"
-          exit 1
+          git pull --rebase --autostash origin main
+          git push origin main
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./docs
+          path: docs
 
   deploy:
     needs: build
+
     runs-on: ubuntu-latest
 
     environment:
