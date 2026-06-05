@@ -5,10 +5,12 @@ import html
 import time
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import urlparse, quote_plus
+from difflib import SequenceMatcher
 
 import feedparser
 import requests
+import markdown
 
 
 KST = timezone(timedelta(hours=9))
@@ -25,13 +27,6 @@ BACKFILL_MODE = os.getenv("BACKFILL_MODE", "false").lower() == "true"
 BACKFILL_START_DATE = os.getenv("BACKFILL_START_DATE", "")
 BACKFILL_END_DATE = os.getenv("BACKFILL_END_DATE", "")
 SEND_TELEGRAM = os.getenv("SEND_TELEGRAM", "true").lower() == "true"
-
-# 오래된 기사 제거 기준
-# - news_history.json에 2025년 이전 데이터가 남아 있으면 홈/주간/월간 목록에 2011년, 2014년 같은 오래된 날짜가 노출될 수 있습니다.
-# - 기본값은 2025-01-01 이후 데이터만 유지합니다.
-# - 필요하면 GitHub Actions env에서 HISTORY_START_DATE 값을 바꾸면 됩니다. 예: 2026-01-01
-HISTORY_START_DATE = os.getenv("HISTORY_START_DATE", "2025-01-01")
-
 
 BASE_DIR = Path(__file__).resolve().parent
 REPO_ROOT = BASE_DIR.parent
@@ -195,6 +190,346 @@ TECH_EMOJIS = {
 }
 
 
+# v2 확장 키워드: MBR, 수처리용 분리막, 국내 동향, 학회·전시회 중심.
+KEYWORDS.update({
+    "submerged membrane": 10,
+    "submerged mbr": 10,
+    "immersed membrane": 9,
+    "immersed mbr": 10,
+    "aerobic mbr": 8,
+    "anaerobic mbr": 8,
+    "anMBR": 8,
+    "flat sheet membrane": 7,
+    "ceramic membrane": 8,
+    "polymeric membrane": 7,
+    "membrane fouling": 10,
+    "biofouling": 8,
+    "fouling control": 8,
+    "air scouring": 8,
+    "backwash": 7,
+    "relaxation": 6,
+    "clean-in-place": 7,
+    "cip": 7,
+    "tss": 4,
+    "mlss": 6,
+    "srt": 5,
+    "hrt": 5,
+    "tmp": 7,
+    "flux": 6,
+    "permeability": 6,
+    "permeate": 5,
+    "filtrate": 5,
+    "sidestream mbr": 8,
+    "membrane module": 8,
+    "membrane cassette": 8,
+    "hollow-fiber membrane": 9,
+    "water korea": 7,
+    "awwa": 6,
+    "wef": 6,
+    "weftec": 8,
+    "iwa mtc": 8,
+    "aquatech": 7,
+    "water exhibition": 6,
+    "conference": 4,
+    "symposium": 4,
+    "막여과": 10,
+    "막분리": 9,
+    "막공정": 9,
+    "막오염": 10,
+    "분리막 오염": 10,
+    "파울링": 10,
+    "막세정": 9,
+    "공기세정": 8,
+    "역세": 7,
+    "역세척": 8,
+    "투과수": 6,
+    "여과수": 6,
+    "투과유속": 7,
+    "막면적": 6,
+    "막모듈": 9,
+    "막 카세트": 8,
+    "침지식": 9,
+    "침지형": 9,
+    "평막": 7,
+    "세라믹막": 8,
+    "고분자막": 7,
+    "중공사": 10,
+    "중공사막": 10,
+    "분리막 생물반응조": 10,
+    "막분리활성슬러지": 10,
+    "활성슬러지": 7,
+    "질산화": 6,
+    "탈질": 6,
+    "생물학적 처리": 6,
+    "총인": 5,
+    "총질소": 5,
+    "방류수질": 7,
+    "하수재이용": 9,
+    "물재이용": 9,
+    "물 재이용": 9,
+    "한국막학회": 8,
+    "상하수도협회": 7,
+    "물환경학회": 7,
+    "워터코리아": 7,
+})
+
+NEGATIVE_PATTERNS.extend([
+    r"battery separator",
+    r"separator film",
+    r"lithium",
+    r"lithium[- ]?ion",
+    r"solid[- ]?state battery",
+    r"\bev\b",
+    r"electric vehicle",
+    r"\bess\b",
+    r"electrolyte",
+    r"semiconductor",
+    r"\boled\b",
+    r"display",
+    r"dialysis",
+    r"hemodialysis",
+    r"medical membrane",
+    r"blood purification",
+    r"automotive stock",
+    r"defense stock",
+    r"renewable energy target",
+    r"grid energy storage",
+    r"healthcare network",
+    r"community healthcare",
+    r"cleantech automotive",
+    r"배터리",
+    r"2차전지",
+    r"이차전지",
+    r"전고체",
+    r"전해질",
+    r"리튬",
+    r"전기차",
+    r"전기 자동차",
+    r"에너지저장",
+    r"에너지 저장",
+    r"반도체",
+    r"디스플레이",
+    r"혈액투석",
+    r"인공장기",
+    r"의료용",
+    r"헬스케어",
+    r"건강 네트워크",
+    r"재생에너지 목표",
+    r"태양광 입찰",
+])
+
+DOMESTIC_SOURCE_HINTS = [
+    "Naver News Korea", "Google News Korea", "Bing News Korea",
+    "워터저널", "Water Journal", "한국막학회", "Korean Membrane Society",
+    "한국상하수도협회", "KWWA", "WATIS", "Water Korea",
+    "환경부", "K-water", "한국환경공단", "산업일보", "에너지데일리",
+]
+
+SOURCE_CATALOG = [
+    # 국내 전문매체 / 산업지
+    {"group": "국내 전문매체", "name": "워터저널", "url": "https://www.waterjournal.co.kr/", "status": "웹/기사 소스"},
+    {"group": "국내 전문매체", "name": "산업일보", "url": "https://www.industrynews.co.kr/", "status": "웹/기사 소스"},
+    {"group": "국내 전문매체", "name": "에너지데일리 환경·수처리", "url": "https://www.energydaily.co.kr/news/articleList.html?sc_section_code=S1N6&view_type=sm", "status": "웹/기사 소스"},
+    {"group": "국내 전문매체", "name": "투데이에너지", "url": "https://www.todayenergy.kr/", "status": "웹/기사 소스"},
+    {"group": "국내 전문매체", "name": "환경일보", "url": "https://www.hkbs.co.kr/", "status": "웹/기사 소스"},
+    {"group": "국내 전문매체", "name": "환경미디어", "url": "https://www.ecomedia.co.kr/", "status": "웹/기사 소스"},
+
+    # 국내 학회·협회
+    {"group": "국내 학회·협회", "name": "한국막학회", "url": "https://www.membrane.or.kr/", "status": "학회/행사 소스"},
+    {"group": "국내 학회·협회", "name": "한국상하수도협회", "url": "https://www.kwwa.or.kr/kr/main.do", "status": "협회/정책 소스"},
+    {"group": "국내 학회·협회", "name": "한국물환경학회", "url": "https://www.kswe.or.kr/", "status": "학회 소스"},
+    {"group": "국내 학회·협회", "name": "대한환경공학회", "url": "https://www.kosenv.or.kr/", "status": "학회 소스"},
+    {"group": "국내 학회·협회", "name": "대한상하수도학회", "url": "https://www.ksww.or.kr/", "status": "학회 소스"},
+
+    # 국내 정부·공공
+    {"group": "국내 정부·공공", "name": "환경부", "url": "https://www.me.go.kr", "status": "정책 소스"},
+    {"group": "국내 정부·공공", "name": "한국환경공단", "url": "https://www.keco.or.kr", "status": "공공 소스"},
+    {"group": "국내 정부·공공", "name": "K-water", "url": "https://www.kwater.or.kr", "status": "공공 소스"},
+    {"group": "국내 정부·공공", "name": "국가상수도정보시스템 WATIS", "url": "https://www.watis.or.kr/web/user/main.do", "status": "공공 소스"},
+    {"group": "국내 정부·공공", "name": "물산업플랫폼", "url": "https://www.water.or.kr/", "status": "공공 소스"},
+    {"group": "국내 전시회", "name": "Water Korea", "url": "https://waterkorea.kr/", "status": "전시회 소스"},
+
+    # 해외 전문매체 / 기관
+    {"group": "해외 전문매체", "name": "WaterWorld", "url": "https://www.waterworld.com/rss.xml", "status": "RSS 활성"},
+    {"group": "해외 전문매체", "name": "Water Online", "url": "https://www.wateronline.com/rss", "status": "RSS 활성"},
+    {"group": "해외 전문매체", "name": "Smart Water Magazine", "url": "https://smartwatermagazine.com/rss.xml", "status": "RSS 활성"},
+    {"group": "해외 전문매체", "name": "IWA", "url": "https://iwa-network.org/feed/", "status": "RSS 활성"},
+    {"group": "해외 전문매체", "name": "WaterNewsWire", "url": "https://waternewswire.com/feeds/main.xml", "status": "RSS 활성"},
+    {"group": "해외 전문매체", "name": "WaterNewsWire Full Text", "url": "https://waternewswire.com/feeds/full-text.xml", "status": "RSS 활성"},
+    {"group": "해외 전문매체", "name": "Water Technology", "url": "https://www.water-technology.net/", "status": "웹/기사 소스"},
+    {"group": "해외 전문매체", "name": "Global Water Intelligence", "url": "https://www.globalwaterintel.com/", "status": "웹/유료기사 중심"},
+    {"group": "해외 학회·협회", "name": "Water Environment Federation", "url": "https://www.wef.org/", "status": "협회/행사 소스"},
+    {"group": "해외 학회·협회", "name": "American Water Works Association", "url": "https://www.awwa.org/", "status": "협회/행사 소스"},
+    {"group": "해외 학회·협회", "name": "International Desalination Association", "url": "https://idadesal.org", "status": "학회/행사 소스"},
+    {"group": "해외 학회·협회", "name": "European Membrane Society", "url": "https://www.emsoc.eu", "status": "학회 소스"},
+
+    # 글로벌 수처리·분리막 핵심 기업
+    {"group": "기업 뉴스룸 - 글로벌 핵심", "name": "Veolia Water Technologies", "url": "https://www.veoliawatertechnologies.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 핵심", "name": "SUEZ", "url": "https://www.suez.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 핵심", "name": "Toray Industries", "url": "https://www.toray.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 핵심", "name": "Toray Water Solutions", "url": "https://www.toraywater.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 핵심", "name": "DuPont Water Solutions", "url": "https://www.dupont.com/water.html", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 핵심", "name": "Hydranautics", "url": "https://membranes.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 핵심", "name": "Nitto", "url": "https://www.nitto.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 핵심", "name": "Kovalus Separation Solutions", "url": "https://www.kovalus.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 핵심", "name": "Kubota", "url": "https://www.kubota.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 핵심", "name": "Mitsubishi Chemical Aqua Solutions", "url": "https://www.mcas.co.jp", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 핵심", "name": "Mitsubishi Heavy Industries", "url": "https://www.mhi.com/news", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 핵심", "name": "Asahi Kasei Microza", "url": "https://www.asahi-kasei.com/microza/", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 핵심", "name": "LG Chem Water Solutions", "url": "https://www.lgwatersolutions.com", "status": "기업 소스"},
+
+    # 글로벌 멤브레인/수처리 유관 기업
+    {"group": "기업 뉴스룸 - 글로벌 유관", "name": "Pentair X-Flow", "url": "https://www.pentair.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 유관", "name": "Pall Water", "url": "https://www.pall.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 유관", "name": "NX Filtration", "url": "https://www.nxfiltration.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 유관", "name": "Synder Filtration", "url": "https://synderfiltration.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 유관", "name": "Applied Membranes", "url": "https://www.appliedmembranes.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 유관", "name": "Axeon Water Technologies", "url": "https://www.axeonwater.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 유관", "name": "Alfa Laval", "url": "https://www.alfalaval.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 글로벌 유관", "name": "Xylem", "url": "https://www.xylem.com", "status": "기업 소스"},
+
+    # 중국계 수처리·막 기업
+    {"group": "기업 뉴스룸 - 중국", "name": "Litree", "url": "https://www.litree.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 중국", "name": "OriginWater", "url": "https://www.originwater.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 중국", "name": "Vontron", "url": "https://www.vontron.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 중국", "name": "Scinor", "url": "https://www.scinor.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 중국", "name": "Memstar", "url": "https://www.memstar.com", "status": "기업 소스"},
+
+    # 국내 경쟁사·유관 기업
+    {"group": "기업 뉴스룸 - 국내", "name": "Econity", "url": "https://www.econity.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 국내", "name": "Kolon Industries", "url": "https://www.kolonindustries.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 국내", "name": "BKT", "url": "https://www.bkt21.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 국내", "name": "GS E&C", "url": "https://www.gsenc.com", "status": "기업 소스"},
+    {"group": "기업 뉴스룸 - 국내", "name": "Doosan Enerbility", "url": "https://www.doosanenerbility.com", "status": "기업 소스"},
+
+    # 검색엔진
+    {"group": "검색엔진", "name": "Google News RSS", "url": "https://news.google.com/rss", "status": "RSS 활성"},
+    {"group": "검색엔진", "name": "Bing News RSS", "url": "https://www.bing.com/news/search?format=RSS", "status": "RSS 활성"},
+    {"group": "검색엔진", "name": "Naver News", "url": "https://search.naver.com/search.naver?where=news", "status": "검색 링크 표시"},
+    {"group": "검색엔진", "name": "Yahoo Japan News", "url": "https://news.yahoo.co.jp/", "status": "검색 링크 표시"},
+    {"group": "검색엔진", "name": "Yandex", "url": "https://yandex.com/search/", "status": "검색 링크 표시"},
+    {"group": "검색엔진", "name": "Baidu", "url": "https://www.baidu.com/", "status": "검색 링크 표시"},
+]
+
+SEARCH_QUERY_CONFIG = [
+    # 국내 일반 동향
+    {"name": "Google News Korea 상하수도", "engine": "google", "region": "domestic", "query": "상하수도 OR 수처리 OR 하수처리 OR 폐수처리 -배터리 -2차전지 -반도체 -전기차"},
+    {"name": "Google News Korea 막여과 MBR", "engine": "google", "region": "domestic", "query": "막여과 OR 분리막 OR MBR OR 중공사막 수처리 -배터리 -2차전지 -리튬 -반도체"},
+    {"name": "Google News Korea 재이용수 PFAS", "engine": "google", "region": "domestic", "query": "재이용수 OR PFAS OR 하수재이용 OR 정수장 OR 하수처리장"},
+    {"name": "Google News Korea 학회 전시회", "engine": "google", "region": "domestic", "query": "한국막학회 OR 워터코리아 OR 상하수도협회 OR 물환경학회 OR 대한환경공학회"},
+
+    # 국내 사이트 지정 검색
+    {"name": "Google Site WaterJournal", "engine": "google", "region": "domestic", "query": "site:waterjournal.co.kr 수처리 OR 하수처리 OR 막여과 OR MBR"},
+    {"name": "Google Site Membrane Korea", "engine": "google", "region": "domestic", "query": "site:membrane.or.kr 분리막 OR 막여과 OR MBR OR 학술대회"},
+    {"name": "Google Site KWWA", "engine": "google", "region": "domestic", "query": "site:kwwa.or.kr 상하수도 OR 물산업 OR 하수처리 OR 정수"},
+    {"name": "Google Site WaterKorea", "engine": "google", "region": "domestic", "query": "site:waterkorea.kr 워터코리아 OR 수처리 OR 상하수도"},
+    {"name": "Google Site WATIS", "engine": "google", "region": "domestic", "query": "site:watis.or.kr 상수도 OR 정수장 OR 수처리"},
+    {"name": "Google Site K-water", "engine": "google", "region": "domestic", "query": "site:kwater.or.kr 수처리 OR 물재이용 OR 정수장 OR 하수"},
+
+    # 글로벌 일반 동향
+    {"name": "Google News Global Water", "engine": "google", "region": "global", "query": '"water treatment" OR wastewater OR "water reuse" OR PFAS -battery -lithium -EV'},
+    {"name": "Google News Global Membrane MBR", "engine": "google", "region": "global", "query": '"membrane filtration" OR MBR OR "membrane bioreactor" OR ultrafiltration -battery -lithium -semiconductor -dialysis'},
+    {"name": "Google News Global PFAS", "engine": "google", "region": "global", "query": 'PFAS "water treatment" OR PFAS "drinking water" OR PFAS wastewater'},
+    {"name": "Google News Global Water Reuse", "engine": "google", "region": "global", "query": '"water reuse" OR "reclaimed water" OR "wastewater reuse"'},
+    {"name": "Google News Global Desalination", "engine": "google", "region": "global", "query": 'desalination OR reverse osmosis OR "RO membrane" -battery -hydrogen'},
+
+    # Bing 보조 검색
+    {"name": "Bing News Korea 상하수도", "engine": "bing", "region": "domestic", "query": "상하수도 수처리 하수처리 폐수처리 -배터리 -2차전지 -전기차"},
+    {"name": "Bing News Korea 막여과 MBR", "engine": "bing", "region": "domestic", "query": "막여과 분리막 MBR 중공사막 수처리 -배터리 -반도체"},
+    {"name": "Bing News Global MBR", "engine": "bing", "region": "global", "query": "water treatment wastewater MBR membrane bioreactor PFAS -battery -lithium -semiconductor"},
+    {"name": "Bing News Global UF MF", "engine": "bing", "region": "global", "query": "ultrafiltration microfiltration membrane wastewater water reuse -battery -dialysis"},
+
+    # 기업 지정 검색 - 글로벌 핵심
+    {"name": "Google Company Toray", "engine": "google", "region": "global", "query": "Toray membrane water treatment OR Toray MBR OR Toray ultrafiltration"},
+    {"name": "Google Company DuPont Water", "engine": "google", "region": "global", "query": "DuPont Water Solutions membrane OR ultrafiltration OR PFAS"},
+    {"name": "Google Company Hydranautics", "engine": "google", "region": "global", "query": "Hydranautics membrane water treatment OR reverse osmosis"},
+    {"name": "Google Company LG Chem Water", "engine": "google", "region": "global", "query": "LG Chem Water Solutions membrane OR reverse osmosis"},
+    {"name": "Google Company Kubota MBR", "engine": "google", "region": "global", "query": "Kubota MBR wastewater membrane"},
+    {"name": "Google Company Mitsubishi membrane", "engine": "google", "region": "global", "query": "Mitsubishi membrane water treatment OR MBR"},
+    {"name": "Google Company Asahi Kasei Microza", "engine": "google", "region": "global", "query": "Asahi Kasei Microza membrane water treatment"},
+    {"name": "Google Company Veolia", "engine": "google", "region": "global", "query": "Veolia water technologies membrane OR MBR OR wastewater"},
+    {"name": "Google Company SUEZ", "engine": "google", "region": "global", "query": "SUEZ water technologies membrane OR MBR OR wastewater"},
+    {"name": "Google Company Kovalus", "engine": "google", "region": "global", "query": "Kovalus membrane water treatment OR wastewater"},
+    {"name": "Google Company NX Filtration", "engine": "google", "region": "global", "query": "NX Filtration membrane water treatment OR hollow fiber"},
+
+    # 기업 지정 검색 - 국내/중국
+    {"name": "Google Company Econity", "engine": "google", "region": "domestic", "query": "Econity OR 에코니티 MBR OR 분리막 OR 수처리"},
+    {"name": "Google Company Kolon", "engine": "google", "region": "domestic", "query": "Kolon OR 코오롱 분리막 수처리 OR 막여과"},
+    {"name": "Google Company Litree", "engine": "google", "region": "global", "query": "Litree membrane water treatment ultrafiltration"},
+    {"name": "Google Company OriginWater", "engine": "google", "region": "global", "query": "OriginWater membrane MBR wastewater"},
+    {"name": "Google Company Scinor", "engine": "google", "region": "global", "query": "Scinor membrane water treatment ultrafiltration"},
+    {"name": "Google Company Vontron", "engine": "google", "region": "global", "query": "Vontron membrane water treatment reverse osmosis"},
+]
+
+EVENT_CATALOG = [
+    {"grade": "S", "name": "WEFTEC", "scope": "해외", "location": "미국", "date": "매년 9~10월", "scale": "대규모/메이저", "url": "https://www.weftec.org/", "note": "북미 최대급 물환경·하수처리 전시회"},
+    {"grade": "S", "name": "Aquatech Amsterdam", "scope": "해외", "location": "네덜란드 암스테르담", "date": "격년 개최", "scale": "대규모/메이저", "url": "https://www.aquatechtrade.com/", "note": "글로벌 수처리 전시회"},
+    {"grade": "S", "name": "Singapore International Water Week", "scope": "해외", "location": "싱가포르", "date": "격년 개최", "scale": "대규모/메이저", "url": "https://www.siww.com.sg/", "note": "아시아권 메이저 물산업 행사"},
+    {"grade": "A", "name": "IWA World Water Congress & Exhibition", "scope": "해외", "location": "국가별 순환", "date": "격년 개최", "scale": "대규모/메이저", "url": "https://iwa-network.org/events/", "note": "IWA 대표 국제 학회·전시"},
+    {"grade": "A", "name": "IWA Membrane Technology Conference", "scope": "해외", "location": "국가별 순환", "date": "비정기/학회 일정 확인 필요", "scale": "전문 메이저", "url": "https://iwa-network.org/events/", "note": "수처리용 멤브레인 전문 학회"},
+    {"grade": "A", "name": "Water Korea", "scope": "국내", "location": "한국", "date": "매년", "scale": "국내 메이저", "url": "https://waterkorea.kr/", "note": "국내 상하수도 대표 전시회"},
+    {"grade": "B", "name": "한국막학회 춘계학술대회", "scope": "국내", "location": "한국", "date": "매년 상반기", "scale": "전문 학회", "url": "https://www.membrane.or.kr/", "note": "분리막 전문 학술행사"},
+    {"grade": "B", "name": "한국막학회 추계학술대회", "scope": "국내", "location": "한국", "date": "매년 하반기", "scale": "전문 학회", "url": "https://www.membrane.or.kr/", "note": "분리막 전문 학술행사"},
+    {"grade": "B", "name": "대한상하수도학회 학술발표회", "scope": "국내", "location": "한국", "date": "학회 일정 확인 필요", "scale": "전문 학회", "url": "https://www.ksww.or.kr/", "note": "상하수도 분야 학술행사"},
+    {"grade": "B", "name": "한국물환경학회 학술대회", "scope": "국내", "location": "한국", "date": "학회 일정 확인 필요", "scale": "전문 학회", "url": "https://www.kswe.or.kr/", "note": "물환경·수질 분야 학술행사"},
+]
+
+INCLUDE_KEYWORDS_PUBLIC = sorted(KEYWORDS.keys())
+EXCLUDE_PATTERNS_PUBLIC = NEGATIVE_PATTERNS
+
+
+TOP_NEWS_LIMIT = 10
+DAILY_REPORT_LOOKBACK_DAYS = 1
+DASHBOARD_YEAR_WINDOW = 2
+
+COMPANY_ENGLISH_MAP = {
+    "토레이": "Toray",
+    "도레이": "Toray",
+    "알파라발": "Alfa Laval",
+    "베올리아": "Veolia",
+    "수에즈": "SUEZ",
+    "자일럼": "Xylem",
+    "듀폰": "DuPont",
+    "하이드라나우틱스": "Hydranautics",
+    "니토": "Nitto",
+    "코발루스": "Kovalus",
+    "코크": "Koch",
+    "미쓰비시": "Mitsubishi",
+    "미쓰비시중공업": "Mitsubishi Heavy Industries",
+    "미쓰비시케미칼": "Mitsubishi Chemical",
+    "쿠보타": "Kubota",
+    "에코니티": "Econity",
+    "코오롱": "Kolon",
+    "코오롱인더스트리": "Kolon Industries",
+    "롯데케미칼": "Lotte Chemical",
+    "웅진케미칼": "Woongjin Chemical",
+    "아사히카세이": "Asahi Kasei",
+    "아사히 카세이": "Asahi Kasei",
+    "마이크로자": "Microza",
+    "펜테어": "Pentair",
+    "팔": "Pall",
+    "싸인더": "Synder Filtration",
+    "신더": "Synder Filtration",
+    "엔엑스필트레이션": "NX Filtration",
+    "에보닉": "Evonik",
+    "리트리": "Litree",
+    "오리진워터": "OriginWater",
+    "본트론": "Vontron",
+    "싸이노어": "Scinor",
+    "시노어": "Scinor",
+    "멤스타": "Memstar",
+    "두산에너빌리티": "Doosan Enerbility",
+    "지에스건설": "GS E&C",
+}
+
+SPEC_VALUE_PATTERNS = [
+    r"\d{1,3}(?:,\d{3})*(?:\.\d+)?\s*(?:m3/day|m³/day|㎥/일|m3\/d|MLD|MGD|톤/일|ton/day|tons/day)",
+    r"\d{1,3}(?:,\d{3})*(?:\.\d+)?\s*(?:억원|백만원|million|billion|USD|KRW|달러)",
+    r"\d{1,3}(?:,\d{3})*(?:\.\d+)?\s*(?:LMH|m/d|bar|kPa|mg/L|ppm|%)",
+    r"\d{1,3}(?:,\d{3})*(?:\.\d+)?\s*(?:명|visitors|attendees|exhibitors|개사|booths)",
+]
+
+
 def load_json(path, default):
     if not path.exists():
         return default
@@ -281,13 +616,279 @@ def in_backfill_range(date_str):
     return True
 
 
+def google_news_rss_url(query, hl="ko", gl="KR", ceid="KR:ko"):
+    return f"https://news.google.com/rss/search?q={quote_plus(query)}&hl={hl}&gl={gl}&ceid={ceid}"
+
+
+def bing_news_rss_url(query):
+    return f"https://www.bing.com/news/search?q={quote_plus(query)}&format=RSS"
+
+
+def build_search_rss_feeds():
+    if os.getenv("ENABLE_SEARCH_RSS", "true").lower() != "true":
+        return []
+
+    feeds = []
+
+    for item in SEARCH_QUERY_CONFIG:
+        engine = item.get("engine")
+        query = item.get("query", "")
+        name = item.get("name", "Search RSS")
+        region = item.get("region", "")
+
+        if not query:
+            continue
+
+        if engine == "google":
+            if region == "global":
+                url = google_news_rss_url(query, hl="en", gl="US", ceid="US:en")
+            else:
+                url = google_news_rss_url(query, hl="ko", gl="KR", ceid="KR:ko")
+        elif engine == "bing":
+            url = bing_news_rss_url(query)
+        else:
+            continue
+
+        feeds.append({
+            "name": name,
+            "url": url,
+            "region": region,
+            "type": "search_rss",
+        })
+
+    return feeds
+
+
+def merge_feed_sources():
+    configured = load_json(FEEDS_FILE, [])
+
+    if not isinstance(configured, list):
+        configured = []
+
+    feeds = []
+    seen = set()
+
+    for feed in configured + build_search_rss_feeds():
+        url = feed.get("url")
+        if not url or url in seen:
+            continue
+        seen.add(url)
+        feeds.append(feed)
+
+    return feeds
+
+
+def is_domestic_article(article):
+    source = article.get("source", "")
+    domain = article.get("domain", "")
+    countries = article.get("countries", []) or []
+    title = article.get("title", "")
+    summary = article.get("summary", "")
+
+    combined = f"{source} {domain} {' '.join(countries)} {title} {summary}".lower()
+
+    if "한국" in countries or "south korea" in combined or "korea" in combined:
+        return True
+
+    if domain.endswith(".kr") or ".kr/" in domain:
+        return True
+
+    for hint in DOMESTIC_SOURCE_HINTS:
+        if hint.lower() in combined:
+            return True
+
+    korean_hits = ["상하수도", "하수처리", "폐수처리", "수처리", "막여과", "중공사막", "환경부", "한국수자원공사", "한국환경공단"]
+    return any(k in f"{title} {summary}" for k in korean_hits)
+
+
+
+def replace_company_names_with_english(text):
+    if not text:
+        return ""
+    out = str(text)
+    for ko, en in COMPANY_ENGLISH_MAP.items():
+        out = out.replace(ko, en)
+    return out
+
+
+def normalize_company_list(companies):
+    result = []
+    for c in companies or []:
+        name = replace_company_names_with_english(str(c).strip())
+        if name and name not in result:
+            result.append(name)
+    return result
+
+
+def parse_date_safe(date_str):
+    try:
+        return datetime.strptime(str(date_str), "%Y-%m-%d").replace(tzinfo=KST)
+    except Exception:
+        return None
+
+
+def is_recent_dashboard_item(item):
+    dt = parse_date_safe(item.get("date", ""))
+    if not dt:
+        return False
+    current_year = datetime.now(KST).year
+    return dt.year >= current_year - (DASHBOARD_YEAR_WINDOW - 1)
+
+
+def dashboard_sort_score(item):
+    dt = parse_date_safe(item.get("date", ""))
+    now = datetime.now(KST)
+    if dt:
+        age_days = max((now - dt).days, 0)
+        recency_bonus = max(0, 730 - age_days) / 730 * 100
+        date_key = dt.strftime("%Y-%m-%d")
+    else:
+        recency_bonus = 0
+        date_key = ""
+    return (recency_bonus + float(item.get("score", 0)), date_key)
+
+
+def extract_date_context_from_text(*values):
+    text = " ".join(str(v or "") for v in values)
+    text = clean_text(text)
+    patterns = [
+        r"20\d{2}[./-]\d{1,2}[./-]\d{1,2}",
+        r"20\d{2}\s*년\s*\d{1,2}\s*월\s*\d{1,2}\s*일",
+        r"20\d{2}\s*년\s*\d{1,2}\s*월",
+        r"\d{1,2}\s*월\s*\d{1,2}\s*일",
+        r"\d{1,2}/\d{1,2}/20\d{2}",
+        r"(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\.?\s+\d{1,2},?\s+20\d{2}",
+    ]
+    found = []
+    for pattern in patterns:
+        for m in re.findall(pattern, text, flags=re.IGNORECASE):
+            value = re.sub(r"\s+", " ", str(m)).strip()
+            if value and value not in found:
+                found.append(value)
+    return found[:5]
+
+
+def get_article_date_context(item):
+    explicit = item.get("date_context") or item.get("event_date") or item.get("article_date_context")
+    if isinstance(explicit, list):
+        explicit = ", ".join(str(x) for x in explicit if x)
+    if explicit:
+        return str(explicit)
+    extracted = extract_date_context_from_text(item.get("title", ""), item.get("ko_title", ""), item.get("summary", ""), item.get("brief", ""))
+    if extracted:
+        return ", ".join(extracted)
+    if item.get("date"):
+        return f"기사 기준일: {item.get('date')}"
+    return "일정 정보 확인 필요"
+
+
+def normalize_for_similarity(text):
+    text = replace_company_names_with_english(clean_text(text or "")).lower()
+    text = re.sub(r"https?://\S+", " ", text)
+    text = re.sub(r"20\d{2}|\d{1,2}월|\d{1,2}일|\d+", " ", text)
+    text = re.sub(r"[^0-9a-zA-Z가-힣]+", " ", text)
+    tokens = [t for t in text.split() if len(t) >= 2]
+    stopwords = {
+        "뉴스", "기사", "발표", "추진", "관련", "통해", "대한", "위한", "및", "으로", "에서", "하고", "하는", "된다", "선정", "공개", "실시", "도입", "개발", "시장", "전망", "성장",
+        "the", "and", "for", "with", "from", "into", "about", "water", "news", "report", "says", "announces", "announced", "launches", "released", "market", "growth"
+    }
+    return [t for t in tokens if t not in stopwords]
+
+
+def token_similarity(a, b):
+    ta = set(normalize_for_similarity(a))
+    tb = set(normalize_for_similarity(b))
+    if not ta or not tb:
+        return 0.0
+    return len(ta & tb) / max(1, min(len(ta), len(tb)))
+
+
+def article_similarity(a, b):
+    a_text = f"{a.get('ko_title','')} {a.get('title','')} {a.get('brief','')} {a.get('summary','')}"
+    b_text = f"{b.get('ko_title','')} {b.get('title','')} {b.get('brief','')} {b.get('summary','')}"
+    token_score = token_similarity(a_text, b_text)
+    title_a = " ".join(normalize_for_similarity(f"{a.get('ko_title','')} {a.get('title','')}"))
+    title_b = " ".join(normalize_for_similarity(f"{b.get('ko_title','')} {b.get('title','')}"))
+    seq_score = SequenceMatcher(None, title_a, title_b).ratio() if title_a and title_b else 0.0
+    return max(token_score, seq_score)
+
+
+def article_identity_key(item):
+    title = item.get("ko_title") or item.get("title") or ""
+    title_key = " ".join(normalize_for_similarity(title))[:120]
+    if title_key:
+        return title_key
+    link = item.get("link", "")
+    if link:
+        return link.strip().lower()
+    return ""
+
+
+def dedupe_similar_articles(items, limit=None, threshold=0.58):
+    result = []
+    seen_keys = set()
+
+    ordered = sorted(items, key=dashboard_sort_score, reverse=True)
+    for item in ordered:
+        key = article_identity_key(item)
+        if key and key in seen_keys:
+            continue
+
+        duplicate = False
+        for existing in result:
+            if article_similarity(item, existing) >= threshold:
+                duplicate = True
+                break
+
+        if duplicate:
+            continue
+
+        result.append(item)
+        if key:
+            seen_keys.add(key)
+
+        if limit and len(result) >= limit:
+            break
+
+    return result
+
+
+def extract_numeric_specs_from_text(text):
+    specs = []
+    text = clean_text(text or "")
+    for pattern in SPEC_VALUE_PATTERNS:
+        for match in re.findall(pattern, text, flags=re.IGNORECASE):
+            value = str(match).strip()
+            if value and value not in specs:
+                specs.append(value)
+    return specs[:8]
+
+
+def merge_specs(*values):
+    specs = []
+    for value in values:
+        if isinstance(value, list):
+            candidates = value
+        elif isinstance(value, str):
+            candidates = extract_numeric_specs_from_text(value)
+        else:
+            candidates = []
+        for candidate in candidates:
+            candidate = str(candidate).strip()
+            if candidate and candidate not in specs:
+                specs.append(candidate)
+    return specs[:10]
+
 def fetch_articles():
-    feeds = load_json(FEEDS_FILE, [])
+    feeds = merge_feed_sources()
     articles = []
+    rss_sleep = float(os.getenv("RSS_SLEEP_SECONDS", "0.35"))
 
     for feed in feeds:
         name = feed.get("name", "Unknown")
         url = feed.get("url")
+        feed_region = feed.get("region", "")
+        feed_type = feed.get("type", "rss")
 
         if not url:
             continue
@@ -297,7 +898,7 @@ def fetch_articles():
         for entry in parsed.entries[:60]:
             title = clean_text(entry.get("title", ""))
             link = entry.get("link", "")
-            summary = clean_text(entry.get("summary", ""))
+            summary = clean_text(entry.get("summary", "") or entry.get("description", ""))
             published_date = parse_entry_date(entry)
 
             if not in_backfill_range(published_date):
@@ -308,7 +909,7 @@ def fetch_articles():
             if score < MIN_SCORE:
                 continue
 
-            articles.append({
+            article = {
                 "date": published_date,
                 "title": title,
                 "link": link,
@@ -317,18 +918,17 @@ def fetch_articles():
                 "domain": get_domain(link),
                 "score": score,
                 "matched": matched,
-            })
+                "region": feed_region,
+                "source_type": feed_type,
+                "specs": extract_numeric_specs_from_text(f"{title} {summary}"),
+            }
 
-        time.sleep(1)
+            article["domestic"] = is_domestic_article(article)
+            articles.append(article)
 
-    dedup = {}
+        time.sleep(rss_sleep)
 
-    for a in sorted(articles, key=lambda x: x["score"], reverse=True):
-        if a["link"] and a["link"] not in dedup:
-            dedup[a["link"]] = a
-
-    return list(dedup.values())
-
+    return dedupe_similar_articles(articles, threshold=0.70)
 
 def flag_for_country(country):
     if not country:
@@ -362,21 +962,48 @@ def emoji_for_category(category, technologies=None):
 
 def guess_category(article):
     keys = set(k.lower() for k in article.get("matched", []))
+    text = f"{article.get('title', '')} {article.get('summary', '')}".lower()
 
-    if "pfas" in keys:
+    if "pfas" in keys or "pfas" in text:
         return "PFAS/오염물"
 
-    if "mbr" in keys or "membrane" in keys or "membrane bioreactor" in keys:
+    if (
+        "mbr" in keys
+        or "membrane bioreactor" in keys
+        or "분리막 생물반응조" in keys
+        or "막분리활성슬러지" in keys
+        or "mbr" in text
+    ):
         return "분리막/MBR"
+
+    if (
+        "membrane" in keys
+        or "hollow fiber" in keys
+        or "ultrafiltration" in keys
+        or "microfiltration" in keys
+        or "막여과" in keys
+        or "중공사막" in keys
+        or "분리막" in keys
+    ):
+        return "분리막/막여과"
+
+    if {"conference", "symposium", "water korea", "weftec", "aquatech", "iwa mtc", "한국막학회", "워터코리아"} & keys:
+        return "학회/전시회"
 
     if {"tender", "contract", "award", "expansion", "upgrade", "pilot", "commissioning"} & keys:
         return "프로젝트/수주"
 
-    if {"veolia", "xylem", "toray", "asahi kasei", "pentair", "kovalus", "suez"} & keys:
+    if {"veolia", "xylem", "toray", "asahi kasei", "pentair", "kovalus", "suez", "dupont", "kubota"} & keys:
         return "기업동향"
 
-    if {"water reuse", "reclaimed water"} & keys:
+    if {"water reuse", "reclaimed water", "재이용수", "물재이용", "물 재이용", "하수재이용"} & keys:
         return "재이용수"
+
+    if {"desalination", "ro", "nf", "담수화", "역삼투"} & keys:
+        return "담수화/RO"
+
+    if {"환경부", "regulation", "funding"} & keys:
+        return "규제/정책"
 
     return "수처리 산업동향"
 
@@ -458,6 +1085,7 @@ def openai_text(prompt, fallback):
 
 
 def summarize_article(article):
+    fallback_specs = extract_numeric_specs_from_text(f"{article.get('title','')} {article.get('summary','')}")
     fallback = {
         "ko_title": article["title"],
         "brief": article["summary"][:220] if article["summary"] else "RSS 제목 기준으로 선별되었습니다. 상세 내용은 원문 확인이 필요합니다.",
@@ -468,6 +1096,7 @@ def summarize_article(article):
         "companies": [],
         "technologies": article.get("matched", []),
         "policy_alert": "",
+        "specs": fallback_specs,
     }
 
     prompt = f"""
@@ -480,11 +1109,17 @@ def summarize_article(article):
 - summary: 상세 보고서용 요약. 4~6문장. 배경, 주요 내용, 수처리 산업 관련성을 포함. 기사에 없는 수치나 사실을 만들지 말 것.
 - why_important: 왜 중요한가. 2문장. 시장, 규제, 기술, 프로젝트 관점 중 관련 있는 이유를 설명. 추측이면 '추측입니다'라고 명시.
 - category: 아래 중 하나만 선택.
-  PFAS/오염물, 재이용수, 분리막/MBR, 산업폐수, 담수화, 프로젝트/수주, 기업동향, 규제/정책, 수처리 산업동향
+  PFAS/오염물, 재이용수, 분리막/MBR, 분리막/막여과, 산업폐수, 담수화/RO, 프로젝트/수주, 기업동향, 규제/정책, 학회/전시회, 수처리 산업동향
 - countries: 기사에 명시된 국가명 배열. 예: ["미국", "중국"]. 없으면 [].
-- companies: 기사에 명시된 기업명 배열. 없으면 [].
+- companies: 기사에 명시된 기업명 배열. 없으면 []. 기업명은 가능한 공식 영문명으로 작성. 예: Toray, Econity, Veolia, DuPont.
 - technologies: 기사에 명시된 기술/키워드 배열. 예: ["PFAS", "Water Reuse", "MBR"].
 - policy_alert: 규제/정책 알림이면 1문장 작성. 아니면 빈 문자열.
+- date_context: 기사에 명시된 발표일, 개최일, 사업 일정, 준공일, 개발 발표 시점, 입찰 일정이 있으면 작성. 없으면 기사 발행일 기준으로 작성.
+- specs: 기사에 명시된 수치·사양 배열. 처리장 용량, m3/day, m³/day, 톤/일, MLD, MGD, 사업비, CAPEX, 막면적, Flux, TMP, MLSS, HRT, SRT, 참석자 규모 등. 기사에 없으면 []. 절대 만들지 말 것.
+
+중요:
+- 처리장, 정수장, 하수처리장, 공장, 프로젝트, 전시회, 학회가 나오면 장소·날짜·규모·용량·사업비 등 숫자 정보를 우선 추출하세요.
+- 수치가 기사에 없으면 specs는 []로 두세요.
 
 원문 제목: {article['title']}
 출처: {article['source']}
@@ -494,6 +1129,7 @@ RSS 요약: {article['summary']}
 """.strip()
 
     parsed = openai_json(prompt, fallback)
+    parsed_specs = parsed.get("specs", fallback["specs"]) or []
 
     return {
         "ko_title": parsed.get("ko_title", fallback["ko_title"]),
@@ -505,8 +1141,8 @@ RSS 요약: {article['summary']}
         "companies": parsed.get("companies", fallback["companies"]) or [],
         "technologies": parsed.get("technologies", fallback["technologies"]) or [],
         "policy_alert": parsed.get("policy_alert", fallback["policy_alert"]) or "",
+        "specs": merge_specs(parsed_specs, fallback_specs, article.get("title", ""), article.get("summary", "")),
     }
-
 
 def get_pages_base_url():
     explicit = os.getenv("PAGES_BASE_URL")
@@ -523,48 +1159,8 @@ def get_pages_base_url():
     return ""
 
 
-def is_valid_date_string(date_str):
-    return bool(re.match(r"^\d{4}-\d{2}-\d{2}$", str(date_str or "")))
-
-
-def keep_history_item(item):
-    date_str = str(item.get("date", ""))
-
-    if not is_valid_date_string(date_str):
-        return False
-
-    if HISTORY_START_DATE and date_str < HISTORY_START_DATE:
-        return False
-
-    return True
-
-
-def clean_history_items(history):
-    if not isinstance(history, list):
-        return []
-
-    cleaned = []
-    seen = set()
-
-    for item in history:
-        if not isinstance(item, dict):
-            continue
-
-        if not keep_history_item(item):
-            continue
-
-        key = (item.get("date", ""), item.get("link", ""))
-        if key in seen:
-            continue
-
-        seen.add(key)
-        cleaned.append(item)
-
-    return sorted(cleaned, key=lambda x: x.get("date", ""))
-
-
 def save_news_history(articles):
-    history = clean_history_items(load_json(HISTORY_FILE, []))
+    history = load_json(HISTORY_FILE, [])
 
     existing = set((item.get("date"), item.get("link")) for item in history)
 
@@ -589,20 +1185,23 @@ def save_news_history(articles):
             "companies": ai.get("companies", []),
             "technologies": ai.get("technologies", []),
             "policy_alert": ai.get("policy_alert", ""),
+            "specs": merge_specs(ai.get("specs", []), a.get("specs", []), a.get("title", ""), a.get("summary", "")),
             "source": a.get("source", ""),
             "link": a.get("link", ""),
             "score": a.get("score", 0),
             "keywords": a.get("matched", []),
+            "domestic": a.get("domestic", False),
+            "region": a.get("region", ""),
+            "source_type": a.get("source_type", ""),
         })
 
-    history = clean_history_items(history)[-1500:]
+    history = history[-1500:]
     save_json(HISTORY_FILE, history)
 
     return history
 
 
 def filter_week_items(history):
-    history = clean_history_items(history)
     today_dt = datetime.now(KST)
     start = (today_dt - timedelta(days=7)).strftime("%Y-%m-%d")
 
@@ -610,14 +1209,12 @@ def filter_week_items(history):
 
 
 def filter_month_items(history):
-    history = clean_history_items(history)
     month_key = datetime.now(KST).strftime("%Y-%m")
 
     return [x for x in history if x.get("date", "").startswith(month_key)]
 
 
 def filter_items_by_month(history, month_key):
-    history = clean_history_items(history)
     return [x for x in history if x.get("date", "").startswith(month_key)]
 
 
@@ -640,7 +1237,6 @@ def get_month_weeks(month_key):
 
 
 def filter_items_by_iso_week(history, week_key):
-    history = clean_history_items(history)
     result = []
 
     for x in history:
@@ -754,8 +1350,208 @@ def build_trend_report_text(title, items, report_type):
     return openai_text(prompt, "보고서를 생성할 수 없습니다.")
 
 
-def make_html_page(title, body_html, path):
+
+def markdown_to_html(text):
+    if not text:
+        return ""
+
+    return markdown.markdown(
+        text,
+        extensions=["extra", "nl2br", "sane_lists"],
+        output_format="html5",
+    )
+
+
+def get_site_base_path():
+    repo = os.getenv("GITHUB_REPOSITORY", "")
+
+    if "/" in repo:
+        return "/" + repo.split("/", 1)[1].strip("/") + "/"
+
+    return "/"
+
+
+def rel_url(path_text):
+    base = get_site_base_path().rstrip("/")
+    path_text = str(path_text).lstrip("/")
+
+    if not path_text:
+        return base + "/"
+
+    return f"{base}/{path_text}"
+
+
+def week_range_label(week_key):
+    try:
+        year = int(week_key.split("-W", 1)[0])
+        week = int(week_key.split("-W", 1)[1])
+        start = datetime.fromisocalendar(year, week, 1).replace(tzinfo=KST)
+        end = start + timedelta(days=6)
+        return f"{start.strftime('%m.%d')}~{end.strftime('%m.%d')}"
+    except Exception:
+        return ""
+
+
+def month_label(month_key):
+    try:
+        year, month = month_key.split("-", 1)
+        return f"{year}년 {int(month):02d}월"
+    except Exception:
+        return month_key
+
+
+def get_week_key_from_date(date_str):
+    try:
+        dt = datetime.strptime(date_str, "%Y-%m-%d").replace(tzinfo=KST)
+        iso = dt.isocalendar()
+        return f"{iso.year}-W{iso.week:02d}"
+    except Exception:
+        return ""
+
+
+def get_date_label(date_str):
+    try:
+        dt = datetime.strptime(date_str, "%Y-%m-%d")
+        weekday = ["월", "화", "수", "목", "금", "토", "일"][dt.weekday()]
+        return f"{date_str} ({weekday})"
+    except Exception:
+        return date_str
+
+
+def list_existing_report_keys():
+    history = load_json(HISTORY_FILE, [])
+
+    daily_keys = set()
+    weekly_keys = set()
+    monthly_keys = set()
+
+    for item in history:
+        date_str = item.get("date", "")
+        if re.match(r"^\d{4}-\d{2}-\d{2}$", date_str):
+            daily_keys.add(date_str)
+            week_key = get_week_key_from_date(date_str)
+            if week_key:
+                weekly_keys.add(week_key)
+            monthly_keys.add(date_str[:7])
+
+    if REPORTS_DIR.exists():
+        for p in REPORTS_DIR.iterdir():
+            if p.is_dir() and (p / "index.html").exists():
+                daily_keys.add(p.name)
+
+    if WEEKLY_DIR.exists():
+        for p in WEEKLY_DIR.iterdir():
+            if p.is_dir() and (p / "index.html").exists():
+                weekly_keys.add(p.name)
+
+    if MONTHLY_DIR.exists():
+        for p in MONTHLY_DIR.iterdir():
+            if p.is_dir() and (p / "index.html").exists():
+                monthly_keys.add(p.name)
+
+    daily = sorted(daily_keys, reverse=True)[:90]
+    weekly = sorted(weekly_keys, reverse=True)[:52]
+    monthly = sorted(monthly_keys, reverse=True)[:36]
+
+    return daily, weekly, monthly
+
+
+
+def split_visible_hidden(items, visible_count):
+    return items[:visible_count], items[visible_count:]
+
+
+def build_nav_group(title, items, visible_count, url_builder, label_builder, active_class):
+    parts = [f'<div class="nav-section-title">{html.escape(title)}</div>']
+
+    if not items:
+        parts.append('<div class="nav-empty">아직 생성된 항목이 없습니다.</div>')
+        return parts
+
+    visible, hidden = split_visible_hidden(items, visible_count)
+
+    for key in visible:
+        url = url_builder(key)
+        label = label_builder(key)
+        parts.append(f'<a class="nav-link {active_class(url)}" href="{rel_url(url)}">{html.escape(label)}</a>')
+
+    if hidden:
+        parts.append('<details class="nav-more"><summary>더보기</summary>')
+        for key in hidden:
+            url = url_builder(key)
+            label = label_builder(key)
+            parts.append(f'<a class="nav-link {active_class(url)}" href="{rel_url(url)}">{html.escape(label)}</a>')
+        parts.append('</details>')
+
+    return parts
+
+
+def build_left_nav(active_url=""):
+    daily, weekly, monthly = list_existing_report_keys()
+
+    def active_class(url):
+        return "active" if active_url.strip("/") == url.strip("/") else ""
+
+    parts = []
+    parts.append('<nav class="side-nav">')
+    parts.append(f'<a class="nav-home {active_class("")}" href="{rel_url("")}">홈</a>')
+
+    parts.extend(build_nav_group(
+        "일일 상세 보고서",
+        daily,
+        5,
+        lambda key: f"reports/{key}/",
+        lambda key: get_date_label(key),
+        active_class,
+    ))
+
+    parts.extend(build_nav_group(
+        "주간 업계 동향",
+        weekly,
+        5,
+        lambda key: f"weekly/{key}/",
+        lambda key: f"{key} ({week_range_label(key)})" if week_range_label(key) else key,
+        active_class,
+    ))
+
+    parts.extend(build_nav_group(
+        "월간 업계 동향",
+        monthly,
+        6,
+        lambda key: f"monthly/{key}/",
+        lambda key: month_label(key),
+        active_class,
+    ))
+
+    parts.append('<div class="nav-section-title">바로가기</div>')
+    quick_links = [
+        ("sources/", "정보 출처"),
+        ("filters/", "필터링 기준"),
+        ("events/", "학회·전시회 일정"),
+    ]
+    for url, label in quick_links:
+        parts.append(f'<a class="nav-link {active_class(url)}" href="{rel_url(url)}">{html.escape(label)}</a>')
+
+    parts.append('</nav>')
+    return "\n".join(parts)
+
+
+def build_toc(toc_items):
+    if not toc_items:
+        return '<aside class="toc"><div class="toc-title">목차</div><div class="toc-empty">표시할 목차가 없습니다.</div></aside>'
+
+    links = []
+    for item_id, label in toc_items:
+        links.append(f'<a href="#{html.escape(item_id)}">{html.escape(label)}</a>')
+
+    return f'<aside class="toc"><div class="toc-title">목차</div>{"".join(links)}</aside>'
+
+
+def make_html_page(title, body_html, path, active_url="", subtitle="", toc_items=None):
     path.mkdir(parents=True, exist_ok=True)
+    toc_items = toc_items or []
+    nav_html = build_left_nav(active_url)
+    toc_html = build_toc(toc_items)
 
     html_doc = f"""<!doctype html>
 <html lang="ko">
@@ -764,29 +1560,244 @@ def make_html_page(title, body_html, path):
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{html.escape(title)}</title>
   <style>
-    body {{ font-family: Arial, "Noto Sans KR", sans-serif; margin:0; background:#f6f8fb; color:#1f2937; line-height:1.65; }}
-    header {{ background:#163b73; color:white; padding:30px 36px; }}
-    main {{ max-width:980px; margin:28px auto; padding:0 18px; }}
-    h1 {{ margin:0 0 8px; font-size:28px; }}
-    h2 {{ margin:26px 0 10px; font-size:22px; }}
-    h3 {{ margin:18px 0 6px; font-size:17px; }}
-    .card {{ background:white; border:1px solid #e5e7eb; border-radius:14px; padding:22px; margin-bottom:18px; box-shadow:0 1px 2px rgba(0,0,0,.04); }}
-    .summary {{ white-space:pre-wrap; background:white; border:1px solid #e5e7eb; border-radius:14px; padding:22px; margin-bottom:22px; }}
-    .pill {{ display:inline-block; background:#e0f2fe; color:#075985; border-radius:999px; padding:3px 10px; font-size:13px; margin-right:6px; }}
-    .meta {{ color:#6b7280; font-size:13px; }}
-    .why {{ background:#fff7ed; border-left:4px solid #f97316; padding:10px 12px; }}
-    .brief {{ background:#f9fafb; border-left:4px solid #163b73; padding:10px 12px; }}
-    a {{ color:#1d4ed8; }}
+    :root {{
+      --bg:#f4f7fb;
+      --panel:#ffffff;
+      --ink:#0f172a;
+      --muted:#64748b;
+      --line:#e2e8f0;
+      --brand:#0f4c81;
+      --brand-dark:#0b3157;
+      --brand-soft:#e0f2fe;
+      --accent:#0284c7;
+      --warn:#fff7ed;
+    }}
+    * {{ box-sizing:border-box; }}
+    body {{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:Arial, "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+      line-height:1.65;
+    }}
+    a {{ color:#1d4ed8; text-decoration:none; }}
+    a:hover {{ text-decoration:underline; }}
+    .topbar {{
+      position:sticky;
+      top:0;
+      z-index:20;
+      background:linear-gradient(135deg, var(--brand-dark), var(--brand));
+      color:#fff;
+      border-bottom:1px solid rgba(255,255,255,.14);
+    }}
+    .topbar-inner {{
+      max-width:1880px;
+      margin:0 auto;
+      padding:18px 24px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }}
+    .brand {{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:#fff;
+      font-size:20px;
+      font-weight:800;
+      letter-spacing:-.02em;
+    }}
+    .brand:hover {{ text-decoration:none; }}
+    .top-date {{ font-size:13px; color:#dbeafe; white-space:nowrap; }}
+    .layout {{
+      max-width:1880px;
+      margin:0 auto;
+      padding:24px;
+      display:grid;
+      grid-template-columns:260px minmax(0, 1fr) 210px;
+      gap:22px;
+      align-items:start;
+    }}
+    .side-nav {{
+      position:sticky;
+      top:82px;
+      max-height:calc(100vh - 108px);
+      overflow:auto;
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px;
+      box-shadow:0 8px 22px rgba(15,23,42,.05);
+    }}
+    .nav-home {{
+      display:block;
+      padding:10px 12px;
+      border-radius:12px;
+      color:var(--ink);
+      font-weight:800;
+      background:#f8fafc;
+      border:1px solid var(--line);
+      margin-bottom:14px;
+    }}
+    .nav-section-title {{
+      margin:16px 0 7px;
+      font-size:12px;
+      font-weight:800;
+      color:#475569;
+      text-transform:uppercase;
+      letter-spacing:.02em;
+    }}
+    .nav-link {{
+      display:block;
+      padding:7px 9px;
+      border-radius:10px;
+      color:#334155;
+      font-size:13px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }}
+    .nav-link:hover, .nav-home:hover {{ background:var(--brand-soft); text-decoration:none; }}
+    .nav-link.active, .nav-home.active {{ background:#dbeafe; color:#0f4c81; font-weight:800; }}
+    .nav-empty {{ color:var(--muted); font-size:12px; padding:6px 2px; }}
+    .nav-more summary {{
+      cursor:pointer;
+      color:#0f4c81;
+      font-size:13px;
+      font-weight:800;
+      padding:7px 9px;
+      border-radius:10px;
+      background:#f8fafc;
+      margin-top:4px;
+    }}
+    .nav-more[open] summary {{ background:#dbeafe; }}
+    .stat-grid {{ display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:14px; margin-bottom:18px; }}
+    .stat-card {{ background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:18px; box-shadow:0 4px 14px rgba(15,23,42,.04); }}
+    .stat-value {{ font-size:28px; font-weight:900; color:#0f4c81; line-height:1.2; }}
+    .stat-label {{ color:var(--muted); font-size:13px; margin-top:6px; }}
+    .headline-list {{ margin:0; padding-left:18px; }}
+    .headline-list li {{ margin:8px 0; }}
+    .source-table {{ width:100%; border-collapse:collapse; font-size:14px; }}
+    .source-table th, .source-table td {{ border-bottom:1px solid var(--line); padding:9px 8px; text-align:left; vertical-align:top; }}
+    .source-table th {{ color:#475569; background:#f8fafc; }}
+    .tag-cloud {{ display:flex; flex-wrap:wrap; gap:8px; }}
+    .tag-cloud span {{ display:inline-block; background:#f1f5f9; border:1px solid var(--line); border-radius:999px; padding:5px 10px; font-size:13px; }}
+    .content {{ min-width:0; }}
+    .hero {{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:28px;
+      margin-bottom:20px;
+      box-shadow:0 8px 22px rgba(15,23,42,.05);
+    }}
+    .hero h1 {{ margin:0; font-size:30px; line-height:1.25; letter-spacing:-.03em; }}
+    .hero .subtitle {{ margin-top:10px; color:var(--muted); font-size:15px; }}
+    .card {{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:22px;
+      margin-bottom:18px;
+      box-shadow:0 4px 14px rgba(15,23,42,.045);
+    }}
+    .card h2 {{ margin:4px 0 10px; font-size:22px; line-height:1.35; letter-spacing:-.02em; }}
+    .card h3 {{ margin:20px 0 8px; font-size:16px; }}
+    .report-body {{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:26px;
+      margin-bottom:18px;
+      box-shadow:0 4px 14px rgba(15,23,42,.045);
+    }}
+    .report-body h1, .report-body h2, .report-body h3 {{ letter-spacing:-.02em; }}
+    .report-body h1 {{ font-size:26px; }}
+    .report-body h2 {{ font-size:22px; margin-top:28px; padding-top:6px; }}
+    .report-body h3 {{ font-size:18px; margin-top:24px; }}
+    .report-body p {{ margin:9px 0; }}
+    .report-body ul, .report-body ol {{ padding-left:22px; }}
+    .report-body li {{ margin:6px 0; }}
+    .meta {{ color:var(--muted); font-size:13px; }}
+    .pill {{
+      display:inline-block;
+      background:var(--brand-soft);
+      color:#075985;
+      border-radius:999px;
+      padding:3px 10px;
+      font-size:13px;
+      margin:2px 6px 2px 0;
+      font-weight:700;
+    }}
+    .brief {{ background:#f8fafc; border-left:4px solid var(--brand); padding:11px 13px; border-radius:0 10px 10px 0; }}
+    .why {{ background:var(--warn); border-left:4px solid #f97316; padding:11px 13px; border-radius:0 10px 10px 0; }}
+    .toc {{
+      position:sticky;
+      top:82px;
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px;
+      box-shadow:0 8px 22px rgba(15,23,42,.05);
+    }}
+    .toc-title {{ font-size:13px; font-weight:800; color:#475569; margin-bottom:8px; }}
+    .toc a {{ display:block; color:#334155; font-size:13px; padding:6px 0; border-bottom:1px solid #f1f5f9; }}
+    .toc-empty {{ color:var(--muted); font-size:12px; }}
+    .dashboard-grid {{ display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:14px; margin-bottom:18px; }}
+    .news-grid {{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:18px; }}
+    .news-card {{ min-height:420px; }}
+    .headline-title {{ font-weight:800; color:#0f172a; }}
+    .headline-list li {{ margin:10px 0 14px; padding-bottom:10px; border-bottom:1px solid #f1f5f9; }}
+    .headline-specs {{ display:inline-block; margin-top:4px; padding:3px 8px; border-radius:999px; background:#f0f9ff; color:#075985; font-size:12px; font-weight:700; }}
+    .event-mini-grid {{ display:grid; grid-template-columns:repeat(5, minmax(0,1fr)); gap:14px; }}
+    .event-mini-card {{ border:1px solid var(--line); border-radius:16px; padding:14px; background:#fff; }}
+    .event-mini-card h3 {{ margin:8px 0 6px; font-size:15px; line-height:1.35; }}
+    .event-grade {{ display:inline-block; padding:3px 9px; border-radius:999px; font-size:12px; font-weight:900; color:#fff; background:#64748b; }}
+    .grade-S {{ background:#7c3aed; }}
+    .grade-A {{ background:#2563eb; }}
+    .grade-B {{ background:#64748b; }}
+    .dash-card {{ background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:18px; box-shadow:0 4px 14px rgba(15,23,42,.04); }}
+    .dash-card h2 {{ font-size:17px; margin:0 0 10px; }}
+    .dash-card a {{ display:block; margin:6px 0; font-size:14px; }}
+    @media (max-width:1180px) {{
+      .layout {{ grid-template-columns:240px minmax(0, 1fr); }}
+      .news-grid {{ grid-template-columns:1fr; }}
+      .event-mini-grid {{ grid-template-columns:repeat(2, minmax(0,1fr)); }}
+      .toc {{ display:none; }}
+      .stat-grid {{ grid-template-columns:repeat(2, minmax(0,1fr)); }}
+    }}
+    @media (max-width:820px) {{
+      .topbar-inner {{ align-items:flex-start; flex-direction:column; }}
+      .layout {{ display:block; padding:14px; }}
+      .side-nav {{ position:relative; top:auto; max-height:none; margin-bottom:16px; }}
+      .hero {{ padding:22px; }}
+      .hero h1 {{ font-size:24px; }}
+      .dashboard-grid {{ grid-template-columns:1fr; }}
+      .stat-grid {{ grid-template-columns:1fr; }}
+      .news-grid {{ grid-template-columns:1fr; }}
+      .event-mini-grid {{ grid-template-columns:1fr; }}
+    }}
   </style>
 </head>
 <body>
-  <header>
-    <h1>{html.escape(title)}</h1>
-    <div>자동 생성 보고서</div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="{rel_url("")}">💧 상하수도·수처리 뉴스 브리핑</a>
+      <div class="top-date">{datetime.now(KST).strftime('%Y-%m-%d %H:%M KST')}</div>
+    </div>
   </header>
-  <main>
-    {body_html}
-  </main>
+  <div class="layout">
+    {nav_html}
+    <main class="content">
+      <section class="hero">
+        <h1>{html.escape(title)}</h1>
+        {f'<div class="subtitle">{html.escape(subtitle)}</div>' if subtitle else ''}
+      </section>
+      {body_html}
+    </main>
+    {toc_html}
+  </div>
 </body>
 </html>
 """
@@ -794,69 +1805,170 @@ def make_html_page(title, body_html, path):
     (path / "index.html").write_text(html_doc, encoding="utf-8")
 
 
-def create_daily_report(articles):
-    today = datetime.now(KST).strftime("%Y-%m-%d")
-    report_dir = REPORTS_DIR / today
+def normalize_display_item(item):
+    if "ai" in item:
+        ai = item.get("ai", {})
+        specs = merge_specs(ai.get("specs", []), item.get("specs", []), item.get("title", ""), item.get("summary", ""))
+        return {
+            "date": item.get("date", ""),
+            "title": replace_company_names_with_english(item.get("title", "")),
+            "ko_title": replace_company_names_with_english(ai.get("ko_title", item.get("title", ""))),
+            "brief": replace_company_names_with_english(ai.get("brief", "")),
+            "summary": replace_company_names_with_english(ai.get("summary", "")),
+            "why_important": replace_company_names_with_english(ai.get("why_important", "")),
+            "category": ai.get("category", guess_category(item)),
+            "countries": ai.get("countries", []),
+            "companies": normalize_company_list(ai.get("companies", [])),
+            "technologies": ai.get("technologies", item.get("matched", [])),
+            "policy_alert": ai.get("policy_alert", ""),
+            "date_context": ai.get("date_context", get_article_date_context(item)),
+            "specs": specs,
+            "source": item.get("source", ""),
+            "link": item.get("link", ""),
+            "score": item.get("score", 0),
+            "domestic": item.get("domestic", False),
+        }
 
+    specs = merge_specs(item.get("specs", []), item.get("title", ""), item.get("summary", ""))
+    return {
+        "date": item.get("date", ""),
+        "title": replace_company_names_with_english(item.get("title", "")),
+        "ko_title": replace_company_names_with_english(item.get("ko_title", item.get("title", ""))),
+        "brief": replace_company_names_with_english(item.get("brief", "")),
+        "summary": replace_company_names_with_english(item.get("summary", "")),
+        "why_important": replace_company_names_with_english(item.get("why_important", "")),
+        "category": item.get("category", ""),
+        "countries": item.get("countries", []),
+        "companies": normalize_company_list(item.get("companies", [])),
+        "technologies": item.get("technologies", item.get("keywords", [])),
+        "policy_alert": item.get("policy_alert", ""),
+        "date_context": item.get("date_context", get_article_date_context(item)),
+        "specs": specs,
+        "source": item.get("source", ""),
+        "link": item.get("link", ""),
+        "score": item.get("score", 0),
+        "domestic": item.get("domestic", False),
+    }
+
+def build_article_cards(items):
     cards = []
 
-    for i, a in enumerate(articles, 1):
-        ai = a["ai"]
-        countries = " ".join(add_country_flag(c) for c in ai.get("countries", []))
-        companies = ", ".join(ai.get("companies", []))
-        techs = ", ".join(ai.get("technologies", []))
-        emoji = emoji_for_category(ai.get("category", ""), ai.get("technologies", []))
+    for i, raw in enumerate(items, 1):
+        a = normalize_display_item(raw)
+        countries = " ".join(add_country_flag(c) for c in a.get("countries", []))
+        companies = ", ".join(a.get("companies", []))
+        techs = ", ".join(a.get("technologies", []))
+        emoji = emoji_for_category(a.get("category", ""), a.get("technologies", []))
+        source_text = a.get("source", "") or "출처 미확인"
+        date_text = a.get("date", "") or "날짜 미확인"
 
         cards.append(f"""
-        <section class="card">
-          <p class="meta">#{i} · {html.escape(a.get('source', ''))} · 점수 {a.get('score', 0)}</p>
-          <h2>{emoji} {html.escape(ai.get('ko_title', ''))}</h2>
-          <p><span class="pill">{html.escape(ai.get('category', ''))}</span></p>
-          <p class="brief">{html.escape(ai.get('brief', ''))}</p>
+        <section class="card" id="article-{i}">
+          <p class="meta">#{i} · 기사일: {html.escape(date_text)} · {html.escape(source_text)} · 점수 {html.escape(str(a.get('score', 0)))}</p>
+          <h2>{emoji} {html.escape(a.get('ko_title', '') or a.get('title', ''))}</h2>
+          <p class="meta">발표/일정: {html.escape(a.get('date_context', '') or get_article_date_context(a))}</p>
+          <p><span class="pill">{html.escape(a.get('category', '') or '분류 없음')}</span></p>
+          <p class="brief">{html.escape(a.get('brief', '') or '요약 정보가 없습니다.')}</p>
           <h3>내용 요약</h3>
-          <p>{html.escape(ai.get('summary', ''))}</p>
+          <p>{html.escape(a.get('summary', '') or '상세 요약 정보가 없습니다.')}</p>
           <h3>왜 중요한가?</h3>
-          <p class="why">{html.escape(ai.get('why_important', ''))}</p>
+          <p class="why">{html.escape(a.get('why_important', '') or '중요도 분석 정보가 없습니다.')}</p>
           <p class="meta">국가: {html.escape(countries or '-')}</p>
           <p class="meta">기업: {html.escape(companies or '-')}</p>
           <p class="meta">기술: {html.escape(techs or '-')}</p>
-          <p><a href="{html.escape(a.get('link', ''))}" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
+          {f'<p><a href="{html.escape(a.get("link", ""))}" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>' if a.get("link") else ''}
         </section>
         """)
 
+    return "".join(cards)
+
+
+def get_recent_daily_items(target_date, selected_articles, history, max_days=DAILY_REPORT_LOOKBACK_DAYS, limit=12):
+    try:
+        target_dt = datetime.strptime(target_date, "%Y-%m-%d").replace(tzinfo=KST)
+    except Exception:
+        target_dt = datetime.now(KST)
+
+    allowed_dates = set((target_dt - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(max_days))
+    pool = []
+
+    for item in selected_articles:
+        item_date = item.get("date", target_date)
+        if item_date in allowed_dates:
+            pool.append(normalize_display_item(item))
+
+    for item in history:
+        if item.get("date", "") in allowed_dates:
+            pool.append(normalize_display_item(item))
+
+    return dedupe_similar_articles(pool, limit=limit, threshold=0.70)
+
+def create_daily_report(articles, history=None, target_date=None):
+    history = history or []
+    today = target_date or datetime.now(KST).strftime("%Y-%m-%d")
+    report_dir = REPORTS_DIR / today
+
+    display_items = get_recent_daily_items(today, articles, history, max_days=DAILY_REPORT_LOOKBACK_DAYS, limit=max(10, MAX_ITEMS))
+
     title = f"{today} 상하수도·수처리 상세 분석 보고서"
+    subtitle = "당일 기사만 사용합니다. 같은 내용의 중복 기사는 자동 제외합니다."
+    active_url = f"reports/{today}/"
+    toc_items = [(f"article-{i}", f"기사 {i}") for i in range(1, min(len(display_items), 12) + 1)]
 
-    if cards:
-        body = "".join(cards)
+    if display_items:
+        body = build_article_cards(display_items)
     else:
-        body = '<section class="card">오늘 기준 필터 조건에 맞는 뉴스가 없습니다.</section>'
+        body = '<section class="card">당일 기준 필터 조건에 맞는 뉴스가 없습니다.</section>'
 
-    make_html_page(title, body, report_dir)
+    make_html_page(title, body, report_dir, active_url=active_url, subtitle=subtitle, toc_items=toc_items)
 
     base_url = get_pages_base_url()
     return f"{base_url}/reports/{today}/" if base_url else f"reports/{today}/"
 
 
-def create_period_report(period_type, items):
+def create_period_report(period_type, items, key=None):
     now = datetime.now(KST)
 
     if period_type == "weekly":
-        iso = now.isocalendar()
-        key = f"{iso.year}-W{iso.week:02d}"
+        if not key:
+            iso = now.isocalendar()
+            key = f"{iso.year}-W{iso.week:02d}"
+        period_label = week_range_label(key)
         title = f"{key} 상하수도·수처리 주간 업계 동향"
+        subtitle = f"기간: {period_label}" if period_label else "주간 누적 동향"
         report_dir = WEEKLY_DIR / key
         report_text = build_trend_report_text(title, items, "weekly")
         url_path = f"weekly/{key}/"
+        toc_items = [
+            ("executive-summary", "Executive Summary"),
+            ("countries", "주요 국가"),
+            ("companies", "주요 기업"),
+            ("technologies", "주요 기술"),
+            ("policy", "규제/정책"),
+            ("articles", "주요 기사"),
+        ]
     else:
-        key = now.strftime("%Y-%m")
-        title = f"{key} 상하수도·수처리 월간 업계 동향"
+        if not key:
+            key = now.strftime("%Y-%m")
+        title = f"{month_label(key)} 상하수도·수처리 월간 업계 동향"
+        subtitle = f"기간: {key}-01 ~ {key}-말일"
         report_dir = MONTHLY_DIR / key
         report_text = build_trend_report_text(title, items, "monthly")
         url_path = f"monthly/{key}/"
+        toc_items = [
+            ("executive-summary", "Executive Summary"),
+            ("keywords", "이달의 키워드"),
+            ("countries", "국가별 동향"),
+            ("companies", "기업별 동향"),
+            ("technologies", "기술별 동향"),
+            ("projects", "주요 프로젝트"),
+            ("policy", "규제/정책"),
+        ]
 
-    body = f'<section class="summary">{html.escape(report_text)}</section>'
+    report_html = markdown_to_html(report_text)
+    body = f'<section class="report-body">{report_html}</section>'
 
-    make_html_page(title, body, report_dir)
+    make_html_page(title, body, report_dir, active_url=url_path, subtitle=subtitle, toc_items=toc_items)
 
     base_url = get_pages_base_url()
     return f"{base_url}/{url_path}" if base_url else url_path
@@ -874,39 +1986,285 @@ def create_backfill_period_reports(history):
         if not week_items:
             continue
 
-        title = f"{week_key} 상하수도·수처리 주간 업계 동향"
-        report_text = build_trend_report_text(title, week_items, "weekly")
-        report_dir = WEEKLY_DIR / week_key
-        body = f'<section class="summary">{html.escape(report_text)}</section>'
-        make_html_page(title, body, report_dir)
+        create_period_report("weekly", week_items, key=week_key)
 
     month_items = filter_items_by_month(history, month_key)
 
     if month_items:
-        title = f"{month_key} 상하수도·수처리 월간 업계 동향"
-        report_text = build_trend_report_text(title, month_items, "monthly")
-        report_dir = MONTHLY_DIR / month_key
-        body = f'<section class="summary">{html.escape(report_text)}</section>'
-        make_html_page(title, body, report_dir)
+        create_period_report("monthly", month_items, key=month_key)
+
+
+def create_recent_daily_history_pages(history, selected_articles):
+    dates = sorted({x.get("date", "") for x in history if re.match(r"^\d{4}-\d{2}-\d{2}$", x.get("date", ""))}, reverse=True)
+
+    for date_key in dates[:14]:
+        if date_key == datetime.now(KST).strftime("%Y-%m-%d"):
+            continue
+        create_daily_report(selected_articles, history, target_date=date_key)
+
+
+
+def article_is_domestic(item):
+    if item.get("domestic"):
+        return True
+
+    countries = item.get("countries", []) or []
+    if "한국" in countries or "대한민국" in countries:
+        return True
+
+    source = item.get("source", "")
+    domain = get_domain(item.get("link", ""))
+
+    test_text = f"{source} {domain} {item.get('title','')} {item.get('ko_title','')} {item.get('summary','')}"
+    if domain.endswith(".kr") or ".kr/" in domain:
+        return True
+
+    return any(hint.lower() in test_text.lower() for hint in DOMESTIC_SOURCE_HINTS)
+
+
+def get_dashboard_items(history, limit=TOP_NEWS_LIMIT):
+    normalized = [normalize_display_item(x) for x in history]
+    recent_items = [x for x in normalized if is_recent_dashboard_item(x)]
+    pool_source = recent_items if recent_items else normalized
+    sorted_items = sorted(pool_source, key=dashboard_sort_score, reverse=True)
+
+    global_pool = []
+    domestic_pool = []
+
+    for item in sorted_items:
+        if article_is_domestic(item):
+            domestic_pool.append(item)
+        else:
+            global_pool.append(item)
+
+    global_items = dedupe_similar_articles(global_pool, limit=limit, threshold=0.55)
+    domestic_items = dedupe_similar_articles(domestic_pool, limit=limit, threshold=0.55)
+
+    return global_items, domestic_items
+
+def build_headline_list(items):
+    if not items:
+        return '<p class="meta">표시할 뉴스가 아직 없습니다.</p>'
+
+    parts = ['<ol class="headline-list">']
+    for item in items:
+        a = normalize_display_item(item)
+        title = a.get("ko_title") or a.get("title") or "제목 없음"
+        source = a.get("source", "출처 미확인")
+        date = a.get("date", "")
+        link = a.get("link", "")
+        category = a.get("category", "")
+        specs = a.get("specs", []) or []
+        specs_html = ""
+        if specs:
+            specs_html = "<div class='headline-specs'>" + " · ".join(html.escape(str(x)) for x in specs[:4]) + "</div>"
+        date_context = a.get("date_context", "") or get_article_date_context(a)
+        meta = f"<span class='meta'> · 기사일 {html.escape(date)} · 발표/일정 {html.escape(date_context)} · {html.escape(source)} · {html.escape(category)}</span>"
+        if link:
+            parts.append(f'<li><a href="{html.escape(link)}" target="_blank" rel="noopener noreferrer"><span class="headline-title">{html.escape(title)}</span></a>{meta}{specs_html}</li>')
+        else:
+            parts.append(f'<li><span class="headline-title">{html.escape(title)}</span>{meta}{specs_html}</li>')
+    parts.append("</ol>")
+    return "\n".join(parts)
+
+def build_event_preview(limit=5):
+    cards = []
+    for item in EVENT_CATALOG[:limit]:
+        cards.append(f"""
+        <article class="event-mini-card">
+          <div class="event-grade grade-{html.escape(item['grade'])}">{html.escape(item['grade'])}급</div>
+          <h3>{html.escape(item['name'])}</h3>
+          <p class="meta">{html.escape(item['scope'])} · {html.escape(item['location'])} · {html.escape(item['date'])}</p>
+          <p>{html.escape(item['note'])}</p>
+          <p class="meta">규모: {html.escape(item['scale'])}</p>
+        </article>
+        """)
+
+    return f"""
+    <div class="event-mini-grid">{''.join(cards)}</div>
+    <p><a href="{rel_url('events/')}">전체 학회·전시회 일정 보기</a></p>
+    """
+
+def create_sources_page():
+    groups = {}
+    for item in SOURCE_CATALOG:
+        groups.setdefault(item["group"], []).append(item)
+
+    sections = []
+    for group, items in groups.items():
+        rows = []
+        for item in items:
+            rows.append(
+                f"<tr><td>{html.escape(item['name'])}</td><td><a href='{html.escape(item['url'])}' target='_blank' rel='noopener noreferrer'>{html.escape(item['url'])}</a></td><td>{html.escape(item['status'])}</td></tr>"
+            )
+        sections.append(f"""
+        <section class="card" id="{html.escape(group)}">
+          <h2>{html.escape(group)}</h2>
+          <table class="source-table">
+            <thead><tr><th>출처</th><th>URL</th><th>상태</th></tr></thead>
+            <tbody>{''.join(rows)}</tbody>
+          </table>
+        </section>
+        """)
+
+    make_html_page(
+        "정보 출처",
+        "".join(sections),
+        DOCS_DIR / "sources",
+        active_url="sources/",
+        subtitle="RSS 활성 소스, 웹 참고 소스, 검색엔진 소스를 구분해 정리합니다.",
+        toc_items=[(group, group) for group in groups.keys()],
+    )
+
+
+def create_filters_page():
+    include_html = '<div class="tag-cloud">' + ''.join(f"<span>{html.escape(k)}</span>" for k in INCLUDE_KEYWORDS_PUBLIC) + '</div>'
+    exclude_html = '<div class="tag-cloud">' + ''.join(f"<span>{html.escape(k)}</span>" for k in EXCLUDE_PATTERNS_PUBLIC) + '</div>'
+
+    body = f"""
+    <section class="card" id="include">
+      <h2>포함 키워드</h2>
+      <p class="meta">아래 키워드가 제목·요약에 포함되면 점수가 올라갑니다. MBR, 막여과, 중공사막, 막오염, TMP, Flux 등 수처리용 멤브레인 키워드를 확장했습니다.</p>
+      {include_html}
+    </section>
+    <section class="card" id="exclude">
+      <h2>제외 키워드</h2>
+      <p class="meta">배터리 분리막, 반도체, 의료용 멤브레인, 자동차/방산 주식 등 수처리와 직접성이 낮은 항목을 제외합니다.</p>
+      {exclude_html}
+    </section>
+    """
+
+    make_html_page(
+        "필터링 기준",
+        body,
+        DOCS_DIR / "filters",
+        active_url="filters/",
+        subtitle="수집 기사 선별에 사용하는 포함/제외 키워드입니다.",
+        toc_items=[("include", "포함 키워드"), ("exclude", "제외 키워드")],
+    )
+
+
+def create_events_page():
+    rows = []
+    for item in EVENT_CATALOG:
+        rows.append(
+            f"<tr><td>{html.escape(item['grade'])}</td><td><a href='{html.escape(item['url'])}' target='_blank' rel='noopener noreferrer'>{html.escape(item['name'])}</a></td><td>{html.escape(item['scope'])}</td><td>{html.escape(item['location'])}</td><td>{html.escape(item['date'])}</td><td>{html.escape(item['scale'])}</td><td>{html.escape(item['note'])}</td></tr>"
+        )
+
+    body = f"""
+    <section class="card" id="events">
+      <h2>국내·해외 멤브레인/수처리 학회·전시회</h2>
+      <table class="source-table">
+        <thead><tr><th>등급</th><th>행사</th><th>구분</th><th>장소</th><th>일정</th><th>규모</th><th>비고</th></tr></thead>
+        <tbody>{''.join(rows)}</tbody>
+      </table>
+      <p class="meta">정확한 개최일·시간·부스 규모는 각 공식 홈페이지 공지를 기준으로 확인해야 합니다.</p>
+    </section>
+    """
+
+    make_html_page(
+        "학회·전시회 일정",
+        body,
+        DOCS_DIR / "events",
+        active_url="events/",
+        subtitle="국내외 수처리·멤브레인 업계 주요 학회와 전시회입니다.",
+        toc_items=[("events", "행사 목록")],
+    )
+
+
+def create_static_info_pages():
+    create_sources_page()
+    create_filters_page()
+    create_events_page()
+
+
+def build_today_detail_preview(history, limit=TOP_NEWS_LIMIT):
+    today = datetime.now(KST).strftime("%Y-%m-%d")
+    today_items = [normalize_display_item(x) for x in history if x.get("date") == today]
+    today_items = dedupe_similar_articles(today_items, limit=limit, threshold=0.70)
+    if not today_items:
+        return '<p class="meta">오늘 날짜로 누적된 상세 기사 제목이 아직 없습니다.</p>'
+    return build_headline_list(today_items)
 
 
 def update_docs_index(daily_url, weekly_url, monthly_url):
     DOCS_DIR.mkdir(parents=True, exist_ok=True)
     (DOCS_DIR / ".nojekyll").write_text("", encoding="utf-8")
 
-    today = datetime.now(KST).strftime("%Y-%m-%d")
+    history = load_json(HISTORY_FILE, [])
+    global_items, domestic_items = get_dashboard_items(history, limit=TOP_NEWS_LIMIT)
 
-    body = f"""
-    <section class="card">
-      <h2>최신 보고서</h2>
-      <p><a href="{html.escape(daily_url)}">{today} 상세 분석 보고서</a></p>
-      <p><a href="{html.escape(weekly_url)}">주간 업계 동향</a></p>
-      <p><a href="{html.escape(monthly_url)}">월간 업계 동향</a></p>
+    total_count = len(history)
+    domestic_count = sum(1 for x in history if article_is_domestic(x))
+    global_count = max(total_count - domestic_count, 0)
+    source_count = len(SOURCE_CATALOG)
+
+    stats = f"""
+    <section class="stat-grid">
+      <div class="stat-card"><div class="stat-value">{total_count}</div><div class="stat-label">누적 기사</div></div>
+      <div class="stat-card"><div class="stat-value">{domestic_count}</div><div class="stat-label">국내 기사</div></div>
+      <div class="stat-card"><div class="stat-value">{global_count}</div><div class="stat-label">해외 기사</div></div>
+      <div class="stat-card"><div class="stat-value">{source_count}</div><div class="stat-label">관리 출처</div></div>
     </section>
     """
 
-    make_html_page("상하수도·수처리 뉴스 브리핑", body, DOCS_DIR)
+    body = f"""
+    <section class="card" id="today-detail">
+      <h2>오늘의 상세 분석 기사</h2>
+      <p class="meta">당일 일일 상세 보고서에 포함되는 기사 제목입니다. 중복 내용은 자동 제외합니다.</p>
+      {build_today_detail_preview(history, limit=TOP_NEWS_LIMIT)}
+      <p><a href="{html.escape(daily_url)}">오늘 상세 분석 보고서 전체 보기</a></p>
+    </section>
 
+    <section class="news-grid" id="headlines">
+      <div class="dash-card news-card">
+        <h2>세계 주요 뉴스 TOP 10</h2>
+        {build_headline_list(global_items)}
+      </div>
+      <div class="dash-card news-card">
+        <h2>국내 주요 뉴스 TOP 10</h2>
+        {build_headline_list(domestic_items)}
+      </div>
+    </section>
+
+    <section class="card" id="events-preview">
+      <h2>국내·해외 학회 및 전시회 일정</h2>
+      <p class="meta">행사 성격, 위치, 일정, 규모 등급과 비고를 함께 표시합니다.</p>
+      {build_event_preview(limit=5)}
+    </section>
+
+    <section class="card" id="collection-stats">
+      <h2>수집 현황</h2>
+      {stats}
+    </section>
+
+    <section class="dashboard-grid" id="source-filter">
+      <div class="dash-card">
+        <h2>정보 출처</h2>
+        <p>RSS, 검색엔진, 국내외 학회·협회, 기업 뉴스룸을 구분해 정리합니다.</p>
+        <p><a href="{rel_url('sources/')}">정보 출처 보기</a></p>
+      </div>
+      <div class="dash-card">
+        <h2>필터링 기준</h2>
+        <p>MBR, 막여과, PFAS, 재이용수 등 포함 키워드와 배터리·반도체 제외 키워드를 공개합니다.</p>
+        <p><a href="{rel_url('filters/')}">필터링 기준 보기</a></p>
+      </div>
+      <div class="dash-card">
+        <h2>보고서 바로가기</h2>
+        <p><a href="{html.escape(weekly_url)}">최신 주간 업계 동향</a></p>
+        <p><a href="{html.escape(monthly_url)}">최신 월간 업계 동향</a></p>
+      </div>
+    </section>
+    """
+
+    make_html_page(
+        "상하수도·수처리 뉴스 브리핑",
+        body,
+        DOCS_DIR,
+        active_url="",
+        subtitle="국내·해외 수처리 뉴스, 멤브레인/MBR 동향, 학회·전시회 일정을 누적 관리합니다.",
+        toc_items=[("today-detail", "오늘 상세 기사"), ("headlines", "주요 뉴스"), ("events-preview", "학회·전시회"), ("collection-stats", "수집 현황"), ("source-filter", "출처/필터")],
+    )
 
 def build_policy_alerts(articles):
     alerts = []
@@ -1065,6 +2423,7 @@ def main():
     history = save_news_history(selected_articles)
 
     create_backfill_period_reports(history)
+    create_recent_daily_history_pages(history, selected_articles)
 
     week_items = filter_week_items(history)
     month_items = filter_month_items(history)
@@ -1072,10 +2431,11 @@ def main():
     weekly_one_line = build_period_one_line("이번 주 상하수도·수처리 동향", week_items)
     monthly_one_line = build_period_one_line("이번 달 상하수도·수처리 동향", month_items)
 
-    daily_url = create_daily_report(selected_articles)
+    daily_url = create_daily_report(selected_articles, history)
     weekly_url = create_period_report("weekly", week_items)
     monthly_url = create_period_report("monthly", month_items)
 
+    create_static_info_pages()
     update_docs_index(daily_url, weekly_url, monthly_url)
 
     telegram_text = build_telegram_message(
