@@ -496,6 +496,8 @@ TOP_NEWS_LIMIT = 10
 DAILY_REPORT_LOOKBACK_DAYS = int(os.getenv("DAILY_REPORT_LOOKBACK_DAYS", "2"))
 DASHBOARD_YEAR_WINDOW = int(os.getenv("DASHBOARD_YEAR_WINDOW", "2"))
 ARTICLE_MAX_AGE_DAYS = int(os.getenv("ARTICLE_MAX_AGE_DAYS", "730"))
+IMAGE_FETCH_TIMEOUT = int(os.getenv("IMAGE_FETCH_TIMEOUT", "7"))
+ENABLE_OG_IMAGE_FETCH = os.getenv("ENABLE_OG_IMAGE_FETCH", "true").lower() == "true"
 PROJECT_NEWS_LIMIT = int(os.getenv("PROJECT_NEWS_LIMIT", "10"))
 NUMERIC_NEWS_LIMIT = int(os.getenv("NUMERIC_NEWS_LIMIT", "10"))
 EVENT_YEAR_WINDOW = int(os.getenv("EVENT_YEAR_WINDOW", "2"))
@@ -629,6 +631,9 @@ PROJECT_STAGE_KEYWORDS = {
     "tender": "Tender", "award": "Award", "commissioning": "Commissioning", "construction": "Construction",
 }
 
+
+GENERIC_THUMBNAIL_SVG = "data:image/svg+xml;utf8," + quote_plus("<svg xmlns='http://www.w3.org/2000/svg' width='640' height='360' viewBox='0 0 640 360'><rect width='640' height='360' fill='#e0f2fe'/><path d='M80 230c80-55 150-55 230 0s150 55 250 0' fill='none' stroke='#0f4c81' stroke-width='18' opacity='.22' stroke-linecap='round'/><text x='320' y='183' text-anchor='middle' font-family='Arial' font-size='30' fill='#0f4c81' font-weight='700'>Water News</text></svg>")
+
 PROJECT_KEYWORDS = [
     "프로젝트", "사업", "수주", "입찰", "발주", "계약", "EPC", "턴키", "증설", "신설", "개선", "현대화",
     "하수처리장", "폐수처리장", "정수장", "재이용수", "처리시설", "contract", "tender", "award",
@@ -702,6 +707,77 @@ def get_domain(url):
         return urlparse(url).netloc.replace("www.", "")
     except Exception:
         return ""
+
+def normalize_image_url(url):
+    if not url:
+        return ""
+    url = html.unescape(str(url).strip())
+    if url.startswith("//"):
+        return "https:" + url
+    if url.startswith("http://") or url.startswith("https://") or url.startswith("data:image"):
+        return url
+    return ""
+
+
+def extract_entry_image(entry):
+    for key in ("media_thumbnail", "media_content"):
+        values = entry.get(key) or []
+        if isinstance(values, list):
+            for item in values:
+                if isinstance(item, dict):
+                    url = normalize_image_url(item.get("url"))
+                    if url:
+                        return url
+    for link in entry.get("links", []) or []:
+        if not isinstance(link, dict):
+            continue
+        href = normalize_image_url(link.get("href"))
+        ltype = str(link.get("type", "")).lower()
+        rel = str(link.get("rel", "")).lower()
+        if href and ("image" in ltype or rel in {"enclosure", "thumbnail"}):
+            return href
+    for key in ("image", "thumbnail"):
+        value = entry.get(key)
+        if isinstance(value, dict):
+            url = normalize_image_url(value.get("href") or value.get("url"))
+            if url:
+                return url
+        elif isinstance(value, str):
+            url = normalize_image_url(value)
+            if url:
+                return url
+    return ""
+
+
+def fetch_og_image(url):
+    if not ENABLE_OG_IMAGE_FETCH or not url:
+        return ""
+    try:
+        headers = {"User-Agent": "Mozilla/5.0 (compatible; HifilM-WaterNewsBot/1.0)"}
+        resp = requests.get(url, headers=headers, timeout=IMAGE_FETCH_TIMEOUT, allow_redirects=True)
+        resp.raise_for_status()
+        text = resp.text[:250000]
+        patterns = [
+            r"<meta[^>]+property=[\"']og:image[\"'][^>]+content=[\"']([^\"']+)[\"']",
+            r"<meta[^>]+content=[\"']([^\"']+)[\"'][^>]+property=[\"']og:image[\"']",
+            r"<meta[^>]+name=[\"']twitter:image[\"'][^>]+content=[\"']([^\"']+)[\"']",
+            r"<meta[^>]+content=[\"']([^\"']+)[\"'][^>]+name=[\"']twitter:image[\"']",
+        ]
+        for pattern in patterns:
+            m = re.search(pattern, text, flags=re.IGNORECASE)
+            if m:
+                return normalize_image_url(m.group(1))
+    except Exception:
+        return ""
+    return ""
+
+
+def enrich_article_images(articles, limit=20):
+    for article in articles[:limit]:
+        if not article.get("image"):
+            article["image"] = fetch_og_image(article.get("link", ""))
+    return articles
+
 
 
 def parse_entry_date(entry):
@@ -1043,6 +1119,7 @@ def fetch_articles():
                 "region": feed_region,
                 "source_type": feed_type,
                 "specs": extract_numeric_specs_from_text(f"{title} {summary}"),
+                "image": extract_entry_image(entry),
             }
 
             article["domestic"] = is_domestic_article(article)
@@ -1354,6 +1431,7 @@ def save_news_history(articles):
             "domestic": a.get("domestic", False),
             "region": a.get("region", ""),
             "source_type": a.get("source_type", ""),
+            "image": a.get("image", ""),
         })
 
     cutoff = (datetime.now(KST) - timedelta(days=ARTICLE_MAX_AGE_DAYS)).strftime("%Y-%m-%d")
@@ -1716,7 +1794,8 @@ def make_html_page(title, body_html, path, active_url="", subtitle="", toc_items
     path.mkdir(parents=True, exist_ok=True)
     toc_items = toc_items or []
     nav_html = build_left_nav(active_url)
-    toc_html = right_html if right_html is not None else build_toc(toc_items)
+    # 오른쪽 사이드바는 제거하고 중앙 콘텐츠 폭을 넓힙니다.
+    toc_html = ""
 
     html_doc = f"""<!doctype html>
 <html lang="ko">
@@ -1756,7 +1835,7 @@ def make_html_page(title, body_html, path, active_url="", subtitle="", toc_items
       border-bottom:1px solid rgba(255,255,255,.14);
     }}
     .topbar-inner {{
-      max-width:2140px;
+      max-width:2200px;
       margin:0 auto;
       padding:18px 24px;
       display:flex;
@@ -1776,11 +1855,11 @@ def make_html_page(title, body_html, path, active_url="", subtitle="", toc_items
     .brand:hover {{ text-decoration:none; }}
     .top-date {{ font-size:13px; color:#dbeafe; white-space:nowrap; }}
     .layout {{
-      max-width:2140px;
+      max-width:2200px;
       margin:0 auto;
       padding:24px;
       display:grid;
-      grid-template-columns:260px minmax(0, 1.35fr) 520px;
+      grid-template-columns:260px minmax(0, 1fr);
       gap:22px;
       align-items:start;
     }}
@@ -2005,6 +2084,7 @@ def normalize_display_item(item):
             "link": item.get("link", ""),
             "score": item.get("score", 0),
             "domestic": item.get("domestic", False),
+            "image": item.get("image", ""),
         }
 
     specs = merge_specs(item.get("specs", []), item.get("title", ""), item.get("summary", ""))
@@ -2026,6 +2106,7 @@ def normalize_display_item(item):
         "link": item.get("link", ""),
         "score": item.get("score", 0),
         "domestic": item.get("domestic", False),
+        "image": item.get("image", ""),
     }
 
 def build_article_cards(items):
@@ -2220,35 +2301,58 @@ def get_dashboard_items(history, limit=TOP_NEWS_LIMIT):
 
     return global_items, domestic_items
 
-def build_headline_list(items):
+def infer_companies_for_item(item):
+    a = normalize_display_item(item)
+    companies = normalize_company_list(a.get("companies", []))
+    text = replace_company_names_with_english(f"{a.get('title','')} {a.get('ko_title','')} {a.get('summary','')} {a.get('brief','')}")
+    for name in sorted(COMPANY_COUNTRY_MAP.keys(), key=len, reverse=True):
+        if re.search(rf"(?<![A-Za-z0-9]){re.escape(name)}(?![A-Za-z0-9])", text, flags=re.IGNORECASE):
+            if name not in companies:
+                companies.append(name)
+    return companies[:5]
+
+
+def display_countries_with_flags(item):
+    a = normalize_display_item(item)
+    countries = []
+    for c in a.get("countries", []) or []:
+        label = add_country_flag(c)
+        if label and label not in countries:
+            countries.append(label)
+    if not countries and article_is_domestic(a):
+        countries.append("🇰🇷 대한민국")
+    return countries
+
+
+def build_headline_list(items, show_images=True):
     if not items:
         return '<p class="meta">표시할 뉴스가 아직 없습니다.</p>'
-
-    parts = ['<ol class="headline-list">']
-    for item in items:
+    parts = ['<ol class="headline-list compact">']
+    for idx, item in enumerate(items, 1):
         a = normalize_display_item(item)
         title = a.get("ko_title") or a.get("title") or "제목 없음"
         source = a.get("source", "출처 미확인")
         date = a.get("date", "")
         link = a.get("link", "")
         category = a.get("category", "")
-        countries = " ".join(add_country_flag(c) for c in a.get("countries", []))
-        companies = ", ".join(format_companies_with_flags(a.get("companies", [])))
         specs = a.get("specs", []) or []
+        image_url = a.get("image") or GENERIC_THUMBNAIL_SVG
+        countries = display_countries_with_flags(a)
+        companies = [add_company_flag(c) for c in infer_companies_for_item(a)]
+        date_context = a.get("date_context", "") or get_article_date_context(a)
+        technologies = a.get("technologies", []) or []
+        first_line_parts = countries + companies + [f"기사일 {date}", f"발표/일정 {date_context}"]
+        second_line_parts = [f"출처 {source}", category] + technologies[:4]
+        first_line = " · ".join(html.escape(x) for x in first_line_parts if x)
+        second_line = " · ".join(html.escape(x) for x in second_line_parts if x)
         specs_html = ""
         if specs:
             specs_html = "<div class='headline-specs'>" + " · ".join(html.escape(str(x)) for x in specs[:4]) + "</div>"
-        date_context = a.get("date_context", "") or get_article_date_context(a)
-        extra = ""
-        if countries:
-            extra += f" · {html.escape(countries)}"
-        if companies:
-            extra += f" · {html.escape(companies)}"
-        meta = f"<span class='meta'> · 기사일 {html.escape(date)} · 발표/일정 {html.escape(date_context)} · 출처 {html.escape(source)} · {html.escape(category)}{extra}</span>"
+        title_html = f'<span class="headline-rank">{idx}</span><span class="headline-title-row">{html.escape(title)}</span>'
         if link:
-            parts.append(f'<li><a href="{html.escape(link)}" target="_blank" rel="noopener noreferrer"><span class="headline-title">{html.escape(title)}</span></a>{meta}{specs_html}</li>')
-        else:
-            parts.append(f'<li><span class="headline-title">{html.escape(title)}</span>{meta}{specs_html}</li>')
+            title_html = f'<a href="{html.escape(link)}" target="_blank" rel="noopener noreferrer">{title_html}</a>'
+        thumb_html = f'<img class="headline-thumb" src="{html.escape(image_url)}" alt="news thumbnail" loading="lazy" referrerpolicy="no-referrer">' if show_images else ""
+        parts.append('<li><div class="headline-item">' + thumb_html + '<div>' + title_html + '<div class="headline-meta-row">' + first_line + '</div><div class="headline-meta-row">' + second_line + '</div>' + specs_html + '</div></div></li>')
     parts.append("</ol>")
     return "\n".join(parts)
 
@@ -2622,8 +2726,26 @@ def build_today_detail_preview(history, limit=TOP_NEWS_LIMIT):
     today_items = dedupe_similar_articles(today_items, limit=limit, threshold=0.70)
     if not today_items:
         return '<p class="meta">오늘 날짜로 누적된 상세 기사 제목이 아직 없습니다.</p>'
-    return build_headline_list(today_items)
-
+    lead = normalize_display_item(today_items[0])
+    image_url = lead.get("image") or GENERIC_THUMBNAIL_SVG
+    title = lead.get("ko_title") or lead.get("title") or "제목 없음"
+    brief = lead.get("brief") or lead.get("summary") or "요약 정보가 없습니다."
+    source = lead.get("source", "출처 미확인")
+    date = lead.get("date", today)
+    category = lead.get("category", "")
+    specs = lead.get("specs", []) or []
+    countries = " · ".join(display_countries_with_flags(lead))
+    companies = " · ".join(add_company_flag(c) for c in infer_companies_for_item(lead))
+    date_context = lead.get("date_context") or get_article_date_context(lead)
+    specs_html = ""
+    if specs:
+        specs_html = "<div class='headline-specs'>" + " · ".join(html.escape(str(x)) for x in specs[:4]) + "</div>"
+    link = lead.get("link", "")
+    title_block = f'<a href="{html.escape(link)}" target="_blank" rel="noopener noreferrer">{html.escape(title)}</a>' if link else html.escape(title)
+    meta_parts = [countries, companies, f"기사일 {date}", f"발표/일정 {date_context}"]
+    meta_line = " · ".join(html.escape(x) for x in meta_parts if x)
+    more_html = build_headline_list(today_items[1:limit], show_images=True) if len(today_items) > 1 else ""
+    return '<div class="article-card today-lead"><div class="article-card-img-wrap"><img class="article-card-img" src="' + html.escape(image_url) + '" alt="lead article thumbnail" loading="lazy" referrerpolicy="no-referrer"></div><div class="article-card-body"><p><span class="pill">' + html.escape(category or '분류 없음') + '</span></p><h2>' + title_block + '</h2><p>' + html.escape(brief) + '</p><p class="meta meta-line">' + meta_line + '</p><p class="meta meta-line">출처 ' + html.escape(source) + ' · ' + html.escape(category) + '</p>' + specs_html + '</div></div>' + more_html
 
 def update_docs_index(daily_url, weekly_url, monthly_url):
     DOCS_DIR.mkdir(parents=True, exist_ok=True)
@@ -2881,7 +3003,7 @@ def main():
     DOCS_DIR.mkdir(parents=True, exist_ok=True)
 
     articles = fetch_articles()
-    selected_articles = articles[:MAX_ITEMS]
+    selected_articles = enrich_article_images(articles[:MAX_ITEMS], limit=MAX_ITEMS)
 
     for article in selected_articles:
         article["ai"] = summarize_article(article)
