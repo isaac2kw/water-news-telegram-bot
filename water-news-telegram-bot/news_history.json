@@ -3789,5 +3789,271 @@
     "domestic": true,
     "region": "domestic",
     "source_type": "search_rss"
+  },
+  {
+    "date": "2026-06-02",
+    "title": "Toray introduces ultrafiltration membrane designed to reduce biofouling in wastewater reuse",
+    "ko_title": "Toray, 재이용수용 저바이오파울링 UF 공개",
+    "brief": "Toray가 폐수 재이용 공정에서 바이오파울링 저감을 목표로 한 F-HFUG Series 한외여과막 모듈을 공개했습니다. 0.005마이크로미터 기공으로 biopolymer 통과와 후단 RO 오염 저감에 초점을 맞췄습니다.",
+    "summary": "Toray는 폐수 재이용 공정용으로 biofouling 저감을 겨냥한 F-HFUG Series ultrafiltration membrane module을 소개했습니다. RSS 요약에 따르면 이 제품은 0.005-micrometer pore size를 적용해 biopolymer의 막 통과를 줄이고, 후단 reverse osmosis fouling을 낮추도록 설계됐습니다. 이는 재이용수 시스템에서 UF가 RO 전처리 역할을 수행하는 구조와 직접 연결되는 내용입니다. 수처리 산업 관점에서 이번 발표는 wastewater reuse 분야에서 전처리 막의 오염 저감 성능을 차별화 포인트로 내세운 제품 동향으로 볼 수 있습니다. 다만 제공된 기사 정보에는 적용 현장, 처리용량, 상용 프로젝트 규모 등은 제시되지 않았습니다.",
+    "why_important": "재이용수 시장에서는 UF 전처리의 성능이 후단 RO 운영 안정성과 세정 부담에 영향을 줄 수 있어, Toray의 이번 제품 발표는 기술 경쟁 관점에서 의미가 있습니다. 실제 시장 파급력은 도입 프로젝트와 운영 데이터에 좌우될 가능성이 있으나, 이는 추측입니다.",
+    "category": "재이용수",
+    "countries": [],
+    "companies": [
+      "Toray"
+    ],
+    "technologies": [
+      "ultrafiltration",
+      "membrane module",
+      "wastewater reuse",
+      "biofouling",
+      "reverse osmosis",
+      "PFAS"
+    ],
+    "policy_alert": "",
+    "specs": [
+      "0.005-micrometer pore size"
+    ],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a22171f778a420fa24b49ec045780e6&url=https%3a%2f%2fwww.dairyfoods.com%2farticles%2f99167-toray-introduces-ultrafiltration-membrane-designed-to-reduce-biofouling-in-wastewater-reuse&c=9496410966415004977&mkt=en-us",
+    "score": 57,
+    "keywords": [
+      "membrane",
+      "ultrafiltration",
+      "wastewater",
+      "water reuse",
+      "toray",
+      "biofouling",
+      "membrane module"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss"
+  },
+  {
+    "date": "2026-02-12",
+    "title": "DuPont Named Finalist in 2026 Edison Awards for FilmTec™ Fortilife™ XC160UHP Membrane for Wastewater Treatment and Reuse",
+    "ko_title": "DuPont, Edison Awards 최종후보 선정",
+    "brief": "DuPont의 FilmTec™ Fortilife™ XC160UHP 역삼투막이 2026 Edison Awards 최종후보에 올랐습니다. 산업폐수 처리와 재이용용 멤브레인 기술의 상업적 주목도를 보여줍니다.",
+    "summary": "DuPont는 산업폐수 처리와 재이용용 FilmTec™ Fortilife™ XC160UHP reverse osmosis 요소가 2026 Edison Awards 최종후보로 선정됐다고 발표했습니다. 기사 요약상 발표는 2026년 2월 12일 WILMINGTON, Del.에서 PRNewswire를 통해 공개됐습니다. 핵심 내용은 해당 제품이 산업용 wastewater treatment and reuse 분야의 멤브레인 솔루션으로 외부 혁신상 평가를 받았다는 점입니다. 수처리 산업 측면에서는 산업폐수 재이용과 고도 처리용 RO 멤브레인 시장에서 제품 경쟁력과 브랜드 인지도를 강화하는 신호로 볼 수 있습니다. 다만 제공된 기사 요약에는 성능 수치, 적용 현장, 처리용량 등 구체 사양은 제시되지 않았습니다.",
+    "why_important": "산업폐수 재이용 시장에서는 실제 프로젝트 수주 이전에도 기술 신뢰도와 레퍼런스 형성이 중요하며, 이번 최종후보 선정은 DuPont의 막 솔루션 마케팅과 시장 포지셔닝에 의미가 있습니다. 기술 측면에서도 RO 기반 wastewater reuse가 계속 주목받는 흐름과 맞닿아 있으나, 구체적 사업 영향은 기사에 없어 추가 효과 판단은 추측입니다.",
+    "category": "분리막/막여과",
+    "countries": [
+      "미국"
+    ],
+    "companies": [
+      "DuPont"
+    ],
+    "technologies": [
+      "membrane",
+      "wastewater",
+      "industrial wastewater",
+      "water treatment",
+      "reverse osmosis",
+      "reuse",
+      "FilmTec™ Fortilife™ XC160UHP"
+    ],
+    "policy_alert": "",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a22171f778a420fa24b49ec045780e6&url=https%3a%2f%2fwww.morningstar.com%2fnews%2fpr-newswire%2f20260212ph86055%2fdupont-named-finalist-in-2026-edison-awards-for-filmtec-fortilife-xc160uhp-membrane-for-wastewater-treatment-and-reuse&c=16560179987338129635&mkt=en-us",
+    "score": 50,
+    "keywords": [
+      "membrane",
+      "wastewater",
+      "industrial wastewater",
+      "water treatment",
+      "award",
+      "dupont",
+      "filmtec"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss"
+  },
+  {
+    "date": "2026-05-30",
+    "title": "익산시 하수처리장, 어린이 환경교육 체험공간으로 - 익산시민뉴스",
+    "ko_title": "익산시 하수처리장, 어린이 환경교육 공간화",
+    "brief": "익산시 하수처리장이 어린이 대상 환경교육 체험공간으로 활용된다는 내용입니다. 하수처리 시설의 공공 소통과 환경교육 기능 확대 측면에서 의미가 있습니다.",
+    "summary": "이번 기사는 익산시 하수처리장을 어린이 환경교육 체험공간으로 활용하는 내용을 전합니다. 하수처리장을 단순한 기반시설이 아니라 시민 체험과 교육이 가능한 공간으로 확장하려는 시도로 해석됩니다. 수처리 산업 관점에서는 하수처리 시설의 사회적 수용성 제고와 환경 인식 개선에 연결될 수 있다는 점이 관련성이 있습니다. 또한 공공 하수처리장이 지역사회와의 접점을 넓히는 운영 모델로 소개될 수 있습니다. 다만 제공된 기사 정보에는 구체적인 시설 규모, 투자비, 운영 방식 등 세부 내용은 확인되지 않습니다.",
+    "why_important": "하수처리장은 주민 수용성과 공공 인식이 중요한 인프라이며, 환경교육 기능을 더하면 지역사회와의 관계 개선에 도움이 될 수 있습니다. 시장이나 프로젝트 확대 효과는 기사만으로는 확인되지 않으며, 관련 파급효과 평가는 추측입니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "한국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "환경교육",
+      "체험공간"
+    ],
+    "policy_alert": "",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5NZE1XQmdrZHNaOWt5c1l0dmh0T3E2Q0MwaWx6bllvUkFwMDNOVUZTOWtuZWYzeGlYVXBOUjYzMDk1SXQ2X2haMkpjQ0NDYlc0a0FQTE1IVWMxakNBQ0pvbThMa2dQNmRwVFMw?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "search_rss"
+  },
+  {
+    "date": "2026-05-26",
+    "title": "서산시, 공공하수처리시설 방류수 '소수력 발전'에 활용 - v.daum.net",
+    "ko_title": "서산시, 하수처리 방류수로 소수력 발전 활용",
+    "brief": "서산시가 공공하수처리시설 방류수를 소수력 발전에 활용하는 내용을 알렸다. 하수처리 방류수의 에너지 회수 사례로, 수처리 시설 운영의 자원순환 관점에서 주목된다.",
+    "summary": "이번 뉴스는 서산시가 공공하수처리시설의 방류수를 소수력 발전에 활용한다고 전한 내용이다. 핵심은 하수처리 이후 배출되는 방류수의 흐름을 에너지원으로 활용해 부가가치를 높이려는 시도에 있다. 이는 하수처리시설이 단순한 오염물질 처리 기능을 넘어 에너지 회수와 자원순환 거점으로 확장될 수 있음을 보여준다. 수처리 산업 측면에서는 하수처리장 운영 효율화와 에너지 비용 절감 가능성에 대한 관심을 높일 수 있다. 다만 기사 요약에 구체적 설비 규모나 사업비, 발전용량 등 세부 수치는 제시되지 않았다.",
+    "why_important": "하수처리 방류수를 활용한 에너지 회수는 공공 수처리 인프라의 운영 효율과 자원순환 가치를 높일 수 있다는 점에서 중요하다. 프로젝트 규모나 경제성은 기사에 없지만, 유사 시설 확산 여부는 지방자치단체의 예산·정책 방향과 연계될 가능성이 있다. 추측입니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "한국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "방류수",
+      "소수력 발전",
+      "에너지 회수"
+    ],
+    "policy_alert": "",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5yV0JLMXcwVUFZd29kRHdzV0QtU1hPdFZ2WjVMdGVEeU1xWWtCMG5OUHZUcHUzWEg2LUNmY1VBZ2lNTHdLR2VoZHNPUUI4YnFpdU9hUw?oc=5",
+    "score": 24,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "방류수"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss"
+  },
+  {
+    "date": "2026-06-02",
+    "title": "Membrane Technology Forum 2026 expands focus on beverage innovation and wastewater treatment",
+    "ko_title": "Membrane Technology Forum 2026, 음료·폐수 확대",
+    "brief": "Membrane Technology Forum 2026가 음료 시장 혁신과 wastewater treatment 관련 의제를 확대합니다. RSS 요약에 따르면 membrane technology의 유망한 beverage 시장 기회를 다루는 연사가 늘어날 예정입니다.",
+    "summary": "Membrane Technology Forum 2026는 기존 막기술 논의에 더해 beverage innovation과 wastewater treatment로 초점을 확장한 것으로 보입니다. RSS 요약에 따르면 2026년 행사 아젠다에는 membrane technology의 유망한 beverage 시장 기회를 식별하는 연사가 더 많이 포함될 예정입니다. 이는 막기술이 식음료 공정과 폐수 처리 영역에서 동시에 적용 범위를 넓히고 있음을 시사합니다. 수처리 산업 관점에서는 분리막 기술이 산업 공정수 관리와 폐수 저감, 자원 회수 논의와 연결될 수 있다는 점에서 관련성이 있습니다. 다만 제공된 정보가 제한적이어서 구체적 프로그램, 일정, 참가 규모, 기술 사양은 확인되지 않습니다.",
+    "why_important": "분리막 기술의 적용처가 beverage와 wastewater treatment로 함께 확장되면 산업폐수 및 공정용수 시장의 신규 수요를 가늠하는 신호가 될 수 있습니다. 행사 아젠다 변화는 기술·시장 트렌드를 보여준다는 점에서 중요하지만, 실제 프로젝트나 투자 확대로 이어질지는 추측입니다.",
+    "category": "학회/전시회",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "membrane",
+      "wastewater treatment",
+      "water treatment",
+      "beverage innovation"
+    ],
+    "policy_alert": "",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a22171f778a420fa24b49ec045780e6&url=https%3a%2f%2fwww.dairyfoods.com%2farticles%2f99166-membrane-technology-forum-2026-expands-focus-on-beverage-innovation-and-wastewater-treatment&c=1461589195714993340&mkt=en-us",
+    "score": 23,
+    "keywords": [
+      "membrane",
+      "wastewater",
+      "water treatment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss"
+  },
+  {
+    "date": "2026-02-18",
+    "title": "MemCor™ MBR systems selected for three major wastewater treatment plant expansions in England",
+    "ko_title": "England 3개 하수처리장 확장에 MemCor MBR 선정",
+    "brief": "England의 주요 하수처리장 3곳 확장 사업에 MemCor™ MBR systems가 선정됐다는 기사입니다. 다만 제공된 RSS 요약에 사업 규모·용량·발주처 등 핵심 세부 정보는 확인되지 않습니다.",
+    "summary": "기사 제목에 따르면 England의 주요 하수처리장 3곳 확장 사업에 MemCor™ MBR systems가 채택됐습니다. 이는 하수처리장 증설 과정에서 MBR 기술이 적용된 사례로 해석됩니다. 다만 현재 제공된 RSS 요약은 Yahoo Finance의 일반 고지 문구 중심이라 프로젝트 위치, 처리용량, 발주처, 계약 규모, 일정 등 핵심 정보는 확인되지 않습니다. 수처리 산업 관점에서는 하수처리장 확장에 분리막 기반 공정이 채택됐다는 점이 중요합니다. 그러나 기사 원문 세부 내용이 확보되지 않아 추가 사실 확인이 필요합니다.",
+    "why_important": "하수처리장 증설에 MBR이 선정됐다는 점은 분리막/MBR 시장 수요와 레퍼런스 확대 측면에서 의미가 있습니다. 다만 발주처, 규모, 규제 배경이 확인되지 않아 시장 영향의 구체적 판단은 제한적이며 일부 해석은 추측입니다.",
+    "category": "분리막/MBR",
+    "countries": [
+      "영국"
+    ],
+    "companies": [
+      "MemCor"
+    ],
+    "technologies": [
+      "MBR",
+      "wastewater treatment",
+      "plant expansion"
+    ],
+    "policy_alert": "",
+    "specs": [],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a22171e21c84448bfa46327cfd02f6c&url=https%3a%2f%2ffinance.yahoo.com%2fnews%2fmemcor-mbr-systems-selected-three-140000877.html&c=15153598790819934667&mkt=en-us",
+    "score": 34,
+    "keywords": [
+      "mbr",
+      "wastewater",
+      "water treatment",
+      "expansion",
+      "investment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss"
+  },
+  {
+    "date": "2026-04-28",
+    "title": "Membrane Technologies for Water Treatment and Purification",
+    "ko_title": "수처리 정화용 막기술 동향 조명",
+    "brief": "막 기반 공정이 전 세계 물 부족 대응의 핵심 수단으로 부각됐다는 내용입니다. 미세여과 등 압력 구동 분리기술이 오염물 제거와 에너지 효율 측면에서 주목받고 있습니다.",
+    "summary": "이번 기사는 수처리와 정화 분야에서 막 기반 공정의 중요성을 개괄적으로 다룹니다. RSS 요약에 따르면 막 기술은 전 세계 물 부족 문제 대응을 위해 물 속 오염물을 에너지 효율적으로 분리하는 수단으로 부상했습니다. 특히 microfiltration와 같은 압력 구동 방식이 주요 기술로 언급됩니다. 기사 제목과 요약상 특정 기업, 프로젝트, 설비 규모, 투자비 등은 확인되지 않습니다. 수처리 산업 관점에서는 분리막/막여과 기술이 물 재이용, 정수, 폐수 고도처리 전반의 기반 기술로 계속 주목받는 흐름을 보여줍니다.",
+    "why_important": "시장과 기술 측면에서 분리막 기반 수처리의 적용 확대 흐름을 보여주는 신호로 볼 수 있습니다. 다만 구체적 상용화 사례나 규제 변화는 기사 요약에 없어, 산업 영향의 세부 해석에는 추가 확인이 필요합니다.",
+    "category": "분리막/막여과",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "membrane",
+      "microfiltration",
+      "water treatment"
+    ],
+    "policy_alert": "",
+    "specs": [],
+    "source": "Bing News Global UF MF",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a22172d60044c1499042e73e550e46a&url=https%3a%2f%2fwww.nature.com%2fnature-index%2ftopics%2fl4%2fmembrane-technologies-for-water-treatment-and-purification&c=5477425063516893123&mkt=en-us",
+    "score": 23,
+    "keywords": [
+      "membrane",
+      "microfiltration",
+      "water treatment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "search_rss"
+  },
+  {
+    "date": "2026-06-03",
+    "title": "안성시, 하수처리시설 증설·신설 추진 - 자치안성신문",
+    "ko_title": "안성시, 하수처리시설 증설·신설 추진",
+    "brief": "안성시가 하수처리시설의 증설과 신설을 추진한다는 내용입니다. 지역 하수처리 인프라 확충 방향을 보여주지만, 기사 요약에는 구체적 규모와 일정은 제시되지 않았습니다.",
+    "summary": "자치안성신문 보도에 따르면 안성시가 하수처리시설의 증설과 신설을 추진하고 있습니다. 제공된 RSS 요약만으로는 대상 시설, 사업 규모, 예산, 처리용량, 추진 일정 등 구체 정보는 확인되지 않습니다. 다만 이번 내용은 지역 하수처리 인프라 확충과 공공 수처리 설비 투자 수요와 연결되는 사안으로 볼 수 있습니다. 수처리 산업 측면에서는 향후 설계, 시공, 기자재, 운영관리 분야의 발주 가능성과 연관될 수 있습니다. 다만 구체적 사업 구조와 기술 범위는 원문 확인이 필요합니다.",
+    "why_important": "지자체의 하수처리시설 증설·신설 추진은 향후 공공 수처리 프로젝트와 관련 기자재·엔지니어링 수요로 이어질 수 있다는 점에서 중요합니다. 다만 시장 규모, 적용 기술, 발주 일정에 대한 판단은 기사 원문 추가 확인이 필요한 추측입니다.",
+    "category": "프로젝트/수주",
+    "countries": [
+      "한국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리"
+    ],
+    "policy_alert": "",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE0tQndaQndfX2N1cVl0c2NkMkhWWVV5Q0ZaVW1wX1d5bHhjUkd3LVFRRGhVSTdfWnhOdWFqa2tqZlRkVHhCME9uOWhnaDR6aWc3OVZwM2dDQUhCR3BOTS1nX1lmNm50RTBIMEtJTDBHTl9VeUtXdXVXLTZ4d2c?oc=5",
+    "score": 18,
+    "keywords": [
+      "하수처리",
+      "수처리"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss"
   }
 ]
