@@ -18,7 +18,10 @@ KST = timezone(timedelta(hours=9))
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
+OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4.1")
+# gpt-5 계열 모델은 temperature 커스텀 값을 지원하지 않으므로 전송하지 않습니다.
+# gpt-4.1 등 일반 모델은 temperature를 정상 지원합니다.
+IS_GPT5_FAMILY = OPENAI_MODEL.startswith("gpt-5")
 
 MAX_ITEMS = int(os.getenv("MAX_ITEMS", "8"))
 MIN_SCORE = int(os.getenv("MIN_SCORE", "8"))
@@ -507,7 +510,6 @@ COMPANY_ENGLISH_MAP = {
     "아사히 카세이": "Asahi Kasei",
     "마이크로자": "Microza",
     "펜테어": "Pentair",
-    "팔": "Pall",
     "싸인더": "Synder Filtration",
     "신더": "Synder Filtration",
     "엔엑스필트레이션": "NX Filtration",
@@ -520,6 +522,36 @@ COMPANY_ENGLISH_MAP = {
     "멤스타": "Memstar",
     "두산에너빌리티": "Doosan Enerbility",
     "지에스건설": "GS E&C",
+}
+
+# 해외 지명 영문 사전 (사후 치환 안전망)
+# 무한히 많은 지명을 모두 등록할 수 없으므로, 근본 해결은 프롬프트의 영문 유지 규칙입니다.
+# 이 사전은 자주 등장하는 주요 해외 지명만 보조로 잡습니다.
+LOCATION_ENGLISH_MAP = {
+    "도쿄": "Tokyo",
+    "오사카": "Osaka",
+    "요코하마": "Yokohama",
+    "나고야": "Nagoya",
+    "버팔로": "Buffalo",
+    "뉴욕": "New York",
+    "캘리포니아": "California",
+    "텍사스": "Texas",
+    "플로리다": "Florida",
+    "헨더슨": "Henderson",
+    "보이시": "Boise",
+    "런던": "London",
+    "파리": "Paris",
+    "베를린": "Berlin",
+    "암스테르담": "Amsterdam",
+    "로테르담": "Rotterdam",
+    "싱가포르": "Singapore",
+    "두바이": "Dubai",
+    "아부다비": "Abu Dhabi",
+    "리야드": "Riyadh",
+    "베이징": "Beijing",
+    "상하이": "Shanghai",
+    "광저우": "Guangzhou",
+    "선전": "Shenzhen",
 }
 
 SPEC_VALUE_PATTERNS = [
@@ -706,7 +738,10 @@ def replace_company_names_with_english(text):
     if not text:
         return ""
     out = str(text)
-    for ko, en in COMPANY_ENGLISH_MAP.items():
+    # 회사명 + 해외 지명 사전을 통합하고, 긴 키부터 치환해 부분 문자열 충돌을 방지합니다.
+    # 예: "미쓰비시중공업"을 "미쓰비시"보다 먼저 치환해 "Mitsubishi중공업" 깨짐을 막습니다.
+    combined = {**COMPANY_ENGLISH_MAP, **LOCATION_ENGLISH_MAP}
+    for ko, en in sorted(combined.items(), key=lambda x: len(x[0]), reverse=True):
         out = out.replace(ko, en)
     return out
 
@@ -1013,27 +1048,30 @@ def openai_json(prompt, fallback):
         return fallback
 
     try:
+        payload = {
+            "model": OPENAI_MODEL,
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "You are a Korean water and wastewater industry analyst. Return valid JSON only. Do not invent facts.",
+                },
+                {
+                    "role": "user",
+                    "content": prompt,
+                },
+            ],
+            "response_format": {"type": "json_object"},
+        }
+        if not IS_GPT5_FAMILY:
+            payload["temperature"] = 0.2
+
         resp = requests.post(
             "https://api.openai.com/v1/chat/completions",
             headers={
                 "Authorization": f"Bearer {OPENAI_API_KEY}",
                 "Content-Type": "application/json",
             },
-            json={
-                "model": OPENAI_MODEL,
-                "messages": [
-                    {
-                        "role": "system",
-                        "content": "You are a Korean water and wastewater industry analyst. Return valid JSON only. Do not invent facts.",
-                    },
-                    {
-                        "role": "user",
-                        "content": prompt,
-                    },
-                ],
-                "response_format": {"type": "json_object"},
-                "temperature": 0.2,
-            },
+            json=payload,
             timeout=90,
         )
 
@@ -1052,26 +1090,29 @@ def openai_text(prompt, fallback):
         return fallback
 
     try:
+        payload = {
+            "model": OPENAI_MODEL,
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "You are a Korean water and wastewater industry analyst. Write concise factual Korean analysis only.",
+                },
+                {
+                    "role": "user",
+                    "content": prompt,
+                },
+            ],
+        }
+        if not IS_GPT5_FAMILY:
+            payload["temperature"] = 0.2
+
         resp = requests.post(
             "https://api.openai.com/v1/chat/completions",
             headers={
                 "Authorization": f"Bearer {OPENAI_API_KEY}",
                 "Content-Type": "application/json",
             },
-            json={
-                "model": OPENAI_MODEL,
-                "messages": [
-                    {
-                        "role": "system",
-                        "content": "You are a Korean water and wastewater industry analyst. Write concise factual Korean analysis only.",
-                    },
-                    {
-                        "role": "user",
-                        "content": prompt,
-                    },
-                ],
-                "temperature": 0.2,
-            },
+            json=payload,
             timeout=90,
         )
 
@@ -1118,6 +1159,8 @@ def summarize_article(article):
 - specs: 기사에 명시된 수치·사양 배열. 처리장 용량, m3/day, m³/day, 톤/일, MLD, MGD, 사업비, CAPEX, 막면적, Flux, TMP, MLSS, HRT, SRT, 참석자 규모 등. 기사에 없으면 []. 절대 만들지 말 것.
 
 중요:
+- 기업명, 해외 지명, 해외 기관명, 브랜드명, 제품명 등 영어가 원문인 고유명사는 한국어로 음역하지 말고 반드시 영문 원문 그대로 표기하세요. 예: Toray(토레이/도레이 금지), Veolia, SUEZ, Buffalo(버팔로 금지), Tokyo(도쿄 금지), Henderson, Boise. 이 규칙은 ko_title, brief, summary, why_important 등 모든 텍스트 필드에 동일하게 적용됩니다.
+- 단, 한국 국내 지명·기관·지자체 등 한국어가 정식 명칭인 대상은 한글로 표기하세요. 예: 환경부, 한국상하수도협회, 예산군, 서울, 부산.
 - 처리장, 정수장, 하수처리장, 공장, 프로젝트, 전시회, 학회가 나오면 장소·날짜·규모·용량·사업비 등 숫자 정보를 우선 추출하세요.
 - 수치가 기사에 없으면 specs는 []로 두세요.
 
@@ -2303,7 +2346,9 @@ def build_telegram_message(articles, daily_url, weekly_url, monthly_url, weekly_
 
     if articles:
         first = articles[0]["ai"]
-        today_summary = first.get("brief", "오늘 기준 수처리 관련 주요 뉴스가 확인되었습니다.")
+        today_summary = replace_company_names_with_english(
+            first.get("brief", "오늘 기준 수처리 관련 주요 뉴스가 확인되었습니다.")
+        )
         lines.append(today_summary)
     else:
         lines.append("오늘 기준 필터 조건에 맞는 주요 뉴스가 없습니다.")
@@ -2341,17 +2386,21 @@ def build_telegram_message(articles, daily_url, weekly_url, monthly_url, weekly_
 
             emoji = emoji_for_category(ai.get("category", ""), ai.get("technologies", []))
 
-            lines.append(f"{idx}. {country_prefix}{ai.get('ko_title', '')}")
+            ko_title = replace_company_names_with_english(ai.get("ko_title", ""))
+            brief = replace_company_names_with_english(ai.get("brief", ""))
+            why_important = replace_company_names_with_english(ai.get("why_important", ""))
+
+            lines.append(f"{idx}. {country_prefix}{ko_title}")
             lines.append("")
             lines.append("주제")
             lines.append(f"{emoji} {ai.get('category', '')}")
             lines.append("")
             lines.append("요약")
-            lines.append(ai.get("brief", ""))
+            lines.append(brief)
             lines.append("")
             lines.append("💡 왜 중요한가?")
             lines.append("")
-            lines.append(ai.get("why_important", ""))
+            lines.append(why_important)
             lines.append("")
             lines.append("━━━━━━━━━━━━━━")
             lines.append("")
