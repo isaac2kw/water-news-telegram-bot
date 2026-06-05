@@ -5,427 +5,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>2026-W23 상하수도·수처리 주간 업계 동향</title>
   <style>
-    :root {
-      --bg:#f4f7fb;
-      --panel:#ffffff;
-      --ink:#0f172a;
-      --muted:#64748b;
-      --line:#e2e8f0;
-      --brand:#0f4c81;
-      --brand-dark:#0b3157;
-      --brand-soft:#e0f2fe;
-      --accent:#0284c7;
-      --warn:#fff7ed;
-    }
-    * { box-sizing:border-box; }
-    body {
-      margin:0;
-      background:var(--bg);
-      color:var(--ink);
-      font-family:Arial, "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
-      line-height:1.65;
-    }
-    a { color:#1d4ed8; text-decoration:none; }
-    a:hover { text-decoration:underline; }
-    .topbar {
-      position:sticky;
-      top:0;
-      z-index:20;
-      background:linear-gradient(135deg, var(--brand-dark), var(--brand));
-      color:#fff;
-      border-bottom:1px solid rgba(255,255,255,.14);
-    }
-    .topbar-inner {
-      max-width:1880px;
-      margin:0 auto;
-      padding:18px 24px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-    }
-    .brand {
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      color:#fff;
-      font-size:20px;
-      font-weight:800;
-      letter-spacing:-.02em;
-    }
-    .brand:hover { text-decoration:none; }
-    .top-date { font-size:13px; color:#dbeafe; white-space:nowrap; }
-    .layout {
-      max-width:1880px;
-      margin:0 auto;
-      padding:24px;
-      display:grid;
-      grid-template-columns:260px minmax(0, 1fr) 210px;
-      gap:22px;
-      align-items:start;
-    }
-    .side-nav {
-      position:sticky;
-      top:82px;
-      max-height:calc(100vh - 108px);
-      overflow:auto;
-      background:var(--panel);
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:16px;
-      box-shadow:0 8px 22px rgba(15,23,42,.05);
-    }
-    .nav-home {
-      display:block;
-      padding:10px 12px;
-      border-radius:12px;
-      color:var(--ink);
-      font-weight:800;
-      background:#f8fafc;
-      border:1px solid var(--line);
-      margin-bottom:14px;
-    }
-    .nav-section-title {
-      margin:16px 0 7px;
-      font-size:12px;
-      font-weight:800;
-      color:#475569;
-      text-transform:uppercase;
-      letter-spacing:.02em;
-    }
-    .nav-link {
-      display:block;
-      padding:7px 9px;
-      border-radius:10px;
-      color:#334155;
-      font-size:13px;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-    .nav-link:hover, .nav-home:hover { background:var(--brand-soft); text-decoration:none; }
-    .nav-link.active, .nav-home.active { background:#dbeafe; color:#0f4c81; font-weight:800; }
-    .nav-empty { color:var(--muted); font-size:12px; padding:6px 2px; }
-    .nav-more summary {
-      cursor:pointer;
-      color:#0f4c81;
-      font-size:13px;
-      font-weight:800;
-      padding:7px 9px;
-      border-radius:10px;
-      background:#f8fafc;
-      margin-top:4px;
-    }
-    .nav-more[open] summary { background:#dbeafe; }
-    .stat-grid { display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:14px; margin-bottom:18px; }
-    .stat-card { background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:18px; box-shadow:0 4px 14px rgba(15,23,42,.04); }
-    .stat-value { font-size:28px; font-weight:900; color:#0f4c81; line-height:1.2; }
-    .stat-label { color:var(--muted); font-size:13px; margin-top:6px; }
-    .headline-list { margin:0; padding-left:18px; }
-    .headline-list li { margin:8px 0; }
-    .source-table { width:100%; border-collapse:collapse; font-size:14px; }
-    .source-table th, .source-table td { border-bottom:1px solid var(--line); padding:9px 8px; text-align:left; vertical-align:top; }
-    .source-table th { color:#475569; background:#f8fafc; }
-    .tag-cloud { display:flex; flex-wrap:wrap; gap:8px; }
-    .tag-cloud span { display:inline-block; background:#f1f5f9; border:1px solid var(--line); border-radius:999px; padding:5px 10px; font-size:13px; }
-    .content { min-width:0; }
-    .hero {
-      background:var(--panel);
-      border:1px solid var(--line);
-      border-radius:22px;
-      padding:28px;
-      margin-bottom:20px;
-      box-shadow:0 8px 22px rgba(15,23,42,.05);
-    }
-    .hero h1 { margin:0; font-size:30px; line-height:1.25; letter-spacing:-.03em; }
-    .hero .subtitle { margin-top:10px; color:var(--muted); font-size:15px; }
-    .card {
-      background:var(--panel);
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:22px;
-      margin-bottom:18px;
-      box-shadow:0 4px 14px rgba(15,23,42,.045);
-    }
-    .card h2 { margin:4px 0 10px; font-size:22px; line-height:1.35; letter-spacing:-.02em; }
-    .card h3 { margin:20px 0 8px; font-size:16px; }
-    .report-body {
-      background:var(--panel);
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:26px;
-      margin-bottom:18px;
-      box-shadow:0 4px 14px rgba(15,23,42,.045);
-    }
-    .report-body h1, .report-body h2, .report-body h3 { letter-spacing:-.02em; }
-    .report-body h1 { font-size:26px; }
-    .report-body h2 { font-size:22px; margin-top:28px; padding-top:6px; }
-    .report-body h3 { font-size:18px; margin-top:24px; }
-    .report-body p { margin:9px 0; }
-    .report-body ul, .report-body ol { padding-left:22px; }
-    .report-body li { margin:6px 0; }
-    .meta { color:var(--muted); font-size:13px; }
-    .pill {
-      display:inline-block;
-      background:var(--brand-soft);
-      color:#075985;
-      border-radius:999px;
-      padding:3px 10px;
-      font-size:13px;
-      margin:2px 6px 2px 0;
-      font-weight:700;
-    }
-    .brief { background:#f8fafc; border-left:4px solid var(--brand); padding:11px 13px; border-radius:0 10px 10px 0; }
-    .why { background:var(--warn); border-left:4px solid #f97316; padding:11px 13px; border-radius:0 10px 10px 0; }
-    .toc {
-      position:sticky;
-      top:82px;
-      background:var(--panel);
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:16px;
-      box-shadow:0 8px 22px rgba(15,23,42,.05);
-    }
-    .toc-title { font-size:13px; font-weight:800; color:#475569; margin-bottom:8px; }
-    .toc a { display:block; color:#334155; font-size:13px; padding:6px 0; border-bottom:1px solid #f1f5f9; }
-    .toc-empty { color:var(--muted); font-size:12px; }
-    .dashboard-grid { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:14px; margin-bottom:18px; }
-    .news-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:18px; }
-    .news-card { min-height:420px; }
-    .headline-title { font-weight:800; color:#0f172a; }
-    .headline-list li { margin:10px 0 14px; padding-bottom:10px; border-bottom:1px solid #f1f5f9; }
-    .headline-specs { display:inline-block; margin-top:4px; padding:3px 8px; border-radius:999px; background:#f0f9ff; color:#075985; font-size:12px; font-weight:700; }
-    .event-mini-grid { display:grid; grid-template-columns:repeat(5, minmax(0,1fr)); gap:14px; }
-    .event-mini-card { border:1px solid var(--line); border-radius:16px; padding:14px; background:#fff; }
-    .event-mini-card h3 { margin:8px 0 6px; font-size:15px; line-height:1.35; }
-    .event-grade { display:inline-block; padding:3px 9px; border-radius:999px; font-size:12px; font-weight:900; color:#fff; background:#64748b; }
-    .grade-S { background:#7c3aed; }
-    .grade-A { background:#2563eb; }
-    .grade-B { background:#64748b; }
-    .dash-card { background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:18px; box-shadow:0 4px 14px rgba(15,23,42,.04); }
-    .dash-card h2 { font-size:17px; margin:0 0 10px; }
-    .dash-card a { display:block; margin:6px 0; font-size:14px; }
-    @media (max-width:1180px) {
-      .layout { grid-template-columns:240px minmax(0, 1fr); }
-      .news-grid { grid-template-columns:1fr; }
-      .event-mini-grid { grid-template-columns:repeat(2, minmax(0,1fr)); }
-      .toc { display:none; }
-      .stat-grid { grid-template-columns:repeat(2, minmax(0,1fr)); }
-    }
-    @media (max-width:820px) {
-      .topbar-inner { align-items:flex-start; flex-direction:column; }
-      .layout { display:block; padding:14px; }
-      .side-nav { position:relative; top:auto; max-height:none; margin-bottom:16px; }
-      .hero { padding:22px; }
-      .hero h1 { font-size:24px; }
-      .dashboard-grid { grid-template-columns:1fr; }
-      .stat-grid { grid-template-columns:1fr; }
-      .news-grid { grid-template-columns:1fr; }
-      .event-mini-grid { grid-template-columns:1fr; }
-    }
+    body { font-family: Arial, "Noto Sans KR", sans-serif; margin:0; background:#f6f8fb; color:#1f2937; line-height:1.65; }
+    header { background:#163b73; color:white; padding:30px 36px; }
+    main { max-width:980px; margin:28px auto; padding:0 18px; }
+    h1 { margin:0 0 8px; font-size:28px; }
+    h2 { margin:26px 0 10px; font-size:22px; }
+    h3 { margin:18px 0 6px; font-size:17px; }
+    .card { background:white; border:1px solid #e5e7eb; border-radius:14px; padding:22px; margin-bottom:18px; box-shadow:0 1px 2px rgba(0,0,0,.04); }
+    .summary { white-space:pre-wrap; background:white; border:1px solid #e5e7eb; border-radius:14px; padding:22px; margin-bottom:22px; }
+    .pill { display:inline-block; background:#e0f2fe; color:#075985; border-radius:999px; padding:3px 10px; font-size:13px; margin-right:6px; }
+    .meta { color:#6b7280; font-size:13px; }
+    .why { background:#fff7ed; border-left:4px solid #f97316; padding:10px 12px; }
+    .brief { background:#f9fafb; border-left:4px solid #163b73; padding:10px 12px; }
+    a { color:#1d4ed8; }
   </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a class="brand" href="/water-news-telegram-bot/">💧 상하수도·수처리 뉴스 브리핑</a>
-      <div class="top-date">2026-06-05 09:41 KST</div>
-    </div>
+  <header>
+    <h1>2026-W23 상하수도·수처리 주간 업계 동향</h1>
+    <div>자동 생성 보고서</div>
   </header>
-  <div class="layout">
-    <nav class="side-nav">
-<a class="nav-home " href="/water-news-telegram-bot/">홈</a>
-<div class="nav-section-title">일일 상세 보고서</div>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-06-05/">2026-06-05 (금)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-06-04/">2026-06-04 (목)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-06-03/">2026-06-03 (수)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-06-02/">2026-06-02 (화)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-06-01/">2026-06-01 (월)</a>
-<details class="nav-more"><summary>더보기</summary>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-31/">2026-05-31 (일)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-30/">2026-05-30 (토)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-29/">2026-05-29 (금)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-28/">2026-05-28 (목)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-27/">2026-05-27 (수)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-26/">2026-05-26 (화)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-22/">2026-05-22 (금)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-21/">2026-05-21 (목)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-20/">2026-05-20 (수)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-18/">2026-05-18 (월)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-17/">2026-05-17 (일)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-16/">2026-05-16 (토)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-13/">2026-05-13 (수)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-06/">2026-05-06 (수)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-04-28/">2026-04-28 (화)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-04-27/">2026-04-27 (월)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-04-24/">2026-04-24 (금)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-04-22/">2026-04-22 (수)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-04-16/">2026-04-16 (목)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-04-10/">2026-04-10 (금)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-04-09/">2026-04-09 (목)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-03-31/">2026-03-31 (화)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-03-30/">2026-03-30 (월)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-03-12/">2026-03-12 (목)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-03-10/">2026-03-10 (화)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-02-23/">2026-02-23 (월)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-02-20/">2026-02-20 (금)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-02-18/">2026-02-18 (수)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-02-12/">2026-02-12 (목)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-02-03/">2026-02-03 (화)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2026-01-02/">2026-01-02 (금)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2025-12-22/">2025-12-22 (월)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2025-12-05/">2025-12-05 (금)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2025-09-15/">2025-09-15 (월)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2025-08-04/">2025-08-04 (월)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2025-04-15/">2025-04-15 (화)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2025-02-27/">2025-02-27 (목)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2025-02-25/">2025-02-25 (화)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2025-01-16/">2025-01-16 (목)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2024-12-30/">2024-12-30 (월)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2024-12-09/">2024-12-09 (월)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2024-12-06/">2024-12-06 (금)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2024-11-25/">2024-11-25 (월)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2024-06-19/">2024-06-19 (수)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2023-12-12/">2023-12-12 (화)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2023-09-20/">2023-09-20 (수)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2021-10-19/">2021-10-19 (화)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2017-09-28/">2017-09-28 (목)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2015-08-05/">2015-08-05 (수)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2015-03-01/">2015-03-01 (일)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2014-10-24/">2014-10-24 (금)</a>
-<a class="nav-link " href="/water-news-telegram-bot/reports/2011-07-05/">2011-07-05 (화)</a>
-</details>
-<div class="nav-section-title">주간 업계 동향</div>
-<a class="nav-link active" href="/water-news-telegram-bot/weekly/2026-W23/">2026-W23 (06.01~06.07)</a>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2026-W22/">2026-W22 (05.25~05.31)</a>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2026-W21/">2026-W21 (05.18~05.24)</a>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2026-W20/">2026-W20 (05.11~05.17)</a>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2026-W19/">2026-W19 (05.04~05.10)</a>
-<details class="nav-more"><summary>더보기</summary>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2026-W18/">2026-W18 (04.27~05.03)</a>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2026-W17/">2026-W17 (04.20~04.26)</a>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2026-W16/">2026-W16 (04.13~04.19)</a>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2026-W15/">2026-W15 (04.06~04.12)</a>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2026-W14/">2026-W14 (03.30~04.05)</a>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2026-W11/">2026-W11 (03.09~03.15)</a>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2026-W09/">2026-W09 (02.23~03.01)</a>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2026-W08/">2026-W08 (02.16~02.22)</a>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2026-W07/">2026-W07 (02.09~02.15)</a>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2026-W06/">2026-W06 (02.02~02.08)</a>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2026-W01/">2026-W01 (12.29~01.04)</a>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2025-W52/">2025-W52 (12.22~12.28)</a>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2025-W49/">2025-W49 (12.01~12.07)</a>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2025-W38/">2025-W38 (09.15~09.21)</a>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2025-W32/">2025-W32 (08.04~08.10)</a>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2025-W16/">2025-W16 (04.14~04.20)</a>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2025-W09/">2025-W09 (02.24~03.02)</a>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2025-W03/">2025-W03 (01.13~01.19)</a>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2025-W01/">2025-W01 (12.30~01.05)</a>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2024-W50/">2024-W50 (12.09~12.15)</a>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2024-W49/">2024-W49 (12.02~12.08)</a>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2024-W48/">2024-W48 (11.25~12.01)</a>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2024-W25/">2024-W25 (06.17~06.23)</a>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2023-W50/">2023-W50 (12.11~12.17)</a>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2023-W38/">2023-W38 (09.18~09.24)</a>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2021-W42/">2021-W42 (10.18~10.24)</a>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2017-W39/">2017-W39 (09.25~10.01)</a>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2015-W32/">2015-W32 (08.03~08.09)</a>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2015-W09/">2015-W09 (02.23~03.01)</a>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2014-W43/">2014-W43 (10.20~10.26)</a>
-<a class="nav-link " href="/water-news-telegram-bot/weekly/2011-W27/">2011-W27 (07.04~07.10)</a>
-</details>
-<div class="nav-section-title">월간 업계 동향</div>
-<a class="nav-link " href="/water-news-telegram-bot/monthly/2026-06/">2026년 06월</a>
-<a class="nav-link " href="/water-news-telegram-bot/monthly/2026-05/">2026년 05월</a>
-<a class="nav-link " href="/water-news-telegram-bot/monthly/2026-04/">2026년 04월</a>
-<a class="nav-link " href="/water-news-telegram-bot/monthly/2026-03/">2026년 03월</a>
-<a class="nav-link " href="/water-news-telegram-bot/monthly/2026-02/">2026년 02월</a>
-<a class="nav-link " href="/water-news-telegram-bot/monthly/2026-01/">2026년 01월</a>
-<details class="nav-more"><summary>더보기</summary>
-<a class="nav-link " href="/water-news-telegram-bot/monthly/2025-12/">2025년 12월</a>
-<a class="nav-link " href="/water-news-telegram-bot/monthly/2025-09/">2025년 09월</a>
-<a class="nav-link " href="/water-news-telegram-bot/monthly/2025-08/">2025년 08월</a>
-<a class="nav-link " href="/water-news-telegram-bot/monthly/2025-04/">2025년 04월</a>
-<a class="nav-link " href="/water-news-telegram-bot/monthly/2025-02/">2025년 02월</a>
-<a class="nav-link " href="/water-news-telegram-bot/monthly/2025-01/">2025년 01월</a>
-<a class="nav-link " href="/water-news-telegram-bot/monthly/2024-12/">2024년 12월</a>
-<a class="nav-link " href="/water-news-telegram-bot/monthly/2024-11/">2024년 11월</a>
-<a class="nav-link " href="/water-news-telegram-bot/monthly/2024-06/">2024년 06월</a>
-<a class="nav-link " href="/water-news-telegram-bot/monthly/2023-12/">2023년 12월</a>
-<a class="nav-link " href="/water-news-telegram-bot/monthly/2023-09/">2023년 09월</a>
-<a class="nav-link " href="/water-news-telegram-bot/monthly/2021-10/">2021년 10월</a>
-<a class="nav-link " href="/water-news-telegram-bot/monthly/2017-09/">2017년 09월</a>
-<a class="nav-link " href="/water-news-telegram-bot/monthly/2015-08/">2015년 08월</a>
-<a class="nav-link " href="/water-news-telegram-bot/monthly/2015-03/">2015년 03월</a>
-<a class="nav-link " href="/water-news-telegram-bot/monthly/2014-10/">2014년 10월</a>
-<a class="nav-link " href="/water-news-telegram-bot/monthly/2011-07/">2011년 07월</a>
-</details>
-<div class="nav-section-title">바로가기</div>
-<a class="nav-link " href="/water-news-telegram-bot/sources/">정보 출처</a>
-<a class="nav-link " href="/water-news-telegram-bot/filters/">필터링 기준</a>
-<a class="nav-link " href="/water-news-telegram-bot/events/">학회·전시회 일정</a>
-</nav>
-    <main class="content">
-      <section class="hero">
-        <h1>2026-W23 상하수도·수처리 주간 업계 동향</h1>
-        <div class="subtitle">기간: 06.01~06.07</div>
-      </section>
-      <section class="report-body"><h1>2026-W23 상하수도·수처리 주간 업계 동향</h1>
-<h2>1. Executive Summary</h2>
-<p>이번 주 업계 동향은 하수처리 인프라 확충, 재이용수용 분리막 기술, PFAS 대응 이슈가 핵심이었다. 🇰🇷 한국은 새만금, 광명시흥, 안성 등 공공 하수처리시설의 발주·증설 움직임과 함께 안전점검, 개선비 지원 등 운영·정책 이슈가 동시에 나타났다. 🇺🇸 미국은 하수처리시설 보호 협약, 업그레이드 완료·설계 착수, 부지 검토 등 인프라 투자 흐름이 이어졌지만 산업 폐수 재활용 프로젝트 중단 사례도 나왔다. 기술 측면에서는 🧪 초여과막(UF) 기반 재이용수 전처리와 🤖 AI 하수처리, ⚠️ PFAS 검출·이동 경로 분석이 주요 화두였다.</p>
-<h2>2. 주요 국가 TOP3</h2>
-<h3>🇰🇷 대한민국</h3>
-<p>공공 하수처리시설의 신설·증설·턴키 발주 예정이 이어지며 내수 인프라 투자 모멘텀이 확인됐다. 동시에 하수처리장 안전점검, 개인 하수처리시설 개선비 지원, 산업단지 폐수 특별점검 등 운영·관리 강화 움직임도 나타났다.</p>
-<h3>🇺🇸 미국</h3>
-<p>버팔로 협약, 헨더슨 1억 달러 업그레이드 완료, 세드로-울리 설계 착수, 포트 앨런 부지 검토 등 하수처리 인프라 사업이 활발했다. 반면 보이시 산업 폐수 재활용 프로젝트는 건설비 상승으로 중단됐다.</p>
-<h3>🇲🇾 말레이시아</h3>
-<p>재생에너지, 특히 ☀️ 태양광 확대가 빨라지며 2031년까지 기존 목표 초과 달성 전망이 제시됐다. 수처리 직접 사업은 아니지만 에너지 인프라 개선이 수처리 운영 여건에 긍정적으로 연결될 가능성이 언급됐다.</p>
-<h2>3. 주요 기업 TOP3</h2>
-<h3>Toray</h3>
-<p>재이용수용 저바이오파울링 🧪 초여과막(UF) 모듈을 공개했다. 0.005μm 기공으로 biopolymer 통과를 줄여 후단 RO 오염 부담 저감에 초점을 맞췄다.</p>
-<h3>Henderson</h3>
-<p>🇺🇸 헨더슨시는 1억 달러를 투입한 하수 재이용 시설 업그레이드를 완료했다. 처리 역량과 지역 물 공급 안정성 강화 사례로 주목된다.</p>
-<h3>한국상하수도협회</h3>
-<p>고용노동부 주관 2025 ISC 성과평가에서 S등급을 달성했다. 인재양성과 산업 운영 역량 측면의 상징적 성과로 해석된다.</p>
-<h2>4. 주요 기술 TOP3</h2>
-<h3>🧪 초여과막(UF) 기반 재이용수 전처리</h3>
-<p>Toray의 신제품은 재이용수 공정에서 UF를 RO 전처리로 활용하는 흐름을 반영했다. 핵심은 biofouling 저감과 RO 운전 안정성 개선이다.</p>
-<h3>🤖 AI 하수처리</h3>
-<p>AI를 활용한 하수처리 효율화와 실시간 모니터링 필요성이 다시 부각됐다. 기사 기준으로는 방향성 중심의 산업 동향 소개 수준이다.</p>
-<h3>⚠️ PFAS 검출·관리</h3>
-<p>PFAS가 매립지와 하수처리장을 통해 이동할 수 있다는 연구와 함께, 🇺🇸 미국에서는 PFAS 검사 비용 절감 기술이 소개됐다. PFAS 제거보다 우선 검출·모니터링 역량 강화가 부각된 주간이었다.</p>
-<h2>5. 규제/정책 변화</h2>
-<ul>
-<li>🇰🇷 안성시, 하수처리장 집중 안전점검 추진</li>
-<li>🇰🇷 용인시, 개인 하수처리시설 개선비 80% 지원</li>
-<li>🇰🇷 예산군, 산업단지 배수시설·폐수처리시설 특별점검 실시</li>
-<li>🇺🇸 버팔로시·군 공병대·버팔로 하수청, 하수처리시설 보호 협약 체결</li>
-</ul>
-<h2>6. 반드시 읽어야 할 기사 TOP3</h2>
-<ol>
-<li>
-<p><strong>Toray, 재이용수용 저바이오파울링 UF 공개</strong><br>
-   재이용수 확대 국면에서 UF 전처리의 오염 저감 성능을 차별화 포인트로 제시한 기술 기사다.</p>
-</li>
-<li>
-<p><strong>헨더슨, 1억 달러 하수처리 시설 업그레이드 완료</strong><br>
-   대규모 투자로 하수 재이용 및 지역 물 공급 안정성을 강화한 미국 인프라 사례다.</p>
-</li>
-<li>
-<p><strong>PFAS가 매립지와 하수처리장에서 이동하는 경로</strong><br>
-   PFAS가 하수처리계를 거쳐 농경지로 이동할 수 있다는 문제를 제기하며 업계 기술 과제를 환기한 기사다.</p>
-</li>
-</ol>
-<h2>7. 다음 주 모니터링 포인트</h2>
-<ul>
-<li>🇰🇷 새만금 하수처리시설 하반기 턴키 발주 구체 일정</li>
-<li>🇰🇷 광명시흥 하수처리시설 내년 발주 관련 사업 구조 구체화 여부</li>
-<li>🇰🇷 안성시 하수처리시설 증설·신설 추진의 세부 규모 공개 여부</li>
-<li>🧪 재이용수용 UF/MBR 등 분리막 기술의 실제 적용 현장 발표 여부</li>
-<li>⚠️ PFAS 관련 검사·규제 강화 후속 보도 여부</li>
-</ul></section>
-    </main>
-    <aside class="toc"><div class="toc-title">목차</div><a href="#executive-summary">Executive Summary</a><a href="#countries">주요 국가</a><a href="#companies">주요 기업</a><a href="#technologies">주요 기술</a><a href="#policy">규제/정책</a><a href="#articles">주요 기사</a></aside>
-  </div>
+  <main>
+    <section class="summary"># 2026-W23 상하수도·수처리 주간 업계 동향
+
+## 1. Executive Summary
+이번 주는 🇰🇷 한국에서 하수처리 인프라 확충, 안전점검, 주민지원 정책이 동시에 부각됐다. 익산 하수처리장의 환경교육 공간화, 안성·남해·예산의 점검, 광명시흥·새만금·안성의 신규 사업 추진이 이어지며 공공 하수처리의 운영·투자 이슈가 두드러졌다. 기술 측면에서는 🤖 AI 하수처리, 🧪 PFAS 검사·오염 이슈, 🧫 분리막 기반 재이용수 기술이 주목받았다. 해외에서는 🇺🇸 미국의 하수처리시설 보호·업그레이드 사례와 PFAS 검사 비용 절감 연구가 눈에 띄었다.
+
+## 2. 주요 국가 TOP3
+1. 🇰🇷 **대한민국**  
+하수처리장 안전점검, 개인 하수처리시설 개선비 지원, 공공하수처리시설 발주 예정 등 정책·운영·투자가 가장 활발했다. 특히 광명시흥, 새만금, 안성 관련 사업은 중장기 발주 시장과 연결된다.
+
+2. 🇺🇸 **미국**  
+NASA의 우주 수처리 테스트, PFAS 검사 비용 절감 연구, 버팔로·헨더슨·세드로-울리의 하수처리 프로젝트 등 기술과 인프라 양쪽에서 움직임이 있었다.
+
+3. 🇻🇳 **베트남**  
+동히엡 면 하수처리장의 운영 모니터링·평가 사례가 보도되며, 운영 효율 점검 중심의 하수처리 관리 이슈가 확인됐다.
+
+## 3. 주요 기업 TOP3
+1. **Toray(도레이/토레이)**  
+🧫 하·폐수 재이용용 저바이오파울링 UF 막 모듈을 공개했다. 0.005μm 기공을 적용해 바이오폴리머 통과를 줄이고 후단 RO 오염 부담 저감을 겨냥했다.
+
+2. **한국상하수도협회**  
+환경ISC 및 고용노동부 ISC 성과평가에서 S등급을 획득했다. 상하수도 분야 인재양성 및 산업 기반 역량 측면의 성과로 해석된다.
+
+3. **정우이엔티**  
+🧫 외부평막분리조 기반 J-MBR 공법이 소개됐다. 다만 기사상 구조·성능·적용 현장 정보는 제한적이다.
+
+## 4. 주요 기술 TOP3
+1. 🤖 **AI 하수처리**  
+AI를 활용한 하수처리 효율화와 실시간 모니터링 필요성이 제기됐다. 기사 기준으로는 방향성과 기대효과 중심이며, 구체 적용 사례는 확인되지 않았다.
+
+2. 🧫 **UF-RO 연계 재이용수 분리막 기술**  
+Toray의 저바이오파울링 UF는 재이용수 공정에서 전처리 성능 강화와 RO fouling 저감에 초점을 맞췄다. 재이용수 확대 흐름과 맞물린 기술 경쟁 사례다.
+
+3. 🧪 **PFAS 검출·오염 대응 기술**  
+미국에서는 PFAS 검사 비용 절감 기술이, 스코틀랜드와 일반 연구 기사에서는 음용수·하수처리계 내 PFAS 오염 문제가 부각됐다. 제거보다 우선 검출·경로 파악 중요성이 커지는 흐름이다.
+
+## 5. 규제/정책 변화
+- 🇰🇷 **안성시**, 하수처리장 집중 안전점검 추진
+- 🇰🇷 **용인시**, 개인 하수처리시설 개선비 **80% 지원**
+- 🇰🇷 **예산군**, 산업단지 배수·폐수처리시설 특별점검 실시
+- 🇰🇷 **남해하수처리장**, 전기설비 안전점검 실시
+
+## 6. 반드시 읽어야 할 기사 TOP3
+1. **광명시흥 하수처리시설 건설공사 내년 발주**  
+내년 상반기 턴키 발주 예정으로, 국내 공공 하수처리 신규 시장의 대표적 선행 지표다.
+
+2. **Toray, 재이용수용 저바이오파울링 UF 공개**  
+🧫 재이용수 공정에서 UF 전처리와 RO 오염 저감을 연결한 분리막 기술 동향을 보여준다.
+
+3. **용인시, 개인 하수처리시설 개선비 80% 지원**  
+공공 대형시설뿐 아니라 분산형·개인 시설 개선까지 정책 지원 범위가 확대되는 흐름을 보여준다.
+
+## 7. 다음 주 모니터링 포인트
+- 🇰🇷 광명시흥·새만금 하수처리시설의 발주 조건, 규모, 일정 구체화 여부
+- 🇰🇷 안성시 하수처리시설 증설·신설 관련 세부 사업 정보 공개 여부
+- 🧫 Toray UF 막의 적용 현장, 상용화 일정, 처리용량 추가 공개 여부
+- 🧪 PFAS 관련 국내 규제·검사 체계 연계 보도 등장 여부
+- 🤖 AI 하수처리의 실제 도입 지자체·실증 사례 공개 여부</section>
+  </main>
 </body>
 </html>
