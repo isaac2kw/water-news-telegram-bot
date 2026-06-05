@@ -165,6 +165,8 @@
     .report-body ul, .report-body ol { padding-left:22px; }
     .report-body li { margin:6px 0; }
     .meta { color:var(--muted); font-size:13px; }
+    .flag-label { display:inline-flex; align-items:center; gap:5px; white-space:nowrap; vertical-align:middle; }
+    .flag-icon { width:18px; height:13px; object-fit:cover; border-radius:2px; box-shadow:0 0 0 1px rgba(15,23,42,.12); vertical-align:-2px; }
     .pill {
       display:inline-block;
       background:var(--brand-soft);
@@ -190,7 +192,7 @@
     .toc a { display:block; color:#334155; font-size:13px; padding:6px 0; border-bottom:1px solid #f1f5f9; }
     .toc-empty { color:var(--muted); font-size:12px; }
     .dashboard-grid { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:14px; margin-bottom:18px; }
-    .news-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:18px; }
+    .news-grid { display:grid; grid-template-columns:1fr; gap:18px; margin-bottom:18px; }
     .news-card { min-height:420px; }
     .headline-title { font-weight:800; color:#0f172a; }
     .headline-list li { margin:10px 0 14px; padding-bottom:10px; border-bottom:1px solid #f1f5f9; }
@@ -242,7 +244,7 @@
   <header class="topbar">
     <div class="topbar-inner">
       <a class="brand" href="/water-news-telegram-bot/">💧 상하수도·수처리 뉴스 브리핑</a>
-      <div class="top-date">2026-06-05 17:21 KST</div>
+      <div class="top-date">2026-06-05 17:36 KST</div>
     </div>
   </header>
   <div class="layout">
@@ -614,6 +616,15 @@
         </tr>
         
         <tr>
+          <td><a href="http://www.bing.com/news/apiclick.aspx?ref=FexRss&amp;aid=&amp;tid=6a22898d1072443790fd07b0d5ca318b&amp;url=https%3a%2f%2fwww.dairyfoods.com%2farticles%2f99166-membrane-technology-forum-2026-expands-focus-on-beverage-innovation-and-wastewater-treatment&amp;c=1461589195714993340&amp;mkt=en-us" target="_blank" rel="noopener noreferrer">Membrane Technology Forum 2026, 음료 혁신·폐수처리 확대</a></td>
+          <td>확인 필요</td>
+          <td>-</td>
+          <td>2026년 개최 예정</td>
+          <td>개선</td>
+          <td>Bing News Global Membrane Reuse</td>
+        </tr>
+        
+        <tr>
           <td><a href="https://news.google.com/rss/articles/CBMiX0FVX3lxTE5YbFB1Mnk3Y29aeEQ0dHNUbVJqa213aUhnZ0YxN3g3eVAzSWxnemxJZlJrV2o3TF8yTmNtcWxucTB2d3VSamFkd015UjdiNVd5YnhvZDJFN013azBSMHhR?oc=5" target="_blank" rel="noopener noreferrer">제주 소규모 하수처리시설 방류수 수질 악화</a></td>
           <td>🇰🇷 한국</td>
           <td>-</td>
@@ -692,6 +703,15 @@
           <td>기사 기준일: 2026-04-10</td>
           <td>개선</td>
           <td>Google News Korea 재이용수 PFAS</td>
+        </tr>
+        
+        <tr>
+          <td><a href="https://news.google.com/rss/articles/CBMiakFVX3lxTFBvcnRDbXQyRFozcFRIQmF3X1lQdUNqM3NUYk4xUXdMd0FSa2E0Tzd0NnFxeUZ0LXc2ZHgxUVh1TmhNbm82bUZqc0tGRlFEYUhsYW1hbUJ6Wkd5WjBrVVNoZjc4eWRQMXE3SXc?oc=5" target="_blank" rel="noopener noreferrer">금산군, 군북면 하수처리시설 점검 실시</a></td>
+          <td>확인 필요</td>
+          <td>-</td>
+          <td>기사 기준일: 2026-06-05</td>
+          <td>개선</td>
+          <td>Google News Korea 상하수도</td>
         </tr>
         
         <tr>
@@ -835,24 +855,6 @@
           <td>-</td>
           <td>기사 기준일: 2026-05-22</td>
           <td>개선</td>
-          <td>Google News Korea 상하수도</td>
-        </tr>
-        
-        <tr>
-          <td><a href="https://news.google.com/rss/articles/CBMiX0FVX3lxTE5HZF95a2ozYjhMREd5Qi04R2ZfVG53QVVadWh1aC1ObUxCZXQ0ZHB2azhZSGkxSmx5YzdxdU9fSnRXb05NbEZzWTNOYmpGNW92cHFCRDBlOUs1dTZOblVF?oc=5" target="_blank" rel="noopener noreferrer">괴산·진천군, 하수처리시설 점검 실시</a></td>
-          <td>🇰🇷 대한민국</td>
-          <td>-</td>
-          <td>기사 기준일: 2026-05-22</td>
-          <td>개선</td>
-          <td>Google News Korea 상하수도</td>
-        </tr>
-        
-        <tr>
-          <td><a href="https://news.google.com/rss/articles/CBMiT0FVX3lxTE52Y0tFRXJoNnFhenhJdHJGVW51ZUZFMmU3YXpLWmZSaGhheC1mVkF1V0FMalgxaEI0My1WRmUwcU1zN1pPLUFjRENfVjNYQUk?oc=5" target="_blank" rel="noopener noreferrer">괴산군 우기 대비 하수처리시설 점검</a></td>
-          <td>🇰🇷 대한민국</td>
-          <td>-</td>
-          <td>기사 기준일: 2026-05-22</td>
-          <td>확인 필요</td>
           <td>Google News Korea 상하수도</td>
         </tr>
         
