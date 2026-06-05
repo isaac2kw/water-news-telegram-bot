@@ -3557,5 +3557,181 @@
     "domestic": true,
     "region": "domestic",
     "source_type": "search_rss"
+  },
+  {
+    "date": "2026-06-02",
+    "title": "Toray introduces ultrafiltration membrane designed to reduce biofouling in wastewater reuse",
+    "ko_title": "Toray, 재이용수용 저바이오파울링 UF 공개",
+    "brief": "Toray가 하·폐수 재이용 공정에서 바이오파울링 저감을 겨냥한 F-HFUG Series 한외여과 막모듈을 공개했다. 0.005마이크로미터 기공 크기로 바이오폴리머 통과와 후단 RO 오염 저감에 초점을 맞췄다.",
+    "summary": "Toray가 하·폐수 재이용 분야를 겨냥해 바이오파울링 저감형 한외여과(UF) 막모듈인 F-HFUG Series를 선보였다. 기사 요약에 따르면 이 제품은 0.005마이크로미터 기공 크기를 적용해 바이오폴리머의 통과를 줄이고, 후단 역삼투(RO) 공정의 오염을 낮추도록 설계됐다. 이는 재이용수 공정에서 UF가 RO 전처리 역할을 하는 흐름과 맞닿아 있다. 수처리 산업 관점에서는 막 오염 저감이 운영 안정성, 세정 주기, 수명 관리와 연결될 수 있다는 점에서 의미가 있다. 다만 기사 요약에는 적용 현장, 처리 용량, 성능 검증 수치 등 추가 세부 정보는 제시되지 않았다.",
+    "why_important": "재이용수 시장에서는 UF-RO 조합의 전처리 성능이 운영비와 안정성에 직접 연결되므로, 바이오파울링 저감 설계는 기술 경쟁력 측면에서 중요하다. 실제 프로젝트 채택 여부와 경제성 영향은 추가 성능 데이터가 필요하며, 그 효과에 대한 확대 해석은 추측입니다.",
+    "category": "분리막/막여과",
+    "countries": [],
+    "companies": [
+      "Toray"
+    ],
+    "technologies": [
+      "Ultrafiltration",
+      "Wastewater Reuse",
+      "Biofouling",
+      "Reverse Osmosis",
+      "Membrane Module"
+    ],
+    "policy_alert": "",
+    "specs": [
+      "기공 크기: 0.005마이크로미터"
+    ],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a2224fa4f3c411ba98a71079a271b85&url=https%3a%2f%2fwww.dairyfoods.com%2farticles%2f99167-toray-introduces-ultrafiltration-membrane-designed-to-reduce-biofouling-in-wastewater-reuse&c=9496410966415004977&mkt=en-us",
+    "score": 57,
+    "keywords": [
+      "membrane",
+      "ultrafiltration",
+      "wastewater",
+      "water reuse",
+      "toray",
+      "biofouling",
+      "membrane module"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss"
+  },
+  {
+    "date": "2026-02-12",
+    "title": "DuPont Named Finalist in 2026 Edison Awards for FilmTec™ Fortilife™ XC160UHP Membrane for Wastewater Treatment and Reuse",
+    "ko_title": "듀폰, 폐수 재이용 RO막으로 에디슨상 결선",
+    "brief": "DuPont가 산업폐수 처리·재이용용 FilmTec Fortilife XC160UHP 역삼투막으로 2026 Edison Awards 결선에 올랐다고 밝혔다. 수처리 재이용 분야에서 막 기술의 상용성과 혁신성이 부각된 사례다.",
+    "summary": "DuPont는 산업폐수 처리 및 재이용용 FilmTec Fortilife XC160UHP 역삼투(RO) 엘리먼트가 2026 Edison Awards 결선작으로 선정됐다고 발표했다. 기사 요약상 발표는 2026년 2월 12일 미국 델라웨어주 윌밍턴에서 이뤄졌다. 이번 소식의 핵심은 특정 프로젝트 수주나 설비 준공이 아니라, 산업용 폐수 재이용 시장에서 DuPont의 막 제품이 혁신성과 적용성을 인정받았다는 점이다. 수처리 산업 관점에서는 산업폐수 재이용과 고도처리에 쓰이는 RO 막 기술의 중요성을 다시 보여준다. 다만 제공된 기사 요약에는 성능 수치, 적용 현장, 처리용량 등 구체 사양은 제시되지 않았다.",
+    "why_important": "산업폐수 재이용 시장에서는 검증된 막 제품의 브랜드 신뢰도와 레퍼런스가 발주·채택에 영향을 줄 수 있어 중요하다. 또한 기술상 수상·결선 소식은 고도처리 및 재이용 분야의 경쟁 구도를 보여주는 신호가 될 수 있으나, 실제 사업 확대 효과는 추측입니다.",
+    "category": "산업폐수",
+    "countries": [
+      "미국"
+    ],
+    "companies": [
+      "DuPont"
+    ],
+    "technologies": [
+      "membrane",
+      "wastewater treatment",
+      "industrial wastewater",
+      "water reuse",
+      "reverse osmosis",
+      "RO",
+      "FilmTec",
+      "Fortilife XC160UHP"
+    ],
+    "policy_alert": "",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a2224fa4f3c411ba98a71079a271b85&url=https%3a%2f%2fwww.morningstar.com%2fnews%2fpr-newswire%2f20260212ph86055%2fdupont-named-finalist-in-2026-edison-awards-for-filmtec-fortilife-xc160uhp-membrane-for-wastewater-treatment-and-reuse&c=16560179987338129635&mkt=en-us",
+    "score": 50,
+    "keywords": [
+      "membrane",
+      "wastewater",
+      "industrial wastewater",
+      "water treatment",
+      "award",
+      "dupont",
+      "filmtec"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss"
+  },
+  {
+    "date": "2026-06-02",
+    "title": "Membrane Technology Forum 2026 expands focus on beverage innovation and wastewater treatment",
+    "ko_title": "막기술포럼 2026, 음료·폐수처리로 확대",
+    "brief": "Membrane Technology Forum 2026가 음료 시장 혁신과 폐수처리 주제로 의제를 확대한다. 막기술의 적용처를 유제품 외 인접 시장으로 넓히려는 흐름이 드러난다.",
+    "summary": "기사에 따르면 Membrane Technology Forum 2026의 프로그램은 음료 시장의 유망 기회를 발굴하는 발표를 더 많이 포함하도록 확대된다. 동시에 폐수처리도 주요 의제로 다뤄질 예정이다. 이는 막기술 논의가 기존 식품·유제품 중심에서 음료 및 수처리 영역으로 확장되고 있음을 보여준다. 수처리 산업 관점에서는 막여과 기술의 산업용 폐수처리 및 공정수 관리 적용 가능성에 대한 관심이 반영된 것으로 해석된다. 다만 제공된 요약에는 개최 장소, 일정, 참가 규모, 구체 기술 세션 내용은 명시되지 않았다.",
+    "why_important": "막기술 적용 시장이 음료와 폐수처리로 넓어지면 관련 분리막, 시스템, 엔지니어링 기업의 신규 수요 발굴에 의미가 있다. 기술·시장 관점에서 산업용 수처리와 식음료 공정의 접점이 커지고 있음을 시사하지만, 구체적 사업 영향은 추측입니다.",
+    "category": "학회/전시회",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "membrane",
+      "wastewater treatment",
+      "water treatment",
+      "beverage innovation"
+    ],
+    "policy_alert": "",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a2224fa4f3c411ba98a71079a271b85&url=https%3a%2f%2fwww.dairyfoods.com%2farticles%2f99166-membrane-technology-forum-2026-expands-focus-on-beverage-innovation-and-wastewater-treatment&c=1461589195714993340&mkt=en-us",
+    "score": 23,
+    "keywords": [
+      "membrane",
+      "wastewater",
+      "water treatment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss"
+  },
+  {
+    "date": "2026-02-18",
+    "title": "MemCor™ MBR systems selected for three major wastewater treatment plant expansions in England",
+    "ko_title": "영국 3개 하수처리장 증설에 MemCor MBR 채택",
+    "brief": "영국 내 3개 주요 하수처리장 증설 사업에 MemCor™ MBR 시스템이 선정됐다는 내용입니다. 다만 제공된 RSS 요약에 세부 사업 규모·일정·발주처 정보는 없어 확인 가능한 범위만 반영했습니다.",
+    "summary": "기사 제목에 따르면 영국의 3개 주요 하수처리장 증설 사업에 MemCor™ MBR 시스템이 채택됐습니다. 이는 하수처리장 확장 과정에서 막생물반응조(MBR) 기술이 적용되는 사례로 해석됩니다. 다만 제공된 RSS 요약은 기사 본문 대신 무관한 안내 문구를 포함하고 있어, 구체적인 프로젝트 위치, 발주처, 처리용량, 투자 규모 등은 확인되지 않습니다. 수처리 산업 측면에서는 영국 하·폐수 인프라 증설에 MBR이 채택됐다는 점이 핵심입니다. 특히 고도처리, 방류수 수질 강화, 부지 효율성 측면에서 MBR 수요와 연결될 가능성이 있습니다.",
+    "why_important": "영국 하수처리장 증설에 MBR이 채택됐다는 점은 분리막 기반 고도처리 시장의 적용 확대 신호로 볼 수 있습니다. 다만 구체적 규제 배경, 사업 규모, 공급 범위는 기사 본문 확인이 필요하며, 시장 파급력에 대한 추가 해석은 추측입니다.",
+    "category": "분리막/MBR",
+    "countries": [
+      "영국"
+    ],
+    "companies": [
+      "MemCor"
+    ],
+    "technologies": [
+      "MBR",
+      "wastewater treatment",
+      "plant expansion"
+    ],
+    "policy_alert": "",
+    "specs": [],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a2224f983e6404bb592f315b9b5a9a2&url=https%3a%2f%2ffinance.yahoo.com%2fnews%2fmemcor-mbr-systems-selected-three-140000877.html&c=15153598790819934667&mkt=en-us",
+    "score": 34,
+    "keywords": [
+      "mbr",
+      "wastewater",
+      "water treatment",
+      "expansion",
+      "investment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss"
+  },
+  {
+    "date": "2026-04-28",
+    "title": "Membrane Technologies for Water Treatment and Purification",
+    "ko_title": "수처리·정수용 막기술의 역할 조명",
+    "brief": "막 기반 공정이 오염물질을 에너지 효율적으로 분리해 물 부족 대응의 핵심 기술로 부각됐습니다. 특히 미세여과 등 압력 구동형 막공정의 수처리 적용성이 강조됐습니다.",
+    "summary": "이번 기사는 물 부족 문제 대응에서 수처리·정수용 막기술의 중요성을 다룹니다. RSS 요약에 따르면 막 기반 공정은 물에서 오염물질을 에너지 효율적으로 분리하는 기술로 소개됩니다. 특히 미세여과를 포함한 압력 구동형 공정이 주요 사례로 언급됩니다. 이는 정수, 하·폐수 처리, 재이용수 생산 등 다양한 수처리 분야에서 막여과 기술의 산업적 활용성과 연결됩니다. 다만 제공된 정보에는 구체적인 프로젝트, 기업, 설비 규모나 성능 수치는 포함되지 않았습니다.",
+    "why_important": "막여과 기술은 에너지 효율과 수질 안정성을 동시에 추구하는 수처리 시장에서 핵심 축이기 때문에 중요합니다. 구체적 규제나 프로젝트 정보는 없지만, 기술 채택 확대와 연구개발 방향을 가늠하는 참고 자료라는 점에서 의미가 있습니다.",
+    "category": "분리막/막여과",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "Membrane",
+      "Microfiltration",
+      "Water Treatment",
+      "Water Purification"
+    ],
+    "policy_alert": "",
+    "specs": [],
+    "source": "Bing News Global UF MF",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a222507244242d19b91482e3392ee80&url=https%3a%2f%2fwww.nature.com%2fnature-index%2ftopics%2fl4%2fmembrane-technologies-for-water-treatment-and-purification&c=5477425063516893123&mkt=en-us",
+    "score": 23,
+    "keywords": [
+      "membrane",
+      "microfiltration",
+      "water treatment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "search_rss"
   }
 ]
