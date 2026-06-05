@@ -3733,5 +3733,38 @@
     "domestic": false,
     "region": "global",
     "source_type": "search_rss"
+  },
+  {
+    "date": "2026-06-05",
+    "title": "5000억 미래에셋코어환경인프라펀드 조성...여수 하수관로·의정부 하수처리장 편입 - 딜북뉴스",
+    "ko_title": "5000억 미래에셋코어환경인프라펀드 조성",
+    "brief": "미래에셋이 5000억 원 규모 환경인프라펀드를 조성합니다. 여수 하수관로와 의정부 하수처리장이 포함됩니다.",
+    "summary": "미래에셋이 5000억 원 규모의 환경인프라펀드를 조성하여 여수 하수관로와 의정부 하수처리장을 자산으로 편입합니다. 이번 펀드는 국내 수처리 인프라 투자 확대를 목표로 하며, 하수관로 및 하수처리장 등 핵심 시설에 집중합니다. 이러한 대규모 펀드 조성은 국내 하수처리 및 수처리 산업의 재정 안정성과 지속가능한 운영에 기여할 것으로 기대됩니다. 여수와 의정부의 주요 수처리 인프라가 투자 대상으로 선정된 점이 주목됩니다. 이는 민간 자본의 수처리 인프라 투자 확대라는 점에서 산업 전반에 긍정적 영향을 미칠 전망입니다.",
+    "why_important": "민간 대형 자본이 하수처리 인프라에 투자함으로써 시장의 자금 조달 구조가 다변화되고, 프로젝트 추진이 촉진될 수 있습니다. 이는 수처리 산업의 성장과 안정성에 중요한 의미를 가집니다.",
+    "category": "프로젝트/수주",
+    "countries": [],
+    "companies": [
+      "Mirae Asset"
+    ],
+    "technologies": [
+      "하수처리",
+      "하수관로",
+      "환경인프라펀드"
+    ],
+    "policy_alert": "",
+    "specs": [
+      "5000억 원"
+    ],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPRmVoQTJZYWNQM2ZoUEJSb2xkR1JHYVBYVEtkYTllbDdtMVkyaVlHRm82UXVCdXpCbEsyS3gxX0hLa3JFU216QUYxRDlpZnFJaEFYbVlxeDAwUVBDSGhtZkx2LWNQX2NTcGxQM3owQzc1LTJwNDJRV3JZd2RVSGNXNC0yMER2bUlRWHdWOUhiZi0tYXQxeXFVQ2tOcFdQQWhSYVZtOTBCM2hCdWZzRl9RR3l0U0pxUVBFWGVneENTYmlPWjZOTTBkZUtn?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss"
   }
 ]
