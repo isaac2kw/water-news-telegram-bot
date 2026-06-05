@@ -497,7 +497,8 @@ DAILY_REPORT_LOOKBACK_DAYS = int(os.getenv("DAILY_REPORT_LOOKBACK_DAYS", "2"))
 DASHBOARD_YEAR_WINDOW = int(os.getenv("DASHBOARD_YEAR_WINDOW", "2"))
 ARTICLE_MAX_AGE_DAYS = int(os.getenv("ARTICLE_MAX_AGE_DAYS", "730"))
 IMAGE_FETCH_TIMEOUT = int(os.getenv("IMAGE_FETCH_TIMEOUT", "7"))
-ENABLE_OG_IMAGE_FETCH = os.getenv("ENABLE_OG_IMAGE_FETCH", "true").lower() == "true"
+ENABLE_OG_IMAGE_FETCH = os.getenv("ENABLE_OG_IMAGE_FETCH", "false").lower() == "true"
+SHOW_ARTICLE_IMAGES = os.getenv("SHOW_ARTICLE_IMAGES", "false").lower() == "true"
 PROJECT_NEWS_LIMIT = int(os.getenv("PROJECT_NEWS_LIMIT", "10"))
 NUMERIC_NEWS_LIMIT = int(os.getenv("NUMERIC_NEWS_LIMIT", "10"))
 EVENT_YEAR_WINDOW = int(os.getenv("EVENT_YEAR_WINDOW", "2"))
@@ -622,6 +623,39 @@ COUNTRY_NAME_TO_FLAG = {
     "말레이시아": "🇲🇾", "Malaysia": "🇲🇾",
     "사우디": "🇸🇦", "Saudi Arabia": "🇸🇦",
     "호주": "🇦🇺", "Australia": "🇦🇺",
+}
+
+COUNTRY_NAME_TO_CODE = {
+    "미국": "us", "USA": "us", "United States": "us", "US": "us",
+    "일본": "jp", "Japan": "jp", "JP": "jp",
+    "한국": "kr", "대한민국": "kr", "Korea": "kr", "South Korea": "kr", "KR": "kr",
+    "중국": "cn", "China": "cn", "CN": "cn",
+    "프랑스": "fr", "France": "fr", "FR": "fr",
+    "싱가포르": "sg", "Singapore": "sg", "SG": "sg",
+    "네덜란드": "nl", "Netherlands": "nl", "NL": "nl",
+    "영국": "gb", "United Kingdom": "gb", "UK": "gb", "GB": "gb",
+    "스웨덴": "se", "Sweden": "se", "SE": "se",
+    "독일": "de", "Germany": "de", "DE": "de",
+    "스페인": "es", "Spain": "es", "ES": "es",
+    "캐나다": "ca", "Canada": "ca", "CA": "ca",
+    "말레이시아": "my", "Malaysia": "my", "MY": "my",
+    "사우디": "sa", "Saudi Arabia": "sa", "SA": "sa",
+    "호주": "au", "Australia": "au", "AU": "au",
+}
+
+COMPANY_COUNTRY_CODE_MAP = {
+    "Toray": "jp", "Kubota": "jp", "Mitsubishi": "jp", "Asahi Kasei": "jp", "Microza": "jp", "Nitto": "jp",
+    "Veolia": "fr", "SUEZ": "fr", "Alfa Laval": "se",
+    "DuPont": "us", "Hydranautics": "us", "Kovalus": "us", "Koch": "us", "Pall": "us", "Xylem": "us", "Applied Membranes": "us", "Axeon": "us", "Synder Filtration": "us",
+    "Pentair": "gb", "NX Filtration": "nl",
+    "LG Chem": "kr", "Econity": "kr", "Kolon": "kr", "BKT": "kr", "GS E&C": "kr", "Doosan Enerbility": "kr",
+    "Litree": "cn", "OriginWater": "cn", "Vontron": "cn", "Scinor": "cn", "Memstar": "cn",
+}
+
+COUNTRY_CODE_TO_KOREAN = {
+    "us": "미국", "jp": "일본", "kr": "대한민국", "cn": "중국", "fr": "프랑스", "sg": "싱가포르",
+    "nl": "네덜란드", "gb": "영국", "se": "스웨덴", "de": "독일", "es": "스페인", "ca": "캐나다",
+    "my": "말레이시아", "sa": "사우디", "au": "호주",
 }
 
 PROJECT_STAGE_KEYWORDS = {
@@ -1137,17 +1171,68 @@ def flag_for_country(country):
     return COUNTRY_FLAGS.get(key, "")
 
 
+def country_code_from_country(country):
+    if not country:
+        return ""
+    value = str(country).strip()
+    lower = value.lower()
+    for name, code in COUNTRY_NAME_TO_CODE.items():
+        if lower == name.lower() or name.lower() in lower:
+            return code
+    return ""
+
+
+def flag_img_html(code):
+    if not code:
+        return ""
+    code = str(code).lower().strip()
+    if not re.fullmatch(r"[a-z]{2}", code):
+        return ""
+    return f'<img class="flag-icon" src="https://flagcdn.com/24x18/{html.escape(code)}.png" alt="{html.escape(code.upper())}" loading="lazy">'
+
+
+def country_display_html(country):
+    if not country:
+        return ""
+    country_text = str(country).strip()
+    code = country_code_from_country(country_text)
+    if not code and country_text in {"한국", "대한민국"}:
+        code = "kr"
+    if code:
+        label = COUNTRY_CODE_TO_KOREAN.get(code, country_text)
+        return f'<span class="flag-label">{flag_img_html(code)}<span>{html.escape(label)}</span></span>'
+    return html.escape(country_text)
+
+
 def add_country_flag(country):
     if not country:
         return ""
-
     country_text = str(country).strip()
-    flag = flag_for_country(country_text) or COUNTRY_NAME_TO_FLAG.get(country_text, "")
-
-    if flag:
-        return f"{flag} {country_text}"
-
+    code = country_code_from_country(country_text)
+    emoji = COUNTRY_NAME_TO_FLAG.get(country_text, "") or flag_for_country(country_text)
+    if emoji:
+        return f"{emoji} {country_text}"
     return country_text
+
+
+def company_country_code(company):
+    if not company:
+        return ""
+    company = replace_company_names_with_english(str(company).strip())
+    for name, code in sorted(COMPANY_COUNTRY_CODE_MAP.items(), key=lambda x: len(x[0]), reverse=True):
+        if name.lower() in company.lower():
+            return code
+    return ""
+
+
+def company_display_html(company):
+    if not company:
+        return ""
+    company = replace_company_names_with_english(str(company).strip())
+    code = company_country_code(company)
+    if code:
+        return f'<span class="flag-label">{flag_img_html(code)}<span>{html.escape(company)}</span></span>'
+    return html.escape(company)
 
 
 def add_company_flag(company):
@@ -1964,6 +2049,8 @@ def make_html_page(title, body_html, path, active_url="", subtitle="", toc_items
     .report-body ul, .report-body ol {{ padding-left:22px; }}
     .report-body li {{ margin:6px 0; }}
     .meta {{ color:var(--muted); font-size:13px; }}
+    .flag-label {{ display:inline-flex; align-items:center; gap:5px; white-space:nowrap; vertical-align:middle; }}
+    .flag-icon {{ width:18px; height:13px; object-fit:cover; border-radius:2px; box-shadow:0 0 0 1px rgba(15,23,42,.12); vertical-align:-2px; }}
     .pill {{
       display:inline-block;
       background:var(--brand-soft);
@@ -1989,7 +2076,7 @@ def make_html_page(title, body_html, path, active_url="", subtitle="", toc_items
     .toc a {{ display:block; color:#334155; font-size:13px; padding:6px 0; border-bottom:1px solid #f1f5f9; }}
     .toc-empty {{ color:var(--muted); font-size:12px; }}
     .dashboard-grid {{ display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:14px; margin-bottom:18px; }}
-    .news-grid {{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:18px; }}
+    .news-grid {{ display:grid; grid-template-columns:1fr; gap:18px; margin-bottom:18px; }}
     .news-card {{ min-height:420px; }}
     .headline-title {{ font-weight:800; color:#0f172a; }}
     .headline-list li {{ margin:10px 0 14px; padding-bottom:10px; border-bottom:1px solid #f1f5f9; }}
@@ -2132,8 +2219,8 @@ def build_article_cards(items):
           <p>{html.escape(a.get('summary', '') or '상세 요약 정보가 없습니다.')}</p>
           <h3>왜 중요한가?</h3>
           <p class="why">{html.escape(a.get('why_important', '') or '중요도 분석 정보가 없습니다.')}</p>
-          <p class="meta">국가: {html.escape(countries or '-')}</p>
-          <p class="meta">기업: {html.escape(companies or '-')}</p>
+          <p class="meta">국가: {countries or '-'}</p>
+          <p class="meta">기업: {companies or '-'}</p>
           <p class="meta">기술: {html.escape(techs or '-')}</p>
           {f'<p><a href="{html.escape(a.get("link", ""))}" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>' if a.get("link") else ''}
         </section>
@@ -2324,10 +2411,11 @@ def display_countries_with_flags(item):
     return countries
 
 
-def build_headline_list(items, show_images=True):
+def build_headline_list(items, show_images=False):
     if not items:
         return '<p class="meta">표시할 뉴스가 아직 없습니다.</p>'
-    parts = ['<ol class="headline-list compact">']
+
+    parts = ['<ol class="headline-list compact no-thumbs">']
     for idx, item in enumerate(items, 1):
         a = normalize_display_item(item)
         title = a.get("ko_title") or a.get("title") or "제목 없음"
@@ -2336,23 +2424,26 @@ def build_headline_list(items, show_images=True):
         link = a.get("link", "")
         category = a.get("category", "")
         specs = a.get("specs", []) or []
-        image_url = a.get("image") or GENERIC_THUMBNAIL_SVG
-        countries = display_countries_with_flags(a)
-        companies = [add_company_flag(c) for c in infer_companies_for_item(a)]
+        countries_html = [country_display_html(c) for c in a.get("countries", []) or []]
+        if not countries_html and article_is_domestic(a):
+            countries_html = [country_display_html("대한민국")]
+        companies_html = [company_display_html(c) for c in infer_companies_for_item(a)]
         date_context = a.get("date_context", "") or get_article_date_context(a)
         technologies = a.get("technologies", []) or []
-        first_line_parts = countries + companies + [f"기사일 {date}", f"발표/일정 {date_context}"]
-        second_line_parts = [f"출처 {source}", category] + technologies[:4]
-        first_line = " · ".join(html.escape(x) for x in first_line_parts if x)
-        second_line = " · ".join(html.escape(x) for x in second_line_parts if x)
+
+        first_line_parts = countries_html + companies_html + [html.escape(f"기사일 {date}"), html.escape(f"발표/일정 {date_context}")]
+        second_line_parts = [html.escape(f"출처 {source}"), html.escape(category)] + [html.escape(str(t)) for t in technologies[:4]]
+        first_line = " · ".join(x for x in first_line_parts if x)
+        second_line = " · ".join(x for x in second_line_parts if x)
+
         specs_html = ""
         if specs:
             specs_html = "<div class='headline-specs'>" + " · ".join(html.escape(str(x)) for x in specs[:4]) + "</div>"
-        title_html = f'<span class="headline-rank">{idx}</span><span class="headline-title-row">{html.escape(title)}</span>'
-        if link:
-            title_html = f'<a href="{html.escape(link)}" target="_blank" rel="noopener noreferrer">{title_html}</a>'
-        thumb_html = f'<img class="headline-thumb" src="{html.escape(image_url)}" alt="news thumbnail" loading="lazy" referrerpolicy="no-referrer">' if show_images else ""
-        parts.append('<li><div class="headline-item">' + thumb_html + '<div>' + title_html + '<div class="headline-meta-row">' + first_line + '</div><div class="headline-meta-row">' + second_line + '</div>' + specs_html + '</div></div></li>')
+
+        title_inner = f'<span class="headline-rank">{idx}</span><span class="headline-title-row">{html.escape(title)}</span>'
+        title_html = f'<a href="{html.escape(link)}" target="_blank" rel="noopener noreferrer">{title_inner}</a>' if link else title_inner
+        parts.append('<li><div class="headline-item no-thumb"><div>' + title_html + '<div class="headline-meta-row">' + first_line + '</div><div class="headline-meta-row">' + second_line + '</div>' + specs_html + '</div></div></li>')
+
     parts.append("</ol>")
     return "\n".join(parts)
 
@@ -2726,26 +2817,29 @@ def build_today_detail_preview(history, limit=TOP_NEWS_LIMIT):
     today_items = dedupe_similar_articles(today_items, limit=limit, threshold=0.70)
     if not today_items:
         return '<p class="meta">오늘 날짜로 누적된 상세 기사 제목이 아직 없습니다.</p>'
+
     lead = normalize_display_item(today_items[0])
-    image_url = lead.get("image") or GENERIC_THUMBNAIL_SVG
     title = lead.get("ko_title") or lead.get("title") or "제목 없음"
     brief = lead.get("brief") or lead.get("summary") or "요약 정보가 없습니다."
     source = lead.get("source", "출처 미확인")
     date = lead.get("date", today)
     category = lead.get("category", "")
     specs = lead.get("specs", []) or []
-    countries = " · ".join(display_countries_with_flags(lead))
-    companies = " · ".join(add_company_flag(c) for c in infer_companies_for_item(lead))
+    countries_html = [country_display_html(c) for c in lead.get("countries", []) or []]
+    if not countries_html and article_is_domestic(lead):
+        countries_html = [country_display_html("대한민국")]
+    companies_html = [company_display_html(c) for c in infer_companies_for_item(lead)]
     date_context = lead.get("date_context") or get_article_date_context(lead)
     specs_html = ""
     if specs:
         specs_html = "<div class='headline-specs'>" + " · ".join(html.escape(str(x)) for x in specs[:4]) + "</div>"
     link = lead.get("link", "")
     title_block = f'<a href="{html.escape(link)}" target="_blank" rel="noopener noreferrer">{html.escape(title)}</a>' if link else html.escape(title)
-    meta_parts = [countries, companies, f"기사일 {date}", f"발표/일정 {date_context}"]
-    meta_line = " · ".join(html.escape(x) for x in meta_parts if x)
-    more_html = build_headline_list(today_items[1:limit], show_images=True) if len(today_items) > 1 else ""
-    return '<div class="article-card today-lead"><div class="article-card-img-wrap"><img class="article-card-img" src="' + html.escape(image_url) + '" alt="lead article thumbnail" loading="lazy" referrerpolicy="no-referrer"></div><div class="article-card-body"><p><span class="pill">' + html.escape(category or '분류 없음') + '</span></p><h2>' + title_block + '</h2><p>' + html.escape(brief) + '</p><p class="meta meta-line">' + meta_line + '</p><p class="meta meta-line">출처 ' + html.escape(source) + ' · ' + html.escape(category) + '</p>' + specs_html + '</div></div>' + more_html
+    meta_parts = countries_html + companies_html + [html.escape(f"기사일 {date}"), html.escape(f"발표/일정 {date_context}")]
+    meta_line = " · ".join(x for x in meta_parts if x)
+    source_line = "출처 " + html.escape(source) + " · " + html.escape(category)
+    more_html = build_headline_list(today_items[1:limit], show_images=False) if len(today_items) > 1 else ""
+    return '<div class="article-card today-lead no-image"><div class="article-card-body"><p><span class="pill">' + html.escape(category or '분류 없음') + '</span></p><h2>' + title_block + '</h2><p>' + html.escape(brief) + '</p><p class="meta meta-line">' + meta_line + '</p><p class="meta meta-line">' + source_line + '</p>' + specs_html + '</div></div>' + more_html
 
 def update_docs_index(daily_url, weekly_url, monthly_url):
     DOCS_DIR.mkdir(parents=True, exist_ok=True)
@@ -3003,7 +3097,7 @@ def main():
     DOCS_DIR.mkdir(parents=True, exist_ok=True)
 
     articles = fetch_articles()
-    selected_articles = enrich_article_images(articles[:MAX_ITEMS], limit=MAX_ITEMS)
+    selected_articles = articles[:MAX_ITEMS]
 
     for article in selected_articles:
         article["ai"] = summarize_article(article)
