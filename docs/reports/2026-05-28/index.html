@@ -36,7 +36,7 @@
       border-bottom:1px solid rgba(255,255,255,.14);
     }
     .topbar-inner {
-      max-width:1880px;
+      max-width:2140px;
       margin:0 auto;
       padding:18px 24px;
       display:flex;
@@ -56,11 +56,11 @@
     .brand:hover { text-decoration:none; }
     .top-date { font-size:13px; color:#dbeafe; white-space:nowrap; }
     .layout {
-      max-width:1880px;
+      max-width:2140px;
       margin:0 auto;
       padding:24px;
       display:grid;
-      grid-template-columns:260px minmax(0, 1fr) 210px;
+      grid-template-columns:260px minmax(0, 1.35fr) 520px;
       gap:22px;
       align-items:start;
     }
@@ -205,11 +205,23 @@
     .dash-card { background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:18px; box-shadow:0 4px 14px rgba(15,23,42,.04); }
     .dash-card h2 { font-size:17px; margin:0 0 10px; }
     .dash-card a { display:block; margin:6px 0; font-size:14px; }
-    @media (max-width:1180px) {
+    .right-rail { position:sticky; top:82px; display:flex; flex-direction:column; gap:16px; }
+    .rail-card { background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:16px; box-shadow:0 8px 22px rgba(15,23,42,.05); }
+    .rail-card h2 { font-size:17px; margin:0 0 10px; }
+    .compact-table { width:100%; border-collapse:collapse; font-size:12px; table-layout:fixed; }
+    .compact-table th, .compact-table td { border-bottom:1px solid var(--line); padding:7px 6px; vertical-align:top; overflow-wrap:anywhere; }
+    .compact-table th { color:#475569; background:#f8fafc; text-align:left; }
+    .compact-list { margin:0; padding-left:18px; font-size:13px; }
+    .compact-list li { margin:7px 0; }
+    .trend-grid { display:grid; grid-template-columns:repeat(6, minmax(0, 1fr)); gap:12px; }
+    .trend-item { text-align:center; border:1px solid var(--line); border-radius:16px; padding:12px; background:#fff; }
+    .trend-key { display:block; font-weight:800; color:#0f4c81; }
+    .trend-val { display:block; color:var(--muted); font-size:12px; margin-top:3px; }
+    @media (max-width:1480px) {
       .layout { grid-template-columns:240px minmax(0, 1fr); }
       .news-grid { grid-template-columns:1fr; }
       .event-mini-grid { grid-template-columns:repeat(2, minmax(0,1fr)); }
-      .toc { display:none; }
+      .toc, .right-rail { display:none; }
       .stat-grid { grid-template-columns:repeat(2, minmax(0,1fr)); }
     }
     @media (max-width:820px) {
@@ -222,6 +234,7 @@
       .stat-grid { grid-template-columns:1fr; }
       .news-grid { grid-template-columns:1fr; }
       .event-mini-grid { grid-template-columns:1fr; }
+      .trend-grid { grid-template-columns:repeat(2, minmax(0,1fr)); }
     }
   </style>
 </head>
@@ -229,7 +242,7 @@
   <header class="topbar">
     <div class="topbar-inner">
       <a class="brand" href="/water-news-telegram-bot/">💧 상하수도·수처리 뉴스 브리핑</a>
-      <div class="top-date">2026-06-05 11:24 KST</div>
+      <div class="top-date">2026-06-05 14:17 KST</div>
     </div>
   </header>
   <div class="layout">
@@ -255,6 +268,7 @@
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-17/">2026-05-17 (일)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-16/">2026-05-16 (토)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-13/">2026-05-13 (수)</a>
+<a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-11/">2026-05-11 (월)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-06/">2026-05-06 (수)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-04-28/">2026-04-28 (화)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-04-27/">2026-04-27 (월)</a>
@@ -328,14 +342,16 @@
 <a class="nav-link " href="/water-news-telegram-bot/monthly/2025-01/">2025년 01월</a>
 </details>
 <div class="nav-section-title">바로가기</div>
+<a class="nav-link " href="/water-news-telegram-bot/projects/">프로젝트·수주 동향</a>
+<a class="nav-link " href="/water-news-telegram-bot/numeric-news/">수치 포함 기사</a>
+<a class="nav-link " href="/water-news-telegram-bot/events/">학회·전시회 일정</a>
 <a class="nav-link " href="/water-news-telegram-bot/sources/">정보 출처</a>
 <a class="nav-link " href="/water-news-telegram-bot/filters/">필터링 기준</a>
-<a class="nav-link " href="/water-news-telegram-bot/events/">학회·전시회 일정</a>
 </nav>
     <main class="content">
       <section class="hero">
         <h1>2026-05-28 상하수도·수처리 상세 분석 보고서</h1>
-        <div class="subtitle">당일 기사만 사용합니다. 같은 내용의 중복 기사는 자동 제외합니다.</div>
+        <div class="subtitle">최근 2일 기사까지 사용합니다. 같은 내용의 중복 기사는 자동 제외합니다.</div>
       </section>
       
         <section class="card" id="article-1">
@@ -343,14 +359,14 @@
           <h2>💧 전주시, 하수처리장 434억 투입 새 단장</h2>
           <p class="meta">발표/일정: 기사 기준일: 2026-05-28</p>
           <p><span class="pill">프로젝트/수주</span></p>
-          <p class="brief">전주시는 하수처리장 시설 개선에 434억 원을 투입해 안정적 운영에 나섭니다. 이번 사업은 노후 시설 개선과 효율성 향상에 중점을 둡니다.</p>
+          <p class="brief">전주시는 하수처리장에 434억 원을 투입해 시설을 새롭게 단장합니다. 안정적 운영을 위해 대규모 개선사업을 추진합니다.</p>
           <h3>내용 요약</h3>
-          <p>전주시는 하수처리장 시설의 노후화 문제를 해결하고자 총 434억 원을 투입해 대규모 개보수 사업을 추진합니다. 이번 사업은 하수처리장의 안정적 운영과 처리 효율성 향상을 목표로 하며, 시설 현대화와 운영 시스템 개선이 포함됩니다. 하수처리장은 도시 인구 증가와 환경 기준 강화에 따라 지속적인 업그레이드가 필요한 핵심 인프라입니다. 본 사업은 지역 환경 보호와 수질 개선에 기여할 것으로 기대됩니다. 수처리 산업에서는 지방자치단체의 대규모 투자와 시설 현대화가 시장 성장의 중요한 동인으로 작용합니다.</p>
+          <p>전주시는 하수처리장 시설 개선을 위해 총 434억 원을 투입하는 대규모 사업을 추진합니다. 이번 사업은 노후된 하수처리장 설비를 현대화하여 안정적인 하수처리와 환경 보호를 도모하는 것이 목적입니다. 하수처리장의 효율성과 안전성을 높여 지역 주민의 생활환경 개선에 기여할 것으로 기대됩니다. 수처리 산업 측면에서는 지방자치단체의 대규모 투자로 관련 설비 및 기술 수요가 증가할 전망입니다. 이번 프로젝트는 국내 수처리 시장의 성장과 기술 고도화에 긍정적인 영향을 미칠 수 있습니다.</p>
           <h3>왜 중요한가?</h3>
-          <p class="why">지방정부의 대규모 하수처리장 투자 사례로, 국내 수처리 시장의 공공 프로젝트 확대와 노후 인프라 개선 트렌드를 보여줍니다. 이는 관련 기술 및 장비 수요 증가로 이어질 수 있습니다.</p>
+          <p class="why">지방정부의 대규모 하수처리장 투자로 국내 수처리 산업의 시장 확대와 기술 수요 증가가 예상됩니다. 프로젝트 관점에서 관련 기업의 참여 기회가 확대될 수 있습니다.</p>
           <p class="meta">국가: -</p>
           <p class="meta">기업: -</p>
-          <p class="meta">기술: 하수처리, 시설개선, 운영효율화</p>
+          <p class="meta">기술: 하수처리, 수처리</p>
           <p><a href="https://news.google.com/rss/articles/CBMiW0FVX3lxTE10VTZaZ0JKUTBaR2dnRnRRc0psUGRZOTRPMUtxME1tcnlScmM2Z0VmQ1NKY0RseUlaSlpMenhtcVc3Zkd4cFA5aGl1QWdVWFpKbENrQkZPVGNpXzTSAWBBVV95cUxOTkFpMmhyNGpqWkhNZzNvZUZNWEpYNXFQX1ByT3l3Q2huY3l5b2dzS2tHUGxOMDdkMnFyTjlwYmtJMHR6cHpOdkg0d0dyVl9wZjc1bjB4ZVdWSFNZaWpMS1Y?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
         </section>
         
@@ -359,47 +375,47 @@
           <h2>💧 전주시, 노후 공공하수처리장 대수선 추진</h2>
           <p class="meta">발표/일정: 기사 기준일: 2026-05-28</p>
           <p><span class="pill">프로젝트/수주</span></p>
-          <p class="brief">전주시가 노후 공공하수처리장 대수선을 추진합니다. 시설 개선을 통해 하수처리 효율과 환경 안전성을 높일 계획입니다.</p>
+          <p class="brief">전주시는 노후 공공하수처리장 대수선을 추진합니다. 시설 개선으로 하수처리 효율 향상이 기대됩니다.</p>
           <h3>내용 요약</h3>
-          <p>전주시는 노후화된 공공하수처리장에 대한 대수선 사업을 추진한다고 밝혔습니다. 이번 사업은 시설의 노후로 인한 처리 효율 저하와 환경 안전성 문제를 해결하기 위한 조치입니다. 하수처리장은 도시 인구 증가와 환경 규제 강화에 따라 지속적인 시설 개선이 요구되고 있습니다. 전주시의 이번 결정은 지역 내 수질 개선과 안정적인 하수처리 인프라 확보에 기여할 것으로 기대됩니다. 수처리 산업에서는 노후 시설의 개보수 및 현대화 수요가 꾸준히 증가하고 있습니다.</p>
+          <p>전주시는 노후화된 공공하수처리장에 대한 대수선 사업을 추진한다고 밝혔습니다. 이번 사업은 시설의 노후로 인한 처리 효율 저하와 환경 문제를 해결하기 위한 조치입니다. 하수처리장 개선을 통해 수질 관리와 지역 환경 보호가 강화될 전망입니다. 수처리 산업에서는 공공시설의 유지보수 및 현대화가 중요한 시장으로, 이번 사례는 관련 기업과 기술 적용 확대에 긍정적 영향을 줄 수 있습니다. 기사에는 구체적인 사업비, 용량 등 수치는 언급되지 않았습니다.</p>
           <h3>왜 중요한가?</h3>
-          <p class="why">노후 하수처리장 대수선은 국내 수처리 시장에서 시설 현대화 및 유지관리 수요를 촉진합니다. 이는 환경 규제 강화와 맞물려 관련 기술 및 기업의 성장 기회로 이어질 수 있습니다.</p>
+          <p class="why">노후 하수처리장 개선은 국내 수처리 시장에서 유지보수 및 리노베이션 수요를 촉진합니다. 이는 관련 기술 및 장비 공급 기업에 새로운 기회를 제공할 수 있습니다.</p>
           <p class="meta">국가: -</p>
           <p class="meta">기업: -</p>
-          <p class="meta">기술: 하수처리, 수처리장 개보수</p>
+          <p class="meta">기술: 하수처리, 수처리장 리노베이션</p>
           <p><a href="https://news.google.com/rss/articles/CBMiT0FVX3lxTFBlNnF4N1FnOEZXTmpKOUs0bzZjVmZzekxTY0RydTNkZ21yMkhRRFVYRjJ3VGFQWTQ2VHRkY3ZkMl9aZHdZUW1qcjRjRnQxeFU?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
         </section>
         
         <section class="card" id="article-3">
           <p class="meta">#3 · 기사일: 2026-05-28 · Google News Korea 상하수도 · 점수 26</p>
-          <h2>💧 전주시 하수처리장 운영관리 강화</h2>
+          <h2>💧 전주시, 체계적 하수처리장 운영관리 강화</h2>
           <p class="meta">발표/일정: 기사 기준일: 2026-05-28</p>
           <p><span class="pill">수처리 산업동향</span></p>
-          <p class="brief">전주시가 하수처리장 운영관리에 집중하고 있습니다. 효율적 수처리와 환경 개선을 위한 조치입니다.</p>
+          <p class="brief">전주시는 하수처리장 운영관리를 더욱 체계적으로 추진한다. 빈틈없는 관리로 수질 개선과 환경 보호를 목표로 한다.</p>
           <h3>내용 요약</h3>
-          <p>전주시는 하수처리장 운영관리 강화를 통해 효율적인 하수처리와 환경 보호에 나서고 있습니다. 이는 도시 인구 증가와 환경 기준 강화에 대응하기 위한 조치로 해석됩니다. 하수처리장은 도시의 수질 개선과 공공위생 유지에 핵심적인 역할을 합니다. 이번 조치는 전주시의 수처리 인프라 관리 역량을 높이고, 지역 환경 개선에 기여할 것으로 기대됩니다. 수처리 산업에서는 공공 부문 운영관리 강화가 시장 확대와 기술 수요 증가로 이어질 수 있습니다.</p>
+          <p>전주시는 하수처리장 운영관리의 체계화와 빈틈없는 관리를 추진한다고 밝혔다. 이는 도시 내 하수처리 효율성을 높이고, 수질 개선 및 환경 보호를 위한 조치로 해석된다. 하수처리장은 도시 인구 증가와 산업 발전에 따라 그 중요성이 커지고 있으며, 운영관리의 고도화는 수처리 산업 전반에 긍정적 영향을 미칠 수 있다. 이번 조치는 전주시의 지속가능한 도시 환경 조성 정책의 일환으로 보인다. 기사에는 구체적인 처리장 용량이나 사업비 등 수치는 언급되지 않았다.</p>
           <h3>왜 중요한가?</h3>
-          <p class="why">지방자치단체의 하수처리장 운영관리 강화는 공공 수처리 시장의 안정성과 기술 수요에 영향을 미칩니다. 이는 수처리 산업의 지속적 성장과 관련 정책 변화에 중요한 시사점을 제공합니다.</p>
+          <p class="why">지방자치단체의 하수처리장 운영관리 강화는 국내 수처리 산업의 관리 수준 향상과 관련 기술 및 서비스 수요 증가로 이어질 수 있다. 이는 시장 및 프로젝트 관점에서 중요하다.</p>
           <p class="meta">국가: -</p>
           <p class="meta">기업: -</p>
           <p class="meta">기술: 하수처리, 수처리장 운영관리</p>
-          <p><a href="https://news.google.com/rss/articles/CBMibEFVX3lxTE9uY1RhTE5tbno4bTdwcUw3Z0pHWk5jZ0dlVFRPRGxsXzdjQTdDNS1QT0hFdnBlX28xMGktZHlRZHRBRXNsVjJWNnhYSDNDLVpERF92V0hpVXU4LU5aSHg2WllZSGdmMkxwM0dwWdIBcEFVX3lxTE9HV3o4SXBqUjY1RWx2RHpBbEdyVnh0Wl9HOUNNZGlXdUhXRW1RNURuOUtPOXhHNjV4N0hsc1pmQzh6cHV2OWhVWDl0dGNrZVF1eDV4OUtQSXRKeXN0VDBpdk5RSFZPNmVBWEFSUl93V2U?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
+          <p><a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE9SQUhNcjQ3Yks5UFNMZTF0a2p5TktwR0x4VjM5bjA0R0ZaXzhjTllxR0k0WFJCRDJQdEVQUXhjYnlWd0Y5YVlKbW1NS1ZMR0JsNUNqeU5hbGNveW1WLWJ2WUZlUmxfX1F3MWc?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
         </section>
         
         <section class="card" id="article-4">
-          <p class="meta">#4 · 기사일: 2026-05-28 · Google News Korea 상하수도 · 점수 26</p>
+          <p class="meta">#4 · 기사일: 2026-05-28 · Google News Korea 재이용수 PFAS · 점수 26</p>
           <h2>💧 천안하수처리장 공기연장 특혜 논란</h2>
           <p class="meta">발표/일정: 기사 기준일: 2026-05-28</p>
           <p><span class="pill">프로젝트/수주</span></p>
-          <p class="brief">한화가 시공 중인 천안하수처리장이 공사 기간 연장을 두고 특혜 논란에 휩싸였습니다. 사업 진행과 관련해 지역 내 논쟁이 이어지고 있습니다.</p>
+          <p class="brief">한화가 시공 중인 천안하수처리장이 공사 기간 연장을 두고 특혜 논란에 휩싸였습니다. 공기연장 배경과 수처리 사업의 투명성 문제가 제기되고 있습니다.</p>
           <h3>내용 요약</h3>
-          <p>천안하수처리장 사업은 한화가 시공을 맡아 진행 중이며, 최근 공사 기간 연장 문제로 특혜 시비가 제기되고 있습니다. 이 논란은 공기연장 결정 과정의 투명성과 공정성에 대한 지역사회의 우려에서 비롯되었습니다. 하수처리장은 지역 환경 개선과 공공 위생에 중요한 역할을 하며, 공사 지연은 시민 생활과 환경 관리에 영향을 줄 수 있습니다. 수처리 산업에서는 대형 프로젝트의 일정 관리와 계약 이행이 중요한 이슈로, 이번 사례는 향후 유사 사업의 관리 기준에도 영향을 미칠 수 있습니다. 기사에는 구체적인 용량이나 사업비 등 수치 정보는 언급되지 않았습니다.</p>
+          <p>한화가 시공을 맡은 천안하수처리장이 공사 기간 연장(공기연장) 문제로 특혜 논란에 직면했습니다. 이번 논란은 하수처리장 건설 과정에서 일정 변경이 발생하면서, 연장 결정의 투명성과 공정성에 대한 의문이 제기된 데서 비롯됐습니다. 천안하수처리장은 지역 내 하수처리 인프라 확충을 위해 추진된 주요 프로젝트로, 공기연장 이슈는 사업 일정과 예산 집행, 지역주민 서비스에 영향을 미칠 수 있습니다. 수처리 산업에서는 대형 프로젝트의 일정 관리와 계약 투명성이 중요한 이슈로, 이번 사례는 업계 전반에 시사점을 제공합니다. 기사에는 PFAS나 재이용수 등 구체적 기술 언급은 없으나, 하수처리장 운영의 신뢰성과 정책적 관리가 강조되고 있습니다.</p>
           <h3>왜 중요한가?</h3>
-          <p class="why">대형 하수처리장 프로젝트의 일정 및 계약 관리 문제는 수처리 산업 전반의 신뢰성과 효율성에 직접적인 영향을 미칩니다. 이번 논란은 향후 공공 수처리 사업의 발주 및 시공 관행에 변화를 줄 수 있습니다.</p>
-          <p class="meta">국가: 대한민국</p>
+          <p class="why">대형 하수처리장 프로젝트의 일정 연장과 특혜 논란은 수처리 산업의 투명성과 공정성에 대한 사회적 신뢰에 직접적인 영향을 미칩니다. 이는 향후 유사 프로젝트의 발주, 관리, 규제 강화 논의로 이어질 수 있습니다.</p>
+          <p class="meta">국가: -</p>
           <p class="meta">기업: Hanwha</p>
-          <p class="meta">기술: 하수처리장</p>
-          <p><a href="https://news.google.com/rss/articles/CBMiRkFVX3lxTE91dUxnYmNnWmVHVnF3MVJjZUNqRzNEQlhDOWdQUThkanNNWGxDTUhXaVItT3g4OFBVTWh4QW9sUnRxQk5NQWc?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
+          <p class="meta">기술: -</p>
+          <p><a href="https://news.google.com/rss/articles/CBMiT0FVX3lxTFB1S2REM3M2cThDZ0RkMlJDNkxTZDVkUkhyZllNamg1M3Rvb1JsTFdGSWx3TkpFbEtQWW5uVS1OeVhzOVZqaUZwa0hsVjJja2s?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
         </section>
         
         <section class="card" id="article-5">
@@ -412,14 +428,46 @@
           <p>전주시는 2023년 하수처리장 운영 및 시설 개선을 위해 434억 원을 투입할 계획이다. 이 투자는 지역 내 하수처리 시설의 효율성을 높이고, 환경 보호를 위한 기반을 마련하는 데 기여할 것으로 기대된다. 하수처리장 운영 개선은 수처리 산업의 지속 가능성을 높이는 중요한 요소로 작용할 수 있다. 이러한 투자는 지역 주민의 생활 환경 개선에도 긍정적인 영향을 미칠 것이다.</p>
           <h3>왜 중요한가?</h3>
           <p class="why">하수처리장 운영 개선은 지역 환경 관리 및 수질 개선에 필수적이다. 이는 수처리 산업의 발전과 관련된 중요한 프로젝트로, 향후 유사한 투자가 증가할 가능성이 있다.</p>
-          <p class="meta">국가: 대한민국</p>
+          <p class="meta">국가: 🇰🇷 대한민국</p>
           <p class="meta">기업: -</p>
           <p class="meta">기술: 하수처리</p>
           <p><a href="https://news.google.com/rss/articles/CBMiYEFVX3lxTE02VEpPb2lUQm5pOENiSzZ6QUdyWXdRYTJ4WS1kWHRPSVNyQlRkRlNGbFJvZzd3cmJpWjBZQkVrRDhlOG5rNGZwYk9sa1ZDTzJOaE5mdU9KQ01KSVI3WlUxQ9IBeEFVX3lxTE1VYVRXV3FZcXJQVXIzRmFDRG1ISGpzdVNDY096NFdtRnFKYmt5My1NVEJUbC1MY1JMRngtZU5TeW5nYm5Bb19HQ1U0UXVuenZXdkxveGFLWEQyVjM2WDJHLWN2OExjTlp3ZEUzTV9ERkVUWFRjcTB2OA?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
         </section>
         
         <section class="card" id="article-6">
-          <p class="meta">#6 · 기사일: 2026-05-28 · Google News Korea 상하수도 · 점수 18</p>
+          <p class="meta">#6 · 기사일: 2026-05-27 · Google News Korea 상하수도 · 점수 26</p>
+          <h2>💧 하수처리장 에너지 자립화 예산 검토</h2>
+          <p class="meta">발표/일정: 기사 발행일 기준</p>
+          <p><span class="pill">규제/정책</span></p>
+          <p class="brief">기획처가 하수처리장 에너지 자립화 확산을 추진하며 내년 예산 반영을 검토 중입니다. 이는 하수처리장의 에너지 효율 개선과 지속가능성 강화에 기여할 전망입니다.</p>
+          <h3>내용 요약</h3>
+          <p>기획처는 하수처리장 에너지 자립화 확산을 위해 내년 예산에 관련 사업 반영을 검토하고 있습니다. 하수처리장은 에너지 소비가 많은 시설로, 에너지 자립화는 운영비 절감과 탄소중립 실현에 중요한 역할을 합니다. 이번 정책 추진은 정부 차원의 지원 확대와 함께 하수처리장 현대화 및 신재생에너지 도입을 촉진할 것으로 기대됩니다. 수처리 산업에서는 에너지 효율화 기술, 바이오가스 활용, 태양광 등 신재생에너지 연계 솔루션에 대한 수요가 증가할 수 있습니다. 이는 국내 수처리 산업의 경쟁력 강화와 환경정책 목표 달성에 긍정적 영향을 미칠 전망입니다.</p>
+          <h3>왜 중요한가?</h3>
+          <p class="why">정부의 예산 반영 검토는 하수처리장 에너지 자립화 관련 시장 확대와 기술 개발 촉진에 직접적 영향을 미칩니다. 정책 변화에 따라 관련 기업과 기술 공급업체의 사업 기회가 늘어날 수 있습니다.</p>
+          <p class="meta">국가: -</p>
+          <p class="meta">기업: -</p>
+          <p class="meta">기술: 하수처리, 에너지 자립화, 신재생에너지</p>
+          <p><a href="https://news.google.com/rss/articles/CBMiT0FVX3lxTE9mQ3VNdU1tZjdKVTRXVEdBamZNcWR2VWF5eTk2TURSeldqbUVlUEY2aDdwZEJqQTRCOUE3bnU5QXdFQnpmMmxsNTVzN3ZkOU0?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
+        </section>
+        
+        <section class="card" id="article-7">
+          <p class="meta">#7 · 기사일: 2026-05-27 · Google News Korea 재이용수 PFAS · 점수 26</p>
+          <h2>💧 울산 하수처리장 방문, 에너지자립 지원</h2>
+          <p class="meta">발표/일정: 기사 기준일: 2026-05-27</p>
+          <p><span class="pill">수처리 산업동향</span></p>
+          <p class="brief">기획처가 울산 하수처리장을 방문하여 에너지자립을 위한 지원 방안을 논의했습니다. 이는 전국적으로 에너지 자립을 확산하기 위한 노력의 일환입니다.</p>
+          <h3>내용 요약</h3>
+          <p>기획재정부는 울산 하수처리장을 방문하여 에너지 자립을 위한 지원 방안을 모색했습니다. 이번 방문은 하수처리장 운영의 효율성을 높이고, 에너지 자립을 통해 지속 가능한 수처리 산업을 발전시키기 위한 것입니다. 정부는 하수처리장에서 발생하는 에너지를 활용하여 에너지 자립을 도모하고 있습니다. 이는 수처리 산업의 혁신과 지속 가능성을 높이는 데 기여할 것으로 기대됩니다.</p>
+          <h3>왜 중요한가?</h3>
+          <p class="why">이번 방문은 수처리 산업의 에너지 효율성을 높이고, 지속 가능한 발전을 촉진하는 중요한 계기가 될 것입니다. 이는 향후 관련 정책 및 기술 개발에 긍정적인 영향을 미칠 것으로 추측됩니다.</p>
+          <p class="meta">국가: 🇰🇷 대한민국</p>
+          <p class="meta">기업: -</p>
+          <p class="meta">기술: 하수처리</p>
+          <p><a href="https://news.google.com/rss/articles/CBMiW0FVX3lxTE90dEI5MWFveGJSR3RuTjEwZHhPdi1iSnA4MTM0cDNIX1NDb0lyOFo1Z3hqZGFMX1hOODhQZC0wdmdMVm82bWprUmsxcGlmbWFseGhkWlhENUNEcDDSAWBBVV95cUxNWFhScWROZTROS09HaGdIckVUTGlCX2RUZVdDa0N4V2hHY3N2TjMtLURNdEdQcEg2cmtzWkVtUURaOTB3OUlla3dZN2VROEw3eXJNeXQyZmV2dGlwQS1pc0k?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
+        </section>
+        
+        <section class="card" id="article-8">
+          <p class="meta">#8 · 기사일: 2026-05-28 · Google News Korea 상하수도 · 점수 18</p>
           <h2>💧 부산환경공단, 친환경 하·폐수처리 재료 확보</h2>
           <p class="meta">발표/일정: 기사 기준일: 2026-05-28</p>
           <p><span class="pill">산업폐수</span></p>
@@ -428,14 +476,14 @@
           <p>부산환경공단은 민간 기업과 협력하여 친환경 하수 및 폐수 처리 재료를 확보하기로 했습니다. 이 프로젝트는 지속 가능한 수처리 기술 개발을 목표로 하며, 지역 환경 보호에 기여할 것으로 보입니다. 민간과의 협력은 자원의 효율적 활용과 혁신적인 기술 개발을 촉진할 수 있습니다. 이러한 노력은 수처리 산업의 발전과 환경 문제 해결에 중요한 역할을 할 것입니다.</p>
           <h3>왜 중요한가?</h3>
           <p class="why">이 프로젝트는 친환경 기술 개발을 통해 수처리 산업의 지속 가능성을 높이는 데 기여할 것입니다. 또한, 민간과의 협력은 새로운 시장 기회를 창출할 수 있는 가능성을 내포하고 있습니다.</p>
-          <p class="meta">국가: 대한민국</p>
+          <p class="meta">국가: 🇰🇷 대한민국</p>
           <p class="meta">기업: -</p>
           <p class="meta">기술: 폐수처리</p>
           <p><a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxOWEU4dWxpUFFuOVQzNmdSd3JnT2xfRWpEZVZKRVNkLVZmVnRwY3cxNHZlLWhWbkI0UFlHMWVmRFduNDJYbFBRTm9Yc0RtTTBpTWdKc3N1TkZIWWNlc05zYzRpQy1WYl9RUFZRYlA2RmpIUXZLY05RRExUMnI1T1FzSUc1R094QUZDWG5FNXpB?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
         </section>
         
-        <section class="card" id="article-7">
-          <p class="meta">#7 · 기사일: 2026-05-28 · Google News Korea 상하수도 · 점수 18</p>
+        <section class="card" id="article-9">
+          <p class="meta">#9 · 기사일: 2026-05-28 · Google News Korea 상하수도 · 점수 18</p>
           <h2>💧 경남 창녕군, 하수처리시설 점검으로 수질 관리 강화</h2>
           <p class="meta">발표/일정: 기사 기준일: 2026-05-28</p>
           <p><span class="pill">규제/정책</span></p>
@@ -444,14 +492,14 @@
           <p>경남 창녕군은 최근 공공하수처리시설에 대한 합동 점검을 실시하여 수질 관리 강화를 도모하고 있습니다. 이번 점검은 녹조 발생을 예방하기 위한 조치로, 하수처리시설의 운영 상태와 수질 기준 준수 여부를 확인하는 데 중점을 두었습니다. 수처리 산업에서는 이러한 점검이 수질 개선과 환경 보호에 중요한 역할을 하며, 지역 사회의 건강을 지키는 데 기여합니다.</p>
           <h3>왜 중요한가?</h3>
           <p class="why">이번 점검은 하수처리시설의 수질 관리 강화를 통해 지역 환경 보호에 기여할 수 있습니다. 이는 수처리 산업의 신뢰성을 높이고, 향후 규제 강화에 대비하는 중요한 사례로 작용할 것입니다.</p>
-          <p class="meta">국가: 대한민국</p>
+          <p class="meta">국가: 🇰🇷 대한민국</p>
           <p class="meta">기업: -</p>
           <p class="meta">기술: -</p>
           <p><a href="https://news.google.com/rss/articles/CBMickFVX3lxTE9FSkV1Y3ZlQWZDMGt1X0lhZTZySWdJa2hjMG9MUWNqcFVId0ZtR2NBTzlXNjJGODdQQ1I0clRZaGRWOVVOQVY5aGFuYVdkSEYzR0ZNanZKVVhaaFRUZU1mNFJ4UE5kTXVNcUt4MWdNQ3duUdIBdkFVX3lxTE1QaEJkMVJkNGdDUk42UjZCcFYyc2o2RE1FRG14azBlM0g4dmczLTJsTGR3OU45c2pzRzNhT1RwaV9PT3UwMGZBdF8yc0EzNE5WaTRtYWp6Q2xzQnJzZFdjRGlPX093WnBPQ19LQVNDb2dNbEhkZEE?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
         </section>
         
-        <section class="card" id="article-8">
-          <p class="meta">#8 · 기사일: 2026-05-28 · Google News Korea 상하수도 · 점수 18</p>
+        <section class="card" id="article-10">
+          <p class="meta">#10 · 기사일: 2026-05-28 · Google News Korea 상하수도 · 점수 18</p>
           <h2>💧 창녕군, 하수처리시설 점검 강화로 녹조 예방</h2>
           <p class="meta">발표/일정: 기사 기준일: 2026-05-28</p>
           <p><span class="pill">수처리 산업동향</span></p>
@@ -460,14 +508,78 @@
           <p>창녕군은 최근 하수처리시설의 점검을 강화하여 녹조 예방에 집중하고 있습니다. 이 조치는 지역 내 수질 개선과 환경 보호를 목표로 하며, 하수처리시설의 운영 효율성을 높이는 데 기여할 것으로 기대됩니다. 수처리 산업에서는 이러한 예방 조치가 중요하며, 지속 가능한 수자원 관리에 기여할 수 있습니다. 하수처리시설의 점검 강화는 지역 주민의 건강과 안전을 보호하는 데도 중요한 역할을 합니다.</p>
           <h3>왜 중요한가?</h3>
           <p class="why">하수처리시설의 점검 강화는 수질 개선과 환경 보호 측면에서 매우 중요합니다. 이는 지역 사회의 건강과 안전을 보장하는 데 기여할 것으로 예상됩니다.</p>
-          <p class="meta">국가: 대한민국</p>
+          <p class="meta">국가: 🇰🇷 대한민국</p>
           <p class="meta">기업: -</p>
           <p class="meta">기술: 하수처리</p>
           <p><a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE1UVUxNSUt3UGpTWnZFb1dTNzgwMGdiQWo1b2s5OERTN2c3TFVlTVd2Z096OFdJVTBpMUxQN3BNeHN1NUU3Rkc2X1p3ZTUzNEtWY3lRQjVkUFo0QQ?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
         </section>
         
+        <section class="card" id="article-11">
+          <p class="meta">#11 · 기사일: 2026-05-27 · Google News Korea 상하수도 · 점수 18</p>
+          <h2>💧 용인시, 하수처리시설 개선 최대 400만원 지원</h2>
+          <p class="meta">발표/일정: 기사 기준일: 2026-05-27</p>
+          <p><span class="pill">프로젝트/수주</span></p>
+          <p class="brief">용인시가 하수처리시설 개선을 위해 최대 400만원을 지원합니다. 이는 지역 내 수처리 시설의 효율성을 높이기 위한 노력의 일환입니다.</p>
+          <h3>내용 요약</h3>
+          <p>용인시는 하수처리시설 개선을 위한 지원금을 최대 400만원까지 제공한다고 발표했습니다. 이 지원은 지역 내 하수처리 시설의 효율성을 높이고, 환경 보호를 위한 중요한 조치로 평가됩니다. 하수처리 산업은 지속 가능한 도시 개발에 필수적이며, 이러한 지원은 관련 기업들에게도 긍정적인 영향을 미칠 것으로 보입니다. 용인시는 이와 같은 정책을 통해 지역 주민의 삶의 질을 향상시키고자 합니다.</p>
+          <h3>왜 중요한가?</h3>
+          <p class="why">이 지원은 하수처리 시설의 개선을 통해 지역 환경을 보호하고, 수처리 산업의 발전을 촉진할 수 있습니다. 이는 시장의 경쟁력을 높이고, 지속 가능한 발전을 위한 중요한 정책입니다.</p>
+          <p class="meta">국가: 🇰🇷 대한민국</p>
+          <p class="meta">기업: -</p>
+          <p class="meta">기술: 하수처리</p>
+          <p><a href="https://news.google.com/rss/articles/CBMicEFVX3lxTE9reVJiaV9jWXdOeGVDcmlldkVsUENjcHZFU0NIRmExMWJ4NjhPd1poWlpDM3RidUI0MmxoLXJCZWdkU2E2QlB4SWhkM0Vrd19CUGlnTzRSZ1BtdnkxSGZWNkpCc2RpcEUwNjQtWnlxbGM?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
+        </section>
+        
+        <section class="card" id="article-12">
+          <p class="meta">#12 · 기사일: 2026-05-27 · Google News Korea 상하수도 · 점수 18</p>
+          <h2>💧 부산환경공단, 민간 3사와 하·폐수처리 협약 체결</h2>
+          <p class="meta">발표/일정: 기사 기준일: 2026-05-27</p>
+          <p><span class="pill">산업폐수</span></p>
+          <p class="brief">부산환경공단이 민간 3사와 하수 및 폐수처리에 필요한 외부 탄소원을 무상으로 공급하기로 협약을 체결했습니다. 이 협약은 수처리 효율성을 높이고 환경 보호에 기여할 것으로 기대됩니다.</p>
+          <h3>내용 요약</h3>
+          <p>부산환경공단은 최근 민간 3사와 하수 및 폐수처리에 필요한 외부 탄소원을 무상으로 공급하기 위한 협약을 체결했습니다. 이 협약은 부산 지역의 수처리 효율성을 높이고, 환경 보호를 위한 지속 가능한 솔루션을 제공하는 데 기여할 것으로 보입니다. 외부 탄소원 공급은 수처리 과정에서의 탄소 배출을 줄이는 데 중요한 역할을 할 것입니다. 이러한 협력은 수처리 산업의 발전과 환경 보호를 동시에 도모하는 사례로 주목받고 있습니다.</p>
+          <h3>왜 중요한가?</h3>
+          <p class="why">이 협약은 수처리 산업의 효율성을 높이고, 환경 규제에 부합하는 지속 가능한 솔루션을 제공하는 데 중요한 의미가 있습니다. 이는 향후 수처리 기술 발전과 관련된 프로젝트에 긍정적인 영향을 미칠 것으로 추측됩니다.</p>
+          <p class="meta">국가: 🇰🇷 대한민국</p>
+          <p class="meta">기업: -</p>
+          <p class="meta">기술: 폐수처리</p>
+          <p><a href="https://news.google.com/rss/articles/CBMiZEFVX3lxTFBXZTNKSHRlRTgzVDZLVEM4cU1tRjBVanRLRks4OGdPNDNQT3ZFb3VuRXU4RlQtZEFTZ1F5NEdGdmVZcXdYX2l0Y0RGTFBkdFdPQ3JUUGJoYVc5U1RwcmdBTFlmako?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
+        </section>
+        
+        <section class="card" id="article-13">
+          <p class="meta">#13 · 기사일: 2026-05-27 · Google News Korea 상하수도 · 점수 18</p>
+          <h2>💧 부산환경공단, 민간기업과 하수처리 비용 절감</h2>
+          <p class="meta">발표/일정: 기사 기준일: 2026-05-27</p>
+          <p><span class="pill">프로젝트/수주</span></p>
+          <p class="brief">부산환경공단이 민간기업과 협력하여 하수처리 비용 절감을 시도하고 있습니다. 이 프로젝트는 효율성을 높이고 비용을 줄이는 데 중점을 두고 있습니다.</p>
+          <h3>내용 요약</h3>
+          <p>부산환경공단은 민간기업과 협력하여 하수처리 비용 절감을 위한 프로젝트를 추진하고 있습니다. 이 프로젝트는 하수처리의 효율성을 높이고 운영 비용을 줄이는 것을 목표로 하고 있습니다. 민간기업의 기술과 자원을 활용하여 공공 서비스의 품질을 개선할 계획입니다. 이러한 협력은 수처리 산업의 혁신적인 접근 방식을 보여줍니다.</p>
+          <h3>왜 중요한가?</h3>
+          <p class="why">이 프로젝트는 하수처리 비용 절감과 효율성 향상이라는 시장의 요구에 부응합니다. 또한, 민간과 공공의 협력 모델이 향후 다른 수처리 프로젝트에 긍정적인 영향을 미칠 것으로 예상됩니다.</p>
+          <p class="meta">국가: 🇰🇷 한국</p>
+          <p class="meta">기업: -</p>
+          <p class="meta">기술: 하수처리</p>
+          <p><a href="https://news.google.com/rss/articles/CBMiRkFVX3lxTE5qZl9KUGxXVTNtVE5NNUkxaG5FS1FNWnBGR2pNcE1sbnIxeVQ5TkhjWjNVczZYM0RLdkFObzRxU0pXaXBGZHc?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
+        </section>
+        
+        <section class="card" id="article-14">
+          <p class="meta">#14 · 기사일: 2026-05-27 · Google News Global PFAS · 점수 18</p>
+          <h2>🧪 고급 분석 기술로 하수에서 PFAS 및 미세플라스틱 탐지</h2>
+          <p class="meta">발표/일정: 기사 기준일: 2026-05-27</p>
+          <p><span class="pill">PFAS/오염물</span></p>
+          <p class="brief">고급 분석 기술을 활용하여 하수에서 PFAS와 미세플라스틱을 탐지하는 방법이 소개되었습니다. 이 기술은 수처리 산업의 오염물질 관리에 중요한 역할을 할 것으로 기대됩니다.</p>
+          <h3>내용 요약</h3>
+          <p>최근 연구에서는 고급 분석 기술을 통해 하수에서 PFAS와 미세플라스틱을 효과적으로 탐지하는 방법이 제시되었습니다. PFAS는 환경과 인체에 미치는 영향이 크기 때문에, 이를 조기에 발견하고 관리하는 것이 중요합니다. 이 기술은 수처리 산업에서 오염물질을 모니터링하고 제거하는 데 기여할 수 있습니다. 따라서, 수처리 시설의 운영 효율성을 높이고 환경 보호에 기여할 것으로 기대됩니다.</p>
+          <h3>왜 중요한가?</h3>
+          <p class="why">PFAS와 미세플라스틱의 탐지는 수처리 산업에서 오염물질 관리의 중요성을 강조합니다. 이는 규제 강화와 기술 발전에 따른 시장의 변화에 대응하기 위한 필수적인 요소입니다.</p>
+          <p class="meta">국가: -</p>
+          <p class="meta">기업: -</p>
+          <p class="meta">기술: PFAS, Microplastics</p>
+          <p><a href="https://news.google.com/rss/articles/CBMizgFBVV95cUxQekJSUzcwb2JfelRKOEdDa0ljZFVuVlZsVDh1RVpmMUtOU2F4NUx3SllQSVU2RkctTG4yR2Z0VVMwdWhwT1lRXzFIWUJwcjdLX0NDQ0xTZEZMa05xdGJrMW83XzBfWTJabkVNWUh3TnlwdkZYNjVtSzVlNWJqc09menpZVkFNZV8yei1kdDVCTzJqVlpuaFpNdS1hdWZCaGtmOERnZWRuSnBrYUVlVXhCLXdfYmNvUmNiSkJIMVFfWkVqODVWbUM1b2ZOaUJ2UQ?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
+        </section>
+        
     </main>
-    <aside class="toc"><div class="toc-title">목차</div><a href="#article-1">기사 1</a><a href="#article-2">기사 2</a><a href="#article-3">기사 3</a><a href="#article-4">기사 4</a><a href="#article-5">기사 5</a><a href="#article-6">기사 6</a><a href="#article-7">기사 7</a><a href="#article-8">기사 8</a></aside>
+    <aside class="toc"><div class="toc-title">목차</div><a href="#article-1">기사 1</a><a href="#article-2">기사 2</a><a href="#article-3">기사 3</a><a href="#article-4">기사 4</a><a href="#article-5">기사 5</a><a href="#article-6">기사 6</a><a href="#article-7">기사 7</a><a href="#article-8">기사 8</a><a href="#article-9">기사 9</a><a href="#article-10">기사 10</a><a href="#article-11">기사 11</a><a href="#article-12">기사 12</a></aside>
   </div>
 </body>
 </html>

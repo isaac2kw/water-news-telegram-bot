@@ -36,7 +36,7 @@
       border-bottom:1px solid rgba(255,255,255,.14);
     }
     .topbar-inner {
-      max-width:1880px;
+      max-width:2140px;
       margin:0 auto;
       padding:18px 24px;
       display:flex;
@@ -56,11 +56,11 @@
     .brand:hover { text-decoration:none; }
     .top-date { font-size:13px; color:#dbeafe; white-space:nowrap; }
     .layout {
-      max-width:1880px;
+      max-width:2140px;
       margin:0 auto;
       padding:24px;
       display:grid;
-      grid-template-columns:260px minmax(0, 1fr) 210px;
+      grid-template-columns:260px minmax(0, 1.35fr) 520px;
       gap:22px;
       align-items:start;
     }
@@ -205,11 +205,23 @@
     .dash-card { background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:18px; box-shadow:0 4px 14px rgba(15,23,42,.04); }
     .dash-card h2 { font-size:17px; margin:0 0 10px; }
     .dash-card a { display:block; margin:6px 0; font-size:14px; }
-    @media (max-width:1180px) {
+    .right-rail { position:sticky; top:82px; display:flex; flex-direction:column; gap:16px; }
+    .rail-card { background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:16px; box-shadow:0 8px 22px rgba(15,23,42,.05); }
+    .rail-card h2 { font-size:17px; margin:0 0 10px; }
+    .compact-table { width:100%; border-collapse:collapse; font-size:12px; table-layout:fixed; }
+    .compact-table th, .compact-table td { border-bottom:1px solid var(--line); padding:7px 6px; vertical-align:top; overflow-wrap:anywhere; }
+    .compact-table th { color:#475569; background:#f8fafc; text-align:left; }
+    .compact-list { margin:0; padding-left:18px; font-size:13px; }
+    .compact-list li { margin:7px 0; }
+    .trend-grid { display:grid; grid-template-columns:repeat(6, minmax(0, 1fr)); gap:12px; }
+    .trend-item { text-align:center; border:1px solid var(--line); border-radius:16px; padding:12px; background:#fff; }
+    .trend-key { display:block; font-weight:800; color:#0f4c81; }
+    .trend-val { display:block; color:var(--muted); font-size:12px; margin-top:3px; }
+    @media (max-width:1480px) {
       .layout { grid-template-columns:240px minmax(0, 1fr); }
       .news-grid { grid-template-columns:1fr; }
       .event-mini-grid { grid-template-columns:repeat(2, minmax(0,1fr)); }
-      .toc { display:none; }
+      .toc, .right-rail { display:none; }
       .stat-grid { grid-template-columns:repeat(2, minmax(0,1fr)); }
     }
     @media (max-width:820px) {
@@ -222,6 +234,7 @@
       .stat-grid { grid-template-columns:1fr; }
       .news-grid { grid-template-columns:1fr; }
       .event-mini-grid { grid-template-columns:1fr; }
+      .trend-grid { grid-template-columns:repeat(2, minmax(0,1fr)); }
     }
   </style>
 </head>
@@ -229,7 +242,7 @@
   <header class="topbar">
     <div class="topbar-inner">
       <a class="brand" href="/water-news-telegram-bot/">💧 상하수도·수처리 뉴스 브리핑</a>
-      <div class="top-date">2026-06-05 11:24 KST</div>
+      <div class="top-date">2026-06-05 14:17 KST</div>
     </div>
   </header>
   <div class="layout">
@@ -255,6 +268,7 @@
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-17/">2026-05-17 (일)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-16/">2026-05-16 (토)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-13/">2026-05-13 (수)</a>
+<a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-11/">2026-05-11 (월)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-06/">2026-05-06 (수)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-04-28/">2026-04-28 (화)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-04-27/">2026-04-27 (월)</a>
@@ -328,14 +342,16 @@
 <a class="nav-link " href="/water-news-telegram-bot/monthly/2025-01/">2025년 01월</a>
 </details>
 <div class="nav-section-title">바로가기</div>
+<a class="nav-link " href="/water-news-telegram-bot/projects/">프로젝트·수주 동향</a>
+<a class="nav-link " href="/water-news-telegram-bot/numeric-news/">수치 포함 기사</a>
+<a class="nav-link " href="/water-news-telegram-bot/events/">학회·전시회 일정</a>
 <a class="nav-link " href="/water-news-telegram-bot/sources/">정보 출처</a>
 <a class="nav-link " href="/water-news-telegram-bot/filters/">필터링 기준</a>
-<a class="nav-link " href="/water-news-telegram-bot/events/">학회·전시회 일정</a>
 </nav>
     <main class="content">
       <section class="hero">
         <h1>2026-05-30 상하수도·수처리 상세 분석 보고서</h1>
-        <div class="subtitle">당일 기사만 사용합니다. 같은 내용의 중복 기사는 자동 제외합니다.</div>
+        <div class="subtitle">최근 2일 기사까지 사용합니다. 같은 내용의 중복 기사는 자동 제외합니다.</div>
       </section>
       
         <section class="card" id="article-1">
@@ -343,14 +359,14 @@
           <h2>💧 안성시, 하수처리장 안전 점검 실시</h2>
           <p class="meta">발표/일정: 기사 기준일: 2026-05-30</p>
           <p><span class="pill">수처리 산업동향</span></p>
-          <p class="brief">안성시는 하수처리장에 대한 집중 안전 점검을 추진한다. 시설 안전 확보와 사고 예방을 위한 조치다.</p>
+          <p class="brief">안성시는 하수처리장에 대한 집중 안전 점검을 추진한다. 이번 점검은 시설 안전 확보와 사고 예방을 위한 조치다.</p>
           <h3>내용 요약</h3>
-          <p>안성시는 관내 하수처리장에 대해 집중적인 안전 점검을 실시한다고 밝혔다. 이번 점검은 시설 내 안전사고 예방과 운영 안정성 확보를 목적으로 한다. 하수처리장은 도시 인프라의 핵심 시설로, 안전 관리가 미흡할 경우 환경오염 및 시민 안전에 직접적인 영향을 미칠 수 있다. 최근 전국적으로 하수처리장 내 사고가 잇따르면서, 지방자치단체 차원의 선제적 대응이 강조되고 있다. 이번 조치는 수처리 산업 내 안전관리 강화와 관련 규제 준수의 중요성을 다시 한 번 부각시킨다.</p>
+          <p>안성시는 관내 하수처리장에 대해 집중적인 안전 점검을 실시한다고 밝혔다. 이번 조치는 하수처리 시설의 안전사고 예방과 안정적인 운영을 위한 것으로, 최근 시설 노후화와 안전사고 우려가 커지는 상황에서 추진된다. 점검 대상은 하수처리장 내 주요 설비와 운영 시스템 등이며, 점검 결과에 따라 보수 및 개선 조치가 이뤄질 예정이다. 이러한 안전 점검은 하수처리장의 효율적 운영과 환경오염 방지에 기여할 것으로 기대된다. 수처리 산업에서는 시설 안전 관리가 점점 더 중요한 이슈로 부각되고 있다.</p>
           <h3>왜 중요한가?</h3>
-          <p class="why">하수처리장 안전 점검은 시설 운영의 신뢰성과 환경 안전 확보에 필수적이다. 이는 수처리 산업 내 규제 준수와 사고 예방을 위한 중요한 조치다.</p>
-          <p class="meta">국가: -</p>
+          <p class="why">하수처리장 안전 점검은 시설 운영의 신뢰성과 환경 안전 확보에 필수적이다. 이는 국내 수처리 산업의 규제 및 관리 기준 강화 추세와도 관련이 있다.</p>
+          <p class="meta">국가: 🇰🇷 대한민국</p>
           <p class="meta">기업: -</p>
-          <p class="meta">기술: 하수처리, 수처리, 안전 점검</p>
+          <p class="meta">기술: 하수처리, 수처리</p>
           <p><a href="https://news.google.com/rss/articles/CBMifEFVX3lxTE45OXZ4R0FDWElvSjN4UUNvTlo3MEt0azV6eHphbVM5bmpENU0za29teXVfMWRCOWdhbFRkYmdmaGVIRGpzT3RmcnlIYU16WlBXSlVQWGR2azE1NXNUMS1hSnlFU1ZMalhPZG50RTN1Mkg5SVJHWlZweUMwaHk?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
         </section>
         
@@ -370,8 +386,24 @@
           <p><a href="https://news.google.com/rss/articles/CBMia0FVX3lxTE5NZE1XQmdrZHNaOWt5c1l0dmh0T3E2Q0MwaWx6bllvUkFwMDNOVUZTOWtuZWYzeGlYVXBOUjYzMDk1SXQ2X2haMkpjQ0NDYlc0a0FQTE1IVWMxakNBQ0pvbThMa2dQNmRwVFMw?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
         </section>
         
+        <section class="card" id="article-3">
+          <p class="meta">#3 · 기사일: 2026-05-29 · Google News Korea 재이용수 PFAS · 점수 26</p>
+          <h2>💧 익산 하수처리장, 어린이 환경교육 체험공간 조성</h2>
+          <p class="meta">발표/일정: 기사 기준일: 2026-05-29</p>
+          <p><span class="pill">수처리 산업동향</span></p>
+          <p class="brief">익산 공공하수처리장에 어린이 환경교육 체험공간이 마련됩니다. 하수처리 과정을 직접 체험하며 환경의 중요성을 배울 수 있습니다.</p>
+          <h3>내용 요약</h3>
+          <p>익산 공공하수처리장에 어린이들을 위한 환경교육 체험공간이 조성됩니다. 이 공간은 하수처리 과정을 직접 보고 체험할 수 있도록 설계되어, 미래 세대의 환경의식 함양에 기여할 것으로 기대됩니다. 하수처리장은 지역 내 수질 개선과 재이용수 생산에 중요한 역할을 하고 있습니다. 이번 체험공간 조성은 수처리 산업의 사회적 가치와 대국민 인식 제고 측면에서 의미가 있습니다. 기사에는 구체적인 시설 규모나 사업비 등 수치는 언급되지 않았습니다.</p>
+          <h3>왜 중요한가?</h3>
+          <p class="why">수처리 시설의 사회적 가치와 환경교육 연계는 산업의 긍정적 이미지를 높이고, 미래 인재 양성에 기여합니다. 이는 수처리 산업의 지속가능성과 대국민 인식 개선에 중요한 역할을 합니다.</p>
+          <p class="meta">국가: -</p>
+          <p class="meta">기업: -</p>
+          <p class="meta">기술: 하수처리, 환경교육, 재이용수</p>
+          <p><a href="https://news.google.com/rss/articles/CBMiXEFVX3lxTE55NUNIcHNiOWNSOXJuRkhQT0xPZ3AwWHcyQ3AyYjRDSGc1SWk3bzQ1aFo1X0poOEQ1dTBHWlJCV09zZlFfSTVfYW9walF4M0l0cjVFMm5VYTdsSmFy?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
+        </section>
+        
     </main>
-    <aside class="toc"><div class="toc-title">목차</div><a href="#article-1">기사 1</a><a href="#article-2">기사 2</a></aside>
+    <aside class="toc"><div class="toc-title">목차</div><a href="#article-1">기사 1</a><a href="#article-2">기사 2</a><a href="#article-3">기사 3</a></aside>
   </div>
 </body>
 </html>

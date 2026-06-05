@@ -36,7 +36,7 @@
       border-bottom:1px solid rgba(255,255,255,.14);
     }
     .topbar-inner {
-      max-width:1880px;
+      max-width:2140px;
       margin:0 auto;
       padding:18px 24px;
       display:flex;
@@ -56,11 +56,11 @@
     .brand:hover { text-decoration:none; }
     .top-date { font-size:13px; color:#dbeafe; white-space:nowrap; }
     .layout {
-      max-width:1880px;
+      max-width:2140px;
       margin:0 auto;
       padding:24px;
       display:grid;
-      grid-template-columns:260px minmax(0, 1fr) 210px;
+      grid-template-columns:260px minmax(0, 1.35fr) 520px;
       gap:22px;
       align-items:start;
     }
@@ -205,11 +205,23 @@
     .dash-card { background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:18px; box-shadow:0 4px 14px rgba(15,23,42,.04); }
     .dash-card h2 { font-size:17px; margin:0 0 10px; }
     .dash-card a { display:block; margin:6px 0; font-size:14px; }
-    @media (max-width:1180px) {
+    .right-rail { position:sticky; top:82px; display:flex; flex-direction:column; gap:16px; }
+    .rail-card { background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:16px; box-shadow:0 8px 22px rgba(15,23,42,.05); }
+    .rail-card h2 { font-size:17px; margin:0 0 10px; }
+    .compact-table { width:100%; border-collapse:collapse; font-size:12px; table-layout:fixed; }
+    .compact-table th, .compact-table td { border-bottom:1px solid var(--line); padding:7px 6px; vertical-align:top; overflow-wrap:anywhere; }
+    .compact-table th { color:#475569; background:#f8fafc; text-align:left; }
+    .compact-list { margin:0; padding-left:18px; font-size:13px; }
+    .compact-list li { margin:7px 0; }
+    .trend-grid { display:grid; grid-template-columns:repeat(6, minmax(0, 1fr)); gap:12px; }
+    .trend-item { text-align:center; border:1px solid var(--line); border-radius:16px; padding:12px; background:#fff; }
+    .trend-key { display:block; font-weight:800; color:#0f4c81; }
+    .trend-val { display:block; color:var(--muted); font-size:12px; margin-top:3px; }
+    @media (max-width:1480px) {
       .layout { grid-template-columns:240px minmax(0, 1fr); }
       .news-grid { grid-template-columns:1fr; }
       .event-mini-grid { grid-template-columns:repeat(2, minmax(0,1fr)); }
-      .toc { display:none; }
+      .toc, .right-rail { display:none; }
       .stat-grid { grid-template-columns:repeat(2, minmax(0,1fr)); }
     }
     @media (max-width:820px) {
@@ -222,6 +234,7 @@
       .stat-grid { grid-template-columns:1fr; }
       .news-grid { grid-template-columns:1fr; }
       .event-mini-grid { grid-template-columns:1fr; }
+      .trend-grid { grid-template-columns:repeat(2, minmax(0,1fr)); }
     }
   </style>
 </head>
@@ -229,7 +242,7 @@
   <header class="topbar">
     <div class="topbar-inner">
       <a class="brand" href="/water-news-telegram-bot/">💧 상하수도·수처리 뉴스 브리핑</a>
-      <div class="top-date">2026-06-05 11:24 KST</div>
+      <div class="top-date">2026-06-05 14:17 KST</div>
     </div>
   </header>
   <div class="layout">
@@ -255,6 +268,7 @@
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-17/">2026-05-17 (일)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-16/">2026-05-16 (토)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-13/">2026-05-13 (수)</a>
+<a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-11/">2026-05-11 (월)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-06/">2026-05-06 (수)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-04-28/">2026-04-28 (화)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-04-27/">2026-04-27 (월)</a>
@@ -328,50 +342,84 @@
 <a class="nav-link " href="/water-news-telegram-bot/monthly/2025-01/">2025년 01월</a>
 </details>
 <div class="nav-section-title">바로가기</div>
+<a class="nav-link " href="/water-news-telegram-bot/projects/">프로젝트·수주 동향</a>
+<a class="nav-link " href="/water-news-telegram-bot/numeric-news/">수치 포함 기사</a>
+<a class="nav-link " href="/water-news-telegram-bot/events/">학회·전시회 일정</a>
 <a class="nav-link " href="/water-news-telegram-bot/sources/">정보 출처</a>
 <a class="nav-link " href="/water-news-telegram-bot/filters/">필터링 기준</a>
-<a class="nav-link " href="/water-news-telegram-bot/events/">학회·전시회 일정</a>
 </nav>
     <main class="content">
       <section class="hero">
         <h1>2026-05-21 상하수도·수처리 상세 분석 보고서</h1>
-        <div class="subtitle">당일 기사만 사용합니다. 같은 내용의 중복 기사는 자동 제외합니다.</div>
+        <div class="subtitle">최근 2일 기사까지 사용합니다. 같은 내용의 중복 기사는 자동 제외합니다.</div>
       </section>
       
         <section class="card" id="article-1">
           <p class="meta">#1 · 기사일: 2026-05-21 · WaterNewsWire Full Text · 점수 46</p>
           <h2>🧪 2026 Climate Solutions Prize, Montréal서 10개 결선 진출팀 발표</h2>
-          <p class="meta">발표/일정: May 21, 2026</p>
+          <p class="meta">발표/일정: 2026-06-08 ~ 2026-06-09</p>
           <p><span class="pill">학회/전시회</span></p>
-          <p class="brief">2026 Climate Solutions Prize 페스티벌이 Montréal에서 6월 8~9일 개최되며, 10개 결선 진출팀이 발표되었습니다. 수처리, PFAS 등 7개 트랙과 2000명 참가, 150만 달러 이상의 상금이 예정되어 있습니다.</p>
+          <p class="brief">2026 Climate Solutions Prize 페스티벌이 Montréal에서 6월 8~9일 개최되며, 10개 결선 진출팀이 발표되었습니다. 2,000명 참가와 150만 달러 이상의 상금이 예정되어 있습니다.</p>
           <h3>내용 요약</h3>
-          <p>2026 Climate Solutions Prize(CSP) 페스티벌이 6월 8~9일 Montréal의 Marché Bonsecours에서 개최됩니다. 이번 행사에서는 역대 최다 지원자 중 선발된 10개 결선 진출팀이 발표되었으며, 이들은 투자자 및 업계 리더 앞에서 실시간 발표를 진행합니다. 페스티벌은 기후 자본, 정책, 혁신 등 7개 주제로 구성되며, 수처리 및 PFAS 등 수처리 산업과 관련된 트랙도 포함되어 있습니다. 총 상금은 150만 달러 이상이며, 참가자는 2,000명 이상이 예상됩니다. 본 행사는 기후 기술의 확산과 투자 활성화에 중점을 두고 있습니다.</p>
+          <p>2026 Climate Solutions Prize(CSP) 페스티벌이 6월 8~9일 Montréal의 Marché Bonsecours에서 개최됩니다. 이번 행사에서는 역대 최다 지원자 중 선발된 10개 결선 진출팀이 발표되었으며, 이들은 투자자 및 업계 리더 앞에서 실시간 발표를 진행할 예정입니다. 페스티벌은 7개 주제 트랙(3개 신규 포함)으로 구성되며, 총 상금은 150만 달러를 넘습니다. 참가자는 약 2,000명으로 예상되며, 기후 기술 확산과 혁신 촉진이 주요 목표입니다. 수처리, PFAS, 투자, 컨퍼런스 등 수처리 산업과 연관된 주제도 다루어질 예정입니다.</p>
           <h3>왜 중요한가?</h3>
-          <p class="why">수처리 및 PFAS 등 오염물 관리 기술이 주요 트랙에 포함되어 있어, 글로벌 수처리 산업의 혁신과 투자 동향을 파악할 수 있습니다. 대규모 상금과 참가자 규모는 신기술 상용화 및 시장 진입에 중요한 기회를 제공합니다.</p>
+          <p class="why">본 행사는 수처리 및 PFAS 등 오염물 관리 기술을 포함한 기후 기술의 확산과 투자 활성화에 기여할 것으로 기대됩니다. 시장 및 기술 혁신 관점에서 글로벌 네트워킹과 자금 조달 기회가 확대될 수 있습니다.</p>
           <p class="meta">국가: 🇨🇦 캐나다</p>
           <p class="meta">기업: -</p>
-          <p class="meta">기술: water treatment, PFAS, climate tech, investment, conference</p>
+          <p class="meta">기술: water treatment, PFAS, investment, conference</p>
           <p><a href="https://waternewswire.com/news/2026/climate-solutions-prize-2026-festival-finalists-montreal" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
         </section>
         
         <section class="card" id="article-2">
           <p class="meta">#2 · 기사일: 2026-05-21 · Google News Korea 상하수도 · 점수 26</p>
-          <h2>💧 경주시 강동 대촌 하수처리장 증설 완료 추진</h2>
+          <h2>💧 경주시, 강동 대촌 하수처리장 증설 마무리</h2>
           <p class="meta">발표/일정: 기사 기준일: 2026-05-21</p>
           <p><span class="pill">프로젝트/수주</span></p>
-          <p class="brief">경주시가 강동 대촌 소규모하수처리장 증설을 마무리 단계에 돌입했습니다. 지역 하수처리 능력 향상이 기대됩니다.</p>
+          <p class="brief">경주시가 강동 대촌 소규모 하수처리장 증설을 마무리하고 있습니다. 이번 증설은 지역 하수 처리 능력을 향상시키기 위한 조치입니다.</p>
           <h3>내용 요약</h3>
-          <p>경주시는 강동 대촌 지역의 소규모하수처리장 증설 사업을 마무리 단계에 접어들었다고 밝혔습니다. 이번 증설은 지역 내 하수처리 수요 증가에 대응하기 위한 조치로, 환경 개선과 주민 생활환경 향상에 기여할 전망입니다. 하수처리장 증설은 경주시의 지속적인 인구 증가와 도시 개발에 따른 필수 인프라 확충의 일환입니다. 수처리 산업 측면에서는 지방 중소규모 하수처리장 증설이 시장 확대와 관련 기술 적용 기회를 제공할 수 있습니다. 기사에는 구체적인 처리 용량이나 사업비 등 수치는 언급되지 않았습니다.</p>
+          <p>경주시는 강동 대촌 소규모 하수처리장 증설을 완료할 예정입니다. 이 프로젝트는 지역 내 하수 처리 용량을 증가시키고, 환경 보호를 위한 중요한 조치로 평가받고 있습니다. 하수처리장 증설은 지역 주민의 생활 환경 개선에 기여할 것으로 기대됩니다. 수처리 산업의 발전과 관련하여, 이러한 시설의 증설은 지속 가능한 수자원 관리에 중요한 역할을 할 것입니다.</p>
           <h3>왜 중요한가?</h3>
-          <p class="why">지방 중소규모 하수처리장 증설은 국내 수처리 시장의 안정적 성장과 관련 기술의 보급 확대에 기여합니다. 경주시 사례는 향후 유사 프로젝트의 벤치마크가 될 수 있습니다.</p>
-          <p class="meta">국가: -</p>
+          <p class="why">이번 증설은 지역 하수 처리 능력을 향상시켜 환경 보호에 기여할 것입니다. 이는 수처리 산업의 발전과 관련된 중요한 프로젝트로, 향후 유사한 프로젝트의 추진에 긍정적인 영향을 미칠 것으로 보입니다.</p>
+          <p class="meta">국가: 🇰🇷 대한민국</p>
           <p class="meta">기업: -</p>
-          <p class="meta">기술: 하수처리장, 하수처리</p>
+          <p class="meta">기술: 하수처리</p>
           <p><a href="https://news.google.com/rss/articles/CBMickFVX3lxTE1ibm5vcjBlUGhoTDBmeFctSHd5TTY2MkFEaHJ5WVp3Ui1WV00tSm5Jd1ZITmhrZzdsRnE3MHNqOHN1ckNoek83OG90RGYzQ2ItR3JTV2RwWUJqTXo2b2t3cmJKLXhJU3lWUE5MYjZzSHZZZ9IBdkFVX3lxTE9Pd09wS2tpYWpBRlJTQ1hSZ1h5WVBRZEFWSDlHVFFsaUhpSkdwZ1ZpY0x3Wlo1MjdTUEV5UjJqRms0aHdDNVF5Z2VPZHdETXh0T29xbjFtNmdEVXZQSFJzUURBYUY0TTdFeFNzZG8td2tlcXNBZ2c?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
         </section>
         
+        <section class="card" id="article-3">
+          <p class="meta">#3 · 기사일: 2026-05-20 · Google News Korea 상하수도 · 점수 26</p>
+          <h2>💧 여천하수처리장 환경평가 본격 착수</h2>
+          <p class="meta">발표/일정: 기사 발행일 기준</p>
+          <p><span class="pill">프로젝트/수주</span></p>
+          <p class="brief">여천하수처리장 사업이 본격적으로 추진되며 환경영향평가가 시작됐습니다. 향후 지역 수처리 인프라 확충에 중요한 단계입니다.</p>
+          <h3>내용 요약</h3>
+          <p>여천하수처리장 건설 사업이 본격적으로 추진되며, 현재 환경영향평가 절차에 착수했습니다. 환경영향평가는 대규모 인프라 사업에서 필수적인 사전 절차로, 지역 환경에 미치는 영향을 분석하고 저감 방안을 마련하는 과정입니다. 이번 조치는 여천 지역의 하수처리 능력 확충과 환경 개선을 위한 중요한 단계로 평가됩니다. 수처리 산업에서는 신규 하수처리장 건설이 관련 기술, 설비, 운영 시장의 성장과 직결됩니다. 사업의 진행 상황에 따라 국내 수처리 기업 및 기술 공급업체의 참여 기회가 확대될 전망입니다. 향후 환경평가 결과와 인허가 절차가 사업 일정에 영향을 미칠 수 있습니다.</p>
+          <h3>왜 중요한가?</h3>
+          <p class="why">신규 하수처리장 건설은 지역 수처리 시장 확대와 관련 기술 수요 증가로 이어집니다. 환경평가 착수는 프로젝트 진행의 핵심 관문입니다.</p>
+          <p class="meta">국가: -</p>
+          <p class="meta">기업: -</p>
+          <p class="meta">기술: 하수처리, 환경영향평가</p>
+          <p><a href="https://news.google.com/rss/articles/CBMiW0FVX3lxTE1hLVhCTjhJbnd2SXNBa2NqeXg5MVZEUnNhNVh3SFpvU2Rkc3ZqcGpHUEJad01VeUdlbDlEUWhyQ2JMTzRLdzg4WlFUVXRvbGUwZ2Zfa2w1RE9tYmM?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
+        </section>
+        
+        <section class="card" id="article-4">
+          <p class="meta">#4 · 기사일: 2026-05-20 · Google News Korea 상하수도 · 점수 18</p>
+          <h2>💧 하수처리수 활용 에너지 자원 확보 모색</h2>
+          <p class="meta">발표/일정: 기사 기준일: 2026-05-20</p>
+          <p><span class="pill">재이용수</span></p>
+          <p class="brief">환경공단이 하수처리수를 활용한 새로운 에너지 자원 확보 방안을 모색하고 있다. 이는 수처리 산업의 지속 가능성을 높이는 중요한 이니셔티브로 평가된다.</p>
+          <h3>내용 요약</h3>
+          <p>환경공단은 하수처리수를 활용하여 새로운 에너지 자원을 확보하기 위한 방안을 모색하고 있다. 이는 하수처리 과정에서 발생하는 자원을 효율적으로 활용하려는 노력의 일환으로, 수처리 산업의 지속 가능성을 높이는 데 기여할 것으로 기대된다. 하수처리수는 다양한 에너지 자원으로 전환될 수 있는 잠재력을 가지고 있으며, 이를 통해 환경 보호와 에너지 자립을 동시에 달성할 수 있다. 이러한 접근은 향후 수처리 산업의 혁신적인 발전을 이끌 가능성이 있다.</p>
+          <h3>왜 중요한가?</h3>
+          <p class="why">하수처리수를 에너지 자원으로 활용하는 것은 수처리 산업의 지속 가능성을 높이는 중요한 전략입니다. 이는 에너지 비용 절감과 환경 보호 측면에서 긍정적인 영향을 미칠 것으로 추측됩니다.</p>
+          <p class="meta">국가: 🇰🇷 대한민국</p>
+          <p class="meta">기업: -</p>
+          <p class="meta">기술: 하수처리, 에너지 자원</p>
+          <p><a href="https://news.google.com/rss/articles/CBMiaEFVX3lxTE52azFyX2Q3TFRKLXVjejlZM2JrVk9PNHpJdTFPOGFuWGEzTEpZSDluV0Fkd1FySjA2SWhieU8tRkhYVk5leFBUOHF5TFAybTFYcVNfQTZiVmg5MlBsZFA4czZKaThmcjk4?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
+        </section>
+        
     </main>
-    <aside class="toc"><div class="toc-title">목차</div><a href="#article-1">기사 1</a><a href="#article-2">기사 2</a></aside>
+    <aside class="toc"><div class="toc-title">목차</div><a href="#article-1">기사 1</a><a href="#article-2">기사 2</a><a href="#article-3">기사 3</a><a href="#article-4">기사 4</a></aside>
   </div>
 </body>
 </html>

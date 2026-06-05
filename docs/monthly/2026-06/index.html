@@ -36,7 +36,7 @@
       border-bottom:1px solid rgba(255,255,255,.14);
     }
     .topbar-inner {
-      max-width:1880px;
+      max-width:2140px;
       margin:0 auto;
       padding:18px 24px;
       display:flex;
@@ -56,11 +56,11 @@
     .brand:hover { text-decoration:none; }
     .top-date { font-size:13px; color:#dbeafe; white-space:nowrap; }
     .layout {
-      max-width:1880px;
+      max-width:2140px;
       margin:0 auto;
       padding:24px;
       display:grid;
-      grid-template-columns:260px minmax(0, 1fr) 210px;
+      grid-template-columns:260px minmax(0, 1.35fr) 520px;
       gap:22px;
       align-items:start;
     }
@@ -205,11 +205,23 @@
     .dash-card { background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:18px; box-shadow:0 4px 14px rgba(15,23,42,.04); }
     .dash-card h2 { font-size:17px; margin:0 0 10px; }
     .dash-card a { display:block; margin:6px 0; font-size:14px; }
-    @media (max-width:1180px) {
+    .right-rail { position:sticky; top:82px; display:flex; flex-direction:column; gap:16px; }
+    .rail-card { background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:16px; box-shadow:0 8px 22px rgba(15,23,42,.05); }
+    .rail-card h2 { font-size:17px; margin:0 0 10px; }
+    .compact-table { width:100%; border-collapse:collapse; font-size:12px; table-layout:fixed; }
+    .compact-table th, .compact-table td { border-bottom:1px solid var(--line); padding:7px 6px; vertical-align:top; overflow-wrap:anywhere; }
+    .compact-table th { color:#475569; background:#f8fafc; text-align:left; }
+    .compact-list { margin:0; padding-left:18px; font-size:13px; }
+    .compact-list li { margin:7px 0; }
+    .trend-grid { display:grid; grid-template-columns:repeat(6, minmax(0, 1fr)); gap:12px; }
+    .trend-item { text-align:center; border:1px solid var(--line); border-radius:16px; padding:12px; background:#fff; }
+    .trend-key { display:block; font-weight:800; color:#0f4c81; }
+    .trend-val { display:block; color:var(--muted); font-size:12px; margin-top:3px; }
+    @media (max-width:1480px) {
       .layout { grid-template-columns:240px minmax(0, 1fr); }
       .news-grid { grid-template-columns:1fr; }
       .event-mini-grid { grid-template-columns:repeat(2, minmax(0,1fr)); }
-      .toc { display:none; }
+      .toc, .right-rail { display:none; }
       .stat-grid { grid-template-columns:repeat(2, minmax(0,1fr)); }
     }
     @media (max-width:820px) {
@@ -222,6 +234,7 @@
       .stat-grid { grid-template-columns:1fr; }
       .news-grid { grid-template-columns:1fr; }
       .event-mini-grid { grid-template-columns:1fr; }
+      .trend-grid { grid-template-columns:repeat(2, minmax(0,1fr)); }
     }
   </style>
 </head>
@@ -229,7 +242,7 @@
   <header class="topbar">
     <div class="topbar-inner">
       <a class="brand" href="/water-news-telegram-bot/">💧 상하수도·수처리 뉴스 브리핑</a>
-      <div class="top-date">2026-06-05 11:24 KST</div>
+      <div class="top-date">2026-06-05 14:18 KST</div>
     </div>
   </header>
   <div class="layout">
@@ -255,6 +268,7 @@
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-17/">2026-05-17 (일)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-16/">2026-05-16 (토)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-13/">2026-05-13 (수)</a>
+<a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-11/">2026-05-11 (월)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-06/">2026-05-06 (수)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-04-28/">2026-04-28 (화)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-04-27/">2026-04-27 (월)</a>
@@ -328,9 +342,11 @@
 <a class="nav-link " href="/water-news-telegram-bot/monthly/2025-01/">2025년 01월</a>
 </details>
 <div class="nav-section-title">바로가기</div>
+<a class="nav-link " href="/water-news-telegram-bot/projects/">프로젝트·수주 동향</a>
+<a class="nav-link " href="/water-news-telegram-bot/numeric-news/">수치 포함 기사</a>
+<a class="nav-link " href="/water-news-telegram-bot/events/">학회·전시회 일정</a>
 <a class="nav-link " href="/water-news-telegram-bot/sources/">정보 출처</a>
 <a class="nav-link " href="/water-news-telegram-bot/filters/">필터링 기준</a>
-<a class="nav-link " href="/water-news-telegram-bot/events/">학회·전시회 일정</a>
 </nav>
     <main class="content">
       <section class="hero">
@@ -340,81 +356,81 @@
       <section class="report-body"><hr>
 <h2>2026년 6월 상하수도·수처리 월간 업계 동향</h2>
 <h3>1. Executive Summary</h3>
-<p>2026년 6월 국내외 상하수도 및 수처리 산업은 하수처리 인프라 투자 확대, AI·막분리 등 첨단기술 도입, PFAS 등 오염물질 대응, 재생에너지 연계, 민간자본 유입이 주요 이슈로 부각됐다. 대한민국에서는 하수처리장 증설·정비와 환경인프라펀드 조성 등 인프라 확충이 활발히 진행 중이다. Toray 등 글로벌 기업은 재이용수용 저오염 초여과막 등 신제품을 선보이며 기술 경쟁을 주도하고 있다. 미국, 말레이시아 등 해외에서는 재생에너지 확대, 우주 수처리, PFAS 검사 혁신 등 다양한 프로젝트와 기술 개발이 이뤄지고 있다. 규제·정책 측면에서는 하수처리시설 개선비 지원 등 환경 개선을 위한 지방정부 정책이 강화되고 있다.</p>
+<p>2026년 6월, 국내외 상하수도 및 수처리 산업은 하수처리 인프라 투자 확대, AI 및 분리막 등 첨단 기술 도입, PFAS 등 오염물질 대응 강화, 재생에너지 활용 확대, 민간자본 유입 등 다양한 변화가 관찰됐다. 대한민국에서는 하수처리장 증설, 환경인프라펀드 조성, 정책적 지원 등 인프라 및 제도적 움직임이 활발했다. 글로벌 시장에서는 Toray의 저바이오파울링 초여과막, NASA의 우주 수처리, 미국 내 PFAS 검사 혁신 등 기술 및 프로젝트가 주목받았다. PFAS 오염 및 규제 이슈, 막기술의 식음료·산업용수 확대 적용 등도 주요 트렌드로 부상했다.</p>
 <hr>
 <h3>2. 이달의 키워드 TOP5</h3>
 <ul>
-<li><strong>하수처리 인프라 투자</strong>: 국내외에서 하수처리장 증설, 정비, 업그레이드 등 인프라 투자가 활발히 이루어지고 있다.</li>
-<li><strong>AI·스마트 수처리</strong> 🤖: AI 기반 하수처리 효율화 및 실시간 모니터링 기술이 산업 혁신의 핵심으로 부상했다.</li>
-<li><strong>막분리·초여과 기술</strong> 🧪: Toray 등에서 저오염·저바이오파울링 초여과막 신제품이 잇따라 출시됐다.</li>
-<li><strong>PFAS 등 오염물질 대응</strong> ☣️: PFAS 검출·제거 기술 개발과 관련 규제 이슈가 부각되고 있다.</li>
-<li><strong>민간자본·펀드 투자</strong> 💰: 미래에셋 등 민간 자본의 대규모 환경인프라 펀드 조성이 산업 재정 안정성에 기여하고 있다.</li>
+<li><strong>하수처리 인프라 투자</strong>: 국내외 하수처리장 증설·업그레이드 및 민간 펀드 조성이 활발하다.</li>
+<li><strong>AI·첨단기술 도입</strong>: AI 기반 하수처리, 초여과막 등 혁신 기술이 산업 효율성 제고에 기여한다.</li>
+<li><strong>PFAS 오염 및 대응</strong>: PFAS 검출·제거 기술과 관련 규제 이슈가 부각되고 있다.</li>
+<li><strong>재생에너지 연계</strong>: 말레이시아 등에서 재생에너지 확대가 수처리 산업에도 긍정적 영향을 미친다.</li>
+<li><strong>막기술 다각화</strong>: 분리막 기술이 음료·산업용수 등 다양한 분야로 적용 범위를 넓히고 있다.</li>
 </ul>
 <hr>
 <h3>3. 국가별 동향 TOP5</h3>
 <ul>
-<li>🇰🇷 <strong>대한민국</strong>: 하수처리장 증설(광명시흥, 안성, 일광), 정비(북항), 민간 펀드(미래에셋) 등 인프라 확충과 정책 지원이 활발하다.</li>
-<li>🇲🇾 <strong>말레이시아</strong>: 2031년까지 재생에너지 용량 목표 초과 달성이 예상되며, 이는 수처리 산업에도 긍정적 영향을 미칠 전망이다.</li>
+<li>🇰🇷 <strong>대한민국</strong>: 하수처리장 증설(광명시흥, 안성, 일광 등), 환경인프라펀드 조성, 하수처리시설 개선비 지원 등 인프라 및 정책 강화가 두드러진다.</li>
+<li>🇲🇾 <strong>말레이시아</strong>: 2031년까지 재생에너지 목표 초과 달성이 예상되며, 이는 수처리 산업에도 긍정적 파급효과가 기대된다.</li>
 <li>🇺🇸 <strong>미국</strong>: 하수처리시설 업그레이드(헨더슨, 버팔로 등), PFAS 검사 혁신, 산업폐수 재활용 프로젝트 중단 등 다양한 이슈가 병존한다.</li>
-<li>🇻🇳 <strong>베트남</strong>: 동히엡 면 하수처리장 운영 평가를 통해 효율성 및 환경 보호를 강화하고 있다.</li>
-<li>🏴 <strong>스코틀랜드</strong>: 외딴 섬에서 수돗물 PFAS 오염이 최고치로 나타나 규제 및 기술 대응 필요성이 대두되고 있다.</li>
+<li>🇻🇳 <strong>베트남</strong>: 동히엡 면 하수처리장 운영 및 평가를 통해 효율성 및 환경보호를 강화하고 있다.</li>
+<li>🏴 <strong>스코틀랜드</strong>: 외딴 섬에서 수돗물 PFAS 농도 최고치 기록으로 오염물질 관리 이슈가 부각된다.</li>
 </ul>
 <hr>
 <h3>4. 기업별 동향 TOP5</h3>
 <ul>
-<li><strong>Toray(토레이)</strong>: 저오염·저바이오파울링 초여과막(F-HFUG Series) 출시로 재이용수 및 RO 전처리 시장 공략 강화.</li>
-<li><strong>정우이엔티</strong>: 외부평막분리조 기반 J-MBR 공법을 소개하며 막분리 기술 차별화 시도(구체 성능은 기사 미확인, 추측입니다).</li>
-<li><strong>미래에셋</strong>: 5000억 원 규모 환경인프라펀드 조성, 여수 하수관로·의정부 하수처리장 등 핵심 인프라에 투자.</li>
-<li><strong>Henderson(미국)</strong>: 1억 달러 규모 하수 재이용 시설 업그레이드 완료.</li>
-<li><strong>NASA(미국)</strong>: 미래 달 기지용 수처리 시설 테스트로 우주 수처리 기술 개발에 앞장서고 있다.</li>
+<li><strong>Toray(도레이)</strong>: 바이오오염 저감 초여과막(F-HFUG 시리즈) 출시로 재이용수 및 RO 전처리 시장에서 기술 경쟁력 강화.</li>
+<li><strong>정우이엔티</strong>: 외부평막분리조 기반 J-MBR 공법을 소개, 고도처리 및 재이용수 시장에서 기술 홍보 강화(세부 성능은 기사 미확인).</li>
+<li><strong>미래에셋</strong>: 5000억 원 규모 환경인프라펀드 조성, 여수 하수관로·의정부 하수처리장 등 핵심 인프라 투자 확대.</li>
+<li><strong>NASA</strong>: 미래 달 기지용 수처리 시설 테스트로 우주 환경 내 물 재이용 기술 개발에 집중.</li>
+<li><strong>Henderson(미국)</strong>: 1억 달러 투자로 하수 재이용 시설 업그레이드 완료, 지역 물 공급 안정성 강화.</li>
 </ul>
 <hr>
 <h3>5. 기술별 동향 TOP5</h3>
 <ul>
-<li><strong>AI 하수처리</strong> 🤖: 효율성 극대화, 실시간 모니터링 등 스마트 수처리 기술 도입이 확산되고 있다.</li>
-<li><strong>초여과(UF)·막분리</strong> 🧪: 저오염·저바이오파울링 UF 막, 외부평막분리조 등 고도화된 막기술이 재이용수 및 RO 전처리 시장에서 주목받고 있다.</li>
-<li><strong>PFAS 검출·제거</strong> ☣️: 미국에서 저비용 PFAS 검출법 개발, PFAS 이동경로 연구 등 오염물질 대응 기술이 강화되고 있다.</li>
-<li><strong>재생에너지 연계</strong> ☀️: 말레이시아 등에서 태양광 등 재생에너지 확대가 수처리 산업에 긍정적 영향을 미치고 있다.</li>
-<li><strong>MBR(막분리활성슬러지)</strong>: 외부평막분리조 등 MBR 기술의 구조·운영 효율 차별화 시도가 이어지고 있다.</li>
+<li>🤖 <strong>AI 하수처리</strong>: 효율성 극대화, 실시간 모니터링, 수질 개선 등 혁신적 변화 유도.</li>
+<li>🧪 <strong>초여과막(UF)·막여과</strong>: Toray의 저바이오파울링 UF, 재이용수·RO 전처리 시장에서 오염 저감 및 운영 안정성 강화.</li>
+<li>🧬 <strong>MBR/평막분리</strong>: J-MBR 등 평막 기반 고도처리 기술이 하수 및 재이용수 분야에서 주목(구체 성능은 기사 미확인).</li>
+<li>🌞 <strong>재생에너지 연계</strong>: 태양광 등 재생에너지 확대가 수처리 산업의 에너지 비용 절감 및 친환경성 제고에 기여.</li>
+<li>🧫 <strong>PFAS 검사·제거</strong>: 미국 내 PFAS 저비용 검출법 개발, PFAS 이동경로 연구 등 오염물질 대응 기술이 부상.</li>
 </ul>
 <hr>
 <h3>6. 주요 프로젝트 TOP5</h3>
 <ul>
-<li><strong>광명시흥 하수처리시설(🇰🇷)</strong>: 내년 상반기 턴키 발주 예정, 지역 하수처리 능력 개선 기대.</li>
-<li><strong>새만금 하수처리시설(🇰🇷)</strong>: 하반기 턴키 발주 예정, 대규모 공공 하수처리 인프라 확충.</li>
-<li><strong>헨더슨 하수처리시설(🇺🇸)</strong>: 1억 달러 투자로 업그레이드 완료, 지역 물 공급 안정성 강화.</li>
-<li><strong>미래에셋 환경인프라펀드(🇰🇷)</strong>: 5000억 원 규모, 여수·의정부 등 핵심 인프라 투자.</li>
-<li><strong>버팔로 하수처리시설(🇺🇸)</strong>: 운영 안정성 확보 위한 협약 체결.</li>
+<li><strong>광명시흥 하수처리시설</strong>: 내년 상반기 턴키 발주 예정, 지역 하수처리 능력 개선.</li>
+<li><strong>새만금 하수처리시설</strong>: 하반기 턴키 발주, 대규모 공공하수처리 인프라 확충.</li>
+<li><strong>헨더슨 하수처리시설(🇺🇸)</strong>: 1억 달러 업그레이드 완료, 하수 재이용 및 물 공급 안정화.</li>
+<li><strong>미래에셋 환경인프라펀드</strong>: 여수 하수관로·의정부 하수처리장 등 국내 핵심 인프라 투자.</li>
+<li><strong>버팔로 하수처리시설(🇺🇸)</strong>: 도시 유일 하수처리시설 보호 협약 체결, 운영 안정성 강화.</li>
 </ul>
 <hr>
 <h3>7. 현재 진행 중인 규제/정책 변화</h3>
 <ul>
 <li>🇰🇷 <strong>용인시</strong>: 개인 하수처리시설 개선비 80% 지원 정책 시행.</li>
-<li>🇰🇷 <strong>고용노동부</strong>: 2025 ISC 성과평가 S등급 부여(한국상하수도협회), 환경산업 인재양성 및 산업 품질 향상 촉진.</li>
-<li>🇰🇷 <strong>예산군</strong>: 산업단지 배수 및 폐수처리시설 특별점검 실시.</li>
+<li>🇰🇷 <strong>고용노동부</strong>: 2025 ISC 성과평가 S등급 달성(한국상하수도협회), 인재양성 및 산업 품질 제고 정책 강화.</li>
+<li><strong>PFAS 관련</strong>: 스코틀랜드·미국 등에서 PFAS 오염 이슈로 규제 및 정책 변화 가능성 대두.</li>
 </ul>
 <hr>
 <h3>8. 향후 예정된 규제/정책 변화</h3>
 <ul>
-<li>(기사에 명시된 추가 예정 규제/정책 변화 없음)</li>
+<li>(기사에 명시된 구체적 향후 규제/정책 변화 없음)</li>
 </ul>
 <hr>
 <h3>9. 향후 1~3년 주목 기술</h3>
 <ul>
-<li><strong>AI 기반 하수처리 및 실시간 모니터링</strong> 🤖</li>
-<li><strong>저오염·저바이오파울링 초여과(UF) 및 막분리 기술</strong> 🧪</li>
-<li><strong>PFAS 등 오염물질 검출·제거 기술</strong> ☣️</li>
-<li><strong>재생에너지 연계 수처리 시스템</strong> ☀️</li>
-<li><strong>MBR 및 외부평막분리조 등 고도화된 막분리 공법</strong></li>
+<li>🤖 AI 기반 하수처리 및 실시간 모니터링</li>
+<li>🧪 저바이오파울링 초여과막(UF) 및 RO 전처리용 분리막</li>
+<li>🧬 MBR(막분리 활성슬러지) 및 평막분리조 기술</li>
+<li>🧫 PFAS 저감 및 저비용 검출 기술</li>
+<li>🌞 재생에너지 연계 수처리 시스템</li>
 </ul>
 <hr>
 <h3>10. 다음 달 모니터링 포인트</h3>
 <ul>
-<li>광명시흥·새만금 등 국내 하수처리시설 대형 프로젝트 발주 일정 및 입찰 동향</li>
-<li>Toray 등 글로벌 기업의 초여과막 상용화 및 국내외 적용 사례</li>
-<li>PFAS 오염 대응 관련 국내외 규제 강화 및 신기술 도입 현황</li>
-<li>AI·스마트 수처리 기술의 실제 적용 확대 및 신규 프로젝트 발표</li>
-<li>민간 환경인프라펀드 투자 확대 및 신규 투자처 선정 동향</li>
+<li>국내외 하수처리장 증설·업그레이드 발주 및 추진 현황</li>
+<li>Toray 등 분리막 신제품의 실제 적용 사례 및 시장 반응</li>
+<li>PFAS 오염 관련 규제 변화 및 기술 적용 동향</li>
+<li>AI·스마트 수처리 기술의 실증 및 상용화 진전</li>
+<li>민간자본(펀드 등) 유입에 따른 수처리 인프라 투자 확대 지속 여부</li>
 </ul>
 <hr></section>
     </main>

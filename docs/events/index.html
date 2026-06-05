@@ -36,7 +36,7 @@
       border-bottom:1px solid rgba(255,255,255,.14);
     }
     .topbar-inner {
-      max-width:1880px;
+      max-width:2140px;
       margin:0 auto;
       padding:18px 24px;
       display:flex;
@@ -56,11 +56,11 @@
     .brand:hover { text-decoration:none; }
     .top-date { font-size:13px; color:#dbeafe; white-space:nowrap; }
     .layout {
-      max-width:1880px;
+      max-width:2140px;
       margin:0 auto;
       padding:24px;
       display:grid;
-      grid-template-columns:260px minmax(0, 1fr) 210px;
+      grid-template-columns:260px minmax(0, 1.35fr) 520px;
       gap:22px;
       align-items:start;
     }
@@ -205,11 +205,23 @@
     .dash-card { background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:18px; box-shadow:0 4px 14px rgba(15,23,42,.04); }
     .dash-card h2 { font-size:17px; margin:0 0 10px; }
     .dash-card a { display:block; margin:6px 0; font-size:14px; }
-    @media (max-width:1180px) {
+    .right-rail { position:sticky; top:82px; display:flex; flex-direction:column; gap:16px; }
+    .rail-card { background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:16px; box-shadow:0 8px 22px rgba(15,23,42,.05); }
+    .rail-card h2 { font-size:17px; margin:0 0 10px; }
+    .compact-table { width:100%; border-collapse:collapse; font-size:12px; table-layout:fixed; }
+    .compact-table th, .compact-table td { border-bottom:1px solid var(--line); padding:7px 6px; vertical-align:top; overflow-wrap:anywhere; }
+    .compact-table th { color:#475569; background:#f8fafc; text-align:left; }
+    .compact-list { margin:0; padding-left:18px; font-size:13px; }
+    .compact-list li { margin:7px 0; }
+    .trend-grid { display:grid; grid-template-columns:repeat(6, minmax(0, 1fr)); gap:12px; }
+    .trend-item { text-align:center; border:1px solid var(--line); border-radius:16px; padding:12px; background:#fff; }
+    .trend-key { display:block; font-weight:800; color:#0f4c81; }
+    .trend-val { display:block; color:var(--muted); font-size:12px; margin-top:3px; }
+    @media (max-width:1480px) {
       .layout { grid-template-columns:240px minmax(0, 1fr); }
       .news-grid { grid-template-columns:1fr; }
       .event-mini-grid { grid-template-columns:repeat(2, minmax(0,1fr)); }
-      .toc { display:none; }
+      .toc, .right-rail { display:none; }
       .stat-grid { grid-template-columns:repeat(2, minmax(0,1fr)); }
     }
     @media (max-width:820px) {
@@ -222,6 +234,7 @@
       .stat-grid { grid-template-columns:1fr; }
       .news-grid { grid-template-columns:1fr; }
       .event-mini-grid { grid-template-columns:1fr; }
+      .trend-grid { grid-template-columns:repeat(2, minmax(0,1fr)); }
     }
   </style>
 </head>
@@ -229,7 +242,7 @@
   <header class="topbar">
     <div class="topbar-inner">
       <a class="brand" href="/water-news-telegram-bot/">💧 상하수도·수처리 뉴스 브리핑</a>
-      <div class="top-date">2026-06-05 11:24 KST</div>
+      <div class="top-date">2026-06-05 14:18 KST</div>
     </div>
   </header>
   <div class="layout">
@@ -255,6 +268,7 @@
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-17/">2026-05-17 (일)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-16/">2026-05-16 (토)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-13/">2026-05-13 (수)</a>
+<a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-11/">2026-05-11 (월)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-06/">2026-05-06 (수)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-04-28/">2026-04-28 (화)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-04-27/">2026-04-27 (월)</a>
@@ -328,9 +342,11 @@
 <a class="nav-link " href="/water-news-telegram-bot/monthly/2025-01/">2025년 01월</a>
 </details>
 <div class="nav-section-title">바로가기</div>
+<a class="nav-link " href="/water-news-telegram-bot/projects/">프로젝트·수주 동향</a>
+<a class="nav-link " href="/water-news-telegram-bot/numeric-news/">수치 포함 기사</a>
+<a class="nav-link active" href="/water-news-telegram-bot/events/">학회·전시회 일정</a>
 <a class="nav-link " href="/water-news-telegram-bot/sources/">정보 출처</a>
 <a class="nav-link " href="/water-news-telegram-bot/filters/">필터링 기준</a>
-<a class="nav-link active" href="/water-news-telegram-bot/events/">학회·전시회 일정</a>
 </nav>
     <main class="content">
       <section class="hero">
@@ -340,11 +356,233 @@
       
     <section class="card" id="events">
       <h2>국내·해외 멤브레인/수처리 학회·전시회</h2>
-      <table class="source-table">
-        <thead><tr><th>등급</th><th>행사</th><th>구분</th><th>장소</th><th>일정</th><th>규모</th><th>비고</th></tr></thead>
-        <tbody><tr><td>S</td><td><a href='https://www.weftec.org/' target='_blank' rel='noopener noreferrer'>WEFTEC</a></td><td>해외</td><td>미국</td><td>매년 9~10월</td><td>대규모/메이저</td><td>북미 최대급 물환경·하수처리 전시회</td></tr><tr><td>S</td><td><a href='https://www.aquatechtrade.com/' target='_blank' rel='noopener noreferrer'>Aquatech Amsterdam</a></td><td>해외</td><td>네덜란드 암스테르담</td><td>격년 개최</td><td>대규모/메이저</td><td>글로벌 수처리 전시회</td></tr><tr><td>S</td><td><a href='https://www.siww.com.sg/' target='_blank' rel='noopener noreferrer'>Singapore International Water Week</a></td><td>해외</td><td>싱가포르</td><td>격년 개최</td><td>대규모/메이저</td><td>아시아권 메이저 물산업 행사</td></tr><tr><td>A</td><td><a href='https://iwa-network.org/events/' target='_blank' rel='noopener noreferrer'>IWA World Water Congress &amp; Exhibition</a></td><td>해외</td><td>국가별 순환</td><td>격년 개최</td><td>대규모/메이저</td><td>IWA 대표 국제 학회·전시</td></tr><tr><td>A</td><td><a href='https://iwa-network.org/events/' target='_blank' rel='noopener noreferrer'>IWA Membrane Technology Conference</a></td><td>해외</td><td>국가별 순환</td><td>비정기/학회 일정 확인 필요</td><td>전문 메이저</td><td>수처리용 멤브레인 전문 학회</td></tr><tr><td>A</td><td><a href='https://waterkorea.kr/' target='_blank' rel='noopener noreferrer'>Water Korea</a></td><td>국내</td><td>한국</td><td>매년</td><td>국내 메이저</td><td>국내 상하수도 대표 전시회</td></tr><tr><td>B</td><td><a href='https://www.membrane.or.kr/' target='_blank' rel='noopener noreferrer'>한국막학회 춘계학술대회</a></td><td>국내</td><td>한국</td><td>매년 상반기</td><td>전문 학회</td><td>분리막 전문 학술행사</td></tr><tr><td>B</td><td><a href='https://www.membrane.or.kr/' target='_blank' rel='noopener noreferrer'>한국막학회 추계학술대회</a></td><td>국내</td><td>한국</td><td>매년 하반기</td><td>전문 학회</td><td>분리막 전문 학술행사</td></tr><tr><td>B</td><td><a href='https://www.ksww.or.kr/' target='_blank' rel='noopener noreferrer'>대한상하수도학회 학술발표회</a></td><td>국내</td><td>한국</td><td>학회 일정 확인 필요</td><td>전문 학회</td><td>상하수도 분야 학술행사</td></tr><tr><td>B</td><td><a href='https://www.kswe.or.kr/' target='_blank' rel='noopener noreferrer'>한국물환경학회 학술대회</a></td><td>국내</td><td>한국</td><td>학회 일정 확인 필요</td><td>전문 학회</td><td>물환경·수질 분야 학술행사</td></tr></tbody>
-      </table>
-      <p class="meta">정확한 개최일·시간·부스 규모는 각 공식 홈페이지 공지를 기준으로 확인해야 합니다.</p>
+      <p class="meta">현재 연도와 내년 연도 중심으로 표시합니다. 일정·장소가 확정되지 않은 행사는 미정으로 표시합니다.</p>
+      
+    <table class="source-table">
+      <thead><tr><th>등급</th><th>행사</th><th>구분</th><th>장소</th><th>일정</th><th>규모</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>S</td>
+          <td><a href="https://www.weftec.org/" target="_blank" rel="noopener noreferrer">WEFTEC</a></td>
+          <td>해외</td>
+          <td>미국</td>
+          <td>매년 9~10월</td>
+          <td>대규모/메이저</td>
+          <td>북미 최대급 물환경·하수처리 전시회</td>
+        </tr>
+        
+        <tr>
+          <td>S</td>
+          <td><a href="https://www.aquatechtrade.com/" target="_blank" rel="noopener noreferrer">Aquatech Amsterdam</a></td>
+          <td>해외</td>
+          <td>네덜란드 암스테르담</td>
+          <td>격년 개최</td>
+          <td>대규모/메이저</td>
+          <td>글로벌 수처리 전시회</td>
+        </tr>
+        
+        <tr>
+          <td>S</td>
+          <td><a href="https://www.siww.com.sg/" target="_blank" rel="noopener noreferrer">Singapore International Water Week</a></td>
+          <td>해외</td>
+          <td>싱가포르</td>
+          <td>격년 개최</td>
+          <td>대규모/메이저</td>
+          <td>아시아권 메이저 물산업 행사</td>
+        </tr>
+        
+        <tr>
+          <td>A</td>
+          <td><a href="https://iwa-network.org/events/" target="_blank" rel="noopener noreferrer">IWA World Water Congress &amp; Exhibition</a></td>
+          <td>해외</td>
+          <td>국가별 순환</td>
+          <td>격년 개최</td>
+          <td>대규모/메이저</td>
+          <td>IWA 대표 국제 학회·전시</td>
+        </tr>
+        
+        <tr>
+          <td>A</td>
+          <td><a href="https://iwa-network.org/events/" target="_blank" rel="noopener noreferrer">IWA Membrane Technology Conference</a></td>
+          <td>해외</td>
+          <td>국가별 순환</td>
+          <td>비정기/학회 일정 확인 필요</td>
+          <td>전문 메이저</td>
+          <td>수처리용 멤브레인 전문 학회</td>
+        </tr>
+        
+        <tr>
+          <td>A</td>
+          <td><a href="https://waterkorea.kr/" target="_blank" rel="noopener noreferrer">Water Korea</a></td>
+          <td>국내</td>
+          <td>한국</td>
+          <td>매년</td>
+          <td>국내 메이저</td>
+          <td>국내 상하수도 대표 전시회</td>
+        </tr>
+        
+        <tr>
+          <td>B</td>
+          <td><a href="https://www.membrane.or.kr/" target="_blank" rel="noopener noreferrer">한국막학회 춘계학술대회</a></td>
+          <td>국내</td>
+          <td>한국</td>
+          <td>매년 상반기</td>
+          <td>전문 학회</td>
+          <td>분리막 전문 학술행사</td>
+        </tr>
+        
+        <tr>
+          <td>B</td>
+          <td><a href="https://www.membrane.or.kr/" target="_blank" rel="noopener noreferrer">한국막학회 추계학술대회</a></td>
+          <td>국내</td>
+          <td>한국</td>
+          <td>매년 하반기</td>
+          <td>전문 학회</td>
+          <td>분리막 전문 학술행사</td>
+        </tr>
+        
+        <tr>
+          <td>B</td>
+          <td><a href="https://www.ksww.or.kr/" target="_blank" rel="noopener noreferrer">대한상하수도학회 학술발표회</a></td>
+          <td>국내</td>
+          <td>한국</td>
+          <td>학회 일정 확인 필요</td>
+          <td>전문 학회</td>
+          <td>상하수도 분야 학술행사</td>
+        </tr>
+        
+        <tr>
+          <td>B</td>
+          <td><a href="https://www.kswe.or.kr/" target="_blank" rel="noopener noreferrer">한국물환경학회 학술대회</a></td>
+          <td>국내</td>
+          <td>한국</td>
+          <td>학회 일정 확인 필요</td>
+          <td>전문 학회</td>
+          <td>물환경·수질 분야 학술행사</td>
+        </tr>
+        
+        <tr>
+          <td>후보</td>
+          <td><a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxNWkFlYUNCN1JJeHhodDV0b0VvUHMzQ2VMaHlxckM1LUtjZmRUcTNHLXlXZnhTQUs3VXBwZ3d0UDNCazc4bWd5c3FiczN6UzE4Rld6TGxTYVJ1T0pPNEVObURMbWRFSE5iUnNVY1ZuNVppS2VNbFVBV2ltREY3a2h3cF91eG1rUkdTcS1JTTd1cFVqX0JJTTBfWVZ1eDJPVmc1cVVfWjNvbFo0SU9aLXk4?oc=5" target="_blank" rel="noopener noreferrer">Men&#x27;s basketball releases 2026-27 non-conference schedule - Indiana State University Athle</a></td>
+          <td>해외</td>
+          <td>미정</td>
+          <td>미정</td>
+          <td>확인 필요</td>
+          <td>검색 기반 신규 행사 후보</td>
+        </tr>
+        
+        <tr>
+          <td>후보</td>
+          <td><a href="https://news.google.com/rss/articles/CBMi3wFBVV95cUxPdndPbzJEMVNGZVZrS2Z4RDhac3hGUG90SFN0VVNrUFljNXlJMFhoaVhLVExzSmFLMXBycnVjU2Vfc0d5VFE2bFl3MUR5QXlLdE5jLThtSWlacGI2ZXBaSkVEUUtGaWk2RHVVNVhDbFZJRGR0MEFfaGxxdGJXa0x0SFd0R0w2THY0WXpWdXR3SXk2NGpTZjJpTEpHU3dCclF4VEx5Qm4yOWt2dkhMWVFOUWhoUENKVzAyLVJqaUdTNXV0MHZ2dHNwTlBPenhBVGwtclZfMmNTVy1PYmQ2X2hZ?oc=5" target="_blank" rel="noopener noreferrer">DENSO to Showcase Smart Mobility Solutions at 2026 ITS America Conference &amp; Expo in Detroi</a></td>
+          <td>해외</td>
+          <td>미정</td>
+          <td>미정</td>
+          <td>확인 필요</td>
+          <td>검색 기반 신규 행사 후보</td>
+        </tr>
+        
+        <tr>
+          <td>후보</td>
+          <td><a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxQYWkxT2NpQUhuZzhpeDdvU0x6UmRYa1Y1RkxGb3kxbFpZWTdkemdhSTF3WGVVVldrbGQwbGxVaFl1TS1jQjRfaDRQYlg5WDI3QURfT3dxcU1uN0FubXlDN1N2Q0JpLUlHempiMHRReEt3RjhMN05nVXAxVTJ3S2R1LWFSYlhZbmV6eXRCcFBqSFZTcEoyQXZTaEdMcXI4Y0V5RkJQUjlnQWIzNEVCcWwwdA?oc=5" target="_blank" rel="noopener noreferrer">SFPE Announces Program and Speakers for 2026 Annual Conference &amp; Expo - PHCPPros</a></td>
+          <td>해외</td>
+          <td>미정</td>
+          <td>미정</td>
+          <td>확인 필요</td>
+          <td>검색 기반 신규 행사 후보</td>
+        </tr>
+        
+        <tr>
+          <td>후보</td>
+          <td><a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxQZDdra2JseWQ4RTdCdnJlVmxzaVlCYVJoZHJTZ2JFanJWN29uNEZpeDdFdE9mSXVhRm94RlR0Rk91Q3BSTmFFMTBoNVJiaTlndGJUSEJnY3dkQmlUbm9iZ1p5SUJud2E2S2JSdmxVdDMyMGd1Wi1VSDVsT2ZtcTBKSnQ4dWZLQnVZYTRocGpoUEFtNmxZek9ZU051ZE9jeWhZRVE?oc=5" target="_blank" rel="noopener noreferrer">Food Safety and Maintenance: Key Insights from IAOM Conference 2026 - News and Statistics </a></td>
+          <td>해외</td>
+          <td>미정</td>
+          <td>미정</td>
+          <td>확인 필요</td>
+          <td>검색 기반 신규 행사 후보</td>
+        </tr>
+        
+        <tr>
+          <td>후보</td>
+          <td><a href="https://news.google.com/rss/articles/CBMiekFVX3lxTE8zNWVralNRVTdvbXJSdlhiWVJBZ2NkT1lnZ1J4UUlOM1p3cGRqWUxhTU5QNDBxOTNNb1NrWHVSamJXakUtSmFBY2Nxb0gyTmJOc1hFbU5UOGI1QlpmRTRETk5RMngyQ21kb2l4V0RZUWpXcU81bGNEdFpn?oc=5" target="_blank" rel="noopener noreferrer">2026 CAP IDEAS Conference - Center for American Progress</a></td>
+          <td>해외</td>
+          <td>미정</td>
+          <td>미정</td>
+          <td>확인 필요</td>
+          <td>검색 기반 신규 행사 후보</td>
+        </tr>
+        
+        <tr>
+          <td>후보</td>
+          <td><a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxNYmwzSVVrbzBtN0d0N2JmczBUTjBWMHBmeW4xdG9nMC15NmhLMHg2V21xaGl5Y3JkdllYVDk5Y1Vsd1FEclFkQ1Jla0E1TElUSzFOZ1BfWXdHeTA0WXNZeldjR1I5d1BoSldya1V0Nmo0aS1mQ0dPSXJuYi1oMEN4Z2JYajVoRmJSMl92SjRLMkhyei11bjBVaGpnU1JpeXM?oc=5" target="_blank" rel="noopener noreferrer">HIMSS and SingHealth to Co-Host 2026 HIMSS APAC Health Conference &amp; Exhibition in Singapor</a></td>
+          <td>해외</td>
+          <td>미정</td>
+          <td>미정</td>
+          <td>확인 필요</td>
+          <td>검색 기반 신규 행사 후보</td>
+        </tr>
+        
+        <tr>
+          <td>후보</td>
+          <td><a href="https://news.google.com/rss/articles/CBMie0FVX3lxTE1vUk5HZnJZWnlnZi1KZlB4ZUFqUEtBQ284MFZ3VGZrejVOSVU2UEJpUHBadUJTTlJzeUpSM1BjaklDRFJVcE9rZEZNeUpVWEdRUW5vdUZsdndkaUFGbmx0U0FyZ00zNXdfLUpvYjlwY2w4QXlBZGlPUmRkYw?oc=5" target="_blank" rel="noopener noreferrer">The Show Begins: CLIA Conference 2026; Day 1 - ittn.ie</a></td>
+          <td>해외</td>
+          <td>미정</td>
+          <td>미정</td>
+          <td>확인 필요</td>
+          <td>검색 기반 신규 행사 후보</td>
+        </tr>
+        
+        <tr>
+          <td>후보</td>
+          <td><a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxQT0hoWUZQemxIQkYyRnQzQXp6Z2pveE11ZVZqTllWOVpxSXdGUTBHZGx0SVFiN19wTDg2c2ZBeldzQnI5dnJpLWlfMlNvb1BiekxsS1NZblRVVDM0UG9DeTBrcVl1bXNSMUFGX0VRaGgyc19LWUJUN3p4ZTU4eG9RbDhqdXV4TE9zMXdTeGVjXzdRY3NYLU53QU16N2lMSUFFbjMteUFnYlFRVlNFMTJHenZn?oc=5" target="_blank" rel="noopener noreferrer">Recommendations for Strengthening Water Security, Peace, and Gender Inclusion Ahead of the</a></td>
+          <td>해외</td>
+          <td>미정</td>
+          <td>미정</td>
+          <td>확인 필요</td>
+          <td>검색 기반 신규 행사 후보</td>
+        </tr>
+        
+        <tr>
+          <td>후보</td>
+          <td><a href="https://news.google.com/rss/articles/CBMid0FVX3lxTE9IN2s3dzYyalNWU24zOFFLNVNST0hnSzJuYnVUT3pJUnVOUjQ4X2lWNDlQLTRtLU9PUlhvcDd4RkI2MFhqdlZ4OFRhSnUxUGdJWWtETUp4Ym9wMTctcFVvUUxFUkVaaS1ma0ZMVFJKd0xlaEJsOGk4?oc=5" target="_blank" rel="noopener noreferrer">Greenbuild Conference + Expo 2026 - Sustainability Magazine</a></td>
+          <td>해외</td>
+          <td>미정</td>
+          <td>미정</td>
+          <td>확인 필요</td>
+          <td>검색 기반 신규 행사 후보</td>
+        </tr>
+        
+        <tr>
+          <td>후보</td>
+          <td><a href="https://news.google.com/rss/articles/CBMiqAJBVV95cUxNRkpqRmw3b1Z1Y0kySXNETVlHNURLbV9zTXFvT1lGaklNa3l5YkdDYU9jRmV4YXd4dmJENkZjQ2hCZXFYcHpBQWJzOTNQR25XbW1RZ3B3b3RqN2VfelV4V2kyWWJoT2F6dW5WZ2RWcU9rNXVLdWJLZ3lTbXlRYWtkczBpOUQ3VldUcEdoVVd3dWZ6OHVzb2F2LWo3TjhQSG4wV2lQOGZJLXVCNGNTcGFoalZQYjY3UUY1Z2I0bTZNWXFqQmk3RXFIVzB4NUJBbkszdWY4UXl2YkF2ekNtTWZ0NFYyVm44NDEwSWdkV2N5N29QZUFhazJoaFM0MTRmU1VYV0xsRC1IWW1LX0NVLTZSZmVHclNLWldnaktNSVREcmptMWc0UUhWNw?oc=5" target="_blank" rel="noopener noreferrer">Keynote Speaker Announced for 2026 Responsible Care® &amp; Sustainability Conference and Expo </a></td>
+          <td>해외</td>
+          <td>미정</td>
+          <td>미정</td>
+          <td>확인 필요</td>
+          <td>검색 기반 신규 행사 후보</td>
+        </tr>
+        
+        <tr>
+          <td>후보</td>
+          <td><a href="https://news.google.com/rss/articles/CBMizgFBVV95cUxPRTdBckpJc1dtRXZjOTZ6YTZHWHc1c2o4N29nNmNzTzB2TGhraHpaQUtmek51OTV5TTZuZHpla3FGWVc0SWlvd0ZYeUZsSkxNV2dyNGZfbGVnWlB2RUM0TmRyTGV3WFFhczdycFZOSXpDRlc5VGVzV1g3WDVlOEhjOEZfSFVoVV8zTHYydkdFZDFrQmZhcWh4cGJhek1JeHR1ZU1jZTJoUkc2Yy12MEViTkdOdGJsaHpsV3J4MEkwYWJrRUIyZlhWT1RXeTFLZw?oc=5" target="_blank" rel="noopener noreferrer">United Nations Water Conference 2026: Statement by Federal Minister Carsten Schneider - Bu</a></td>
+          <td>해외</td>
+          <td>미정</td>
+          <td>미정</td>
+          <td>확인 필요</td>
+          <td>검색 기반 신규 행사 후보</td>
+        </tr>
+        
+        <tr>
+          <td>후보</td>
+          <td><a href="https://news.google.com/rss/articles/CBMiX0FVX3lxTFBSa0ZmbGluRlFFUDNZTFpodUdRVjhhTTR5NkNTdlJYVWM2bmZITnl2c2gwT0RDY09oY1paMkxqdjF2YlZ6SEtQWEt3U3NGZFFVZkJrN0ZlUjc5dDhpZXJJ?oc=5" target="_blank" rel="noopener noreferrer">Kanematsu to exhibit at “International Semiconductor Laser Conference (ISLC) 2026” - kanem</a></td>
+          <td>해외</td>
+          <td>미정</td>
+          <td>미정</td>
+          <td>확인 필요</td>
+          <td>검색 기반 신규 행사 후보</td>
+        </tr>
+        </tbody>
+    </table>
+    
     </section>
     
     </main>

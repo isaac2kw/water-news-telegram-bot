@@ -36,7 +36,7 @@
       border-bottom:1px solid rgba(255,255,255,.14);
     }
     .topbar-inner {
-      max-width:1880px;
+      max-width:2140px;
       margin:0 auto;
       padding:18px 24px;
       display:flex;
@@ -56,11 +56,11 @@
     .brand:hover { text-decoration:none; }
     .top-date { font-size:13px; color:#dbeafe; white-space:nowrap; }
     .layout {
-      max-width:1880px;
+      max-width:2140px;
       margin:0 auto;
       padding:24px;
       display:grid;
-      grid-template-columns:260px minmax(0, 1fr) 210px;
+      grid-template-columns:260px minmax(0, 1.35fr) 520px;
       gap:22px;
       align-items:start;
     }
@@ -205,11 +205,23 @@
     .dash-card { background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:18px; box-shadow:0 4px 14px rgba(15,23,42,.04); }
     .dash-card h2 { font-size:17px; margin:0 0 10px; }
     .dash-card a { display:block; margin:6px 0; font-size:14px; }
-    @media (max-width:1180px) {
+    .right-rail { position:sticky; top:82px; display:flex; flex-direction:column; gap:16px; }
+    .rail-card { background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:16px; box-shadow:0 8px 22px rgba(15,23,42,.05); }
+    .rail-card h2 { font-size:17px; margin:0 0 10px; }
+    .compact-table { width:100%; border-collapse:collapse; font-size:12px; table-layout:fixed; }
+    .compact-table th, .compact-table td { border-bottom:1px solid var(--line); padding:7px 6px; vertical-align:top; overflow-wrap:anywhere; }
+    .compact-table th { color:#475569; background:#f8fafc; text-align:left; }
+    .compact-list { margin:0; padding-left:18px; font-size:13px; }
+    .compact-list li { margin:7px 0; }
+    .trend-grid { display:grid; grid-template-columns:repeat(6, minmax(0, 1fr)); gap:12px; }
+    .trend-item { text-align:center; border:1px solid var(--line); border-radius:16px; padding:12px; background:#fff; }
+    .trend-key { display:block; font-weight:800; color:#0f4c81; }
+    .trend-val { display:block; color:var(--muted); font-size:12px; margin-top:3px; }
+    @media (max-width:1480px) {
       .layout { grid-template-columns:240px minmax(0, 1fr); }
       .news-grid { grid-template-columns:1fr; }
       .event-mini-grid { grid-template-columns:repeat(2, minmax(0,1fr)); }
-      .toc { display:none; }
+      .toc, .right-rail { display:none; }
       .stat-grid { grid-template-columns:repeat(2, minmax(0,1fr)); }
     }
     @media (max-width:820px) {
@@ -222,6 +234,7 @@
       .stat-grid { grid-template-columns:1fr; }
       .news-grid { grid-template-columns:1fr; }
       .event-mini-grid { grid-template-columns:1fr; }
+      .trend-grid { grid-template-columns:repeat(2, minmax(0,1fr)); }
     }
   </style>
 </head>
@@ -229,7 +242,7 @@
   <header class="topbar">
     <div class="topbar-inner">
       <a class="brand" href="/water-news-telegram-bot/">💧 상하수도·수처리 뉴스 브리핑</a>
-      <div class="top-date">2026-06-05 11:24 KST</div>
+      <div class="top-date">2026-06-05 14:17 KST</div>
     </div>
   </header>
   <div class="layout">
@@ -255,6 +268,7 @@
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-17/">2026-05-17 (일)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-16/">2026-05-16 (토)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-13/">2026-05-13 (수)</a>
+<a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-11/">2026-05-11 (월)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-05-06/">2026-05-06 (수)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-04-28/">2026-04-28 (화)</a>
 <a class="nav-link " href="/water-news-telegram-bot/reports/2026-04-27/">2026-04-27 (월)</a>
@@ -328,34 +342,116 @@
 <a class="nav-link " href="/water-news-telegram-bot/monthly/2025-01/">2025년 01월</a>
 </details>
 <div class="nav-section-title">바로가기</div>
+<a class="nav-link " href="/water-news-telegram-bot/projects/">프로젝트·수주 동향</a>
+<a class="nav-link " href="/water-news-telegram-bot/numeric-news/">수치 포함 기사</a>
+<a class="nav-link " href="/water-news-telegram-bot/events/">학회·전시회 일정</a>
 <a class="nav-link " href="/water-news-telegram-bot/sources/">정보 출처</a>
 <a class="nav-link " href="/water-news-telegram-bot/filters/">필터링 기준</a>
-<a class="nav-link " href="/water-news-telegram-bot/events/">학회·전시회 일정</a>
 </nav>
     <main class="content">
       <section class="hero">
         <h1>2026-06-03 상하수도·수처리 상세 분석 보고서</h1>
-        <div class="subtitle">당일 기사만 사용합니다. 같은 내용의 중복 기사는 자동 제외합니다.</div>
+        <div class="subtitle">최근 2일 기사까지 사용합니다. 같은 내용의 중복 기사는 자동 제외합니다.</div>
       </section>
       
         <section class="card" id="article-1">
-          <p class="meta">#1 · 기사일: 2026-06-03 · Google News Korea 상하수도 · 점수 26</p>
+          <p class="meta">#1 · 기사일: 2026-06-02 · Bing News Global Membrane Reuse · 점수 57</p>
+          <h2>♻️ Toray, 바이오오염 저감 초여과막 출시</h2>
+          <p class="meta">발표/일정: 기사 발행일 기준</p>
+          <p><span class="pill">분리막/막여과</span></p>
+          <p class="brief">Toray가 바이오오염 저감을 위한 F-HFUG 초여과막 모듈을 개발했습니다. 0.005마이크로미터 기공 크기로 하·폐수 재이용에 적합합니다.</p>
+          <h3>내용 요약</h3>
+          <p>Toray는 하·폐수 재이용 공정에서 바이오오염을 줄이기 위해 F-HFUG 시리즈 초여과막 모듈을 출시했습니다. 이 제품은 0.005마이크로미터의 미세한 기공 크기를 갖추고 있어, 생체고분자 물질의 통과를 줄이고 이후 역삼투(RO) 공정의 오염을 완화하는 데 도움을 줍니다. 초여과막은 하수 및 산업폐수 재이용, 정수 등 다양한 수처리 분야에서 핵심적으로 사용됩니다. Toray의 신제품은 막오염 문제로 인한 유지관리 비용과 시스템 다운타임을 줄일 수 있을 것으로 기대됩니다. 이번 개발은 수처리 산업에서 효율성과 신뢰성을 높이는 기술적 진전으로 평가됩니다.</p>
+          <h3>왜 중요한가?</h3>
+          <p class="why">막오염 저감은 수처리 시스템의 운영 효율성과 비용 절감에 매우 중요합니다. Toray의 신제품은 재이용수 및 막여과 시장에서 경쟁력을 높일 수 있는 기술적 진보입니다.</p>
+          <p class="meta">국가: -</p>
+          <p class="meta">기업: 🇯🇵 Toray</p>
+          <p class="meta">기술: Ultrafiltration, Biofouling, Membrane Module, Wastewater Reuse</p>
+          <p><a href="http://www.bing.com/news/apiclick.aspx?ref=FexRss&amp;aid=&amp;tid=6a225b3aeabb4974bcd64b79694831bd&amp;url=https%3a%2f%2fwww.dairyfoods.com%2farticles%2f99167-toray-introduces-ultrafiltration-membrane-designed-to-reduce-biofouling-in-wastewater-reuse&amp;c=9496410966415004977&amp;mkt=en-us" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
+        </section>
+        
+        <section class="card" id="article-2">
+          <p class="meta">#2 · 기사일: 2026-06-03 · Google News Korea 상하수도 · 점수 26</p>
           <h2>💧 동히엡 면 하수처리장 운영 및 폐수 처리 평가</h2>
           <p class="meta">발표/일정: 기사 기준일: 2026-06-03</p>
-          <p><span class="pill">산업폐수</span></p>
-          <p class="brief">베트남 동히엡 면 하수처리장의 운영 상황과 폐수 처리 과정이 모니터링 및 평가되었습니다. 현지 수처리 효율과 환경 관리가 주요 점검 대상입니다.</p>
+          <p><span class="pill">수처리 산업동향</span></p>
+          <p class="brief">베트남 동히엡 면 하수처리장의 운영 상황과 폐수 처리 과정이 모니터링 및 평가되고 있습니다. 현지 수처리 효율성 및 환경 관리가 주요 관심사입니다.</p>
           <h3>내용 요약</h3>
-          <p>베트남 동히엡 면 하수처리장의 운영 현황과 폐수 처리 과정에 대한 모니터링 및 평가가 이루어졌습니다. 이번 평가는 하수처리장의 효율성과 환경 보호 기준 준수 여부를 점검하기 위한 목적입니다. 하수처리장은 지역 내 생활 및 산업 폐수를 처리하여 수질 개선에 기여하고 있습니다. 이러한 모니터링은 처리장 운영의 투명성과 지속적인 개선을 도모하는 데 중요합니다. 수처리 산업에서는 현장 운영 데이터와 평가 결과가 향후 기술 도입 및 시설 개선에 참고 자료로 활용될 수 있습니다.</p>
+          <p>베트남 동히엡 면 하수처리장은 지역 내 하수 및 폐수 처리를 담당하고 있으며, 최근 운영 상황과 처리 과정에 대한 모니터링 및 평가가 이루어졌습니다. 이러한 평가는 처리장 운영의 효율성, 환경 기준 준수 여부, 지역 주민의 위생 및 환경 보호에 미치는 영향을 점검하기 위해 실시됩니다. 하수처리장의 성능과 관리 체계가 지역 환경 개선에 중요한 역할을 하고 있습니다. 수처리 산업에서는 현지 처리장 운영의 모범 사례와 개선점을 파악할 수 있는 기회로 볼 수 있습니다. 기사에는 구체적인 용량이나 기술 사양 등은 언급되지 않았습니다.</p>
           <h3>왜 중요한가?</h3>
-          <p class="why">하수처리장 운영의 모니터링과 평가는 시설의 효율성 및 환경 규제 준수 여부를 확인하는 데 필수적입니다. 이는 향후 베트남 수처리 시장의 기술 도입과 프로젝트 추진에 중요한 참고 자료가 될 수 있습니다.</p>
+          <p class="why">동남아 신흥국의 하수처리장 운영 및 평가 사례는 한국 및 글로벌 수처리 기업의 해외 진출 전략 수립에 참고가 됩니다. 현지 시장의 수처리 수요와 운영 실태를 파악할 수 있다는 점에서 중요합니다.</p>
           <p class="meta">국가: 베트남</p>
           <p class="meta">기업: -</p>
           <p class="meta">기술: 하수처리, 폐수 처리, 운영 모니터링</p>
           <p><a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxNREFDczd1M1VKYnk0d283TWJKMTllSDZmLXF2Q2ptV2dqaDI0RmRsZWROb3o2Nl9ibXo5SEVLNTJEYnAxQldIM0R4d1VyOTFoWTRaSnJwVm0zdEN5NFdfRWZISGhkaFU2THBmbzJIUmxzeDFBaWhTSy1wM210N0lodzZmTWVydnFJSEFnRGlPQmJJLWh6MDZheUhSNkJqTy1nQXdrRndlMGpCS3dvWVhr?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
         </section>
         
-        <section class="card" id="article-2">
-          <p class="meta">#2 · 기사일: 2026-06-03 · Google News Korea 상하수도 · 점수 18</p>
+        <section class="card" id="article-3">
+          <p class="meta">#3 · 기사일: 2026-06-02 · Google News Korea 막여과 MBR · 점수 26</p>
+          <h2>🧬 정우이엔티, 외부평막분리조 J-MBR 공법 소개</h2>
+          <p class="meta">발표/일정: 기사 기준일: 2026-06-02</p>
+          <p><span class="pill">분리막/MBR</span></p>
+          <p class="brief">정우이엔티㈜가 외부평막분리조를 활용한 J-MBR 공법을 선보였습니다. 평막을 이용한 막분리 기술로 주목받고 있습니다.</p>
+          <h3>내용 요약</h3>
+          <p>정우이엔티㈜는 외부평막분리조를 적용한 J-MBR 공법을 개발해 소개했습니다. 이 기술은 막분리(MBR) 방식 중 평막을 외부에 설치해 효율적인 분리와 유지관리가 가능한 것이 특징입니다. 평막은 막오염 저감과 세정이 용이해 기존 MBR 대비 운전 효율성이 높다는 장점이 있습니다. 해당 공법은 하수 및 폐수처리장 등 다양한 수처리 현장에 적용될 수 있습니다. 수처리 산업에서 막분리 기술의 발전과 현장 적용 확대에 기여할 것으로 기대됩니다.</p>
+          <h3>왜 중요한가?</h3>
+          <p class="why">평막을 활용한 외부막분리조 기술은 운전 효율성과 유지관리 측면에서 산업 현장에 실질적인 이점을 제공합니다. 이는 국내 수처리 시장에서 MBR 기술의 경쟁력 강화와 적용 확대에 중요한 의미를 가집니다.</p>
+          <p class="meta">국가: -</p>
+          <p class="meta">기업: Jungwoo ENT</p>
+          <p class="meta">기술: MBR, 막분리, 평막</p>
+          <p><a href="https://news.google.com/rss/articles/CBMia0FVX3lxTE1vNGttbm5GSTE0dlJCV2JEbTVMTzJBNzJPQTZzZnpYcVAwNFpLWUllbFlOX2pkSDZfY3NzV0FJQ0ZPLUxyQm9Rb2YzdVRmQXBnQkgwWmJFMEcweTMyNExNbkk3VG93dUxjT0lr?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
+        </section>
+        
+        <section class="card" id="article-4">
+          <p class="meta">#4 · 기사일: 2026-06-02 · Google News Korea 상하수도 · 점수 26</p>
+          <h2>💧 북항하수처리장 정비로 쾌적한 환경 조성</h2>
+          <p class="meta">발표/일정: 기사 기준일: 2026-06-02</p>
+          <p><span class="pill">수처리 산업동향</span></p>
+          <p class="brief">북항하수처리장이 정비를 통해 악취 문제를 해결하고 쾌적한 환경을 조성합니다. 이는 지역 주민들에게 긍정적인 영향을 미칠 것으로 기대됩니다.</p>
+          <h3>내용 요약</h3>
+          <p>북항하수처리장은 최근 정비 작업을 통해 악취 문제를 해결하고 쾌적한 환경을 조성하기 위한 노력을 하고 있습니다. 이 정비는 하수처리 시설의 효율성을 높이고, 지역 주민들의 생활 환경을 개선하는 데 기여할 것으로 보입니다. 수처리 산업에서는 이러한 정비 작업이 하수처리 기술의 발전과 관련이 있으며, 지역 사회의 수질 개선에도 긍정적인 영향을 미칠 것입니다. 향후 이러한 정비 사례가 다른 지역으로 확산될 가능성도 있습니다.</p>
+          <h3>왜 중요한가?</h3>
+          <p class="why">이 정비는 지역 주민의 생활 환경 개선과 직결되어 있어 사회적 반향을 일으킬 수 있습니다. 수처리 기술의 발전과 함께 하수처리 시설의 효율성을 높이는 것은 지속 가능한 수자원 관리에 중요한 요소입니다.</p>
+          <p class="meta">국가: 🇰🇷 대한민국</p>
+          <p class="meta">기업: -</p>
+          <p class="meta">기술: 하수처리</p>
+          <p><a href="https://news.google.com/rss/articles/CBMiZkFVX3lxTE1ZZ2dxUFFxT1h2cWU5RzRFamxLd1JKSnloM2dSRWhhZWhjRWpaWGxGVXk2blJzX1dUT2Y4bjVtQ3V5cUdCaXRGWmNjbnpyOXUxeDZqTm9HYU93UGdrMkpkMU5YdW1adw?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
+        </section>
+        
+        <section class="card" id="article-5">
+          <p class="meta">#5 · 기사일: 2026-06-02 · Google News Korea 재이용수 PFAS · 점수 26</p>
+          <h2>💧 남해하수처리장 전기설비 안전점검 실시</h2>
+          <p class="meta">발표/일정: 기사 기준일: 2026-06-02</p>
+          <p><span class="pill">산업폐수</span></p>
+          <p class="brief">남해하수처리장에서 전기설비 안전점검이 실시되었습니다. 이번 점검은 하수처리장의 안전성을 높이기 위한 조치입니다.</p>
+          <h3>내용 요약</h3>
+          <p>남해하수처리장에서 전기설비에 대한 안전점검이 진행되었습니다. 이 점검은 하수처리장의 안전성을 확보하고, 운영 효율성을 높이기 위한 목적입니다. 하수처리 산업에서 전기설비의 안전성은 매우 중요한 요소로, 정기적인 점검이 필요합니다. 이번 점검을 통해 하수처리장의 전반적인 운영 안정성이 강화될 것으로 기대됩니다.</p>
+          <h3>왜 중요한가?</h3>
+          <p class="why">하수처리장의 전기설비 안전점검은 운영 효율성과 안전성을 높이는 데 중요합니다. 이는 수처리 산업의 신뢰성을 높이는 데 기여할 것입니다.</p>
+          <p class="meta">국가: 🇰🇷 대한민국</p>
+          <p class="meta">기업: -</p>
+          <p class="meta">기술: -</p>
+          <p><a href="https://news.google.com/rss/articles/CBMiZkFVX3lxTFBsQV90TVZQUWF4cUFZTVdjdERUQXl2S1pJRERrdkJVQjYwSHd5eldoUzZnTmlESW5CR2hWUHNpeGhmV1NQRGFXbVNNR055Y2ZCQ3hnRzFCS1J4ektEZGJkRUtIRVpVQQ?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
+        </section>
+        
+        <section class="card" id="article-6">
+          <p class="meta">#6 · 기사일: 2026-06-02 · Bing News Global Membrane Reuse · 점수 23</p>
+          <h2>🧬 Membrane Technology Forum 2026, 음료 혁신·폐수처리 확대</h2>
+          <p class="meta">발표/일정: 2026년 개최 예정</p>
+          <p><span class="pill">학회/전시회</span></p>
+          <p class="brief">Membrane Technology Forum 2026은 음료 시장 혁신과 폐수처리 분야에 초점을 확대합니다. 분리막 기술의 전략적 적용 기회가 논의될 예정입니다.</p>
+          <h3>내용 요약</h3>
+          <p>Membrane Technology Forum 2026은 기존 분리막 기술 중심에서 음료 시장 혁신과 폐수처리 분야로 논의 범위를 확장합니다. 이번 포럼에서는 음료 산업 내 분리막 기술의 유망한 시장 기회와 함께, 폐수처리 분야에서의 최신 적용 사례와 전략이 발표될 예정입니다. 이는 분리막 기술이 식음료 산업뿐 아니라 환경 분야에서도 중요한 역할을 하고 있음을 보여줍니다. 수처리 산업에서는 분리막 기술의 다각적 활용과 시장 확대 가능성에 주목할 필요가 있습니다. 해당 포럼은 글로벌 분리막 기술 동향과 산업 내 협력 기회를 모색하는 장이 될 전망입니다.</p>
+          <h3>왜 중요한가?</h3>
+          <p class="why">분리막 기술의 적용 범위가 음료 산업과 폐수처리로 확대됨에 따라 시장 기회가 증가할 것으로 예상됩니다. 이는 수처리 산업의 기술 발전과 새로운 비즈니스 모델 창출에 중요한 영향을 미칠 수 있습니다.</p>
+          <p class="meta">국가: -</p>
+          <p class="meta">기업: -</p>
+          <p class="meta">기술: Membrane, Wastewater Treatment, Water Treatment, Beverage Innovation</p>
+          <p><a href="http://www.bing.com/news/apiclick.aspx?ref=FexRss&amp;aid=&amp;tid=6a225b3aeabb4974bcd64b79694831bd&amp;url=https%3a%2f%2fwww.dairyfoods.com%2farticles%2f99166-membrane-technology-forum-2026-expands-focus-on-beverage-innovation-and-wastewater-treatment&amp;c=1461589195714993340&amp;mkt=en-us" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
+        </section>
+        
+        <section class="card" id="article-7">
+          <p class="meta">#7 · 기사일: 2026-06-03 · Google News Korea 상하수도 · 점수 18</p>
           <h2>💧 안성시, 하수처리시설 증설·신설 추진</h2>
           <p class="meta">발표/일정: 기사 기준일: 2026-06-03</p>
           <p><span class="pill">프로젝트/수주</span></p>
@@ -370,8 +466,40 @@
           <p><a href="https://news.google.com/rss/articles/CBMifEFVX3lxTE0tQndaQndfX2N1cVl0c2NkMkhWWVV5Q0ZaVW1wX1d5bHhjUkd3LVFRRGhVSTdfWnhOdWFqa2tqZlRkVHhCME9uOWhnaDR6aWc3OVZwM2dDQUhCR3BOTS1nX1lmNm50RTBIMEtJTDBHTl9VeUtXdXVXLTZ4d2c?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
         </section>
         
-        <section class="card" id="article-3">
-          <p class="meta">#3 · 기사일: 2026-06-03 · Google News Korea 학회 전시회 · 점수 17</p>
+        <section class="card" id="article-8">
+          <p class="meta">#8 · 기사일: 2026-06-02 · Google News Korea 상하수도 · 점수 18</p>
+          <h2>💧 새만금 하수처리시설, 하반기 턴키 발주 예정</h2>
+          <p class="meta">발표/일정: 기사 기준일: 2026-06-02</p>
+          <p><span class="pill">프로젝트/수주</span></p>
+          <p class="brief">새만금 공공하수처리시설의 턴키 발주가 하반기에 예정되어 있습니다. 이는 지역 수처리 인프라 개선에 기여할 것으로 기대됩니다.</p>
+          <h3>내용 요약</h3>
+          <p>새만금 지역의 공공하수처리시설이 하반기에 턴키 방식으로 발주될 예정입니다. 이 프로젝트는 지역 내 하수 처리 능력을 향상시키고, 환경 보호에 기여할 것으로 보입니다. 수처리 산업에서는 이러한 대규모 프로젝트가 기술 발전과 시장 확대에 중요한 역할을 할 수 있습니다. 턴키 발주는 효율적인 관리와 신속한 진행을 가능하게 하여, 지역 주민들에게 더 나은 수질을 제공할 수 있을 것입니다.</p>
+          <h3>왜 중요한가?</h3>
+          <p class="why">이 프로젝트는 지역 수처리 인프라의 개선을 통해 환경 규제를 준수하는 데 중요한 역할을 할 것입니다. 또한, 턴키 발주는 수처리 산업의 기술 혁신과 시장 성장에 기여할 것으로 예상됩니다.</p>
+          <p class="meta">국가: 🇰🇷 한국</p>
+          <p class="meta">기업: -</p>
+          <p class="meta">기술: 하수처리</p>
+          <p><a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE9UVXdvUjJIa2JsUTZiX29wRXpmRnh2TjdxUFFHY3RfQnEyZ2pfakNhSFplSGhuSGt4ZGNNSld6SVMzb1BDamVEWms0TkRobnZZcmpldEhQYU5mRmt5N0VIOW53OGlodnRTNVE?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
+        </section>
+        
+        <section class="card" id="article-9">
+          <p class="meta">#9 · 기사일: 2026-06-02 · Google News Korea 상하수도 · 점수 18</p>
+          <h2>💧 용인시, 개인 하수처리시설 개선비 80% 지원</h2>
+          <p class="meta">발표/일정: 기사 기준일: 2026-06-02</p>
+          <p><span class="pill">규제/정책</span></p>
+          <p class="brief">용인시는 개인 하수처리시설 개선비를 80% 지원한다고 발표했다. 이는 지역 주민들의 하수처리 환경을 개선하기 위한 조치로 해석된다.</p>
+          <h3>내용 요약</h3>
+          <p>용인시는 개인 하수처리시설의 개선비를 80% 지원하기로 결정했다. 이 정책은 지역 주민들이 보다 나은 하수처리 환경을 조성할 수 있도록 돕기 위한 것이다. 하수처리시설의 개선은 지역의 수질 개선과 환경 보호에 기여할 것으로 기대된다. 이러한 지원은 수처리 산업의 발전과 관련이 있으며, 주민들의 참여를 유도할 수 있는 기회가 될 것이다.</p>
+          <h3>왜 중요한가?</h3>
+          <p class="why">이 정책은 지역 주민들의 하수처리 환경을 개선하여 수질을 향상시키는 데 중요한 역할을 할 것이다. 또한, 수처리 산업의 성장과 관련된 새로운 기회를 창출할 수 있다.</p>
+          <p class="meta">국가: 🇰🇷 대한민국</p>
+          <p class="meta">기업: -</p>
+          <p class="meta">기술: 하수처리</p>
+          <p><a href="https://news.google.com/rss/articles/CBMibEFVX3lxTE9jUHdZSm54UDdLeGRBWGpSRmRBVjM0YUl0MWRRaVJwX3hVVEtFeGhuR0JnaFJsMG54QWh0Z0o4bVMzdkpkcFJRc3c0enJDeDNWQWJsUHhwbjB0WkNSekhBbmVNVFZoeGhmS1VmTg?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
+        </section>
+        
+        <section class="card" id="article-10">
+          <p class="meta">#10 · 기사일: 2026-06-03 · Google News Korea 학회 전시회 · 점수 17</p>
           <h2>💧 한국상하수도협회, 환경ISC 첫 ‘S등급’ 획득</h2>
           <p class="meta">발표/일정: 기사 기준일: 2026-06-03</p>
           <p><span class="pill">학회/전시회</span></p>
@@ -380,14 +508,14 @@
           <p>한국상하수도협회가 환경ISC에서 첫 번째 ‘S등급’을 획득했습니다. 이 등급은 환경산업 인재양성을 위한 노력의 성과로 평가받고 있습니다. 협회는 지속 가능한 수처리 기술 개발과 인재 양성을 통해 환경 산업의 발전에 기여하고 있습니다. 이번 성과는 한국의 수처리 산업에 긍정적인 영향을 미칠 것으로 기대됩니다.</p>
           <h3>왜 중요한가?</h3>
           <p class="why">이번 S등급 획득은 한국의 수처리 산업 인재 양성에 대한 중요성을 강조합니다. 이는 향후 환경 관련 프로젝트와 기술 개발에 긍정적인 영향을 미칠 것으로 추측됩니다.</p>
-          <p class="meta">국가: 대한민국</p>
+          <p class="meta">국가: 🇰🇷 대한민국</p>
           <p class="meta">기업: -</p>
           <p class="meta">기술: -</p>
           <p><a href="https://news.google.com/rss/articles/CBMic0FVX3lxTE5uWnF3QnNTRUVSSWlxYlY4amZLUnB5WGt4S1cyR0JYTlNjQ0lDNUlHbUc3RkZlQnVfSnNEc3d3MTBYTWNqTUZ3cGpBa1hrTElzSFB6aVF5VFpFbUFwTkw0S01obkRuWFdob3lPMGRBbGVoRTjSAW5BVV95cUxPWDM0VW1yNmFZaHN2TUU0MGV6cnJCN0dESFVVQTZtSFVvZlZmc3lMcWNVY0M4N0RkSmlyNDl2dk9YSGhQTGdremZZMXNVZ3R2eVRYOXFQeEFGTUFfVUhPTEFqOUNDWXZycGRaUmpWQQ?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
         </section>
         
-        <section class="card" id="article-4">
-          <p class="meta">#4 · 기사일: 2026-06-03 · Google News Global Water · 점수 15</p>
+        <section class="card" id="article-11">
+          <p class="meta">#11 · 기사일: 2026-06-03 · Google News Global Water · 점수 15</p>
           <h2>🧪 스코틀랜드 섬, 수돗물의 PFAS 농도 최고치</h2>
           <p class="meta">발표/일정: 기사 기준일: 2026-06-03</p>
           <p><span class="pill">PFAS/오염물</span></p>
@@ -402,8 +530,8 @@
           <p><a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxPNU04b3NNbF94dDFtOGNwaUpPdFFmc0NyM3JOV1hFc0VFbXM2VS0wYll6WUlHYnlOakNXQzJGUklUVVRvSzdaWmZNUTJBSkNhSG9OR0xfU0dVdWU0blJTbFJ1SEdhWmxKX0VnZFNkcGJFT3RHcXZjVDVSMWpnVDRvVW1sRzJjZUdVTk85cjMxTW5RRTdualNmMVRPU0M5RU00VkNrNFNMd0JxeDdWeE05WFhWYzJyZ0RIa2ZZWElUQnJYZVU?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
         </section>
         
-        <section class="card" id="article-5">
-          <p class="meta">#5 · 기사일: 2026-06-03 · Google News Global Water · 점수 15</p>
+        <section class="card" id="article-12">
+          <p class="meta">#12 · 기사일: 2026-06-03 · Google News Global Water · 점수 15</p>
           <h2>🧪 캔자스대, PFAS 검출 비용 절감 혁신</h2>
           <p class="meta">발표/일정: 기사 기준일: 2026-06-03</p>
           <p><span class="pill">PFAS/오염물</span></p>
@@ -418,8 +546,8 @@
           <p><a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxQZ2s2TUctNkZZLTE5WXczanJjbl9EWUpFQnpvbXMybWUxMjM1X0ZuWld1ZG85TjBaM2lIZ0tMekVfTkZhV1YxejVtazJSd2VVTTB3SXBzZ2NQLXRnb29SOVNpV1hGX1N4YzNkTnkyeFVVbWlZcDA2YnVBbnJVcU1pcTRLSUVaMjlRcUxkZzJ1YXVxS3p4NUhaZmZnWHZWMzFQUTg4OG90ZXdUTm5vQTQ4?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
         </section>
         
-        <section class="card" id="article-6">
-          <p class="meta">#6 · 기사일: 2026-06-03 · Google News Global Water · 점수 15</p>
+        <section class="card" id="article-13">
+          <p class="meta">#13 · 기사일: 2026-06-03 · Google News Global Water · 점수 15</p>
           <h2>🧪 미국 음용수 PFAS 검사 비용 절감 방안</h2>
           <p class="meta">발표/일정: 기사 기준일: 2026-06-03</p>
           <p><span class="pill">PFAS/오염물</span></p>
@@ -434,8 +562,24 @@
           <p><a href="https://news.google.com/rss/articles/CBMiZEFVX3lxTE1ONkdsMzI4cUozRktDdlN3MHJIN1kzbVp4WkFsVFZ5bFJwWmcyd0E5cElFcldGa0Q1bW5YeEdRUHRweHdpWWRqSi1UZ0VKQnJuQVdQS0U2Tm1hWmxINFJ1eVloRVk?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
         </section>
         
+        <section class="card" id="article-14">
+          <p class="meta">#14 · 기사일: 2026-06-02 · Google News Global Water · 점수 15</p>
+          <h2>💧 NASA, 미래 달 기지 수처리 시설 테스트</h2>
+          <p class="meta">발표/일정: 기사 기준일: 2026-06-02</p>
+          <p><span class="pill">수처리 산업동향</span></p>
+          <p class="brief">NASA가 미래의 달 기지를 위한 수처리 시설을 테스트하고 있습니다. 이 프로젝트는 우주 탐사의 지속 가능성을 높이는 데 기여할 것입니다.</p>
+          <h3>내용 요약</h3>
+          <p>NASA는 미래의 달 기지를 위한 수처리 시설을 테스트하고 있습니다. 이 시설은 우주에서 발생하는 폐수를 처리하여 재사용할 수 있는 시스템을 개발하는 것을 목표로 하고 있습니다. 이는 우주 탐사의 지속 가능성을 높이고, 장기적인 우주 거주를 가능하게 할 것입니다. 수처리 산업에 있어 이러한 기술 개발은 우주 환경에서의 물 관리에 중요한 의미를 가집니다.</p>
+          <h3>왜 중요한가?</h3>
+          <p class="why">이 프로젝트는 우주 탐사와 관련된 수처리 기술의 발전을 촉진할 수 있습니다. 이는 향후 우주 미션에서의 자원 관리와 지속 가능성에 중요한 영향을 미칠 것입니다.</p>
+          <p class="meta">국가: 🇺🇸 미국</p>
+          <p class="meta">기업: -</p>
+          <p class="meta">기술: Wastewater Treatment</p>
+          <p><a href="https://news.google.com/rss/articles/CBMitwFBVV95cUxNbl9mQVcxNEVkWDRMZzFCM2dqT3RZSEg2ZUJ5NUdWUGdpejZKQ21rY2lLcVhHWTNhcXlNR0hpejVNSlhvOVZLem13N25xdUk0a08yel9hQ0xyUENZR2hKWjA2SXpGamJPbFllaV81MjdyU25UdjdyX0lnN2VDMVQtNEk3aC1wNGM3R0dkaGJ4T29UVnMxRE92aV9GOG55QUdkbHFfSWFkcFQzS1JSZlVXa3VnN1FfdXM?oc=5" target="_blank" rel="noopener noreferrer">원문 기사 보기</a></p>
+        </section>
+        
     </main>
-    <aside class="toc"><div class="toc-title">목차</div><a href="#article-1">기사 1</a><a href="#article-2">기사 2</a><a href="#article-3">기사 3</a><a href="#article-4">기사 4</a><a href="#article-5">기사 5</a><a href="#article-6">기사 6</a></aside>
+    <aside class="toc"><div class="toc-title">목차</div><a href="#article-1">기사 1</a><a href="#article-2">기사 2</a><a href="#article-3">기사 3</a><a href="#article-4">기사 4</a><a href="#article-5">기사 5</a><a href="#article-6">기사 6</a><a href="#article-7">기사 7</a><a href="#article-8">기사 8</a><a href="#article-9">기사 9</a><a href="#article-10">기사 10</a><a href="#article-11">기사 11</a><a href="#article-12">기사 12</a></aside>
   </div>
 </body>
 </html>
