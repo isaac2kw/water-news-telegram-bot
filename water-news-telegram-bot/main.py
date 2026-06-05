@@ -41,6 +41,9 @@ DOCS_DIR = REPO_ROOT / "docs"
 REPORTS_DIR = DOCS_DIR / "reports"
 WEEKLY_DIR = DOCS_DIR / "weekly"
 MONTHLY_DIR = DOCS_DIR / "monthly"
+PROJECTS_DIR = DOCS_DIR / "projects"
+NUMERIC_DIR = DOCS_DIR / "numeric-news"
+EVENTS_CACHE_FILE = BASE_DIR / "events_cache.json"
 
 
 KEYWORDS = {
@@ -477,13 +480,25 @@ EVENT_CATALOG = [
     {"grade": "B", "name": "한국물환경학회 학술대회", "scope": "국내", "location": "한국", "date": "학회 일정 확인 필요", "scale": "전문 학회", "url": "https://www.kswe.or.kr/", "note": "물환경·수질 분야 학술행사"},
 ]
 
+
+EVENT_SEARCH_QUERY_CONFIG = [
+    {"name": "Google Events Global Water", "engine": "google", "region": "global", "query": "water conference 2026 OR water exhibition 2026 OR wastewater conference 2026 OR membrane conference 2026"},
+    {"name": "Google Events Global Next Year", "engine": "google", "region": "global", "query": "water conference 2027 OR water exhibition 2027 OR wastewater conference 2027 OR membrane conference 2027"},
+    {"name": "Google Events Korea", "engine": "google", "region": "domestic", "query": "수처리 전시회 2026 OR 상하수도 학회 2026 OR 분리막 학회 2026 OR 워터코리아 2026"},
+    {"name": "Google Events Korea Next Year", "engine": "google", "region": "domestic", "query": "수처리 전시회 2027 OR 상하수도 학회 2027 OR 분리막 학회 2027 OR 워터코리아 2027"},
+]
+
 INCLUDE_KEYWORDS_PUBLIC = sorted(KEYWORDS.keys())
 EXCLUDE_PATTERNS_PUBLIC = NEGATIVE_PATTERNS
 
 
 TOP_NEWS_LIMIT = 10
-DAILY_REPORT_LOOKBACK_DAYS = 1
-DASHBOARD_YEAR_WINDOW = 2
+DAILY_REPORT_LOOKBACK_DAYS = int(os.getenv("DAILY_REPORT_LOOKBACK_DAYS", "2"))
+DASHBOARD_YEAR_WINDOW = int(os.getenv("DASHBOARD_YEAR_WINDOW", "2"))
+ARTICLE_MAX_AGE_DAYS = int(os.getenv("ARTICLE_MAX_AGE_DAYS", "730"))
+PROJECT_NEWS_LIMIT = int(os.getenv("PROJECT_NEWS_LIMIT", "10"))
+NUMERIC_NEWS_LIMIT = int(os.getenv("NUMERIC_NEWS_LIMIT", "10"))
+EVENT_YEAR_WINDOW = int(os.getenv("EVENT_YEAR_WINDOW", "2"))
 
 COMPANY_ENGLISH_MAP = {
     "토레이": "Toray",
@@ -553,6 +568,72 @@ LOCATION_ENGLISH_MAP = {
     "광저우": "Guangzhou",
     "선전": "Shenzhen",
 }
+
+
+COMPANY_COUNTRY_MAP = {
+    "Toray": "🇯🇵",
+    "Kubota": "🇯🇵",
+    "Mitsubishi": "🇯🇵",
+    "Asahi Kasei": "🇯🇵",
+    "Microza": "🇯🇵",
+    "Nitto": "🇯🇵",
+    "Veolia": "🇫🇷",
+    "SUEZ": "🇫🇷",
+    "Alfa Laval": "🇸🇪",
+    "DuPont": "🇺🇸",
+    "Hydranautics": "🇺🇸",
+    "Kovalus": "🇺🇸",
+    "Koch": "🇺🇸",
+    "Pall": "🇺🇸",
+    "Xylem": "🇺🇸",
+    "Applied Membranes": "🇺🇸",
+    "Axeon": "🇺🇸",
+    "Pentair": "🇬🇧",
+    "NX Filtration": "🇳🇱",
+    "Synder Filtration": "🇺🇸",
+    "LG Chem": "🇰🇷",
+    "Econity": "🇰🇷",
+    "Kolon": "🇰🇷",
+    "BKT": "🇰🇷",
+    "GS E&C": "🇰🇷",
+    "Doosan Enerbility": "🇰🇷",
+    "Litree": "🇨🇳",
+    "OriginWater": "🇨🇳",
+    "Vontron": "🇨🇳",
+    "Scinor": "🇨🇳",
+    "Memstar": "🇨🇳",
+}
+
+COUNTRY_NAME_TO_FLAG = {
+    "미국": "🇺🇸", "USA": "🇺🇸", "United States": "🇺🇸",
+    "일본": "🇯🇵", "Japan": "🇯🇵",
+    "한국": "🇰🇷", "대한민국": "🇰🇷", "Korea": "🇰🇷", "South Korea": "🇰🇷",
+    "중국": "🇨🇳", "China": "🇨🇳",
+    "프랑스": "🇫🇷", "France": "🇫🇷",
+    "싱가포르": "🇸🇬", "Singapore": "🇸🇬",
+    "네덜란드": "🇳🇱", "Netherlands": "🇳🇱",
+    "영국": "🇬🇧", "United Kingdom": "🇬🇧", "UK": "🇬🇧",
+    "스웨덴": "🇸🇪", "Sweden": "🇸🇪",
+    "독일": "🇩🇪", "Germany": "🇩🇪",
+    "스페인": "🇪🇸", "Spain": "🇪🇸",
+    "캐나다": "🇨🇦", "Canada": "🇨🇦",
+    "말레이시아": "🇲🇾", "Malaysia": "🇲🇾",
+    "사우디": "🇸🇦", "Saudi Arabia": "🇸🇦",
+    "호주": "🇦🇺", "Australia": "🇦🇺",
+}
+
+PROJECT_STAGE_KEYWORDS = {
+    "입찰": "입찰", "발주": "발주", "수주": "수주", "계약": "계약", "착공": "착공", "준공": "준공",
+    "설계": "설계", "기본설계": "기본설계", "실시설계": "실시설계", "공사": "공사", "증설": "증설",
+    "신설": "신설", "개선": "개선", "현대화": "현대화", "upgrade": "Upgrade", "contract": "Contract",
+    "tender": "Tender", "award": "Award", "commissioning": "Commissioning", "construction": "Construction",
+}
+
+PROJECT_KEYWORDS = [
+    "프로젝트", "사업", "수주", "입찰", "발주", "계약", "EPC", "턴키", "증설", "신설", "개선", "현대화",
+    "하수처리장", "폐수처리장", "정수장", "재이용수", "처리시설", "contract", "tender", "award",
+    "project", "expansion", "upgrade", "commissioning", "construction", "plant", "facility",
+]
 
 SPEC_VALUE_PATTERNS = [
     r"\d{1,3}(?:,\d{3})*(?:\.\d+)?\s*(?:m3/day|m³/day|㎥/일|m3\/d|MLD|MGD|톤/일|ton/day|tons/day)",
@@ -939,6 +1020,12 @@ def fetch_articles():
             if not in_backfill_range(published_date):
                 continue
 
+            dt = parse_date_safe(published_date)
+            if dt and not BACKFILL_MODE:
+                age_days = (datetime.now(KST) - dt).days
+                if age_days > ARTICLE_MAX_AGE_DAYS:
+                    continue
+
             score, matched = score_article(title, summary)
 
             if score < MIN_SCORE:
@@ -977,12 +1064,40 @@ def add_country_flag(country):
     if not country:
         return ""
 
-    flag = flag_for_country(country)
+    country_text = str(country).strip()
+    flag = flag_for_country(country_text) or COUNTRY_NAME_TO_FLAG.get(country_text, "")
 
     if flag:
-        return f"{flag} {country}"
+        return f"{flag} {country_text}"
 
-    return country
+    return country_text
+
+
+def add_company_flag(company):
+    if not company:
+        return ""
+    company = replace_company_names_with_english(str(company).strip())
+    for name, flag in sorted(COMPANY_COUNTRY_MAP.items(), key=lambda x: len(x[0]), reverse=True):
+        if name.lower() in company.lower():
+            return f"{flag} {company}"
+    return company
+
+
+def format_companies_with_flags(companies):
+    result = []
+    for company in normalize_company_list(companies or []):
+        flagged = add_company_flag(company)
+        if flagged and flagged not in result:
+            result.append(flagged)
+    return result
+
+
+def country_flag_from_text(text):
+    text = str(text or "")
+    for name, flag in COUNTRY_NAME_TO_FLAG.items():
+        if name.lower() in text.lower():
+            return flag
+    return ""
 
 
 def emoji_for_category(category, technologies=None):
@@ -1137,6 +1252,7 @@ def summarize_article(article):
         "companies": [],
         "technologies": article.get("matched", []),
         "policy_alert": "",
+        "date_context": get_article_date_context(article),
         "specs": fallback_specs,
     }
 
@@ -1184,6 +1300,7 @@ RSS 요약: {article['summary']}
         "companies": parsed.get("companies", fallback["companies"]) or [],
         "technologies": parsed.get("technologies", fallback["technologies"]) or [],
         "policy_alert": parsed.get("policy_alert", fallback["policy_alert"]) or "",
+        "date_context": parsed.get("date_context", fallback.get("date_context", get_article_date_context(article))) or get_article_date_context(article),
         "specs": merge_specs(parsed_specs, fallback_specs, article.get("title", ""), article.get("summary", "")),
     }
 
@@ -1228,6 +1345,7 @@ def save_news_history(articles):
             "companies": ai.get("companies", []),
             "technologies": ai.get("technologies", []),
             "policy_alert": ai.get("policy_alert", ""),
+            "date_context": ai.get("date_context", get_article_date_context(a)),
             "specs": merge_specs(ai.get("specs", []), a.get("specs", []), a.get("title", ""), a.get("summary", "")),
             "source": a.get("source", ""),
             "link": a.get("link", ""),
@@ -1238,6 +1356,8 @@ def save_news_history(articles):
             "source_type": a.get("source_type", ""),
         })
 
+    cutoff = (datetime.now(KST) - timedelta(days=ARTICLE_MAX_AGE_DAYS)).strftime("%Y-%m-%d")
+    history = [x for x in history if not x.get("date") or x.get("date", "") >= cutoff]
     history = history[-1500:]
     save_json(HISTORY_FILE, history)
 
@@ -1568,9 +1688,11 @@ def build_left_nav(active_url=""):
 
     parts.append('<div class="nav-section-title">바로가기</div>')
     quick_links = [
+        ("projects/", "프로젝트·수주 동향"),
+        ("numeric-news/", "수치 포함 기사"),
+        ("events/", "학회·전시회 일정"),
         ("sources/", "정보 출처"),
         ("filters/", "필터링 기준"),
-        ("events/", "학회·전시회 일정"),
     ]
     for url, label in quick_links:
         parts.append(f'<a class="nav-link {active_class(url)}" href="{rel_url(url)}">{html.escape(label)}</a>')
@@ -1590,11 +1712,11 @@ def build_toc(toc_items):
     return f'<aside class="toc"><div class="toc-title">목차</div>{"".join(links)}</aside>'
 
 
-def make_html_page(title, body_html, path, active_url="", subtitle="", toc_items=None):
+def make_html_page(title, body_html, path, active_url="", subtitle="", toc_items=None, right_html=None):
     path.mkdir(parents=True, exist_ok=True)
     toc_items = toc_items or []
     nav_html = build_left_nav(active_url)
-    toc_html = build_toc(toc_items)
+    toc_html = right_html if right_html is not None else build_toc(toc_items)
 
     html_doc = f"""<!doctype html>
 <html lang="ko">
@@ -1634,7 +1756,7 @@ def make_html_page(title, body_html, path, active_url="", subtitle="", toc_items
       border-bottom:1px solid rgba(255,255,255,.14);
     }}
     .topbar-inner {{
-      max-width:1880px;
+      max-width:2140px;
       margin:0 auto;
       padding:18px 24px;
       display:flex;
@@ -1654,11 +1776,11 @@ def make_html_page(title, body_html, path, active_url="", subtitle="", toc_items
     .brand:hover {{ text-decoration:none; }}
     .top-date {{ font-size:13px; color:#dbeafe; white-space:nowrap; }}
     .layout {{
-      max-width:1880px;
+      max-width:2140px;
       margin:0 auto;
       padding:24px;
       display:grid;
-      grid-template-columns:260px minmax(0, 1fr) 210px;
+      grid-template-columns:260px minmax(0, 1.35fr) 520px;
       gap:22px;
       align-items:start;
     }}
@@ -1803,11 +1925,23 @@ def make_html_page(title, body_html, path, active_url="", subtitle="", toc_items
     .dash-card {{ background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:18px; box-shadow:0 4px 14px rgba(15,23,42,.04); }}
     .dash-card h2 {{ font-size:17px; margin:0 0 10px; }}
     .dash-card a {{ display:block; margin:6px 0; font-size:14px; }}
-    @media (max-width:1180px) {{
+    .right-rail {{ position:sticky; top:82px; display:flex; flex-direction:column; gap:16px; }}
+    .rail-card {{ background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:16px; box-shadow:0 8px 22px rgba(15,23,42,.05); }}
+    .rail-card h2 {{ font-size:17px; margin:0 0 10px; }}
+    .compact-table {{ width:100%; border-collapse:collapse; font-size:12px; table-layout:fixed; }}
+    .compact-table th, .compact-table td {{ border-bottom:1px solid var(--line); padding:7px 6px; vertical-align:top; overflow-wrap:anywhere; }}
+    .compact-table th {{ color:#475569; background:#f8fafc; text-align:left; }}
+    .compact-list {{ margin:0; padding-left:18px; font-size:13px; }}
+    .compact-list li {{ margin:7px 0; }}
+    .trend-grid {{ display:grid; grid-template-columns:repeat(6, minmax(0, 1fr)); gap:12px; }}
+    .trend-item {{ text-align:center; border:1px solid var(--line); border-radius:16px; padding:12px; background:#fff; }}
+    .trend-key {{ display:block; font-weight:800; color:#0f4c81; }}
+    .trend-val {{ display:block; color:var(--muted); font-size:12px; margin-top:3px; }}
+    @media (max-width:1480px) {{
       .layout {{ grid-template-columns:240px minmax(0, 1fr); }}
       .news-grid {{ grid-template-columns:1fr; }}
       .event-mini-grid {{ grid-template-columns:repeat(2, minmax(0,1fr)); }}
-      .toc {{ display:none; }}
+      .toc, .right-rail {{ display:none; }}
       .stat-grid {{ grid-template-columns:repeat(2, minmax(0,1fr)); }}
     }}
     @media (max-width:820px) {{
@@ -1820,6 +1954,7 @@ def make_html_page(title, body_html, path, active_url="", subtitle="", toc_items
       .stat-grid {{ grid-template-columns:1fr; }}
       .news-grid {{ grid-template-columns:1fr; }}
       .event-mini-grid {{ grid-template-columns:1fr; }}
+      .trend-grid {{ grid-template-columns:repeat(2, minmax(0,1fr)); }}
     }}
   </style>
 </head>
@@ -1899,7 +2034,7 @@ def build_article_cards(items):
     for i, raw in enumerate(items, 1):
         a = normalize_display_item(raw)
         countries = " ".join(add_country_flag(c) for c in a.get("countries", []))
-        companies = ", ".join(a.get("companies", []))
+        companies = ", ".join(format_companies_with_flags(a.get("companies", [])))
         techs = ", ".join(a.get("technologies", []))
         emoji = emoji_for_category(a.get("category", ""), a.get("technologies", []))
         source_text = a.get("source", "") or "출처 미확인"
@@ -1954,7 +2089,7 @@ def create_daily_report(articles, history=None, target_date=None):
     display_items = get_recent_daily_items(today, articles, history, max_days=DAILY_REPORT_LOOKBACK_DAYS, limit=max(10, MAX_ITEMS))
 
     title = f"{today} 상하수도·수처리 상세 분석 보고서"
-    subtitle = "당일 기사만 사용합니다. 같은 내용의 중복 기사는 자동 제외합니다."
+    subtitle = f"최근 {DAILY_REPORT_LOOKBACK_DAYS}일 기사까지 사용합니다. 같은 내용의 중복 기사는 자동 제외합니다."
     active_url = f"reports/{today}/"
     toc_items = [(f"article-{i}", f"기사 {i}") for i in range(1, min(len(display_items), 12) + 1)]
 
@@ -2097,12 +2232,19 @@ def build_headline_list(items):
         date = a.get("date", "")
         link = a.get("link", "")
         category = a.get("category", "")
+        countries = " ".join(add_country_flag(c) for c in a.get("countries", []))
+        companies = ", ".join(format_companies_with_flags(a.get("companies", [])))
         specs = a.get("specs", []) or []
         specs_html = ""
         if specs:
             specs_html = "<div class='headline-specs'>" + " · ".join(html.escape(str(x)) for x in specs[:4]) + "</div>"
         date_context = a.get("date_context", "") or get_article_date_context(a)
-        meta = f"<span class='meta'> · 기사일 {html.escape(date)} · 발표/일정 {html.escape(date_context)} · {html.escape(source)} · {html.escape(category)}</span>"
+        extra = ""
+        if countries:
+            extra += f" · {html.escape(countries)}"
+        if companies:
+            extra += f" · {html.escape(companies)}"
+        meta = f"<span class='meta'> · 기사일 {html.escape(date)} · 발표/일정 {html.escape(date_context)} · 출처 {html.escape(source)} · {html.escape(category)}{extra}</span>"
         if link:
             parts.append(f'<li><a href="{html.escape(link)}" target="_blank" rel="noopener noreferrer"><span class="headline-title">{html.escape(title)}</span></a>{meta}{specs_html}</li>')
         else:
@@ -2111,22 +2253,7 @@ def build_headline_list(items):
     return "\n".join(parts)
 
 def build_event_preview(limit=5):
-    cards = []
-    for item in EVENT_CATALOG[:limit]:
-        cards.append(f"""
-        <article class="event-mini-card">
-          <div class="event-grade grade-{html.escape(item['grade'])}">{html.escape(item['grade'])}급</div>
-          <h3>{html.escape(item['name'])}</h3>
-          <p class="meta">{html.escape(item['scope'])} · {html.escape(item['location'])} · {html.escape(item['date'])}</p>
-          <p>{html.escape(item['note'])}</p>
-          <p class="meta">규모: {html.escape(item['scale'])}</p>
-        </article>
-        """)
-
-    return f"""
-    <div class="event-mini-grid">{''.join(cards)}</div>
-    <p><a href="{rel_url('events/')}">전체 학회·전시회 일정 보기</a></p>
-    """
+    return build_events_table(get_event_items(limit=limit), compact=True) + f'<p><a href="{rel_url("events/")}">전체 학회·전시회 일정 보기</a></p>'
 
 def create_sources_page():
     groups = {}
@@ -2188,20 +2315,12 @@ def create_filters_page():
 
 
 def create_events_page():
-    rows = []
-    for item in EVENT_CATALOG:
-        rows.append(
-            f"<tr><td>{html.escape(item['grade'])}</td><td><a href='{html.escape(item['url'])}' target='_blank' rel='noopener noreferrer'>{html.escape(item['name'])}</a></td><td>{html.escape(item['scope'])}</td><td>{html.escape(item['location'])}</td><td>{html.escape(item['date'])}</td><td>{html.escape(item['scale'])}</td><td>{html.escape(item['note'])}</td></tr>"
-        )
-
+    events = update_events_cache()
     body = f"""
     <section class="card" id="events">
       <h2>국내·해외 멤브레인/수처리 학회·전시회</h2>
-      <table class="source-table">
-        <thead><tr><th>등급</th><th>행사</th><th>구분</th><th>장소</th><th>일정</th><th>규모</th><th>비고</th></tr></thead>
-        <tbody>{''.join(rows)}</tbody>
-      </table>
-      <p class="meta">정확한 개최일·시간·부스 규모는 각 공식 홈페이지 공지를 기준으로 확인해야 합니다.</p>
+      <p class="meta">현재 연도와 내년 연도 중심으로 표시합니다. 일정·장소가 확정되지 않은 행사는 미정으로 표시합니다.</p>
+      {build_events_table(events)}
     </section>
     """
 
@@ -2221,6 +2340,282 @@ def create_static_info_pages():
     create_events_page()
 
 
+
+
+def is_project_item(item):
+    a = normalize_display_item(item)
+    text = f"{a.get('title','')} {a.get('ko_title','')} {a.get('summary','')} {a.get('brief','')} {a.get('category','')} {' '.join(a.get('technologies', []))} {' '.join(a.get('specs', []))}".lower()
+    if "프로젝트/수주" in a.get("category", ""):
+        return True
+    return any(k.lower() in text for k in PROJECT_KEYWORDS)
+
+
+def detect_project_stage(item):
+    a = normalize_display_item(item)
+    text = f"{a.get('title','')} {a.get('ko_title','')} {a.get('summary','')} {a.get('brief','')} {a.get('date_context','')}".lower()
+    for key, label in PROJECT_STAGE_KEYWORDS.items():
+        if key.lower() in text:
+            return label
+    return "확인 필요"
+
+
+def get_project_location(item):
+    a = normalize_display_item(item)
+    countries = a.get("countries", []) or []
+    if countries:
+        return " ".join(add_country_flag(c) for c in countries[:2])
+    text = f"{a.get('title','')} {a.get('ko_title','')} {a.get('summary','')} {a.get('brief','')}"
+    flag = country_flag_from_text(text)
+    if flag:
+        return flag
+    return "확인 필요"
+
+
+def get_project_items(history, limit=PROJECT_NEWS_LIMIT):
+    pool = [normalize_display_item(x) for x in history if is_recent_dashboard_item(x) and is_project_item(x)]
+    return dedupe_similar_articles(pool, limit=limit, threshold=0.58)
+
+
+def get_numeric_items(history, limit=NUMERIC_NEWS_LIMIT):
+    pool = []
+    for x in history:
+        a = normalize_display_item(x)
+        if not is_recent_dashboard_item(a):
+            continue
+        if a.get("specs"):
+            pool.append(a)
+    return dedupe_similar_articles(pool, limit=limit, threshold=0.58)
+
+
+def format_specs_short(specs, max_items=3):
+    specs = [str(s).strip() for s in (specs or []) if str(s).strip()]
+    if not specs:
+        return "-"
+    return " · ".join(specs[:max_items])
+
+
+def build_projects_table(items, compact=False):
+    if not items:
+        return '<p class="meta">표시할 프로젝트·수주 동향이 아직 없습니다.</p>'
+    cls = "compact-table" if compact else "source-table"
+    rows = []
+    for raw in items:
+        a = normalize_display_item(raw)
+        title = a.get("ko_title") or a.get("title") or "제목 없음"
+        link = a.get("link", "")
+        title_html = f'<a href="{html.escape(link)}" target="_blank" rel="noopener noreferrer">{html.escape(title)}</a>' if link else html.escape(title)
+        rows.append(f"""
+        <tr>
+          <td>{title_html}</td>
+          <td>{html.escape(get_project_location(a))}</td>
+          <td>{html.escape(format_specs_short(a.get('specs'), 2))}</td>
+          <td>{html.escape(a.get('date_context') or get_article_date_context(a))}</td>
+          <td>{html.escape(detect_project_stage(a))}</td>
+          <td>{html.escape(a.get('source','출처 미확인'))}</td>
+        </tr>
+        """)
+    return f"""
+    <table class="{cls}">
+      <thead><tr><th>프로젝트명</th><th>지역</th><th>사업비/용량</th><th>기간·날짜</th><th>단계</th><th>출처</th></tr></thead>
+      <tbody>{''.join(rows)}</tbody>
+    </table>
+    """
+
+
+def build_numeric_table(items, compact=False):
+    if not items:
+        return '<p class="meta">수치가 포함된 기사가 아직 없습니다.</p>'
+    cls = "compact-table" if compact else "source-table"
+    rows = []
+    for raw in items:
+        a = normalize_display_item(raw)
+        title = a.get("ko_title") or a.get("title") or "제목 없음"
+        link = a.get("link", "")
+        title_html = f'<a href="{html.escape(link)}" target="_blank" rel="noopener noreferrer">{html.escape(title)}</a>' if link else html.escape(title)
+        rows.append(f"""
+        <tr>
+          <td>{title_html}</td>
+          <td>{html.escape(format_specs_short(a.get('specs'), 4))}</td>
+          <td>{html.escape(a.get('date',''))}</td>
+          <td>{html.escape(a.get('date_context') or get_article_date_context(a))}</td>
+          <td>{html.escape(a.get('source','출처 미확인'))}</td>
+        </tr>
+        """)
+    return f"""
+    <table class="{cls}">
+      <thead><tr><th>기사 제목</th><th>핵심 수치</th><th>기사일</th><th>기간·날짜</th><th>출처</th></tr></thead>
+      <tbody>{''.join(rows)}</tbody>
+    </table>
+    """
+
+
+def build_keyword_trends(history, days=7, limit=6):
+    cutoff = (datetime.now(KST) - timedelta(days=days)).strftime("%Y-%m-%d")
+    counts = {}
+    for item in history:
+        if item.get("date", "") < cutoff:
+            continue
+        for key in item.get("keywords", []) + item.get("technologies", []):
+            key = str(key).strip()
+            if not key or len(key) > 32:
+                continue
+            counts[key] = counts.get(key, 0) + 1
+    top = sorted(counts.items(), key=lambda x: x[1], reverse=True)[:limit]
+    if not top:
+        return '<p class="meta">최근 키워드 집계가 아직 없습니다.</p>'
+    items = []
+    for key, val in top:
+        items.append(f'<div class="trend-item"><span class="trend-key">{html.escape(key)}</span><span class="trend-val">{val}건</span></div>')
+    return '<div class="trend-grid">' + ''.join(items) + '</div>'
+
+
+def fetch_event_candidates_from_search(limit=12):
+    if os.getenv("ENABLE_EVENT_SEARCH", "true").lower() != "true":
+        return []
+    feeds = []
+    for item in EVENT_SEARCH_QUERY_CONFIG:
+        query = item.get("query", "")
+        if not query:
+            continue
+        if item.get("engine") == "google":
+            url = google_news_rss_url(query, hl="ko" if item.get("region") == "domestic" else "en", gl="KR" if item.get("region") == "domestic" else "US", ceid="KR:ko" if item.get("region") == "domestic" else "US:en")
+        else:
+            url = bing_news_rss_url(query)
+        feeds.append({"name": item.get("name", "Event Search"), "url": url, "region": item.get("region", "")})
+    candidates = []
+    current_year = datetime.now(KST).year
+    allowed_years = {str(current_year), str(current_year + 1)}
+    for feed in feeds:
+        parsed = feedparser.parse(feed["url"])
+        for entry in parsed.entries[:20]:
+            title = clean_text(entry.get("title", ""))
+            summary = clean_text(entry.get("summary", "") or entry.get("description", ""))
+            combined = f"{title} {summary}"
+            if not any(y in combined for y in allowed_years):
+                continue
+            score, matched = score_article(title, summary)
+            if score < 4 and not re.search(r"conference|exhibition|expo|학회|전시회|컨퍼런스", combined, re.I):
+                continue
+            candidates.append({
+                "grade": "후보",
+                "name": replace_company_names_with_english(title[:90]),
+                "scope": "국내" if feed.get("region") == "domestic" else "해외",
+                "location": "미정",
+                "date": ", ".join(extract_date_context_from_text(combined)) or "미정",
+                "scale": "확인 필요",
+                "url": entry.get("link", ""),
+                "note": "검색 기반 신규 행사 후보",
+                "source": feed.get("name", "Event Search"),
+            })
+    return dedupe_similar_articles(candidates, limit=limit, threshold=0.60)
+
+
+def update_events_cache():
+    current_year = datetime.now(KST).year
+    allowed_years = {str(current_year), str(current_year + 1)}
+    static_items = []
+    for item in EVENT_CATALOG:
+        copied = dict(item)
+        # 연도가 명시되지 않은 정기행사는 현재연도/내년 목록에서도 보이도록 유지합니다.
+        copied["source"] = copied.get("source", "공식/기본 등록")
+        static_items.append(copied)
+    candidates = fetch_event_candidates_from_search(limit=12)
+    merged = static_items + candidates
+    save_json(EVENTS_CACHE_FILE, {"updated_at": datetime.now(KST).strftime("%Y-%m-%d %H:%M:%S KST"), "events": merged})
+    return merged
+
+
+def get_event_items(limit=None):
+    data = load_json(EVENTS_CACHE_FILE, {})
+    events = data.get("events") if isinstance(data, dict) else None
+    if not events:
+        events = update_events_cache()
+    current_year = datetime.now(KST).year
+    allowed_years = {str(current_year), str(current_year + 1)}
+    filtered = []
+    for item in events:
+        text = f"{item.get('name','')} {item.get('date','')} {item.get('note','')}"
+        if any(y in text for y in allowed_years) or not re.search(r"20\d{2}", text):
+            filtered.append(item)
+    result = filtered[:limit] if limit else filtered
+    return result
+
+
+def build_events_table(items, compact=False):
+    if not items:
+        return '<p class="meta">표시할 학회·전시회 일정이 없습니다.</p>'
+    cls = "compact-table" if compact else "source-table"
+    rows = []
+    for item in items:
+        name = item.get("name", "")
+        url = item.get("url", "")
+        name_html = f'<a href="{html.escape(url)}" target="_blank" rel="noopener noreferrer">{html.escape(name)}</a>' if url else html.escape(name)
+        rows.append(f"""
+        <tr>
+          <td>{html.escape(item.get('grade',''))}</td>
+          <td>{name_html}</td>
+          <td>{html.escape(item.get('scope',''))}</td>
+          <td>{html.escape(item.get('location','미정'))}</td>
+          <td>{html.escape(item.get('date','미정'))}</td>
+          <td>{html.escape(item.get('scale','확인 필요'))}</td>
+          <td>{html.escape(item.get('note',''))}</td>
+        </tr>
+        """)
+    return f"""
+    <table class="{cls}">
+      <thead><tr><th>등급</th><th>행사</th><th>구분</th><th>장소</th><th>일정</th><th>규모</th><th>비고</th></tr></thead>
+      <tbody>{''.join(rows)}</tbody>
+    </table>
+    """
+
+
+def build_right_rail(history):
+    projects = get_project_items(history, limit=5)
+    numeric = get_numeric_items(history, limit=5)
+    events = get_event_items(limit=5)
+    return f"""
+    <aside class="right-rail">
+      <section class="rail-card" id="rail-projects">
+        <h2>프로젝트·수주 TOP 5</h2>
+        {build_projects_table(projects, compact=True)}
+        <p><a href="{rel_url('projects/')}">더보기</a></p>
+      </section>
+      <section class="rail-card" id="rail-numeric">
+        <h2>수치 포함 기사 TOP 5</h2>
+        {build_numeric_table(numeric, compact=True)}
+        <p><a href="{rel_url('numeric-news/')}">더보기</a></p>
+      </section>
+      <section class="rail-card" id="rail-events">
+        <h2>학회·전시회 일정 TOP 5</h2>
+        {build_events_table(events, compact=True)}
+        <p><a href="{rel_url('events/')}">더보기</a></p>
+      </section>
+    </aside>
+    """
+
+
+def create_projects_page(history):
+    items = get_project_items(history, limit=60)
+    body = f"""
+    <section class="card" id="projects">
+      <h2>프로젝트·수주 동향</h2>
+      <p class="meta">사업비, 처리용량, 지역, 기간·날짜, 단계, 출처를 함께 표시합니다. 기회점수는 사용하지 않습니다.</p>
+      {build_projects_table(items)}
+    </section>
+    """
+    make_html_page("프로젝트·수주 동향", body, PROJECTS_DIR, active_url="projects/", subtitle="상하수도·수처리 프로젝트, 발주, 수주, 증설, 개선 관련 기사만 모아 표시합니다.", toc_items=[("projects", "프로젝트·수주")])
+
+
+def create_numeric_page(history):
+    items = get_numeric_items(history, limit=80)
+    body = f"""
+    <section class="card" id="numeric-news">
+      <h2>수치가 포함된 주요 기사</h2>
+      <p class="meta">사업비, 처리용량, Flux, TMP, MLSS, 제거율, 참석자 수 등 정량 정보가 포함된 기사만 모읍니다.</p>
+      {build_numeric_table(items)}
+    </section>
+    """
+    make_html_page("수치 포함 기사", body, NUMERIC_DIR, active_url="numeric-news/", subtitle="기술 벤치마킹과 시장규모 판단에 필요한 숫자 중심 기사입니다.", toc_items=[("numeric-news", "수치 기사")])
 def build_today_detail_preview(history, limit=TOP_NEWS_LIMIT):
     today = datetime.now(KST).strftime("%Y-%m-%d")
     today_items = [normalize_display_item(x) for x in history if x.get("date") == today]
@@ -2236,6 +2631,8 @@ def update_docs_index(daily_url, weekly_url, monthly_url):
 
     history = load_json(HISTORY_FILE, [])
     global_items, domestic_items = get_dashboard_items(history, limit=TOP_NEWS_LIMIT)
+    project_items = get_project_items(history, limit=PROJECT_NEWS_LIMIT)
+    numeric_items = get_numeric_items(history, limit=NUMERIC_NEWS_LIMIT)
 
     total_count = len(history)
     domestic_count = sum(1 for x in history if article_is_domestic(x))
@@ -2254,7 +2651,7 @@ def update_docs_index(daily_url, weekly_url, monthly_url):
     body = f"""
     <section class="card" id="today-detail">
       <h2>오늘의 상세 분석 기사</h2>
-      <p class="meta">당일 일일 상세 보고서에 포함되는 기사 제목입니다. 중복 내용은 자동 제외합니다.</p>
+      <p class="meta">일일 상세 보고서에 포함되는 기사 제목입니다. 중복 내용은 자동 제외합니다.</p>
       {build_today_detail_preview(history, limit=TOP_NEWS_LIMIT)}
       <p><a href="{html.escape(daily_url)}">오늘 상세 분석 보고서 전체 보기</a></p>
     </section>
@@ -2270,10 +2667,29 @@ def update_docs_index(daily_url, weekly_url, monthly_url):
       </div>
     </section>
 
+    <section class="card" id="projects-preview">
+      <h2>프로젝트·수주 동향</h2>
+      <p class="meta">사업비, 처리용량, 지역, 기간·날짜, 단계, 출처를 함께 표시합니다.</p>
+      {build_projects_table(project_items, compact=False)}
+      <p><a href="{rel_url('projects/')}">프로젝트·수주 동향 전체 보기</a></p>
+    </section>
+
+    <section class="card" id="numeric-preview">
+      <h2>수치가 포함된 주요 기사</h2>
+      <p class="meta">사업비, 처리용량, Flux, TMP, MLSS, 제거율 등 정량 정보가 포함된 기사입니다.</p>
+      {build_numeric_table(numeric_items, compact=False)}
+      <p><a href="{rel_url('numeric-news/')}">수치 포함 기사 전체 보기</a></p>
+    </section>
+
     <section class="card" id="events-preview">
       <h2>국내·해외 학회 및 전시회 일정</h2>
-      <p class="meta">행사 성격, 위치, 일정, 규모 등급과 비고를 함께 표시합니다.</p>
+      <p class="meta">현재 연도와 내년 연도 중심으로 행사 성격, 위치, 일정, 규모 등급과 비고를 표시합니다.</p>
       {build_event_preview(limit=5)}
+    </section>
+
+    <section class="card" id="keyword-trends">
+      <h2>주요 키워드 트렌드 최근 7일</h2>
+      {build_keyword_trends(history, days=7, limit=6)}
     </section>
 
     <section class="card" id="collection-stats">
@@ -2305,8 +2721,9 @@ def update_docs_index(daily_url, weekly_url, monthly_url):
         body,
         DOCS_DIR,
         active_url="",
-        subtitle="국내·해외 수처리 뉴스, 멤브레인/MBR 동향, 학회·전시회 일정을 누적 관리합니다.",
-        toc_items=[("today-detail", "오늘 상세 기사"), ("headlines", "주요 뉴스"), ("events-preview", "학회·전시회"), ("collection-stats", "수집 현황"), ("source-filter", "출처/필터")],
+        subtitle="국내·해외 수처리 뉴스, 멤브레인/MBR 동향, 프로젝트·수주, 수치 기사, 학회·전시회 일정을 누적 관리합니다.",
+        toc_items=[("today-detail", "오늘 상세 기사"), ("headlines", "주요 뉴스"), ("projects-preview", "프로젝트·수주"), ("numeric-preview", "수치 기사"), ("events-preview", "학회·전시회"), ("keyword-trends", "키워드 트렌드"), ("collection-stats", "수집 현황"), ("source-filter", "출처/필터")],
+        right_html=build_right_rail(history),
     )
 
 def build_policy_alerts(articles):
@@ -2485,6 +2902,8 @@ def main():
     monthly_url = create_period_report("monthly", month_items)
 
     create_static_info_pages()
+    create_projects_page(history)
+    create_numeric_page(history)
     update_docs_index(daily_url, weekly_url, monthly_url)
 
     telegram_text = build_telegram_message(
