@@ -22,10 +22,10 @@ on:
 
   schedule:
     # GitHub Actions cron uses UTC.
-    # 21:00 UTC = 06:00 KST
-    # 03:00 UTC = 12:00 KST
-    # 09:00 UTC = 18:00 KST
-    # 14:00 UTC = 23:00 KST
+    # 21:00 UTC = 06:00 KST.
+    # 03:00 UTC = 12:00 KST.
+    # 09:00 UTC = 18:00 KST.
+    # 14:00 UTC = 23:00 KST.
     - cron: "0 21 * * *"
     - cron: "0 3 * * *"
     - cron: "0 9 * * *"
@@ -70,11 +70,6 @@ jobs:
           mkdir -p ../docs/reports
           mkdir -p ../docs/weekly
           mkdir -p ../docs/monthly
-          mkdir -p ../docs/projects
-          mkdir -p ../docs/numeric-news
-          mkdir -p ../docs/events
-          mkdir -p ../docs/sources
-          mkdir -p ../docs/filters
 
           if [ ! -f news_history.json ]; then
             echo "[]" > news_history.json
@@ -82,10 +77,6 @@ jobs:
 
           if [ ! -f sent_links.json ]; then
             echo "[]" > sent_links.json
-          fi
-
-          if [ ! -f events_cache.json ]; then
-            echo "{}" > events_cache.json
           fi
 
       - name: Show trigger information
@@ -106,23 +97,17 @@ jobs:
           OPENAI_MODEL: "gpt-4.1"
           MAX_ITEMS: "30"
           MIN_SCORE: "8"
-          DAILY_REPORT_LOOKBACK_DAYS: "2"
-          DASHBOARD_YEAR_WINDOW: "2"
-          ARTICLE_MAX_AGE_DAYS: "730"
-          PROJECT_NEWS_LIMIT: "10"
-          NUMERIC_NEWS_LIMIT: "10"
-          EVENT_YEAR_WINDOW: "2"
-          ENABLE_SEARCH_RSS: "true"
-          ENABLE_EVENT_SEARCH: "true"
-          RSS_SLEEP_SECONDS: "0.35"
+          ENABLE_OG_IMAGE_FETCH: "true"
+          IMAGE_FETCH_TIMEOUT: "7"
 
           BACKFILL_MODE: ${{ github.event_name == 'workflow_dispatch' && inputs.backfill_mode || 'false' }}
           BACKFILL_START_DATE: ${{ github.event_name == 'workflow_dispatch' && inputs.backfill_start_date || '' }}
           BACKFILL_END_DATE: ${{ github.event_name == 'workflow_dispatch' && inputs.backfill_end_date || '' }}
 
-          # Scheduled run always sends Telegram.
+          # Scheduled run updates the website 4 times/day.
+          # Telegram is sent only at 06:00 KST schedule (21:00 UTC).
           # Manual run follows the workflow_dispatch input.
-          SEND_TELEGRAM: ${{ github.event_name == 'schedule' && 'true' || inputs.send_telegram }}
+          SEND_TELEGRAM: ${{ github.event_name == 'schedule' && github.event.schedule == '0 21 * * *' && 'true' || inputs.send_telegram }}
 
           TZ: Asia/Seoul
         run: python main.py
@@ -142,10 +127,6 @@ jobs:
 
           if [ -f news_history.json ]; then
             git add news_history.json
-          fi
-
-          if [ -f events_cache.json ]; then
-            git add events_cache.json
           fi
 
           if git diff --cached --quiet; then
