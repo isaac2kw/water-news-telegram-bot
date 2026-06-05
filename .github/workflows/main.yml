@@ -88,7 +88,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_MODEL: "gpt-5.4"
+          OPENAI_MODEL: "gpt-4.1"
           MAX_ITEMS: "30"
           MIN_SCORE: "8"
 
