@@ -4733,5 +4733,111 @@
     "region": "domestic",
     "source_type": "search_rss",
     "image": ""
+  },
+  {
+    "date": "2026-06-02",
+    "title": "Toray introduces ultrafiltration membrane designed to reduce biofouling in wastewater reuse",
+    "ko_title": "Toray, 바이오오염 저감 초여과막 출시",
+    "brief": "Toray가 폐수 재이용을 위한 F-HFUG 초여과막 모듈을 선보였습니다. 0.005마이크로미터 기공 크기로 바이오폴리머와 역삼투막 오염을 줄입니다.",
+    "summary": "Toray는 폐수 재이용 공정에서 바이오오염을 줄이기 위해 F-HFUG 시리즈 초여과막 모듈을 개발했습니다. 이 제품은 0.005마이크로미터의 미세한 기공 크기를 갖추고 있어, 바이오폴리머의 통과를 최소화하고 이후 단계인 역삼투(RO) 공정의 오염을 감소시키는 데 중점을 두고 있습니다. 초여과막은 폐수 재이용 및 고도 정수처리에서 핵심적인 전처리 기술로, 막 오염 저감은 운영 효율성과 비용 절감에 중요한 역할을 합니다. Toray의 신제품은 수처리 산업에서 분리막 기술의 발전과 바이오오염 제어에 대한 시장의 요구에 부응하는 사례입니다. 기사에는 구체적인 용량이나 사업 적용 사례 등은 언급되지 않았습니다.",
+    "why_important": "분리막의 바이오오염 저감은 폐수 재이용 및 고도 수처리 시장에서 운영비 절감과 신뢰성 향상에 직접적으로 기여합니다. Toray의 신제품 출시는 분리막/막여과 기술 경쟁력 강화 측면에서 주목받고 있습니다.",
+    "category": "분리막/막여과",
+    "countries": [],
+    "companies": [
+      "Toray"
+    ],
+    "technologies": [
+      "Ultrafiltration",
+      "Biofouling",
+      "Membrane Module",
+      "Water Reuse"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-06-02",
+    "specs": [
+      "0.005-micrometer pore size"
+    ],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a23f6fa4d6e4519979ecaa65a108d39&url=https%3a%2f%2fwww.dairyfoods.com%2farticles%2f99167-toray-introduces-ultrafiltration-membrane-designed-to-reduce-biofouling-in-wastewater-reuse&c=9496410966415004977&mkt=en-us",
+    "score": 57,
+    "keywords": [
+      "membrane",
+      "ultrafiltration",
+      "wastewater",
+      "water reuse",
+      "toray",
+      "biofouling",
+      "membrane module"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-06-02",
+    "title": "Membrane Technology Forum 2026 expands focus on beverage innovation and wastewater treatment",
+    "ko_title": "Membrane Technology Forum 2026, 음료 혁신·폐수처리 확대",
+    "brief": "Membrane Technology Forum 2026이 음료 시장 혁신과 폐수처리 분야에 초점을 확대합니다. 다양한 연사들이 막기술의 새로운 기회를 제시할 예정입니다.",
+    "summary": "Membrane Technology Forum 2026은 기존 막기술 중심의 논의에서 한 걸음 더 나아가, 음료 시장의 혁신과 폐수처리 분야에 대한 집중을 강화할 예정입니다. 이번 포럼에서는 음료 산업에서 막기술의 적용 가능성과 시장 기회에 대한 다양한 연사들의 발표가 예정되어 있습니다. 폐수처리 분야 역시 주요 의제로 다뤄지며, 막여과 및 관련 기술의 최신 동향이 공유될 전망입니다. 이러한 변화는 막기술이 전통적 수처리뿐 아니라 식음료 산업 등 다양한 분야로 확장되고 있음을 보여줍니다. 수처리 산업에서는 막기술의 응용 범위 확대와 시장 다변화에 주목할 필요가 있습니다.",
+    "why_important": "막기술의 응용 분야가 음료 산업 등으로 확대되면서 시장 기회가 넓어지고 있습니다. 또한 폐수처리 분야의 기술 발전 동향을 파악할 수 있는 중요한 행사입니다.",
+    "category": "학회/전시회",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "Membrane",
+      "Wastewater",
+      "Water Treatment",
+      "Beverage Innovation"
+    ],
+    "policy_alert": "",
+    "date_context": "2026년 개최 예정",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a23f6fa4d6e4519979ecaa65a108d39&url=https%3a%2f%2fwww.dairyfoods.com%2farticles%2f99166-membrane-technology-forum-2026-expands-focus-on-beverage-innovation-and-wastewater-treatment&c=1461589195714993340&mkt=en-us",
+    "score": 23,
+    "keywords": [
+      "membrane",
+      "wastewater",
+      "water treatment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-06-06",
+    "title": "South Sioux City receives $40M loan for wastewater treatment plant expansion - KTIV",
+    "ko_title": "South Sioux City, 하수처리장 확장에 4천만 달러 대출",
+    "brief": "South Sioux City가 하수처리장 확장 사업을 위해 4천만 달러 대출을 받았습니다. 이번 자금 지원은 지역 수처리 인프라 개선에 활용됩니다.",
+    "summary": "South Sioux City는 하수처리장 확장 사업을 위해 4천만 달러의 대출을 확보했습니다. 이 자금은 기존 하수처리장의 용량 증대와 시설 현대화에 사용될 예정입니다. 지역 인구 증가와 산업 발전에 따른 하수 처리 수요 증가에 대응하기 위한 조치입니다. 이번 확장 사업은 지역 환경 보호와 공공 위생 향상에 기여할 것으로 기대됩니다. 수처리 산업에서는 대규모 공공 프로젝트로서 관련 장비, 기술, 서비스 공급에 기회가 될 수 있습니다.",
+    "why_important": "대규모 하수처리장 확장 사업은 수처리 시장의 성장과 기술 수요 증가로 이어집니다. 공공 인프라 투자 확대는 관련 기업과 기술 공급자에게 새로운 사업 기회를 제공합니다.",
+    "category": "프로젝트/수주",
+    "countries": [
+      "미국"
+    ],
+    "companies": [],
+    "technologies": [
+      "Wastewater Treatment",
+      "Plant Expansion"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 발행일 기준",
+    "specs": [
+      "$40M loan"
+    ],
+    "source": "Google News Global Water",
+    "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOSXVXMUZ1ZWRzZldUMmY3b3ZnRUxlYkN5bjJkS2JUN1FnYWd3cmdxQ2pseTV5cHh3aTUtREFSX1lDaVJpbENENkxYelVVVG5oY0tBcjNWNDJJQ3JseGpWTVJkOTdvcm1HNGdQMGRvSl9OQlBScjZKNVJHaU80X21PMGdvOFlFR1cxYVUwVXU0cnZDZEs1c2VmenhuTDZoQXJYUU9QeVJ3TTRqbTJpV1Iw?oc=5",
+    "score": 20,
+    "keywords": [
+      "wastewater",
+      "water treatment",
+      "expansion"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
   }
 ]
