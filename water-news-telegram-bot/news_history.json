@@ -4839,5 +4839,78 @@
     "region": "global",
     "source_type": "rss",
     "image": ""
+  },
+  {
+    "date": "2026-06-02",
+    "title": "Toray introduces ultrafiltration membrane designed to reduce biofouling in wastewater reuse",
+    "ko_title": "Toray, 바이오오염 저감 초여과막 출시",
+    "brief": "Toray가 바이오오염 저감을 위한 F-HFUG 초여과막 모듈을 개발했습니다. 0.005마이크로미터 기공 크기로 폐수 재이용 공정의 효율을 높입니다.",
+    "summary": "Toray는 폐수 재이용 공정에서 바이오오염 및 역삼투막 오염을 줄이기 위해 F-HFUG 시리즈 초여과막 모듈을 출시했습니다. 이 제품은 0.005마이크로미터의 미세한 기공 크기를 갖추고 있어, 바이오폴리머의 통과를 최소화하여 후단의 역삼투(RO) 공정의 오염을 감소시킵니다. 초여과막은 폐수 재이용 및 고도 수처리 분야에서 핵심적인 역할을 하며, 막 오염 저감 기술은 운전비 절감과 시스템 신뢰성 향상에 기여합니다. Toray의 신제품은 수처리 산업에서 분리막 기술의 진보와 함께, 재이용수 품질 향상에 직접적인 영향을 미칠 것으로 기대됩니다.",
+    "why_important": "막 오염 저감은 재이용수 및 고도처리 시장에서 운전 효율과 비용 절감에 매우 중요합니다. Toray의 신제품은 분리막/막여과 기술 경쟁력 강화에 기여할 수 있습니다.",
+    "category": "분리막/막여과",
+    "countries": [],
+    "companies": [
+      "Toray"
+    ],
+    "technologies": [
+      "Ultrafiltration",
+      "Membrane Module",
+      "Biofouling",
+      "Wastewater Reuse"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 발행일 기준",
+    "specs": [
+      "0.005-micrometer pore size"
+    ],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a2434d4827f43f5aa523af9cdc7ef1b&url=https%3a%2f%2fwww.dairyfoods.com%2farticles%2f99167-toray-introduces-ultrafiltration-membrane-designed-to-reduce-biofouling-in-wastewater-reuse&c=9496410966415004977&mkt=en-us",
+    "score": 57,
+    "keywords": [
+      "membrane",
+      "ultrafiltration",
+      "wastewater",
+      "water reuse",
+      "toray",
+      "biofouling",
+      "membrane module"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-06-02",
+    "title": "Membrane Technology Forum 2026 expands focus on beverage innovation and wastewater treatment",
+    "ko_title": "Membrane Technology Forum 2026, 음료 혁신·폐수처리 확대",
+    "brief": "Membrane Technology Forum 2026이 음료 시장 혁신과 폐수처리 분야에 초점을 확대합니다. 더 많은 연사가 막기술의 새로운 기회를 논의할 예정입니다.",
+    "summary": "2026년에 개최되는 Membrane Technology Forum은 기존의 막기술 논의에서 한 걸음 더 나아가, 음료 시장의 혁신과 폐수처리 분야를 주요 의제로 확대합니다. 이번 포럼에서는 막기술이 음료 산업에서 창출할 수 있는 새로운 시장 기회와, 폐수처리 분야에서의 응용 가능성에 대해 다양한 연사가 발표할 예정입니다. 막기술은 수처리 산업에서 중요한 역할을 하며, 특히 음료 제조와 폐수 재이용 등에서 그 활용도가 높아지고 있습니다. 이러한 변화는 막여과 및 MBR 등 첨단 수처리 기술의 산업적 적용 확대와도 밀접한 관련이 있습니다. 포럼의 의제 확대는 수처리 산업 내 막기술의 시장성과 혁신 가능성을 보여줍니다.",
+    "why_important": "막기술의 적용 분야가 확대되면서 음료 산업과 폐수처리 시장 모두에서 새로운 비즈니스 기회가 창출될 수 있습니다. 이는 막여과 및 MBR 기술의 산업적 확산과 시장 성장에 중요한 신호입니다.",
+    "category": "학회/전시회",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "Membrane",
+      "Wastewater",
+      "Water Treatment",
+      "MBR",
+      "Beverage Innovation"
+    ],
+    "policy_alert": "",
+    "date_context": "2026년 개최 예정",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a2434d4827f43f5aa523af9cdc7ef1b&url=https%3a%2f%2fwww.dairyfoods.com%2farticles%2f99166-membrane-technology-forum-2026-expands-focus-on-beverage-innovation-and-wastewater-treatment&c=1461589195714993340&mkt=en-us",
+    "score": 23,
+    "keywords": [
+      "membrane",
+      "wastewater",
+      "water treatment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
   }
 ]
