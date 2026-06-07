@@ -5192,5 +5192,169 @@
     "region": "global",
     "source_type": "search_rss",
     "image": ""
+  },
+  {
+    "date": "2026-06-02",
+    "title": "Toray introduces ultrafiltration membrane designed to reduce biofouling in wastewater reuse",
+    "ko_title": "Toray, 바이오오염 저감 초여과막 출시",
+    "brief": "Toray가 폐수 재이용을 위한 F-HFUG 초여과막 모듈을 선보였습니다. 0.005마이크로미터 기공 크기로 바이오오염과 역삼투막 오염을 줄입니다.",
+    "summary": "Toray는 폐수 재이용 공정에서 바이오오염을 줄이기 위해 F-HFUG 시리즈 초여과막 모듈을 개발했습니다. 이 제품은 0.005마이크로미터의 미세한 기공 크기를 갖추어, 생체고분자 물질의 통과를 억제하고 후단의 역삼투(RO) 공정에서의 막 오염을 감소시키는 것이 특징입니다. 초여과막은 폐수 재이용 및 고도 수처리 분야에서 핵심적인 역할을 하며, 막 오염 저감은 운전 효율성과 유지관리 비용 절감에 중요한 영향을 미칩니다. 이번 신제품은 Toray의 막여과 기술력과 폐수 재이용 시장에서의 경쟁력을 보여줍니다. 수처리 산업에서 막 오염 제어는 지속적인 기술 개발의 주요 과제입니다.",
+    "why_important": "막 오염 저감 기술은 폐수 재이용 시장에서 운영비 절감과 시스템 신뢰성 향상에 매우 중요합니다. Toray의 신제품은 분리막/막여과 분야의 기술 경쟁을 촉진할 것으로 보입니다.",
+    "category": "분리막/막여과",
+    "countries": [],
+    "companies": [
+      "Toray"
+    ],
+    "technologies": [
+      "Ultrafiltration",
+      "Membrane Module",
+      "Biofouling",
+      "Wastewater Reuse"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 발행일 기준",
+    "specs": [
+      "0.005-micrometer pore size"
+    ],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a254ec580e74543a9ad59842eaf5bf2&url=https%3a%2f%2fwww.dairyfoods.com%2farticles%2f99167-toray-introduces-ultrafiltration-membrane-designed-to-reduce-biofouling-in-wastewater-reuse&c=9496410966415004977&mkt=en-us",
+    "score": 57,
+    "keywords": [
+      "membrane",
+      "ultrafiltration",
+      "wastewater",
+      "water reuse",
+      "toray",
+      "biofouling",
+      "membrane module"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-06-07",
+    "title": "하수처리장에 데이터센터 결합…냉각비 줄이고 부지 가치 높여 - 한국경제",
+    "ko_title": "하수처리장-데이터센터 결합, 냉각비 절감",
+    "brief": "하수처리장과 데이터센터를 결합해 냉각비를 줄이고 부지 가치를 높이는 방안이 주목받고 있습니다. 수처리 산업과 IT 인프라의 융합 사례로 평가됩니다.",
+    "summary": "하수처리장에 데이터센터를 결합하는 방식이 소개되었습니다. 데이터센터의 냉각에 하수처리장의 재이용수를 활용해 에너지 비용을 절감하고, 기존 하수처리장 부지의 활용 가치를 높일 수 있다는 점이 강조됩니다. 이러한 융합은 도시 내 한정된 부지의 효율적 사용과 친환경적 에너지 절감 효과를 동시에 추구할 수 있는 방안으로 평가됩니다. 수처리 산업에서는 재이용수의 부가가치 창출과 새로운 사업 모델로 주목받고 있습니다. IT 인프라와 환경 인프라의 협업이 확대될 가능성이 있습니다.",
+    "why_important": "하수처리장 재이용수의 활용 범위가 확대되어 수처리 산업의 새로운 시장 기회를 창출할 수 있습니다. 데이터센터의 에너지 효율 개선과 부지 활용 극대화라는 두 산업의 융합이 산업계에 시사점을 줍니다.",
+    "category": "재이용수",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "재이용수",
+      "데이터센터 냉각",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-06-07",
+    "specs": [],
+    "source": "Google News Korea 재이용수 PFAS",
+    "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5IS0V6dEozTWc3X1NRWFhsbnhZa3pSMUU4STdXaEs5Qy1MbEdxZ0ZpejF6dXpfMXlfR1pfUWpTU1drVWFmUU9XVU9VQUxyVlZOelIzY9IBVEFVX3lxTE5IS0V6dEozTWc3X1NRWFhsbnhZa3pSMUU4STdXaEs5Qy1MbEdxZ0ZpejF6dXpfMXlfR1pfUWpTU1drVWFmUU9XVU9VQUxyVlZOelIzYw?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-06-02",
+    "title": "‘악취 없애고 쾌적하게’...북항하수처리장 정비 실시 - 전남타임스",
+    "ko_title": "북항하수처리장 정비로 악취 개선 추진",
+    "brief": "북항하수처리장이 악취 저감과 쾌적한 환경 조성을 위해 정비에 들어갔습니다. 이번 조치는 지역 주민의 생활환경 개선에 중점을 두고 있습니다.",
+    "summary": "북항하수처리장이 악취 문제 해소와 쾌적한 환경 조성을 위해 정비를 실시합니다. 하수처리장은 지역 내 악취 민원과 환경 문제의 주요 원인 중 하나로 지적되어 왔습니다. 이번 정비는 하수처리 공정의 개선과 시설 현대화를 통해 악취를 줄이고, 주민 생활환경을 개선하는 데 목적이 있습니다. 수처리 산업에서는 하수처리장 운영 효율화와 환경 기준 강화가 지속적으로 요구되고 있어, 이번 사례는 관련 업계에 시사점을 제공합니다. 기사에는 구체적인 정비 방식이나 기술, 용량 등 세부 내용은 언급되지 않았습니다.",
+    "why_important": "하수처리장 정비는 지역 환경 민원 해소와 수처리 산업의 운영 효율화 측면에서 중요합니다. 특히 악취 저감은 주민 수용성과 환경 규제 대응에 직접적으로 영향을 미칩니다.",
+    "category": "프로젝트/수주",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "악취 저감"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-06-02",
+    "specs": [],
+    "source": "Google News Korea 재이용수 PFAS",
+    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBMME8yeEdDTktjNEJLVnF4NVh2NDlQS2FaaWViMnFjemdXTHpBNGp4RlN5dThZa25lcEl0X0RTdGkyS1Z3S2xjbGN3WDhsZFpsWm1udEpJQ1Jxb2JNWHhWd01TdDJFcU0?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-05-18",
+    "title": "인천경제청, 송도공공하수처리장 3단계 사업자 수의계약 추진 - 중부일보",
+    "ko_title": "송도공공하수처리장 3단계 수의계약 추진",
+    "brief": "인천경제청이 송도공공하수처리장 3단계 사업을 수의계약 방식으로 추진합니다. 사업자 선정 절차와 향후 일정이 주목됩니다.",
+    "summary": "인천경제자유구역청은 송도공공하수처리장 3단계 사업을 수의계약 방식으로 추진한다고 밝혔습니다. 이번 사업은 송도 지역의 하수처리 용량 확충과 환경 개선을 목표로 하고 있습니다. 수의계약 추진은 사업의 신속한 진행과 효율성 제고를 위한 결정으로 보입니다. 하수처리장 증설은 인구 증가와 산업단지 확장에 대응하기 위한 필수 인프라 확충 사업입니다. 수처리 산업에서는 대규모 공공 프로젝트로 관련 기업들의 참여와 기술 적용이 기대됩니다.",
+    "why_important": "대규모 하수처리장 증설 사업은 국내 수처리 시장 확대와 관련 기업의 수주 기회 증가에 직접적인 영향을 미칩니다. 수의계약 방식은 사업 추진 속도와 참여 기업 선정에 있어 시장에 중요한 변수가 될 수 있습니다.",
+    "category": "프로젝트/수주",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-05-18",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE90bjUwbUtpV0xfYmVncWNYLWlnc0FPVEhjY3ltVjJsZjVPTHkwVjFBaVdXZmE3eWN1a21mSDlkYUxHbXo3TjVPQ0RORGFzckw3ZTdCRWhxVmJSZURxblhYeEhQVE9RejRabTl5RVlZdw?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "search_rss",
+    "image": ""
+  },
+  {
+    "date": "2026-06-02",
+    "title": "Membrane Technology Forum 2026 expands focus on beverage innovation and wastewater treatment",
+    "ko_title": "Membrane Technology Forum 2026, 음료 혁신·폐수처리 확대",
+    "brief": "Membrane Technology Forum 2026은 음료 시장 혁신과 폐수처리 분야에 초점을 확대합니다. 다양한 연사가 막기술의 새로운 기회를 논의할 예정입니다.",
+    "summary": "2026년 개최 예정인 Membrane Technology Forum은 기존 막기술 중심에서 음료 시장 혁신과 폐수처리 분야로 의제를 확장합니다. 이번 포럼에서는 막기술이 음료 산업에서 창출할 수 있는 새로운 시장 기회와 폐수처리 분야의 최신 동향이 주요 논의 주제가 될 예정입니다. 다양한 연사가 참여해 막기술의 전략적 활용 방안과 산업 적용 사례를 공유할 계획입니다. 이러한 변화는 막기술의 응용 범위가 식음료 산업과 환경 분야로 확대되고 있음을 보여줍니다. 수처리 산업에서는 막기술의 다각적 활용이 시장 성장과 기술 발전에 중요한 역할을 할 것으로 기대됩니다.",
+    "why_important": "막기술의 응용 확대는 수처리 산업뿐만 아니라 음료 등 새로운 시장에서의 성장 가능성을 시사합니다. 이는 기술 및 시장 관점에서 산업 전반에 긍정적 영향을 미칠 수 있습니다.",
+    "category": "학회/전시회",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "Membrane",
+      "Wastewater",
+      "Water Treatment",
+      "Beverage Innovation"
+    ],
+    "policy_alert": "",
+    "date_context": "2026년 개최 예정",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a254ec580e74543a9ad59842eaf5bf2&url=https%3a%2f%2fwww.dairyfoods.com%2farticles%2f99166-membrane-technology-forum-2026-expands-focus-on-beverage-innovation-and-wastewater-treatment&c=1461589195714993340&mkt=en-us",
+    "score": 23,
+    "keywords": [
+      "membrane",
+      "wastewater",
+      "water treatment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
   }
 ]
