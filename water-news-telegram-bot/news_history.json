@@ -5561,5 +5561,73 @@
     "region": "global",
     "source_type": "rss",
     "image": ""
+  },
+  {
+    "date": "2026-05-27",
+    "title": "기획처, 하수처리장 에너지 자립화 확산 추진…내년 예산 반영 검토 - v.daum.net",
+    "ko_title": "기획처, 하수처리장 에너지 자립화 예산 검토",
+    "brief": "기획처가 하수처리장 에너지 자립화 확산을 위해 내년 예산 반영을 검토 중입니다. 이는 하수처리장 운영의 효율성과 지속가능성 강화를 목표로 합니다.",
+    "summary": "기획처는 하수처리장 에너지 자립화 확산을 위해 내년도 예산 반영을 검토하고 있습니다. 에너지 자립화는 하수처리장 운영비 절감과 탄소중립 실현에 기여할 수 있는 방안으로 주목받고 있습니다. 이번 정책 추진은 정부 차원의 예산 지원 확대를 통해 전국 하수처리장에 신재생에너지 도입을 촉진할 것으로 기대됩니다. 수처리 산업에서는 에너지 효율화 및 친환경 기술 개발이 중요한 이슈로, 관련 기업과 기술 공급업체에 새로운 기회가 될 수 있습니다. 기사에는 구체적인 사업비, 용량 등 수치는 언급되지 않았습니다.",
+    "why_important": "정부의 예산 반영 검토는 하수처리장 에너지 자립화 관련 시장 확대와 기술 도입 촉진에 직접적인 영향을 미칩니다. 이는 수처리 산업의 친환경 전환과 에너지 비용 절감에 중요한 정책적 신호입니다.",
+    "category": "규제/정책",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "하수처리장 에너지 자립화",
+      "신재생에너지",
+      "수처리"
+    ],
+    "policy_alert": "기획처가 하수처리장 에너지 자립화 확산을 위한 내년 예산 반영을 검토 중입니다.",
+    "date_context": "기사 발행일 기준",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFB0c2hSTm11ZzZvR01OcEFoR1NSYkhwbDJpUko2YWNvYnNiWkR3STZUQW0zTGxlRjJUVmYteFVzcVZ1WG1tZTJDam5UZw?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-02-18",
+    "title": "MemCor™ MBR systems selected for three major wastewater treatment plant expansions in England",
+    "ko_title": "MemCor MBR, 영국 3개 하수처리장 확장에 선정",
+    "brief": "MemCor MBR 시스템이 영국 내 3개 주요 하수처리장 확장 프로젝트에 채택되었습니다. 이는 MBR 기술의 신뢰성과 시장 확대를 보여줍니다.",
+    "summary": "MemCor MBR 시스템이 영국의 3개 주요 하수처리장 확장 사업에 선정되었습니다. 이번 선정은 영국 내 하수처리 인프라의 현대화와 처리 효율성 향상을 목표로 하고 있습니다. MBR(Membrane Bioreactor) 기술은 고도 수처리와 공간 효율성에서 강점을 가지며, 영국과 같은 선진국의 대형 프로젝트에서 채택이 늘고 있습니다. 이번 사례는 글로벌 수처리 시장에서 MBR 기술의 입지를 재확인시켜 줍니다. 기사에는 구체적인 처리 용량이나 사업비 등 수치는 언급되지 않았습니다.",
+    "why_important": "영국의 대형 하수처리장 확장에 MBR 기술이 채택된 것은 고도 수처리 시장에서 분리막 기반 기술의 경쟁력을 보여줍니다. 이는 향후 유럽 및 글로벌 시장에서 MBR 수요 확대에 긍정적 영향을 줄 수 있습니다.",
+    "category": "분리막/MBR",
+    "countries": [
+      "영국"
+    ],
+    "companies": [
+      "MemCor"
+    ],
+    "technologies": [
+      "MBR",
+      "Wastewater Treatment",
+      "Water Treatment"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-02-18",
+    "specs": [],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a25b0a6370d41f49412e98cc2df74e8&url=https%3a%2f%2ffinance.yahoo.com%2fnews%2fmemcor-mbr-systems-selected-three-140000877.html&c=15153598790819934667&mkt=en-us",
+    "score": 34,
+    "keywords": [
+      "mbr",
+      "wastewater",
+      "water treatment",
+      "expansion",
+      "investment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
   }
 ]
