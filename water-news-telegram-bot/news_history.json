@@ -5019,5 +5019,178 @@
     "region": "global",
     "source_type": "rss",
     "image": ""
+  },
+  {
+    "date": "2026-06-02",
+    "title": "Toray introduces ultrafiltration membrane designed to reduce biofouling in wastewater reuse",
+    "ko_title": "Toray, 바이오오염 저감 초여과막 출시",
+    "brief": "Toray가 폐수 재이용용 바이오오염 저감 초여과막 F-HFUG 시리즈를 선보였습니다. 0.005마이크로미터 기공 크기로 역삼투막 오염도 줄입니다.",
+    "summary": "Toray는 폐수 재이용 공정에서 바이오오염을 줄이기 위해 F-HFUG 시리즈 초여과막 모듈을 개발했습니다. 이 제품은 0.005마이크로미터의 미세한 기공 크기를 갖추고 있어, 생체고분자 물질의 통과를 효과적으로 차단합니다. 이를 통해 후단의 역삼투(RO) 공정에서 발생하는 막 오염 문제를 완화할 수 있습니다. 초여과막의 성능 개선은 수처리 공정의 효율성과 유지관리 비용 절감에 중요한 역할을 합니다. Toray의 이번 신제품은 막여과 및 재이용수 시장에서 기술적 경쟁력을 높일 것으로 기대됩니다.",
+    "why_important": "막여과 및 재이용수 시장에서 바이오오염 저감은 운영비 절감과 시스템 신뢰성 향상에 핵심적입니다. Toray의 신제품은 기술적 진보로 시장 내 경쟁력을 강화할 수 있습니다.",
+    "category": "분리막/막여과",
+    "countries": [],
+    "companies": [
+      "Toray"
+    ],
+    "technologies": [
+      "Ultrafiltration",
+      "Biofouling",
+      "Water Reuse",
+      "Membrane Module"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 발행일 기준",
+    "specs": [
+      "0.005-micrometer pore size"
+    ],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a252e45c635408aa20a6e7c0259572d&url=https%3a%2f%2fwww.dairyfoods.com%2farticles%2f99167-toray-introduces-ultrafiltration-membrane-designed-to-reduce-biofouling-in-wastewater-reuse&c=9496410966415004977&mkt=en-us",
+    "score": 57,
+    "keywords": [
+      "membrane",
+      "ultrafiltration",
+      "wastewater",
+      "water reuse",
+      "toray",
+      "biofouling",
+      "membrane module"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-05-26",
+    "title": "서산시, 공공하수처리시설 방류수 '소수력 발전'에 활용 - v.daum.net",
+    "ko_title": "서산시, 하수 방류수로 소수력 발전 추진",
+    "brief": "서산시는 공공하수처리시설 방류수를 활용한 소수력 발전을 추진합니다. 이는 수처리와 재생에너지 융합 사례로 주목받고 있습니다.",
+    "summary": "서산시는 공공하수처리시설에서 발생하는 방류수를 이용해 소수력 발전을 추진한다고 밝혔습니다. 하수처리 후 배출되는 방류수를 에너지 자원으로 전환하는 시도로, 수처리와 재생에너지의 융합 모델입니다. 이 사업은 에너지 비용 절감과 탄소중립 실현에 기여할 수 있습니다. 최근 국내외에서 하수 방류수를 활용한 에너지 생산이 주목받고 있으며, 서산시의 사례는 지방자치단체의 친환경 정책 확대 흐름과도 맞닿아 있습니다. 수처리 산업에서는 방류수의 다각적 활용 가능성을 보여주는 사례로 평가됩니다.",
+    "why_important": "하수 방류수의 에너지화는 수처리 산업의 부가가치 창출과 에너지 비용 절감에 기여할 수 있습니다. 지방정부의 친환경 정책 확대와 연계된 시장 기회로도 주목됩니다.",
+    "category": "재이용수",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "방류수 재이용",
+      "소수력 발전"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 발행일 기준",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1IOWNfUlBNaGRDbms3MlJpaFhHZm9Vaml2SW53SktuNktUaEk1U0VsR0dKZnhYdmRPZFpwRHF6c2V2Rm9Tc29DMVR1ZVBJbDg?oc=5",
+    "score": 24,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "방류수"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-06-02",
+    "title": "Membrane Technology Forum 2026 expands focus on beverage innovation and wastewater treatment",
+    "ko_title": "Membrane Technology Forum 2026, 음료 혁신·폐수처리 확대",
+    "brief": "Membrane Technology Forum 2026은 음료 시장 혁신과 폐수처리 분야에 중점을 두고 확대됩니다. 이번 포럼은 분리막 기술의 새로운 적용 기회를 모색합니다.",
+    "summary": "2026년 개최 예정인 Membrane Technology Forum은 기존의 분리막 기술 논의에서 한 걸음 더 나아가, 음료 시장의 혁신적 기회와 폐수처리 분야를 주요 의제로 다룹니다. 이번 포럼에서는 다양한 연사들이 음료 산업에서의 분리막 기술 활용 가능성과 폐수처리 분야의 최신 동향을 소개할 예정입니다. 이는 분리막 기술이 식음료 산업과 환경 분야 모두에서 중요한 역할을 하고 있음을 시사합니다. 특히, 음료 산업의 성장과 더불어 폐수처리 수요가 증가하는 시장 상황에서 관련 기술의 발전이 주목받고 있습니다. 수처리 산업에서는 분리막의 적용 범위 확대와 신기술 도입에 대한 논의가 활발히 이루어질 전망입니다.",
+    "why_important": "분리막 기술의 적용 분야가 음료 산업과 폐수처리로 확대됨에 따라 시장 기회가 늘어날 것으로 기대됩니다. 이는 수처리 산업의 기술 혁신과 새로운 비즈니스 모델 창출에 중요한 영향을 미칠 수 있습니다.",
+    "category": "학회/전시회",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "Membrane",
+      "Wastewater",
+      "Water Treatment"
+    ],
+    "policy_alert": "",
+    "date_context": "2026년 개최 예정",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a252e45c635408aa20a6e7c0259572d&url=https%3a%2f%2fwww.dairyfoods.com%2farticles%2f99166-membrane-technology-forum-2026-expands-focus-on-beverage-innovation-and-wastewater-treatment&c=1461589195714993340&mkt=en-us",
+    "score": 23,
+    "keywords": [
+      "membrane",
+      "wastewater",
+      "water treatment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-05-14",
+    "title": "Integrated Water Services Announces Acquisition of Complete Filtration Resources, Expanding into Process Filtration, and Industrial Wastewater Markets",
+    "ko_title": "IWS, Complete Filtration Resources 인수 발표",
+    "brief": "Integrated Water Services가 Complete Filtration Resources를 인수했습니다. 이를 통해 공정 여과 및 산업 폐수 시장으로 사업을 확장합니다.",
+    "summary": "2026년 5월 14일, Integrated Water Services(IWS)는 Complete Filtration Resources 인수를 공식 발표했습니다. IWS는 모듈형 폐수 처리 및 재이용 시스템 분야의 선도 기업으로, 이번 인수를 통해 공정 여과 및 산업 폐수 시장으로 사업 영역을 확대하게 됩니다. Complete Filtration Resources는 여과 기술을 보유한 기업으로, IWS의 기존 역량과 시너지를 낼 것으로 기대됩니다. 이번 거래는 산업용 폐수 처리 시장에서의 입지 강화와 기술 포트폴리오 확장에 중요한 의미를 가집니다. 수처리 산업에서는 기업 간 인수합병을 통한 시장 확대와 기술력 확보가 주요 전략으로 자리잡고 있습니다.",
+    "why_important": "이번 인수는 산업폐수 및 공정 여과 시장 진출을 통한 IWS의 사업 다각화와 경쟁력 강화를 의미합니다. 기업동향 및 시장 확대 관점에서 주목할 만한 사례입니다.",
+    "category": "기업동향",
+    "countries": [
+      "미국"
+    ],
+    "companies": [
+      "Integrated Water Services",
+      "Complete Filtration Resources"
+    ],
+    "technologies": [
+      "Process Filtration",
+      "Industrial Wastewater",
+      "Water Treatment"
+    ],
+    "policy_alert": "",
+    "date_context": "2026-05-14",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a252e45c635408aa20a6e7c0259572d&url=https%3a%2f%2fwww.morningstar.com%2fnews%2fpr-newswire%2f20260514la58099%2fintegrated-water-services-announces-acquisition-of-complete-filtration-resources-expanding-into-process-filtration-and-industrial-wastewater-markets&c=10156077192832065799&mkt=en-us",
+    "score": 23,
+    "keywords": [
+      "wastewater",
+      "industrial wastewater",
+      "water treatment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-03-20",
+    "title": "Stevens and bipartisan Congressional PFAS Task Force chair aim to help upgrade wastewater treatment - Michigan Advance",
+    "ko_title": "미국 PFAS Task Force, 하수처리시설 개선 추진",
+    "brief": "미국 Stevens 의원과 초당적 PFAS Task Force가 하수처리시설 업그레이드를 지원하려 합니다. PFAS 오염 대응과 수처리 인프라 개선이 주요 목표입니다.",
+    "summary": "미국 Stevens 의원과 초당적 Congressional PFAS Task Force 의장이 하수처리시설의 업그레이드를 지원하기 위한 노력을 추진하고 있습니다. PFAS(영구화학물질) 오염이 미국 내 수처리 인프라에 심각한 영향을 미치고 있어, 관련 정책 및 예산 지원이 논의되고 있습니다. 이번 움직임은 하수처리시설의 PFAS 제거 역량 강화를 목표로 하며, 지역사회와 환경 보호를 위한 연방 차원의 대응책 마련이 포함됩니다. 수처리 산업에서는 PFAS 대응 기술 개발 및 시설 개선 수요가 증가할 것으로 예상됩니다. 기사에는 구체적인 사업비나 시설 용량 등 수치는 언급되지 않았습니다.",
+    "why_important": "PFAS 오염 규제 강화와 이에 따른 하수처리시설 업그레이드 정책은 미국 수처리 시장의 기술 및 설비 투자 확대를 촉진할 수 있습니다. 이는 PFAS 제거 기술 및 관련 산업의 성장 기회와도 직결됩니다.",
+    "category": "PFAS/오염물",
+    "countries": [
+      "미국"
+    ],
+    "companies": [],
+    "technologies": [
+      "PFAS",
+      "wastewater treatment",
+      "water treatment",
+      "upgrade"
+    ],
+    "policy_alert": "미국 의회 차원의 PFAS 오염 대응 및 하수처리시설 업그레이드 지원 정책이 논의되고 있습니다.",
+    "date_context": "기사 발행일 기준",
+    "specs": [],
+    "source": "Google News Global PFAS",
+    "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQYWlfWkVROGJRelFPMEtpOWxhQ3RBMEZiOUpiUms5OVViWEdpSE4wa1RoaVlqMlZHeEpRY2hCRTg4RW9neVdWakVSa0hYUjBQNUc5ZEQtQk1USk1WOVJuMlNlX2dETkJmcnRndEZKOWNrQ2VLM3hjbmdSNGJ2Y2RHNHhhTGpmOGtIM1pLZnR5amV0aEhZY2dRWGFmbWxRZFZsLWdCb0hfbTFMaUxXVGUzNjhWeEI2VHJRYmpEQVJJU0ZFUVhKUFl3MnNnNHBHNmJy?oc=5",
+    "score": 30,
+    "keywords": [
+      "wastewater",
+      "water treatment",
+      "pfas",
+      "upgrade"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "search_rss",
+    "image": ""
   }
 ]
