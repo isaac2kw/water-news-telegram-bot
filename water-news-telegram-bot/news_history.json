@@ -5900,5 +5900,182 @@
     "region": "domestic",
     "source_type": "rss",
     "image": ""
+  },
+  {
+    "date": "2026-06-02",
+    "title": "Toray introduces ultrafiltration membrane designed to reduce biofouling in wastewater reuse",
+    "ko_title": "Toray, 바이오오염 저감 초여과막 출시",
+    "brief": "Toray가 폐수 재이용을 위한 F-HFUG 시리즈 초여과막을 선보였습니다. 0.005마이크로미터 기공 크기로 바이오폴리머 통과와 RO 오염을 줄입니다.",
+    "summary": "Toray는 폐수 재이용 공정에서 바이오오염을 줄이기 위해 F-HFUG 시리즈 초여과막 모듈을 개발했습니다. 이 제품은 0.005마이크로미터의 미세한 기공 크기를 갖추고 있어 바이오폴리머의 통과를 최소화하고, 이후 단계인 역삼투(RO) 공정의 오염을 감소시키는 데 중점을 두고 있습니다. 초여과막은 폐수 재이용 및 고도 수처리 분야에서 핵심적인 역할을 하며, 막 오염 저감은 운영비 절감과 시스템 신뢰성 향상에 중요한 요소입니다. Toray의 신제품은 수처리 산업에서 막여과 기술의 진보와 효율성 향상에 기여할 것으로 기대됩니다.",
+    "why_important": "막 오염 저감은 수처리 플랜트의 운영 효율성과 유지관리 비용에 직접적인 영향을 미칩니다. Toray의 신제품은 막여과 및 재이용수 시장에서 기술 경쟁력을 높일 수 있습니다.",
+    "category": "분리막/막여과",
+    "countries": [],
+    "companies": [
+      "Toray"
+    ],
+    "technologies": [
+      "Ultrafiltration",
+      "Membrane Module",
+      "Biofouling",
+      "Water Reuse"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-06-02",
+    "specs": [
+      "0.005-micrometer pore size"
+    ],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a26f3cc1197458997a596b8f6671884&url=https%3a%2f%2fwww.dairyfoods.com%2farticles%2f99167-toray-introduces-ultrafiltration-membrane-designed-to-reduce-biofouling-in-wastewater-reuse&c=9496410966415004977&mkt=en-us",
+    "score": 57,
+    "keywords": [
+      "membrane",
+      "ultrafiltration",
+      "wastewater",
+      "water reuse",
+      "toray",
+      "biofouling",
+      "membrane module"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-02-12",
+    "title": "DuPont Named Finalist in 2026 Edison Awards for FilmTec™ Fortilife™ XC160UHP Membrane for Wastewater Treatment and Reuse",
+    "ko_title": "DuPont, Edison Awards 결선 진출: FilmTec Fortilife XC160UHP",
+    "brief": "DuPont의 FilmTec Fortilife XC160UHP 막이 2026 Edison Awards 결선에 올랐습니다. 이 제품은 산업 폐수 처리 및 재이용 분야에서 혁신성을 인정받았습니다.",
+    "summary": "DuPont은 산업 폐수 처리 및 재이용을 위한 역삼투막인 FilmTec Fortilife XC160UHP로 2026 Edison Awards 결선 진출자로 선정되었습니다. 이 상은 혁신적인 기술 및 제품에 수여되는 권위 있는 상으로, DuPont의 막 기술이 산업용 수처리 시장에서 경쟁력을 인정받았음을 시사합니다. 해당 제품은 산업 폐수의 효율적 정화와 재이용을 목표로 개발되었습니다. 이번 수상 후보 선정은 막여과 기술의 발전과 산업 폐수 재이용 시장의 성장 가능성을 보여줍니다. 수처리 산업에서 DuPont의 기술적 리더십이 재확인된 사례입니다.",
+    "why_important": "DuPont의 막 기술이 글로벌 산업 폐수 재이용 시장에서 혁신성을 인정받았다는 점에서 시장 및 기술적 의미가 있습니다. 이는 고도화되는 폐수 처리 수요에 대응하는 선진 기술의 중요성을 부각시킵니다.",
+    "category": "분리막/막여과",
+    "countries": [],
+    "companies": [
+      "DuPont"
+    ],
+    "technologies": [
+      "Reverse Osmosis",
+      "Membrane",
+      "Wastewater Reuse",
+      "FilmTec Fortilife XC160UHP"
+    ],
+    "policy_alert": "",
+    "date_context": "2026-02-12",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a26f3cc1197458997a596b8f6671884&url=https%3a%2f%2fwww.morningstar.com%2fnews%2fpr-newswire%2f20260212ph86055%2fdupont-named-finalist-in-2026-edison-awards-for-filmtec-fortilife-xc160uhp-membrane-for-wastewater-treatment-and-reuse&c=16560179987338129635&mkt=en-us",
+    "score": 50,
+    "keywords": [
+      "membrane",
+      "wastewater",
+      "industrial wastewater",
+      "water treatment",
+      "award",
+      "dupont",
+      "filmtec"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-06-02",
+    "title": "Membrane Technology Forum 2026 expands focus on beverage innovation and wastewater treatment",
+    "ko_title": "Membrane Technology Forum 2026, 음료 혁신·폐수처리 확대",
+    "brief": "Membrane Technology Forum 2026이 음료 시장 혁신과 폐수처리 분야에 초점을 확대합니다. 이번 포럼은 막기술의 전략적 적용 기회를 모색할 예정입니다.",
+    "summary": "Membrane Technology Forum 2026은 기존 막기술 논의에 더해 음료 시장의 혁신과 폐수처리 분야에 대한 논의를 확대할 계획입니다. 이번 포럼에서는 막기술이 음료 산업에서의 새로운 시장 기회와 폐수처리 분야에서의 적용 가능성을 조명합니다. 다양한 연사들이 참여하여 막기술의 전략적 활용 방안을 제시할 예정입니다. 이러한 변화는 막기술이 전통적 수처리뿐 아니라 식음료 산업 등 다양한 분야로 확장되고 있음을 보여줍니다. 수처리 산업에서는 막기술의 응용 범위가 넓어지는 점이 주목됩니다.",
+    "why_important": "막기술이 음료 산업 등 새로운 시장으로 확장되는 추세를 반영합니다. 이는 수처리 산업의 시장 다변화와 기술 적용 확대에 중요한 의미가 있습니다.",
+    "category": "학회/전시회",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "Membrane",
+      "Wastewater",
+      "Water Treatment",
+      "Beverage Innovation"
+    ],
+    "policy_alert": "",
+    "date_context": "2026년 개최 예정",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a26f3cc1197458997a596b8f6671884&url=https%3a%2f%2fwww.dairyfoods.com%2farticles%2f99166-membrane-technology-forum-2026-expands-focus-on-beverage-innovation-and-wastewater-treatment&c=1461589195714993340&mkt=en-us",
+    "score": 23,
+    "keywords": [
+      "membrane",
+      "wastewater",
+      "water treatment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-06-09",
+    "title": "Newburgh to Break Ground on Major Wastewater Treatment Plant Upgrades - wevv.com",
+    "ko_title": "Newburgh, 하수처리장 대규모 업그레이드 착공",
+    "brief": "미국 Newburgh에서 하수처리장 대규모 업그레이드 공사가 곧 시작됩니다. 이번 사업은 지역 수질 개선과 인프라 현대화를 목표로 합니다.",
+    "summary": "미국 Newburgh 시가 기존 하수처리장의 대규모 업그레이드 공사를 곧 착공할 예정입니다. 이번 프로젝트는 노후된 수처리 인프라를 현대화하고, 지역 내 수질 개선 및 환경 보호를 강화하기 위한 목적입니다. 업그레이드에는 최신 수처리 기술 도입과 설비 개선이 포함될 것으로 알려졌으나, 구체적인 용량이나 사업비 등 세부 사양은 기사에 언급되지 않았습니다. 이 사업은 지역사회와 환경에 긍정적인 영향을 미칠 것으로 기대됩니다. 수처리 산업에서는 미국 내 공공 인프라 투자 확대와 기술 수요 증가의 신호로 해석될 수 있습니다.",
+    "why_important": "본 프로젝트는 미국 내 노후 수처리 인프라의 현대화와 관련 기술 시장 확대에 중요한 사례입니다. 신규 기술 적용 및 공공 투자 확대가 예상되어 관련 기업과 시장에 기회가 될 수 있습니다.",
+    "category": "프로젝트/수주",
+    "countries": [
+      "미국"
+    ],
+    "companies": [],
+    "technologies": [
+      "Wastewater Treatment",
+      "Upgrade"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-06-09",
+    "specs": [],
+    "source": "Google News Global Water",
+    "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQLXpDdjg4VDRXdUF0V2Jra3ZqdUItWHA3d1VRdXV1aHdYU1RhT2FnYm1EZFZXaDcwQVFfY1gyc2hVYjc2Tl94cDlDOENPWW9BLXBtUEE1SU5IMGNfc3dhYlhFaWlNMUZZcU9hZEFqcHRPMGF6eDJqUWpRc2kwbjBxUlVnYnRCVGpiTlVCUk9ubHZqd3NjOEloTW9XcXotbEMzUjdEZmV4TGdPZHY0ZGl4dnBIemdfVHVsRVRBYTRsNXA0US1RUVQ1cEEzSTI3WnY4U0hmX0ltdHl6YzFjWVRiZmliVnEtWVc4?oc=5",
+    "score": 20,
+    "keywords": [
+      "wastewater",
+      "water treatment",
+      "upgrade"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-02-18",
+    "title": "MemCor™ MBR systems selected for three major wastewater treatment plant expansions in England",
+    "ko_title": "영국 3개 하수처리장 확장에 MemCor MBR 채택",
+    "brief": "영국 내 3개 주요 하수처리장 확장 사업에 MemCor™ MBR 시스템이 선정되었습니다. 이번 선정은 MBR 기술의 신뢰성과 수처리 효율성을 보여줍니다.",
+    "summary": "영국에서 3개의 주요 하수처리장 확장 사업에 MemCor™ MBR 시스템이 채택되었습니다. MBR(Membrane Bioreactor) 기술은 고도 수처리와 공간 효율성을 제공하여, 기존 시설의 확장 및 수질 기준 강화에 효과적입니다. 이번 프로젝트 선정은 MemCor™ MBR의 기술적 신뢰성과 시장 내 입지를 강화하는 계기가 될 전망입니다. 영국은 환경 규제 강화와 인구 증가에 따라 하수처리장 확장 및 현대화가 활발히 이루어지고 있습니다. 본 사례는 글로벌 수처리 시장에서 MBR 기술의 지속적인 성장 가능성을 시사합니다.",
+    "why_important": "영국 내 대규모 하수처리장 확장에 MBR 기술이 적용됨으로써, 고도 수처리 시장에서 분리막 기반 기술의 수요가 증가하고 있음을 보여줍니다. 이는 글로벌 수처리 산업의 기술 트렌드와 시장 확대에 중요한 신호입니다.",
+    "category": "분리막/MBR",
+    "countries": [
+      "영국"
+    ],
+    "companies": [],
+    "technologies": [
+      "MBR",
+      "Membrane Bioreactor",
+      "Wastewater Treatment"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-02-18",
+    "specs": [],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a26f3cccf74478386e5ab1adc57c4ba&url=https%3a%2f%2ffinance.yahoo.com%2fnews%2fmemcor-mbr-systems-selected-three-140000877.html&c=15153598790819934667&mkt=en-us",
+    "score": 34,
+    "keywords": [
+      "mbr",
+      "wastewater",
+      "water treatment",
+      "expansion",
+      "investment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
   }
 ]
