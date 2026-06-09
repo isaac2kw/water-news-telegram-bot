@@ -6999,5 +6999,188 @@
     "region": "global",
     "source_type": "search_rss",
     "image": ""
+  },
+  {
+    "date": "2026-06-02",
+    "title": "Toray introduces ultrafiltration membrane designed to reduce biofouling in wastewater reuse",
+    "ko_title": "Toray, 바이오오염 저감 초여과막 출시",
+    "brief": "Toray가 폐수 재이용을 위한 F-HFUG 초여과막 모듈을 선보였습니다. 0.005마이크로미터 기공 크기로 바이오폴리머와 역삼투막 오염을 줄입니다.",
+    "summary": "Toray는 폐수 재이용 공정에서 바이오오염을 줄이기 위해 F-HFUG 시리즈 초여과막 모듈을 개발했습니다. 이 제품은 0.005마이크로미터의 미세한 기공 크기를 통해 바이오폴리머의 통과를 최소화하고, 후단의 역삼투(RO) 공정에서 막 오염을 감소시키는 것이 특징입니다. 초여과막은 폐수 재이용 및 고도 수처리 분야에서 핵심적인 역할을 하며, 막 오염 저감은 운영 효율성과 유지관리 비용 절감에 중요한 영향을 미칩니다. Toray의 신제품은 수처리 산업에서 고품질 재이용수 생산과 시스템 신뢰성 향상에 기여할 것으로 기대됩니다. 본 기사에는 구체적인 처리 용량이나 사업 규모 등 수치는 언급되지 않았습니다.",
+    "why_important": "막 오염 저감 기술은 재이용수 시장에서 운영비 절감과 시스템 신뢰성 향상에 매우 중요합니다. Toray의 신제품은 분리막 기반 수처리 공정의 효율성 개선에 기여할 수 있습니다.",
+    "category": "분리막/막여과",
+    "countries": [],
+    "companies": [
+      "Toray"
+    ],
+    "technologies": [
+      "Ultrafiltration",
+      "Biofouling",
+      "Wastewater Reuse",
+      "Membrane Module"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-06-02",
+    "specs": [
+      "0.005-micrometer pore size"
+    ],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a2816a11c9f458892c83e8f60bb043a&url=https%3a%2f%2fwww.dairyfoods.com%2farticles%2f99167-toray-introduces-ultrafiltration-membrane-designed-to-reduce-biofouling-in-wastewater-reuse&c=9496410966415004977&mkt=en-us",
+    "score": 57,
+    "keywords": [
+      "membrane",
+      "ultrafiltration",
+      "wastewater",
+      "water reuse",
+      "toray",
+      "biofouling",
+      "membrane module"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-02-12",
+    "title": "DuPont Named Finalist in 2026 Edison Awards for FilmTec™ Fortilife™ XC160UHP Membrane for Wastewater Treatment and Reuse",
+    "ko_title": "DuPont, Edison Awards 결선 진출: FilmTec Fortilife XC160UHP",
+    "brief": "DuPont의 FilmTec Fortilife XC160UHP 역삼투막이 2026 Edison Awards 결선에 올랐습니다. 이 제품은 산업 폐수 처리 및 재이용 분야에 적용됩니다.",
+    "summary": "DuPont은 FilmTec Fortilife XC160UHP 역삼투막으로 2026년 Edison Awards 결선 진출자로 선정되었습니다. 이 제품은 산업 폐수 처리와 재이용을 위한 고성능 분리막으로, 내구성과 효율성이 강조됩니다. Edison Awards는 혁신적인 기술과 제품을 평가하는 국제적 상으로, 수처리 산업에서의 기술적 진보를 인정받은 사례입니다. DuPont의 이번 수상 후보 선정은 산업 폐수 재이용 시장에서의 기술 경쟁력을 보여줍니다. 해당 기술은 막여과 및 RO 분야에서 산업용 수처리 효율을 높이는 데 기여할 것으로 기대됩니다.",
+    "why_important": "산업 폐수 재이용 및 고성능 RO 기술의 혁신이 글로벌 수처리 시장에서 중요한 경쟁 요소임을 보여줍니다. DuPont의 기술이 국제적으로 인정받으면서 관련 시장의 기술 발전과 경쟁이 가속화될 전망입니다.",
+    "category": "분리막/RO",
+    "countries": [
+      "미국"
+    ],
+    "companies": [
+      "DuPont"
+    ],
+    "technologies": [
+      "Reverse Osmosis",
+      "Membrane",
+      "Industrial Wastewater",
+      "Water Reuse"
+    ],
+    "policy_alert": "",
+    "date_context": "2026-02-12",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a2816a11c9f458892c83e8f60bb043a&url=https%3a%2f%2fwww.morningstar.com%2fnews%2fpr-newswire%2f20260212ph86055%2fdupont-named-finalist-in-2026-edison-awards-for-filmtec-fortilife-xc160uhp-membrane-for-wastewater-treatment-and-reuse&c=16560179987338129635&mkt=en-us",
+    "score": 50,
+    "keywords": [
+      "membrane",
+      "wastewater",
+      "industrial wastewater",
+      "water treatment",
+      "award",
+      "dupont",
+      "filmtec"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-06-09",
+    "title": "Advanced Municipal Water Treatment Technologies Market to Reach $61.5 Billion by 2030, Driven by Stringent PFAS Regulations - Yahoo Finance Singapore",
+    "ko_title": "첨단 상수처리 시장, 2030년 615억달러 전망",
+    "brief": "첨단 상수처리 기술 시장이 2030년 615억달러에 이를 전망입니다. PFAS 규제 강화가 시장 성장을 견인하고 있습니다.",
+    "summary": "글로벌 첨단 상수처리 기술 시장이 2030년까지 615억달러 규모에 도달할 것으로 전망되었습니다. 이 성장은 각국에서 강화되고 있는 PFAS(영구화학물질) 규제에 의해 주도되고 있습니다. PFAS는 인체 및 환경에 유해한 오염물질로, 이에 대한 규제 강화가 첨단 수처리 기술의 수요를 촉진하고 있습니다. 시장 확대는 막여과, 고도산화, CIP 등 다양한 첨단 기술의 도입을 가속화할 것으로 보입니다. 이러한 변화는 수처리 산업 전반에 기술 혁신과 투자 확대를 유도할 것으로 예상됩니다.",
+    "why_important": "PFAS 규제 강화는 전 세계적으로 수처리 시장의 기술적 진화를 촉진하고 있습니다. 이는 관련 기업과 기술 공급자에게 새로운 시장 기회를 제공할 것으로 보입니다.",
+    "category": "수처리 산업동향",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "PFAS",
+      "Water Treatment",
+      "CIP"
+    ],
+    "policy_alert": "",
+    "date_context": "2030년 시장 전망",
+    "specs": [
+      "615억달러(USD) 시장 규모(2030년 전망)",
+      "61.5 Billion"
+    ],
+    "source": "Google News Global Water",
+    "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNWU9YNlJjUGZRcTFVYVBVS2h1YlBidm0tWmFmR3JBZ0VLZW9acDhEQW5rcnhZZ2RVSERpZ0JpNm9MUTFYWXlGYnBPWEE1LTR5Y28ySFJWblRGTU5oOXRxb2VZNXk5ZnhNOWY5eFBDQjVDRmVDTi1RM0ZfOUR0T3Y4U3M0dEdtWk1McGdFNk5VZlRSTEwwc3RkMUp6YnU?oc=5",
+    "score": 24,
+    "keywords": [
+      "water treatment",
+      "pfas",
+      "cip"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-06-02",
+    "title": "Membrane Technology Forum 2026 expands focus on beverage innovation and wastewater treatment",
+    "ko_title": "Membrane Technology Forum 2026, 음료 혁신·폐수처리 확대",
+    "brief": "Membrane Technology Forum 2026이 음료 시장 혁신과 폐수처리 분야에 집중합니다. 분리막 기술의 새로운 시장 기회가 논의될 예정입니다.",
+    "summary": "2026년 개최 예정인 Membrane Technology Forum은 기존의 분리막 기술 논의 범위를 확장하여, 음료 시장의 혁신과 폐수처리 분야에 중점을 둘 계획입니다. 이번 포럼에서는 음료 산업 내 분리막 기술의 적용 가능성과 새로운 시장 기회에 대한 발표가 늘어날 예정입니다. 또한 폐수처리 분야에서도 최신 분리막 기술의 활용 방안이 다뤄집니다. 이러한 변화는 분리막 기술의 응용 범위가 식음료 산업과 환경 분야 모두에서 확대되고 있음을 보여줍니다. 수처리 산업에서는 분리막 기술의 다각적 활용이 시장 성장과 기술 발전에 중요한 역할을 할 것으로 기대됩니다.",
+    "why_important": "분리막 기술의 응용 분야가 음료 산업과 폐수처리로 확대되면서 새로운 시장 기회가 창출될 전망입니다. 이는 분리막/막여과 산업의 성장과 기술 혁신에 중요한 영향을 미칠 수 있습니다.",
+    "category": "학회/전시회",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "Membrane",
+      "Wastewater",
+      "Water Treatment",
+      "Beverage Innovation"
+    ],
+    "policy_alert": "",
+    "date_context": "2026년 개최 예정",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a2816a11c9f458892c83e8f60bb043a&url=https%3a%2f%2fwww.dairyfoods.com%2farticles%2f99166-membrane-technology-forum-2026-expands-focus-on-beverage-innovation-and-wastewater-treatment&c=1461589195714993340&mkt=en-us",
+    "score": 23,
+    "keywords": [
+      "membrane",
+      "wastewater",
+      "water treatment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-02-18",
+    "title": "MemCor™ MBR systems selected for three major wastewater treatment plant expansions in England",
+    "ko_title": "MemCor MBR, 영국 3개 하수처리장 확장에 선정",
+    "brief": "MemCor MBR 시스템이 영국 내 3개 주요 하수처리장 확장 프로젝트에 채택되었습니다. 이는 영국 수처리 시장에서 MBR 기술의 입지를 강화하는 사례입니다.",
+    "summary": "MemCor MBR 시스템이 영국의 3개 주요 하수처리장 확장 사업에 선정되었습니다. 이번 선정은 영국 내 하수처리 인프라 확장과 고도화에 있어 MBR(막분리 활성슬러지) 기술의 중요성을 보여줍니다. MBR 시스템은 기존 처리장 대비 높은 처리 효율과 공간 절약, 수질 개선 효과를 제공하는 것으로 알려져 있습니다. 영국은 환경 규제 강화와 인구 증가에 따라 하수처리 용량 증대와 수질 기준 충족이 중요한 과제로 대두되고 있습니다. 이번 프로젝트는 MemCor 브랜드의 기술 신뢰도와 시장 내 영향력을 재확인하는 계기가 될 것으로 보입니다.",
+    "why_important": "영국 내 대형 하수처리장 확장에 MBR 기술이 채택됨으로써, 고도 수처리 시장에서 분리막 기반 기술의 수요가 증가하고 있음을 보여줍니다. 이는 유럽 시장 내 기술 경쟁 및 프로젝트 수주 기회 확대와도 직결됩니다.",
+    "category": "분리막/MBR",
+    "countries": [
+      "영국"
+    ],
+    "companies": [
+      "MemCor"
+    ],
+    "technologies": [
+      "MBR",
+      "Wastewater Treatment",
+      "Water Treatment"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-02-18",
+    "specs": [],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a2816a1c0374bc38b16fc803238eba1&url=https%3a%2f%2ffinance.yahoo.com%2fnews%2fmemcor-mbr-systems-selected-three-140000877.html&c=15153598790819934667&mkt=en-us",
+    "score": 34,
+    "keywords": [
+      "mbr",
+      "wastewater",
+      "water treatment",
+      "expansion",
+      "investment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
   }
 ]
