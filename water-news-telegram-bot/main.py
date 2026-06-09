@@ -3,6 +3,10 @@ import re
 import json
 import html
 import time
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.image import MIMEImage
+from email.mime.text import MIMEText
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from urllib.parse import urlparse, quote_plus
@@ -31,6 +35,14 @@ BACKFILL_START_DATE = os.getenv("BACKFILL_START_DATE", "")
 BACKFILL_END_DATE = os.getenv("BACKFILL_END_DATE", "")
 SEND_TELEGRAM = os.getenv("SEND_TELEGRAM", "true").lower() == "true"
 
+# Instagram card-news review email settings.
+# Required GitHub Secrets: GMAIL_USER, GMAIL_APP_PASSWORD, CARD_RECIPIENT.
+GMAIL_USER = os.getenv("GMAIL_USER")
+GMAIL_APP_PASSWORD = os.getenv("GMAIL_APP_PASSWORD")
+CARD_RECIPIENT = os.getenv("CARD_RECIPIENT", GMAIL_USER or "")
+FORCE_CARD_NEWS = os.getenv("FORCE_CARD_NEWS", "false").lower() == "true"
+CARD_NEWS_TOP_N = int(os.getenv("CARD_NEWS_TOP_N", "5"))
+
 BASE_DIR = Path(__file__).resolve().parent
 REPO_ROOT = BASE_DIR.parent
 FEEDS_FILE = BASE_DIR / "feeds.json"
@@ -43,6 +55,7 @@ WEEKLY_DIR = DOCS_DIR / "weekly"
 MONTHLY_DIR = DOCS_DIR / "monthly"
 PROJECTS_DIR = DOCS_DIR / "projects"
 NUMERIC_DIR = DOCS_DIR / "numeric-news"
+CARDS_DIR = DOCS_DIR / "cards"
 EVENTS_CACHE_FILE = BASE_DIR / "events_cache.json"
 
 
@@ -3072,6 +3085,156 @@ def build_telegram_message(articles, daily_url, weekly_url, monthly_url, weekly_
     return "\n".join(lines)
 
 
+def should_generate_cards(now=None):
+    """월요일(0)과 목요일(3)에 카드뉴스 PNG를 생성합니다. FORCE_CARD_NEWS=true이면 요일과 무관하게 생성합니다."""
+    if FORCE_CARD_NEWS:
+        return True
+    now = now or datetime.now(KST)
+    return now.weekday() in (0, 3)
+
+
+def sanitize_gmail_app_password(value):
+    """Google 앱 비밀번호 표시 형식의 공백/비분리 공백을 제거합니다."""
+    return re.sub(r"\s+", "", str(value or "").replace("\u00a0", ""))
+
+
+def card_css():
+    return """
+    :root { --blue:#0f4c81; --sky:#e0f2fe; --ink:#0f172a; --muted:#64748b; --line:#dbeafe; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#f8fafc; font-family:Arial, 'Noto Sans KR', sans-serif; color:var(--ink); }
+    .slide { width:1080px; height:1350px; padding:72px; background:linear-gradient(180deg,#ffffff 0%,#eef8ff 100%); position:relative; overflow:hidden; }
+    .slide:before { content:''; position:absolute; right:-180px; top:-160px; width:520px; height:520px; border-radius:50%; background:rgba(14,165,233,.14); }
+    .slide:after { content:''; position:absolute; left:-240px; bottom:-220px; width:620px; height:620px; border-radius:50%; background:rgba(15,76,129,.10); }
+    .top { position:relative; z-index:1; display:flex; justify-content:space-between; align-items:center; margin-bottom:54px; }
+    .brand { font-size:30px; font-weight:800; color:var(--blue); letter-spacing:-.02em; }
+    .date { font-size:24px; color:var(--muted); }
+    .badge { position:relative; z-index:1; display:inline-flex; align-items:center; gap:10px; padding:12px 20px; border-radius:999px; background:var(--sky); color:var(--blue); font-size:24px; font-weight:800; border:1px solid var(--line); }
+    h1 { position:relative; z-index:1; margin:34px 0 32px; font-size:68px; line-height:1.12; letter-spacing:-.055em; color:#0b2f52; }
+    .summary { position:relative; z-index:1; font-size:34px; line-height:1.55; letter-spacing:-.035em; margin:0 0 44px; color:#1e293b; }
+    .meta { position:relative; z-index:1; border-top:2px solid var(--line); padding-top:28px; margin-top:28px; color:var(--muted); font-size:24px; line-height:1.5; }
+    .why { position:relative; z-index:1; margin-top:34px; padding:28px; background:rgba(255,255,255,.76); border:1px solid var(--line); border-radius:28px; font-size:27px; line-height:1.48; letter-spacing:-.03em; }
+    .footer { position:absolute; left:72px; right:72px; bottom:58px; z-index:1; display:flex; justify-content:space-between; align-items:center; color:#475569; font-size:22px; }
+    .source { max-width:680px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    """
+
+
+def build_card_html(article, index, date_str):
+    ai = article.get("ai", {}) or {}
+    title = replace_company_names_with_english(ai.get("ko_title") or article.get("title") or "제목 없음")
+    brief = replace_company_names_with_english(ai.get("brief") or article.get("summary") or "요약 정보가 없습니다.")
+    why = replace_company_names_with_english(ai.get("why_important") or "수처리 산업 모니터링 대상으로 분류된 기사입니다.")
+    category = ai.get("category") or guess_category(article)
+    source = article.get("source") or article.get("domain") or "source unknown"
+    article_date = article.get("date", date_str)
+    link = article.get("link", "")
+
+    return f"""<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>{card_css()}</style>
+</head>
+<body>
+  <main class="slide">
+    <div class="top">
+      <div class="brand">HIFILM Water News</div>
+      <div class="date">{html.escape(date_str)}</div>
+    </div>
+    <div class="badge">#{index:02d} {html.escape(category)}</div>
+    <h1>{html.escape(title)}</h1>
+    <p class="summary">{html.escape(brief)}</p>
+    <div class="why">왜 중요한가: {html.escape(why)}</div>
+    <div class="meta">기사일: {html.escape(article_date)}<br>출처: {html.escape(source)}</div>
+    <div class="footer">
+      <div>Manual review before Instagram upload</div>
+      <div class="source">{html.escape(link)}</div>
+    </div>
+  </main>
+</body>
+</html>"""
+
+
+def generate_card_news(articles, date_str, top_n=None):
+    """선정 기사로 1080×1350 PNG 카드뉴스를 생성하고 PNG 경로 목록을 반환합니다."""
+    top_n = top_n or CARD_NEWS_TOP_N
+    cards_dir = CARDS_DIR / date_str
+    cards_dir.mkdir(parents=True, exist_ok=True)
+
+    targets = [a for a in articles if a.get("ai")][:top_n]
+    if not targets:
+        print("No summarized articles for card news; skipping card generation.")
+        return []
+
+    html_paths = []
+    for idx, article in enumerate(targets, start=1):
+        html_path = cards_dir / f"card_{idx:02d}.html"
+        html_path.write_text(build_card_html(article, idx, date_str), encoding="utf-8")
+        html_paths.append(html_path)
+
+    png_paths = []
+    try:
+        from playwright.sync_api import sync_playwright
+        with sync_playwright() as p:
+            browser = p.chromium.launch()
+            page = browser.new_page(viewport={"width": 1080, "height": 1350}, device_scale_factor=1)
+            for html_path in html_paths:
+                png_path = html_path.with_suffix(".png")
+                page.goto(html_path.resolve().as_uri(), wait_until="networkidle")
+                page.screenshot(path=str(png_path), full_page=False)
+                png_paths.append(png_path)
+            browser.close()
+    except Exception as exc:
+        print(f"Card PNG generation failed: {exc}")
+        return []
+
+    print(f"Generated {len(png_paths)} card-news PNG files in {cards_dir}")
+    return png_paths
+
+
+def send_card_email(png_paths, date_str):
+    """카드뉴스 PNG를 Gmail SMTP로 검수용 이메일에 첨부해 발송합니다."""
+    gmail_user = GMAIL_USER
+    gmail_pass = sanitize_gmail_app_password(GMAIL_APP_PASSWORD)
+    recipient = CARD_RECIPIENT or gmail_user
+
+    if not png_paths:
+        print("No card PNG files to email; skipping.")
+        return
+
+    if not gmail_user or not gmail_pass or not recipient:
+        print("Gmail email credentials not set; skipping card email.")
+        return
+
+    msg = MIMEMultipart()
+    msg["From"] = gmail_user
+    msg["To"] = recipient
+    msg["Subject"] = f"Water News Cards - {date_str}"
+
+    body = (
+        f"카드뉴스 {date_str} 검수용입니다.\n\n"
+        "첨부 PNG를 확인하고 인스타그램 게시 여부를 판단해 주세요.\n"
+        "이 이메일은 GitHub Actions에서 자동 발송되었습니다."
+    )
+    msg.attach(MIMEText(body, "plain", "utf-8"))
+
+    for png in png_paths:
+        png = Path(png)
+        if not png.exists():
+            continue
+        with png.open("rb") as f:
+            img = MIMEImage(f.read(), name=png.name)
+        msg.attach(img)
+
+    with smtplib.SMTP("smtp.gmail.com", 587, timeout=60) as server:
+        server.starttls()
+        server.login(gmail_user, gmail_pass)
+        server.send_message(msg)
+
+    print(f"Card email sent to {recipient}")
+
+
 def send_telegram(text):
     if not BOT_TOKEN or not CHAT_ID:
         raise RuntimeError("TELEGRAM_BOT_TOKEN 또는 TELEGRAM_CHAT_ID가 설정되지 않았습니다.")
@@ -3121,6 +3284,11 @@ def main():
     create_projects_page(history)
     create_numeric_page(history)
     update_docs_index(daily_url, weekly_url, monthly_url)
+
+    today_str = datetime.now(KST).strftime("%Y-%m-%d")
+    if should_generate_cards():
+        card_pngs = generate_card_news(selected_articles, today_str)
+        send_card_email(card_pngs, today_str)
 
     telegram_text = build_telegram_message(
         selected_articles,
