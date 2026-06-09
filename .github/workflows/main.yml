@@ -73,6 +73,7 @@ jobs:
           mkdir -p ../docs/reports
           mkdir -p ../docs/weekly
           mkdir -p ../docs/monthly
+          mkdir -p ../docs/cards
 
           if [ ! -f news_history.json ]; then
             echo "[]" > news_history.json
@@ -91,6 +92,7 @@ jobs:
           echo "Backfill start date: ${{ github.event_name == 'workflow_dispatch' && inputs.backfill_start_date || '' }}"
           echo "Backfill end date: ${{ github.event_name == 'workflow_dispatch' && inputs.backfill_end_date || '' }}"
           echo "Send telegram: ${{ github.event_name == 'schedule' && 'true' || inputs.send_telegram }}"
+          echo "Force card news: true"
 
       - name: Run news bot
         env:
@@ -98,10 +100,16 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: "gpt-4.1"
+
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           CARD_RECIPIENT: ${{ secrets.CARD_RECIPIENT }}
+
+          # Test mode: force card-news generation and email sending.
+          # After email test succeeds, change this to "false".
+          FORCE_CARD_NEWS: "true"
           CARD_NEWS_TOP_N: "5"
+
           MAX_ITEMS: "30"
           MIN_SCORE: "8"
           ENABLE_OG_IMAGE_FETCH: "true"
