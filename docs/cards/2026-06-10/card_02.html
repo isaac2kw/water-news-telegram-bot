@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    :root { --blue:#0f4c81; --sky:#e0f2fe; --ink:#0f172a; --muted:#64748b; --line:#dbeafe; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#f8fafc; font-family:Arial, 'Noto Sans KR', sans-serif; color:var(--ink); }
+    .slide { width:1080px; height:1350px; padding:72px; background:linear-gradient(180deg,#ffffff 0%,#eef8ff 100%); position:relative; overflow:hidden; }
+    .slide:before { content:''; position:absolute; right:-180px; top:-160px; width:520px; height:520px; border-radius:50%; background:rgba(14,165,233,.14); }
+    .slide:after { content:''; position:absolute; left:-240px; bottom:-220px; width:620px; height:620px; border-radius:50%; background:rgba(15,76,129,.10); }
+    .top { position:relative; z-index:1; display:flex; justify-content:space-between; align-items:center; margin-bottom:54px; }
+    .brand { font-size:30px; font-weight:800; color:var(--blue); letter-spacing:-.02em; }
+    .date { font-size:24px; color:var(--muted); }
+    .badge { position:relative; z-index:1; display:inline-flex; align-items:center; gap:10px; padding:12px 20px; border-radius:999px; background:var(--sky); color:var(--blue); font-size:24px; font-weight:800; border:1px solid var(--line); }
+    h1 { position:relative; z-index:1; margin:34px 0 32px; font-size:68px; line-height:1.12; letter-spacing:-.055em; color:#0b2f52; }
+    .summary { position:relative; z-index:1; font-size:34px; line-height:1.55; letter-spacing:-.035em; margin:0 0 44px; color:#1e293b; }
+    .meta { position:relative; z-index:1; border-top:2px solid var(--line); padding-top:28px; margin-top:28px; color:var(--muted); font-size:24px; line-height:1.5; }
+    .why { position:relative; z-index:1; margin-top:34px; padding:28px; background:rgba(255,255,255,.76); border:1px solid var(--line); border-radius:28px; font-size:27px; line-height:1.48; letter-spacing:-.03em; }
+    .footer { position:absolute; left:72px; right:72px; bottom:58px; z-index:1; display:flex; justify-content:space-between; align-items:center; color:#475569; font-size:22px; }
+    .source { max-width:680px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    </style>
+</head>
+<body>
+  <main class="slide">
+    <div class="top">
+      <div class="brand">HIFILM Water News</div>
+      <div class="date">2026-06-10</div>
+    </div>
+    <div class="badge">#02 학회/전시회</div>
+    <h1>2026 Climate Solutions Prize, Montréal서 10개 결선 진출팀 발표</h1>
+    <p class="summary">2026 Climate Solutions Prize Festival이 Montréal에서 10개 결선 진출팀을 발표했습니다. 6월 8~9일 개최 예정이며, 2,000명 참가와 150만 달러 이상의 상금이 준비되어 있습니다.</p>
+    <div class="why">왜 중요한가: 이 행사는 수처리 및 PFAS 등 환경 기술 분야의 혁신과 투자 확대를 촉진하는 글로벌 플랫폼입니다. 시장과 기술 관점에서 신기술의 상용화 및 자본 유치 기회를 제공한다는 점에서 중요합니다.</div>
+    <div class="meta">기사일: 2026-05-21<br>출처: WaterNewsWire Full Text</div>
+    <div class="footer">
+      <div>Manual review before Instagram upload</div>
+      <div class="source">https://waternewswire.com/news/2026/climate-solutions-prize-2026-festival-finalists-montreal</div>
+    </div>
+  </main>
+</body>
+</html>
