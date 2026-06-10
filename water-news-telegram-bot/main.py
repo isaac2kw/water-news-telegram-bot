@@ -3168,8 +3168,8 @@ def call_claude_for_cards(articles_data, date_str, start_date, end_date):
 </card_news_guide>
 
 중요 규칙:
-1. 동향(수처리 산업동향)/기술(분리막, MBR, PFAS 등)/규제(규제/정책) 기사만 선정합니다.
-2. 프로젝트/수주, 학회/전시회, 산업폐수(증설/건설), 교육/홍보 기사는 제외합니다.
+1. 모든 카테고리의 기사를 커버와 본문 카드 모두에 포함합니다. 필터링하지 마십시오.
+2. 커버 헤드라인 수와 본문 카드 수는 반드시 일치해야 합니다. 커버에 5건이면 본문도 5장입니다.
 3. 영문 카드뉴스입니다. 고유명사(기업, 지명, 기관)는 영문 유지하고 옐로우(#DDA11D)로 강조합니다.
 4. 커버 1장 + 본문 카드(선정 기사 수만큼, 최대 5장)를 제작합니다.
 5. 각 카드는 완전한 HTML 문서입니다 (<!DOCTYPE html> 포함).
@@ -3198,7 +3198,7 @@ def call_claude_for_cards(articles_data, date_str, start_date, end_date):
             },
             json={
                 "model": "claude-opus-4-7",
-                "max_tokens": 16000,
+                "max_tokens": 30000,
                 "system": system_prompt,
                 "messages": [{"role": "user", "content": user_message}],
             },
