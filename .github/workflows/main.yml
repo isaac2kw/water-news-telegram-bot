@@ -104,10 +104,11 @@ jobs:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           CARD_RECIPIENT: ${{ secrets.CARD_RECIPIENT }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
 
-          # Test mode: force card-news generation and email sending.
-          # After email test succeeds, change this to "false".
-          FORCE_CARD_NEWS: "true"
+          # Card news is now handled by the separate card_news.yml workflow.
+          # Set FORCE_CARD_NEWS to "true" only for manual testing.
+          FORCE_CARD_NEWS: "false"
           CARD_NEWS_TOP_N: "5"
 
           MAX_ITEMS: "30"
