@@ -1,0 +1,176 @@
+기사 데이터를 분석하여 선정 기준에 맞는 기사를 필터링합니다.
+
+**선정 기준 검토:**
+1. ✅ PFAS in drinking water - Scotland (규제/오염 동향)
+2. ✅ University of Kansas PFAS testing breakthrough (기술)
+3. ✅ Faster lower-cost PFAS testing (기술/동향)
+4. ❌ 동히엡 면 하수처리장 모니터링 (프로젝트)
+5. ❌ 한국상하수도협회 S등급 (교육/홍보)
+6. ❌ 안성시 하수처리시설 증설 (건설)
+7. ❌ Corps of Engineers / Buffalo 협약 (프로젝트/수주)
+8. ❌ Henderson $100M 시설 업그레이드 (건설)
+9. ❌ Sedro-Woolley 시설 업그레이드 (건설)
+10. ❌ 예산군 특별점검 (산업폐수)
+
+**선정 기사: 3건** (PFAS 관련 규제/기술/동향)
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HifilM Water Treatment News – Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;700&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { width:1080px; height:1080px; overflow:hidden; font-family:'Montserrat',sans-serif; background:#00205D; }
+
+  /* ── 그리드 10칸 (108px each) ── */
+  .grid-col { position:absolute; top:0; height:1080px; width:108px; border-right:1px solid rgba(255,255,255,0.04); pointer-events:none; }
+
+  /* ── 배경 ── */
+  .bg-main { position:absolute; inset:0; background:linear-gradient(145deg,#00205D 0%,#003A8C 55%,#0075C1 100%); }
+  .bg-accent { position:absolute; right:-60px; bottom:-60px; width:640px; height:640px; border-radius:50%; background:radial-gradient(circle,rgba(0,117,193,0.35) 0%,transparent 70%); }
+  .bg-ring1 { position:absolute; right:60px; bottom:60px; width:480px; height:480px; border-radius:50%; border:2px solid rgba(221,161,29,0.18); }
+  .bg-ring2 { position:absolute; right:100px; bottom:100px; width:380px; height:380px; border-radius:50%; border:1px solid rgba(0,117,193,0.35); }
+
+  /* ── 상단 바 ── */
+  .top-bar { position:absolute; top:0; left:0; right:0; height:8px; background:linear-gradient(90deg,#0075C1,#DDA11D); }
+
+  /* ── 날짜 태그 ── */
+  .date-tag { position:absolute; top:40px; left:108px; background:rgba(221,161,29,0.15); border:1px solid #DDA11D; border-radius:4px; padding:6px 18px; }
+  .date-tag span { color:#DDA11D; font-size:13px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; }
+
+  /* ── 주간 라벨 ── */
+  .week-label { position:absolute; top:40px; right:108px; color:rgba(255,255,255,0.4); font-size:12px; font-weight:600; letter-spacing:2px; text-transform:uppercase; line-height:32px; }
+
+  /* ── 메인 타이틀 영역 ── */
+  .title-block { position:absolute; top:160px; left:108px; right:108px; }
+  .sub-eyebrow { color:#0075C1; font-size:13px; font-weight:700; letter-spacing:3px; text-transform:uppercase; margin-bottom:20px; }
+  .main-title { color:#FFFFFF; font-weight:900; line-height:1.08; white-space:nowrap; }
+  .main-title .hl { color:#DDA11D; }
+  .divider-gold { width:80px; height:5px; background:#DDA11D; border-radius:3px; margin-top:32px; margin-bottom:28px; }
+  .sub-desc { color:rgba(255,255,255,0.62); font-size:17px; font-weight:400; line-height:1.6; max-width:700px; }
+  .sub-desc strong { color:#fff; font-weight:600; }
+
+  /* ── 기사 수 뱃지 ── */
+  .article-badge { position:absolute; right:108px; top:50%; transform:translateY(-50%); text-align:center; }
+  .badge-circle { width:148px; height:148px; border-radius:50%; border:3px solid #DDA11D; background:rgba(221,161,29,0.08); display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 auto; }
+  .badge-num { color:#DDA11D; font-size:52px; font-weight:900; line-height:1; }
+  .badge-label { color:rgba(255,255,255,0.7); font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-top:4px; }
+  .badge-sub { color:rgba(255,255,255,0.5); font-size:11px; margin-top:10px; text-align:center; letter-spacing:1px; text-transform:uppercase; }
+
+  /* ── 토픽 리스트 ── */
+  .topic-list { position:absolute; bottom:190px; left:108px; right:108px; }
+  .topic-item { display:flex; align-items:center; gap:16px; margin-bottom:18px; }
+  .topic-num { color:#DDA11D; font-size:12px; font-weight:800; letter-spacing:1px; min-width:28px; }
+  .topic-bar { width:3px; height:36px; background:#0075C1; border-radius:2px; flex-shrink:0; }
+  .topic-text { color:rgba(255,255,255,0.78); font-size:15px; font-weight:500; line-height:1.35; }
+  .topic-text .hl { color:#DDA11D; font-weight:700; }
+  .topic-cat { margin-left:auto; padding:3px 10px; border-radius:3px; font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; }
+  .cat-reg { background:rgba(221,161,29,0.15); color:#DDA11D; border:1px solid rgba(221,161,29,0.4); }
+  .cat-tech { background:rgba(0,117,193,0.2); color:#7EC8E3; border:1px solid rgba(0,117,193,0.5); }
+
+  /* ── 푸터 ── */
+  .footer { position:absolute; bottom:0; left:0; right:0; height:72px; background:rgba(0,0,0,0.35); border-top:2px solid #0075C1; display:flex; align-items:center; padding:0 108px; }
+  .footer-logo { font-size:20px; font-weight:900; color:#fff; letter-spacing:1px; }
+  .footer-logo .m { color:#DDA11D; }
+  .footer-mid { flex:1; text-align:center; color:rgba(255,255,255,0.45); font-size:12px; font-weight:600; letter-spacing:3px; text-transform:uppercase; }
+  .footer-right { min-width:120px; text-align:right; }
+</style>
+</head>
+<body>
+<div id="cover">
+  <!-- 배경 -->
+  <div class="bg-main"></div>
+  <div class="bg-accent"></div>
+  <div class="bg-ring1"></div>
+  <div class="bg-ring2"></div>
+  <div class="top-bar"></div>
+
+  <!-- 그리드 안내선 (투명) -->
+  <div class="grid-col" style="left:0px"></div>
+  <div class="grid-col" style="left:108px"></div>
+  <div class="grid-col" style="left:216px"></div>
+  <div class="grid-col" style="left:324px"></div>
+  <div class="grid-col" style="left:432px"></div>
+  <div class="grid-col" style="left:540px"></div>
+  <div class="grid-col" style="left:648px"></div>
+  <div class="grid-col" style="left:756px"></div>
+  <div class="grid-col" style="left:864px"></div>
+  <div class="grid-col" style="left:972px"></div>
+
+  <!-- 날짜 -->
+  <div class="date-tag"><span>June 10, 2026</span></div>
+  <div class="week-label">Weekly Digest</div>
+
+  <!-- 타이틀 블록 -->
+  <div class="title-block">
+    <div class="sub-eyebrow">Water Treatment Industry News</div>
+    <div class="main-title" id="mainTitle">
+      <span class="hl">PFAS</span> IN FOCUS:<br>DETECTION &amp; RISK
+    </div>
+    <div class="divider-gold"></div>
+    <div class="sub-desc">
+      From <strong>Scotland's</strong> contaminated islands to <strong>University of Kansas</strong>'s<br>
+      breakthrough — this week, <strong>PFAS</strong> monitoring takes center stage.
+    </div>
+  </div>
+
+  <!-- 기사 수 뱃지 -->
+  <div style="position:absolute;right:108px;top:270px;text-align:center;">
+    <div class="badge-circle">
+      <div class="badge-num">3</div>
+      <div class="badge-label">Stories</div>
+    </div>
+    <div class="badge-sub">Jun 03 – 09, 2026</div>
+  </div>
+
+  <!-- 토픽 리스트 -->
+  <div class="topic-list">
+    <div class="topic-item">
+      <div class="topic-num">01</div>
+      <div class="topic-bar"></div>
+      <div class="topic-text"><span class="hl">Scotland</span>'s remote island records highest PFAS levels in drinking water</div>
+      <div class="topic-cat cat-reg">Regulation</div>
+    </div>
+    <div class="topic-item">
+      <div class="topic-num">02</div>
+      <div class="topic-bar"></div>
+      <div class="topic-text"><span class="hl">University of Kansas</span> breakthrough slashes PFAS detection costs</div>
+      <div class="topic-cat cat-tech">Technology</div>
+    </div>
+    <div class="topic-item">
+      <div class="topic-num">03</div>
+      <div class="topic-bar"></div>
+      <div class="topic-text">Faster, lower-cost PFAS testing set to reshape <span class="hl">US</span> drinking water monitoring</div>
+      <div class="topic-cat cat-tech">Technology</div>
+    </div>
+  </div>
+
+  <!-- 푸터 -->
+  <div class="footer">
+    <div class="footer-logo">Hifil<span class="m">M</span> INC.</div>
+    <div class="footer-mid">Water Treatment</div>
+    <div class="footer-right"></div>
+  </div>
+</div>
+
+<script>
+// fitTitles: 제목 한 줄 강제
+(function fitTitles(){
+  var el = document.getElementById('mainTitle');
+  if(!el) return;
+  var maxW = 1080 - 108 - 108 - 180;
+  var fs = 72;
+  el.style.fontSize = fs + 'px';
+  while(el.scrollWidth > maxW && fs > 32){
+    fs -= 1;
+    el.style.fontSize = fs + 'px';
+  }
+})();
+</script>
+</body>
+</html>

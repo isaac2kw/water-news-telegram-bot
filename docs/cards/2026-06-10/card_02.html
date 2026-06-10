@@ -1,42 +1,213 @@
-<!doctype html>
-<html lang="ko">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Card 02 – University of Kansas PFAS Breakthrough</title>
 <style>
-    :root { --blue:#0f4c81; --sky:#e0f2fe; --ink:#0f172a; --muted:#64748b; --line:#dbeafe; }
-    * { box-sizing:border-box; }
-    body { margin:0; background:#f8fafc; font-family:Arial, 'Noto Sans KR', sans-serif; color:var(--ink); }
-    .slide { width:1080px; height:1350px; padding:72px; background:linear-gradient(180deg,#ffffff 0%,#eef8ff 100%); position:relative; overflow:hidden; }
-    .slide:before { content:''; position:absolute; right:-180px; top:-160px; width:520px; height:520px; border-radius:50%; background:rgba(14,165,233,.14); }
-    .slide:after { content:''; position:absolute; left:-240px; bottom:-220px; width:620px; height:620px; border-radius:50%; background:rgba(15,76,129,.10); }
-    .top { position:relative; z-index:1; display:flex; justify-content:space-between; align-items:center; margin-bottom:54px; }
-    .brand { font-size:30px; font-weight:800; color:var(--blue); letter-spacing:-.02em; }
-    .date { font-size:24px; color:var(--muted); }
-    .badge { position:relative; z-index:1; display:inline-flex; align-items:center; gap:10px; padding:12px 20px; border-radius:999px; background:var(--sky); color:var(--blue); font-size:24px; font-weight:800; border:1px solid var(--line); }
-    h1 { position:relative; z-index:1; margin:34px 0 32px; font-size:68px; line-height:1.12; letter-spacing:-.055em; color:#0b2f52; }
-    .summary { position:relative; z-index:1; font-size:34px; line-height:1.55; letter-spacing:-.035em; margin:0 0 44px; color:#1e293b; }
-    .meta { position:relative; z-index:1; border-top:2px solid var(--line); padding-top:28px; margin-top:28px; color:var(--muted); font-size:24px; line-height:1.5; }
-    .why { position:relative; z-index:1; margin-top:34px; padding:28px; background:rgba(255,255,255,.76); border:1px solid var(--line); border-radius:28px; font-size:27px; line-height:1.48; letter-spacing:-.03em; }
-    .footer { position:absolute; left:72px; right:72px; bottom:58px; z-index:1; display:flex; justify-content:space-between; align-items:center; color:#475569; font-size:22px; }
-    .source { max-width:680px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-    </style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { width:1080px; height:1080px; overflow:hidden; font-family:'Montserrat',sans-serif; background:#00205D; }
+
+  .bg-main { position:absolute; inset:0; background:linear-gradient(160deg,#001845 0%,#00205D 60%,#003070 100%); }
+  .top-bar { position:absolute; top:0; left:0; right:0; height:8px; background:linear-gradient(90deg,#0075C1,#DDA11D); }
+  .bg-deco { position:absolute; left:-100px; bottom:-100px; width:500px; height:500px; border-radius:50%; background:radial-gradient(circle,rgba(221,161,29,0.08) 0%,transparent 70%); }
+
+  .cat-label { position:absolute; top:48px; left:108px; display:flex; align-items:center; gap:12px; }
+  .cat-pill { background:rgba(0,117,193,0.2); border:1.5px solid #0075C1; border-radius:4px; padding:5px 16px; color:#7EC8E3; font-size:11px; font-weight:800; letter-spacing:2.5px; text-transform:uppercase; }
+  .cat-date { color:rgba(255,255,255,0.38); font-size:11px; font-weight:600; letter-spacing:2px; }
+  .card-num { position:absolute; top:48px; right:108px; color:rgba(255,255,255,0.12); font-size:64px; font-weight:900; line-height:1; }
+
+  .title-area { position:absolute; top:120px; left:108px; right:108px; }
+  .article-title { color:#FFFFFF; font-size:30px; font-weight:800; line-height:1.25; }
+  .article-title .hl { color:#DDA11D; }
+  .title-divider { width:160px; height:4px; background:#0075C1; border-radius:2px; margin-top:20px; }
+
+  .infographic { position:absolute; top:295px; left:108px; right:108px; height:390px; }
+
+  .fact-box { position:absolute; bottom:88px; left:108px; right:108px; background:rgba(0,117,193,0.10); border:1.5px solid rgba(0,117,193,0.4); border-left:5px solid #DDA11D; border-radius:6px; padding:20px 28px; display:flex; gap:32px; align-items:flex-start; }
+  .fact-icon { flex-shrink:0; margin-top:2px; }
+  .fact-content { flex:1; }
+  .fact-label { color:#DDA11D; font-size:10px; font-weight:800; letter-spacing:2px; text-transform:uppercase; margin-bottom:6px; }
+  .fact-text { color:rgba(255,255,255,0.82); font-size:13.5px; font-weight:500; line-height:1.6; }
+  .fact-text .hl { color:#DDA11D; font-weight:700; }
+  .fact-text .blu { color:#7EC8E3; font-weight:700; }
+
+  .footer { position:absolute; bottom:0; left:0; right:0; height:52px; background:rgba(0,0,0,0.35); border-top:2px solid #0075C1; display:flex; align-items:center; padding:0 108px; }
+  .footer-logo { font-size:16px; font-weight:900; color:#fff; }
+  .footer-logo .m { color:#DDA11D; }
+  .footer-mid { flex:1; text-align:center; color:rgba(255,255,255,0.4); font-size:11px; font-weight:600; letter-spacing:3px; text-transform:uppercase; }
+  .footer-page { color:rgba(255,255,255,0.25); font-size:11px; font-weight:700; }
+</style>
 </head>
 <body>
-  <main class="slide">
-    <div class="top">
-      <div class="brand">HIFILM Water News</div>
-      <div class="date">2026-06-10</div>
+<div id="card_02">
+  <div class="bg-main"></div>
+  <div class="bg-deco"></div>
+  <div class="top-bar"></div>
+
+  <div class="cat-label">
+    <div class="cat-pill">Technology · Detection</div>
+    <div class="cat-date">Jun 03, 2026 · Innovation News Network</div>
+  </div>
+  <div class="card-num">02</div>
+
+  <div class="title-area">
+    <div class="article-title">
+      <span class="hl">University of Kansas</span> Breakthrough<br>
+      Cuts <span class="hl">PFAS Detection</span> Costs &amp; Boosts Accuracy
     </div>
-    <div class="badge">#02 학회/전시회</div>
-    <h1>2026 Climate Solutions Prize, 몬트리올서 10개 결선 진출팀 발표</h1>
-    <p class="summary">Climate Solutions Prize 2026 결선 진출 10팀이 발표되었습니다. 몬트리올에서 6월 8~9일 개최되는 페스티벌에서 최종 우승자가 선정됩니다.</p>
-    <div class="why">왜 중요한가: 본 행사는 수처리 및 PFAS 등 환경 분야 혁신 기술의 글로벌 동향을 확인할 수 있는 대규모 국제 컨퍼런스입니다. 시장 및 투자 관점에서 신기술의 상용화 가능성과 자금 조달 트렌드를 파악할 수 있습니다.</div>
-    <div class="meta">기사일: 2026-05-21<br>출처: WaterNewsWire Full Text</div>
-    <div class="footer">
-      <div>Manual review before Instagram upload</div>
-      <div class="source">https://waternewswire.com/news/2026/climate-solutions-prize-2026-festival-finalists-montreal</div>
+    <div class="title-divider"></div>
+  </div>
+
+  <!-- 인포그래픽: 기술 프로세스 + 비용/시간 비교 -->
+  <div class="infographic">
+    <svg width="864" height="390" viewBox="0 0 864 390" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="864" height="390" rx="12" fill="rgba(0,32,93,0.55)" stroke="rgba(0,117,193,0.25)" stroke-width="1.5"/>
+
+      <!-- 상단 레이블 -->
+      <text x="30" y="32" fill="rgba(255,255,255,0.7)" font-size="12" font-family="Montserrat" font-weight="700" letter-spacing="1">NEW TESTING METHOD VS. CONVENTIONAL</text>
+
+      <!-- ───── 왼쪽: 기존 방법 ───── -->
+      <g transform="translate(30,52)">
+        <rect x="0" y="0" width="370" height="308" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+        <text x="185" y="28" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="12" font-family="Montserrat" font-weight="700" letter-spacing="1">CONVENTIONAL METHOD</text>
+
+        <!-- 비용 게이지 -->
+        <text x="20" y="58" fill="rgba(255,255,255,0.55)" font-size="10.5" font-family="Montserrat" font-weight="600">Cost per Sample</text>
+        <rect x="20" y="65" width="330" height="16" rx="8" fill="rgba(255,255,255,0.08)"/>
+        <rect x="20" y="65" width="280" height="16" rx="8" fill="rgba(200,60,60,0.55)"/>
+        <text x="310" y="78" fill="rgba(255,100,100,0.9)" font-size="10" font-family="Montserrat" font-weight="800">HIGH</text>
+
+        <!-- 시간 게이지 -->
+        <text x="20" y="106" fill="rgba(255,255,255,0.55)" font-size="10.5" font-family="Montserrat" font-weight="600">Testing Turnaround</text>
+        <rect x="20" y="113" width="330" height="16" rx="8" fill="rgba(255,255,255,0.08)"/>
+        <rect x="20" y="113" width="260" height="16" rx="8" fill="rgba(200,100,60,0.55)"/>
+        <text x="295" y="126" fill="rgba(255,150,80,0.9)" font-size="10" font-family="Montserrat" font-weight="800">SLOW</text>
+
+        <!-- 검출 범위 게이지 -->
+        <text x="20" y="154" fill="rgba(255,255,255,0.55)" font-size="10.5" font-family="Montserrat" font-weight="600">Detection Range</text>
+        <rect x="20" y="161" width="330" height="16" rx="8" fill="rgba(255,255,255,0.08)"/>
+        <rect x="20" y="161" width="160" height="16" rx="8" fill="rgba(0,117,193,0.4)"/>
+        <text x="190" y="174" fill="rgba(150,200,255,0.8)" font-size="10" font-family="Montserrat" font-weight="800">LIMITED</text>
+
+        <!-- 프로세스 단계 -->
+        <text x="20" y="210" fill="rgba(255,255,255,0.4)" font-size="10" font-family="Montserrat" font-weight="700" letter-spacing="1">PROCESS STEPS</text>
+        <!-- 단계 아이콘 -->
+        <g transform="translate(20,220)">
+          <!-- 단계1 -->
+          <circle cx="20" cy="20" r="16" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          <text x="20" y="25" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10" font-family="Montserrat">SPE</text>
+          <text x="20" y="48" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-size="8" font-family="Montserrat">Extract</text>
+          <!-- 화살표 -->
+          <line x1="38" y1="20" x2="56" y2="20" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          <polygon points="56,15 65,20 56,25" fill="rgba(255,255,255,0.2)"/>
+          <!-- 단계2 -->
+          <circle cx="82" cy="20" r="16" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          <text x="82" y="25" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10" font-family="Montserrat">LC</text>
+          <text x="82" y="48" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-size="8" font-family="Montserrat">Separate</text>
+          <line x1="100" y1="20" x2="118" y2="20" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          <polygon points="118,15 127,20 118,25" fill="rgba(255,255,255,0.2)"/>
+          <!-- 단계3 -->
+          <circle cx="144" cy="20" r="16" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          <text x="144" y="25" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9" font-family="Montserrat">MS</text>
+          <text x="144" y="48" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-size="8" font-family="Montserrat">Analyze</text>
+          <line x1="162" y1="20" x2="180" y2="20" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          <polygon points="180,15 189,20 180,25" fill="rgba(255,255,255,0.2)"/>
+          <!-- 단계4 -->
+          <circle cx="206" cy="20" r="16" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          <text x="206" y="23" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="8.5" font-family="Montserrat">Lab</text>
+          <text x="206" y="48" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-size="8" font-family="Montserrat">Report</text>
+          <!-- 전체 소요 시간 -->
+          <text x="270" y="15" fill="rgba(255,100,100,0.7)" font-size="10" font-family="Montserrat" font-weight="700">Days–</text>
+          <text x="270" y="30" fill="rgba(255,100,100,0.7)" font-size="10" font-family="Montserrat" font-weight="700">Weeks</text>
+        </g>
+      </g>
+
+      <!-- 중앙 VS -->
+      <g transform="translate(420,180)">
+        <circle cx="12" cy="0" r="24" fill="rgba(221,161,29,0.15)" stroke="#DDA11D" stroke-width="2"/>
+        <text x="12" y="6" text-anchor="middle" fill="#DDA11D" font-size="14" font-family="Montserrat" font-weight="900">VS</text>
+      </g>
+
+      <!-- ───── 오른쪽: 신기술 ───── -->
+      <g transform="translate(464,52)">
+        <rect x="0" y="0" width="370" height="308" rx="10" fill="rgba(221,161,29,0.06)" stroke="#DDA11D" stroke-width="2"/>
+        <!-- NEW 태그 -->
+        <rect x="270" y="-12" width="80" height="24" rx="4" fill="#DDA11D"/>
+        <text x="310" y="5" text-anchor="middle" fill="#00205D" font-size="11" font-family="Montserrat" font-weight="900">KU TECH</text>
+        <text x="185" y="28" text-anchor="middle" fill="#DDA11D" font-size="12" font-family="Montserrat" font-weight="700" letter-spacing="1">UNIVERSITY OF KANSAS METHOD</text>
+
+        <!-- 비용 게이지 (낮음) -->
+        <text x="20" y="58" fill="rgba(255,255,255,0.55)" font-size="10.5" font-family="Montserrat" font-weight="600">Cost per Sample</text>
+        <rect x="20" y="65" width="330" height="16" rx="8" fill="rgba(255,255,255,0.08)"/>
+        <rect x="20" y="65" width="90" height="16" rx="8" fill="rgba(100,220,120,0.6)"/>
+        <text x="125" y="78" fill="rgba(100,220,120,0.9)" font-size="10" font-family="Montserrat" font-weight="800">REDUCED ↓</text>
+
+        <!-- 시간 게이지 (빠름) -->
+        <text x="20" y="106" fill="rgba(255,255,255,0.55)" font-size="10.5" font-family="Montserrat" font-weight="600">Testing Turnaround</text>
+        <rect x="20" y="113" width="330" height="16" rx="8" fill="rgba(255,255,255,0.08)"/>
+        <rect x="20" y="113" width="75" height="16" rx="8" fill="rgba(100,220,120,0.6)"/>
+        <text x="110" y="126" fill="rgba(100,220,120,0.9)" font-size="10" font-family="Montserrat" font-weight="800">FASTER ↓</text>
+
+        <!-- 검출 범위 게이지 (향상) -->
+        <text x="20" y="154" fill="rgba(255,255,255,0.55)" font-size="10.5" font-family="Montserrat" font-weight="600">Detection Range</text>
+        <rect x="20" y="161" width="330" height="16" rx="8" fill="rgba(255,255,255,0.08)"/>
+        <rect x="20" y="161" width="300" height="16" rx="8" fill="rgba(221,161,29,0.55)"/>
+        <text x="330" y="174" fill="#DDA11D" font-size="10" font-family="Montserrat" font-weight="800">↑</text>
+
+        <!-- 프로세스 단계 (간소화) -->
+        <text x="20" y="210" fill="rgba(255,255,255,0.4)" font-size="10" font-family="Montserrat" font-weight="700" letter-spacing="1">STREAMLINED PROCESS</text>
+        <g transform="translate(20,220)">
+          <!-- 단계1 -->
+          <circle cx="30" cy="20" r="18" fill="rgba(221,161,29,0.15)" stroke="#DDA11D" stroke-width="2"/>
+          <text x="30" y="24" text-anchor="middle" fill="#DDA11D" font-size="9" font-family="Montserrat" font-weight="700">Sample</text>
+          <text x="30" y="48" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-size="8" font-family="Montserrat">Prep</text>
+          <line x1="50" y1="20" x2="78" y2="20" stroke="#DDA11D" stroke-width="2"/>
+          <polygon points="78,14 90,20 78,26" fill="#DDA11D"/>
+          <!-- 단계2 핵심 -->
+          <circle cx="112" cy="20" r="22" fill="rgba(221,161,29,0.2)" stroke="#DDA11D" stroke-width="2.5"/>
+          <text x="112" y="18" text-anchor="middle" fill="#DDA11D" font-size="9" font-family="Montserrat" font-weight="700">Novel</text>
+          <text x="112" y="30" text-anchor="middle" fill="#DDA11D" font-size="9" font-family="Montserrat" font-weight="700">Sensor</text>
+          <text x="112" y="52" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="8" font-family="Montserrat">Core Innovation</text>
+          <line x1="136" y1="20" x2="154" y2="20" stroke="#DDA11D" stroke-width="2"/>
+          <polygon points="154,14 166,20 154,26" fill="#DDA11D"/>
+          <!-- 단계3 -->
+          <circle cx="188" cy="20" r="18" fill="rgba(221,161,29,0.15)" stroke="#DDA11D" stroke-width="2"/>
+          <text x="188" y="24" text-anchor="middle" fill="#DDA11D" font-size="9" font-family="Montserrat" font-weight="700">Result</text>
+          <text x="188" y="48" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-size="8" font-family="Montserrat">Output</text>
+          <!-- 소요 시간 -->
+          <text x="255" y="15" fill="rgba(100,220,120,0.9)" font-size="11" font-family="Montserrat" font-weight="700">Hours</text>
+          <text x="255" y="30" fill="rgba(100,220,120,0.7)" font-size="10" font-family="Montserrat" font-weight="600">↓ Rapid</text>
+        </g>
+      </g>
+
+      <!-- 하단 임팩트 라인 -->
+      <g transform="translate(30,372)">
+        <rect x="0" y="0" width="804" height="0" rx="0" fill="none"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- 팩트 박스 -->
+  <div class="fact-box">
+    <div class="fact-icon">
+      <svg width="28" height="28" viewBox="0 0 28 28"><circle cx="14" cy="14" r="13" stroke="#DDA11D" stroke-width="2" fill="none"/><text x="14" y="20" text-anchor="middle" fill="#DDA11D" font-size="16" font-weight="900" font-family="Montserrat">i</text></svg>
     </div>
-  </main>
+    <div class="fact-content">
+      <div class="fact-label">Research Breakthrough</div>
+      <div class="fact-text">
+        Researchers at the <span class="hl">University of Kansas</span> have developed a new testing method that significantly <span class="hl">reduces the cost</span> of PFAS detection while <span class="blu">improving accuracy and detection range</span>. The innovation could make routine PFAS monitoring in drinking water more accessible to municipalities and utilities worldwide.
+      </div>
+    </div>
+  </div>
+
+  <!-- 푸터 -->
+  <div class="footer">
+    <div class="footer-logo">Hifil<span class="m">M</span> INC.</div>
+    <div class="footer-mid">Water Treatment</div>
+    <div class="footer-page">02 / 03</div>
+  </div>
+</div>
 </body>
 </html>

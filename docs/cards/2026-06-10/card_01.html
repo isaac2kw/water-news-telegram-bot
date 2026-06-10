@@ -1,42 +1,182 @@
-<!doctype html>
-<html lang="ko">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Card 01 – Scotland PFAS</title>
 <style>
-    :root { --blue:#0f4c81; --sky:#e0f2fe; --ink:#0f172a; --muted:#64748b; --line:#dbeafe; }
-    * { box-sizing:border-box; }
-    body { margin:0; background:#f8fafc; font-family:Arial, 'Noto Sans KR', sans-serif; color:var(--ink); }
-    .slide { width:1080px; height:1350px; padding:72px; background:linear-gradient(180deg,#ffffff 0%,#eef8ff 100%); position:relative; overflow:hidden; }
-    .slide:before { content:''; position:absolute; right:-180px; top:-160px; width:520px; height:520px; border-radius:50%; background:rgba(14,165,233,.14); }
-    .slide:after { content:''; position:absolute; left:-240px; bottom:-220px; width:620px; height:620px; border-radius:50%; background:rgba(15,76,129,.10); }
-    .top { position:relative; z-index:1; display:flex; justify-content:space-between; align-items:center; margin-bottom:54px; }
-    .brand { font-size:30px; font-weight:800; color:var(--blue); letter-spacing:-.02em; }
-    .date { font-size:24px; color:var(--muted); }
-    .badge { position:relative; z-index:1; display:inline-flex; align-items:center; gap:10px; padding:12px 20px; border-radius:999px; background:var(--sky); color:var(--blue); font-size:24px; font-weight:800; border:1px solid var(--line); }
-    h1 { position:relative; z-index:1; margin:34px 0 32px; font-size:68px; line-height:1.12; letter-spacing:-.055em; color:#0b2f52; }
-    .summary { position:relative; z-index:1; font-size:34px; line-height:1.55; letter-spacing:-.035em; margin:0 0 44px; color:#1e293b; }
-    .meta { position:relative; z-index:1; border-top:2px solid var(--line); padding-top:28px; margin-top:28px; color:var(--muted); font-size:24px; line-height:1.5; }
-    .why { position:relative; z-index:1; margin-top:34px; padding:28px; background:rgba(255,255,255,.76); border:1px solid var(--line); border-radius:28px; font-size:27px; line-height:1.48; letter-spacing:-.03em; }
-    .footer { position:absolute; left:72px; right:72px; bottom:58px; z-index:1; display:flex; justify-content:space-between; align-items:center; color:#475569; font-size:22px; }
-    .source { max-width:680px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-    </style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { width:1080px; height:1080px; overflow:hidden; font-family:'Montserrat',sans-serif; background:#00205D; }
+
+  .bg-main { position:absolute; inset:0; background:linear-gradient(160deg,#001845 0%,#00205D 60%,#003070 100%); }
+  .top-bar { position:absolute; top:0; left:0; right:0; height:8px; background:linear-gradient(90deg,#0075C1,#DDA11D); }
+  .bg-deco { position:absolute; right:-80px; top:-80px; width:500px; height:500px; border-radius:50%; background:radial-gradient(circle,rgba(0,117,193,0.15) 0%,transparent 70%); }
+
+  /* ── 카테고리 라벨 ── */
+  .cat-label { position:absolute; top:48px; left:108px; display:flex; align-items:center; gap:12px; }
+  .cat-pill { background:rgba(221,161,29,0.15); border:1.5px solid #DDA11D; border-radius:4px; padding:5px 16px; color:#DDA11D; font-size:11px; font-weight:800; letter-spacing:2.5px; text-transform:uppercase; }
+  .cat-date { color:rgba(255,255,255,0.38); font-size:11px; font-weight:600; letter-spacing:2px; }
+
+  /* ── 카드 번호 ── */
+  .card-num { position:absolute; top:48px; right:108px; color:rgba(255,255,255,0.12); font-size:64px; font-weight:900; line-height:1; }
+
+  /* ── 제목 영역 ── */
+  .title-area { position:absolute; top:120px; left:108px; right:108px; }
+  .article-title { color:#FFFFFF; font-size:32px; font-weight:800; line-height:1.22; }
+  .article-title .hl { color:#DDA11D; }
+  .title-divider { width:160px; height:4px; background:#0075C1; border-radius:2px; margin-top:20px; }
+
+  /* ── 인포그래픽 SVG ── */
+  .infographic { position:absolute; top:300px; left:108px; right:108px; height:380px; }
+
+  /* ── 팩트 박스 ── */
+  .fact-box { position:absolute; bottom:88px; left:108px; right:108px; background:rgba(0,117,193,0.10); border:1.5px solid rgba(0,117,193,0.4); border-left:5px solid #DDA11D; border-radius:6px; padding:20px 28px; display:flex; gap:32px; align-items:flex-start; }
+  .fact-icon { flex-shrink:0; margin-top:2px; }
+  .fact-content { flex:1; }
+  .fact-label { color:#DDA11D; font-size:10px; font-weight:800; letter-spacing:2px; text-transform:uppercase; margin-bottom:6px; }
+  .fact-text { color:rgba(255,255,255,0.82); font-size:13.5px; font-weight:500; line-height:1.6; }
+  .fact-text .hl { color:#DDA11D; font-weight:700; }
+  .fact-text .blu { color:#7EC8E3; font-weight:700; }
+
+  /* ── 출처 ── */
+  .source-tag { position:absolute; bottom:60px; right:108px; color:rgba(255,255,255,0.25); font-size:10px; letter-spacing:1px; }
+
+  /* ── 푸터 ── */
+  .footer { position:absolute; bottom:0; left:0; right:0; height:52px; background:rgba(0,0,0,0.35); border-top:2px solid #0075C1; display:flex; align-items:center; padding:0 108px; }
+  .footer-logo { font-size:16px; font-weight:900; color:#fff; }
+  .footer-logo .m { color:#DDA11D; }
+  .footer-mid { flex:1; text-align:center; color:rgba(255,255,255,0.4); font-size:11px; font-weight:600; letter-spacing:3px; text-transform:uppercase; }
+  .footer-page { color:rgba(255,255,255,0.25); font-size:11px; font-weight:700; }
+</style>
 </head>
 <body>
-  <main class="slide">
-    <div class="top">
-      <div class="brand">HIFILM Water News</div>
-      <div class="date">2026-06-10</div>
+<div id="card_01">
+  <div class="bg-main"></div>
+  <div class="bg-deco"></div>
+  <div class="top-bar"></div>
+
+  <!-- 카테고리 -->
+  <div class="cat-label">
+    <div class="cat-pill">Regulation · Contamination</div>
+    <div class="cat-date">Jun 03, 2026 · The Guardian</div>
+  </div>
+  <div class="card-num">01</div>
+
+  <!-- 제목 -->
+  <div class="title-area">
+    <div class="article-title">
+      <span class="hl">Scotland</span>'s Remote Island Records<br>
+      <span class="hl">Highest PFAS</span> Levels in Drinking Water
     </div>
-    <div class="badge">#01 분리막/막여과</div>
-    <h1>Toray, 바이오오염 저감 초여과막 출시</h1>
-    <p class="summary">Toray가 폐수 재이용을 위한 F-HFUG 초여과막 모듈을 선보였습니다. 0.005마이크로미터 기공 크기로 바이오폴리머 통과와 RO 오염을 줄입니다.</p>
-    <div class="why">왜 중요한가: 막 오염 저감 기술은 수처리 산업의 효율성과 비용 절감에 직결되어 시장 경쟁력을 높입니다. Toray의 신제품은 막여과 및 RO 공정의 통합 운영에 긍정적 영향을 줄 수 있습니다.</div>
-    <div class="meta">기사일: 2026-06-02<br>출처: Bing News Global Membrane Reuse</div>
-    <div class="footer">
-      <div>Manual review before Instagram upload</div>
-      <div class="source">http://www.bing.com/news/apiclick.aspx?ref=FexRss&amp;aid=&amp;tid=6a288339b28e457887ee1ae0b50da274&amp;url=https%3a%2f%2fwww.dairyfoods.com%2farticles%2f99167-toray-introduces-ultrafiltration-membrane-designed-to-reduce-biofouling-in-wastewater-reuse&amp;c=9496410966415004977&amp;mkt=en-us</div>
+    <div class="title-divider"></div>
+  </div>
+
+  <!-- 인포그래픽 SVG -->
+  <div class="infographic">
+    <svg width="864" height="380" viewBox="0 0 864 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- 배경 패널 -->
+      <rect x="0" y="0" width="864" height="380" rx="12" fill="rgba(0,32,93,0.55)" stroke="rgba(0,117,193,0.25)" stroke-width="1.5"/>
+
+      <!-- 지도 아이콘 (스코틀랜드 섬 위치 표시) -->
+      <g transform="translate(40,30)">
+        <!-- 섬 실루엣 simplified -->
+        <ellipse cx="80" cy="90" rx="55" ry="70" fill="rgba(0,117,193,0.18)" stroke="rgba(0,117,193,0.5)" stroke-width="1.5"/>
+        <ellipse cx="80" cy="90" rx="38" ry="52" fill="rgba(0,32,93,0.7)" stroke="rgba(0,117,193,0.3)" stroke-width="1"/>
+        <!-- 위험 마커 -->
+        <circle cx="80" cy="75" r="16" fill="rgba(221,161,29,0.2)" stroke="#DDA11D" stroke-width="2"/>
+        <text x="80" y="82" text-anchor="middle" fill="#DDA11D" font-size="18" font-weight="900" font-family="Montserrat">!</text>
+        <text x="80" y="175" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="11" font-family="Montserrat" font-weight="600">Scotland</text>
+        <text x="80" y="190" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="11" font-family="Montserrat" font-weight="600">Remote Island</text>
+      </g>
+
+      <!-- 화살표 -->
+      <line x1="195" y1="120" x2="240" y2="120" stroke="#DDA11D" stroke-width="2" stroke-dasharray="5,3"/>
+      <polygon points="240,114 252,120 240,126" fill="#DDA11D"/>
+
+      <!-- PFAS 농도 비교 바 차트 -->
+      <g transform="translate(265,20)">
+        <text x="0" y="20" fill="rgba(255,255,255,0.7)" font-size="12" font-family="Montserrat" font-weight="700" letter-spacing="1">PFAS CONCENTRATION COMPARISON</text>
+        <text x="0" y="36" fill="rgba(255,255,255,0.38)" font-size="10" font-family="Montserrat">(Relative Levels — Illustrative)</text>
+
+        <!-- Y축 라인 -->
+        <line x1="0" y1="50" x2="0" y2="290" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <line x1="0" y1="290" x2="575" y2="290" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+
+        <!-- 그리드 라인 -->
+        <line x1="0" y1="170" x2="575" y2="170" stroke="rgba(255,255,255,0.07)" stroke-width="1" stroke-dasharray="4,4"/>
+        <line x1="0" y1="110" x2="575" y2="110" stroke="rgba(255,255,255,0.07)" stroke-width="1" stroke-dasharray="4,4"/>
+        <line x1="0" y1="50" x2="575" y2="50" stroke="rgba(255,255,255,0.07)" stroke-width="1" stroke-dasharray="4,4"/>
+
+        <!-- EU 법적 기준 라인 -->
+        <line x1="0" y1="230" x2="575" y2="230" stroke="rgba(0,117,193,0.7)" stroke-width="1.5" stroke-dasharray="6,4"/>
+        <text x="580" y="235" fill="#7EC8E3" font-size="9.5" font-family="Montserrat" font-weight="700">EU Limit</text>
+
+        <!-- 막대: 일반 지역 평균 -->
+        <rect x="40" y="250" width="70" height="40" rx="4" fill="rgba(0,117,193,0.45)" stroke="#0075C1" stroke-width="1.5"/>
+        <text x="75" y="244" text-anchor="middle" fill="#7EC8E3" font-size="11" font-family="Montserrat" font-weight="700">Avg.</text>
+        <text x="75" y="315" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10" font-family="Montserrat">Typical</text>
+        <text x="75" y="328" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10" font-family="Montserrat">UK Water</text>
+
+        <!-- 막대: Scotland 일반 -->
+        <rect x="160" y="200" width="70" height="90" rx="4" fill="rgba(0,117,193,0.55)" stroke="#0075C1" stroke-width="1.5"/>
+        <text x="195" y="194" text-anchor="middle" fill="#7EC8E3" font-size="11" font-family="Montserrat" font-weight="700">Elevated</text>
+        <text x="195" y="315" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10" font-family="Montserrat">Scotland</text>
+        <text x="195" y="328" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10" font-family="Montserrat">Mainland</text>
+
+        <!-- 막대: 해당 섬 (위험 수준) -->
+        <rect x="280" y="58" width="70" height="232" rx="4" fill="rgba(221,161,29,0.25)" stroke="#DDA11D" stroke-width="2.5"/>
+        <!-- 경고 패턴 -->
+        <rect x="280" y="58" width="70" height="30" rx="4" fill="rgba(221,161,29,0.5)"/>
+        <text x="315" y="46" text-anchor="middle" fill="#DDA11D" font-size="12" font-family="Montserrat" font-weight="900">HIGHEST</text>
+        <text x="315" y="315" text-anchor="middle" fill="#DDA11D" font-size="10" font-family="Montserrat" font-weight="700">Remote</text>
+        <text x="315" y="328" text-anchor="middle" fill="#DDA11D" font-size="10" font-family="Montserrat" font-weight="700">Island</text>
+        <!-- 경고 아이콘 -->
+        <text x="315" y="83" text-anchor="middle" fill="#DDA11D" font-size="18" font-weight="900" font-family="Montserrat">⚠</text>
+
+        <!-- 막대: WHO 가이드라인 참고 -->
+        <rect x="400" y="170" width="70" height="120" rx="4" fill="rgba(120,200,100,0.2)" stroke="rgba(120,200,100,0.5)" stroke-width="1.5"/>
+        <text x="435" y="163" text-anchor="middle" fill="rgba(120,200,100,0.85)" font-size="10.5" font-family="Montserrat" font-weight="700">Guideline</text>
+        <text x="435" y="315" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10" font-family="Montserrat">WHO</text>
+        <text x="435" y="328" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10" font-family="Montserrat">Reference</text>
+
+        <!-- Y축 레이블 -->
+        <text x="-8" y="295" text-anchor="end" fill="rgba(255,255,255,0.35)" font-size="9" font-family="Montserrat">Low</text>
+        <text x="-8" y="175" text-anchor="end" fill="rgba(255,255,255,0.35)" font-size="9" font-family="Montserrat">Mid</text>
+        <text x="-8" y="55" text-anchor="end" fill="rgba(255,255,255,0.35)" font-size="9" font-family="Montserrat">High</text>
+      </g>
+
+      <!-- "Forever Chemicals" 설명 태그 -->
+      <g transform="translate(40,230)">
+        <rect x="0" y="0" width="195" height="100" rx="8" fill="rgba(0,117,193,0.12)" stroke="rgba(0,117,193,0.35)" stroke-width="1.5"/>
+        <text x="12" y="22" fill="#7EC8E3" font-size="10" font-family="Montserrat" font-weight="800" letter-spacing="1.5">PFAS KEY FACTS</text>
+        <text x="12" y="42" fill="rgba(255,255,255,0.7)" font-size="10" font-family="Montserrat">• Persist indefinitely in environment</text>
+        <text x="12" y="58" fill="rgba(255,255,255,0.7)" font-size="10" font-family="Montserrat">• Linked to cancer &amp; immune effects</text>
+        <text x="12" y="74" fill="rgba(255,255,255,0.7)" font-size="10" font-family="Montserrat">• Called "Forever Chemicals"</text>
+        <text x="12" y="90" fill="rgba(255,255,255,0.7)" font-size="10" font-family="Montserrat">• Detected in remote locations</text>
+      </g>
+    </svg>
+  </div>
+
+  <!-- 팩트 박스 -->
+  <div class="fact-box">
+    <div class="fact-icon">
+      <svg width="28" height="28" viewBox="0 0 28 28"><circle cx="14" cy="14" r="13" stroke="#DDA11D" stroke-width="2" fill="none"/><text x="14" y="20" text-anchor="middle" fill="#DDA11D" font-size="16" font-weight="900" font-family="Montserrat">i</text></svg>
     </div>
-  </main>
+    <div class="fact-content">
+      <div class="fact-label">Key Finding</div>
+      <div class="fact-text">
+        A remote island in <span class="hl">Scotland</span> has been identified as having the <span class="hl">highest PFAS contamination levels</span> in drinking water across the country. Despite geographic isolation, <span class="blu">"forever chemicals"</span> have permeated the local water supply — raising urgent questions about contamination pathways and regulatory oversight in rural communities.
+      </div>
+    </div>
+  </div>
+
+  <!-- 푸터 -->
+  <div class="footer">
+    <div class="footer-logo">Hifil<span class="m">M</span> INC.</div>
+    <div class="footer-mid">Water Treatment</div>
+    <div class="footer-page">01 / 03</div>
+  </div>
+</div>
 </body>
 </html>
