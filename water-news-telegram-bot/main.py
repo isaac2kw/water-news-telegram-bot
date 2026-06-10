@@ -3197,7 +3197,7 @@ def call_claude_for_cards(articles_data, date_str, start_date, end_date):
                 "anthropic-version": "2023-06-01",
             },
             json={
-                "model": "claude-sonnet-4-20250514",
+                "model": "claude-sonnet-4-6",
                 "max_tokens": 16000,
                 "system": system_prompt,
                 "messages": [{"role": "user", "content": user_message}],
