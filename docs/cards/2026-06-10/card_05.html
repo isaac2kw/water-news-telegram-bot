@@ -1,42 +1,76 @@
-<!doctype html>
-<html lang="ko">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
 <style>
-    :root { --blue:#0f4c81; --sky:#e0f2fe; --ink:#0f172a; --muted:#64748b; --line:#dbeafe; }
-    * { box-sizing:border-box; }
-    body { margin:0; background:#f8fafc; font-family:Arial, 'Noto Sans KR', sans-serif; color:var(--ink); }
-    .slide { width:1080px; height:1350px; padding:72px; background:linear-gradient(180deg,#ffffff 0%,#eef8ff 100%); position:relative; overflow:hidden; }
-    .slide:before { content:''; position:absolute; right:-180px; top:-160px; width:520px; height:520px; border-radius:50%; background:rgba(14,165,233,.14); }
-    .slide:after { content:''; position:absolute; left:-240px; bottom:-220px; width:620px; height:620px; border-radius:50%; background:rgba(15,76,129,.10); }
-    .top { position:relative; z-index:1; display:flex; justify-content:space-between; align-items:center; margin-bottom:54px; }
-    .brand { font-size:30px; font-weight:800; color:var(--blue); letter-spacing:-.02em; }
-    .date { font-size:24px; color:var(--muted); }
-    .badge { position:relative; z-index:1; display:inline-flex; align-items:center; gap:10px; padding:12px 20px; border-radius:999px; background:var(--sky); color:var(--blue); font-size:24px; font-weight:800; border:1px solid var(--line); }
-    h1 { position:relative; z-index:1; margin:34px 0 32px; font-size:68px; line-height:1.12; letter-spacing:-.055em; color:#0b2f52; }
-    .summary { position:relative; z-index:1; font-size:34px; line-height:1.55; letter-spacing:-.035em; margin:0 0 44px; color:#1e293b; }
-    .meta { position:relative; z-index:1; border-top:2px solid var(--line); padding-top:28px; margin-top:28px; color:var(--muted); font-size:24px; line-height:1.5; }
-    .why { position:relative; z-index:1; margin-top:34px; padding:28px; background:rgba(255,255,255,.76); border:1px solid var(--line); border-radius:28px; font-size:27px; line-height:1.48; letter-spacing:-.03em; }
-    .footer { position:absolute; left:72px; right:72px; bottom:58px; z-index:1; display:flex; justify-content:space-between; align-items:center; color:#475569; font-size:22px; }
-    .source { max-width:680px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-    </style>
+  :root{--main-blue:#0075C1;--yellow:#DDA11D;--navy:#00205D;--tint:#E6F1FB;--card-bg:#F5F7FA;--line:#B5D4F4;--gray-light:#888780;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{margin:0;padding:0;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;}
+  .card{width:1080px;height:1080px;background:#ffffff;position:relative;overflow:hidden;}
+  .pad{padding:0 90px;}
+  .footer{position:absolute;left:0;right:0;bottom:46px;padding:0 90px;}
+  .footer .line{height:1px;background:var(--line);margin-bottom:22px;}
+  .footer .row{display:flex;align-items:center;justify-content:space-between;}
+  .logo{font-size:26px;font-weight:700;}
+  .logo .h{color:var(--main-blue);}.logo .m{color:var(--yellow);}.logo .inc{color:var(--navy);}
+  .footer .center{color:var(--main-blue);font-size:22px;font-weight:600;letter-spacing:2px;}
+  .footer .right{width:120px;}
+  .label{display:flex;align-items:center;gap:12px;padding-top:96px;color:var(--main-blue);font-size:24px;font-weight:700;letter-spacing:3px;}
+  .label .ldot{width:10px;height:10px;border-radius:50%;background:var(--main-blue);}
+  .label .lbadge{margin-left:6px;background:var(--tint);color:var(--main-blue);font-size:18px;letter-spacing:2px;padding:5px 14px;border-radius:20px;}
+  .ctitle{margin-top:34px;color:var(--navy);font-size:50px;font-weight:700;line-height:1.18;}
+  .ctitle .b{color:var(--main-blue);}.ctitle .y{color:var(--yellow);}
+  .cdivider{width:160px;height:4px;background:var(--main-blue);margin-top:30px;}
+  .info{margin-top:40px;}
+  .facts{position:absolute;left:90px;right:90px;bottom:150px;display:flex;gap:18px;}
+  .fact{flex:1;background:var(--card-bg);border-radius:16px;padding:26px 24px;}
+  .fact .k{color:var(--gray-light);font-size:18px;letter-spacing:1px;margin-bottom:10px;}
+  .fact .v{color:var(--navy);font-size:24px;font-weight:700;line-height:1.25;}
+  .fact .v .b{color:var(--main-blue);}.fact .v .y{color:var(--yellow);}
+</style>
 </head>
 <body>
-  <main class="slide">
-    <div class="top">
-      <div class="brand">HIFILM Water News</div>
-      <div class="date">2026-06-10</div>
+<div class="card" id="card_05">
+  <div class="pad">
+    <div class="label"><span class="ldot"></span>학회 · 인증<span class="lbadge">KOREA</span></div>
+    <div class="ctitle"><span class="y">한국상하수도협회</span>, 환경ISC 첫 <span class="b">'S등급'</span> 획득 — 인재양성 성과 인정</div>
+    <div class="cdivider"></div>
+    <div class="info">
+      <svg width="900" height="300" viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg">
+        <rect x="60" y="100" width="120" height="160" rx="8" fill="#F5F7FA" stroke="#B5D4F4" stroke-width="2"/>
+        <text x="120" y="200" text-anchor="middle" font-size="36" font-weight="700" fill="#B5D4F4">C</text>
+        <text x="120" y="235" text-anchor="middle" font-size="14" fill="#888780">Basic</text>
+        <rect x="200" y="80" width="120" height="180" rx="8" fill="#F5F7FA" stroke="#B5D4F4" stroke-width="2"/>
+        <text x="260" y="200" text-anchor="middle" font-size="36" font-weight="700" fill="#B5D4F4">B</text>
+        <text x="260" y="235" text-anchor="middle" font-size="14" fill="#888780">Good</text>
+        <rect x="340" y="60" width="120" height="200" rx="8" fill="#E6F1FB" stroke="#0075C1" stroke-width="2"/>
+        <text x="400" y="200" text-anchor="middle" font-size="36" font-weight="700" fill="#0075C1">A</text>
+        <text x="400" y="235" text-anchor="middle" font-size="14" fill="#888780">Excellent</text>
+        <rect x="480" y="30" width="160" height="230" rx="8" fill="#DDA11D"/>
+        <text x="560" y="170" text-anchor="middle" font-size="56" font-weight="700" fill="#ffffff">S</text>
+        <text x="560" y="210" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">TOP GRADE</text>
+        <text x="560" y="235" text-anchor="middle" font-size="14" fill="#ffffff">FIRST EVER</text>
+        <rect x="680" y="100" width="180" height="160" rx="10" fill="#E6F1FB" stroke="#0075C1" stroke-width="2"/>
+        <text x="770" y="140" text-anchor="middle" font-size="16" font-weight="700" fill="#0075C1">환경 ISC</text>
+        <text x="770" y="175" text-anchor="middle" font-size="14" fill="#888780">Industrial</text>
+        <text x="770" y="195" text-anchor="middle" font-size="14" fill="#888780">Skills Council</text>
+        <text x="770" y="225" text-anchor="middle" font-size="14" fill="#00205D">인재양성</text>
+      </svg>
     </div>
-    <div class="badge">#05 재이용수</div>
-    <h1>SUEZ, Béziers서 Hybrid Batch RO 파일럿 가동</h1>
-    <p class="summary">SUEZ와 Salinity Solutions가 프랑스 Béziers에서 Hybrid Batch Reverse Osmosis 파일럿을 시작했습니다. 이 프로젝트는 도시 하수 재이용을 위한 산업용 첫 사례입니다.</p>
-    <div class="why">왜 중요한가: 본 파일럿은 하수 재이용 시장에서 Hybrid Batch RO의 실증을 통해 에너지 절감 및 운영 효율성 향상 가능성을 보여줍니다. 이는 향후 도시 하수 재이용 프로젝트의 기술 선택과 시장 확대에 영향을 줄 수 있습니다.</div>
-    <div class="meta">기사일: 2026-04-24<br>출처: Google News Global Desalination</div>
-    <div class="footer">
-      <div>Manual review before Instagram upload</div>
-      <div class="source">https://news.google.com/rss/articles/CBMiqgFBVV95cUxQRTdOWkNvWFVsaWlKLTY5emQ5bFBrQWRpQVRUZnZuRlNRTWpBTUN0b0JoaEtrZFcxX1RVdTRCNnBmdkNrSm5NQjdNcHJNV3U1cFZ4MHA0aUUwd3FmcUJ4RjMwa0VPM3NxYW1fdlFRSWQybHN1TXFNaDVaYmdRREZEcVM5QVZnRmM3bnQ0NlRQckUwMUFHbm4wODNDNjgxaDAtREZQV2UwWFhSdw?oc=5</div>
+  </div>
+  <div class="facts">
+    <div class="fact"><div class="k">기관</div><div class="v"><span class="y">한국상하수도협회</span></div></div>
+    <div class="fact"><div class="k">등급</div><div class="v"><span class="b">S등급</span> · 환경 ISC</div></div>
+    <div class="fact"><div class="k">분야</div><div class="v">환경산업 인재양성</div></div>
+  </div>
+  <div class="footer">
+    <div class="line"></div>
+    <div class="row">
+      <div class="logo"><span class="h">Hifil</span><span class="m">M</span>&nbsp;<span class="inc">INC.</span></div>
+      <div class="center">Water Treatment</div>
+      <div class="right"></div>
     </div>
-  </main>
+  </div>
+</div>
 </body>
 </html>
