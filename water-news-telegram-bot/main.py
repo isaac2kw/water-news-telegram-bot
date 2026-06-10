@@ -3169,9 +3169,9 @@ def call_claude_for_cards(articles_data, date_str, start_date, end_date):
 
 중요 규칙:
 1. 모든 카테고리의 기사를 커버와 본문 카드 모두에 포함합니다. 필터링하지 마십시오.
-2. 커버 헤드라인 수와 본문 카드 수는 반드시 일치해야 합니다. 커버에 5건이면 본문도 5장입니다.
-3. 영문 카드뉴스입니다. 고유명사(기업, 지명, 기관)는 영문 유지하고 옐로우(#DDA11D)로 강조합니다.
-4. 커버 1장 + 본문 카드(선정 기사 수만큼, 최대 5장)를 제작합니다.
+2. 커버 헤드라인 수와 본문 카드 수는 반드시 일치해야 합니다. 커버에 10건이면 본문도 10장입니다.
+3. 영문 카드뉴스입니다. 모든 제목, 라벨, 인포그래픽 텍스트, 사실 박스를 반드시 영어로 작성합니다. 한국어 기사도 영어로 번역합니다. 한글은 어떤 카드에도 사용하지 마십시오.
+4. 고유명사(기업, 지명, 기관)는 영문 원문 유지하고 옐로우(#DDA11D)로 강조합니다.
 5. 각 카드는 완전한 HTML 문서입니다 (<!DOCTYPE html> 포함).
 6. 각 카드 사이에 ===CARD_SEPARATOR=== 구분자를 넣습니다.
 7. 첫 번째 카드는 커버(id="cover"), 이후는 id="card_01", "card_02" 순서입니다.
@@ -3198,11 +3198,11 @@ def call_claude_for_cards(articles_data, date_str, start_date, end_date):
             },
             json={
                 "model": "claude-opus-4-7",
-                "max_tokens": 30000,
+                "max_tokens": 50000,
                 "system": system_prompt,
                 "messages": [{"role": "user", "content": user_message}],
             },
-            timeout=180,
+            timeout=300,
         )
         resp.raise_for_status()
         data = resp.json()
