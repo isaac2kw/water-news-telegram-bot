@@ -23,6 +23,7 @@ BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4.1")
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
 # gpt-5 계열 모델은 temperature 커스텀 값을 지원하지 않으므로 전송하지 않습니다.
 # gpt-4.1 등 일반 모델은 temperature를 정상 지원합니다.
 IS_GPT5_FAMILY = OPENAI_MODEL.startswith("gpt-5")
@@ -41,6 +42,7 @@ GMAIL_USER = os.getenv("GMAIL_USER")
 GMAIL_APP_PASSWORD = os.getenv("GMAIL_APP_PASSWORD")
 CARD_RECIPIENT = os.getenv("CARD_RECIPIENT", GMAIL_USER or "")
 FORCE_CARD_NEWS = os.getenv("FORCE_CARD_NEWS", "false").lower() == "true"
+CARD_NEWS_ONLY = os.getenv("CARD_NEWS_ONLY", "false").lower() == "true"
 CARD_NEWS_TOP_N = int(os.getenv("CARD_NEWS_TOP_N", "5"))
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -57,6 +59,7 @@ PROJECTS_DIR = DOCS_DIR / "projects"
 NUMERIC_DIR = DOCS_DIR / "numeric-news"
 CARDS_DIR = DOCS_DIR / "cards"
 EVENTS_CACHE_FILE = BASE_DIR / "events_cache.json"
+CARD_GUIDE_FILE = BASE_DIR / "card_news_guide.md"
 
 
 KEYWORDS = {
@@ -3098,90 +3101,177 @@ def sanitize_gmail_app_password(value):
     return re.sub(r"\s+", "", str(value or "").replace("\u00a0", ""))
 
 
-def card_css():
-    return """
-    :root { --blue:#0f4c81; --sky:#e0f2fe; --ink:#0f172a; --muted:#64748b; --line:#dbeafe; }
-    * { box-sizing:border-box; }
-    body { margin:0; background:#f8fafc; font-family:Arial, 'Noto Sans KR', sans-serif; color:var(--ink); }
-    .slide { width:1080px; height:1350px; padding:72px; background:linear-gradient(180deg,#ffffff 0%,#eef8ff 100%); position:relative; overflow:hidden; }
-    .slide:before { content:''; position:absolute; right:-180px; top:-160px; width:520px; height:520px; border-radius:50%; background:rgba(14,165,233,.14); }
-    .slide:after { content:''; position:absolute; left:-240px; bottom:-220px; width:620px; height:620px; border-radius:50%; background:rgba(15,76,129,.10); }
-    .top { position:relative; z-index:1; display:flex; justify-content:space-between; align-items:center; margin-bottom:54px; }
-    .brand { font-size:30px; font-weight:800; color:var(--blue); letter-spacing:-.02em; }
-    .date { font-size:24px; color:var(--muted); }
-    .badge { position:relative; z-index:1; display:inline-flex; align-items:center; gap:10px; padding:12px 20px; border-radius:999px; background:var(--sky); color:var(--blue); font-size:24px; font-weight:800; border:1px solid var(--line); }
-    h1 { position:relative; z-index:1; margin:34px 0 32px; font-size:68px; line-height:1.12; letter-spacing:-.055em; color:#0b2f52; }
-    .summary { position:relative; z-index:1; font-size:34px; line-height:1.55; letter-spacing:-.035em; margin:0 0 44px; color:#1e293b; }
-    .meta { position:relative; z-index:1; border-top:2px solid var(--line); padding-top:28px; margin-top:28px; color:var(--muted); font-size:24px; line-height:1.5; }
-    .why { position:relative; z-index:1; margin-top:34px; padding:28px; background:rgba(255,255,255,.76); border:1px solid var(--line); border-radius:28px; font-size:27px; line-height:1.48; letter-spacing:-.03em; }
-    .footer { position:absolute; left:72px; right:72px; bottom:58px; z-index:1; display:flex; justify-content:space-between; align-items:center; color:#475569; font-size:22px; }
-    .source { max-width:680px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-    """
+def get_card_date_range(now=None):
+    """월요일이면 목~일(4일), 목요일이면 월~수(3일) 범위를 반환합니다. 중첩 방지."""
+    now = now or datetime.now(KST)
+    weekday = now.weekday()
+
+    if FORCE_CARD_NEWS:
+        start = now - timedelta(days=7)
+        end = now - timedelta(days=1)
+    elif weekday == 0:
+        start = now - timedelta(days=4)
+        end = now - timedelta(days=1)
+    elif weekday == 3:
+        start = now - timedelta(days=3)
+        end = now - timedelta(days=1)
+    else:
+        return None, None
+
+    return start.strftime("%Y-%m-%d"), end.strftime("%Y-%m-%d")
 
 
-def build_card_html(article, index, date_str):
-    ai = article.get("ai", {}) or {}
-    title = replace_company_names_with_english(ai.get("ko_title") or article.get("title") or "제목 없음")
-    brief = replace_company_names_with_english(ai.get("brief") or article.get("summary") or "요약 정보가 없습니다.")
-    why = replace_company_names_with_english(ai.get("why_important") or "수처리 산업 모니터링 대상으로 분류된 기사입니다.")
-    category = ai.get("category") or guess_category(article)
-    source = article.get("source") or article.get("domain") or "source unknown"
-    article_date = article.get("date", date_str)
-    link = article.get("link", "")
+def load_articles_in_range(start_date, end_date):
+    """news_history.json에서 날짜 범위 내 기사를 추출합니다."""
+    history = load_json(HISTORY_FILE, [])
+    results = []
+    for item in history:
+        d = item.get("date", "")
+        if start_date <= d <= end_date:
+            results.append(item)
+    return results
 
-    return f"""<!doctype html>
-<html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>{card_css()}</style>
-</head>
-<body>
-  <main class="slide">
-    <div class="top">
-      <div class="brand">HIFILM Water News</div>
-      <div class="date">{html.escape(date_str)}</div>
-    </div>
-    <div class="badge">#{index:02d} {html.escape(category)}</div>
-    <h1>{html.escape(title)}</h1>
-    <p class="summary">{html.escape(brief)}</p>
-    <div class="why">왜 중요한가: {html.escape(why)}</div>
-    <div class="meta">기사일: {html.escape(article_date)}<br>출처: {html.escape(source)}</div>
-    <div class="footer">
-      <div>Manual review before Instagram upload</div>
-      <div class="source">{html.escape(link)}</div>
-    </div>
-  </main>
-</body>
-</html>"""
+
+def call_claude_for_cards(articles_data, date_str, start_date, end_date):
+    """Claude API를 호출해 커버 + 본문 HTML 카드를 생성합니다."""
+    api_key = ANTHROPIC_API_KEY
+    if not api_key:
+        print("ANTHROPIC_API_KEY not set; skipping Claude card generation.")
+        return None
+
+    guide_text = ""
+    if CARD_GUIDE_FILE.exists():
+        guide_text = CARD_GUIDE_FILE.read_text(encoding="utf-8")
+
+    simplified = []
+    for a in articles_data:
+        ai = a.get("ai", {}) or {}
+        simplified.append({
+            "title": a.get("title", ""),
+            "ko_title": ai.get("ko_title", ""),
+            "brief": ai.get("brief", ""),
+            "why_important": ai.get("why_important", ""),
+            "category": ai.get("category", ""),
+            "countries": ai.get("countries", []),
+            "companies": ai.get("companies", []),
+            "technologies": ai.get("technologies", []),
+            "specs": ai.get("specs", []),
+            "date": a.get("date", ""),
+            "source": a.get("source", ""),
+        })
+
+    system_prompt = f"""당신은 HifilM INC.의 인스타그램 수처리 뉴스 카드뉴스 디자이너입니다.
+아래 제작 가이드를 반드시 따라 HTML 카드를 생성하십시오.
+
+<card_news_guide>
+{guide_text}
+</card_news_guide>
+
+중요 규칙:
+1. 동향(수처리 산업동향)/기술(분리막, MBR, PFAS 등)/규제(규제/정책) 기사만 선정합니다.
+2. 프로젝트/수주, 학회/전시회, 산업폐수(증설/건설), 교육/홍보 기사는 제외합니다.
+3. 영문 카드뉴스입니다. 고유명사(기업, 지명, 기관)는 영문 유지하고 옐로우(#DDA11D)로 강조합니다.
+4. 커버 1장 + 본문 카드(선정 기사 수만큼, 최대 5장)를 제작합니다.
+5. 각 카드는 완전한 HTML 문서입니다 (<!DOCTYPE html> 포함).
+6. 각 카드 사이에 ===CARD_SEPARATOR=== 구분자를 넣습니다.
+7. 첫 번째 카드는 커버(id="cover"), 이후는 id="card_01", "card_02" 순서입니다.
+8. 규격: 1080x1080px. 가이드의 색상(#0075C1, #DDA11D, #00205D 등), 로고(Hifil 블루 + M 옐로우), 푸터(좌: HifilM INC., 중앙: Water Treatment, 우: 비움) 규칙을 정확히 적용합니다.
+9. 커버: 10칸 고정, 제목 한 줄 강제(fitTitles 스크립트 포함), 고유명사 옐로우, 출처/페이지번호 없음.
+10. 본문: 상단 카테고리 라벨 + 제목 + 좌측 구분선(160px, 4px, 블루) + 기사 성격에 맞는 인포그래픽(SVG 직접 제작) + 사실 박스 + 푸터.
+11. HTML 코드만 출력합니다. 설명이나 마크다운 코드블록은 넣지 마십시오.
+"""
+
+    user_message = f"""다음 기사 데이터로 {date_str} 발행 카드뉴스를 제작해 주세요.
+수집 기간: {start_date} ~ {end_date}
+
+기사 데이터:
+{json.dumps(simplified, ensure_ascii=False, indent=2)}
+"""
+
+    try:
+        resp = requests.post(
+            "https://api.anthropic.com/v1/messages",
+            headers={
+                "Content-Type": "application/json",
+                "x-api-key": api_key,
+                "anthropic-version": "2023-06-01",
+            },
+            json={
+                "model": "claude-sonnet-4-20250514",
+                "max_tokens": 16000,
+                "system": system_prompt,
+                "messages": [{"role": "user", "content": user_message}],
+            },
+            timeout=180,
+        )
+        resp.raise_for_status()
+        data = resp.json()
+        return data["content"][0]["text"]
+    except Exception as exc:
+        print(f"Claude API call failed: {exc}")
+        return None
 
 
 def generate_card_news(articles, date_str, top_n=None):
-    """선정 기사로 1080×1350 PNG 카드뉴스를 생성하고 PNG 경로 목록을 반환합니다."""
+    """Claude API로 카드뉴스 HTML을 받아 Playwright로 1080x1080 2x PNG 캡처합니다."""
     top_n = top_n or CARD_NEWS_TOP_N
     cards_dir = CARDS_DIR / date_str
     cards_dir.mkdir(parents=True, exist_ok=True)
 
-    targets = [a for a in articles if a.get("ai")][:top_n]
+    start_date, end_date = get_card_date_range()
+    if start_date is None:
+        print("Not a card-news day; skipping.")
+        return []
+
+    range_articles = load_articles_in_range(start_date, end_date)
+    if not range_articles:
+        range_articles = articles
+
+    targets = [a for a in range_articles if a.get("ai")][:top_n * 2]
     if not targets:
-        print("No summarized articles for card news; skipping card generation.")
+        print("No articles for card news; skipping.")
+        return []
+
+    print(f"Calling Claude API for card news ({start_date} ~ {end_date}, {len(targets)} articles)...")
+    html_output = call_claude_for_cards(targets, date_str, start_date, end_date)
+    if not html_output:
+        print("Claude returned no HTML; skipping card generation.")
+        return []
+
+    html_output = re.sub(r"^```html\s*", "", html_output.strip())
+    html_output = re.sub(r"\s*```$", "", html_output.strip())
+
+    cards = [c.strip() for c in html_output.split("===CARD_SEPARATOR===") if c.strip()]
+    if not cards:
+        print("No card HTML segments found; skipping.")
         return []
 
     html_paths = []
-    for idx, article in enumerate(targets, start=1):
-        html_path = cards_dir / f"card_{idx:02d}.html"
-        html_path.write_text(build_card_html(article, idx, date_str), encoding="utf-8")
-        html_paths.append(html_path)
+    for idx, card_html in enumerate(cards):
+        name = "cover" if idx == 0 else f"card_{idx:02d}"
+        path = cards_dir / f"{name}.html"
+        path.write_text(card_html, encoding="utf-8")
+        html_paths.append(path)
 
     png_paths = []
     try:
         from playwright.sync_api import sync_playwright
         with sync_playwright() as p:
             browser = p.chromium.launch()
-            page = browser.new_page(viewport={"width": 1080, "height": 1350}, device_scale_factor=1)
+            page = browser.new_page(
+                viewport={"width": 1080, "height": 1080},
+                device_scale_factor=2,
+            )
             for html_path in html_paths:
                 png_path = html_path.with_suffix(".png")
                 page.goto(html_path.resolve().as_uri(), wait_until="networkidle")
+                page.wait_for_timeout(1000)
+                if "cover" in html_path.name:
+                    try:
+                        page.evaluate("if(typeof fitTitles==='function') fitTitles()")
+                        page.wait_for_timeout(400)
+                    except Exception:
+                        pass
                 page.screenshot(path=str(png_path), full_page=False)
                 png_paths.append(png_path)
             browser.close()
@@ -3189,7 +3279,7 @@ def generate_card_news(articles, date_str, top_n=None):
         print(f"Card PNG generation failed: {exc}")
         return []
 
-    print(f"Generated {len(png_paths)} card-news PNG files in {cards_dir}")
+    print(f"Generated {len(png_paths)} card-news PNGs (Claude API) in {cards_dir}")
     return png_paths
 
 
@@ -3259,6 +3349,22 @@ def send_telegram(text):
 def main():
     DOCS_DIR.mkdir(parents=True, exist_ok=True)
 
+    # 카드뉴스 전용 모드: 기존 history에서 기사를 읽어 Claude API로 카드 생성 후 이메일 발송만 수행합니다.
+    if CARD_NEWS_ONLY:
+        today_str = datetime.now(KST).strftime("%Y-%m-%d")
+        start_date, end_date = get_card_date_range()
+        if not start_date:
+            print("get_card_date_range returned None; exiting card-news-only mode.")
+            return
+        print(f"Card-news-only mode: {start_date} ~ {end_date}")
+        range_articles = load_articles_in_range(start_date, end_date)
+        if not range_articles:
+            print(f"No articles found in range {start_date} ~ {end_date}; exiting.")
+            return
+        card_pngs = generate_card_news(range_articles, today_str)
+        send_card_email(card_pngs, today_str)
+        return
+
     articles = fetch_articles()
     selected_articles = articles[:MAX_ITEMS]
 
@@ -3286,7 +3392,7 @@ def main():
     update_docs_index(daily_url, weekly_url, monthly_url)
 
     today_str = datetime.now(KST).strftime("%Y-%m-%d")
-    if should_generate_cards():
+    if FORCE_CARD_NEWS:
         card_pngs = generate_card_news(selected_articles, today_str)
         send_card_email(card_pngs, today_str)
 
