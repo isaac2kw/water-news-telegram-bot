@@ -3197,7 +3197,7 @@ def call_claude_for_cards(articles_data, date_str, start_date, end_date):
                 "anthropic-version": "2023-06-01",
             },
             json={
-                "model": "claude-sonnet-4-6",
+                "model": "claude-opus-4-7",
                 "max_tokens": 16000,
                 "system": system_prompt,
                 "messages": [{"role": "user", "content": user_message}],
@@ -3227,7 +3227,7 @@ def generate_card_news(articles, date_str, top_n=None):
     if not range_articles:
         range_articles = articles
 
-    targets = range_articles[:top_n * 2]
+    targets = [a for a in range_articles if a.get("ai")][:top_n * 2]
     if not targets:
         print("No articles for card news; skipping.")
         return []
