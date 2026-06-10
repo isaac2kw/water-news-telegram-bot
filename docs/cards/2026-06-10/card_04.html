@@ -1,42 +1,102 @@
-<!doctype html>
-<html lang="ko">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
 <style>
-    :root { --blue:#0f4c81; --sky:#e0f2fe; --ink:#0f172a; --muted:#64748b; --line:#dbeafe; }
-    * { box-sizing:border-box; }
-    body { margin:0; background:#f8fafc; font-family:Arial, 'Noto Sans KR', sans-serif; color:var(--ink); }
-    .slide { width:1080px; height:1350px; padding:72px; background:linear-gradient(180deg,#ffffff 0%,#eef8ff 100%); position:relative; overflow:hidden; }
-    .slide:before { content:''; position:absolute; right:-180px; top:-160px; width:520px; height:520px; border-radius:50%; background:rgba(14,165,233,.14); }
-    .slide:after { content:''; position:absolute; left:-240px; bottom:-220px; width:620px; height:620px; border-radius:50%; background:rgba(15,76,129,.10); }
-    .top { position:relative; z-index:1; display:flex; justify-content:space-between; align-items:center; margin-bottom:54px; }
-    .brand { font-size:30px; font-weight:800; color:var(--blue); letter-spacing:-.02em; }
-    .date { font-size:24px; color:var(--muted); }
-    .badge { position:relative; z-index:1; display:inline-flex; align-items:center; gap:10px; padding:12px 20px; border-radius:999px; background:var(--sky); color:var(--blue); font-size:24px; font-weight:800; border:1px solid var(--line); }
-    h1 { position:relative; z-index:1; margin:34px 0 32px; font-size:68px; line-height:1.12; letter-spacing:-.055em; color:#0b2f52; }
-    .summary { position:relative; z-index:1; font-size:34px; line-height:1.55; letter-spacing:-.035em; margin:0 0 44px; color:#1e293b; }
-    .meta { position:relative; z-index:1; border-top:2px solid var(--line); padding-top:28px; margin-top:28px; color:var(--muted); font-size:24px; line-height:1.5; }
-    .why { position:relative; z-index:1; margin-top:34px; padding:28px; background:rgba(255,255,255,.76); border:1px solid var(--line); border-radius:28px; font-size:27px; line-height:1.48; letter-spacing:-.03em; }
-    .footer { position:absolute; left:72px; right:72px; bottom:58px; z-index:1; display:flex; justify-content:space-between; align-items:center; color:#475569; font-size:22px; }
-    .source { max-width:680px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-    </style>
+  :root{
+    --main-blue:#0075C1;
+    --yellow:#DDA11D;
+    --navy:#00205D;
+    --tint:#E6F1FB;
+    --card-bg:#F5F7FA;
+    --line:#B5D4F4;
+    --gray-light:#888780;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{margin:0;padding:0;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;}
+  .card{width:1080px;height:1080px;background:#ffffff;position:relative;overflow:hidden;}
+  .pad{padding:0 90px;}
+  .footer{position:absolute;left:0;right:0;bottom:46px;padding:0 90px;}
+  .footer .line{height:1px;background:var(--line);margin-bottom:22px;}
+  .footer .row{display:flex;align-items:center;justify-content:space-between;}
+  .logo{font-size:26px;font-weight:700;letter-spacing:.2px;}
+  .logo .h{color:var(--main-blue);}
+  .logo .m{color:var(--yellow);}
+  .logo .inc{color:var(--navy);}
+  .footer .center{color:var(--main-blue);font-size:22px;font-weight:600;letter-spacing:2px;}
+  .footer .right{width:120px;}
+  .label{display:flex;align-items:center;gap:12px;padding-top:96px;color:var(--main-blue);font-size:24px;font-weight:700;letter-spacing:3px;}
+  .label .ldot{width:10px;height:10px;border-radius:50%;background:var(--main-blue);}
+  .label .lbadge{margin-left:6px;background:var(--tint);color:var(--main-blue);font-size:18px;letter-spacing:2px;padding:5px 14px;border-radius:20px;}
+  .ctitle{margin-top:34px;color:var(--navy);font-size:54px;font-weight:700;line-height:1.18;}
+  .ctitle .b{color:var(--main-blue);}
+  .ctitle .y{color:var(--yellow);}
+  .cdivider{width:160px;height:4px;background:var(--main-blue);margin-top:30px;}
+  .info{margin-top:40px;}
+  .facts{position:absolute;left:90px;right:90px;bottom:150px;display:flex;gap:18px;}
+  .fact{flex:1;background:var(--card-bg);border-radius:16px;padding:26px 24px;}
+  .fact .k{color:var(--gray-light);font-size:18px;letter-spacing:1px;margin-bottom:10px;}
+  .fact .v{color:var(--navy);font-size:24px;font-weight:700;line-height:1.25;}
+  .fact .v .b{color:var(--main-blue);}
+  .fact .v .y{color:var(--yellow);}
+</style>
 </head>
 <body>
-  <main class="slide">
-    <div class="top">
-      <div class="brand">HIFILM Water News</div>
-      <div class="date">2026-06-10</div>
+<div class="card" id="card_03">
+  <div class="pad">
+    <div class="label"><span class="ldot"></span>TRENDS · MONITORING<span class="lbadge">US</span></div>
+    <div class="ctitle">Faster low-cost <span class="b">PFAS</span> testing could reshape <span class="y">US</span> water monitoring</div>
+    <div class="cdivider"></div>
+    <div class="info">
+      <svg width="900" height="320" viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg">
+        <!-- Flow diagram: Sample → Fast Test → Scale Up → Nationwide -->
+        <rect x="10" y="100" width="180" height="120" rx="14" fill="#F5F7FA" stroke="#B5D4F4" stroke-width="2"/>
+        <circle cx="100" cy="145" r="20" fill="#0075C1"/>
+        <text x="100" y="152" text-anchor="middle" font-family="Helvetica" font-size="20" font-weight="700" fill="#ffffff">1</text>
+        <text x="100" y="190" text-anchor="middle" font-family="Helvetica" font-size="16" font-weight="700" fill="#00205D">WATER</text>
+        <text x="100" y="210" text-anchor="middle" font-family="Helvetica" font-size="16" font-weight="700" fill="#00205D">SAMPLE</text>
+
+        <polygon points="200,145 230,145 230,135 255,160 230,185 230,175 200,175" fill="#0075C1"/>
+
+        <rect x="265" y="100" width="180" height="120" rx="14" fill="#E6F1FB" stroke="#0075C1" stroke-width="2"/>
+        <circle cx="355" cy="145" r="20" fill="#0075C1"/>
+        <text x="355" y="152" text-anchor="middle" font-family="Helvetica" font-size="20" font-weight="700" fill="#ffffff">2</text>
+        <text x="355" y="190" text-anchor="middle" font-family="Helvetica" font-size="16" font-weight="700" fill="#00205D">FAST</text>
+        <text x="355" y="210" text-anchor="middle" font-family="Helvetica" font-size="16" font-weight="700" fill="#00205D">PFAS TEST</text>
+
+        <polygon points="455,145 485,145 485,135 510,160 485,185 485,175 455,175" fill="#0075C1"/>
+
+        <rect x="520" y="100" width="180" height="120" rx="14" fill="#F5F7FA" stroke="#B5D4F4" stroke-width="2"/>
+        <circle cx="610" cy="145" r="20" fill="#0075C1"/>
+        <text x="610" y="152" text-anchor="middle" font-family="Helvetica" font-size="20" font-weight="700" fill="#ffffff">3</text>
+        <text x="610" y="190" text-anchor="middle" font-family="Helvetica" font-size="16" font-weight="700" fill="#00205D">LOWER</text>
+        <text x="610" y="210" text-anchor="middle" font-family="Helvetica" font-size="16" font-weight="700" fill="#00205D">COST</text>
+
+        <polygon points="710,145 740,145 740,135 765,160 740,185 740,175 710,175" fill="#DDA11D"/>
+
+        <rect x="775" y="100" width="115" height="120" rx="14" fill="#FFF6E0" stroke="#DDA11D" stroke-width="2"/>
+        <circle cx="832" cy="145" r="20" fill="#DDA11D"/>
+        <text x="832" y="152" text-anchor="middle" font-family="Helvetica" font-size="20" font-weight="700" fill="#ffffff">4</text>
+        <text x="832" y="190" text-anchor="middle" font-family="Helvetica" font-size="15" font-weight="700" fill="#00205D">NATION-</text>
+        <text x="832" y="210" text-anchor="middle" font-family="Helvetica" font-size="15" font-weight="700" fill="#00205D">WIDE</text>
+
+        <text x="450" y="280" text-anchor="middle" font-family="Helvetica" font-size="18" fill="#888780">Lower cost enables broader, more frequent water monitoring across the US</text>
+      </svg>
     </div>
-    <div class="badge">#04 분리막/RO</div>
-    <h1>DuPont, Edison Awards 결선 진출: FilmTec Fortilife XC160UHP</h1>
-    <p class="summary">DuPont의 FilmTec Fortilife XC160UHP 막이 2026 Edison Awards 결선 진출작으로 선정되었습니다. 이 제품은 산업 폐수 처리 및 재이용 분야에 적용됩니다.</p>
-    <div class="why">왜 중요한가: DuPont의 혁신적 RO 막 기술이 국제적으로 인정받으면서 산업폐수 재이용 시장에서 기술 경쟁력이 부각되고 있습니다. 이는 글로벌 수처리 시장에서 고도화된 분리막 기술의 중요성을 보여줍니다.</div>
-    <div class="meta">기사일: 2026-02-12<br>출처: Bing News Global Membrane Reuse</div>
-    <div class="footer">
-      <div>Manual review before Instagram upload</div>
-      <div class="source">http://www.bing.com/news/apiclick.aspx?ref=FexRss&amp;aid=&amp;tid=6a288339b28e457887ee1ae0b50da274&amp;url=https%3a%2f%2fwww.morningstar.com%2fnews%2fpr-newswire%2f20260212ph86055%2fdupont-named-finalist-in-2026-edison-awards-for-filmtec-fortilife-xc160uhp-membrane-for-wastewater-treatment-and-reuse&amp;c=16560179987338129635&amp;mkt=en-us</div>
+  </div>
+  <div class="facts">
+    <div class="fact"><div class="k">CATEGORY</div><div class="v"><span class="b">Industry Trend</span></div></div>
+    <div class="fact"><div class="k">FOCUS</div><div class="v">Drinking water monitoring</div></div>
+    <div class="fact"><div class="k">REGION</div><div class="v"><span class="y">United States</span></div></div>
+  </div>
+  <div class="footer">
+    <div class="line"></div>
+    <div class="row">
+      <div class="logo"><span class="h">Hifil</span><span class="m">M</span>&nbsp;<span class="inc">INC.</span></div>
+      <div class="center">Water Treatment</div>
+      <div class="right"></div>
     </div>
-  </main>
+  </div>
+</div>
 </body>
 </html>

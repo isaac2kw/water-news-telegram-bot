@@ -2,211 +2,92 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Card 02 – University of Kansas PFAS Breakthrough</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap');
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { width:1080px; height:1080px; overflow:hidden; font-family:'Montserrat',sans-serif; background:#00205D; }
-
-  .bg-main { position:absolute; inset:0; background:linear-gradient(160deg,#001845 0%,#00205D 60%,#003070 100%); }
-  .top-bar { position:absolute; top:0; left:0; right:0; height:8px; background:linear-gradient(90deg,#0075C1,#DDA11D); }
-  .bg-deco { position:absolute; left:-100px; bottom:-100px; width:500px; height:500px; border-radius:50%; background:radial-gradient(circle,rgba(221,161,29,0.08) 0%,transparent 70%); }
-
-  .cat-label { position:absolute; top:48px; left:108px; display:flex; align-items:center; gap:12px; }
-  .cat-pill { background:rgba(0,117,193,0.2); border:1.5px solid #0075C1; border-radius:4px; padding:5px 16px; color:#7EC8E3; font-size:11px; font-weight:800; letter-spacing:2.5px; text-transform:uppercase; }
-  .cat-date { color:rgba(255,255,255,0.38); font-size:11px; font-weight:600; letter-spacing:2px; }
-  .card-num { position:absolute; top:48px; right:108px; color:rgba(255,255,255,0.12); font-size:64px; font-weight:900; line-height:1; }
-
-  .title-area { position:absolute; top:120px; left:108px; right:108px; }
-  .article-title { color:#FFFFFF; font-size:30px; font-weight:800; line-height:1.25; }
-  .article-title .hl { color:#DDA11D; }
-  .title-divider { width:160px; height:4px; background:#0075C1; border-radius:2px; margin-top:20px; }
-
-  .infographic { position:absolute; top:295px; left:108px; right:108px; height:390px; }
-
-  .fact-box { position:absolute; bottom:88px; left:108px; right:108px; background:rgba(0,117,193,0.10); border:1.5px solid rgba(0,117,193,0.4); border-left:5px solid #DDA11D; border-radius:6px; padding:20px 28px; display:flex; gap:32px; align-items:flex-start; }
-  .fact-icon { flex-shrink:0; margin-top:2px; }
-  .fact-content { flex:1; }
-  .fact-label { color:#DDA11D; font-size:10px; font-weight:800; letter-spacing:2px; text-transform:uppercase; margin-bottom:6px; }
-  .fact-text { color:rgba(255,255,255,0.82); font-size:13.5px; font-weight:500; line-height:1.6; }
-  .fact-text .hl { color:#DDA11D; font-weight:700; }
-  .fact-text .blu { color:#7EC8E3; font-weight:700; }
-
-  .footer { position:absolute; bottom:0; left:0; right:0; height:52px; background:rgba(0,0,0,0.35); border-top:2px solid #0075C1; display:flex; align-items:center; padding:0 108px; }
-  .footer-logo { font-size:16px; font-weight:900; color:#fff; }
-  .footer-logo .m { color:#DDA11D; }
-  .footer-mid { flex:1; text-align:center; color:rgba(255,255,255,0.4); font-size:11px; font-weight:600; letter-spacing:3px; text-transform:uppercase; }
-  .footer-page { color:rgba(255,255,255,0.25); font-size:11px; font-weight:700; }
+  :root{
+    --main-blue:#0075C1;
+    --yellow:#DDA11D;
+    --navy:#00205D;
+    --tint:#E6F1FB;
+    --card-bg:#F5F7FA;
+    --line:#B5D4F4;
+    --gray-light:#888780;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{margin:0;padding:0;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;}
+  .card{width:1080px;height:1080px;background:#ffffff;position:relative;overflow:hidden;}
+  .pad{padding:0 90px;}
+  .footer{position:absolute;left:0;right:0;bottom:46px;padding:0 90px;}
+  .footer .line{height:1px;background:var(--line);margin-bottom:22px;}
+  .footer .row{display:flex;align-items:center;justify-content:space-between;}
+  .logo{font-size:26px;font-weight:700;letter-spacing:.2px;}
+  .logo .h{color:var(--main-blue);}
+  .logo .m{color:var(--yellow);}
+  .logo .inc{color:var(--navy);}
+  .footer .center{color:var(--main-blue);font-size:22px;font-weight:600;letter-spacing:2px;}
+  .footer .right{width:120px;}
+  .label{display:flex;align-items:center;gap:12px;padding-top:96px;color:var(--main-blue);font-size:24px;font-weight:700;letter-spacing:3px;}
+  .label .ldot{width:10px;height:10px;border-radius:50%;background:var(--main-blue);}
+  .label .lbadge{margin-left:6px;background:var(--tint);color:var(--main-blue);font-size:18px;letter-spacing:2px;padding:5px 14px;border-radius:20px;}
+  .ctitle{margin-top:34px;color:var(--navy);font-size:54px;font-weight:700;line-height:1.18;}
+  .ctitle .b{color:var(--main-blue);}
+  .ctitle .y{color:var(--yellow);}
+  .cdivider{width:160px;height:4px;background:var(--main-blue);margin-top:30px;}
+  .info{margin-top:40px;}
+  .facts{position:absolute;left:90px;right:90px;bottom:150px;display:flex;gap:18px;}
+  .fact{flex:1;background:var(--card-bg);border-radius:16px;padding:26px 24px;}
+  .fact .k{color:var(--gray-light);font-size:18px;letter-spacing:1px;margin-bottom:10px;}
+  .fact .v{color:var(--navy);font-size:24px;font-weight:700;line-height:1.25;}
+  .fact .v .b{color:var(--main-blue);}
+  .fact .v .y{color:var(--yellow);}
 </style>
 </head>
 <body>
-<div id="card_02">
-  <div class="bg-main"></div>
-  <div class="bg-deco"></div>
-  <div class="top-bar"></div>
+<div class="card" id="card_01">
+  <div class="pad">
+    <div class="label"><span class="ldot"></span>POLICY · CONTAMINATION<span class="lbadge">UK · SCOTLAND</span></div>
+    <div class="ctitle">Highest <span class="b">PFAS</span> levels found in <span class="y">Scotland</span> remote island drinking water</div>
+    <div class="cdivider"></div>
+    <div class="info">
+      <svg width="900" height="320" viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg">
+        <!-- Flow: Source → Water → Risk -->
+        <rect x="20" y="80" width="220" height="160" rx="14" fill="#F5F7FA" stroke="#B5D4F4" stroke-width="2"/>
+        <text x="130" y="125" text-anchor="middle" font-family="Helvetica" font-size="20" font-weight="700" fill="#00205D">FOREVER</text>
+        <text x="130" y="152" text-anchor="middle" font-family="Helvetica" font-size="20" font-weight="700" fill="#00205D">CHEMICALS</text>
+        <text x="130" y="190" text-anchor="middle" font-family="Helvetica" font-size="16" fill="#888780">Industrial &amp;</text>
+        <text x="130" y="212" text-anchor="middle" font-family="Helvetica" font-size="16" fill="#888780">historic sources</text>
 
-  <div class="cat-label">
-    <div class="cat-pill">Technology · Detection</div>
-    <div class="cat-date">Jun 03, 2026 · Innovation News Network</div>
-  </div>
-  <div class="card-num">02</div>
+        <polygon points="260,140 310,140 310,125 340,160 310,195 310,180 260,180" fill="#0075C1"/>
 
-  <div class="title-area">
-    <div class="article-title">
-      <span class="hl">University of Kansas</span> Breakthrough<br>
-      Cuts <span class="hl">PFAS Detection</span> Costs &amp; Boosts Accuracy
-    </div>
-    <div class="title-divider"></div>
-  </div>
+        <rect x="350" y="80" width="220" height="160" rx="14" fill="#E6F1FB" stroke="#0075C1" stroke-width="2"/>
+        <circle cx="460" cy="135" r="22" fill="#0075C1"/>
+        <text x="460" y="142" text-anchor="middle" font-family="Helvetica" font-size="22" font-weight="700" fill="#ffffff">H₂O</text>
+        <text x="460" y="185" text-anchor="middle" font-family="Helvetica" font-size="20" font-weight="700" fill="#00205D">DRINKING</text>
+        <text x="460" y="212" text-anchor="middle" font-family="Helvetica" font-size="20" font-weight="700" fill="#00205D">WATER</text>
 
-  <!-- 인포그래픽: 기술 프로세스 + 비용/시간 비교 -->
-  <div class="infographic">
-    <svg width="864" height="390" viewBox="0 0 864 390" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="0" y="0" width="864" height="390" rx="12" fill="rgba(0,32,93,0.55)" stroke="rgba(0,117,193,0.25)" stroke-width="1.5"/>
+        <polygon points="590,140 640,140 640,125 670,160 640,195 640,180 590,180" fill="#0075C1"/>
 
-      <!-- 상단 레이블 -->
-      <text x="30" y="32" fill="rgba(255,255,255,0.7)" font-size="12" font-family="Montserrat" font-weight="700" letter-spacing="1">NEW TESTING METHOD VS. CONVENTIONAL</text>
+        <rect x="680" y="80" width="200" height="160" rx="14" fill="#F5F7FA" stroke="#DDA11D" stroke-width="2"/>
+        <circle cx="780" cy="135" r="22" fill="#DDA11D"/>
+        <text x="780" y="143" text-anchor="middle" font-family="Helvetica" font-size="24" font-weight="700" fill="#ffffff">!</text>
+        <text x="780" y="185" text-anchor="middle" font-family="Helvetica" font-size="20" font-weight="700" fill="#00205D">HEALTH</text>
+        <text x="780" y="212" text-anchor="middle" font-family="Helvetica" font-size="20" font-weight="700" fill="#00205D">RISK</text>
 
-      <!-- ───── 왼쪽: 기존 방법 ───── -->
-      <g transform="translate(30,52)">
-        <rect x="0" y="0" width="370" height="308" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
-        <text x="185" y="28" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="12" font-family="Montserrat" font-weight="700" letter-spacing="1">CONVENTIONAL METHOD</text>
-
-        <!-- 비용 게이지 -->
-        <text x="20" y="58" fill="rgba(255,255,255,0.55)" font-size="10.5" font-family="Montserrat" font-weight="600">Cost per Sample</text>
-        <rect x="20" y="65" width="330" height="16" rx="8" fill="rgba(255,255,255,0.08)"/>
-        <rect x="20" y="65" width="280" height="16" rx="8" fill="rgba(200,60,60,0.55)"/>
-        <text x="310" y="78" fill="rgba(255,100,100,0.9)" font-size="10" font-family="Montserrat" font-weight="800">HIGH</text>
-
-        <!-- 시간 게이지 -->
-        <text x="20" y="106" fill="rgba(255,255,255,0.55)" font-size="10.5" font-family="Montserrat" font-weight="600">Testing Turnaround</text>
-        <rect x="20" y="113" width="330" height="16" rx="8" fill="rgba(255,255,255,0.08)"/>
-        <rect x="20" y="113" width="260" height="16" rx="8" fill="rgba(200,100,60,0.55)"/>
-        <text x="295" y="126" fill="rgba(255,150,80,0.9)" font-size="10" font-family="Montserrat" font-weight="800">SLOW</text>
-
-        <!-- 검출 범위 게이지 -->
-        <text x="20" y="154" fill="rgba(255,255,255,0.55)" font-size="10.5" font-family="Montserrat" font-weight="600">Detection Range</text>
-        <rect x="20" y="161" width="330" height="16" rx="8" fill="rgba(255,255,255,0.08)"/>
-        <rect x="20" y="161" width="160" height="16" rx="8" fill="rgba(0,117,193,0.4)"/>
-        <text x="190" y="174" fill="rgba(150,200,255,0.8)" font-size="10" font-family="Montserrat" font-weight="800">LIMITED</text>
-
-        <!-- 프로세스 단계 -->
-        <text x="20" y="210" fill="rgba(255,255,255,0.4)" font-size="10" font-family="Montserrat" font-weight="700" letter-spacing="1">PROCESS STEPS</text>
-        <!-- 단계 아이콘 -->
-        <g transform="translate(20,220)">
-          <!-- 단계1 -->
-          <circle cx="20" cy="20" r="16" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
-          <text x="20" y="25" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10" font-family="Montserrat">SPE</text>
-          <text x="20" y="48" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-size="8" font-family="Montserrat">Extract</text>
-          <!-- 화살표 -->
-          <line x1="38" y1="20" x2="56" y2="20" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
-          <polygon points="56,15 65,20 56,25" fill="rgba(255,255,255,0.2)"/>
-          <!-- 단계2 -->
-          <circle cx="82" cy="20" r="16" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
-          <text x="82" y="25" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10" font-family="Montserrat">LC</text>
-          <text x="82" y="48" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-size="8" font-family="Montserrat">Separate</text>
-          <line x1="100" y1="20" x2="118" y2="20" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
-          <polygon points="118,15 127,20 118,25" fill="rgba(255,255,255,0.2)"/>
-          <!-- 단계3 -->
-          <circle cx="144" cy="20" r="16" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
-          <text x="144" y="25" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9" font-family="Montserrat">MS</text>
-          <text x="144" y="48" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-size="8" font-family="Montserrat">Analyze</text>
-          <line x1="162" y1="20" x2="180" y2="20" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
-          <polygon points="180,15 189,20 180,25" fill="rgba(255,255,255,0.2)"/>
-          <!-- 단계4 -->
-          <circle cx="206" cy="20" r="16" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
-          <text x="206" y="23" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="8.5" font-family="Montserrat">Lab</text>
-          <text x="206" y="48" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-size="8" font-family="Montserrat">Report</text>
-          <!-- 전체 소요 시간 -->
-          <text x="270" y="15" fill="rgba(255,100,100,0.7)" font-size="10" font-family="Montserrat" font-weight="700">Days–</text>
-          <text x="270" y="30" fill="rgba(255,100,100,0.7)" font-size="10" font-family="Montserrat" font-weight="700">Weeks</text>
-        </g>
-      </g>
-
-      <!-- 중앙 VS -->
-      <g transform="translate(420,180)">
-        <circle cx="12" cy="0" r="24" fill="rgba(221,161,29,0.15)" stroke="#DDA11D" stroke-width="2"/>
-        <text x="12" y="6" text-anchor="middle" fill="#DDA11D" font-size="14" font-family="Montserrat" font-weight="900">VS</text>
-      </g>
-
-      <!-- ───── 오른쪽: 신기술 ───── -->
-      <g transform="translate(464,52)">
-        <rect x="0" y="0" width="370" height="308" rx="10" fill="rgba(221,161,29,0.06)" stroke="#DDA11D" stroke-width="2"/>
-        <!-- NEW 태그 -->
-        <rect x="270" y="-12" width="80" height="24" rx="4" fill="#DDA11D"/>
-        <text x="310" y="5" text-anchor="middle" fill="#00205D" font-size="11" font-family="Montserrat" font-weight="900">KU TECH</text>
-        <text x="185" y="28" text-anchor="middle" fill="#DDA11D" font-size="12" font-family="Montserrat" font-weight="700" letter-spacing="1">UNIVERSITY OF KANSAS METHOD</text>
-
-        <!-- 비용 게이지 (낮음) -->
-        <text x="20" y="58" fill="rgba(255,255,255,0.55)" font-size="10.5" font-family="Montserrat" font-weight="600">Cost per Sample</text>
-        <rect x="20" y="65" width="330" height="16" rx="8" fill="rgba(255,255,255,0.08)"/>
-        <rect x="20" y="65" width="90" height="16" rx="8" fill="rgba(100,220,120,0.6)"/>
-        <text x="125" y="78" fill="rgba(100,220,120,0.9)" font-size="10" font-family="Montserrat" font-weight="800">REDUCED ↓</text>
-
-        <!-- 시간 게이지 (빠름) -->
-        <text x="20" y="106" fill="rgba(255,255,255,0.55)" font-size="10.5" font-family="Montserrat" font-weight="600">Testing Turnaround</text>
-        <rect x="20" y="113" width="330" height="16" rx="8" fill="rgba(255,255,255,0.08)"/>
-        <rect x="20" y="113" width="75" height="16" rx="8" fill="rgba(100,220,120,0.6)"/>
-        <text x="110" y="126" fill="rgba(100,220,120,0.9)" font-size="10" font-family="Montserrat" font-weight="800">FASTER ↓</text>
-
-        <!-- 검출 범위 게이지 (향상) -->
-        <text x="20" y="154" fill="rgba(255,255,255,0.55)" font-size="10.5" font-family="Montserrat" font-weight="600">Detection Range</text>
-        <rect x="20" y="161" width="330" height="16" rx="8" fill="rgba(255,255,255,0.08)"/>
-        <rect x="20" y="161" width="300" height="16" rx="8" fill="rgba(221,161,29,0.55)"/>
-        <text x="330" y="174" fill="#DDA11D" font-size="10" font-family="Montserrat" font-weight="800">↑</text>
-
-        <!-- 프로세스 단계 (간소화) -->
-        <text x="20" y="210" fill="rgba(255,255,255,0.4)" font-size="10" font-family="Montserrat" font-weight="700" letter-spacing="1">STREAMLINED PROCESS</text>
-        <g transform="translate(20,220)">
-          <!-- 단계1 -->
-          <circle cx="30" cy="20" r="18" fill="rgba(221,161,29,0.15)" stroke="#DDA11D" stroke-width="2"/>
-          <text x="30" y="24" text-anchor="middle" fill="#DDA11D" font-size="9" font-family="Montserrat" font-weight="700">Sample</text>
-          <text x="30" y="48" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-size="8" font-family="Montserrat">Prep</text>
-          <line x1="50" y1="20" x2="78" y2="20" stroke="#DDA11D" stroke-width="2"/>
-          <polygon points="78,14 90,20 78,26" fill="#DDA11D"/>
-          <!-- 단계2 핵심 -->
-          <circle cx="112" cy="20" r="22" fill="rgba(221,161,29,0.2)" stroke="#DDA11D" stroke-width="2.5"/>
-          <text x="112" y="18" text-anchor="middle" fill="#DDA11D" font-size="9" font-family="Montserrat" font-weight="700">Novel</text>
-          <text x="112" y="30" text-anchor="middle" fill="#DDA11D" font-size="9" font-family="Montserrat" font-weight="700">Sensor</text>
-          <text x="112" y="52" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="8" font-family="Montserrat">Core Innovation</text>
-          <line x1="136" y1="20" x2="154" y2="20" stroke="#DDA11D" stroke-width="2"/>
-          <polygon points="154,14 166,20 154,26" fill="#DDA11D"/>
-          <!-- 단계3 -->
-          <circle cx="188" cy="20" r="18" fill="rgba(221,161,29,0.15)" stroke="#DDA11D" stroke-width="2"/>
-          <text x="188" y="24" text-anchor="middle" fill="#DDA11D" font-size="9" font-family="Montserrat" font-weight="700">Result</text>
-          <text x="188" y="48" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-size="8" font-family="Montserrat">Output</text>
-          <!-- 소요 시간 -->
-          <text x="255" y="15" fill="rgba(100,220,120,0.9)" font-size="11" font-family="Montserrat" font-weight="700">Hours</text>
-          <text x="255" y="30" fill="rgba(100,220,120,0.7)" font-size="10" font-family="Montserrat" font-weight="600">↓ Rapid</text>
-        </g>
-      </g>
-
-      <!-- 하단 임팩트 라인 -->
-      <g transform="translate(30,372)">
-        <rect x="0" y="0" width="804" height="0" rx="0" fill="none"/>
-      </g>
-    </svg>
-  </div>
-
-  <!-- 팩트 박스 -->
-  <div class="fact-box">
-    <div class="fact-icon">
-      <svg width="28" height="28" viewBox="0 0 28 28"><circle cx="14" cy="14" r="13" stroke="#DDA11D" stroke-width="2" fill="none"/><text x="14" y="20" text-anchor="middle" fill="#DDA11D" font-size="16" font-weight="900" font-family="Montserrat">i</text></svg>
-    </div>
-    <div class="fact-content">
-      <div class="fact-label">Research Breakthrough</div>
-      <div class="fact-text">
-        Researchers at the <span class="hl">University of Kansas</span> have developed a new testing method that significantly <span class="hl">reduces the cost</span> of PFAS detection while <span class="blu">improving accuracy and detection range</span>. The innovation could make routine PFAS monitoring in drinking water more accessible to municipalities and utilities worldwide.
-      </div>
+        <text x="450" y="290" text-anchor="middle" font-family="Helvetica" font-size="18" fill="#888780">Persistent PFAS contamination on a remote Scottish island raises regulatory concern</text>
+      </svg>
     </div>
   </div>
-
-  <!-- 푸터 -->
+  <div class="facts">
+    <div class="fact"><div class="k">CATEGORY</div><div class="v"><span class="b">Regulation</span></div></div>
+    <div class="fact"><div class="k">FOCUS</div><div class="v">PFAS in drinking water</div></div>
+    <div class="fact"><div class="k">REGION</div><div class="v"><span class="y">Scotland</span>, UK</div></div>
+  </div>
   <div class="footer">
-    <div class="footer-logo">Hifil<span class="m">M</span> INC.</div>
-    <div class="footer-mid">Water Treatment</div>
-    <div class="footer-page">02 / 03</div>
+    <div class="line"></div>
+    <div class="row">
+      <div class="logo"><span class="h">Hifil</span><span class="m">M</span>&nbsp;<span class="inc">INC.</span></div>
+      <div class="center">Water Treatment</div>
+      <div class="right"></div>
+    </div>
   </div>
 </div>
 </body>

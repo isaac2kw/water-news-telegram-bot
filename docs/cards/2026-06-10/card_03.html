@@ -2,81 +2,101 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Card 03 – Faster Lower-Cost PFAS Testing US</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap');
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { width:1080px; height:1080px; overflow:hidden; font-family:'Montserrat',sans-serif; background:#00205D; }
-
-  .bg-main { position:absolute; inset:0; background:linear-gradient(160deg,#001845 0%,#00205D 60%,#003070 100%); }
-  .top-bar { position:absolute; top:0; left:0; right:0; height:8px; background:linear-gradient(90deg,#0075C1,#DDA11D); }
-  .bg-deco { position:absolute; right:-60px; top:200px; width:420px; height:420px; border-radius:50%; background:radial-gradient(circle,rgba(0,117,193,0.1) 0%,transparent 70%); }
-
-  .cat-label { position:absolute; top:48px; left:108px; display:flex; align-items:center; gap:12px; }
-  .cat-pill { background:rgba(0,117,193,0.2); border:1.5px solid #0075C1; border-radius:4px; padding:5px 16px; color:#7EC8E3; font-size:11px; font-weight:800; letter-spacing:2.5px; text-transform:uppercase; }
-  .cat-date { color:rgba(255,255,255,0.38); font-size:11px; font-weight:600; letter-spacing:2px; }
-  .card-num { position:absolute; top:48px; right:108px; color:rgba(255,255,255,0.12); font-size:64px; font-weight:900; line-height:1; }
-
-  .title-area { position:absolute; top:120px; left:108px; right:108px; }
-  .article-title { color:#FFFFFF; font-size:30px; font-weight:800; line-height:1.25; }
-  .article-title .hl { color:#DDA11D; }
-  .title-divider { width:160px; height:4px; background:#0075C1; border-radius:2px; margin-top:20px; }
-
-  .infographic { position:absolute; top:295px; left:108px; right:108px; height:385px; }
-
-  .fact-box { position:absolute; bottom:88px; left:108px; right:108px; background:rgba(0,117,193,0.10); border:1.5px solid rgba(0,117,193,0.4); border-left:5px solid #DDA11D; border-radius:6px; padding:20px 28px; display:flex; gap:32px; align-items:flex-start; }
-  .fact-icon { flex-shrink:0; margin-top:2px; }
-  .fact-content { flex:1; }
-  .fact-label { color:#DDA11D; font-size:10px; font-weight:800; letter-spacing:2px; text-transform:uppercase; margin-bottom:6px; }
-  .fact-text { color:rgba(255,255,255,0.82); font-size:13.5px; font-weight:500; line-height:1.6; }
-  .fact-text .hl { color:#DDA11D; font-weight:700; }
-  .fact-text .blu { color:#7EC8E3; font-weight:700; }
-
-  .footer { position:absolute; bottom:0; left:0; right:0; height:52px; background:rgba(0,0,0,0.35); border-top:2px solid #0075C1; display:flex; align-items:center; padding:0 108px; }
-  .footer-logo { font-size:16px; font-weight:900; color:#fff; }
-  .footer-logo .m { color:#DDA11D; }
-  .footer-mid { flex:1; text-align:center; color:rgba(255,255,255,0.4); font-size:11px; font-weight:600; letter-spacing:3px; text-transform:uppercase; }
-  .footer-page { color:rgba(255,255,255,0.25); font-size:11px; font-weight:700; }
+  :root{
+    --main-blue:#0075C1;
+    --yellow:#DDA11D;
+    --navy:#00205D;
+    --tint:#E6F1FB;
+    --card-bg:#F5F7FA;
+    --line:#B5D4F4;
+    --gray-light:#888780;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{margin:0;padding:0;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;}
+  .card{width:1080px;height:1080px;background:#ffffff;position:relative;overflow:hidden;}
+  .pad{padding:0 90px;}
+  .footer{position:absolute;left:0;right:0;bottom:46px;padding:0 90px;}
+  .footer .line{height:1px;background:var(--line);margin-bottom:22px;}
+  .footer .row{display:flex;align-items:center;justify-content:space-between;}
+  .logo{font-size:26px;font-weight:700;letter-spacing:.2px;}
+  .logo .h{color:var(--main-blue);}
+  .logo .m{color:var(--yellow);}
+  .logo .inc{color:var(--navy);}
+  .footer .center{color:var(--main-blue);font-size:22px;font-weight:600;letter-spacing:2px;}
+  .footer .right{width:120px;}
+  .label{display:flex;align-items:center;gap:12px;padding-top:96px;color:var(--main-blue);font-size:24px;font-weight:700;letter-spacing:3px;}
+  .label .ldot{width:10px;height:10px;border-radius:50%;background:var(--main-blue);}
+  .label .lbadge{margin-left:6px;background:var(--tint);color:var(--main-blue);font-size:18px;letter-spacing:2px;padding:5px 14px;border-radius:20px;}
+  .ctitle{margin-top:34px;color:var(--navy);font-size:54px;font-weight:700;line-height:1.18;}
+  .ctitle .b{color:var(--main-blue);}
+  .ctitle .y{color:var(--yellow);}
+  .cdivider{width:160px;height:4px;background:var(--main-blue);margin-top:30px;}
+  .info{margin-top:40px;}
+  .facts{position:absolute;left:90px;right:90px;bottom:150px;display:flex;gap:18px;}
+  .fact{flex:1;background:var(--card-bg);border-radius:16px;padding:26px 24px;}
+  .fact .k{color:var(--gray-light);font-size:18px;letter-spacing:1px;margin-bottom:10px;}
+  .fact .v{color:var(--navy);font-size:24px;font-weight:700;line-height:1.25;}
+  .fact .v .b{color:var(--main-blue);}
+  .fact .v .y{color:var(--yellow);}
 </style>
 </head>
 <body>
-<div id="card_03">
-  <div class="bg-main"></div>
-  <div class="bg-deco"></div>
-  <div class="top-bar"></div>
+<div class="card" id="card_02">
+  <div class="pad">
+    <div class="label"><span class="ldot"></span>TECHNOLOGY · DETECTION<span class="lbadge">US</span></div>
+    <div class="ctitle"><span class="y">University of Kansas</span> breakthrough cuts cost &amp; improves <span class="b">PFAS</span> detection</div>
+    <div class="cdivider"></div>
+    <div class="info">
+      <svg width="900" height="320" viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg">
+        <!-- Conventional vs New method comparison -->
+        <rect x="20" y="40" width="410" height="240" rx="16" fill="#F5F7FA" stroke="#B5D4F4" stroke-width="2"/>
+        <text x="225" y="80" text-anchor="middle" font-family="Helvetica" font-size="20" font-weight="700" fill="#888780">CONVENTIONAL</text>
+        <text x="225" y="105" text-anchor="middle" font-family="Helvetica" font-size="14" fill="#888780">PFAS TESTING</text>
 
-  <div class="cat-label">
-    <div class="cat-pill">Technology · Policy Impact</div>
-    <div class="cat-date">Jun 03, 2026 · Phys.org</div>
-  </div>
-  <div class="card-num">03</div>
+        <rect x="60" y="135" width="330" height="28" rx="6" fill="#B5D4F4"/>
+        <text x="80" y="155" font-family="Helvetica" font-size="14" font-weight="700" fill="#00205D">COST</text>
+        <text x="370" y="155" text-anchor="end" font-family="Helvetica" font-size="14" font-weight="700" fill="#00205D">HIGH</text>
 
-  <div class="title-area">
-    <div class="article-title">
-      Faster, Lower-Cost <span class="hl">PFAS Testing</span><br>
-      Set to Reshape <span class="hl">US</span> Drinking Water Monitoring
+        <rect x="60" y="180" width="280" height="28" rx="6" fill="#B5D4F4"/>
+        <text x="80" y="200" font-family="Helvetica" font-size="14" font-weight="700" fill="#00205D">TIME</text>
+        <text x="320" y="200" text-anchor="end" font-family="Helvetica" font-size="14" font-weight="700" fill="#00205D">SLOW</text>
+
+        <rect x="60" y="225" width="200" height="28" rx="6" fill="#B5D4F4"/>
+        <text x="80" y="245" font-family="Helvetica" font-size="14" font-weight="700" fill="#00205D">SENSITIVITY</text>
+        <text x="245" y="245" text-anchor="end" font-family="Helvetica" font-size="14" font-weight="700" fill="#00205D">LIMITED</text>
+
+        <rect x="470" y="40" width="410" height="240" rx="16" fill="#E6F1FB" stroke="#0075C1" stroke-width="2"/>
+        <text x="675" y="80" text-anchor="middle" font-family="Helvetica" font-size="20" font-weight="700" fill="#0075C1">KU BREAKTHROUGH</text>
+        <text x="675" y="105" text-anchor="middle" font-family="Helvetica" font-size="14" fill="#0075C1">NEW METHOD</text>
+
+        <rect x="510" y="135" width="130" height="28" rx="6" fill="#0075C1"/>
+        <text x="530" y="155" font-family="Helvetica" font-size="14" font-weight="700" fill="#ffffff">COST</text>
+        <text x="820" y="155" text-anchor="end" font-family="Helvetica" font-size="14" font-weight="700" fill="#DDA11D">LOWER</text>
+
+        <rect x="510" y="180" width="180" height="28" rx="6" fill="#0075C1"/>
+        <text x="530" y="200" font-family="Helvetica" font-size="14" font-weight="700" fill="#ffffff">TIME</text>
+        <text x="820" y="200" text-anchor="end" font-family="Helvetica" font-size="14" font-weight="700" fill="#DDA11D">FASTER</text>
+
+        <rect x="510" y="225" width="320" height="28" rx="6" fill="#0075C1"/>
+        <text x="530" y="245" font-family="Helvetica" font-size="14" font-weight="700" fill="#ffffff">SENSITIVITY</text>
+        <text x="820" y="245" text-anchor="end" font-family="Helvetica" font-size="14" font-weight="700" fill="#DDA11D">IMPROVED</text>
+      </svg>
     </div>
-    <div class="title-divider"></div>
   </div>
-
-  <!-- 인포그래픽: 파급효과 맵 + 타임라인 -->
-  <div class="infographic">
-    <svg width="864" height="385" viewBox="0 0 864 385" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="0" y="0" width="864" height="385" rx="12" fill="rgba(0,32,93,0.55)" stroke="rgba(0,117,193,0.25)" stroke-width="1.5"/>
-
-      <!-- 타이틀 -->
-      <text x="30" y="30" fill="rgba(255,255,255,0.7)" font-size="12" font-family="Montserrat" font-weight="700" letter-spacing="1">IMPACT ON US DRINKING WATER MONITORING LANDSCAPE</text>
-
-      <!-- ────────── 중앙 허브 다이어그램 ────────── -->
-      <!-- 중심 원: 새 기술 -->
-      <circle cx="432" cy="200" r="62" fill="rgba(0,117,193,0.2)" stroke="#0075C1" stroke-width="2.5"/>
-      <circle cx="432" cy="200" r="48" fill="rgba(0,32,93,0.8)" stroke="rgba(0,117,193,0.5)" stroke-width="1.5"/>
-      <text x="432" y="192" text-anchor="middle" fill="#7EC8E3" font-size="11" font-family="Montserrat" font-weight="700">RAPID</text>
-      <text x="432" y="207" text-anchor="middle" fill="#DDA11D" font-size="11" font-family="Montserrat" font-weight="900">PFAS</text>
-      <text x="432" y="222" text-anchor="middle" fill="#7EC8E3" font-size="11" font-family="Montserrat" font-weight="700">TESTING</text>
-
-      <!-- 파급 효과 1: 비용 절감 (좌상) -->
-      <line x1="390" y1="155" x2="290" y2="90" stroke="rgba(221,161,29,0.5)" stroke-width="1.5" stroke-dasharray="5,3"/>
-      <circle cx="255" cy="75" r="52" fill="rgba(221,161,29,0.1)" stroke="#DDA11D" stroke-width="1.5"/>
-      <text x="255" y="60" text-anchor="middle" fill="#DDA11D" font-size="22" font-family="
+  <div class="facts">
+    <div class="fact"><div class="k">CATEGORY</div><div class="v"><span class="b">Technology</span></div></div>
+    <div class="fact"><div class="k">FOCUS</div><div class="v">PFAS detection method</div></div>
+    <div class="fact"><div class="k">SOURCE</div><div class="v"><span class="y">University of Kansas</span></div></div>
+  </div>
+  <div class="footer">
+    <div class="line"></div>
+    <div class="row">
+      <div class="logo"><span class="h">Hifil</span><span class="m">M</span>&nbsp;<span class="inc">INC.</span></div>
+      <div class="center">Water Treatment</div>
+      <div class="right"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
