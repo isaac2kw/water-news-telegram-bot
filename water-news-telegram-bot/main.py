@@ -3227,7 +3227,7 @@ def generate_card_news(articles, date_str, top_n=None):
     if not range_articles:
         range_articles = articles
 
-   targets = range_articles[:top_n * 2]
+    targets = range_articles[:top_n * 2]
     if not targets:
         print("No articles for card news; skipping.")
         return []
