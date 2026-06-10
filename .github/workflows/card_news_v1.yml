@@ -1,0 +1,109 @@
+name: Card News Generator (Mon/Thu 6AM KST)
+
+on:
+  workflow_dispatch:
+    inputs:
+      force_run:
+        description: "Force card news generation regardless of day"
+        required: false
+        default: "true"
+
+  schedule:
+    # 20:40 UTC Sun = 05:40 KST Mon → 카드 생성 + 이메일 ≈ 06:00 KST 도착
+    # 20:40 UTC Wed = 05:40 KST Thu → 카드 생성 + 이메일 ≈ 06:00 KST 도착
+    - cron: "40 20 * * 0,3"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: card-news-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  generate-cards:
+    runs-on: ubuntu-latest
+
+    env:
+      TZ: Asia/Seoul
+
+    defaults:
+      run:
+        working-directory: water-news-telegram-bot
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install playwright
+          playwright install chromium --with-deps
+
+      - name: Prepare directories
+        run: |
+          mkdir -p ../docs/cards
+
+      - name: Show trigger information
+        run: |
+          echo "GitHub event: ${{ github.event_name }}"
+          echo "KST now:"
+          date
+          echo "Card news only mode: true"
+
+      - name: Generate card news and send email
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          CARD_RECIPIENT: ${{ secrets.CARD_RECIPIENT }}
+
+          # Card-news-only mode: skip daily pipeline, only generate cards and email.
+          CARD_NEWS_ONLY: "true"
+
+          # FORCE_CARD_NEWS bypasses weekday check. Use "true" for manual dispatch.
+          FORCE_CARD_NEWS: ${{ github.event_name == 'workflow_dispatch' && inputs.force_run || 'false' }}
+
+          CARD_NEWS_TOP_N: "5"
+          SEND_TELEGRAM: "false"
+          TZ: Asia/Seoul
+        run: python main.py
+
+      - name: Commit generated card files
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
+          git add -A ../docs/cards
+
+          if git diff --cached --quiet; then
+            echo "No card files to commit"
+            exit 0
+          fi
+
+          git commit -m "Generate card news $(date +%Y-%m-%d)"
+
+          for i in 1 2 3; do
+            echo "Push attempt $i"
+            git pull --rebase --autostash origin main
+            if git push origin HEAD:main; then
+              echo "Push succeeded"
+              exit 0
+            fi
+            echo "Push failed. Retrying after 10 seconds..."
+            sleep 10
+          done
+
+          echo "Push failed after 3 attempts"
+          exit 1
