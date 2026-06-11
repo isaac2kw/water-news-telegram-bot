@@ -8510,5 +8510,146 @@
     "region": "domestic",
     "source_type": "rss",
     "image": ""
+  },
+  {
+    "date": "2026-06-02",
+    "title": "Toray introduces ultrafiltration membrane designed to reduce biofouling in wastewater reuse",
+    "ko_title": "Toray, 바이오오염 저감 초여과막 출시",
+    "brief": "Toray가 폐수 재이용을 위한 F-HFUG 시리즈 초여과막을 선보였습니다. 이 제품은 0.005마이크로미터 기공 크기로 바이오폴리머 통과와 RO 오염을 줄입니다.",
+    "summary": "Toray는 폐수 재이용 공정에서 바이오오염을 줄이기 위해 F-HFUG 시리즈 초여과막 모듈을 개발했습니다. 이 제품은 0.005마이크로미터의 미세한 기공 크기를 갖추고 있어, 바이오폴리머의 통과를 효과적으로 억제하고 이후 단계인 역삼투(RO) 공정의 오염을 감소시킵니다. 초여과막은 폐수 재이용 및 고도 수처리 분야에서 핵심적인 역할을 하며, 막 오염 저감은 운영 효율성과 유지관리 비용 절감에 중요한 영향을 미칩니다. Toray의 신제품은 수처리 산업에서 분리막 기술의 진보를 보여주는 사례입니다. 기사에는 구체적인 처리 용량이나 사업 일정 등은 언급되지 않았습니다.",
+    "why_important": "막 오염 저감 기술은 수처리 산업의 운영 효율성과 비용 절감에 직접적인 영향을 미칩니다. Toray의 신제품은 분리막/막여과 시장에서 기술 경쟁력을 강화할 수 있습니다.",
+    "category": "분리막/막여과",
+    "countries": [],
+    "companies": [
+      "Toray"
+    ],
+    "technologies": [
+      "Ultrafiltration",
+      "Biofouling",
+      "Water Reuse",
+      "Membrane Module"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-06-02",
+    "specs": [
+      "0.005-micrometer pore size"
+    ],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a2aeaf59dfc4255a605389e8a823002&url=https%3a%2f%2fwww.dairyfoods.com%2farticles%2f99167-toray-introduces-ultrafiltration-membrane-designed-to-reduce-biofouling-in-wastewater-reuse&c=9496410966415004977&mkt=en-us",
+    "score": 57,
+    "keywords": [
+      "membrane",
+      "ultrafiltration",
+      "wastewater",
+      "water reuse",
+      "toray",
+      "biofouling",
+      "membrane module"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-06-11",
+    "title": "DuPont MemCor MBR Selected for Riverstone Upgrade in Australia - Yahoo Finance",
+    "ko_title": "DuPont MemCor MBR, 호주 Riverstone 업그레이드 선정",
+    "brief": "DuPont의 MemCor MBR 기술이 호주 Riverstone 처리장 업그레이드에 채택되었습니다. 이번 프로젝트는 MBR 기술 적용 확대를 보여줍니다.",
+    "summary": "DuPont의 MemCor MBR(막분리 활성슬러지 공정) 기술이 호주 Riverstone 지역의 하수처리장 업그레이드 프로젝트에 선정되었습니다. 이번 선정은 기존 시설의 성능 향상과 더 엄격한 방류수질 기준 충족을 목표로 합니다. MBR 기술은 고품질 처리수 생산과 공간 효율성을 제공하여, 호주와 같은 물 부족 국가에서 각광받고 있습니다. DuPont의 MemCor는 글로벌 시장에서 이미 다양한 실적을 보유하고 있으며, 이번 프로젝트는 MBR 시장 확대와 기술 신뢰성 강화에 기여할 전망입니다. 수처리 산업에서는 선진 분리막 기술의 적용이 지속적으로 증가하고 있습니다.",
+    "why_important": "본 프로젝트는 MBR 기술의 글로벌 적용 확대와 DuPont의 시장 입지 강화에 중요한 의미가 있습니다. 호주와 같은 선진 시장에서의 성공 사례는 국내외 수처리 시장에도 영향을 줄 수 있습니다.",
+    "category": "분리막/MBR",
+    "countries": [
+      "호주"
+    ],
+    "companies": [
+      "DuPont"
+    ],
+    "technologies": [
+      "MBR",
+      "MemCor"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-06-11",
+    "specs": [],
+    "source": "Google News Global Membrane MBR",
+    "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQRDFDbi1PdGVNbWZqRzFTT05PODM3blNRZHA4ajdON1U2OXZYUVRQVU9nVFRRZ0F3QUR4Zm9na1R5eFBaVk84UFRocmlwam5DcVcwX0Y4ODZ2TmxwLUlBWTZpRWRRN3ZTNndGN0RXencxWmZnM1VYOS1weHhJRTZ0SlV5c3RlSlBfYlNacERTRVVIS1RKSEFKSGdGcTJXemZob0NNb2dGa2ZRUQ?oc=5",
+    "score": 22,
+    "keywords": [
+      "mbr",
+      "upgrade",
+      "dupont"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-06-02",
+    "title": "Membrane Technology Forum 2026 expands focus on beverage innovation and wastewater treatment",
+    "ko_title": "Membrane Technology Forum 2026, 음료 혁신·폐수처리 확대",
+    "brief": "Membrane Technology Forum 2026이 음료 시장 혁신과 폐수처리 분야에 초점을 확대합니다. 더 많은 연사가 막기술의 새로운 기회를 제시할 예정입니다.",
+    "summary": "Membrane Technology Forum 2026은 기존의 막기술 중심 논의에서 한 걸음 더 나아가, 음료 시장의 혁신적 기회와 폐수처리 분야에 대한 논의를 확대할 예정입니다. 이번 포럼에서는 막기술이 음료 산업에서 어떻게 활용될 수 있는지와, 폐수처리 분야에서의 최신 동향 및 적용 사례가 주요 의제로 다뤄집니다. 특히, 다양한 연사가 참여해 막기술의 전략적 시장 기회를 제시할 계획입니다. 이러한 변화는 막기술이 전통적 수처리뿐 아니라 식음료 산업 등 다양한 분야로 확장되고 있음을 보여줍니다. 수처리 산업에서는 막기술의 응용 범위 확대와 새로운 시장 진출 가능성을 확인할 수 있는 중요한 행사입니다.",
+    "why_important": "막기술의 응용 분야가 음료 산업 등으로 확장됨에 따라, 수처리 산업의 시장 다변화와 기술 융합이 가속화될 전망입니다. 이는 기업의 신시장 진출 및 기술 개발 전략에 중요한 시사점을 제공합니다.",
+    "category": "학회/전시회",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "Membrane",
+      "Wastewater",
+      "Water Treatment",
+      "Beverage Innovation"
+    ],
+    "policy_alert": "",
+    "date_context": "2026년 개최 예정",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a2aeaf59dfc4255a605389e8a823002&url=https%3a%2f%2fwww.dairyfoods.com%2farticles%2f99166-membrane-technology-forum-2026-expands-focus-on-beverage-innovation-and-wastewater-treatment&c=1461589195714993340&mkt=en-us",
+    "score": 23,
+    "keywords": [
+      "membrane",
+      "wastewater",
+      "water treatment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-02-18",
+    "title": "MemCor™ MBR systems selected for three major wastewater treatment plant expansions in England",
+    "ko_title": "MemCor MBR, 영국 3개 하수처리장 확장에 선정",
+    "brief": "MemCor MBR 시스템이 영국 내 3개 주요 하수처리장 확장 프로젝트에 채택되었습니다. 이는 MBR 기술의 신뢰성과 시장 확대를 보여줍니다.",
+    "summary": "영국에서 3개의 주요 하수처리장 확장 사업에 MemCor™ MBR 시스템이 선정되었습니다. MBR(Membrane Bioreactor) 기술은 고도 하수처리에 적합하며, 이번 선정은 해당 기술의 효율성과 신뢰성을 인정받은 결과입니다. 영국은 환경 규제 강화와 인구 증가에 따라 하수처리장 확장이 지속적으로 필요합니다. 이번 프로젝트는 영국 내 수처리 인프라 현대화와 관련 산업의 성장에 기여할 것으로 기대됩니다. MemCor™ MBR의 적용은 분리막 기반 하수처리 기술의 글로벌 확산을 시사합니다.",
+    "why_important": "영국 내 대규모 하수처리장 확장에 MBR 기술이 채택됨으로써, 분리막/MBR 시장의 성장과 기술 신뢰성이 강화됩니다. 이는 글로벌 수처리 시장에서 MBR 도입 확대에 중요한 신호입니다.",
+    "category": "분리막/MBR",
+    "countries": [
+      "영국"
+    ],
+    "companies": [],
+    "technologies": [
+      "MBR",
+      "Membrane Bioreactor",
+      "Wastewater Treatment"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-02-18",
+    "specs": [],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a2aeaf51c7646199f29ec64b6b0ce8a&url=https%3a%2f%2ffinance.yahoo.com%2fnews%2fmemcor-mbr-systems-selected-three-140000877.html&c=15153598790819934667&mkt=en-us",
+    "score": 34,
+    "keywords": [
+      "mbr",
+      "wastewater",
+      "water treatment",
+      "expansion",
+      "investment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
   }
 ]
