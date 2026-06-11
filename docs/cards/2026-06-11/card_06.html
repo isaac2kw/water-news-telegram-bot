@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  :root{--main-blue:#0075C1;--yellow:#DDA11D;--navy:#00205D;--tint:#E6F1FB;--card-bg:#F5F7FA;--line:#B5D4F4;--gray-light:#888780;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;}
+  .card{width:1080px;height:1080px;background:#ffffff;position:relative;overflow:hidden;}
+  .pad{padding:0 90px;}
+  .footer{position:absolute;left:0;right:0;bottom:46px;padding:0 90px;}
+  .footer .line{height:1px;background:var(--line);margin-bottom:22px;}
+  .footer .row{display:flex;align-items:center;justify-content:space-between;}
+  .logo{font-size:26px;font-weight:700;}
+  .logo .h{color:var(--main-blue);} .logo .m{color:var(--yellow);} .logo .inc{color:var(--navy);}
+  .footer .center{color:var(--main-blue);font-size:22px;font-weight:600;letter-spacing:2px;}
+  .footer .right{width:120px;}
+  .label{display:flex;align-items:center;gap:12px;padding-top:96px;color:var(--main-blue);font-size:24px;font-weight:700;letter-spacing:3px;}
+  .label .ldot{width:10px;height:10px;border-radius:50%;background:var(--main-blue);}
+  .label .lbadge{margin-left:6px;background:var(--tint);color:var(--main-blue);font-size:18px;letter-spacing:2px;padding:5px 14px;border-radius:20px;}
+  .ctitle{margin-top:34px;color:var(--navy);font-size:52px;font-weight:700;line-height:1.18;}
+  .ctitle .b{color:var(--main-blue);} .ctitle .y{color:var(--yellow);}
+  .cdivider{width:160px;height:4px;background:var(--main-blue);margin-top:30px;}
+  .info{margin-top:40px;}
+  .facts{position:absolute;left:90px;right:90px;bottom:150px;display:flex;gap:18px;}
+  .fact{flex:1;background:var(--card-bg);border-radius:16px;padding:24px 22px;}
+  .fact .k{color:var(--gray-light);font-size:17px;letter-spacing:1px;margin-bottom:10px;}
+  .fact .v{color:var(--navy);font-size:22px;font-weight:700;line-height:1.25;}
+  .fact .v .b{color:var(--main-blue);} .fact .v .y{color:var(--yellow);}
+</style>
+</head>
+<body>
+<div class="card" id="card_06">
+  <div class="pad">
+    <div class="label"><span class="ldot"></span>SURVEY<span class="lbadge">KOREA</span></div>
+    <div class="ctitle"><span class="y">Yeon-dong</span> Launches <span class="b">Septic Tank Survey</span> in Non-Sewer Zones</div>
+    <div class="cdivider"></div>
+    <div class="info">
+      <svg width="900" height="320" viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg">
+        <rect x="40" y="60" width="820" height="220" rx="14" fill="#F5F7FA" stroke="#B5D4F4" stroke-width="2"/>
+        <text x="450" y="100" text-anchor="middle" font-size="20" font-weight="700" fill="#00205D">Septic Tank Field Inspection Workflow</text>
+        <circle cx="160" cy="180" r="40" fill="#E6F1FB" stroke="#0075C1" stroke-width="2"/>
+        <text x="160" y="178" text-anchor="middle" font-size="14" font-weight="700" fill="#00205D">Identify</text>
+        <text x="160" y="195" text-anchor="middle" font-size="11" fill="#0075C1">Non-Sewer</text>
+        <text x="160" y="240" text-anchor="middle" font-size="13" fill="#888780">Step 1</text>
+        <polygon points="220,180 270,180 270,165 295,182 270,200 270,185 220,185" fill="#0075C1"/>
+        <circle cx="345" cy="180" r="40" fill="#E6F1FB" stroke="#0075C1" stroke-width="2"/>
+        <text x="345" y="178" text-anchor="middle" font-size="14" font-weight="700" fill="#00205D">Inspect</text>
+        <text x="345" y="195" text-anchor="middle" font-size="11" fill="#0075C1">Tank Status</text>
+        <text x="345" y="240" text-anchor="middle" font-size="13" fill="#888780">Step 2</text>
+        <polygon points="405,180 455,180 455,165 480,182 455,200 455,185 405,185" fill="#0075C1"/>
+        <circle cx="530" cy="180" r="40" fill="#E6F1FB" stroke="#0075C1" stroke-width="2"/>
+        <text x="530" y="178" text-anchor="middle" font-size="14" font-weight="700" fill="#00205D">Record</text>
+        <text x="530" y="195" text-anchor="middle" font-size="11" fill="#0075C1">Data</text>
+        <text x="530" y="240" text-anchor="middle" font-size="13" fill="#888780">Step 3</text>
+        <polygon points="590,180 640,180 640,165 665,182 640,200 640,185 590,185" fill="#0075C1"/>
+        <circle cx="720" cy="180" r="40" fill="#DDA11D"/>
+        <text x="720" y="178" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">Improve</text>
+        <text x="720" y="195" text-anchor="middle" font-size="11" fill="#fff">Sanitation</text>
+        <text x="720" y="240" text-anchor="middle" font-size="13" fill="#888780">Step 4</text>
+      </svg>
+    </div>
+  </div>
+  <div class="facts">
+    <div class="fact"><div class="k">CATEGORY</div><div class="v"><span class="b">Survey</span></div></div>
+    <div class="fact"><div class="k">AREA</div><div class="v"><span class="y">Yeon-dong</span></div></div>
+    <div class="fact"><div class="k">SCOPE</div><div class="v">Septic Tanks</div></div>
+  </div>
+  <div class="footer"><div class="line"></div><div class="row"><div class="logo"><span class="h">Hifil</span><span class="m">M</span>&nbsp;<span class="inc">INC.</span></div><div class="center">Water Treatment</div><div class="right"></div></div></div>
+</div>
+</body>
+</html>
