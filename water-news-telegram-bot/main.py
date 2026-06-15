@@ -45,6 +45,13 @@ FORCE_CARD_NEWS = os.getenv("FORCE_CARD_NEWS", "false").lower() == "true"
 CARD_NEWS_ONLY = os.getenv("CARD_NEWS_ONLY", "false").lower() == "true"
 CARD_NEWS_TOP_N = int(os.getenv("CARD_NEWS_TOP_N", "5"))
 
+# OpenAI 호출을 제한해 429 Too Many Requests 발생 가능성을 낮춥니다.
+# MAX_ITEMS는 웹에 표시할 기사 후보 수, OPENAI_SUMMARY_LIMIT는 실제 AI 요약 호출 수입니다.
+OPENAI_SUMMARY_LIMIT = int(os.getenv("OPENAI_SUMMARY_LIMIT", "8"))
+OPENAI_REQUEST_SLEEP_SECONDS = float(os.getenv("OPENAI_REQUEST_SLEEP_SECONDS", "1.2"))
+OPENAI_RETRY_COUNT = int(os.getenv("OPENAI_RETRY_COUNT", "2"))
+OPENAI_RATE_LIMIT_HIT = False
+
 BASE_DIR = Path(__file__).resolve().parent
 REPO_ROOT = BASE_DIR.parent
 FEEDS_FILE = BASE_DIR / "feeds.json"
@@ -1066,6 +1073,45 @@ def article_identity_key(item):
     return ""
 
 
+def extract_duplicate_context_terms(item):
+    text = normalize_for_similarity(f"{item.get('ko_title','')} {item.get('title','')} {item.get('brief','')} {item.get('summary','')}")
+    terms = set(text)
+    normalized = set()
+    for t in terms:
+        normalized.add(t)
+        if t.endswith(("군", "시", "구")) and len(t) >= 3:
+            normalized.add(t[:-1])
+    facility_terms = {"하수처리장", "폐수처리장", "정수장", "처리장", "수처리", "상하수도", "분리막", "mbr", "pfas", "membrane", "wastewater"}
+    activity_terms = {"교육", "체험", "견학", "실시", "개최", "방문", "협약", "계약", "수주", "준공", "착공", "증설", "upgrade", "contract", "award"}
+    return {
+        "all": normalized,
+        "facility": normalized & facility_terms,
+        "activity": normalized & activity_terms,
+        "location": {t for t in normalized if (len(t) >= 2 and (t.endswith(("군", "시", "구")) or t in {"영양", "서울", "부산", "대구", "인천", "광주", "대전", "울산", "세종"}))},
+    }
+
+
+def likely_same_news_event(a, b):
+    if a.get("date") and b.get("date") and a.get("date") != b.get("date"):
+        return False
+
+    ca = extract_duplicate_context_terms(a)
+    cb = extract_duplicate_context_terms(b)
+
+    if ca["location"] & cb["location"] and ca["facility"] & cb["facility"] and ca["activity"] & cb["activity"]:
+        return True
+
+    tech_a = set(str(x).lower() for x in (a.get("technologies", []) or a.get("keywords", []) or []))
+    tech_b = set(str(x).lower() for x in (b.get("technologies", []) or b.get("keywords", []) or []))
+    if tech_a & tech_b and token_similarity(
+        f"{a.get('title','')} {a.get('summary','')}",
+        f"{b.get('title','')} {b.get('summary','')}",
+    ) >= 0.45:
+        return True
+
+    return False
+
+
 def dedupe_similar_articles(items, limit=None, threshold=0.58):
     result = []
     seen_keys = set()
@@ -1078,7 +1124,7 @@ def dedupe_similar_articles(items, limit=None, threshold=0.58):
 
         duplicate = False
         for existing in result:
-            if article_similarity(item, existing) >= threshold:
+            if article_similarity(item, existing) >= threshold or likely_same_news_event(item, existing):
                 duplicate = True
                 break
 
@@ -1336,14 +1382,68 @@ def guess_category(article):
     return "수처리 산업동향"
 
 
+def is_openai_rate_limit_error(error_text):
+    text = str(error_text or "").lower()
+    return "429" in text or "too many requests" in text or "rate limit" in text or "insufficient_quota" in text
+
+
+def openai_chat_payload(messages, json_mode=False):
+    payload = {
+        "model": OPENAI_MODEL,
+        "messages": messages,
+    }
+    if json_mode:
+        payload["response_format"] = {"type": "json_object"}
+    if not IS_GPT5_FAMILY:
+        payload["temperature"] = 0.2
+    return payload
+
+
+def post_openai_chat(payload, timeout=90):
+    global OPENAI_RATE_LIMIT_HIT
+
+    if OPENAI_RATE_LIMIT_HIT:
+        raise RuntimeError("OpenAI rate limit already detected in this run")
+
+    last_error = None
+
+    for attempt in range(OPENAI_RETRY_COUNT + 1):
+        try:
+            resp = requests.post(
+                "https://api.openai.com/v1/chat/completions",
+                headers={
+                    "Authorization": f"Bearer {OPENAI_API_KEY}",
+                    "Content-Type": "application/json",
+                },
+                json=payload,
+                timeout=timeout,
+            )
+
+            if resp.status_code == 429:
+                OPENAI_RATE_LIMIT_HIT = True
+                raise RuntimeError(f"OpenAI 429 rate limit: {resp.text[:240]}")
+
+            resp.raise_for_status()
+            return resp.json()
+
+        except Exception as exc:
+            last_error = exc
+            if is_openai_rate_limit_error(str(exc)):
+                OPENAI_RATE_LIMIT_HIT = True
+                break
+            if attempt < OPENAI_RETRY_COUNT:
+                time.sleep(2 + attempt * 3)
+
+    raise last_error
+
+
 def openai_json(prompt, fallback):
     if not OPENAI_API_KEY:
         return fallback
 
     try:
-        payload = {
-            "model": OPENAI_MODEL,
-            "messages": [
+        payload = openai_chat_payload(
+            [
                 {
                     "role": "system",
                     "content": "You are a Korean water and wastewater industry analyst. Return valid JSON only. Do not invent facts.",
@@ -1353,28 +1453,15 @@ def openai_json(prompt, fallback):
                     "content": prompt,
                 },
             ],
-            "response_format": {"type": "json_object"},
-        }
-        if not IS_GPT5_FAMILY:
-            payload["temperature"] = 0.2
-
-        resp = requests.post(
-            "https://api.openai.com/v1/chat/completions",
-            headers={
-                "Authorization": f"Bearer {OPENAI_API_KEY}",
-                "Content-Type": "application/json",
-            },
-            json=payload,
-            timeout=90,
+            json_mode=True,
         )
 
-        resp.raise_for_status()
-        data = resp.json()
-
+        data = post_openai_chat(payload, timeout=90)
+        time.sleep(OPENAI_REQUEST_SLEEP_SECONDS)
         return json.loads(data["choices"][0]["message"]["content"])
 
     except Exception as e:
-        fallback["api_error"] = str(e)[:180]
+        print(f"OpenAI JSON summary skipped: {str(e)[:240]}")
         return fallback
 
 
@@ -1383,9 +1470,8 @@ def openai_text(prompt, fallback):
         return fallback
 
     try:
-        payload = {
-            "model": OPENAI_MODEL,
-            "messages": [
+        payload = openai_chat_payload(
+            [
                 {
                     "role": "system",
                     "content": "You are a Korean water and wastewater industry analyst. Write concise factual Korean analysis only.",
@@ -1395,44 +1481,48 @@ def openai_text(prompt, fallback):
                     "content": prompt,
                 },
             ],
-        }
-        if not IS_GPT5_FAMILY:
-            payload["temperature"] = 0.2
-
-        resp = requests.post(
-            "https://api.openai.com/v1/chat/completions",
-            headers={
-                "Authorization": f"Bearer {OPENAI_API_KEY}",
-                "Content-Type": "application/json",
-            },
-            json=payload,
-            timeout=90,
+            json_mode=False,
         )
 
-        resp.raise_for_status()
-        data = resp.json()
-
+        data = post_openai_chat(payload, timeout=90)
+        time.sleep(OPENAI_REQUEST_SLEEP_SECONDS)
         return data["choices"][0]["message"]["content"].strip()
 
     except Exception as e:
-        return f"{fallback} [요약 API 오류: {str(e)[:120]}]"
+        print(f"OpenAI text summary skipped: {str(e)[:240]}")
+        return fallback
 
 
-def summarize_article(article):
-    fallback_specs = extract_numeric_specs_from_text(f"{article.get('title','')} {article.get('summary','')}")
-    fallback = {
-        "ko_title": article["title"],
-        "brief": article["summary"][:220] if article["summary"] else "RSS 제목 기준으로 선별되었습니다. 상세 내용은 원문 확인이 필요합니다.",
-        "summary": article["summary"][:500] if article["summary"] else "RSS 제목 기준으로 선별되었습니다. 상세 내용은 원문 확인이 필요합니다.",
+def local_article_summary(article):
+    title = replace_company_names_with_english(article.get("title", ""))
+    summary = replace_company_names_with_english(article.get("summary", ""))
+    category = guess_category(article)
+    specs = extract_numeric_specs_from_text(f"{title} {summary}")
+
+    if summary:
+        brief = clean_text(summary)[:180]
+        detail = clean_text(summary)[:500]
+    else:
+        brief = "RSS 제목 기준으로 선별되었습니다. 상세 내용은 원문 확인이 필요합니다."
+        detail = "RSS 제목 기준으로 선별되었습니다. 상세 내용은 원문 확인이 필요합니다."
+
+    return {
+        "ko_title": title,
+        "brief": brief,
+        "summary": detail,
         "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-        "category": guess_category(article),
-        "countries": [],
+        "category": category,
+        "countries": ["대한민국"] if article.get("domestic") else [],
         "companies": [],
         "technologies": article.get("matched", []),
         "policy_alert": "",
         "date_context": get_article_date_context(article),
-        "specs": fallback_specs,
+        "specs": specs,
     }
+
+
+def summarize_article(article):
+    fallback = local_article_summary(article)
 
     prompt = f"""
 다음 뉴스 항목을 한국어로 분석하세요.
@@ -1479,7 +1569,7 @@ RSS 요약: {article['summary']}
         "technologies": parsed.get("technologies", fallback["technologies"]) or [],
         "policy_alert": parsed.get("policy_alert", fallback["policy_alert"]) or "",
         "date_context": parsed.get("date_context", fallback.get("date_context", get_article_date_context(article))) or get_article_date_context(article),
-        "specs": merge_specs(parsed_specs, fallback_specs, article.get("title", ""), article.get("summary", "")),
+        "specs": merge_specs(parsed_specs, fallback.get("specs", []), article.get("title", ""), article.get("summary", "")),
     }
 
 def get_pages_base_url():
@@ -1599,97 +1689,129 @@ def filter_items_by_iso_week(history, week_key):
     return result
 
 
+def summarize_counts(items, field, limit=5):
+    counts = {}
+    for item in items:
+        values = item.get(field, []) or []
+        if isinstance(values, str):
+            values = [values]
+        for value in values:
+            value = replace_company_names_with_english(str(value).strip())
+            if not value or value == "-":
+                continue
+            counts[value] = counts.get(value, 0) + 1
+    return sorted(counts.items(), key=lambda x: x[1], reverse=True)[:limit]
+
+
 def build_period_one_line(title, items):
+    # OpenAI 호출 없이 생성합니다. 429 오류가 텔레그램/HTML에 노출되는 것을 방지합니다.
     if not items:
         return "누적된 관련 뉴스가 아직 없습니다."
 
-    lines = []
+    categories = summarize_counts(items, "category", 3)
+    countries = summarize_counts(items, "countries", 3)
+    techs = summarize_counts(items, "technologies", 3)
+    companies = summarize_counts(items, "companies", 2)
 
-    for x in items[:40]:
-        countries = ", ".join(x.get("countries", []))
-        companies = ", ".join(x.get("companies", []))
-        techs = ", ".join(x.get("technologies", []))
-        lines.append(
-            f"- {x.get('date')} / {x.get('category')} / 국가:{countries} / 기업:{companies} / 기술:{techs} / {x.get('ko_title')} / {x.get('brief')}"
-        )
+    parts = []
+    if countries:
+        parts.append("주요 국가: " + ", ".join(add_country_flag(k) for k, _ in countries))
+    if techs:
+        parts.append("주요 기술: " + ", ".join(k for k, _ in techs))
+    if companies:
+        parts.append("주요 기업: " + ", ".join(add_company_flag(k) for k, _ in companies))
+    if categories:
+        parts.append("주요 분야: " + ", ".join(k for k, _ in categories))
 
-    prompt = f"""
-아래 뉴스 목록을 기준으로 '{title}'을 한국어 한 줄로 요약하세요.
+    if parts:
+        return f"{title}: " + " / ".join(parts) + f" 중심으로 {len(items)}건의 관련 뉴스가 누적되었습니다."
 
-조건:
-- 1문장만 작성
-- 160자 이내
-- 핵심 국가에는 국기 이모지 사용
-- 핵심 기술에는 적절한 이모지 사용
-- 과장 금지
-- 기사에 없는 사실 추측 금지
-
-뉴스 목록:
-{chr(10).join(lines)}
-""".strip()
-
-    return openai_text(prompt, "누적 뉴스 기준으로 핵심 동향을 요약할 수 없습니다.")
+    return f"{title}: {len(items)}건의 관련 뉴스가 누적되었습니다."
 
 
 def build_trend_report_text(title, items, report_type):
+    # 주간/월간 보고서는 API 오류로 깨지지 않도록 기본 집계형 보고서로 생성합니다.
     if not items:
         return "누적된 관련 뉴스가 아직 없습니다."
 
-    lines = []
+    categories = summarize_counts(items, "category", 8)
+    countries = summarize_counts(items, "countries", 8)
+    companies = summarize_counts(items, "companies", 8)
+    techs = summarize_counts(items, "technologies", 8)
 
-    for x in items[:60]:
-        countries = ", ".join(x.get("countries", []))
-        companies = ", ".join(x.get("companies", []))
-        techs = ", ".join(x.get("technologies", []))
-        lines.append(
-            f"- {x.get('date')} / {x.get('category')} / 국가:{countries} / 기업:{companies} / 기술:{techs} / {x.get('ko_title')} / {x.get('summary')}"
-        )
+    project_items = [x for x in items if "프로젝트" in str(x.get("category", "")) or "수주" in str(x.get("category", ""))]
+    policy_items = [x for x in items if x.get("policy_alert") or "규제" in str(x.get("category", "")) or "정책" in str(x.get("category", ""))]
 
-    if report_type == "weekly":
-        structure = """
-작성 구조:
-1. Executive Summary: 3~5문장
-2. 주요 국가 TOP3: 국가별 1~2문장
-3. 주요 기업 TOP3: 기업별 1~2문장
-4. 주요 기술 TOP3: 기술별 1~2문장
-5. 규제/정책 변화: 있으면 2~4개, 없으면 '특이사항 없음'
-6. 반드시 읽어야 할 기사 TOP3: 제목과 요약 1문장
-7. 다음 주 모니터링 포인트: 3~5개
-"""
+    top_items = dedupe_similar_articles([normalize_display_item(x) for x in items], limit=5, threshold=0.58)
+
+    lines = [f"# {title}", ""]
+    lines.append("## Executive Summary")
+    lines.append(f"- 해당 기간 수집·선별된 상하수도·수처리 관련 뉴스는 총 {len(items)}건입니다.")
+    if categories:
+        lines.append("- 주요 분야는 " + ", ".join(f"{k}({v}건)" for k, v in categories[:5]) + "입니다.")
+    if countries:
+        lines.append("- 주요 국가는 " + ", ".join(f"{add_country_flag(k)}({v}건)" for k, v in countries[:5]) + "입니다.")
+    if techs:
+        lines.append("- 주요 기술 키워드는 " + ", ".join(f"{k}({v}건)" for k, v in techs[:5]) + "입니다.")
+    lines.append("")
+
+    lines.append("## 주요 국가")
+    if countries:
+        for k, v in countries[:5]:
+            lines.append(f"- {add_country_flag(k)}: {v}건")
     else:
-        structure = """
-작성 구조:
-1. Executive Summary: 4~6문장
-2. 이달의 키워드 TOP5: 키워드별 1문장
-3. 국가별 동향 TOP5: 국가별 1~2문장
-4. 기업별 동향 TOP5: 기업별 1~2문장
-5. 기술별 동향 TOP5: 기술별 1~2문장
-6. 주요 프로젝트 TOP5: 프로젝트별 1문장
-7. 현재 진행 중인 규제/정책 변화: 있으면 2~5개
-8. 향후 예정된 규제/정책 변화: 기사에 명시된 경우만 작성
-9. 향후 1~3년 주목 기술: 3~5개
-10. 다음 달 모니터링 포인트: 3~5개
-"""
+        lines.append("- 국가 정보가 명확히 추출된 항목이 없습니다.")
+    lines.append("")
 
-    prompt = f"""
-아래 뉴스 목록을 기준으로 '{title}' 보고서를 한국어로 작성하세요.
+    lines.append("## 주요 기업")
+    if companies:
+        for k, v in companies[:5]:
+            lines.append(f"- {add_company_flag(k)}: {v}건")
+    else:
+        lines.append("- 기업 정보가 명확히 추출된 항목이 없습니다.")
+    lines.append("")
 
-조건:
-- 너무 길게 쓰지 말 것
-- 핵심 동향 위주
-- 국가가 나오면 국기 이모지 사용
-- 기술에는 적절한 이모지 사용
-- 기사에 없는 사실을 만들지 말 것
-- 추측이면 반드시 '추측입니다'라고 명시
-- HifilM 영향 분석은 작성하지 말 것
+    lines.append("## 주요 기술")
+    if techs:
+        for k, v in techs[:5]:
+            lines.append(f"- {k}: {v}건")
+    else:
+        lines.append("- 기술 정보가 명확히 추출된 항목이 없습니다.")
+    lines.append("")
 
-{structure}
+    lines.append("## 주요 프로젝트")
+    if project_items:
+        for x in dedupe_similar_articles([normalize_display_item(i) for i in project_items], limit=5, threshold=0.58):
+            title_text = x.get("ko_title") or x.get("title") or "제목 없음"
+            lines.append(f"- {title_text}")
+    else:
+        lines.append("- 별도 프로젝트·수주 항목은 확인되지 않았습니다.")
+    lines.append("")
 
-뉴스 목록:
-{chr(10).join(lines)}
-""".strip()
+    lines.append("## 규제/정책 변화")
+    if policy_items:
+        for x in dedupe_similar_articles([normalize_display_item(i) for i in policy_items], limit=5, threshold=0.58):
+            alert = x.get("policy_alert") or x.get("ko_title") or x.get("title")
+            lines.append(f"- {alert}")
+    else:
+        lines.append("- 특이사항 없음")
+    lines.append("")
 
-    return openai_text(prompt, "보고서를 생성할 수 없습니다.")
+    lines.append("## 반드시 읽어야 할 기사")
+    for idx, x in enumerate(top_items, 1):
+        title_text = x.get("ko_title") or x.get("title") or "제목 없음"
+        brief = x.get("brief") or x.get("summary") or ""
+        lines.append(f"{idx}. {title_text}")
+        if brief:
+            lines.append(f"   - {brief[:180]}")
+    lines.append("")
+
+    lines.append("## 다음 모니터링 포인트")
+    lines.append("- MBR, 막여과, PFAS, 물 재이용 관련 신규 프로젝트")
+    lines.append("- 국내 지자체·환경부·K-water 발주 및 정책 공고")
+    lines.append("- 글로벌 기업의 멤브레인 제품·수주·증설 발표")
+
+    return "\n".join(lines)
 
 
 
@@ -3368,8 +3490,11 @@ def main():
     articles = fetch_articles()
     selected_articles = articles[:MAX_ITEMS]
 
-    for article in selected_articles:
-        article["ai"] = summarize_article(article)
+    for idx, article in enumerate(selected_articles):
+        if idx < OPENAI_SUMMARY_LIMIT:
+            article["ai"] = summarize_article(article)
+        else:
+            article["ai"] = local_article_summary(article)
 
     history = save_news_history(selected_articles)
 
