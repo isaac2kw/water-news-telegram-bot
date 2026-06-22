@@ -17018,5 +17018,38 @@
     "region": "global",
     "source_type": "rss",
     "image": ""
+  },
+  {
+    "date": "2026-06-09",
+    "title": "[구리시] 구리하수처리장 온실가스 감축설비 본격 추진 - 워터저널",
+    "ko_title": "[구리시] 구리하수처리장 온실가스 감축설비 본격 추진 - 워터저널",
+    "brief": "[구리시] 구리하수처리장 온실가스 감축설비 본격 추진 워터저널",
+    "summary": "[구리시] 구리하수처리장 온실가스 감축설비 본격 추진 워터저널",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-06-09",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5oZE9qUExMRnh3dS0zYl91OUZOSWtoQ0pvNDAxTUctOUtZZ2lPRDM0NnJLVHNKenFHaU1yNllCOXE0TkhGaWpjaEdiYnAyVkZBRU4zMktSb1hRV3oyT3Y4MXNTYkRBSXYtM1UxSzZ5YnlrQQ?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
   }
 ]
