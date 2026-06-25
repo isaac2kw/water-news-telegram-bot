@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  :root{
+    --main-blue:#0075C1;
+    --yellow:#DDA11D;
+    --navy:#00205D;
+    --tint:#E6F1FB;
+    --card-bg:#F5F7FA;
+    --line:#B5D4F4;
+    --gray-light:#888780;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{margin:0;padding:0;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;}
+  .card{width:1080px;height:1080px;background:#ffffff;position:relative;overflow:hidden;}
+  .pad{padding:0 90px;}
+  .footer{position:absolute;left:0;right:0;bottom:46px;padding:0 90px;}
+  .footer .line{height:1px;background:var(--line);margin-bottom:22px;}
+  .footer .row{display:flex;align-items:center;justify-content:space-between;}
+  .logo{font-size:26px;font-weight:700;letter-spacing:.2px;}
+  .logo .h{color:var(--main-blue);}
+  .logo .m{color:var(--yellow);}
+  .logo .inc{color:var(--navy);}
+  .footer .center{color:var(--main-blue);font-size:22px;font-weight:600;letter-spacing:2px;}
+  .footer .right{width:120px;}
+  .label{display:flex;align-items:center;gap:12px;padding-top:96px;color:var(--main-blue);font-size:24px;font-weight:700;letter-spacing:3px;}
+  .label .ldot{width:10px;height:10px;border-radius:50%;background:var(--main-blue);}
+  .label .lbadge{margin-left:6px;background:var(--tint);color:var(--main-blue);font-size:18px;letter-spacing:2px;padding:5px 14px;border-radius:20px;}
+  .ctitle{margin-top:34px;color:var(--navy);font-size:52px;font-weight:700;line-height:1.18;}
+  .ctitle .b{color:var(--main-blue);}
+  .ctitle .y{color:var(--yellow);}
+  .cdivider{width:160px;height:4px;background:var(--main-blue);margin-top:30px;}
+  .info{margin-top:40px;}
+  .facts{position:absolute;left:90px;right:90px;bottom:150px;display:flex;gap:18px;}
+  .fact{flex:1;background:var(--card-bg);border-radius:16px;padding:26px 24px;}
+  .fact .k{color:var(--gray-light);font-size:18px;letter-spacing:1px;margin-bottom:10px;}
+  .fact .v{color:var(--navy);font-size:22px;font-weight:700;line-height:1.25;}
+  .fact .v .b{color:var(--main-blue);}
+  .fact .v .y{color:var(--yellow);}
+</style>
+</head>
+<body>
+<div class="card" id="card_01">
+  <div class="pad">
+    <div class="label"><span class="ldot"></span>POLICY · INFRASTRUCTURE<span class="lbadge">KR</span></div>
+    <div class="ctitle"><span class="y">Cheonan</span> <span class="b">Sewage Plant</span> Project Altered During Mayoral Vacancy</div>
+    <div class="cdivider"></div>
+    <div class="info">
+      <svg width="900" height="340" viewBox="0 0 900 340" xmlns="http://www.w3.org/2000/svg">
+        <!-- Timeline base -->
+        <line x1="80" y1="170" x2="820" y2="170" stroke="#B5D4F4" stroke-width="3"/>
+        
+        <!-- Node 1: Original plan -->
+        <circle cx="150" cy="170" r="22" fill="#0075C1"/>
+        <text x="150" y="177" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="700">1</text>
+        <rect x="60" y="60" width="180" height="80" rx="10" fill="#E6F1FB"/>
+        <text x="150" y="90" text-anchor="middle" fill="#00205D" font-size="16" font-weight="700">ORIGINAL PLAN</text>
+        <text x="150" y="115" text-anchor="middle" fill="#0075C1" font-size="13">Approved Project</text>
+        <text x="150" y="132" text-anchor="middle" fill="#888780" font-size="12">Pre-Election Design</text>
+        <line x1="150" y1="140" x2="150" y2="148" stroke="#0075C1" stroke-width="2"/>
+        
+        <!-- Node 2: Vacancy period -->
+        <circle cx="370" cy="170" r="22" fill="#DDA11D"/>
+        <text x="370" y="177" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="700">2</text>
+        <rect x="280" y="200" width="180" height="80" rx="10" fill="#E6F1FB"/>
+        <text x="370" y="230" text-anchor="middle" fill="#00205D" font-size="16" font-weight="700">MAYORAL VACANCY</text>
+        <text x="370" y="253" text-anchor="middle" fill="#DDA11D" font-size="13" font-weight="700">Plan Modified</text>
+        <text x="370" y="270" text-anchor="middle" fill="#888780" font-size="12">No Elected Leader</text>
+        <line x1="370" y1="192" x2="370" y2="200" stroke="#DDA11D" stroke-width="2"/>
+        
+        <!-- Node 3: Controversy -->
+        <circle cx="590" cy="170" r="22" fill="#00205D"/>
+        <text x="590" y="177" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="700">3</text>
+        <rect x="500" y="60" width="180" height="80" rx="10" fill="#E6F1FB"/>
+        <text x="590" y="90" text-anchor="middle" fill="#00205D" font-size="16" font-weight="700">PUBLIC BACKLASH</text>
+        <text x="590" y="115" text-anchor="middle" fill="#0075C1" font-size="13">Halt Demanded</text>
+        <text x="590" y="132" text-anchor="middle" fill="#888780" font-size="12">Calls for Review</text>
+        <line x1="590" y1="140" x2="590" y2="148" stroke="#00205D" stroke-width="2"/>
+        
+        <!-- Node 4: Inauguration -->
+        <circle cx="790" cy="170" r="22" fill="#0075C1"/>
+        <text x="790" y="177" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="700">4</text>
+        <rect x="700" y="200" width="180" height="80" rx="10" fill="#E6F1FB"/>
+        <text x="790" y="230" text-anchor="middle" fill="#00205D" font-size="16" font-weight="700">MAYOR-ELECT</text>
+        <text x="790" y="253" text-anchor="middle" fill="#0075C1" font-size="13">Awaiting Office</text>
+        <text x="790" y="270" text-anchor="middle" fill="#888780" font-size="12">Decision Pending</text>
+        <line x1="790" y1="192" x2="790" y2="200" stroke="#0075C1" stroke-width="2"/>
+      </svg>
+    </div>
+  </div>
+  <div class="facts">
+    <div class="fact"><div class="k">LOCATION</div><div class="v"><span class="y">Cheonan</span>, South Korea</div></div>
+    <div class="fact"><div class="k">FOCUS</div><div class="v"><span class="b">Sewage Plant</span> Project Change</div></div>
+    <div class="fact"><div class="k">ISSUE</div><div class="v">Governance & Timing Dispute</div></div>
+  </div>
+  <div class="footer">
+    <div class="line"></div>
+    <div class="row">
+      <div class="logo"><span class="h">Hifil</span><span class="m">M</span>&nbsp;<span class="inc">INC.</span></div>
+      <div class="center">Water Treatment</div>
+      <div class="right"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
