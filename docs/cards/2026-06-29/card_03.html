@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  :root{--main-blue:#0075C1;--yellow:#DDA11D;--navy:#00205D;--tint:#E6F1FB;--card-bg:#F5F7FA;--line:#B5D4F4;--gray-light:#888780;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;}
+  .card{width:1080px;height:1080px;background:#ffffff;position:relative;overflow:hidden;}
+  .pad{padding:0 90px;}
+  .footer{position:absolute;left:0;right:0;bottom:46px;padding:0 90px;}
+  .footer .line{height:1px;background:var(--line);margin-bottom:22px;}
+  .footer .row{display:flex;align-items:center;justify-content:space-between;}
+  .logo{font-size:26px;font-weight:700;}
+  .logo .h{color:var(--main-blue);} .logo .m{color:var(--yellow);} .logo .inc{color:var(--navy);}
+  .footer .center{color:var(--main-blue);font-size:22px;font-weight:600;letter-spacing:2px;}
+  .footer .right{width:120px;}
+  .label{display:flex;align-items:center;gap:12px;padding-top:96px;color:var(--main-blue);font-size:24px;font-weight:700;letter-spacing:3px;}
+  .label .ldot{width:10px;height:10px;border-radius:50%;background:var(--main-blue);}
+  .label .lbadge{margin-left:6px;background:var(--tint);color:var(--main-blue);font-size:18px;letter-spacing:2px;padding:5px 14px;border-radius:20px;}
+  .ctitle{margin-top:34px;color:var(--navy);font-size:54px;font-weight:700;line-height:1.18;}
+  .ctitle .b{color:var(--main-blue);} .ctitle .y{color:var(--yellow);}
+  .cdivider{width:160px;height:4px;background:var(--main-blue);margin-top:30px;}
+  .info{margin-top:48px;}
+  .facts{position:absolute;left:90px;right:90px;bottom:150px;display:flex;gap:18px;}
+  .fact{flex:1;background:var(--card-bg);border-radius:16px;padding:26px 24px;}
+  .fact .k{color:var(--gray-light);font-size:18px;letter-spacing:1px;margin-bottom:10px;}
+  .fact .v{color:var(--navy);font-size:24px;font-weight:700;line-height:1.25;}
+  .fact .v .b{color:var(--main-blue);} .fact .v .y{color:var(--yellow);}
+</style>
+</head>
+<body>
+<div class="card" id="card_03">
+  <div class="pad">
+    <div class="label"><span class="ldot"></span>INVESTMENT<span class="lbadge">US</span></div>
+    <div class="ctitle"><span class="y">Oshkosh</span> Starts <span class="b">$40 Million</span> Upgrade to Wastewater Treatment Plant</div>
+    <div class="cdivider"></div>
+    <div class="info">
+      <svg width="900" height="320" viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg">
+        <line x1="80" y1="280" x2="860" y2="280" stroke="#B5D4F4" stroke-width="2"/>
+        <rect x="160" y="220" width="100" height="60" fill="#B5D4F4"/>
+        <text x="210" y="305" text-anchor="middle" font-family="Helvetica" font-size="16" fill="#888780">PLANNING</text>
+        <text x="210" y="210" text-anchor="middle" font-family="Helvetica" font-size="18" font-weight="700" fill="#888780">$5M</text>
+        <rect x="320" y="140" width="100" height="140" fill="#0075C1"/>
+        <text x="370" y="305" text-anchor="middle" font-family="Helvetica" font-size="16" fill="#0075C1" font-weight="700">CONSTRUCTION</text>
+        <text x="370" y="130" text-anchor="middle" font-family="Helvetica" font-size="18" font-weight="700" fill="#0075C1">$25M</text>
+        <rect x="480" y="190" width="100" height="90" fill="#00205D"/>
+        <text x="530" y="305" text-anchor="middle" font-family="Helvetica" font-size="16" fill="#00205D" font-weight="700">EQUIPMENT</text>
+        <text x="530" y="180" text-anchor="middle" font-family="Helvetica" font-size="18" font-weight="700" fill="#00205D">$7M</text>
+        <rect x="640" y="240" width="100" height="40" fill="#DDA11D"/>
+        <text x="690" y="305" text-anchor="middle" font-family="Helvetica" font-size="16" fill="#DDA11D" font-weight="700">CONTINGENCY</text>
+        <text x="690" y="230" text-anchor="middle" font-family="Helvetica" font-size="18" font-weight="700" fill="#DDA11D">$3M</text>
+        <text x="80" y="60" font-family="Helvetica" font-size="22" font-weight="700" fill="#00205D">TOTAL CAPEX</text>
+        <text x="80" y="100" font-family="Helvetica" font-size="44" font-weight="700" fill="#DDA11D">$40,000,000</text>
+      </svg>
+    </div>
+  </div>
+  <div class="facts">
+    <div class="fact"><div class="k">CATEGORY</div><div class="v"><span class="b">CAPEX</span></div></div>
+    <div class="fact"><div class="k">PROJECT</div><div class="v"><span class="y">Oshkosh</span> WWTP</div></div>
+    <div class="fact"><div class="k">FIGURES</div><div class="v"><span class="y">$40M</span></div></div>
+  </div>
+  <div class="footer">
+    <div class="line"></div>
+    <div class="row">
+      <div class="logo"><span class="h">Hifil</span><span class="m">M</span>&nbsp;<span class="inc">INC.</span></div>
+      <div class="center">Water Treatment</div>
+      <div class="right"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  :root{--main-blue:#0075C1;--yellow:#DDA11D;--navy:#00205D;--tint:#E6F1FB;--card-bg:#F5F7FA;--line:#B5D4F4;--gray-light:#888780;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;}
+  .card{width:1080px;height:1080px;background:#ffffff;position:relative;overflow:hidden;}
+  .pad{padding:0 90px;}
+  .footer{position:absolute;left:0;right:0;bottom:46px;padding:0 90px;}
+  .footer .line{height:1px;background:var(--line);margin-bottom:22px;}
+  .footer .row{display:flex;align-items:center;justify-content:space-between;}
+  .logo{font-size:26px;font-weight:700;}
+  .logo .h{color:var(--main-blue);} .logo .m{color:var(--yellow);} .logo .inc{color:var(--navy);}
+  .footer .center{color:var(--main-blue);font-size:22px;font-weight:600;letter-spacing:2px;}
+  .footer .right{width:120px;}
+  .label{display:flex;align-items:center;gap:12px;padding-top:96px;color:var(--main-blue);font-size:24px;font-weight:700;letter-spacing:3px;}
+  .label .ldot{width:10px;height:10px;border-radius:50%;background:var(--main-blue);}
+  .label .lbadge{margin-left:6px;background:var(--tint);color:var(--main-blue);font-size:18px;letter-spacing:2px;padding:5px 14px;border-radius:20px;}
+  .ctitle{margin-top:34px;color:var(--navy);font-size:54px;font-weight:700;line-height:1.18;}
+  .ctitle .b{color:var(--main-blue);} .ctitle .y{color:var(--yellow);}
+  .cdivider{width:160px;height:4px;background:var(--main-blue);margin-top:30px;}
+  .info{margin-top:48px;}
+  .facts{position:absolute;left:90px;right:90px;bottom:150px;display:flex;gap:18px;}
+  .fact{flex:1;background:var(--card-bg);border-radius:16px;padding:26px 24px;}
+  .fact .k{color:var(--gray-light);font-size:18px;letter-spacing:1px;margin-bottom:10px;}
+  .fact .v{color:var(--navy);font-size:24px;font-weight:700;line-height:1.25;}
+  .fact .v .b{color:var(--main-blue);} .fact .v .y{color:var(--yellow);}
+</style>
+</head>
+<body>
+<div class="card" id="card_05">
+  <div class="pad">
+    <div class="label"><span class="ldot"></span>TECH AWARD<span class="lbadge">PFAS</span></div>
+    <div class="ctitle"><span class="y">Calgon Carbon</span> Wins <span class="y">AWWA</span> Innovation Award for <span class="b">PFAS Destruction</span></div>
+    <div class="cdivider"></div>
+    <div class="info">
+      <svg width="900" height="320" viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg">
+        <rect x="40" y="100" width="200" height="140" rx="12" fill="#F5F7FA" stroke="#B5D4F4" stroke-width="2"/>
+        <text x="140" y="150" text-anchor="middle" font-family="Helvetica" font-size="20" font-weight="700" fill="#00205D">PFAS</text>
+        <text x="140" y="180" text-anchor="middle" font-family="Helvetica" font-size="14" fill="#888780">Forever chemicals</text>
+        <text x="140" y="210" text-anchor="middle" font-family="Helvetica" font-size="28" font-weight="700" fill="#0075C1">C-F</text>
+        <polygon points="250,165 320,165 320,155 345,175 320,195 320,185 250,185" fill="#0075C1"/>
+        <rect x="360" y="80" width="220" height="180" rx="12" fill="#0075C1"/>
+        <text x="470" y="135" text-anchor="middle" font-family="Helvetica" font-size="22" font-weight="700" fill="#ffffff">DESTRUCTION</text>
+        <text x="470" y="170" text-anchor="middle" font-family="Helvetica" font-size="18" fill="#E6F1FB">TECHNOLOGY</text>
+        <text x="470" y="220" text-anchor="middle" font-family="Helvetica" font-size="42" font-weight="700" fill="#DDA11D">★</text>
+        <polygon points="590,165 660,165 660,155 685,175 660,195 660,185 590,185" fill="#DDA11D"/>
+        <rect x="700" y="100" width="160" height="140" rx="12" fill="#E6F1FB" stroke="#DDA11D" stroke-width="2"/>
+        <text x="780" y="150" text-anchor="middle" font-family="Helvetica" font-size="18" font-weight="700" fill="#00205D">SAFE</text>
+        <text x="780" y="180" text-anchor="middle" font-family="Helvetica" font-size="18" font-weight="700" fill="#00205D">BYPRODUCTS</text>
+        <text x="780" y="210" text-anchor="middle" font-family="Helvetica" font-size="14" fill="#888780">F⁻, CO₂</text>
+      </svg>
+    </div>
+  </div>
+  <div class="facts">
+    <div class="fact"><div class="k">CATEGORY</div><div class="v"><span class="b">PFAS Destruction</span></div></div>
+    <div class="fact"><div class="k">COMPANY</div><div class="v"><span class="y">Calgon Carbon</span></div></div>
+    <div class="fact"><div class="k">AWARD</div><div class="v"><span class="y">AWWA</span> Innovation</div></div>
+  </div>
+  <div class="footer">
+    <div class="line"></div>
+    <div class="row">
+      <div class="logo"><span class="h">Hifil</span><span class="m">M</span>&nbsp;<span class="inc">INC.</span></div>
+      <div class="center">Water Treatment</div>
+      <div class="right"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
