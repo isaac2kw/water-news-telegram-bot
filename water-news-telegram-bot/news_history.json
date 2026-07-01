@@ -21527,5 +21527,135 @@
     "region": "domestic",
     "source_type": "rss",
     "image": ""
+  },
+  {
+    "date": "2026-06-16",
+    "title": "Dupont MBR System Chosen for Riverstone Water Resource Recovery Facility",
+    "ko_title": "Dupont MBR System Chosen for Riverstone Water Resource Recovery Facility",
+    "brief": "Dupont’s Memcor membrane bioreactor system has been chosen for the Riverstone Water Resource Recovery Facility in Sydney, Australia. The Memcor MBR system will consist of 2,592 Mem",
+    "summary": "Dupont’s Memcor membrane bioreactor system has been chosen for the Riverstone Water Resource Recovery Facility in Sydney, Australia. The Memcor MBR system will consist of 2,592 Mempulse B50 MBR ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane",
+      "dupont"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-06-16",
+    "specs": [],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a4505006fb7446c99a593e587fe4048&url=https%3a%2f%2fwww.process-worldwide.com%2fdupont-mbr-system-chosen-for-riverstone-water-resource-recovery-facility-a-d265991f5bfc4ecbaba0f1cd6452e721%2f&c=9557833955966831224&mkt=en-us",
+    "score": 35,
+    "keywords": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane",
+      "dupont"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-07-01",
+    "title": "금호건설, 과천 하수처리장 현대화사업 수주 - 파이낸셜뉴스",
+    "ko_title": "금호건설, 과천 하수처리장 현대화사업 수주 - 파이낸셜뉴스",
+    "brief": "금호건설, 과천 하수처리장 현대화사업 수주 파이낸셜뉴스",
+    "summary": "금호건설, 과천 하수처리장 현대화사업 수주 파이낸셜뉴스",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-07-01",
+    "specs": [],
+    "source": "Google News Korea 재이용수 PFAS",
+    "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5ySklKVzFnYV9Gc0ctQmVqODNBMHczaFFYUTdKV1JNMXlzdElWWGRGSW8zV1JlOHJxMUpfOW5YOWJuU3lLM2lYLTlsN2l0RXFCWkZCQTdXR1pGdw?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-07-01",
+    "title": "금호건설, 2249억대 과천 하수처리장 수주…환경 플랜트 영토 넓힌다 - 아이뉴스24",
+    "ko_title": "금호건설, 2249억대 과천 하수처리장 수주…환경 플랜트 영토 넓힌다 - 아이뉴스24",
+    "brief": "금호건설, 2249억대 과천 하수처리장 수주…환경 플랜트 영토 넓힌다 아이뉴스24",
+    "summary": "금호건설, 2249억대 과천 하수처리장 수주…환경 플랜트 영토 넓힌다 아이뉴스24",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-07-01",
+    "specs": [],
+    "source": "Google News Korea 재이용수 PFAS",
+    "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE55UTFQaDF3TnVKSDBMczgwUlNmZl9RX1J4RlEwaHN2ZTlFNFVnMTcwOHBoOGhYSmdFUXkzQmIycjJBMlM1THNFMg?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-07-01",
+    "title": "PFAS, Project Funding are Key Woes as Drinking Water Providers Convene - Engineering News-Record (ENR)",
+    "ko_title": "PFAS, Project Funding are Key Woes as Drinking Water Providers Convene - Engineering News-Record (ENR)",
+    "brief": "PFAS, Project Funding are Key Woes as Drinking Water Providers Convene Engineering News-Record (ENR)",
+    "summary": "PFAS, Project Funding are Key Woes as Drinking Water Providers Convene Engineering News-Record (ENR)",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "PFAS/오염물",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "drinking water",
+      "pfas",
+      "funding"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-07-01",
+    "specs": [],
+    "source": "Google News Global Water",
+    "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNRGNBM0ppSUxpaVRsZ2R2dUh0WFdKbmZTaWpNVGZSZC1LcHp0OThOTGZHd0N0LUNpdDF3dXpOT0hjX2s4czZMUHpfTEV0WkFSY3hnQmhQYXg2SWYtYVJLXzRhYUVZSU1WR0xTeWUyNW9xajJHN0ViWkp1dnlncjU0U05XWGt6bnEtQUJwSmYyYjJnZWFpRG5NRlY3T285cUxqenRKdUtoUQ?oc=5",
+    "score": 19,
+    "keywords": [
+      "drinking water",
+      "pfas",
+      "funding"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
   }
 ]
