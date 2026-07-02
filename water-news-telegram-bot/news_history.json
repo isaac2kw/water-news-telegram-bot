@@ -21917,5 +21917,69 @@
     "region": "domestic",
     "source_type": "rss",
     "image": ""
+  },
+  {
+    "date": "2026-06-16",
+    "title": "Dupont MBR System Chosen for Riverstone Water Resource Recovery Facility",
+    "ko_title": "Dupont MBR System Chosen for Riverstone Water Resource Recovery Facility",
+    "brief": "Dupont’s Memcor membrane bioreactor system has been chosen for the Riverstone Water Resource Recovery Facility in Sydney, Australia. The Memcor MBR system will consist of 2,592 Mem",
+    "summary": "Dupont’s Memcor membrane bioreactor system has been chosen for the Riverstone Water Resource Recovery Facility in Sydney, Australia. The Memcor MBR system will consist of 2,592 Mempulse B50 MBR ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane",
+      "dupont"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-06-16",
+    "specs": [],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a4605990d2941e2a9dfa2b86112d8e3&url=https%3a%2f%2fwww.process-worldwide.com%2fdupont-mbr-system-chosen-for-riverstone-water-resource-recovery-facility-a-d265991f5bfc4ecbaba0f1cd6452e721%2f&c=9557833955966831224&mkt=en-us",
+    "score": 35,
+    "keywords": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane",
+      "dupont"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-07-02",
+    "title": "과천 공공하수처리시설 현대화 본격화 ··· 금호건설 컨소시엄 사업 수주 - 이뉴스투데이",
+    "ko_title": "과천 공공하수처리시설 현대화 본격화 ··· 금호건설 컨소시엄 사업 수주 - 이뉴스투데이",
+    "brief": "과천 공공하수처리시설 현대화 본격화 ··· 금호건설 컨소시엄 사업 수주 이뉴스투데이",
+    "summary": "과천 공공하수처리시설 현대화 본격화 ··· 금호건설 컨소시엄 사업 수주 이뉴스투데이",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-07-02",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE01RW5LWU54OUJTYW5jdndMSVdHeVdYRkhFT25xT0FKSVE0aU5RbURqWm1KcURyU09FRjFNaHlhZ0d0XzdPZmdvVVBwT19EODg5NXN1UVZSbjFtR0NDcVQ2T3gtNlhQbVhxOWNLeDNnc2_SAXRBVV95cUxPOFFhYjRrMGZlNy01VmpKNUFTR1I1S0NIS1VRY3dTUEtRVXVvb0lYazdNbjN0cnotZ0xMOWYxd0dLM0RHRnhIZEdKQnRKS2N5UmdwMzhCVTlKekNhM1p2VlNsZmxqb19xMDR2UVNOTEZOQkhrUw?oc=5",
+    "score": 18,
+    "keywords": [
+      "하수처리",
+      "수처리"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
   }
 ]
