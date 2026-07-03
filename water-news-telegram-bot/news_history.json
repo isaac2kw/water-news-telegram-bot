@@ -22799,5 +22799,69 @@
     "region": "domestic",
     "source_type": "rss",
     "image": ""
+  },
+  {
+    "date": "2026-07-01",
+    "title": "\"하수처리장 위 공원 생긴다\"…금호건설, 과천서 2249억 사업 수주 - 한국경제",
+    "ko_title": "\"하수처리장 위 공원 생긴다\"…금호건설, 과천서 2249억 사업 수주 - 한국경제",
+    "brief": "\"하수처리장 위 공원 생긴다\"…금호건설, 과천서 2249억 사업 수주 한국경제",
+    "summary": "\"하수처리장 위 공원 생긴다\"…금호건설, 과천서 2249억 사업 수주 한국경제",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-07-01",
+    "specs": [],
+    "source": "Google News Korea 재이용수 PFAS",
+    "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1QLWRZTzZvdTJfaXJ6MjFTOXFaNHVieTkzbXpJT1JUbFVxSXB2dHZGWnBjLVhTaTJPTFVDUy1IWTR2V1JoWFFia2RKZjQtNjY2cXZOUWN0bXl6QdIBVEFVX3lxTE0tRFdHYjhKaHNMTDZydjBDcS1CelJtdHMzQ0hZYzhPbEZEM19RdmoyU0dnQjJIMG9fZkhHcTZjTzRLaE5EY2xVWmdXbEctSkhrWVkxYQ?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-07-04",
+    "title": "RO Membrane and Components Market Growth Outlook to 2035 Driven by Water Reuse and Desalination Expansion - News and Statistics - IndexBox",
+    "ko_title": "RO Membrane and Components Market Growth Outlook to 2035 Driven by Water Reuse and Desalination Expansion - News and Statistics - IndexBox",
+    "brief": "RO Membrane and Components Market Growth Outlook to 2035 Driven by Water Reuse and Desalination Expansion - News and Statistics IndexBox",
+    "summary": "RO Membrane and Components Market Growth Outlook to 2035 Driven by Water Reuse and Desalination Expansion - News and Statistics IndexBox",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "membrane",
+      "water reuse",
+      "expansion"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-07-04",
+    "specs": [],
+    "source": "Google News Global Water",
+    "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOcU5nYUxwMXBhSmpPZ3JlNzlhQXZ5UHlRb1E1NEVjT3ZfMDZwNVhrSU1hVmRZRGFLeHhnclRrWEN5RUVxbnJENV9wdDd4OEs4ODZheGJXenEzdzFnaVZwc0VQOWVPa20zc2ZVaHBTMnY5OXdtY0QtWGVPTVo5UDR5SU95aTNFYjNieHdsMl9hbmY1Zl95aUhWbVVrQTdlNE5oVmJCd0RVaVBsamVpMzV6eW51dXl5eGVsODc3eU5pY0p6RDJVaVBNbmljUERfSUdlbTZwWUF0QmhLSHIwazJrdQ?oc=5",
+    "score": 22,
+    "keywords": [
+      "membrane",
+      "water reuse",
+      "expansion"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
   }
 ]
