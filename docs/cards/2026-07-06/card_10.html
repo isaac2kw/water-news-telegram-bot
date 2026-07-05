@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  :root{--main-blue:#0075C1;--yellow:#DDA11D;--navy:#00205D;--tint:#E6F1FB;--card-bg:#F5F7FA;--line:#B5D4F4;--gray-light:#888780;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{margin:0;padding:0;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;}
+  .card{width:1080px;height:1080px;background:#ffffff;position:relative;overflow:hidden;}
+  .pad{padding:0 90px;}
+  .footer{position:absolute;left:0;right:0;bottom:46px;padding:0 90px;}
+  .footer .line{height:1px;background:var(--line);margin-bottom:22px;}
+  .footer .row{display:flex;align-items:center;justify-content:space-between;}
+  .logo{font-size:26px;font-weight:700;}
+  .logo .h{color:var(--main-blue);}.logo .m{color:var(--yellow);}.logo .inc{color:var(--navy);}
+  .footer .center{color:var(--main-blue);font-size:22px;font-weight:600;letter-spacing:2px;}
+  .footer .right{width:120px;}
+  .label{display:flex;align-items:center;gap:12px;padding-top:96px;color:var(--main-blue);font-size:24px;font-weight:700;letter-spacing:3px;}
+  .label .ldot{width:10px;height:10px;border-radius:50%;background:var(--main-blue);}
+  .label .lbadge{margin-left:6px;background:var(--tint);color:var(--main-blue);font-size:18px;letter-spacing:2px;padding:5px 14px;border-radius:20px;}
+  .ctitle{margin-top:34px;color:var(--navy);font-size:52px;font-weight:700;line-height:1.18;}
+  .ctitle .b{color:var(--main-blue);}.ctitle .y{color:var(--yellow);}
+  .cdivider{width:160px;height:4px;background:var(--main-blue);margin-top:30px;}
+  .info{margin-top:44px;}
+  .facts{position:absolute;left:90px;right:90px;bottom:150px;display:flex;gap:18px;}
+  .fact{flex:1;background:var(--card-bg);border-radius:16px;padding:26px 24px;}
+  .fact .k{color:var(--gray-light);font-size:18px;letter-spacing:1px;margin-bottom:10px;}
+  .fact .v{color:var(--navy);font-size:24px;font-weight:700;line-height:1.25;}
+  .fact .v .b{color:var(--main-blue);}.fact .v .y{color:var(--yellow);}
+</style>
+</head>
+<body>
+<div class="card" id="card_10">
+  <div class="pad">
+    <div class="label"><span class="ldot"></span>MARKET · MEMBRANE<span class="lbadge">GLB</span></div>
+    <div class="ctitle"><span class="b">RO Membrane</span> Market to 2035 Driven by <span class="y">Water Reuse</span> and <span class="y">Desalination</span></div>
+    <div class="cdivider"></div>
+    <div class="info">
+      <svg width="900" height="320" viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg">
+        <line x1="80" y1="270" x2="820" y2="270" stroke="#B5D4F4" stroke-width="2"/>
+        <line x1="80" y1="60" x2="80" y2="270" stroke="#B5D4F4" stroke-width="2"/>
+        <rect x="140" y="200" width="90" height="70" fill="#0075C1"/>
+        <text x="185" y="185" text-anchor="middle" fill="#00205D" font-size="16" font-weight="700">2025</text>
+        <text x="185" y="295" text-anchor="middle" fill="#888780" font-size="14">Baseline</text>
+        <rect x="290" y="160" width="90" height="110" fill="#0075C1"/>
+        <text x="335" y="145" text-anchor="middle" fill="#00205D" font-size="16" font-weight="700">2028</text>
+        <text x="335" y="295" text-anchor="middle" fill="#888780" font-size="14">Growth</text>
+        <rect x="440" y="110" width="90" height="160" fill="#DDA11D"/>
+        <text x="485" y="95" text-anchor="middle" fill="#00205D" font-size="16" font-weight="700">2031</text>
+        <text x="485" y="295" text-anchor="middle" fill="#888780" font-size="14">Acceleration</text>
+        <rect x="590" y="70" width="90" height="200" fill="#DDA11D"/>
+        <text x="635" y="55" text-anchor="middle" fill="#00205D" font-size="16" font-weight="700">2035</text>
+        <text x="635" y="295" text-anchor="middle" fill="#888780" font-size="14">Outlook</text>
+        <text x="750" y="150" fill="#0075C1" font-size="16" font-weight="700">Drivers:</text>
+        <text x="750" y="175" fill="#00205D" font-size="14">Water Reuse</text>
+        <text x="750" y="195" fill="#00205D" font-size="14">Desalination</text>
+      </svg>
+    </div>
+  </div>
+  <div class="facts">
+    <div class="fact"><div class="k">SEGMENT</div><div class="v"><span class="b">RO Membrane</span></div></div>
+    <div class="fact"><div class="k">HORIZON</div><div class="v">To 2035</div></div>
+    <div class="fact"><div class="k">DRIVERS</div><div class="v"><span class="y">Reuse + Desalination</span></div></div>
+  </div>
+  <div class="footer">
+    <div class="line"></div>
+    <div class="row">
+      <div class="logo"><span class="h">Hifil</span><span class="m">M</span>&nbsp;<span class="inc">INC.</span></div>
+      <div class="center">Water Treatment</div>
+      <div class="right"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
