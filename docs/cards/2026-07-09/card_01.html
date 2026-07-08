@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  :root{--main-blue:#0075C1;--yellow:#DDA11D;--navy:#00205D;--tint:#E6F1FB;--card-bg:#F5F7FA;--line:#B5D4F4;--gray-light:#888780;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;}
+  .card{width:1080px;height:1080px;background:#fff;position:relative;overflow:hidden;}
+  .pad{padding:0 90px;}
+  .footer{position:absolute;left:0;right:0;bottom:46px;padding:0 90px;}
+  .footer .line{height:1px;background:var(--line);margin-bottom:22px;}
+  .footer .row{display:flex;align-items:center;justify-content:space-between;}
+  .logo{font-size:26px;font-weight:700;}
+  .logo .h{color:var(--main-blue);} .logo .m{color:var(--yellow);} .logo .inc{color:var(--navy);}
+  .footer .center{color:var(--main-blue);font-size:22px;font-weight:600;letter-spacing:2px;}
+  .footer .right{width:120px;}
+  .label{display:flex;align-items:center;gap:12px;padding-top:96px;color:var(--main-blue);font-size:24px;font-weight:700;letter-spacing:3px;}
+  .label .ldot{width:10px;height:10px;border-radius:50%;background:var(--main-blue);}
+  .label .lbadge{margin-left:6px;background:var(--tint);color:var(--main-blue);font-size:18px;letter-spacing:2px;padding:5px 14px;border-radius:20px;}
+  .ctitle{margin-top:34px;color:var(--navy);font-size:52px;font-weight:700;line-height:1.18;}
+  .ctitle .b{color:var(--main-blue);} .ctitle .y{color:var(--yellow);}
+  .cdivider{width:160px;height:4px;background:var(--main-blue);margin-top:30px;}
+  .info{margin-top:40px;}
+  .facts{position:absolute;left:90px;right:90px;bottom:150px;display:flex;gap:18px;}
+  .fact{flex:1;background:var(--card-bg);border-radius:16px;padding:22px 20px;}
+  .fact .k{color:var(--gray-light);font-size:16px;letter-spacing:1px;margin-bottom:8px;}
+  .fact .v{color:var(--navy);font-size:22px;font-weight:700;line-height:1.25;}
+  .fact .v .b{color:var(--main-blue);} .fact .v .y{color:var(--yellow);}
+</style>
+</head>
+<body>
+<div class="card" id="card_01">
+  <div class="pad">
+    <div class="label"><span class="ldot"></span>FUNDING · POLICY<span class="lbadge">US</span></div>
+    <div class="ctitle"><span class="y">US DOE</span> Announces <span class="b">$150M</span> for Oil & Gas Wastewater Treatment</div>
+    <div class="cdivider"></div>
+    <div class="info">
+      <svg width="900" height="340" viewBox="0 0 900 340" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="280" width="900" height="2" fill="#B5D4F4"/>
+        <rect x="80" y="180" width="140" height="100" fill="#E6F1FB" rx="8"/>
+        <text x="150" y="230" text-anchor="middle" font-size="22" font-weight="700" fill="#00205D">$40M</text>
+        <text x="150" y="310" text-anchor="middle" font-size="16" fill="#888780">WW TREATMENT</text>
+        <rect x="260" y="120" width="140" height="160" fill="#0075C1" rx="8"/>
+        <text x="330" y="180" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">$55M</text>
+        <text x="330" y="310" text-anchor="middle" font-size="16" fill="#888780">RECOVERY</text>
+        <rect x="440" y="150" width="140" height="130" fill="#DDA11D" rx="8"/>
+        <text x="510" y="210" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">$35M</text>
+        <text x="510" y="310" text-anchor="middle" font-size="16" fill="#888780">FRACKING</text>
+        <rect x="620" y="210" width="140" height="70" fill="#E6F1FB" rx="8"/>
+        <text x="690" y="250" text-anchor="middle" font-size="22" font-weight="700" fill="#00205D">$20M</text>
+        <text x="690" y="310" text-anchor="middle" font-size="16" fill="#888780">DIAGNOSTICS</text>
+        <text x="450" y="60" text-anchor="middle" font-size="28" font-weight="700" fill="#00205D">Total <tspan fill="#0075C1">$150M</tspan> Funding Allocation</text>
+      </svg>
+    </div>
+  </div>
+  <div class="facts">
+    <div class="fact"><div class="k">AGENCY</div><div class="v"><span class="y">US DOE</span></div></div>
+    <div class="fact"><div class="k">FUND</div><div class="v"><span class="b">$150M</span></div></div>
+    <div class="fact"><div class="k">FOCUS</div><div class="v">Oil & Gas WW</div></div>
+  </div>
+  <div class="footer"><div class="line"></div><div class="row"><div class="logo"><span class="h">Hifil</span><span class="m">M</span>&nbsp;<span class="inc">INC.</span></div><div class="center">Water Treatment</div><div class="right"></div></div></div>
+</div>
+</body>
+</html>
