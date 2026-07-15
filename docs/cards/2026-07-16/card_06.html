@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  :root{--main-blue:#0075C1;--yellow:#DDA11D;--navy:#00205D;--tint:#E6F1FB;--card-bg:#F5F7FA;--line:#B5D4F4;--gray-light:#888780;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;}
+  .card{width:1080px;height:1080px;background:#fff;position:relative;overflow:hidden;}
+  .pad{padding:0 90px;}
+  .footer{position:absolute;left:0;right:0;bottom:46px;padding:0 90px;}
+  .footer .line{height:1px;background:var(--line);margin-bottom:22px;}
+  .footer .row{display:flex;align-items:center;justify-content:space-between;}
+  .logo{font-size:26px;font-weight:700;} .logo .h{color:var(--main-blue);} .logo .m{color:var(--yellow);} .logo .inc{color:var(--navy);}
+  .footer .center{color:var(--main-blue);font-size:22px;font-weight:600;letter-spacing:2px;}
+  .footer .right{width:120px;}
+  .label{display:flex;align-items:center;gap:12px;padding-top:96px;color:var(--main-blue);font-size:24px;font-weight:700;letter-spacing:3px;}
+  .label .ldot{width:10px;height:10px;border-radius:50%;background:var(--main-blue);}
+  .label .lbadge{margin-left:6px;background:var(--tint);color:var(--main-blue);font-size:18px;letter-spacing:2px;padding:5px 14px;border-radius:20px;}
+  .ctitle{margin-top:34px;color:var(--navy);font-size:52px;font-weight:700;line-height:1.18;}
+  .ctitle .b{color:var(--main-blue);} .ctitle .y{color:var(--yellow);}
+  .cdivider{width:160px;height:4px;background:var(--main-blue);margin-top:30px;}
+  .info{margin-top:44px;}
+  .facts{position:absolute;left:90px;right:90px;bottom:150px;display:flex;gap:18px;}
+  .fact{flex:1;background:var(--card-bg);border-radius:16px;padding:26px 24px;}
+  .fact .k{color:var(--gray-light);font-size:18px;letter-spacing:1px;margin-bottom:10px;}
+  .fact .v{color:var(--navy);font-size:24px;font-weight:700;line-height:1.25;}
+  .fact .v .b{color:var(--main-blue);} .fact .v .y{color:var(--yellow);}
+</style>
+</head>
+<body>
+<div class="card" id="card_06">
+  <div class="pad">
+    <div class="label"><span class="ldot"></span>POLICY · INVESTIGATION<span class="lbadge">KOREA</span></div>
+    <div class="ctitle"><span class="y">Ansan</span> WWTP Bribery: Officials &amp; Broker Referred to <span class="b">Prosecutors</span></div>
+    <div class="cdivider"></div>
+    <div class="info">
+      <svg width="900" height="320" viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg">
+        <rect x="60" y="100" width="220" height="130" rx="12" fill="#F5F7FA" stroke="#B5D4F4"/>
+        <text x="170" y="145" text-anchor="middle" font-family="Helvetica" font-size="20" font-weight="700" fill="#00205D">Public Officials</text>
+        <text x="170" y="175" text-anchor="middle" font-family="Helvetica" font-size="16" fill="#888780">City of Ansan</text>
+        <text x="170" y="205" text-anchor="middle" font-family="Helvetica" font-size="14" fill="#0075C1">Under investigation</text>
+
+        <circle cx="450" cy="165" r="55" fill="#DDA11D"/>
+        <text x="450" y="160" text-anchor="middle" font-family="Helvetica" font-size="16" font-weight="700" fill="#ffffff">Broker</text>
+        <text x="450" y="185" text-anchor="middle" font-family="Helvetica" font-size="14" fill="#ffffff">Bribe Flow</text>
+
+        <line x1="280" y1="165" x2="395" y2="165" stroke="#0075C1" stroke-width="3"/>
+        <line x1="505" y1="165" x2="620" y2="165" stroke="#0075C1" stroke-width="3"/>
+
+        <rect x="620" y="100" width="220" height="130" rx="12" fill="#F5F7FA" stroke="#B5D4F4"/>
+        <text x="730" y="145" text-anchor="middle" font-family="Helvetica" font-size="20" font-weight="700" fill="#00205D">Prosecutors</text>
+        <text x="730" y="175" text-anchor="middle" font-family="Helvetica" font-size="16" fill="#888780">Referral &amp; Charges</text>
+        <text x="730" y="205" text-anchor="middle" font-family="Helvetica" font-size="14" fill="#0075C1">Case pending</text>
+
+        <text x="450" y="285" text-anchor="middle" font-family="Helvetica" font-size="17" font-weight="600" fill="#00205D">Ansan sewage plant PPP project scrutinized</text>
+      </svg>
+    </div>
+  </div>
+  <div class="facts">
+    <div class="fact"><div class="k">CITY</div><div class="v"><span class="y">Ansan</span></div></div>
+    <div class="fact"><div class="k">CASE</div><div class="v">Bribery</div></div>
+    <div class="fact"><div class="k">STATUS</div><div class="v"><span class="b">Referred</span></div></div>
+  </div>
+  <div class="footer">
+    <div class="line"></div>
+    <div class="row">
+      <div class="logo"><span class="h">Hifil</span><span class="m">M</span>&nbsp;<span class="inc">INC.</span></div>
+      <div class="center">Water Treatment</div>
+      <div class="right"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

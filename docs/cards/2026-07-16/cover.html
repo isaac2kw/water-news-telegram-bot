@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  :root{
+    --main-blue:#0075C1;
+    --yellow:#DDA11D;
+    --navy:#00205D;
+    --tint:#E6F1FB;
+    --card-bg:#F5F7FA;
+    --line:#B5D4F4;
+    --gray-light:#888780;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{margin:0;padding:0;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;}
+  .card{width:1080px;height:1080px;background:#ffffff;position:relative;overflow:hidden;}
+  .pad{padding:0 90px;}
+  .footer{position:absolute;left:0;right:0;bottom:46px;padding:0 90px;}
+  .footer .line{height:1px;background:var(--line);margin-bottom:22px;}
+  .footer .row{display:flex;align-items:center;justify-content:space-between;}
+  .logo{font-size:26px;font-weight:700;letter-spacing:.2px;}
+  .logo .h{color:var(--main-blue);}
+  .logo .m{color:var(--yellow);}
+  .logo .inc{color:var(--navy);}
+  .footer .center{color:var(--main-blue);font-size:22px;font-weight:600;letter-spacing:2px;}
+  .footer .right{width:120px;}
+  .badge{display:inline-block;background:var(--tint);color:var(--main-blue);font-size:22px;font-weight:700;letter-spacing:6px;padding:13px 30px;border-radius:27px;}
+  .cover-top{padding-top:96px;text-align:center;}
+  .title{font-size:78px;font-weight:700;margin-top:34px;line-height:1.05;}
+  .title .b{color:var(--main-blue);}
+  .title .n{color:var(--navy);}
+  .title .y{color:var(--yellow);}
+  .divider{width:160px;height:4px;background:var(--main-blue);margin:30px auto 0;}
+  .dateline{color:var(--gray-light);font-size:22px;letter-spacing:3px;margin-top:26px;text-align:center;font-weight:600;}
+  .hl-wrap{position:absolute;left:0;right:0;top:470px;bottom:150px;padding:0 90px;display:flex;flex-direction:column;}
+  .hl{flex:1;display:flex;align-items:center;gap:22px;border-bottom:1px solid #eef2f6;}
+  .hl .num{color:var(--main-blue);font-size:30px;font-weight:700;min-width:42px;text-align:right;}
+  .hl .dot{width:7px;height:7px;border-radius:50%;background:var(--line);flex:0 0 auto;}
+  .hl-title{flex:1;color:var(--navy);font-size:27px;font-weight:600;white-space:nowrap;overflow:hidden;}
+  .hl-title .y{color:var(--yellow);font-weight:700;}
+  .flag{flex:0 0 auto;font-size:16px;font-weight:700;color:#5a6573;border:1px solid var(--line);border-radius:6px;padding:3px 9px;letter-spacing:1px;}
+  .hl.empty{visibility:hidden;}
+</style>
+</head>
+<body>
+<div class="card" id="cover">
+  <div class="cover-top">
+    <span class="badge">DAILY WATER NEWS</span>
+    <div class="title"><span class="b">Water</span> <span class="n">News</span> <span class="y">Briefing</span></div>
+    <div class="divider"></div>
+    <div class="dateline">JULY 16, 2026 · THU · TOP HEADLINES</div>
+  </div>
+
+  <div class="hl-wrap">
+    <div class="hl">
+      <span class="num">1</span><span class="dot"></span>
+      <span class="hl-title">49M Gallons of Sewage Spill into <span class="y">Hudson</span> After <span class="y">Yonkers</span> WWTP Power Failure</span>
+      <span class="flag">US</span>
+    </div>
+    <div class="hl">
+      <span class="num">2</span><span class="dot"></span>
+      <span class="hl-title"><span class="y">IIT-Madras</span> Revives Forgotten Route to Industrial Wastewater Treatment</span>
+      <span class="flag">IN</span>
+    </div>
+    <div class="hl">
+      <span class="num">3</span><span class="dot"></span>
+      <span class="hl-title"><span class="y">IIT-Madras</span> Team Advances Low-Cost Industrial Effluent Recovery</span>
+      <span class="flag">IN</span>
+    </div>
+    <div class="hl">
+      <span class="num">4</span><span class="dot"></span>
+      <span class="hl-title"><span class="y">IIT-Madras</span> Membrane Route Targets Chemical Industry Reuse</span>
+      <span class="flag">IN</span>
+    </div>
+    <div class="hl">
+      <span class="num">5</span><span class="dot"></span>
+      <span class="hl-title"><span class="y">IIT-Madras</span> Legacy Process Reboots for Circular Water Reuse</span>
+      <span class="flag">IN</span>
+    </div>
+    <div class="hl">
+      <span class="num">6</span><span class="dot"></span>
+      <span class="hl-title"><span class="y">Ansan</span> WWTP Bribery: Officials and Broker Referred to Prosecutors</span>
+      <span class="flag">KR</span>
+    </div>
+    <div class="hl">
+      <span class="num">7</span><span class="dot"></span>
+      <span class="hl-title">7 Suspects Sent to Prosecutors Over <span class="y">Ansan</span> Sewage Plant Bribes</span>
+      <span class="flag">KR</span>
+    </div>
+    <div class="hl">
+      <span class="num">8</span><span class="dot"></span>
+      <span class="hl-title"><span class="y">Ansan</span> Sewage PPP Bribery Case: Officials Formally Charged</span>
+      <span class="flag">KR</span>
+    </div>
+    <div class="hl">
+      <span class="num">9</span><span class="dot"></span>
+      <span class="hl-title"><span class="y">IIT-Madras</span> Pilots Legacy Membrane Route for Textile Effluent</span>
+      <span class="flag">IN</span>
+    </div>
+    <div class="hl">
+      <span class="num">10</span><span class="dot"></span>
+      <span class="hl-title"><span class="y">Ulsan Yeocheon</span> WWTP Unveils Blueprint: From NIMBY to Public Park</span>
+      <span class="flag">KR</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="line"></div>
+    <div class="row">
+      <div class="logo"><span class="h">Hifil</span><span class="m">M</span>&nbsp;<span class="inc">INC.</span></div>
+      <div class="center">Water Treatment</div>
+      <div class="right"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+function fitTitles(){
+  const titles = document.querySelectorAll('.hl-title');
+  titles.forEach(t=>{
+    let size = 27;
+    const min = 16;
+    t.style.fontSize = size + 'px';
+    while(t.scrollWidth > t.clientWidth && size > min){
+      size -= 0.5;
+      t.style.fontSize = size + 'px';
+    }
+  });
+}
+fitTitles();
+</script>
+</body>
+</html>
