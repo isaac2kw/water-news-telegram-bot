@@ -28990,5 +28990,36 @@
     "region": "global",
     "source_type": "rss",
     "image": ""
+  },
+  {
+    "date": "2026-07-16",
+    "title": "[과천시] 과천시, 공공하수처리시설 현대화 사업 실시설계 본격 착수 - 워터저널",
+    "ko_title": "[과천시] 과천시, 공공하수처리시설 현대화 사업 실시설계 본격 착수 - 워터저널",
+    "brief": "[과천시] 과천시, 공공하수처리시설 현대화 사업 실시설계 본격 착수 워터저널",
+    "summary": "[과천시] 과천시, 공공하수처리시설 현대화 사업 실시설계 본격 착수 워터저널",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-07-16",
+    "specs": [],
+    "source": "Google Site WaterJournal",
+    "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBFVTRKMlNJYm91ekpJeDhMd19aV2FKbHNiT2Q3d2NBQ1hjNS1jamdJd252WUh1MFMwWTNDcVFhcEtjcHp3Z0I3dHpLTkZoeUtiTFhLOG02aUs5eEVBRkNncXZGRGpXTnp1RnZjekZBaFd5Q2Vsb0HSAXZBVV95cUxQRVU0SjJTSWJvdXpKSXg4THdfWldhSmxzYk9kN3djQUNYYzUtY2pnSXdudllIdTBTMFkzQ3FRYXBLY3B6d2dCN3R6S05GaHlLYkxYSzhtNmlLOXhFQUZDZ3F2RkRqV056dUZ2Y3pGQWhXeUNlbG9B?oc=5",
+    "score": 18,
+    "keywords": [
+      "하수처리",
+      "수처리"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "search_rss",
+    "image": ""
   }
 ]
