@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  :root{--main-blue:#0075C1;--yellow:#DDA11D;--navy:#00205D;--tint:#E6F1FB;--card-bg:#F5F7FA;--line:#B5D4F4;--gray-light:#888780;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;}
+  .card{width:1080px;height:1080px;background:#fff;position:relative;overflow:hidden;}
+  .pad{padding:0 90px;}
+  .footer{position:absolute;left:0;right:0;bottom:46px;padding:0 90px;}
+  .footer .line{height:1px;background:var(--line);margin-bottom:22px;}
+  .footer .row{display:flex;align-items:center;justify-content:space-between;}
+  .logo{font-size:26px;font-weight:700;}
+  .logo .h{color:var(--main-blue);} .logo .m{color:var(--yellow);} .logo .inc{color:var(--navy);}
+  .footer .center{color:var(--main-blue);font-size:22px;font-weight:600;letter-spacing:2px;}
+  .footer .right{width:120px;}
+  .label{display:flex;align-items:center;gap:12px;padding-top:96px;color:var(--main-blue);font-size:24px;font-weight:700;letter-spacing:3px;}
+  .label .ldot{width:10px;height:10px;border-radius:50%;background:var(--main-blue);}
+  .label .lbadge{margin-left:6px;background:var(--tint);color:var(--main-blue);font-size:18px;letter-spacing:2px;padding:5px 14px;border-radius:20px;}
+  .ctitle{margin-top:34px;color:var(--navy);font-size:52px;font-weight:700;line-height:1.18;}
+  .ctitle .b{color:var(--main-blue);} .ctitle .y{color:var(--yellow);}
+  .cdivider{width:160px;height:4px;background:var(--main-blue);margin-top:30px;}
+  .info{margin-top:44px;}
+  .facts{position:absolute;left:90px;right:90px;bottom:150px;display:flex;gap:18px;}
+  .fact{flex:1;background:var(--card-bg);border-radius:16px;padding:26px 24px;}
+  .fact .k{color:var(--gray-light);font-size:18px;letter-spacing:1px;margin-bottom:10px;}
+  .fact .v{color:var(--navy);font-size:24px;font-weight:700;line-height:1.25;}
+  .fact .v .b{color:var(--main-blue);} .fact .v .y{color:var(--yellow);}
+</style>
+</head>
+<body>
+<div class="card" id="card_06">
+  <div class="pad">
+    <div class="label"><span class="ldot"></span>DESIGN<span class="lbadge">KOREA</span></div>
+    <div class="ctitle"><span class="y">Gwacheon</span> launches <span class="b">detailed design</span> for public sewage plant modernization</div>
+    <div class="cdivider"></div>
+    <div class="info">
+      <svg width="900" height="320" viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg">
+        <line x1="60" y1="160" x2="840" y2="160" stroke="#B5D4F4" stroke-width="4"/>
+        <circle cx="120" cy="160" r="22" fill="#0075C1"/>
+        <text x="120" y="167" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">1</text>
+        <text x="120" y="115" text-anchor="middle" fill="#00205D" font-size="16" font-weight="700">Basic Plan</text>
+        <text x="120" y="215" text-anchor="middle" fill="#0075C1" font-size="13">Completed</text>
+        <circle cx="300" cy="160" r="26" fill="#DDA11D"/>
+        <text x="300" y="167" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">2</text>
+        <text x="300" y="105" text-anchor="middle" fill="#00205D" font-size="16" font-weight="700">Detailed</text>
+        <text x="300" y="125" text-anchor="middle" fill="#00205D" font-size="16" font-weight="700">Design</text>
+        <text x="300" y="215" text-anchor="middle" fill="#DDA11D" font-size="13" font-weight="700">In Progress</text>
+        <circle cx="500" cy="160" r="22" fill="#B5D4F4"/>
+        <text x="500" y="167" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">3</text>
+        <text x="500" y="115" text-anchor="middle" fill="#888780" font-size="16" font-weight="700">Bidding</text>
+        <text x="500" y="215" text-anchor="middle" fill="#888780" font-size="13">Upcoming</text>
+        <circle cx="680" cy="160" r="22" fill="#B5D4F4"/>
+        <text x="680" y="167" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">4</text>
+        <text x="680" y="115" text-anchor="middle" fill="#888780" font-size="16" font-weight="700">Construction</text>
+        <text x="680" y="215" text-anchor="middle" fill="#888780" font-size="13">Planned</text>
+        <circle cx="820" cy="160" r="22" fill="#B5D4F4"/>
+        <text x="820" y="167" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">5</text>
+        <text x="820" y="115" text-anchor="middle" fill="#888780" font-size="16" font-weight="700">Operation</text>
+        <text x="820" y="215" text-anchor="middle" fill="#888780" font-size="13">Future</text>
+      </svg>
+    </div>
+  </div>
+  <div class="facts">
+    <div class="fact"><div class="k">CITY</div><div class="v"><span class="y">Gwacheon</span></div></div>
+    <div class="fact"><div class="k">STAGE</div><div class="v"><span class="b">Detailed</span> Design</div></div>
+    <div class="fact"><div class="k">SCOPE</div><div class="v">Public Sewage Upgrade</div></div>
+  </div>
+  <div class="footer">
+    <div class="line"></div>
+    <div class="row">
+      <div class="logo"><span class="h">Hifil</span><span class="m">M</span>&nbsp;<span class="inc">INC.</span></div>
+      <div class="center">Water Treatment</div>
+      <div class="right"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
