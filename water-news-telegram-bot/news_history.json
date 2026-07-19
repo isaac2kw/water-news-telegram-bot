@@ -29301,5 +29301,69 @@
     "region": "global",
     "source_type": "rss",
     "image": ""
+  },
+  {
+    "date": "2026-07-19",
+    "title": "하수처리장에서 ‘청정 수소’ 생산·판매 - KBS 뉴스",
+    "ko_title": "하수처리장에서 ‘청정 수소’ 생산·판매 - KBS 뉴스",
+    "brief": "하수처리장에서 ‘청정 수소’ 생산·판매 KBS 뉴스",
+    "summary": "하수처리장에서 ‘청정 수소’ 생산·판매 KBS 뉴스",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-07-19",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE90blEzUU9VT2R1QkhvQjRmSmdqeUpJTTQydkNZVzVsbTByZ2J0aFk3R1JLRDJ5RE1UYW54VnNrWm13dmJTQzlzSURwN1JJVEU1MVRBeHQxaHhkS2ZJeUhhWkFTZlhNdw?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-07-19",
+    "title": "인천 청라 스타필드 2028년 개장 ... 하수처리 대책 마련 - 시니어오늘",
+    "ko_title": "인천 청라 스타필드 2028년 개장 ... 하수처리 대책 마련 - 시니어오늘",
+    "brief": "인천 청라 스타필드 2028년 개장 ... 하수처리 대책 마련 시니어오늘",
+    "summary": "인천 청라 스타필드 2028년 개장 ... 하수처리 대책 마련 시니어오늘",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-07-19",
+    "specs": [],
+    "source": "Google News Korea 재이용수 PFAS",
+    "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFA1NFI5S0ZDSU1mbDB3MFdsU2xRdjJqRENNaEtwODlKVVAzQmtNTkNfNVNqUzRON1ZyQVBCblZDRUVYNndJaDhsRVp1b2ZHTW5mXzdUNkkzLUZCNFRxOVlVdEJiQ19GWlU1UUQ3ek1pUQ?oc=5",
+    "score": 18,
+    "keywords": [
+      "하수처리",
+      "수처리"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
   }
 ]
