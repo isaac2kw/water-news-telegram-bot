@@ -32806,5 +32806,436 @@
     "region": "domestic",
     "source_type": "rss",
     "image": ""
+  },
+  {
+    "date": "2026-07-16",
+    "title": "PFAS buildup on RO membranes highlights end-of-life handling concerns",
+    "ko_title": "PFAS buildup on RO membranes highlights end-of-life handling concerns",
+    "brief": "Researchers at Texas A&M University have found that reverse osmosis (RO) membranes used in advanced wastewater treatment can accumulate significant ...",
+    "summary": "Researchers at Texas A&M University have found that reverse osmosis (RO) membranes used in advanced wastewater treatment can accumulate significant ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "PFAS/오염물",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "membrane",
+      "wastewater",
+      "water treatment",
+      "pfas"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-07-16",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a62fae91da94ff79cb65906537a0cb3&url=https%3a%2f%2fwww.filtsep.com%2fcontent%2fnews%2fpfas-buildup-on-ro-membranes-highlights-end-of-life-handling-concerns&c=18099872806301638169&mkt=en-us",
+    "score": 33,
+    "keywords": [
+      "membrane",
+      "wastewater",
+      "water treatment",
+      "pfas"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-02-12",
+    "title": "DuPont Named Finalist in 2026 Edison Awards for FilmTec™ Fortilife™ XC160UHP Membrane for Wastewater Treatment and Reuse",
+    "ko_title": "DuPont Named Finalist in 2026 Edison Awards for FilmTec™ Fortilife™ XC160UHP Membrane for Wastewater Treatment and Reuse",
+    "brief": "WILMINGTON, Del., Feb. 12, 2026 /PRNewswire/ -- DuPont (NYSE: DD) is proud to announce that its FilmTec™ Fortilife™ XC160UHP reverse osmosis elements for industrial wastewater trea",
+    "summary": "WILMINGTON, Del., Feb. 12, 2026 /PRNewswire/ -- DuPont (NYSE: DD) is proud to announce that its FilmTec™ Fortilife™ XC160UHP reverse osmosis elements for industrial wastewater treatment and reuse, has ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "membrane",
+      "wastewater",
+      "industrial wastewater",
+      "water treatment",
+      "award",
+      "dupont",
+      "filmtec"
+    ],
+    "policy_alert": "",
+    "date_context": "Feb. 12, 2026",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a62fae91da94ff79cb65906537a0cb3&url=https%3a%2f%2fwww.morningstar.com%2fnews%2fpr-newswire%2f20260212ph86055%2fdupont-named-finalist-in-2026-edison-awards-for-filmtec-fortilife-xc160uhp-membrane-for-wastewater-treatment-and-reuse&c=16560179987338129635&mkt=en-us",
+    "score": 50,
+    "keywords": [
+      "membrane",
+      "wastewater",
+      "industrial wastewater",
+      "water treatment",
+      "award",
+      "dupont",
+      "filmtec"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-07-24",
+    "title": "식약처, 하수처리장서 불법 마약류 무더기 검출 - 후생신보",
+    "ko_title": "식약처, 하수처리장서 불법 마약류 무더기 검출 - 후생신보",
+    "brief": "식약처, 하수처리장서 불법 마약류 무더기 검출 후생신보",
+    "summary": "식약처, 하수처리장서 불법 마약류 무더기 검출 후생신보",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-07-24",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMiREFVX3lxTFBZMVRMSnYwaV9XUlRaSzhmS3RFRVRNNmhqZUFPX3AzQmFKQTVwTV9kc1VSMFo2NDB1enJSM00tV3VFQXdm?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-07-24",
+    "title": "인제군, ‘남면·상남2 공공하수처리장’ 준공 - 이코노믹포스트",
+    "ko_title": "인제군, ‘남면·상남2 공공하수처리장’ 준공 - 이코노믹포스트",
+    "brief": "인제군, ‘남면·상남2 공공하수처리장’ 준공 이코노믹포스트",
+    "summary": "인제군, ‘남면·상남2 공공하수처리장’ 준공 이코노믹포스트",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-07-24",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFBRdlhvR0ozdXR4cnFCZUN4clVTMEJFWmFRUWh6eFQ1OFp6c0NPNW8zRDZPYnE3RVdOMXpqZW1uaHQ2alN6ZHFob0dwU2I?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-07-24",
+    "title": "필로폰 등 불법 마약류 31종, 대도시 하수처리장서 대거 검출 - 메디소비자뉴스",
+    "ko_title": "필로폰 등 불법 마약류 31종, 대도시 하수처리장서 대거 검출 - 메디소비자뉴스",
+    "brief": "필로폰 등 불법 마약류 31종, 대도시 하수처리장서 대거 검출 메디소비자뉴스",
+    "summary": "필로폰 등 불법 마약류 31종, 대도시 하수처리장서 대거 검출 메디소비자뉴스",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-07-24",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE45Y2RuQm1SSFpqcG5GRG5TZWtlZG5BM2c5eVhHRUswdUNCeGZ1elRscHAzNzRwRG44dURlZWlKdnRJTGdJSXptRUFRODRkODBsQU5taEwza1h6bzU3VlY5QjJPOUxzcHhZaUF0cWVvVFBLUQ?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-07-24",
+    "title": "인제군, 653억 투입 남면·상남2 하수처리장 준공 - gukjenews.com",
+    "ko_title": "인제군, 653억 투입 남면·상남2 하수처리장 준공 - gukjenews.com",
+    "brief": "인제군, 653억 투입 남면·상남2 하수처리장 준공 gukjenews.com",
+    "summary": "인제군, 653억 투입 남면·상남2 하수처리장 준공 gukjenews.com",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-07-24",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE15TE5CaWtJb1lUcERhenlIMU9fVWNraXRJQVhuYlR6MDdMQ2FEdXJQcUl1ZTFxTDRXS1FUcEcyX010N0xFcjVBb0NPYnhlYkxuTFFkVzZLUUtvSkd4cFVhLURiLTNDSDJfRS1NNWRR?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-07-24",
+    "title": "식약처, 하수처리장 내 불법 마약류 31종 확인·분석대상 243종 확대 - 한국식품의약신문",
+    "ko_title": "식약처, 하수처리장 내 불법 마약류 31종 확인·분석대상 243종 확대 - 한국식품의약신문",
+    "brief": "식약처, 하수처리장 내 불법 마약류 31종 확인·분석대상 243종 확대 한국식품의약신문",
+    "summary": "식약처, 하수처리장 내 불법 마약류 31종 확인·분석대상 243종 확대 한국식품의약신문",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-07-24",
+    "specs": [],
+    "source": "Google News Korea 재이용수 PFAS",
+    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1UU2Jnb3VNSVlUdTQ1alREZEpoV1ZWOThlY3hDVzFxT215WGpiSnhaVWlBR09WeVlha0hjOTVSNlRVTTNPVjZsQlBjRUJaenpXOV9HY19KZFhzSWYxYXRIRGJXQl9xTTg?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-07-24",
+    "title": "인제 남면·상남2 하수처리장 준공···수질 오염 해소 기대 - 이뉴스투데이",
+    "ko_title": "인제 남면·상남2 하수처리장 준공···수질 오염 해소 기대 - 이뉴스투데이",
+    "brief": "인제 남면·상남2 하수처리장 준공···수질 오염 해소 기대 이뉴스투데이",
+    "summary": "인제 남면·상남2 하수처리장 준공···수질 오염 해소 기대 이뉴스투데이",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-07-24",
+    "specs": [],
+    "source": "Google News Korea 재이용수 PFAS",
+    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBOZ3g0czJyVVhxN0Z3Wmc0VENtaVhfRjE5NnhPVm9ObmY5Q2tSbDJRdHNRVi1HM1hVTG0xbEcxb3ZoS1VLWnJSNUMwMnN1SEN0RGFuZVY2RDJBaDgxVzZkTVNWaGlHbS0xOW1XVnRTdS3SAXRBVV95cUxPMGF0Uy1sS2hPWV9Dd0N4dGgwbVExQXhwLTZVS3pQSDcxZ25KcmphdE5sbFY0Sm1JaGV1R3BTUDhIX2l0aXJjT2hkZ0xaR3MyWDdLUWRRc2VUX3M4Y3BiUWFLRG95blJhSFQ4c3BEUDF6NTA4bg?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-07-23",
+    "title": "청정지대 명성 지켜준 653억원짜리 인제 하수처리장 준공 - v.daum.net",
+    "ko_title": "청정지대 명성 지켜준 653억원짜리 인제 하수처리장 준공 - v.daum.net",
+    "brief": "청정지대 명성 지켜준 653억원짜리 인제 하수처리장 준공 v.daum.net",
+    "summary": "청정지대 명성 지켜준 653억원짜리 인제 하수처리장 준공 v.daum.net",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-07-23",
+    "specs": [
+      "653억원"
+    ],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9JQkhDUVZiczl1RnRfdHo5VklwVkpMamZQM0lsWnVFM0F3OGtHRXN5Qm94Wlg2WS1hcEJJS052dEpFcmVRNFl2bnVUV2psNVE?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-07-23",
+    "title": "인제군, 653억 투입 '남면·상남2 하수처리장' 신설 완료…8월 최종 인수 - v.daum.net",
+    "ko_title": "인제군, 653억 투입 '남면·상남2 하수처리장' 신설 완료…8월 최종 인수 - v.daum.net",
+    "brief": "인제군, 653억 투입 '남면·상남2 하수처리장' 신설 완료…8월 최종 인수 v.daum.net",
+    "summary": "인제군, 653억 투입 '남면·상남2 하수처리장' 신설 완료…8월 최종 인수 v.daum.net",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-07-23",
+    "specs": [],
+    "source": "Google News Korea 재이용수 PFAS",
+    "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5xMlZxRGJGU2oyekFOWlNCMm5Mc08wY0ZCREVVdVVXaUpEME5CMkQzNzUwUXBhNzkxb2M5cjN0aUVSTkVWOHJGbHFrSnJ1emM?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-07-01",
+    "title": "Asia Pacific Membrane Bioreactor (MBR) Market Size, 2033 - Market Data Forecast",
+    "ko_title": "Asia Pacific Membrane Bioreactor (MBR) Market Size, 2033 - Market Data Forecast",
+    "brief": "Asia Pacific Membrane Bioreactor (MBR) Market Size, 2033 Market Data Forecast",
+    "summary": "Asia Pacific Membrane Bioreactor (MBR) Market Size, 2033 Market Data Forecast",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-07-01",
+    "specs": [],
+    "source": "Google Company Kubota MBR",
+    "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPZTl4N0EtWHFKMy1DU2NSTzdFbTd0VU1GME13ZEtqVHFGTWcxaTBpclRhMGxzbGpIRUxydFlLYnJXbk5vdmlyVXFPaUtWaFVvSmYxRzBseHdQakw3Z09PcXh4eGdIUTVDLTcwdDJjemQ5VTBpWFZpUkJFZlRnT0c1X05uRjlka1ZTV1g2NTQya0hjc1U?oc=5",
+    "score": 28,
+    "keywords": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "search_rss",
+    "image": ""
+  },
+  {
+    "date": "2026-07-13",
+    "title": "IIT-M revives forgotten route to industrial wastewater treatment",
+    "ko_title": "IIT-M revives forgotten route to industrial wastewater treatment",
+    "brief": "IIT-M researchers develop a breakthrough gas hydrate process for efficient industrial wastewater treatment, enhancing purity and sustainability.",
+    "summary": "IIT-M researchers develop a breakthrough gas hydrate process for efficient industrial wastewater treatment, enhancing purity and sustainability.",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "wastewater",
+      "industrial wastewater",
+      "water treatment"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-07-13",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a62fae91da94ff79cb65906537a0cb3&url=https%3a%2f%2fwww.thehindubusinessline.com%2fbusiness-tech%2fiit-m-revives-forgotten-route-to-industrial-wastewater-treatment%2farticle71214890.ece&c=157392574798552026&mkt=en-us",
+    "score": 23,
+    "keywords": [
+      "wastewater",
+      "industrial wastewater",
+      "water treatment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-07-24",
+    "title": "Lummi Tribal Sewer and Water District receives national recognition for its wastewater treatment plant - 1170 KPUG-AM |",
+    "ko_title": "Lummi Tribal Sewer and Water District receives national recognition for its wastewater treatment plant - 1170 KPUG-AM |",
+    "brief": "Lummi Tribal Sewer and Water District receives national recognition for its wastewater treatment plant 1170 KPUG-AM |",
+    "summary": "Lummi Tribal Sewer and Water District receives national recognition for its wastewater treatment plant 1170 KPUG-AM |",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "wastewater",
+      "sewer",
+      "water treatment"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-07-24",
+    "specs": [],
+    "source": "Google News Global Water",
+    "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNYWtsUmN5ZXNURUdwenRxejZuQlA3THMwMERoV0Jjb1pWQ1JxeTBia3NCWkJYSTdQSWIzdlJhQnZhdElBcE5HMDVEVGlUWjdvOVBWdWx2aUk2RFo0RnpiNnBnVUE4MkRqSVdOTlZXcDItbFVNQnZGbHZSemwxekdtbzBiNFJPOFdDWExBcG80WXRmS1lFZUE4RTlxUjA0OFBJRkM0TS10cUJqekpxRWFVbWhZUWh3Y3NzWlBRaWQwVkRLOUF5X1l1YXJBdTJGOXByTUE?oc=5",
+    "score": 21,
+    "keywords": [
+      "wastewater",
+      "sewer",
+      "water treatment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
   }
 ]
