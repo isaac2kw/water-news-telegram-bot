@@ -34183,5 +34183,137 @@
     "region": "global",
     "source_type": "rss",
     "image": ""
+  },
+  {
+    "date": "2026-07-16",
+    "title": "PFAS buildup on RO membranes highlights end-of-life handling concerns",
+    "ko_title": "PFAS buildup on RO membranes highlights end-of-life handling concerns",
+    "brief": "Researchers at Texas A&M University have found that reverse osmosis (RO) membranes used in advanced wastewater treatment can accumulate significant ...",
+    "summary": "Researchers at Texas A&M University have found that reverse osmosis (RO) membranes used in advanced wastewater treatment can accumulate significant ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "PFAS/오염물",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "membrane",
+      "wastewater",
+      "water treatment",
+      "pfas"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-07-16",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a653208e3824a01a43378ffe08a7168&url=https%3a%2f%2fwww.filtsep.com%2fcontent%2fnews%2fpfas-buildup-on-ro-membranes-highlights-end-of-life-handling-concerns&c=18099872806301638169&mkt=en-us",
+    "score": 33,
+    "keywords": [
+      "membrane",
+      "wastewater",
+      "water treatment",
+      "pfas"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-07-23",
+    "title": "청정지대 명성 지켜준 653억원짜리 인제 하수처리장 준공 - v.daum.net",
+    "ko_title": "청정지대 명성 지켜준 653억원짜리 인제 하수처리장 준공 - v.daum.net",
+    "brief": "청정지대 명성 지켜준 653억원짜리 인제 하수처리장 준공 v.daum.net",
+    "summary": "청정지대 명성 지켜준 653억원짜리 인제 하수처리장 준공 v.daum.net",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-07-23",
+    "specs": [
+      "653억원"
+    ],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE9JNnc2WGhidlZSOE1YcEVWdVBPYmxYdHdQSllkSlliUzNuZGQ0RDlaMUVZNWpIYVdncXNZbHpVT1BGbTdjcGc?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-07-13",
+    "title": "안산 하수처리장 비리 공무원·브로커 검찰 송치 - 연합뉴스",
+    "ko_title": "안산 하수처리장 비리 공무원·브로커 검찰 송치 - 연합뉴스",
+    "brief": "안산 하수처리장 비리 공무원·브로커 검찰 송치 연합뉴스",
+    "summary": "안산 하수처리장 비리 공무원·브로커 검찰 송치 연합뉴스",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-07-13",
+    "specs": [],
+    "source": "Google News Korea 재이용수 PFAS",
+    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9RcGdldDFtdzhnbFhiNTlQbkdkajFPUERoUkg3REM2YnNUb2JzeTFkQ3R3MnRHM240eF84eHRWSHByM2FEbjdGR2k5RGh0VExIaVFGR2Y2aU9ydkXSAWBBVV95cUxNc3Y1QUVXaW9Ob2lfRFNqZ19yamVCYnpaYndQNEJMZDRvbkliVXFfbnRVeTJtS0xuMTZVcmdMOUZQbmJCa3JocTNQYnFkMm91UldZUnJsTU9PWnR0SFEzMV8?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-07-13",
+    "title": "IIT-M revives forgotten route to industrial wastewater treatment",
+    "ko_title": "IIT-M revives forgotten route to industrial wastewater treatment",
+    "brief": "IIT-M researchers develop a breakthrough gas hydrate process for efficient industrial wastewater treatment, enhancing purity and sustainability.",
+    "summary": "IIT-M researchers develop a breakthrough gas hydrate process for efficient industrial wastewater treatment, enhancing purity and sustainability.",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "wastewater",
+      "industrial wastewater",
+      "water treatment"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-07-13",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a653208e3824a01a43378ffe08a7168&url=https%3a%2f%2fwww.thehindubusinessline.com%2fbusiness-tech%2fiit-m-revives-forgotten-route-to-industrial-wastewater-treatment%2farticle71214890.ece&c=157392574798552026&mkt=en-us",
+    "score": 23,
+    "keywords": [
+      "wastewater",
+      "industrial wastewater",
+      "water treatment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
   }
 ]
