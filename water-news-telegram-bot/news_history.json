@@ -35269,5 +35269,67 @@
     "region": "global",
     "source_type": "search_rss",
     "image": ""
+  },
+  {
+    "date": "2026-07-28",
+    "title": "박원종 특별시의회위원장, 하수처리 시설용량 과부하 대비 선제적 관리 체계 당부 > 뉴스 - 더코리아",
+    "ko_title": "박원종 특별시의회위원장, 하수처리 시설용량 과부하 대비 선제적 관리 체계 당부 > 뉴스 - 더코리아",
+    "brief": "박원종 특별시의회위원장, 하수처리 시설용량 과부하 대비 선제적 관리 체계 당부 > 뉴스 더코리아",
+    "summary": "박원종 특별시의회위원장, 하수처리 시설용량 과부하 대비 선제적 관리 체계 당부 > 뉴스 더코리아",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-07-28",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFAyZzBNcXdKc1V4V2tzdURTckhBTC1La0QyeU9CN1A4azZpb2E0MjRZdnF4d1FUdDBoZWhpYkxWNTRQaHJnWkk3MnJFbFNmdkNuWTQ0RGdDOGFfRWZNR1JKMHpWUmlDQjdjeElfX2xVOUM?oc=5",
+    "score": 18,
+    "keywords": [
+      "하수처리",
+      "수처리"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-07-28",
+    "title": "$47.5M wastewater plant contract awarded at Fort Morgan City Council meeting - The Fort Morgan Times",
+    "ko_title": "$47.5M wastewater plant contract awarded at Fort Morgan City Council meeting - The Fort Morgan Times",
+    "brief": "$47.5M wastewater plant contract awarded at Fort Morgan City Council meeting The Fort Morgan Times",
+    "summary": "$47.5M wastewater plant contract awarded at Fort Morgan City Council meeting The Fort Morgan Times",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "프로젝트/수주",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "wastewater",
+      "contract",
+      "award"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-07-28",
+    "specs": [],
+    "source": "Google News Global Water",
+    "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNZFJabFBKemZKd21HRFBRdS1IUWZLY3dfVjdLUDJyT1A4V2otNWswN3Z4SktpRF9lWnRuQklMSWVzckFIWElMeDlVRHFaR3pGcXRuSmFyWGVUTi1LbXRDQnJFM1RFMFBSdlJjcC1QV0x2enFxNV9KQnNyTXRLc1BjdVg3a2JEN1lTQnF4UkRSemVrbmRKNm4yMlRwRTlNMWV3TVhBZldNY0Y3OU5QOXpFNkRWcUhUNTBZNFZn?oc=5",
+    "score": 18,
+    "keywords": [
+      "wastewater",
+      "contract",
+      "award"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
   }
 ]
