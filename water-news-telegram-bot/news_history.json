@@ -39080,5 +39080,67 @@
     "region": "global",
     "source_type": "rss",
     "image": ""
+  },
+  {
+    "date": "2026-08-01",
+    "title": "안성시, 하수처리시설 증설·신설 추진 - 자치안성신문",
+    "ko_title": "안성시, 하수처리시설 증설·신설 추진 - 자치안성신문",
+    "brief": "안성시, 하수처리시설 증설·신설 추진 자치안성신문",
+    "summary": "안성시, 하수처리시설 증설·신설 추진 자치안성신문",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-08-01",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE0tQndaQndfX2N1cVl0c2NkMkhWWVV5Q0ZaVW1wX1d5bHhjUkd3LVFRRGhVSTdfWnhOdWFqa2tqZlRkVHhCME9uOWhnaDR6aWc3OVZwM2dDQUhCR3BOTS1nX1lmNm50RTBIMEtJTDBHTl9VeUtXdXVXLTZ4d2c?oc=5",
+    "score": 18,
+    "keywords": [
+      "하수처리",
+      "수처리"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-07-31",
+    "title": "[예산군] 산업단지 폐수처리 효율 높인다… 공공폐수처리시설 기술진단 실시 - 워터저널",
+    "ko_title": "[예산군] 산업단지 폐수처리 효율 높인다… 공공폐수처리시설 기술진단 실시 - 워터저널",
+    "brief": "[예산군] 산업단지 폐수처리 효율 높인다… 공공폐수처리시설 기술진단 실시 워터저널",
+    "summary": "[예산군] 산업단지 폐수처리 효율 높인다… 공공폐수처리시설 기술진단 실시 워터저널",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "폐수처리",
+      "수처리"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-07-31",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBYZ2JOYVhmSnoyRnBaeVRlZURyTXp5UVJZUjhmSDNzVVI1Qkk0bmwtSU1ReFRsQWExQ3NTRDEtMGtVcGYtSXlUQ0EtRmVWX0pPU2x2TGNrQVg4TnUwZ21Jc1RPbGw5OHhoNVFJcGN0NXhuUdIBdkFVX3lxTE8yZTRodVkySktBX3lHdXE2dS1tN2hSYUdjZmtpZG04aURpYzF1QzlmMkR1X1BGY2ZscUhkU1pDaDhvcDh2UzB5NFN0b2tiTjRMdkl6RUF2b1lQQTBoZTFZdDFfbW9sRnpKS3M3bGFzM3hJdF9vUXc?oc=5",
+    "score": 18,
+    "keywords": [
+      "폐수처리",
+      "수처리"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
   }
 ]
