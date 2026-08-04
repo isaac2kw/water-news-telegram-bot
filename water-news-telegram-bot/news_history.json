@@ -39476,5 +39476,34 @@
     "region": "domestic",
     "source_type": "rss",
     "image": ""
+  },
+  {
+    "date": "2026-08-04",
+    "title": "Maryland's New PFAS Limits for Sewage Sludge Draw Criticism That Most Plants Already Comply - Medical Daily",
+    "ko_title": "Maryland's New PFAS Limits for Sewage Sludge Draw Criticism That Most Plants Already Comply - Medical Daily",
+    "brief": "Maryland's New PFAS Limits for Sewage Sludge Draw Criticism That Most Plants Already Comply Medical Daily",
+    "summary": "Maryland's New PFAS Limits for Sewage Sludge Draw Criticism That Most Plants Already Comply Medical Daily",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "PFAS/오염물",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "sewage",
+      "pfas"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-08-04",
+    "specs": [],
+    "source": "Google News Global Water",
+    "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQWTVNQkpjS2U1ak1KNndfN1Jkc1RwcU4yTXp2S2pfMTVaWk5jUVRGNG5MWlp6Y0cyX0gtdUt5bVB3LWRTSU5QdWJkRjFPeXVhRFVlU3VNZjR5QjVZcHYxQzNNNG1tNmprOHlZRUxNblptbkxQeUkwakl0Tm8zUS1MdmZaeUV1aUhFOHRiYjFMNTM0QQ?oc=5",
+    "score": 18,
+    "keywords": [
+      "sewage",
+      "pfas"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
   }
 ]
