@@ -39629,5 +39629,100 @@
     "region": "global",
     "source_type": "rss",
     "image": ""
+  },
+  {
+    "date": "2026-08-03",
+    "title": "안성시, 하수처리장 집중 안전 점검 추진 - 자치안성신문",
+    "ko_title": "안성시, 하수처리장 집중 안전 점검 추진 - 자치안성신문",
+    "brief": "안성시, 하수처리장 집중 안전 점검 추진 자치안성신문",
+    "summary": "안성시, 하수처리장 집중 안전 점검 추진 자치안성신문",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-08-03",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE45OXZ4R0FDWElvSjN4UUNvTlo3MEt0azV6eHphbVM5bmpENU0za29teXVfMWRCOWdhbFRkYmdmaGVIRGpzT3RmcnlIYU16WlBXSlVQWGR2azE1NXNUMS1hSnlFU1ZMalhPZG50RTN1Mkg5SVJHWlZweUMwaHk?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-07-13",
+    "title": "IIT-M revives forgotten route to industrial wastewater treatment",
+    "ko_title": "IIT-M revives forgotten route to industrial wastewater treatment",
+    "brief": "IIT-M researchers develop a breakthrough gas hydrate process for efficient industrial wastewater treatment, enhancing purity and sustainability.",
+    "summary": "IIT-M researchers develop a breakthrough gas hydrate process for efficient industrial wastewater treatment, enhancing purity and sustainability.",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "wastewater",
+      "industrial wastewater",
+      "water treatment"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-07-13",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a731dd25296424cbc98beddebd64b27&url=https%3a%2f%2fwww.thehindubusinessline.com%2fbusiness-tech%2fiit-m-revives-forgotten-route-to-industrial-wastewater-treatment%2farticle71214890.ece&c=157392574798552026&mkt=en-us",
+    "score": 23,
+    "keywords": [
+      "wastewater",
+      "industrial wastewater",
+      "water treatment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-08-05",
+    "title": "김해, 가뭄 비상…하수처리수로 물길 열다 - 재경일보",
+    "ko_title": "김해, 가뭄 비상…하수처리수로 물길 열다 - 재경일보",
+    "brief": "김해, 가뭄 비상…하수처리수로 물길 열다 재경일보",
+    "summary": "김해, 가뭄 비상…하수처리수로 물길 열다 재경일보",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-08-05",
+    "specs": [],
+    "source": "Google News Korea 재이용수 PFAS",
+    "link": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE1xZFNqYi16TmoyNE45NVRwem9mTjRnUXNXSWJIRDJCUUtnQ1FwQWNiOEY1ZGFfZU96THc0N1hPZjBYbkxxZUxteTJB?oc=5",
+    "score": 18,
+    "keywords": [
+      "하수처리",
+      "수처리"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
   }
 ]
