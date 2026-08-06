@@ -39786,5 +39786,100 @@
     "region": "global",
     "source_type": "rss",
     "image": ""
+  },
+  {
+    "date": "2026-08-06",
+    "title": "[브라질] Veolia, 브라질 사베스프 정수·하수처리시설 고도화 지원 - 워터저널",
+    "ko_title": "[브라질] Veolia, 브라질 사베스프 정수·하수처리시설 고도화 지원 - 워터저널",
+    "brief": "[브라질] Veolia, 브라질 사베스프 정수·하수처리시설 고도화 지원 워터저널",
+    "summary": "[브라질] Veolia, 브라질 사베스프 정수·하수처리시설 고도화 지원 워터저널",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "기업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "veolia",
+      "하수처리",
+      "수처리"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-08-06",
+    "specs": [],
+    "source": "Google News Korea 재이용수 PFAS",
+    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBoZlU5ZTdMUjh4bjhSeXJremlDNmpsRGU2NlkwZGtlX2hubHFRaUFQMktHc24tRTFFQXFfczF5VUlHc3I0NzNWYjBZNl9jMDMtdXI2d0dKem0waklMOWYtNXgyZmhNVnlNdGg3YXZERkJkZ9IBdkFVX3lxTFBUREFLWDZaWDdSQVVVTE1PYjJhaXgzelNuNlo2WjJiU0JaeUhmcEIxYjNNMjl1WG1rTnEzNW1GcFJVNDZTb0dqaEgwR0tuZlZnWnEtZkxtZDNpY0tDWHptU2lLUnJZcHBNVTVzZTdfem42S0ZZUkE?oc=5",
+    "score": 26,
+    "keywords": [
+      "veolia",
+      "하수처리",
+      "수처리"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-07-13",
+    "title": "IIT-M revives forgotten route to industrial wastewater treatment",
+    "ko_title": "IIT-M revives forgotten route to industrial wastewater treatment",
+    "brief": "IIT-M researchers develop a breakthrough gas hydrate process for efficient industrial wastewater treatment, enhancing purity and sustainability.",
+    "summary": "IIT-M researchers develop a breakthrough gas hydrate process for efficient industrial wastewater treatment, enhancing purity and sustainability.",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "wastewater",
+      "industrial wastewater",
+      "water treatment"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-07-13",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a741e0c62664f7488709e5110188dae&url=https%3a%2f%2fwww.thehindubusinessline.com%2fbusiness-tech%2fiit-m-revives-forgotten-route-to-industrial-wastewater-treatment%2farticle71214890.ece&c=157392574798552026&mkt=en-us",
+    "score": 23,
+    "keywords": [
+      "wastewater",
+      "industrial wastewater",
+      "water treatment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-08-06",
+    "title": "가뭄 '경계' 김해시, 농업용수 확보 비상…하수처리수도 재이용 할 판 - 뉴스1",
+    "ko_title": "가뭄 '경계' 김해시, 농업용수 확보 비상…하수처리수도 재이용 할 판 - 뉴스1",
+    "brief": "가뭄 '경계' 김해시, 농업용수 확보 비상…하수처리수도 재이용 할 판 뉴스1",
+    "summary": "가뭄 '경계' 김해시, 농업용수 확보 비상…하수처리수도 재이용 할 판 뉴스1",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-08-06",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBFcXBUR2JWdllmcDg4ak5kYmkxaHBJS3FCNWFOMXVkLXVMVEgtMnV6Uk4xMTNuUVFINEVBekpFQ1dnN1UxM3p0MHI2N2sxMjNmenhtQmxkWVNieUpTRlNZ?oc=5",
+    "score": 18,
+    "keywords": [
+      "하수처리",
+      "수처리"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
   }
 ]
