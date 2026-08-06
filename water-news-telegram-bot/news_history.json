@@ -39881,5 +39881,100 @@
     "region": "domestic",
     "source_type": "rss",
     "image": ""
+  },
+  {
+    "date": "2026-08-06",
+    "title": "Sabesp Strengthens Water Security In Brazil With Veolia Upgrades To Water And Wastewater Treatment... - megaproject.com",
+    "ko_title": "Sabesp Strengthens Water Security In Brazil With Veolia Upgrades To Water And Wastewater Treatment... - megaproject.com",
+    "brief": "Sabesp Strengthens Water Security In Brazil With Veolia Upgrades To Water And Wastewater Treatment... megaproject.com",
+    "summary": "Sabesp Strengthens Water Security In Brazil With Veolia Upgrades To Water And Wastewater Treatment... megaproject.com",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "프로젝트/수주",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "wastewater",
+      "water treatment",
+      "upgrade",
+      "veolia"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-08-06",
+    "specs": [],
+    "source": "Google Company Veolia",
+    "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNVlpBNVBrZGRld2RLdFFQVmxad0hfVnZUTFpmY3hiRjJJVUJVOVRpemI1RU9hN240a0daVHM1YU5xRXNWcG9MbDF5aG1TSlZBd0FURERLZWVYXzJ3b2hPSU9MaDBvWS1OSm1UZ3IxWHFadV9TSkJNRV9pUWtKeVdWRUtIZVloQ2FjVU9VbUpWTGJlcXNOSkIxbGxQU29HM1NjcWNZSm85Ul8xbkREamxia2ZBUXJhazFJT2NaTU8zSVEzMEtTMU5kM2YzQnQ2dw?oc=5",
+    "score": 28,
+    "keywords": [
+      "wastewater",
+      "water treatment",
+      "upgrade",
+      "veolia"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "search_rss",
+    "image": ""
+  },
+  {
+    "date": "2026-07-13",
+    "title": "IIT-M revives forgotten route to industrial wastewater treatment",
+    "ko_title": "IIT-M revives forgotten route to industrial wastewater treatment",
+    "brief": "IIT-M researchers develop a breakthrough gas hydrate process for efficient industrial wastewater treatment, enhancing purity and sustainability.",
+    "summary": "IIT-M researchers develop a breakthrough gas hydrate process for efficient industrial wastewater treatment, enhancing purity and sustainability.",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "wastewater",
+      "industrial wastewater",
+      "water treatment"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-07-13",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a746ffc544a47e380c8b4b0b386ad26&url=https%3a%2f%2fwww.thehindubusinessline.com%2fbusiness-tech%2fiit-m-revives-forgotten-route-to-industrial-wastewater-treatment%2farticle71214890.ece&c=157392574798552026&mkt=en-us",
+    "score": 23,
+    "keywords": [
+      "wastewater",
+      "industrial wastewater",
+      "water treatment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-08-06",
+    "title": "김해시, 가뭄 대응 위해 하수처리수 재이용.임시보 설치 추진 - newfilenews.com",
+    "ko_title": "김해시, 가뭄 대응 위해 하수처리수 재이용.임시보 설치 추진 - newfilenews.com",
+    "brief": "김해시, 가뭄 대응 위해 하수처리수 재이용.임시보 설치 추진 newfilenews.com",
+    "summary": "김해시, 가뭄 대응 위해 하수처리수 재이용.임시보 설치 추진 newfilenews.com",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-08-06",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1TeXlRTm9QZEFyb3loZXBxMzRfZVpqQ0dLZjJIeHl1UmJoXzVWY1l3VEhqOGNwemMyYUdBR3EzLW1DcXYxeE01V01Pdmk4dXN6WFFCdVFTbFA1WXBON1ZyQ245MEhnak1vd0hXVk5R?oc=5",
+    "score": 18,
+    "keywords": [
+      "하수처리",
+      "수처리"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
   }
 ]
