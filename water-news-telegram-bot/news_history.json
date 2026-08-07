@@ -40137,5 +40137,102 @@
     "region": "global",
     "source_type": "rss",
     "image": ""
+  },
+  {
+    "date": "2026-08-07",
+    "title": "[해외개선사례] “지속 가능성은 코펜하겐 하수처리장 혁신을 이끈다” - 워터저널",
+    "ko_title": "[해외개선사례] “지속 가능성은 코펜하겐 하수처리장 혁신을 이끈다” - 워터저널",
+    "brief": "[해외개선사례] “지속 가능성은 코펜하겐 하수처리장 혁신을 이끈다” 워터저널",
+    "summary": "[해외개선사례] “지속 가능성은 코펜하겐 하수처리장 혁신을 이끈다” 워터저널",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-08-07",
+    "specs": [],
+    "source": "Google News Korea 재이용수 PFAS",
+    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBDTDk0MFh0cnlyLU1GODBTMVVBWURtN0NaSkc3QWV0VkhYVk9QcHZlQktocVBXQUVfUTctZ0hXZTd4dHpvSWI4bWpvWmdlZlZ6Q1FkcFJZa0dwVUpHSGljMTU5MWVhVzJnZWkzVnl0c2tQUdIBdkFVX3lxTFA4djRMRkR0MTlrM1RrR3F5SGtmbXRrSnNkb1Q2YjNNd2xORmpKYjFfdTE2eENfS2pMcVE5TWJQMW04b09HY2ZvRVVJZFJ5YnJwOTljZ29VY1FVMTlVdUVxZjRmdEJVaEJtZGF1dlIwMjVzbUE0bVE?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-08-07",
+    "title": "호남 산단 용수 공급 '이상 無'…기후장관, 광주 하수처리장 방문 - 네이트",
+    "ko_title": "호남 산단 용수 공급 '이상 無'…기후장관, 광주 하수처리장 방문 - 네이트",
+    "brief": "호남 산단 용수 공급 '이상 無'…기후장관, 광주 하수처리장 방문 네이트",
+    "summary": "호남 산단 용수 공급 '이상 無'…기후장관, 광주 하수처리장 방문 네이트",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-08-07",
+    "specs": [],
+    "source": "Google News Korea 재이용수 PFAS",
+    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE40eEJ2cWFBdlZvMFFKS20xd09yMHh4XzJMdHEwNERMeXZ5YVo3bEN6VnFBcFpYelp1UnBwQjJBcVJTS2tfcHVhOC1fa0hfbzFrbDZIZDFveVViZWhCdkpPLQ?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-07-13",
+    "title": "IIT-M revives forgotten route to industrial wastewater treatment",
+    "ko_title": "IIT-M revives forgotten route to industrial wastewater treatment",
+    "brief": "IIT-M researchers develop a breakthrough gas hydrate process for efficient industrial wastewater treatment, enhancing purity and sustainability.",
+    "summary": "IIT-M researchers develop a breakthrough gas hydrate process for efficient industrial wastewater treatment, enhancing purity and sustainability.",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "wastewater",
+      "industrial wastewater",
+      "water treatment"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-07-13",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a7563639bc8424f9bc9064432878aa1&url=https%3a%2f%2fwww.thehindubusinessline.com%2fbusiness-tech%2fiit-m-revives-forgotten-route-to-industrial-wastewater-treatment%2farticle71214890.ece&c=157392574798552026&mkt=en-us",
+    "score": 23,
+    "keywords": [
+      "wastewater",
+      "industrial wastewater",
+      "water treatment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
   }
 ]
