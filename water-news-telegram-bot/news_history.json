@@ -40917,5 +40917,36 @@
     "region": "global",
     "source_type": "rss",
     "image": ""
+  },
+  {
+    "date": "2026-08-03",
+    "title": "충주시, 캠핑장 하수처리시설 집중 점검 - v.daum.net",
+    "ko_title": "충주시, 캠핑장 하수처리시설 집중 점검 - v.daum.net",
+    "brief": "충주시, 캠핑장 하수처리시설 집중 점검 v.daum.net",
+    "summary": "충주시, 캠핑장 하수처리시설 집중 점검 v.daum.net",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-08-03",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9hRVhLNWp2OW92U1lPRW5FbzVVRDd6MGF2Qi1wdXpZZkFKdXpxNTI4aTBHcTlyUEtWZkE2bmM1YXdzUjhXSHBPeXNjbHpxbEk?oc=5",
+    "score": 18,
+    "keywords": [
+      "하수처리",
+      "수처리"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
   }
 ]
