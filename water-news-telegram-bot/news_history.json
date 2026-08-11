@@ -42273,5 +42273,40 @@
     "region": "domestic",
     "source_type": "rss",
     "image": ""
+  },
+  {
+    "date": "2026-08-11",
+    "title": "LiqTech wins US wastewater reuse order for QureFlow system",
+    "ko_title": "LiqTech wins US wastewater reuse order for QureFlow system",
+    "brief": "LiqTech International has secured an order for a QureFlow QF-6 ceramic membrane filtration system for an industrial wastewater reuse application in the ...",
+    "summary": "LiqTech International has secured an order for a QureFlow QF-6 ceramic membrane filtration system for an industrial wastewater reuse application in the ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "membrane",
+      "wastewater",
+      "water reuse",
+      "industrial wastewater",
+      "ceramic membrane"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-08-11",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a7b9a18dd624a2d89437649df4fcbfc&url=https%3a%2f%2fwww.filtsep.com%2fcontent%2fnews%2fliqtech-wins-us-wastewater-reuse-order-for-qureflow-system&c=5512686614447114985&mkt=en-us",
+    "score": 41,
+    "keywords": [
+      "membrane",
+      "wastewater",
+      "water reuse",
+      "industrial wastewater",
+      "ceramic membrane"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
   }
 ]
