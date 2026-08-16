@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  :root{--main-blue:#0075C1;--yellow:#DDA11D;--navy:#00205D;--tint:#E6F1FB;--card-bg:#F5F7FA;--line:#B5D4F4;--gray-light:#888780;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{margin:0;padding:0;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;}
+  .card{width:1080px;height:1080px;background:#ffffff;position:relative;overflow:hidden;}
+  .pad{padding:0 90px;}
+  .footer{position:absolute;left:0;right:0;bottom:46px;padding:0 90px;}
+  .footer .line{height:1px;background:var(--line);margin-bottom:22px;}
+  .footer .row{display:flex;align-items:center;justify-content:space-between;}
+  .logo{font-size:26px;font-weight:700;}
+  .logo .h{color:var(--main-blue);}.logo .m{color:var(--yellow);}.logo .inc{color:var(--navy);}
+  .footer .center{color:var(--main-blue);font-size:22px;font-weight:600;letter-spacing:2px;}
+  .footer .right{width:120px;}
+  .label{display:flex;align-items:center;gap:12px;padding-top:96px;color:var(--main-blue);font-size:24px;font-weight:700;letter-spacing:3px;}
+  .label .ldot{width:10px;height:10px;border-radius:50%;background:var(--main-blue);}
+  .label .lbadge{margin-left:6px;background:var(--tint);color:var(--main-blue);font-size:18px;letter-spacing:2px;padding:5px 14px;border-radius:20px;}
+  .ctitle{margin-top:34px;color:var(--navy);font-size:52px;font-weight:700;line-height:1.18;}
+  .ctitle .b{color:var(--main-blue);}.ctitle .y{color:var(--yellow);}
+  .cdivider{width:160px;height:4px;background:var(--main-blue);margin-top:30px;}
+  .info{margin-top:40px;}
+  .facts{position:absolute;left:90px;right:90px;bottom:150px;display:flex;gap:18px;}
+  .fact{flex:1;background:var(--card-bg);border-radius:16px;padding:26px 24px;}
+  .fact .k{color:var(--gray-light);font-size:18px;letter-spacing:1px;margin-bottom:10px;}
+  .fact .v{color:var(--navy);font-size:24px;font-weight:700;line-height:1.25;}
+  .fact .v .b{color:var(--main-blue);}.fact .v .y{color:var(--yellow);}
+</style>
+</head>
+<body>
+<div class="card" id="card_07">
+  <div class="pad">
+    <div class="label"><span class="ldot"></span>PFAS · LEGAL ACTION<span class="lbadge">US</span></div>
+    <div class="ctitle"><span class="y">Veolia</span> Sues <span class="y">Delaware</span> Manufacturers Over <span class="b">PFAS</span> in Drinking Water</div>
+    <div class="cdivider"></div>
+    <div class="info">
+      <svg width="900" height="320" viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg">
+        <text x="80" y="60" font-size="20" font-weight="700" fill="#0075C1">PFAS CONTAMINATION PATHWAY</text>
+        <rect x="40" y="110" width="180" height="120" rx="12" fill="#F5F7FA" stroke="#B5D4F4" stroke-width="2"/>
+        <text x="130" y="155" text-anchor="middle" font-size="18" font-weight="700" fill="#00205D">Manufacturers</text>
+        <text x="130" y="185" text-anchor="middle" font-size="14" fill="#888780">Delaware Firms</text>
+        <text x="130" y="212" text-anchor="middle" font-size="14" font-weight="700" fill="#DDA11D">PFAS Source</text>
+        <polygon points="230,160 300,160 300,150 340,180 300,210 300,190 230,190" fill="#0075C1"/>
+        <rect x="360" y="110" width="180" height="120" rx="12" fill="#E6F1FB" stroke="#0075C1" stroke-width="2"/>
+        <text x="450" y="155" text-anchor="middle" font-size="18" font-weight="700" fill="#00205D">Drinking Water</text>
+        <text x="450" y="185" text-anchor="middle" font-size="14" fill="#888780">Supply System</text>
+        <text x="450" y="212" text-anchor="middle" font-size="14" font-weight="700" fill="#0075C1">Contaminated</text>
+        <polygon points="550,160 620,160 620,150 660,180 620,210 620,190 550,190" fill="#0075C1"/>
+        <rect x="680" y="110" width="180" height="120" rx="12" fill="#DDA11D"/>
+        <text x="770" y="155" text-anchor="middle" font-size="20" font-weight="700" fill="#fff">Veolia</text>
+        <text x="770" y="185" text-anchor="middle" font-size="14" fill="#fff">Water Supplier</text>
+        <text x="770" y="212" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">FILES LAWSUIT</text>
+      </svg>
+    </div>
+  </div>
+  <div class="facts">
+    <div class="fact"><div class="k">PLAINTIFF</div><div class="v"><span class="y">Veolia</span></div></div>
+    <div class="fact"><div class="k">LOCATION</div><div class="v"><span class="y">Delaware</span></div></div>
+    <div class="fact"><div class="k">POLLUTANT</div><div class="v"><span class="b">PFAS</span></div></div>
+  </div>
+  <div class="footer">
+    <div class="line"></div>
+    <div class="row">
+      <div class="logo"><span class="h">Hifil</span><span class="m">M</span>&nbsp;<span class="inc">INC.</span></div>
+      <div class="center">Water Treatment</div>
+      <div class="right"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
