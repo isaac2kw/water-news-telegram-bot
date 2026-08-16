@@ -44219,5 +44219,77 @@
     "region": "global",
     "source_type": "rss",
     "image": ""
+  },
+  {
+    "date": "2026-08-12",
+    "title": "DuPont MemCor MBR system selected for major wastewater upgrade in Australia",
+    "ko_title": "DuPont MemCor MBR system selected for major wastewater upgrade in Australia",
+    "brief": "DuPont has announced the selection of its MemCor membrane bioreactor (MBR) system for an expansion of the Lower Molonglo Water Quality Control Centre ...",
+    "summary": "DuPont has announced the selection of its MemCor membrane bioreactor (MBR) system for an expansion of the Lower Molonglo Water Quality Control Centre ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane",
+      "wastewater",
+      "expansion",
+      "upgrade",
+      "dupont"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-08-12",
+    "specs": [],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a8130ff09ba4da5b65edee68dd716e9&url=https%3a%2f%2fwww.filtsep.com%2fcontent%2fnews%2fdupont-memcor-mbr-system-selected-for-major-wastewater-upgrade-in-australia&c=3739037480018451891&mkt=en-us",
+    "score": 53,
+    "keywords": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane",
+      "wastewater",
+      "expansion",
+      "upgrade",
+      "dupont"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "search_rss",
+    "image": ""
+  },
+  {
+    "date": "2026-08-14",
+    "title": "상하수도협회, 3박4일 ‘물산업 취업캠프’ 성료 - 국토일보",
+    "ko_title": "상하수도협회, 3박4일 ‘물산업 취업캠프’ 성료 - 국토일보",
+    "brief": "상하수도협회, 3박4일 ‘물산업 취업캠프’ 성료 국토일보",
+    "summary": "상하수도협회, 3박4일 ‘물산업 취업캠프’ 성료 국토일보",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "상하수도",
+      "물산업",
+      "상하수도협회"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-08-14",
+    "specs": [],
+    "source": "Google News Korea 학회 전시회",
+    "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1nWmZQVzJGTVo2Y0o5WHFXZm5Id2xiMFFmaVpFV1RWNDlEbXI0LWxVNEFOVTlXWm9URFFGc2lIdUpObTFSRHpoY01iSldLdjVLTTduUExmV0YtVk1IbFZ0SXNfbzY?oc=5",
+    "score": 25,
+    "keywords": [
+      "상하수도",
+      "물산업",
+      "상하수도협회"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "search_rss",
+    "image": ""
   }
 ]
