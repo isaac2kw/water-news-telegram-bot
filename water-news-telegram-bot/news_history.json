@@ -47658,5 +47658,145 @@
     "region": "global",
     "source_type": "search_rss",
     "image": ""
+  },
+  {
+    "date": "2026-08-12",
+    "title": "DuPont MemCor MBR system selected for major wastewater upgrade in Australia",
+    "ko_title": "DuPont MemCor MBR system selected for major wastewater upgrade in Australia",
+    "brief": "DuPont has announced the selection of its MemCor membrane bioreactor (MBR) system for an expansion of the Lower Molonglo Water Quality Control Centre ...",
+    "summary": "DuPont has announced the selection of its MemCor membrane bioreactor (MBR) system for an expansion of the Lower Molonglo Water Quality Control Centre ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane",
+      "wastewater",
+      "expansion",
+      "upgrade",
+      "dupont"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-08-12",
+    "specs": [],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a8bbe3297174b5993019ff8e941ef63&url=https%3a%2f%2fwww.filtsep.com%2fcontent%2fnews%2fdupont-memcor-mbr-system-selected-for-major-wastewater-upgrade-in-australia&c=3739037480018451891&mkt=en-us",
+    "score": 53,
+    "keywords": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane",
+      "wastewater",
+      "expansion",
+      "upgrade",
+      "dupont"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-08-11",
+    "title": "LiqTech wins US wastewater reuse order for QureFlow system",
+    "ko_title": "LiqTech wins US wastewater reuse order for QureFlow system",
+    "brief": "LiqTech International has secured an order for a QureFlow QF-6 ceramic membrane filtration system for an industrial wastewater reuse application in the ...",
+    "summary": "LiqTech International has secured an order for a QureFlow QF-6 ceramic membrane filtration system for an industrial wastewater reuse application in the ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "membrane",
+      "wastewater",
+      "water reuse",
+      "industrial wastewater",
+      "ceramic membrane"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-08-11",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a8bbe322a8d4637a75d88d1a714e03c&url=https%3a%2f%2fwww.filtsep.com%2fcontent%2fnews%2fliqtech-wins-us-wastewater-reuse-order-for-qureflow-system&c=5512686614447114985&mkt=en-us",
+    "score": 41,
+    "keywords": [
+      "membrane",
+      "wastewater",
+      "water reuse",
+      "industrial wastewater",
+      "ceramic membrane"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-08-24",
+    "title": "경기도의회 임창열 의원, 구리하수처리장 현대화·지하화 추진 방안 논의 - 경기평화신문",
+    "ko_title": "경기도의회 임창열 의원, 구리하수처리장 현대화·지하화 추진 방안 논의 - 경기평화신문",
+    "brief": "경기도의회 임창열 의원, 구리하수처리장 현대화·지하화 추진 방안 논의 경기평화신문",
+    "summary": "경기도의회 임창열 의원, 구리하수처리장 현대화·지하화 추진 방안 논의 경기평화신문",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-08-24",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE1ob1VBbWg2SDJlMWZXQkNYRzFENFdHMFpkNWhGYWFjOFZwWkFIMzhYUjh2eE9XZ3VxZFZ0eF80WkRnUDdpNkRpLUJ3?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-08-24",
+    "title": "임창열 경기도의원, 구리하수처리장 지하화 추진…“안정적 재원 확보 관건” - 경인매일",
+    "ko_title": "임창열 경기도의원, 구리하수처리장 지하화 추진…“안정적 재원 확보 관건” - 경인매일",
+    "brief": "임창열 경기도의원, 구리하수처리장 지하화 추진…“안정적 재원 확보 관건” 경인매일",
+    "summary": "임창열 경기도의원, 구리하수처리장 지하화 추진…“안정적 재원 확보 관건” 경인매일",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-08-24",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE4tcnh0dnZLSDBfaFFONkVWNWc5emVHWXdQcE5WbXR3ZE43aHhCRXVhR1h4UXpjSHBCM0FjcGFCRHNHQmZRRDFMOEJXVkgtc1pCdFllbjItcGJCUHNtLUw5YzNrMzVsNS00?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
   }
 ]
