@@ -49482,5 +49482,36 @@
     "region": "global",
     "source_type": "rss",
     "image": ""
+  },
+  {
+    "date": "2026-08-10",
+    "title": "LiqTech Secures U.S. Industrial Wastewater Reuse Order for QureFlow™ System",
+    "ko_title": "LiqTech Secures U.S. Industrial Wastewater Reuse Order for QureFlow™ System",
+    "brief": "BALLERUP, Denmark, Aug. 10, 2026 (GLOBE NEWSWIRE) -- LiqTech International, Inc. (Nasdaq: LIQT), a clean technology company specializing in advanced ceramic filtration solutions, t",
+    "summary": "BALLERUP, Denmark, Aug. 10, 2026 (GLOBE NEWSWIRE) -- LiqTech International, Inc. (Nasdaq: LIQT), a clean technology company specializing in advanced ceramic filtration solutions, today announced that ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "재이용수",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "wastewater",
+      "water reuse",
+      "industrial wastewater"
+    ],
+    "policy_alert": "",
+    "date_context": "Aug. 10, 2026",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a924cff8aae44328293776b3ef401e2&url=https%3a%2f%2fuk.finance.yahoo.com%2fnews%2fliqtech-secures-u-industrial-wastewater-130000564.html&c=12508849670372883301&mkt=en-us",
+    "score": 25,
+    "keywords": [
+      "wastewater",
+      "water reuse",
+      "industrial wastewater"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
   }
 ]
