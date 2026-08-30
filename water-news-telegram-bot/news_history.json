@@ -50002,5 +50002,69 @@
     "region": "domestic",
     "source_type": "rss",
     "image": ""
+  },
+  {
+    "date": "2026-08-30",
+    "title": "경주시의회 경제산업위, 하수처리장 등 3곳 현장점검 - 데일리한국",
+    "ko_title": "경주시의회 경제산업위, 하수처리장 등 3곳 현장점검 - 데일리한국",
+    "brief": "경주시의회 경제산업위, 하수처리장 등 3곳 현장점검 데일리한국",
+    "summary": "경주시의회 경제산업위, 하수처리장 등 3곳 현장점검 데일리한국",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-08-30",
+    "specs": [],
+    "source": "Google News Korea 재이용수 PFAS",
+    "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBPM0pVQUl0ZlZZVmRFdW42QW8yM3lxSlM3ZTZnS0ZsdmtEQTRSaGQxUGNhSWl2LUpBZFczU0hDLVExdUN3cWRudlFzbzJrNkJFaUc0ak9zZndwY3hTRzAteUh5R1FvZUtEWlliYUxJc1FFTWvSAXNBVV95cUxQTzNKVUFJdGZWWVZkRXVuNkFvMjN5cUpTN2U2Z0tGbHZrREE0UmhkMVBjYUlpdi1KQWRXM1NIQy1RMXVDd3FkbnZRc28yazZCRWlHNGpPc2Z3cGN4U0cwLXlIeUdRb2VLRFpZYmFMSXNRRU1r?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-08-10",
+    "title": "LiqTech Secures U.S. Industrial Wastewater Reuse Order for QureFlow™ System",
+    "ko_title": "LiqTech Secures U.S. Industrial Wastewater Reuse Order for QureFlow™ System",
+    "brief": "BALLERUP, Denmark, Aug. 10, 2026 (GLOBE NEWSWIRE) -- LiqTech International, Inc. (Nasdaq: LIQT), a clean technology company specializing in advanced ceramic filtration solutions, t",
+    "summary": "BALLERUP, Denmark, Aug. 10, 2026 (GLOBE NEWSWIRE) -- LiqTech International, Inc. (Nasdaq: LIQT), a clean technology company specializing in advanced ceramic filtration solutions, today announced that ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "재이용수",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "wastewater",
+      "water reuse",
+      "industrial wastewater"
+    ],
+    "policy_alert": "",
+    "date_context": "Aug. 10, 2026",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a946d0376e94e02a79f4ae972444beb&url=https%3a%2f%2fuk.finance.yahoo.com%2fnews%2fliqtech-secures-u-industrial-wastewater-130000564.html&c=12508849670372883301&mkt=en-us",
+    "score": 25,
+    "keywords": [
+      "wastewater",
+      "water reuse",
+      "industrial wastewater"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
   }
 ]
