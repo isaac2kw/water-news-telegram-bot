@@ -1,34 +1,5 @@
 [
   {
-    "date": "2025-02-25",
-    "title": "Green hydrogen economy: Evonik is building a plant for anion exchange membranes",
-    "ko_title": "에보닉, 음이온 교환막 생산 파일럿 공장 건설",
-    "brief": "에보닉이 독일 말르에 음이온 교환막 생산을 위한 파일럿 공장을 건설합니다. 이 공장은 2025년 말 가동될 예정입니다.",
-    "summary": "에보닉은 독일 말르에 혁신적인 음이온 교환막(AEM) 생산을 위한 파일럿 공장을 건설하고 있습니다. 이 막은 DURAION®이라는 이름으로 판매되며, 녹색 수소 생산에 필수적인 요소입니다. 에보닉은 이 공장에 수십억 유로를 투자하고 있으며, 2025년 말 가동을 목표로 하고 있습니다. 이 투자는 에보닉의 사업 목표와 연계되어 있으며, 녹색 수소 경제의 발전에 기여할 것으로 기대됩니다. 수처리 산업에서 이러한 기술은 지속 가능한 에너지 생산에 중요한 역할을 할 것입니다.",
-    "why_important": "녹색 수소 경제의 발전은 수처리 산업에 새로운 기회를 제공합니다. 이 기술은 수소 생산의 비용 경쟁력을 높여 시장의 변화를 이끌 것으로 추측입니다.",
-    "category": "분리막/MBR",
-    "countries": [
-      "독일"
-    ],
-    "companies": [
-      "에보닉"
-    ],
-    "technologies": [
-      "음이온 교환막",
-      "녹색 수소"
-    ],
-    "policy_alert": "",
-    "source": "WaterNewsWire Full Text",
-    "link": "https://waternewswire.com/news/2025/02251green-hydrogen-economy",
-    "score": 22,
-    "keywords": [
-      "membrane",
-      "expansion",
-      "pilot",
-      "investment"
-    ]
-  },
-  {
     "date": "2025-02-27",
     "title": "02271pfas-problem",
     "ko_title": "PFAS 문제, 수처리 산업의 새로운 도전",
@@ -50588,6 +50559,39 @@
     "specs": [],
     "source": "Google News Korea 재이용수 PFAS",
     "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1HMV9YY195RUJqX3J2MjJKZlpUN2U3SEsyV1F0ODlpZ1VjZWUxNDkwNUJkcHdVY3lVUlZQMkh1WWNmb3VocFJZVlNfZGZBRkI3aUHSAVNBVV95cUxOQjJsMWxHbkJJbkdTSWlyU0pwWkdiT3ppZzBfbmV6VXh6MWRmN2V3c3o5anhNbm5Jdm9xNTQ1dHRiM3dZcXhSa1ZPUHlPY1JnNFh3MA?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-08-31",
+    "title": "충주시 수안보하수처리장, 환경공단 운영관리평가 ‘전국 최우수’ - kodominnews.com",
+    "ko_title": "충주시 수안보하수처리장, 환경공단 운영관리평가 ‘전국 최우수’ - kodominnews.com",
+    "brief": "충주시 수안보하수처리장, 환경공단 운영관리평가 ‘전국 최우수’ kodominnews.com",
+    "summary": "충주시 수안보하수처리장, 환경공단 운영관리평가 ‘전국 최우수’ kodominnews.com",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-08-31",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE41WjRHYUZ5cEZ3bEpoZ1RGc241N2dHS2JRSVJaUFB3bTNBMW1NeHRieHhQSGkwQ0hPamQxLTJZMUI3aVpiUkI3b1NKS25yWGg5T2FZM3BubVRCS0NPN2RYOXNrY3ZibTM4aG9PeFZ3?oc=5",
     "score": 26,
     "keywords": [
       "하수처리",
