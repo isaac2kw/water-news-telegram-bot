@@ -1,34 +1,5 @@
 [
   {
-    "date": "2025-01-16",
-    "title": "Water Sector Organizations Partner on Innovative Generative AI Research Project",
-    "ko_title": "수처리 분야, 생성형 AI 연구 프로젝트 시작",
-    "brief": "미국 수처리 관련 기관들이 생성형 AI 연구 프로젝트를 시작했습니다. 이 프로젝트는 수처리 산업의 혁신적인 기술 적용을 위한 기초를 마련할 것입니다.",
-    "summary": "미국의 수처리 관련 기관들이 생성형 AI의 역할을 연구하기 위한 프로젝트를 시작했습니다. 이 연구는 수처리 유틸리티에 대한 생성형 AI의 기초 이해를 확립하고, 최선의 사례 및 응용 프로그램을 공유하는 데 중점을 두고 있습니다. 또한, 향후 수처리 분야에서의 생성형 AI 응용을 위한 연구 로드맵을 수립할 예정입니다. AWWA의 CEO는 생성형 AI가 수처리 커뮤니티를 혁신적으로 변화시킬 것이라고 강조했습니다.",
-    "why_important": "이 연구는 수처리 산업의 기술 혁신을 촉진할 수 있는 중요한 기초 자료를 제공합니다. 생성형 AI의 도입은 운영 효율성을 높이고, 새로운 비즈니스 모델을 창출할 가능성이 있습니다.",
-    "category": "수처리 산업동향",
-    "countries": [
-      "미국"
-    ],
-    "companies": [
-      "American Water Works Association",
-      "Water Environment Federation",
-      "Water Research Foundation",
-      "Karmous Edwards Consulting"
-    ],
-    "technologies": [
-      "Generative AI"
-    ],
-    "policy_alert": "",
-    "source": "WaterNewsWire Full Text",
-    "link": "https://waternewswire.com/news/2025/01161innovative-generative-ai-research-project",
-    "score": 13,
-    "keywords": [
-      "wastewater",
-      "drinking water"
-    ]
-  },
-  {
     "date": "2025-02-25",
     "title": "Green hydrogen economy: Evonik is building a plant for anion exchange membranes",
     "ko_title": "에보닉, 음이온 교환막 생산 파일럿 공장 건설",
@@ -50518,6 +50489,105 @@
     "specs": [],
     "source": "Google News Korea 재이용수 PFAS",
     "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1WclVfa3JtUDBVUkZqSkc1TnI1bm5LOG5Qd0tIdTVhTnEwa3VFZ2VRclFCMXNDYVBJdGFDamtJd294bC15NF9GbTZ4OFJQdVVjSldFMkhHdHNkTWpxT3MxZ2kyNA?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-08-31",
+    "title": "“형식적 수질 관리 관성 과감히 타치, 환경 복지 백본망 수혈… 충주 수안보하수처리장, 전국 ‘최우수’ 우뚝” - 타임뉴스",
+    "ko_title": "“형식적 수질 관리 관성 과감히 타치, 환경 복지 백본망 수혈… 충주 수안보하수처리장, 전국 ‘최우수’ 우뚝” - 타임뉴스",
+    "brief": "“형식적 수질 관리 관성 과감히 타치, 환경 복지 백본망 수혈… 충주 수안보하수처리장, 전국 ‘최우수’ 우뚝” 타임뉴스",
+    "summary": "“형식적 수질 관리 관성 과감히 타치, 환경 복지 백본망 수혈… 충주 수안보하수처리장, 전국 ‘최우수’ 우뚝” 타임뉴스",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-08-31",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE4yMlBjaXFhMTVEZHhwd1ZjV3E4R2xZTUY5YU9sWmZRTmx4Snl6MW1PbHZHSVZKbTRLeW9BbEtCa3FTVmQ5LTV2SHR1T2VrMHMtN0llYg?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-08-31",
+    "title": "[충주소식] 수안보하수처리장 환경공단 평가서 '최우수' - 연합뉴스",
+    "ko_title": "[충주소식] 수안보하수처리장 환경공단 평가서 '최우수' - 연합뉴스",
+    "brief": "[충주소식] 수안보하수처리장 환경공단 평가서 '최우수' 연합뉴스",
+    "summary": "[충주소식] 수안보하수처리장 환경공단 평가서 '최우수' 연합뉴스",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-08-31",
+    "specs": [],
+    "source": "Google News Korea 재이용수 PFAS",
+    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5lbEttbHhPRjJVTVJudV9sSzBFa1l6TzFrRGVlWjIzd1lxUlE5TV9VZHA1V3lXOTZ5WC1vQk1vSFVFVlNocUM5YTFSSUZnWHBDOVBwQ2MyUEgxUnN6Y3pqVdIBYEFVX3lxTE5lbEttbHhPRjJVTVJudV9sSzBFa1l6TzFrRGVlWjIzd1lxUlE5TV9VZHA1V3lXOTZ5WC1vQk1vSFVFVlNocUM5YTFSSUZnWHBDOVBwQ2MyUEgxUnN6Y3pqVQ?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-08-30",
+    "title": "[만화경] 하수처리장 ‘내로남불’ - sedaily.com",
+    "ko_title": "[만화경] 하수처리장 ‘내로남불’ - sedaily.com",
+    "brief": "[만화경] 하수처리장 ‘내로남불’ sedaily.com",
+    "summary": "[만화경] 하수처리장 ‘내로남불’ sedaily.com",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-08-30",
+    "specs": [],
+    "source": "Google News Korea 재이용수 PFAS",
+    "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1HMV9YY195RUJqX3J2MjJKZlpUN2U3SEsyV1F0ODlpZ1VjZWUxNDkwNUJkcHdVY3lVUlZQMkh1WWNmb3VocFJZVlNfZGZBRkI3aUHSAVNBVV95cUxOQjJsMWxHbkJJbkdTSWlyU0pwWkdiT3ppZzBfbmV6VXh6MWRmN2V3c3o5anhNbm5Jdm9xNTQ1dHRiM3dZcXhSa1ZPUHlPY1JnNFh3MA?oc=5",
     "score": 26,
     "keywords": [
       "하수처리",
