@@ -1,30 +1,5 @@
 [
   {
-    "date": "2025-02-27",
-    "title": "02271pfas-problem",
-    "ko_title": "PFAS 문제, 수처리 산업의 새로운 도전",
-    "brief": "PFAS에 대한 공공 인식이 높아지고 있습니다. 이는 수처리 산업에 중요한 영향을 미칠 수 있습니다.",
-    "summary": "PFAS(퍼플루오로알킬물질)에 대한 관심이 증가하고 있으며, 이는 건강 문제로 부각되고 있습니다. 최근 IDTechEx의 보고서는 PFAS와 관련된 규제가 산업에 미치는 영향을 분석하고 있습니다. PFAS는 다양한 산업에서 사용되며, 수돗물에서의 PFAS 처리 문제는 수처리 산업에 큰 도전 과제가 되고 있습니다. 이러한 문제는 새로운 기술 개발과 규제 대응을 촉진할 것으로 예상됩니다.",
-    "why_important": "PFAS 문제는 수처리 산업의 규제 환경을 변화시킬 수 있습니다. 이는 기업들이 새로운 기술을 개발하고, 시장에서의 경쟁력을 유지하기 위해 대응해야 함을 의미합니다.",
-    "category": "PFAS/오염물",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "PFAS",
-      "membrane",
-      "drinking water"
-    ],
-    "policy_alert": "",
-    "source": "WaterNewsWire Full Text",
-    "link": "https://waternewswire.com/news/2025/02271pfas-problem",
-    "score": 23,
-    "keywords": [
-      "membrane",
-      "drinking water",
-      "pfas"
-    ]
-  },
-  {
     "date": "2025-04-15",
     "title": "Release of microplastics from polymeric ultrafiltration membrane system for drinking water treatment under different operating conditions - ScienceDirect.com",
     "ko_title": "음용수 처리에서 미세플라스틱 방출 연구",
@@ -50600,6 +50575,37 @@
     ],
     "domestic": true,
     "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-09-01",
+    "title": "Wausau utility customers face a decade of rate increases as wastewater plant exceeds proposed PFAS limit - Wausau Pilot & Review",
+    "ko_title": "Wausau utility customers face a decade of rate increases as wastewater plant exceeds proposed PFAS limit - Wausau Pilot & Review",
+    "brief": "Wausau utility customers face a decade of rate increases as wastewater plant exceeds proposed PFAS limit Wausau Pilot & Review",
+    "summary": "Wausau utility customers face a decade of rate increases as wastewater plant exceeds proposed PFAS limit Wausau Pilot & Review",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "PFAS/오염물",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "wastewater",
+      "pfas",
+      "pilot"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-09-01",
+    "specs": [],
+    "source": "Google News Global Water",
+    "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQNE9YUWRRb1plZHpvbHZsa2xiRlp6WEJCaVZFVGYtWE9MTW9NQm93ZHJ3UDBBSHlaTXdYWmcxajhGUUR1SF8wd094Q2NwbVdKdld5MFc4dXVUUG1KYTd4Y3NGQnVNR3BrMXZZYWVGMnNCUUxiUkk1UXdVN3hkeDd5RUdPWjladld5WkFsYlZjT2ctaDdadlEyb2JNaEhFZTNYSk5paDVPZmlpZEhNNWdidUVJVlkweVJBUGVZYVdtS0RNeGI1YVF5NGF5dHJDSzJEbXVmWXJiZGl5ZXhNX2NhSUhsbw?oc=5",
+    "score": 23,
+    "keywords": [
+      "wastewater",
+      "pfas",
+      "pilot"
+    ],
+    "domestic": false,
+    "region": "global",
     "source_type": "rss",
     "image": ""
   }
