@@ -1,31 +1,6 @@
 [
   {
     "date": "2026-02-18",
-    "title": "BC Budget Misses Opportunity to Generate New Revenue, Strengthen Watershed Security, Jobs, and Economic Resilience",
-    "ko_title": "BC 예산, 수자원 보안 강화 기회 놓쳐",
-    "brief": "2026년 BC 예산은 수자원 보안 강화를 위한 기회를 놓쳤습니다. 기후 변화와 불확실성이 커지는 가운데, 산업용수 요금 현대화에 대한 약속이 없습니다.",
-    "summary": "2026년 브리티시컬럼비아(B.C.) 예산은 주의 경제와 공공 안전을 뒷받침하는 수자원 보안 강화를 위한 중요한 기회를 놓쳤습니다. 기후 변화로 인한 극단적인 상황이 증가하고 있는 가운데, 예산은 수자원 보안에 대한 새로운 투자를 포함하지 않았습니다. 또한, 산업용수 요금의 현대화에 대한 약속도 없어 물의 경제적 가치가 저평가되고 있다는 우려가 제기되고 있습니다. 이러한 상황은 지역 사회와 기업에 심각한 영향을 미칠 수 있습니다.",
-    "why_important": "이 예산은 수자원 관리와 관련된 규제 및 정책의 중요성을 강조합니다. 안정적인 수자원 확보 없이는 경제와 일자리 보호가 어려울 것으로 보입니다.",
-    "category": "규제/정책",
-    "countries": [
-      "캐나다"
-    ],
-    "companies": [],
-    "technologies": [
-      "funding",
-      "investment"
-    ],
-    "policy_alert": "수자원 보안 강화를 위한 새로운 투자와 산업용수 요금 현대화가 필요합니다.",
-    "source": "WaterNewsWire Full Text",
-    "link": "https://waternewswire.com/news/2026/budget-2026-watershed-security-industrial-water-rates",
-    "score": 8,
-    "keywords": [
-      "funding",
-      "investment"
-    ]
-  },
-  {
-    "date": "2026-02-18",
     "title": "MemCor™ MBR systems selected for three major wastewater treatment plant expansions in England",
     "ko_title": "영국, MemCor™ MBR 시스템으로 하수처리장 확장",
     "brief": "영국에서 MemCor™ MBR 시스템이 세 개의 주요 하수처리장 확장에 선정되었습니다. 이는 수처리 기술의 발전과 투자 확대를 의미합니다.",
@@ -50608,6 +50583,39 @@
     "domestic": true,
     "region": "domestic",
     "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-09-02",
+    "title": "[미국] 하와이 마우이 소재 리하이나 하수처리장 개선으로 물공급 지속가능성 강화 - 워터저널",
+    "ko_title": "[미국] 하와이 마우이 소재 리하이나 하수처리장 개선으로 물공급 지속가능성 강화 - 워터저널",
+    "brief": "[미국] 하와이 마우이 소재 리하이나 하수처리장 개선으로 물공급 지속가능성 강화 워터저널",
+    "summary": "[미국] 하와이 마우이 소재 리하이나 하수처리장 개선으로 물공급 지속가능성 강화 워터저널",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-09-02",
+    "specs": [],
+    "source": "Google Site WaterJournal",
+    "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBuMGNxNnFVSWE5cmd3UVRtSm1oMzFoeENvbzhpT3pHcHY5Um9fMWt0akZSbjhPS1ZIUDNfWERLckpVaDRGOEtRbzdpOFhiODZWb25JR2N5dFVmb3k0cW9CUzM3UGxycmdvemNjMXQ2cHJUU2lxSmfSAXZBVV95cUxQbjBjcTZxVUlhOXJnd1FUbUptaDMxaHhDb284aU96R3B2OVJvXzFrdGpGUm44T0tWSFAzX1hES3JKVWg0RjhLUW83aThYYjg2Vm9uSUdjeXRVZm95NHFvQlMzN1BscnJnb3pjYzF0NnByVFNpcUpn?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "search_rss",
     "image": ""
   }
 ]
