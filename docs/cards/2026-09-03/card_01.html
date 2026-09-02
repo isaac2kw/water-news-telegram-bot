@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  :root{--main-blue:#0075C1;--yellow:#DDA11D;--navy:#00205D;--tint:#E6F1FB;--card-bg:#F5F7FA;--line:#B5D4F4;--gray-light:#888780;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{margin:0;padding:0;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;}
+  .card{width:1080px;height:1080px;background:#ffffff;position:relative;overflow:hidden;}
+  .pad{padding:0 90px;}
+  .footer{position:absolute;left:0;right:0;bottom:46px;padding:0 90px;}
+  .footer .line{height:1px;background:var(--line);margin-bottom:22px;}
+  .footer .row{display:flex;align-items:center;justify-content:space-between;}
+  .logo{font-size:26px;font-weight:700;}
+  .logo .h{color:var(--main-blue);}.logo .m{color:var(--yellow);}.logo .inc{color:var(--navy);}
+  .footer .center{color:var(--main-blue);font-size:22px;font-weight:600;letter-spacing:2px;}
+  .footer .right{width:120px;}
+  .label{display:flex;align-items:center;gap:12px;padding-top:96px;color:var(--main-blue);font-size:24px;font-weight:700;letter-spacing:3px;}
+  .label .ldot{width:10px;height:10px;border-radius:50%;background:var(--main-blue);}
+  .label .lbadge{margin-left:6px;background:var(--tint);color:var(--main-blue);font-size:18px;letter-spacing:2px;padding:5px 14px;border-radius:20px;}
+  .ctitle{margin-top:34px;color:var(--navy);font-size:52px;font-weight:700;line-height:1.18;}
+  .ctitle .b{color:var(--main-blue);}.ctitle .y{color:var(--yellow);}
+  .cdivider{width:160px;height:4px;background:var(--main-blue);margin-top:30px;}
+  .info{margin-top:40px;}
+  .facts{position:absolute;left:90px;right:90px;bottom:150px;display:flex;gap:18px;}
+  .fact{flex:1;background:var(--card-bg);border-radius:16px;padding:26px 24px;}
+  .fact .k{color:var(--gray-light);font-size:18px;letter-spacing:1px;margin-bottom:10px;}
+  .fact .v{color:var(--navy);font-size:24px;font-weight:700;line-height:1.25;}
+  .fact .v .b{color:var(--main-blue);}.fact .v .y{color:var(--yellow);}
+</style>
+</head>
+<body>
+<div class="card" id="card_01">
+  <div class="pad">
+    <div class="label"><span class="ldot"></span>URBAN DEVELOPMENT<span class="lbadge">KOREA</span></div>
+    <div class="ctitle">32-Story Tower Above a Sewage Plant: <span class="y">Tancheon Center</span> Blueprint</div>
+    <div class="cdivider"></div>
+    <div class="info">
+      <svg width="900" height="360" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg">
+        <rect x="60" y="60" width="780" height="60" fill="#E6F1FB" rx="6"/>
+        <text x="80" y="98" font-size="22" font-weight="700" fill="#0075C1">TOWER · 32 FLOORS · MIXED USE</text>
+        <rect x="60" y="130" width="780" height="20" fill="#B5D4F4"/>
+        <text x="80" y="146" font-size="14" fill="#00205D" font-weight="700">DECK · STRUCTURAL SLAB</text>
+        <rect x="60" y="160" width="780" height="140" fill="#F5F7FA" stroke="#B5D4F4"/>
+        <text x="80" y="200" font-size="20" font-weight="700" fill="#00205D">UNDERGROUND SEWAGE TREATMENT PLANT</text>
+        <circle cx="150" cy="240" r="16" fill="#0075C1"/>
+        <circle cx="230" cy="240" r="16" fill="#0075C1"/>
+        <circle cx="310" cy="240" r="16" fill="#0075C1"/>
+        <path d="M 380 240 L 460 240" stroke="#0075C1" stroke-width="3"/>
+        <polygon points="460,232 476,240 460,248" fill="#0075C1"/>
+        <text x="500" y="246" font-size="18" fill="#00205D" font-weight="700">EFFLUENT</text>
+        <rect x="60" y="310" width="780" height="30" fill="#00205D"/>
+        <text x="80" y="332" font-size="16" fill="#ffffff" font-weight="700">GROUND LEVEL</text>
+      </svg>
+    </div>
+  </div>
+  <div class="facts">
+    <div class="fact"><div class="k">SITE</div><div class="v"><span class="y">Tancheon</span> Center</div></div>
+    <div class="fact"><div class="k">CONCEPT</div><div class="v"><span class="b">Cover & Build</span></div></div>
+    <div class="fact"><div class="k">HEIGHT</div><div class="v">32 Floors</div></div>
+  </div>
+  <div class="footer">
+    <div class="line"></div>
+    <div class="row">
+      <div class="logo"><span class="h">Hifil</span><span class="m">M</span>&nbsp;<span class="inc">INC.</span></div>
+      <div class="center">Water Treatment</div>
+      <div class="right"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
