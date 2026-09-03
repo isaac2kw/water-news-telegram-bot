@@ -1,180 +1,5 @@
 [
   {
-    "date": "2026-02-18",
-    "title": "MemCor™ MBR systems selected for three major wastewater treatment plant expansions in England",
-    "ko_title": "England 3개 하수처리장 확장에 MemCor MBR 선정",
-    "brief": "England의 주요 하수처리장 3곳 확장 사업에 MemCor™ MBR systems가 선정됐다는 기사입니다. 다만 제공된 RSS 요약에 사업 규모·용량·발주처 등 핵심 세부 정보는 확인되지 않습니다.",
-    "summary": "기사 제목에 따르면 England의 주요 하수처리장 3곳 확장 사업에 MemCor™ MBR systems가 채택됐습니다. 이는 하수처리장 증설 과정에서 MBR 기술이 적용된 사례로 해석됩니다. 다만 현재 제공된 RSS 요약은 Yahoo Finance의 일반 고지 문구 중심이라 프로젝트 위치, 처리용량, 발주처, 계약 규모, 일정 등 핵심 정보는 확인되지 않습니다. 수처리 산업 관점에서는 하수처리장 확장에 분리막 기반 공정이 채택됐다는 점이 중요합니다. 그러나 기사 원문 세부 내용이 확보되지 않아 추가 사실 확인이 필요합니다.",
-    "why_important": "하수처리장 증설에 MBR이 선정됐다는 점은 분리막/MBR 시장 수요와 레퍼런스 확대 측면에서 의미가 있습니다. 다만 발주처, 규모, 규제 배경이 확인되지 않아 시장 영향의 구체적 판단은 제한적이며 일부 해석은 추측입니다.",
-    "category": "분리막/MBR",
-    "countries": [
-      "영국"
-    ],
-    "companies": [
-      "MemCor"
-    ],
-    "technologies": [
-      "MBR",
-      "wastewater treatment",
-      "plant expansion"
-    ],
-    "policy_alert": "",
-    "specs": [],
-    "source": "Bing News Global MBR",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a22171e21c84448bfa46327cfd02f6c&url=https%3a%2f%2ffinance.yahoo.com%2fnews%2fmemcor-mbr-systems-selected-three-140000877.html&c=15153598790819934667&mkt=en-us",
-    "score": 34,
-    "keywords": [
-      "mbr",
-      "wastewater",
-      "water treatment",
-      "expansion",
-      "investment"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss"
-  },
-  {
-    "date": "2026-02-18",
-    "title": "MemCor™ MBR systems selected for three major wastewater treatment plant expansions in England",
-    "ko_title": "영국 3개 하수처리장 증설에 MemCor MBR 선정",
-    "brief": "MemCor MBR 시스템이 영국 내 3개 주요 하수처리장 증설 사업에 선정됐다는 내용입니다. 기사 본문 요약이 부족해 구체적 발주처·규모·일정은 확인이 필요합니다.",
-    "summary": "기사 제목에 따르면 MemCor MBR 시스템이 영국의 3개 주요 하수처리장 확장 사업에 채택됐습니다. 다만 제공된 RSS 요약은 기사 본문과 무관한 문구로 보이며, 발주처, 사업 규모, 처리용량, 계약 금액, 공급 범위 등 핵심 정보는 확인되지 않습니다. 그럼에도 제목만으로는 영국 하수처리 인프라 증설 과정에서 MBR 기술이 적용되는 사례로 해석할 수 있습니다. 이는 방류수 수질 강화, 부지 효율성, 기존 시설 증설 대응 측면에서 분리막 기반 하수처리 솔루션의 활용 가능성을 보여줍니다. 다만 상세한 산업적 의미를 판단하려면 원문 확인이 필요합니다.",
-    "why_important": "영국 하수처리장 증설에 MBR이 채택됐다면 분리막 기반 고도처리 수요 확대 신호로 볼 수 있어 시장 측면에서 의미가 있습니다. 다만 구체적 규제 배경, 프로젝트 규모, 기술 사양은 기사 원문 확인 전까지 추측입니다.",
-    "category": "분리막/MBR",
-    "countries": [
-      "영국"
-    ],
-    "companies": [
-      "MemCor"
-    ],
-    "technologies": [
-      "MBR",
-      "wastewater treatment",
-      "expansion"
-    ],
-    "policy_alert": "",
-    "source": "Bing News Global MBR",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a22227d802c4a48a01593d586ef2c7d&url=https%3a%2f%2ffinance.yahoo.com%2fnews%2fmemcor-mbr-systems-selected-three-140000877.html&c=15153598790819934667&mkt=en-us",
-    "score": 34,
-    "keywords": [
-      "mbr",
-      "wastewater",
-      "water treatment",
-      "expansion",
-      "investment"
-    ]
-  },
-  {
-    "date": "2026-02-20",
-    "title": "Canadian Water and Wastewater Association and Water Canada Announce Strategic Partnership to Elevate the Water Canada Awards",
-    "ko_title": "캐나다 수처리 협회, 워터 캐나다와 파트너십 체결",
-    "brief": "캐나다 수처리 협회(CWWA)와 워터 캐나다가 전략적 파트너십을 체결했습니다. 이로 인해 2026년 워터 캐나다 어워드가 새로운 카테고리를 추가하여 지방 정부의 성과를 기립니다.",
-    "summary": "캐나다 수처리 협회(CWWA)와 워터 캐나다가 전략적 파트너십을 체결하여 캐나다 수처리 분야의 우수성을 인정하는 방안을 통합했습니다. 이번 협력으로 2026년 워터 캐나다 어워드에 두 개의 새로운 카테고리가 추가되어 지방 정부의 기여를 강조합니다. 이는 지역 정부가 캐나다의 중요한 자원을 관리하는 데 있어 중요한 역할을 하고 있음을 보여줍니다. 이러한 변화는 수처리 산업의 발전과 협력을 촉진할 것으로 기대됩니다.",
-    "why_important": "이번 파트너십은 캐나다 수처리 산업의 인식을 높이고 지방 정부의 기여를 강조하는 데 중요한 의미를 갖습니다. 이는 향후 수처리 관련 프로젝트와 정책에 긍정적인 영향을 미칠 것으로 보입니다.",
-    "category": "프로젝트/수주",
-    "countries": [
-      "캐나다"
-    ],
-    "companies": [],
-    "technologies": [],
-    "policy_alert": "",
-    "source": "WaterNewsWire Full Text",
-    "link": "https://waternewswire.com/news/2026/water-canada-awards-2026-partnership",
-    "score": 23,
-    "keywords": [
-      "wastewater",
-      "award",
-      "upgrade",
-      "pilot"
-    ]
-  },
-  {
-    "date": "2026-02-23",
-    "title": "“인천 송도공공하수처리장 3단계 증설사업 입찰 담합 의혹” - 인천투데이",
-    "ko_title": "인천 송도하수처리장 증설사업 입찰 담합 의혹",
-    "brief": "인천 송도공공하수처리장 3단계 증설사업에서 입찰 담합 의혹이 제기되었습니다. 이 사건은 수처리 산업의 투명성과 공정성을 위협할 수 있습니다.",
-    "summary": "인천 송도공공하수처리장 3단계 증설사업에서 입찰 담합 의혹이 발생했습니다. 이 사건은 하수처리 시설의 확장과 관련된 것으로, 수처리 산업의 경쟁 환경에 부정적인 영향을 미칠 수 있습니다. 입찰 담합은 공정한 경쟁을 저해하고, 결국에는 시민들에게 제공되는 서비스의 질에도 영향을 미칠 수 있습니다. 따라서 이 사건은 수처리 산업의 투명성과 신뢰성을 확보하기 위한 중요한 이슈로 부각되고 있습니다.",
-    "why_important": "이 사건은 수처리 산업의 공정한 경쟁을 저해할 수 있는 요소로 작용할 수 있습니다. 또한, 규제 기관의 감시와 정책 개선 필요성을 강조하는 사례가 될 것입니다.",
-    "category": "규제/정책",
-    "countries": [
-      "대한민국"
-    ],
-    "companies": [],
-    "technologies": [
-      "하수처리"
-    ],
-    "policy_alert": "입찰 담합 의혹은 향후 규제 강화로 이어질 수 있습니다.",
-    "specs": [],
-    "source": "Google News Korea 상하수도",
-    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1XdUw5M1I2OTY5a1BXR0Y1TGhnTDZYRHhybGRIWGk3VnFPR3dBU3IweDB3dWpVVWJJQWRtRTNIWHVyNVlmR1NucE54Z2lybU90TWZqX1hfYU5USGRYV1pzZU5XVkpBVzc4T2x3MHBPQ28?oc=5",
-    "score": 26,
-    "keywords": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "domestic": true,
-    "region": "domestic",
-    "source_type": "search_rss"
-  },
-  {
-    "date": "2026-03-10",
-    "title": "Decent Holding Inc. (Nasdaq: DXST) Announces Strategic Cooperation to Expand AI-Enabled Community Healthcare Network in China",
-    "ko_title": "Decent Holding, 중국에서 AI 기반 건강 네트워크 확장",
-    "brief": "Decent Holding의 자회사 Suncare가 중국에서 지역 노인 돌봄 운영자와 전략적 협력 계약을 체결했습니다. 이 협약은 AI 기반 디지털 건강 솔루션을 통합하여 커뮤니티 서비스 위치를 70곳으로 확장할 계획입니다.",
-    "summary": "Decent Holding Inc.는 최근 노인 건강 및 웰빙 부문에 진출한 폐수 처리 서비스 제공업체입니다. 자회사 Suncare는 중국의 지역 노인 돌봄 운영자와 전략적 협력 계약을 체결하여 AI 기반 디지털 건강 플랫폼을 통합할 예정입니다. 이 협약은 동부 및 북부 중국의 여러 지방에서 약 70개의 커뮤니티 서비스 위치를 확장하는 것을 목표로 합니다. 각 위치는 약 30,000에서 100,000명의 주민 커뮤니티에 예방 건강 상담 및 라이프스타일 관리 서비스를 제공합니다. 이는 수처리 산업과 건강 관리의 융합을 보여주는 사례로, 향후 시장 확장에 기여할 것으로 예상됩니다.",
-    "why_important": "이 협약은 수처리 산업과 건강 관리의 융합을 통해 새로운 시장 기회를 창출할 수 있습니다. 또한, AI 기술을 활용한 서비스 확장은 향후 기술 발전과 규제 변화에 대응하는 중요한 사례가 될 것입니다.",
-    "category": "기업동향",
-    "countries": [
-      "중국"
-    ],
-    "companies": [
-      "Decent Holding Inc.",
-      "Suncare (Shanghai) Health Technology Co., Ltd."
-    ],
-    "technologies": [
-      "AI",
-      "Digital Health",
-      "Wastewater Treatment"
-    ],
-    "policy_alert": "",
-    "source": "WaterNewsWire Full Text",
-    "link": "https://waternewswire.com/news/2026/healthcare-china-decent-holding-dxst-community-health-network-expansion",
-    "score": 23,
-    "keywords": [
-      "wastewater",
-      "industrial wastewater",
-      "water treatment"
-    ]
-  },
-  {
-    "date": "2026-03-12",
-    "title": "상하수도협회, 국내 최대 물산업 박람회 ‘워터코리아’ 개최 - 국토일보",
-    "ko_title": "상하수도협회, 물산업 박람회 ‘워터코리아’ 개최",
-    "brief": "상하수도협회가 국내 최대 물산업 박람회인 ‘워터코리아’를 개최했습니다. 이번 박람회는 물산업의 최신 기술과 동향을 소개하는 자리입니다.",
-    "summary": "상하수도협회는 국내 최대 물산업 박람회인 ‘워터코리아’를 개최했습니다. 이 박람회는 물산업의 최신 기술과 동향을 소개하고, 관련 기업과 전문가들이 모여 네트워킹을 할 수 있는 기회를 제공합니다. 수처리 산업의 발전과 혁신을 촉진하는 중요한 행사로, 다양한 기술과 솔루션이 전시됩니다. 특히, 물 관리와 관련된 최신 트렌드와 정책이 논의될 예정입니다.",
-    "why_important": "이번 박람회는 물산업의 최신 기술과 동향을 공유하는 중요한 플랫폼입니다. 수처리 산업의 발전과 관련된 정책 및 기술 혁신을 촉진할 것으로 기대됩니다.",
-    "category": "학회/전시회",
-    "countries": [],
-    "companies": [],
-    "technologies": [],
-    "policy_alert": "",
-    "specs": [],
-    "source": "Google News Korea 학회 전시회",
-    "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5kYk5OMUI5ZERJY2lVOFkzaFYwMHlENGZVVUM1eURCOGNtMWZtSFRtSWxYWnFlRzZDRk84UHlOTG1kMEdIeUxYNm9jVm5PSlNubG43RWwzUFRSbVhGTWNqanhYQlU?oc=5",
-    "score": 32,
-    "keywords": [
-      "상하수도",
-      "물산업",
-      "상하수도협회",
-      "워터코리아"
-    ],
-    "domestic": true,
-    "region": "domestic",
-    "source_type": "search_rss"
-  },
-  {
     "date": "2026-03-30",
     "title": "美 공공 하수처리장에 韓 기술 첫 진출…'이 회사'가 해냈다 - 한국경제",
     "ko_title": "美 공공 하수처리장에 韓 기술 첫 진출",
@@ -50624,6 +50449,206 @@
     ],
     "domestic": false,
     "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-09-02",
+    "title": "Hamworthy Launches Ultra Trident Wastewater Treatment at SMM 2026",
+    "ko_title": "Hamworthy Launches Ultra Trident Wastewater Treatment at SMM 2026",
+    "brief": "Marine water and waste specialist Hamworthy has unveiled its new Ultra Trident MBR, a membrane bioreactor that brings ...",
+    "summary": "Marine water and waste specialist Hamworthy has unveiled its new Ultra Trident MBR, a membrane bioreactor that brings ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane",
+      "wastewater",
+      "water treatment"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-09-02",
+    "specs": [],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a9921d2da4a49dbb71047bd0bd29667&url=https%3a%2f%2fwww.marinelink.com%2fnews%2fhamworthy-launches-ultra-trident-542657&c=18033050553532778125&mkt=en-us",
+    "score": 43,
+    "keywords": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane",
+      "wastewater",
+      "water treatment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-09-03",
+    "title": "경주시의회 경제위원회, 하수처리장·탑동정수장·신농업혁신타운 현장 점검 - 서라벌신문",
+    "ko_title": "경주시의회 경제위원회, 하수처리장·탑동정수장·신농업혁신타운 현장 점검 - 서라벌신문",
+    "brief": "경주시의회 경제위원회, 하수처리장·탑동정수장·신농업혁신타운 현장 점검 서라벌신문",
+    "summary": "경주시의회 경제위원회, 하수처리장·탑동정수장·신농업혁신타운 현장 점검 서라벌신문",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-09-03",
+    "specs": [],
+    "source": "Google News Korea 재이용수 PFAS",
+    "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9qb0Rfb1doNy1abE5PY0ZKYk5Fc0pFamc4TmFDS0dlY1JZYjh0TldzSlpFQTlxVThGX3NFbE9pYjNTT0diQ0cwNV9ZNmpwazRaR1R6Sk9rLUV6MTY5REdGUHlyaTVFRXF5NFpzVg?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-09-03",
+    "title": "28년 방치된 성남 구미동 하수처리장 시설 시민 이용은 얼마나? - 중도일보",
+    "ko_title": "28년 방치된 성남 구미동 하수처리장 시설 시민 이용은 얼마나? - 중도일보",
+    "brief": "28년 방치된 성남 구미동 하수처리장 시설 시민 이용은 얼마나? 중도일보",
+    "summary": "28년 방치된 성남 구미동 하수처리장 시설 시민 이용은 얼마나? 중도일보",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-09-03",
+    "specs": [],
+    "source": "Google News Korea 재이용수 PFAS",
+    "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE85ZmZxdG8yZFk0U3NEa001d2ViQXN5RTg0VFFMbXlkOGtaVWNYaVgtb2w5NzlRdEJUdDJLN0hCQlZDN3hFLWVCQVZFQmFFSHNPNmlyYmItM1RMaWQ2REV6bklyWk5mdWJBWGJxVg?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-09-03",
+    "title": "28년 방치된 하수처리장이 밤의 명소로…성남 '물빛정원' 미디어아트 공개 - 네이트",
+    "ko_title": "28년 방치된 하수처리장이 밤의 명소로…성남 '물빛정원' 미디어아트 공개 - 네이트",
+    "brief": "28년 방치된 하수처리장이 밤의 명소로…성남 '물빛정원' 미디어아트 공개 네이트",
+    "summary": "28년 방치된 하수처리장이 밤의 명소로…성남 '물빛정원' 미디어아트 공개 네이트",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-09-03",
+    "specs": [],
+    "source": "Google News Korea 재이용수 PFAS",
+    "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBpR3FyTXQzOU54Wm1kaXJjZjNZemVwNFhpOVR2UFJJOThpM1N3SThqOThTMlJaZTlicmFkRnpDVWpnY2VUeVY2YmU0TENiMWJmWHdz?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-09-03",
+    "title": "'28년간 방치' 성남 구미동 옛 하수처리장의 화려한 변신 - 네이트",
+    "ko_title": "'28년간 방치' 성남 구미동 옛 하수처리장의 화려한 변신 - 네이트",
+    "brief": "'28년간 방치' 성남 구미동 옛 하수처리장의 화려한 변신 네이트",
+    "summary": "'28년간 방치' 성남 구미동 옛 하수처리장의 화려한 변신 네이트",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-09-03",
+    "specs": [],
+    "source": "Google News Korea 재이용수 PFAS",
+    "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5LTTU3WjBFWWYzTWVSdUtaclBKbTdjeEJERGFGcFB4YnY3M3NHZW1NVE9GLURUY3k0UEwzWVk5Y2FwTzEzMGJWcTR5TGU4eWhLRlhV?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-09-02",
+    "title": "서울 하수처리장 29종 악취 측정…체감 요인까지 분석 - 뉴시스",
+    "ko_title": "서울 하수처리장 29종 악취 측정…체감 요인까지 분석 - 뉴시스",
+    "brief": "서울 하수처리장 29종 악취 측정…체감 요인까지 분석 뉴시스",
+    "summary": "서울 하수처리장 29종 악취 측정…체감 요인까지 분석 뉴시스",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-09-02",
+    "specs": [],
+    "source": "Google News Korea 재이용수 PFAS",
+    "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9fZ3VnMnFUZG1yN0Y3dU1TYW5vREFoSG8wbGZvazZ3cDNMVTFHdzRjZGFmblV1dnZfRVBReVVLNXU5R2hhVW9YSXpWRHVsODdkTFp4cklYTzQ1amMtMlh1aXlXcjlpcWQ2MGdHcU9UeFJ4ZUpmbk9uS9IBeEFVX3lxTE9fZ3VnMnFUZG1yN0Y3dU1TYW5vREFoSG8wbGZvazZ3cDNMVTFHdzRjZGFmblV1dnZfRVBReVVLNXU5R2hhVW9YSXpWRHVsODdkTFp4cklYTzQ1amMtMlh1aXlXcjlpcWQ2MGdHcU9UeFJ4ZUpmbk9uSw?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
     "source_type": "rss",
     "image": ""
   }
