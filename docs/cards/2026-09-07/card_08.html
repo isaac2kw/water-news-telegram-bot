@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  :root{--main-blue:#0075C1;--yellow:#DDA11D;--navy:#00205D;--tint:#E6F1FB;--card-bg:#F5F7FA;--line:#B5D4F4;--gray-light:#888780;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;}
+  .card{width:1080px;height:1080px;background:#fff;position:relative;overflow:hidden;}
+  .pad{padding:0 90px;}
+  .footer{position:absolute;left:0;right:0;bottom:46px;padding:0 90px;}
+  .footer .line{height:1px;background:var(--line);margin-bottom:22px;}
+  .footer .row{display:flex;align-items:center;justify-content:space-between;}
+  .logo{font-size:26px;font-weight:700;}
+  .logo .h{color:var(--main-blue);} .logo .m{color:var(--yellow);} .logo .inc{color:var(--navy);}
+  .footer .center{color:var(--main-blue);font-size:22px;font-weight:600;letter-spacing:2px;}
+  .footer .right{width:120px;}
+  .label{display:flex;align-items:center;gap:12px;padding-top:96px;color:var(--main-blue);font-size:24px;font-weight:700;letter-spacing:3px;}
+  .label .ldot{width:10px;height:10px;border-radius:50%;background:var(--main-blue);}
+  .label .lbadge{margin-left:6px;background:var(--tint);color:var(--main-blue);font-size:18px;letter-spacing:2px;padding:5px 14px;border-radius:20px;}
+  .ctitle{margin-top:34px;color:var(--navy);font-size:46px;font-weight:700;line-height:1.18;}
+  .ctitle .b{color:var(--main-blue);} .ctitle .y{color:var(--yellow);}
+  .cdivider{width:160px;height:4px;background:var(--main-blue);margin-top:30px;}
+  .info{margin-top:40px;}
+  .facts{position:absolute;left:90px;right:90px;bottom:150px;display:flex;gap:18px;}
+  .fact{flex:1;background:var(--card-bg);border-radius:16px;padding:26px 24px;}
+  .fact .k{color:var(--gray-light);font-size:18px;letter-spacing:1px;margin-bottom:10px;}
+  .fact .v{color:var(--navy);font-size:22px;font-weight:700;line-height:1.25;}
+  .fact .v .b{color:var(--main-blue);} .fact .v .y{color:var(--yellow);}
+</style>
+</head>
+<body>
+<div class="card" id="card_08">
+  <div class="pad">
+    <div class="label"><span class="ldot"></span>MARKET · MEMBRANE<span class="lbadge">GLOBAL</span></div>
+    <div class="ctitle"><span class="b">Microfiltration Asymmetric Polymer Membrane</span> Market Grows on <span class="y">Biopharma</span> & Reuse</div>
+    <div class="cdivider"></div>
+    <div class="info">
+      <svg width="900" height="320" viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg">
+        <text x="40" y="45" font-family="Helvetica" font-size="20" font-weight="700" fill="#888780">MARKET GROWTH TRAJECTORY (Illustrative)</text>
+        
+        <line x1="80" y1="270" x2="860" y2="270" stroke="#B5D4F4" stroke-width="2"/>
+        <line x1="80" y1="80" x2="80" y2="270" stroke="#B5D4F4" stroke-width="2"/>
+
+        <rect x="150" y="220" width="90" height="50" fill="#0075C1" opacity="0.7"/>
+        <text x="195" y="295" text-anchor="middle" font-family="Helvetica" font-size="18" font-weight="700" fill="#00205D">2025</text>
+        <text x="195" y="210" text-anchor="middle" font-family="Helvetica" font-size="14" fill="#0075C1">Base</text>
+
+        <rect x="330" y="160" width="90" height="110" fill="#0075C1"/>
+        <text x="375" y="295" text-anchor="middle" font-family="Helvetica" font-size="18" font-weight="700" fill="#00205D">2030</text>
+        <text x="375" y="150" text-anchor="middle" font-family="Helvetica" font-size="14" fill="#0075C1">Growth</text>
+
+        <rect x="510" y="90" width="90" height="180" fill="#DDA11D"/>
+        <text x="555" y="295" text-anchor="middle" font-family="Helvetica" font-size="18" font-weight="700" fill="#00205D">2035</text>
+        <text x="555" y="80" text-anchor="middle" font-family="Helvetica" font-size="14" font-weight="700" fill="#DDA11D">Forecast Peak</text>
+
+        <rect x="680" y="130" width="160" height="140" rx="10" fill="#E6F1FB"/>
+        <text x="760" y="160" text-anchor="middle" font-family="Helvetica" font-size="14" font-weight="700" fill="#0075C1">DRIVERS</text>
+        <text x="760" y="195" text-anchor="middle" font-family="Helvetica" font-size="16" font-weight="700" fill="#00205D">Biopharma</text>
+        <text x="760" y="220" text-anchor="middle" font-family="Helvetica" font-size="16" fill="#00205D">+</text>
+        <text x="760" y="245" text-anchor="middle" font-family="Helvetica" font-size="16" font-weight="700" fill="#00205D">Water Reuse</text>
+      </svg>
+    </div>
+  </div>
+  <div class="facts">
+    <div class="fact"><div class="k">CATEGORY</div><div class="v"><span class="b">MF Membrane</span></div></div>
+    <div class="fact"><div class="k">HORIZON</div><div class="v">To 2035</div></div>
+    <div class="fact"><div class="k">DRIVERS</div><div class="v"><span class="y">Biopharma</span> · Reuse</div></div>
+  </div>
+  <div class="footer">
+    <div class="line"></div>
+    <div class="row">
+      <div class="logo"><span class="h">Hifil</span><span class="m">M</span>&nbsp;<span class="inc">INC.</span></div>
+      <div class="center">Water Treatment</div>
+      <div class="right"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

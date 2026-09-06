@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  :root{--main-blue:#0075C1;--yellow:#DDA11D;--navy:#00205D;--tint:#E6F1FB;--card-bg:#F5F7FA;--line:#B5D4F4;--gray-light:#888780;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;}
+  .card{width:1080px;height:1080px;background:#fff;position:relative;overflow:hidden;}
+  .pad{padding:0 90px;}
+  .footer{position:absolute;left:0;right:0;bottom:46px;padding:0 90px;}
+  .footer .line{height:1px;background:var(--line);margin-bottom:22px;}
+  .footer .row{display:flex;align-items:center;justify-content:space-between;}
+  .logo{font-size:26px;font-weight:700;}
+  .logo .h{color:var(--main-blue);} .logo .m{color:var(--yellow);} .logo .inc{color:var(--navy);}
+  .footer .center{color:var(--main-blue);font-size:22px;font-weight:600;letter-spacing:2px;}
+  .footer .right{width:120px;}
+  .label{display:flex;align-items:center;gap:12px;padding-top:96px;color:var(--main-blue);font-size:24px;font-weight:700;letter-spacing:3px;}
+  .label .ldot{width:10px;height:10px;border-radius:50%;background:var(--main-blue);}
+  .label .lbadge{margin-left:6px;background:var(--tint);color:var(--main-blue);font-size:18px;letter-spacing:2px;padding:5px 14px;border-radius:20px;}
+  .ctitle{margin-top:34px;color:var(--navy);font-size:52px;font-weight:700;line-height:1.18;}
+  .ctitle .b{color:var(--main-blue);} .ctitle .y{color:var(--yellow);}
+  .cdivider{width:160px;height:4px;background:var(--main-blue);margin-top:30px;}
+  .info{margin-top:44px;}
+  .facts{position:absolute;left:90px;right:90px;bottom:150px;display:flex;gap:18px;}
+  .fact{flex:1;background:var(--card-bg);border-radius:16px;padding:26px 24px;}
+  .fact .k{color:var(--gray-light);font-size:18px;letter-spacing:1px;margin-bottom:10px;}
+  .fact .v{color:var(--navy);font-size:22px;font-weight:700;line-height:1.25;}
+  .fact .v .b{color:var(--main-blue);} .fact .v .y{color:var(--yellow);}
+</style>
+</head>
+<body>
+<div class="card" id="card_10">
+  <div class="pad">
+    <div class="label"><span class="ldot"></span>CASE STUDY · REUSE<span class="lbadge">USA</span></div>
+    <div class="ctitle"><span class="y">Dow Path2Zero</span> Case: <span class="b">Reuse</span> in Petrochemical Complex Expansion</div>
+    <div class="cdivider"></div>
+    <div class="info">
+      <svg width="900" height="320" viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg">
+        <text x="40" y="45" font-family="Helvetica" font-size="20" font-weight="700" fill="#888780">CASE HIGHLIGHTS</text>
+
+        <rect x="40" y="70" width="260" height="210" rx="14" fill="#F5F7FA" stroke="#B5D4F4" stroke-width="2"/>
+        <circle cx="170" cy="130" r="30" fill="#0075C1"/>
+        <text x="170" y="138" text-anchor="middle" font-family="Helvetica" font-size="24" font-weight="700" fill="#fff">01</text>
+        <text x="170" y="185" text-anchor="middle" font-family="Helvetica" font-size="20" font-weight="700" fill="#00205D">Operator</text>
+        <text x="170" y="215" text-anchor="middle" font-family="Helvetica" font-size="22" font-weight="700" fill="#DDA11D">Dow</text>
+        <text x="170" y="245" text-anchor="middle" font-family="Helvetica" font-size="14" fill="#888780">Global Chemical</text>
+
+        <rect x="320" y="70" width="260" height="210" rx="14" fill="#F5F7FA" stroke="#B5D4F4" stroke-width="2"/>
+        <circle cx="450" cy="130" r="30" fill="#0075C1"/>
+        <text x="450" y="138" text-anchor="middle" font-family="Helvetica" font-size="24" font-weight="700" fill="#fff">02</text>
+        <text x="450" y="185" text-anchor="middle" font-family="Helvetica" font-size="20" font-weight="700" fill="#00205D">Project</text>
+        <text x="450" y="215" text-anchor="middle" font-family="Helvetica" font-size="22" font-weight="700" fill="#DDA11D">Path2Zero</text>
+        <text x="450" y="245" text-anchor="middle" font-family="Helvetica" font-size="14" fill="#888780">Net-Zero Expansion</text>
+
+        <rect x="600" y="70" width="260" height="210" rx="14" fill="#E6F1FB" stroke="#0075C1" stroke-width="2"/>
+        <circle cx="730" cy="130" r="30" fill="#DDA11D"/>
+        <text x="730" y="138" text-anchor="middle" font-family="Helvetica" font-size="24" font-weight="700" fill="#fff">03</text>
+        <text x="730" y="185" text-anchor="middle" font-family="Helvetica" font-size="20" font-weight="700" fill="#00205D">Approach</text>
+        <text x="730" y="215" text-anchor="middle" font-family="Helvetica" font-size="22" font-weight="700" fill="#0075C1">Water Reuse</text>
+        <text x="730" y="245" text-anchor="middle" font-family="Helvetica" font-size="14" fill="#888780">Integrated Loop</text>
+      </svg>
+    </div>
+  </div>
+  <div class="facts">
+    <div class="fact"><div class="k">CATEGORY</div><div class="v"><span class="b">Industrial Reuse</span></div></div>
+    <div class="fact"><div class="k">SECTOR</div><div class="v">Petrochemical</div></div>
+    <div class="fact"><div class="k">FOCUS</div><div class="v"><span class="y">Path2Zero</span> Integration</div></div>
+  </div>
+  <div class="footer">
+    <div class="line"></div>
+    <div class="row">
+      <div class="logo"><span class="h">Hifil</span><span class="m">M</span>&nbsp;<span class="inc">INC.</span></div>
+      <div class="center">Water Treatment</div>
+      <div class="right"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
