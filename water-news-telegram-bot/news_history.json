@@ -1,37 +1,6 @@
 [
   {
     "date": "2026-05-28",
-    "title": "한화 시공 천안하수처리장, 공기연장 놓고 특혜 공방 - v.daum.net",
-    "ko_title": "한화 시공 천안하수처리장, 공기연장 놓고 특혜 공방",
-    "brief": "한화가 시공 중인 천안하수처리장에서 공기연장 문제로 특혜 논란이 일고 있다. 이로 인해 수처리 산업의 투명성과 공정성이 도마 위에 올랐다.",
-    "summary": "천안하수처리장에서 한화의 공기연장 요청이 특혜 논란을 일으키고 있다. 이 사건은 하수처리 산업의 투명성과 공정성에 대한 우려를 불러일으키며, 관련 규제와 정책에 영향을 미칠 수 있다. 하수처리장은 지역 사회의 환경과 건강에 중요한 역할을 하므로, 이러한 논란은 수처리 산업 전반에 걸쳐 주목받고 있다. 향후 이 사건의 전개가 수처리 프로젝트의 신뢰성에 미칠 영향이 주목된다.",
-    "why_important": "이 사건은 하수처리 프로젝트의 투명성과 공정성을 강조하며, 향후 규제와 정책에 영향을 미칠 수 있습니다. 수처리 산업의 신뢰성 확보가 시장의 지속 가능성에 중요한 요소로 작용할 것입니다.",
-    "category": "프로젝트/수주",
-    "countries": [
-      "대한민국"
-    ],
-    "companies": [
-      "Hanwha"
-    ],
-    "technologies": [
-      "하수처리"
-    ],
-    "policy_alert": "",
-    "specs": [],
-    "source": "Google News Korea 상하수도",
-    "link": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE91dUxnYmNnWmVHVnF3MVJjZUNqRzNEQlhDOWdQUThkanNNWGxDTUhXaVItT3g4OFBVTWh4QW9sUnRxQk5NQWc?oc=5",
-    "score": 26,
-    "keywords": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "domestic": true,
-    "region": "domestic",
-    "source_type": "search_rss"
-  },
-  {
-    "date": "2026-05-28",
     "title": "[전주시] 하수처리장 운영·관리 강화…434억 원 투입 - 투데이안",
     "ko_title": "전주시, 하수처리장 운영·관리 강화에 434억 원 투입",
     "brief": "전주시는 하수처리장 운영 및 관리 강화를 위해 434억 원을 투입한다고 발표했다. 이는 지역 수처리 시스템의 효율성을 높이기 위한 조치이다.",
@@ -50886,6 +50855,39 @@
     "domestic": false,
     "region": "global",
     "source_type": "search_rss",
+    "image": ""
+  },
+  {
+    "date": "2026-09-04",
+    "title": "Case study: Dow integrates water reuse into Path2Zero processing plant expansion",
+    "ko_title": "Case study: Dow integrates water reuse into Path2Zero processing plant expansion",
+    "brief": "Xylem’s water-as-a-service treatment system will process river water and recover cooling-tower blowdown wastewater for ethylene production.",
+    "summary": "Xylem’s water-as-a-service treatment system will process river water and recover cooling-tower blowdown wastewater for ethylene production.",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "프로젝트/수주",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "wastewater",
+      "water reuse",
+      "expansion",
+      "xylem"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-09-04",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a9f47448bcf442b87885bc68b7cb20b&url=https%3a%2f%2fwww.plantservices.com%2fenergy%2fwater-management%2farticle%2f55403213%2fdow-integrates-water-reuse-into-path2zero-processing-plant-expansion&c=5087183445996730856&mkt=en-us",
+    "score": 30,
+    "keywords": [
+      "wastewater",
+      "water reuse",
+      "expansion",
+      "xylem"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
     "image": ""
   }
 ]
