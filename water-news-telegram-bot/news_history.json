@@ -1,146 +1,5 @@
 [
   {
-    "date": "2026-05-11",
-    "title": "안성시, 하수처리장 집중안전점검 시행 - 경인매일",
-    "ko_title": "안성시, 하수처리장 집중안전점검 실시",
-    "brief": "안성시가 하수처리장에 대한 집중안전점검을 시행합니다. 시설 안전 확보와 사고 예방을 위한 조치입니다.",
-    "summary": "안성시는 하수처리장에 대해 집중안전점검을 실시한다고 밝혔습니다. 이번 점검은 시설의 안전성 확보와 사고 예방을 목적으로 진행됩니다. 하수처리장은 도시의 수처리 인프라에서 핵심적인 역할을 하며, 안전사고 발생 시 환경오염 및 시민 안전에 큰 영향을 미칠 수 있습니다. 따라서 정기적이고 체계적인 점검이 중요합니다. 이번 조치는 수처리 산업에서 안전관리의 중요성을 다시 한 번 강조하는 사례입니다.",
-    "why_important": "하수처리장 안전점검은 시설 운영의 신뢰성과 환경 보호에 직결됩니다. 규제 및 정책 측면에서 지방자치단체의 관리 강화 움직임으로 해석할 수 있습니다.",
-    "category": "프로젝트/수주",
-    "countries": [
-      "대한민국"
-    ],
-    "companies": [],
-    "technologies": [
-      "하수처리",
-      "수처리"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-05-11",
-    "specs": [],
-    "source": "Google News Korea 상하수도",
-    "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5IVUlrbWs2QmtGZjIzcEZsSjFfRU16LWYzakNnSDZuNVFITUFJOW1wUWtZdWFISkducnRadENIUU1iazVZODljcHV5ekRJblNLZ0Q1THNTaDlWTV9UeFhzMkZjZzNSVjVx?oc=5",
-    "score": 26,
-    "keywords": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "domestic": true,
-    "region": "domestic",
-    "source_type": "search_rss"
-  },
-  {
-    "date": "2026-06-02",
-    "title": "Toray introduces ultrafiltration membrane designed to reduce biofouling in wastewater reuse",
-    "ko_title": "Toray, 바이오오염 저감 초여과막 출시",
-    "brief": "Toray가 폐수 재이용용 바이오오염 저감 초여과막을 선보였습니다. 0.005마이크로미터 기공 크기로 역삼투막 오염도 줄입니다.",
-    "summary": "Toray는 폐수 재이용 공정에서 바이오오염을 줄이기 위해 F-HFUG Series 초여과막 모듈을 개발했습니다. 이 제품은 0.005마이크로미터의 미세한 기공 크기를 갖추고 있어 생체고분자의 통과를 효과적으로 차단합니다. 이를 통해 후단의 역삼투(RO) 공정에서 발생하는 막 오염을 감소시킬 수 있습니다. 초여과막의 성능 개선은 폐수 재이용 시스템의 효율성과 유지관리 비용 절감에 중요한 역할을 합니다. 이번 신제품은 Toray의 막여과 기술력과 폐수 재이용 시장에서의 경쟁력을 보여줍니다.",
-    "why_important": "막여과 및 폐수 재이용 시장에서 바이오오염 저감은 운영 효율성과 비용 절감에 매우 중요합니다. Toray의 신제품은 기술적 진보를 통해 시장 내 경쟁력을 강화할 수 있습니다.",
-    "category": "분리막/막여과",
-    "countries": [],
-    "companies": [
-      "Toray"
-    ],
-    "technologies": [
-      "Ultrafiltration",
-      "Biofouling",
-      "Water Reuse",
-      "Membrane Module"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-06-02",
-    "specs": [
-      "0.005-micrometer pore size"
-    ],
-    "source": "Bing News Global Membrane Reuse",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a22861e010c45afaf51b82e1626d37b&url=https%3a%2f%2fwww.dairyfoods.com%2farticles%2f99167-toray-introduces-ultrafiltration-membrane-designed-to-reduce-biofouling-in-wastewater-reuse&c=9496410966415004977&mkt=en-us",
-    "score": 57,
-    "keywords": [
-      "membrane",
-      "ultrafiltration",
-      "wastewater",
-      "water reuse",
-      "toray",
-      "biofouling",
-      "membrane module"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": "https://www.dairyfoods.com/ext/resources/2026/06/02/F-HFUG-Series-ultrafiltration-membrane-module.jpg?height=635&t=1780403406&width=1200"
-  },
-  {
-    "date": "2026-02-12",
-    "title": "DuPont Named Finalist in 2026 Edison Awards for FilmTec™ Fortilife™ XC160UHP Membrane for Wastewater Treatment and Reuse",
-    "ko_title": "DuPont, Edison Awards 결선 진출: FilmTec Fortilife XC160UHP",
-    "brief": "DuPont의 FilmTec Fortilife XC160UHP 막이 2026 Edison Awards 결선 진출작으로 선정되었습니다. 이 제품은 산업 폐수 처리 및 재이용 분야에 적용됩니다.",
-    "summary": "DuPont은 산업 폐수 처리 및 재이용을 위한 FilmTec Fortilife XC160UHP 역삼투막(RO)이 2026년 Edison Awards 결선 진출작으로 선정되었다고 발표했습니다. 이 상은 혁신적인 기술과 제품을 평가하는 국제적 시상식입니다. 해당 막은 산업 현장에서 폐수의 효율적 처리와 재이용을 지원하는 고성능 제품으로, 수처리 산업에서의 기술 발전을 보여줍니다. DuPont의 FilmTec 브랜드는 글로벌 수처리 시장에서 널리 사용되고 있습니다. 이번 수상 후보 선정은 산업용 수처리 막 기술의 중요성과 시장 내 DuPont의 입지를 강조합니다.",
-    "why_important": "산업 폐수 재이용 및 고성능 분리막 기술의 혁신이 국제적으로 인정받았다는 점에서 시장과 기술 관점에서 중요합니다. DuPont의 기술력이 글로벌 수처리 산업 내 경쟁력을 강화할 것으로 기대됩니다.",
-    "category": "분리막/RO",
-    "countries": [],
-    "companies": [
-      "DuPont"
-    ],
-    "technologies": [
-      "Reverse Osmosis",
-      "Membrane",
-      "Industrial Wastewater",
-      "Water Reuse"
-    ],
-    "policy_alert": "",
-    "date_context": "2026-02-12",
-    "specs": [],
-    "source": "Bing News Global Membrane Reuse",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a22861e010c45afaf51b82e1626d37b&url=https%3a%2f%2fwww.morningstar.com%2fnews%2fpr-newswire%2f20260212ph86055%2fdupont-named-finalist-in-2026-edison-awards-for-filmtec-fortilife-xc160uhp-membrane-for-wastewater-treatment-and-reuse&c=16560179987338129635&mkt=en-us",
-    "score": 50,
-    "keywords": [
-      "membrane",
-      "wastewater",
-      "industrial wastewater",
-      "water treatment",
-      "award",
-      "dupont",
-      "filmtec"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-06-02",
-    "title": "Membrane Technology Forum 2026 expands focus on beverage innovation and wastewater treatment",
-    "ko_title": "Membrane Technology Forum 2026, 음료 혁신·폐수처리 확대",
-    "brief": "Membrane Technology Forum 2026은 음료 시장 혁신과 폐수처리 분야에 초점을 확대합니다. 분리막 기술의 새로운 시장 기회를 모색하는 발표가 늘어날 예정입니다.",
-    "summary": "2026년 개최 예정인 Membrane Technology Forum은 기존의 분리막 기술 논의에서 한 걸음 더 나아가, 음료 산업의 혁신과 폐수처리 분야에 대한 집중을 강화합니다. 이번 포럼에서는 음료 시장에서의 분리막 기술 적용 기회와 함께, 폐수처리 분야의 최신 동향과 전략적 접근이 주요 의제로 다뤄질 예정입니다. 다양한 연사가 참여해 음료 산업 내 분리막 활용 가능성과 폐수처리 기술의 발전 방향을 제시할 것으로 보입니다. 이러한 변화는 분리막 기술의 응용 범위를 넓히고, 수처리 산업 내에서의 시장 확대 가능성을 시사합니다. 수처리 산업 관계자들에게는 새로운 비즈니스 기회와 기술 트렌드를 파악할 수 있는 중요한 행사입니다.",
-    "why_important": "분리막 기술의 적용 분야가 음료 산업과 폐수처리로 확대됨에 따라, 시장 다변화와 신기술 도입이 기대됩니다. 이는 수처리 산업의 성장과 혁신에 중요한 영향을 미칠 수 있습니다.",
-    "category": "학회/전시회",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "Membrane",
-      "Wastewater",
-      "Water Treatment",
-      "Beverage Innovation"
-    ],
-    "policy_alert": "",
-    "date_context": "2026년 개최 예정",
-    "specs": [],
-    "source": "Bing News Global Membrane Reuse",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a22861e010c45afaf51b82e1626d37b&url=https%3a%2f%2fwww.dairyfoods.com%2farticles%2f99166-membrane-technology-forum-2026-expands-focus-on-beverage-innovation-and-wastewater-treatment&c=1461589195714993340&mkt=en-us",
-    "score": 23,
-    "keywords": [
-      "membrane",
-      "wastewater",
-      "water treatment"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": "https://www.dairyfoods.com/ext/resources/2025/06/11/MTF-expo-hall.jpg?height=635&t=1780402878&width=1200"
-  },
-  {
     "date": "2026-02-18",
     "title": "MemCor™ MBR systems selected for three major wastewater treatment plant expansions in England",
     "ko_title": "MemCor MBR, 영국 3개 하수처리장 확장에 선정",
@@ -51034,6 +50893,138 @@
     "domestic": true,
     "region": "domestic",
     "source_type": "search_rss",
+    "image": ""
+  },
+  {
+    "date": "2026-09-02",
+    "title": "Hamworthy Launches Ultra Trident Membrane Bioreactor at SMM 2026",
+    "ko_title": "Hamworthy Launches Ultra Trident Membrane Bioreactor at SMM 2026",
+    "brief": "Hamworthy has introduced the Ultra Trident MBR, a compact membrane bioreactor offering biological and ultrafiltration treatment for vessel types ranging from cruise ships to offsho",
+    "summary": "Hamworthy has introduced the Ultra Trident MBR, a compact membrane bioreactor offering biological and ultrafiltration treatment for vessel types ranging from cruise ships to offshore support vessels.",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane",
+      "ultrafiltration"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-09-02",
+    "specs": [],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aa489a006bb4b0685e73dff7c5db323&url=https%3a%2f%2foceannews.com%2fnews%2fscience-technology%2fhamworthy-launches-ultra-trident-membrane-bioreactor-at-smm-2026%2f&c=15651945408866912146&mkt=en-us",
+    "score": 36,
+    "keywords": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane",
+      "ultrafiltration"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-09-10",
+    "title": "Water stewardship in the age of AI: Maximizing water reuse in data centers",
+    "ko_title": "Water stewardship in the age of AI: Maximizing water reuse in data centers",
+    "brief": "How data centers are adopting advanced water treatment solutions such as ultrafiltration membranes to enhance water reuse, reduce environmental impact and meet regulatory ...",
+    "summary": "How data centers are adopting advanced water treatment solutions such as ultrafiltration membranes to enhance water reuse, reduce environmental impact and meet regulatory ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "membrane",
+      "ultrafiltration",
+      "water reuse",
+      "water treatment"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-09-10",
+    "specs": [],
+    "source": "Bing News Global UF MF",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aa489afc7f040e89b26308b626be059&url=https%3a%2f%2fwww.watertechonline.com%2fwater-reuse%2farticle%2f55395695%2fwater-stewardship-in-the-age-of-ai-maximizing-water-reuse-in-data-centers&c=3325256638564411801&mkt=en-us",
+    "score": 32,
+    "keywords": [
+      "membrane",
+      "ultrafiltration",
+      "water reuse",
+      "water treatment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "search_rss",
+    "image": ""
+  },
+  {
+    "date": "2026-09-11",
+    "title": "안양시의회 도시교통위원회, 석수광역공공하수처리장 방문 - 하나뉴스",
+    "ko_title": "안양시의회 도시교통위원회, 석수광역공공하수처리장 방문 - 하나뉴스",
+    "brief": "안양시의회 도시교통위원회, 석수광역공공하수처리장 방문 하나뉴스",
+    "summary": "안양시의회 도시교통위원회, 석수광역공공하수처리장 방문 하나뉴스",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-09-11",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBvQUhCTUtxTU15WWcwcDBHN2FpTi04Z0RaQS1NNFRBN3VpenM5Y0d3d2N6RUd6SlF2MXVET1BOeUVGUUUwWTMyWmt2OGJ5eTEyVnVjMGlHeF82c2tiTWZ6QXBIYUh3b2pzZjFCOThR?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-09-11",
+    "title": "안양시의회 도시교통위원회, 석수광역공공하수처리장 현장 점검 - webeconomy.co.kr",
+    "ko_title": "안양시의회 도시교통위원회, 석수광역공공하수처리장 현장 점검 - webeconomy.co.kr",
+    "brief": "안양시의회 도시교통위원회, 석수광역공공하수처리장 현장 점검 webeconomy.co.kr",
+    "summary": "안양시의회 도시교통위원회, 석수광역공공하수처리장 현장 점검 webeconomy.co.kr",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-09-11",
+    "specs": [],
+    "source": "Google News Korea 재이용수 PFAS",
+    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBlYkJ4YzM2ZmNGU1U0Vkt2SGNkZW9Kc01nRnJxRzkzRDVSLUVrY3NKbUZMWUZud3NwWjlpR2RmRm1XNlhVVU0zRkRhNHFESlJkQnd2T1FxZUhWUmF1Rk96WFpwcEtpbzE4LWRxVndBd1NZZw?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
     "image": ""
   }
 ]
