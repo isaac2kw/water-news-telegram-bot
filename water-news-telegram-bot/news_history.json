@@ -1,79 +1,5 @@
 [
   {
-    "date": "2026-06-09",
-    "title": "[제주도] 대정하수처리장 증설사업 준공 - 워터저널",
-    "ko_title": "[제주도] 대정하수처리장 증설사업 준공 - 워터저널",
-    "brief": "[제주도] 대정하수처리장 증설사업 준공 워터저널",
-    "summary": "[제주도] 대정하수처리장 증설사업 준공 워터저널",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [
-      "대한민국"
-    ],
-    "companies": [],
-    "technologies": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-06-09",
-    "specs": [],
-    "source": "Google Site WaterJournal",
-    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBrZnl0SmtsckRCNjhsaUVYTjZCQWg4QzU3SHRLRmFwTzNhSGFkNFJiWkJQaS1PZGxaeWxOQjhobE1zVmFyTFVWQkdWVHhIOU5tYUNxTjVWNGxkSVhkcDdLVldVazNRd3NoMzhFRkZ5ck40d9IBdkFVX3lxTE5YSXV1WTJDZV90QWNqNkZOQmEzbF9wWTlIQk45bkJHam5ucHVLcDd5ejBuU2JaU3RfdGw4b21MVWZpU3JSZndHWXB2TVJRNWJoZnlvcktKaUE5TWwxNFNFZWhZRWg4S0stN1BDMnRvOFpOMFNDZEE?oc=5",
-    "score": 26,
-    "keywords": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "domestic": true,
-    "region": "domestic",
-    "source_type": "search_rss",
-    "image": ""
-  },
-  {
-    "date": "2026-06-12",
-    "title": "DuPont MemCor MBR selected for Riverstone wastewater treatment expansion in Sydney",
-    "ko_title": "DuPont MemCor MBR selected for Riverstone wastewater treatment expansion in Sydney",
-    "brief": "DuPont Water Solutions has been selected to supply its MemCor membrane bioreactor (MBR) technology for the next phase of upgrades at the Riverstone Water ...",
-    "summary": "DuPont Water Solutions has been selected to supply its MemCor membrane bioreactor (MBR) technology for the next phase of upgrades at the Riverstone Water ...",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "분리막/MBR",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "mbr",
-      "membrane bioreactor",
-      "membrane",
-      "wastewater",
-      "water treatment",
-      "expansion",
-      "upgrade",
-      "dupont"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-06-12",
-    "specs": [],
-    "source": "Bing News Global MBR",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a3a80641c3340bb87d0623516bc46bb&url=https%3a%2f%2fwww.filtsep.com%2fcontent%2fnews%2fdupont-memcor-mbr-selected-for-riverstone-wastewater-treatment-expansion-in-sydney&c=6589888048297182099&mkt=en-us",
-    "score": 60,
-    "keywords": [
-      "mbr",
-      "membrane bioreactor",
-      "membrane",
-      "wastewater",
-      "water treatment",
-      "expansion",
-      "upgrade",
-      "dupont"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
     "date": "2026-06-16",
     "title": "Dupont MBR System Chosen for Riverstone Water Resource Recovery Facility",
     "ko_title": "Dupont MBR System Chosen for Riverstone Water Resource Recovery Facility",
@@ -50110,6 +50036,78 @@
     ],
     "domestic": true,
     "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-10-01",
+    "title": "수돗물 속 ‘영구 화학물질’ PFAS…원인은 상류 하수처리장 방류수 - 강찬수의 에코파일",
+    "ko_title": "수돗물 속 ‘영구 화학물질’ PFAS…원인은 상류 하수처리장 방류수 - 강찬수의 에코파일",
+    "brief": "수돗물 속 ‘영구 화학물질’ PFAS…원인은 상류 하수처리장 방류수 강찬수의 에코파일",
+    "summary": "수돗물 속 ‘영구 화학물질’ PFAS…원인은 상류 하수처리장 방류수 강찬수의 에코파일",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "PFAS/오염물",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "pfas",
+      "하수처리",
+      "수처리",
+      "방류수",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-10-01",
+    "specs": [],
+    "source": "Google News Korea 재이용수 PFAS",
+    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5seS1wNEJZdEdfc0ktNkZBdzRrMFBaT1h2aUhBNmFPMkh2TVJMOTNyVENVOEpfTU45MWZSRm5ncURtT1dqVTJ0NHRyb0VPNzk0UUJWQ0JsTXdSNzA?oc=5",
+    "score": 42,
+    "keywords": [
+      "pfas",
+      "하수처리",
+      "수처리",
+      "방류수",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-08-11",
+    "title": "Australia's Largest Inland Wastewater Treatment Facility Selects MemCor™ MBR System for Expansion",
+    "ko_title": "Australia's Largest Inland Wastewater Treatment Facility Selects MemCor™ MBR System for Expansion",
+    "brief": "The Lower Molonglo Water Quality Control Center will become the largest MBR plant in Australia with the addition of a new DuPont™ MemCor™ MBR system WILMINGTON, Del., Aug. 11, 2026",
+    "summary": "The Lower Molonglo Water Quality Control Center will become the largest MBR plant in Australia with the addition of a new DuPont™ MemCor™ MBR system WILMINGTON, Del., Aug. 11, 2026 /PRNewswire/ -- ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "mbr",
+      "wastewater",
+      "water treatment",
+      "expansion",
+      "dupont"
+    ],
+    "policy_alert": "",
+    "date_context": "Aug. 11, 2026",
+    "specs": [],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6abe2962b26840e09d16b358329eaecc&url=https%3a%2f%2fwww.prnewswire.com%2fnews-releases%2faustralias-largest-inland-wastewater-treatment-facility-selects-memcor-mbr-system-for-expansion-302846252.html&c=12856373631053607080&mkt=en-us",
+    "score": 37,
+    "keywords": [
+      "mbr",
+      "wastewater",
+      "water treatment",
+      "expansion",
+      "dupont"
+    ],
+    "domestic": false,
+    "region": "global",
     "source_type": "rss",
     "image": ""
   }
