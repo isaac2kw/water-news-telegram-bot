@@ -1,102 +1,5 @@
 [
   {
-    "date": "2026-06-16",
-    "title": "Dupont MBR System Chosen for Riverstone Water Resource Recovery Facility",
-    "ko_title": "Dupont MBR System Chosen for Riverstone Water Resource Recovery Facility",
-    "brief": "Dupont’s Memcor membrane bioreactor system has been chosen for the Riverstone Water Resource Recovery Facility in Sydney, Australia. The Memcor MBR system will consist of 2,592 Mem",
-    "summary": "Dupont’s Memcor membrane bioreactor system has been chosen for the Riverstone Water Resource Recovery Facility in Sydney, Australia. The Memcor MBR system will consist of 2,592 Mempulse B50 MBR ...",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "분리막/MBR",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "mbr",
-      "membrane bioreactor",
-      "membrane",
-      "dupont"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-06-16",
-    "specs": [],
-    "source": "Bing News Global MBR",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a3ee035e28e403eb0b4f1c2cac7cb2a&url=https%3a%2f%2fwww.process-worldwide.com%2fdupont-mbr-system-chosen-for-riverstone-water-resource-recovery-facility-a-d265991f5bfc4ecbaba0f1cd6452e721%2f&c=9557833955966831224&mkt=en-us",
-    "score": 35,
-    "keywords": [
-      "mbr",
-      "membrane bioreactor",
-      "membrane",
-      "dupont"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "search_rss",
-    "image": ""
-  },
-  {
-    "date": "2026-06-17",
-    "title": "마곡동 하수처리장이 ‘공원’으로 변신 - 워터저널",
-    "ko_title": "마곡동 하수처리장이 ‘공원’으로 변신 - 워터저널",
-    "brief": "마곡동 하수처리장이 ‘공원’으로 변신 워터저널",
-    "summary": "마곡동 하수처리장이 ‘공원’으로 변신 워터저널",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [
-      "대한민국"
-    ],
-    "companies": [],
-    "technologies": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-06-17",
-    "specs": [],
-    "source": "Google News Korea 재이용수 PFAS",
-    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1sQlp2d0dDR3RXb3VEZk0zVkUxTjlqak9uZ3dYNmxIdVMtT1F2SDNlNG5wM1RBdHcwTEV4RlBBb1Voa2ZUOHFYSnhPNl9oTVhjRlF5Qzc4eWdwZUNvUUdtVzFteEp3UjRxRG5OVS04ZlDSAXRBVV95cUxPNWVBNUFueTZLM1BTM3FUT2NTYk5tV0JtNE5oUWM5TldrXy1rZjNTZzdYRTFzM0k5QzkzY0dEeFFFSlh0YlZhNW5VS2Fibmh4THVUbGxFX0JEVG9zQklhMjBWUDk4TzdCd0pSVWdWbXA3dURzcQ?oc=5",
-    "score": 26,
-    "keywords": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "domestic": true,
-    "region": "domestic",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-06-26",
-    "title": "안성시, 하수처리시설 증설·신설 추진안성시, 하수처리시설 증설·신설 추진 - 자치안성신문",
-    "ko_title": "안성시, 하수처리시설 증설·신설 추진안성시, 하수처리시설 증설·신설 추진 - 자치안성신문",
-    "brief": "안성시, 하수처리시설 증설·신설 추진안성시, 하수처리시설 증설·신설 추진 자치안성신문",
-    "summary": "안성시, 하수처리시설 증설·신설 추진안성시, 하수처리시설 증설·신설 추진 자치안성신문",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [
-      "대한민국"
-    ],
-    "companies": [],
-    "technologies": [
-      "하수처리",
-      "수처리"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-06-26",
-    "specs": [],
-    "source": "Google News Korea 재이용수 PFAS",
-    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE0tQndaQndfX2N1cVl0c2NkMkhWWVV5Q0ZaVW1wX1d5bHhjUkd3LVFRRGhVSTdfWnhOdWFqa2tqZlRkVHhCME9uOWhnaDR6aWc3OVZwM2dDQUhCR3BOTS1nX1lmNm50RTBIMEtJTDBHTl9VeUtXdXVXLTZ4d2c?oc=5",
-    "score": 18,
-    "keywords": [
-      "하수처리",
-      "수처리"
-    ],
-    "domestic": true,
-    "region": "domestic",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
     "date": "2026-06-15",
     "title": "DuPont membrane bioreactor selected for major wastewater project in Sydney",
     "ko_title": "DuPont membrane bioreactor selected for major wastewater project in Sydney",
@@ -50010,6 +49913,107 @@
     ],
     "domestic": false,
     "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-10-07",
+    "title": "Optimizing Membrane Biofouling Control in Potable Water Reuse Treatment Trains - fundsforNGOs - Grants and Resources for Sustainability",
+    "ko_title": "Optimizing Membrane Biofouling Control in Potable Water Reuse Treatment Trains - fundsforNGOs - Grants and Resources for Sustainability",
+    "brief": "Optimizing Membrane Biofouling Control in Potable Water Reuse Treatment Trains fundsforNGOs - Grants and Resources for Sustainability",
+    "summary": "Optimizing Membrane Biofouling Control in Potable Water Reuse Treatment Trains fundsforNGOs - Grants and Resources for Sustainability",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "membrane",
+      "water reuse",
+      "biofouling",
+      "fouling control"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-10-07",
+    "specs": [],
+    "source": "Google News Global Water Reuse",
+    "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxObEozWHdSallfV29FVVZOaWJGbldoRFVnZUlJR0p2SldjYVhqZ1MzcjJCbnFCclYtZXdtSDBjQnhqSnRVZG1wbzNZUEpIRW4wc0Q5Y2RpNGMtNTJyQUZtR0N5TXpYMThmcEpZQWU0SWVFVjNaVV95UGdxTko5ZVNlYTNUY2dnQmVOc2xGVVlMV2E0YmxwcmtJaFBMVTdpajh0UXNmN2EyWTlaWVo5NVRONDFWek7SAboBQVVfeXFMTTRFb09XTlRERnZ3emF4bkpHajhIZVBQd1RfMkxUOE0wckl0RWlFd09MVTZPdU9Vc1dJTFEwWUtPUS1zSVpYMl9zYlNFYmdLanF1V01iWEIzbk9LTEdGeXppdFkySVJDSmotNV8zVEdTVU9PU2FDbFR6aG1rLTFLMDlMNk0waEQ0aGtBUV9XMEhJai1Ja0FKcW5iRzVsT2xGd3JVTW9pMW9Wd0dTcWt1N1BXN0x6Wm1GR0Vn?oc=5",
+    "score": 33,
+    "keywords": [
+      "membrane",
+      "water reuse",
+      "biofouling",
+      "fouling control"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "search_rss",
+    "image": ""
+  },
+  {
+    "date": "2026-09-28",
+    "title": "NX Filtration N : demonstrates proven membrane technology for advanced water reuse in New Delhi",
+    "ko_title": "NX Filtration N : demonstrates proven membrane technology for advanced water reuse in New Delhi",
+    "brief": "The Netherlands, 28 September 2026 - During India International Water Week (IIWW) 2026, NX Filtration presented its proven Hollow Fiber Nanofiltration (HFNF) technology at the Okhl",
+    "summary": "The Netherlands, 28 September 2026 - During India International Water Week (IIWW) 2026, NX Filtration presented its proven Hollow Fiber Nanofiltration (HFNF) technology at the Okhla wastewater ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "membrane",
+      "hollow fiber",
+      "wastewater",
+      "water reuse"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-09-28",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ac61154f8084e65b0eab030d1a7d7cb&url=https%3a%2f%2fwww.marketscreener.com%2fnews%2fnx-filtration-n-demonstrates-proven-membrane-technology-for-advanced-water-reuse-in-new-delhi-ce785adcdf89f225&c=7324323096318801119&mkt=en-us",
+    "score": 33,
+    "keywords": [
+      "membrane",
+      "hollow fiber",
+      "wastewater",
+      "water reuse"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-10-07",
+    "title": "구미 원평하수처리장 배드민턴장, 8억원 들여 사계절 이용 - www.kyongbuk.co.kr",
+    "ko_title": "구미 원평하수처리장 배드민턴장, 8억원 들여 사계절 이용 - www.kyongbuk.co.kr",
+    "brief": "구미 원평하수처리장 배드민턴장, 8억원 들여 사계절 이용 www.kyongbuk.co.kr",
+    "summary": "구미 원평하수처리장 배드민턴장, 8억원 들여 사계절 이용 www.kyongbuk.co.kr",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-10-07",
+    "specs": [
+      "8억원"
+    ],
+    "source": "Google News Korea 재이용수 PFAS",
+    "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE03Z25yN0swSFh4R2ZJbTJZdHZDeHU1T25Sa001TGxNNFpyYkRreU85LUhkLTNhNmFpdE82YmpNUjBWQXN2c1EwLWQ0NW9iOU5tZ1lVR3puNWdsRFN2VzlnUVFLZTY0ekFZcjVZcElHTQ?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
     "source_type": "rss",
     "image": ""
   }
