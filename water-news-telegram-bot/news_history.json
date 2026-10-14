@@ -22,45 +22,6 @@
     "date_context": "Feb. 12, 2026",
     "specs": [],
     "source": "Bing News Global Membrane Reuse",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a491f0e2d764d85a9d9ab28d8a7e8da&url=https%3a%2f%2fwww.morningstar.com%2fnews%2fpr-newswire%2f20260212ph86055%2fdupont-named-finalist-in-2026-edison-awards-for-filmtec-fortilife-xc160uhp-membrane-for-wastewater-treatment-and-reuse&c=16560179987338129635&mkt=en-us",
-    "score": 50,
-    "keywords": [
-      "membrane",
-      "wastewater",
-      "industrial wastewater",
-      "water treatment",
-      "award",
-      "dupont",
-      "filmtec"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-02-12",
-    "title": "DuPont Named Finalist in 2026 Edison Awards for FilmTec™ Fortilife™ XC160UHP Membrane for Wastewater Treatment and Reuse",
-    "ko_title": "DuPont Named Finalist in 2026 Edison Awards for FilmTec™ Fortilife™ XC160UHP Membrane for Wastewater Treatment and Reuse",
-    "brief": "WILMINGTON, Del., Feb. 12, 2026 /PRNewswire/ -- DuPont (NYSE: DD) is proud to announce that its FilmTec™ Fortilife™ XC160UHP reverse osmosis elements for industrial wastewater trea",
-    "summary": "WILMINGTON, Del., Feb. 12, 2026 /PRNewswire/ -- DuPont (NYSE: DD) is proud to announce that its FilmTec™ Fortilife™ XC160UHP reverse osmosis elements for industrial wastewater treatment and reuse, has ...",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "분리막/MBR",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "membrane",
-      "wastewater",
-      "industrial wastewater",
-      "water treatment",
-      "award",
-      "dupont",
-      "filmtec"
-    ],
-    "policy_alert": "",
-    "date_context": "Feb. 12, 2026",
-    "specs": [],
-    "source": "Bing News Global Membrane Reuse",
     "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a49831007c942eba57cb52d7680c8a1&url=https%3a%2f%2fwww.morningstar.com%2fnews%2fpr-newswire%2f20260212ph86055%2fdupont-named-finalist-in-2026-edison-awards-for-filmtec-fortilife-xc160uhp-membrane-for-wastewater-treatment-and-reuse&c=16560179987338129635&mkt=en-us",
     "score": 50,
     "keywords": [
@@ -50119,6 +50080,37 @@
     ],
     "domestic": false,
     "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-10-13",
+    "title": "충북 공공하수처리대행 업체, 단양군에 참여기회 보장 ‘촉구’ - 충청일보",
+    "ko_title": "충북 공공하수처리대행 업체, 단양군에 참여기회 보장 ‘촉구’ - 충청일보",
+    "brief": "충북 공공하수처리대행 업체, 단양군에 참여기회 보장 ‘촉구’ 충청일보",
+    "summary": "충북 공공하수처리대행 업체, 단양군에 참여기회 보장 ‘촉구’ 충청일보",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-10-13",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1yOFQwdC01cmtPdllXbVZvUXowSTBZc2pqdHl0YVFPR3NNOEtqWFVha1N6WmRSQVpXamNvazhlTlE1bWIzdW9QdzNsMjRqeW1ZMU5JRUYzNHJiVmZLZlJhWmw5UlhQY0ZWTE1xazJBcDA?oc=5",
+    "score": 18,
+    "keywords": [
+      "하수처리",
+      "수처리"
+    ],
+    "domestic": true,
+    "region": "domestic",
     "source_type": "rss",
     "image": ""
   }
