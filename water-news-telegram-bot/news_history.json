@@ -1,67 +1,5 @@
 [
   {
-    "date": "2025-07-10",
-    "title": "Wastewater Treatment, Advanced Tech, and Water Reuse",
-    "ko_title": "Wastewater Treatment, Advanced Tech, and Water Reuse",
-    "brief": "Wastewater treatment equipment are a wide range of products designed to purify contaminated water for safe reuse or discharge. Key equipment include screening systems to remove sol",
-    "summary": "Wastewater treatment equipment are a wide range of products designed to purify contaminated water for safe reuse or discharge. Key equipment include screening systems to remove solids, grit removal ...",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "재이용수",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "wastewater",
-      "water reuse",
-      "water treatment"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2025-07-10",
-    "specs": [],
-    "source": "Bing News Global Membrane Reuse",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a57a44dfda741a4b5f3762250e9958a&url=https%3a%2f%2fwww.contractormag.com%2fplumbing%2fwastewater%2farticle%2f55302464%2fwastewater-treatment-advanced-tech-and-water-reuse&c=17192209696101705738&mkt=en-us",
-    "score": 24,
-    "keywords": [
-      "wastewater",
-      "water reuse",
-      "water treatment"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2025-05-15",
-    "title": "Frost Radar™ Positions Top Growth and Innovation Leaders in Water and Wastewater Treatment Membrane Solutions",
-    "ko_title": "Frost Radar™ Positions Top Growth and Innovation Leaders in Water and Wastewater Treatment Membrane Solutions",
-    "brief": "LONDON, May 15, 2025 /CNW/ -- Climate change, rapid urbanisation, and industrialisation have intensified global water stress, affecting equitable access to fresh water. In response",
-    "summary": "LONDON, May 15, 2025 /CNW/ -- Climate change, rapid urbanisation, and industrialisation have intensified global water stress, affecting equitable access to fresh water. In response, governments and ...",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "분리막/MBR",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "membrane",
-      "wastewater",
-      "water treatment"
-    ],
-    "policy_alert": "",
-    "date_context": "May 15, 2025",
-    "specs": [],
-    "source": "Bing News Global MBR",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a57a44c3e7d429db060168de51324b2&url=https%3a%2f%2fwww.newswire.ca%2fnews-releases%2ffrost-radar-tm-positions-top-growth-and-innovation-leaders-in-water-and-wastewater-treatment-membrane-solutions-811227991.html&c=11821458214154069089&mkt=en-us",
-    "score": 23,
-    "keywords": [
-      "membrane",
-      "wastewater",
-      "water treatment"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
     "date": "2025-01-06",
     "title": "Wastewater treatment plants funnel PFAS into drinking water",
     "ko_title": "Wastewater treatment plants funnel PFAS into drinking water",
@@ -50009,6 +49947,78 @@
     "domestic": false,
     "region": "global",
     "source_type": "search_rss",
+    "image": ""
+  },
+  {
+    "date": "2026-10-21",
+    "title": "QUA launches compact membrane technology for wastewater treatment",
+    "ko_title": "QUA launches compact membrane technology for wastewater treatment",
+    "brief": "QUA has launched EnviQ RF 30, a compact membrane unit designed for membrane bioreactor (MBR) and submerged ultrafiltration (UF) applications in ...",
+    "summary": "QUA has launched EnviQ RF 30, a compact membrane unit designed for membrane bioreactor (MBR) and submerged ultrafiltration (UF) applications in ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane",
+      "ultrafiltration",
+      "wastewater",
+      "water treatment"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-10-21",
+    "specs": [],
+    "source": "Bing News Global UF MF",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ad9515a3b17463ba77b6e544865bbb6&url=https%3a%2f%2fwww.filtsep.com%2fcontent%2fnews%2fqua-launches-compact-membrane-technology-for-wastewater-treatment&c=3132429264852209514&mkt=en-us",
+    "score": 51,
+    "keywords": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane",
+      "ultrafiltration",
+      "wastewater",
+      "water treatment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "search_rss",
+    "image": ""
+  },
+  {
+    "date": "2026-08-11",
+    "title": "Australia's Largest Inland Wastewater Treatment Facility Selects MemCor™ MBR System for Expansion",
+    "ko_title": "Australia's Largest Inland Wastewater Treatment Facility Selects MemCor™ MBR System for Expansion",
+    "brief": "The Lower Molonglo Water Quality Control Center will become the largest MBR plant in Australia with the addition of a new DuPont™ MemCor™ MBR system WILMINGTON, Del., Aug. 11, 2026",
+    "summary": "The Lower Molonglo Water Quality Control Center will become the largest MBR plant in Australia with the addition of a new DuPont™ MemCor™ MBR system WILMINGTON, Del., Aug. 11, 2026 /PRNewswire/ -- ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "mbr",
+      "wastewater",
+      "water treatment",
+      "expansion",
+      "dupont"
+    ],
+    "policy_alert": "",
+    "date_context": "Aug. 11, 2026",
+    "specs": [],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ad9514bc71b4972b28a6bab6ba6f4fc&url=https%3a%2f%2fwww.prnewswire.com%2fnews-releases%2faustralias-largest-inland-wastewater-treatment-facility-selects-memcor-mbr-system-for-expansion-302846252.html&c=12856373631053607080&mkt=en-us",
+    "score": 37,
+    "keywords": [
+      "mbr",
+      "wastewater",
+      "water treatment",
+      "expansion",
+      "dupont"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
     "image": ""
   }
 ]
