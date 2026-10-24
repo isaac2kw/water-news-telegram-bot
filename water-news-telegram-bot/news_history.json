@@ -1,129 +1,5 @@
 [
   {
-    "date": "2026-07-13",
-    "title": "IIT-M revives forgotten route to industrial wastewater treatment",
-    "ko_title": "IIT-M revives forgotten route to industrial wastewater treatment",
-    "brief": "IIT-M researchers develop a breakthrough gas hydrate process for efficient industrial wastewater treatment, enhancing purity and sustainability.",
-    "summary": "IIT-M researchers develop a breakthrough gas hydrate process for efficient industrial wastewater treatment, enhancing purity and sustainability.",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "wastewater",
-      "industrial wastewater",
-      "water treatment"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-07-13",
-    "specs": [],
-    "source": "Bing News Global Membrane Reuse",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a5a09ab38764763921adaad36ee9cc9&url=https%3a%2f%2fwww.thehindubusinessline.com%2fbusiness-tech%2fiit-m-revives-forgotten-route-to-industrial-wastewater-treatment%2farticle71214890.ece&c=157392574798552026&mkt=en-us",
-    "score": 23,
-    "keywords": [
-      "wastewater",
-      "industrial wastewater",
-      "water treatment"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-07-17",
-    "title": "World Hollow Fiber MBR Module - Market Analysis, Forecast, Size, Trends and Insights - IndexBox",
-    "ko_title": "World Hollow Fiber MBR Module - Market Analysis, Forecast, Size, Trends and Insights - IndexBox",
-    "brief": "World Hollow Fiber MBR Module - Market Analysis, Forecast, Size, Trends and Insights IndexBox",
-    "summary": "World Hollow Fiber MBR Module - Market Analysis, Forecast, Size, Trends and Insights IndexBox",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "분리막/MBR",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "mbr",
-      "hollow fiber"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-07-17",
-    "specs": [],
-    "source": "Google News Global Water Reuse",
-    "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNRWlSNFQ1bF9fZEozSjVoUUliWFo1WGJXYzRZWkZETG45MFZGeDdhbE1kdVVzSFFSMWlRaG40VEtlX2dlTnYxaS1VX3daSzIyckZMTlN3YXVZU2pJZjRxXzktbHc0ZmZXWnE5MVlDS1ZKZDlIdXY2THhFVFZERWZPNWZwWXAwdENCelNlbnBmdFNCa21MRENUaGE2b3hZWFg3aGgwR3V1TUc5STdkOGlQM2p1ekdrcHRKTU1lYVg5Tl8ybWVfTlUwelhTMnZ6NmdnbW9fdg?oc=5",
-    "score": 18,
-    "keywords": [
-      "mbr",
-      "hollow fiber"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "search_rss",
-    "image": ""
-  },
-  {
-    "date": "2026-07-16",
-    "title": "과천시, 공공하수처리시설 현대화 사업 속도…2027년 착공 추진 - 데일리뉴스",
-    "ko_title": "과천시, 공공하수처리시설 현대화 사업 속도…2027년 착공 추진 - 데일리뉴스",
-    "brief": "과천시, 공공하수처리시설 현대화 사업 속도…2027년 착공 추진 데일리뉴스",
-    "summary": "과천시, 공공하수처리시설 현대화 사업 속도…2027년 착공 추진 데일리뉴스",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [
-      "대한민국"
-    ],
-    "companies": [],
-    "technologies": [
-      "하수처리",
-      "수처리"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-07-16",
-    "specs": [],
-    "source": "Google News Korea 상하수도",
-    "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5rU25kQ1NvaDVoRWtEUEd3cnlpUmdTRmtzN1A1UEN4MHBGQTVaM2o2SWowRjROcXl6QWNnMjFsZnZtV1g2T1ZkVkF4ejVOUWpNejEtdWdWaUNMUVJ2QVJnWTl5TGtvZDlBUEZ3XzBoMNIBc0FVX3lxTE9xa0NlTWEtWWQyeG01WUFjSVZqNUU4X28xeExwSG5XZHllcXo2NVpmRmpfdWRsSUtwampwY0dqNjdteURZY3hqUUR6d0E0elg5TkpNSFZqdVZVZzZ3VXh2M2hxajdzeXBHWDdCVUp0NXZaOHM?oc=5",
-    "score": 18,
-    "keywords": [
-      "하수처리",
-      "수처리"
-    ],
-    "domestic": true,
-    "region": "domestic",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-07-16",
-    "title": "PFAS buildup on RO membranes highlights end-of-life handling concerns",
-    "ko_title": "PFAS buildup on RO membranes highlights end-of-life handling concerns",
-    "brief": "Researchers at Texas A&M University have found that reverse osmosis (RO) membranes used in advanced wastewater treatment can accumulate significant ...",
-    "summary": "Researchers at Texas A&M University have found that reverse osmosis (RO) membranes used in advanced wastewater treatment can accumulate significant ...",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "PFAS/오염물",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "membrane",
-      "wastewater",
-      "water treatment",
-      "pfas"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-07-16",
-    "specs": [],
-    "source": "Bing News Global Membrane Reuse",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a5a4473e5304938a8240f3090aa92b0&url=https%3a%2f%2fwww.filtsep.com%2fcontent%2fnews%2fpfas-buildup-on-ro-membranes-highlights-end-of-life-handling-concerns&c=18099872806301638169&mkt=en-us",
-    "score": 33,
-    "keywords": [
-      "membrane",
-      "wastewater",
-      "water treatment",
-      "pfas"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
     "date": "2026-02-12",
     "title": "DuPont Named Finalist in 2026 Edison Awards for FilmTec™ Fortilife™ XC160UHP Membrane for Wastewater Treatment and Reuse",
     "ko_title": "DuPont Named Finalist in 2026 Edison Awards for FilmTec™ Fortilife™ XC160UHP Membrane for Wastewater Treatment and Reuse",
@@ -50057,6 +49933,144 @@
     "domestic": true,
     "region": "domestic",
     "source_type": "search_rss",
+    "image": ""
+  },
+  {
+    "date": "2026-10-21",
+    "title": "QUA launches compact membrane technology for wastewater treatment",
+    "ko_title": "QUA launches compact membrane technology for wastewater treatment",
+    "brief": "QUA has launched EnviQ RF 30, a compact membrane unit designed for membrane bioreactor (MBR) and submerged ultrafiltration (UF) applications in ...",
+    "summary": "QUA has launched EnviQ RF 30, a compact membrane unit designed for membrane bioreactor (MBR) and submerged ultrafiltration (UF) applications in ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane",
+      "ultrafiltration",
+      "wastewater",
+      "water treatment"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-10-21",
+    "specs": [],
+    "source": "Bing News Global UF MF",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6adcaf0fe40646178fa93502c3b024e6&url=https%3a%2f%2fwww.filtsep.com%2fcontent%2fnews%2fqua-launches-compact-membrane-technology-for-wastewater-treatment&c=3132429264852209514&mkt=en-us",
+    "score": 51,
+    "keywords": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane",
+      "ultrafiltration",
+      "wastewater",
+      "water treatment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "search_rss",
+    "image": ""
+  },
+  {
+    "date": "2026-09-29",
+    "title": "QILEE Launches Advanced Buried Modular AO+MBR Integrated Wastewater Treatment System for Global Water Challenges",
+    "ko_title": "QILEE Launches Advanced Buried Modular AO+MBR Integrated Wastewater Treatment System for Global Water Challenges",
+    "brief": "The newly introduced system utilizes a comprehensive, multi-stage process flow: equalization and regulation, anoxic denitrification, aerobic biochemical treatment, membrane separat",
+    "summary": "The newly introduced system utilizes a comprehensive, multi-stage process flow: equalization and regulation, anoxic denitrification, aerobic biochemical treatment, membrane separation, and clear water ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "mbr",
+      "membrane",
+      "wastewater",
+      "water treatment"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-09-29",
+    "specs": [],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6adcaf014dea42a1aa7dd3e9f5684a17&url=https%3a%2f%2fwww.streetinsider.com%2fGetNews%2fQILEE%2bLaunches%2bAdvanced%2bBuried%2bModular%2bAO%252BMBR%2bIntegrated%2bWastewater%2bTreatment%2bSystem%2bfor%2bGlobal%2bWater%2bChallenges%2f27115951.html&c=14131003969004157472&mkt=en-us",
+    "score": 33,
+    "keywords": [
+      "mbr",
+      "membrane",
+      "wastewater",
+      "water treatment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-08-11",
+    "title": "Australia's Largest Inland Wastewater Treatment Facility Selects MemCor™ MBR System for Expansion",
+    "ko_title": "Australia's Largest Inland Wastewater Treatment Facility Selects MemCor™ MBR System for Expansion",
+    "brief": "The Lower Molonglo Water Quality Control Center will become the largest MBR plant in Australia with the addition of a new DuPont™ MemCor™ MBR system WILMINGTON, Del., Aug. 11, 2026",
+    "summary": "The Lower Molonglo Water Quality Control Center will become the largest MBR plant in Australia with the addition of a new DuPont™ MemCor™ MBR system WILMINGTON, Del., Aug. 11, 2026 /PRNewswire/ -- ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "mbr",
+      "wastewater",
+      "water treatment",
+      "expansion",
+      "dupont"
+    ],
+    "policy_alert": "",
+    "date_context": "Aug. 11, 2026",
+    "specs": [],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6adcaf014dea42a1aa7dd3e9f5684a17&url=https%3a%2f%2fwww.prnewswire.com%2fnews-releases%2faustralias-largest-inland-wastewater-treatment-facility-selects-memcor-mbr-system-for-expansion-302846252.html&c=12856373631053607080&mkt=en-us",
+    "score": 37,
+    "keywords": [
+      "mbr",
+      "wastewater",
+      "water treatment",
+      "expansion",
+      "dupont"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-10-24",
+    "title": "철원 하수처리장 공사현장서 50대 작업자 넘어져 심정지 이송 - 동아일보",
+    "ko_title": "철원 하수처리장 공사현장서 50대 작업자 넘어져 심정지 이송 - 동아일보",
+    "brief": "철원 하수처리장 공사현장서 50대 작업자 넘어져 심정지 이송 동아일보",
+    "summary": "철원 하수처리장 공사현장서 50대 작업자 넘어져 심정지 이송 동아일보",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-10-24",
+    "specs": [],
+    "source": "Google News Korea 재이용수 PFAS",
+    "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5pWVhkdFBzT3JGNC12Q0hmdmpoeGRxYUhOQmpISWNFeHBzeTFGWnBWb0RmSDBoWWVoNFBoSzJIRVpXY053Q2pROE90ODJ0VUdfMC1DY1B6a0VqcEVvY2o2Nm1hRklJZ9IBZkFVX3lxTE5pWVhkdFBzT3JGNC12Q0hmdmpoeGRxYUhOQmpISWNFeHBzeTFGWnBWb0RmSDBoWWVoNFBoSzJIRVpXY053Q2pROE90ODJ0VUdfMC1DY1B6a0VqcEVvY2o2Nm1hRklJZw?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
     "image": ""
   }
 ]
