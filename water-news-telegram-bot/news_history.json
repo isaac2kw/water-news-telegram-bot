@@ -1,166 +1,5 @@
 [
   {
-    "date": "2026-07-16",
-    "title": "PFAS buildup on RO membranes highlights end-of-life handling concerns",
-    "ko_title": "PFAS buildup on RO membranes highlights end-of-life handling concerns",
-    "brief": "Researchers at Texas A&M University have found that reverse osmosis (RO) membranes used in advanced wastewater treatment can accumulate significant ...",
-    "summary": "Researchers at Texas A&M University have found that reverse osmosis (RO) membranes used in advanced wastewater treatment can accumulate significant ...",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "PFAS/오염물",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "membrane",
-      "wastewater",
-      "water treatment",
-      "pfas"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-07-16",
-    "specs": [],
-    "source": "Bing News Global Membrane Reuse",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a66f80add3f403f818295468f569232&url=https%3a%2f%2fwww.filtsep.com%2fcontent%2fnews%2fpfas-buildup-on-ro-membranes-highlights-end-of-life-handling-concerns&c=18099872806301638169&mkt=en-us",
-    "score": 33,
-    "keywords": [
-      "membrane",
-      "wastewater",
-      "water treatment",
-      "pfas"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-07-27",
-    "title": "구리시, 노후화된 제2하수처리장 전동구동장치 교체 - 경기신문",
-    "ko_title": "구리시, 노후화된 제2하수처리장 전동구동장치 교체 - 경기신문",
-    "brief": "구리시, 노후화된 제2하수처리장 전동구동장치 교체 경기신문",
-    "summary": "구리시, 노후화된 제2하수처리장 전동구동장치 교체 경기신문",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [
-      "대한민국"
-    ],
-    "companies": [],
-    "technologies": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-07-27",
-    "specs": [],
-    "source": "Google News Korea 상하수도",
-    "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5pamEzT0h0MXNrNXJLTzVRNk1UT0p4bVVJSXBJbW5DZXBHNWtwR2hEWXNPZkRpbzBYeGttQldpNHJBSTBsdTNQWmZfMTFDaFZRdGVURHI5VUpTdWZPSl9Fc0Jn?oc=5",
-    "score": 26,
-    "keywords": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "domestic": true,
-    "region": "domestic",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-07-19",
-    "title": "하수처리장에서 ‘청정 수소’ 생산·판매 - v.daum.net",
-    "ko_title": "하수처리장에서 ‘청정 수소’ 생산·판매 - v.daum.net",
-    "brief": "하수처리장에서 ‘청정 수소’ 생산·판매 v.daum.net",
-    "summary": "하수처리장에서 ‘청정 수소’ 생산·판매 v.daum.net",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [
-      "대한민국"
-    ],
-    "companies": [],
-    "technologies": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-07-19",
-    "specs": [],
-    "source": "Google News Korea 상하수도",
-    "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE50d2RUMzJXaGU4ZGVvcHhuZzN2WW5QelMzNVZMZThYQU4wY1BuVldrSDlScHJON3BmTy1BM1NpaWt3bFU2NWtCY1RHQQ?oc=5",
-    "score": 26,
-    "keywords": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "domestic": true,
-    "region": "domestic",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-07-13",
-    "title": "IIT-M revives forgotten route to industrial wastewater treatment",
-    "ko_title": "IIT-M revives forgotten route to industrial wastewater treatment",
-    "brief": "IIT-M researchers develop a breakthrough gas hydrate process for efficient industrial wastewater treatment, enhancing purity and sustainability.",
-    "summary": "IIT-M researchers develop a breakthrough gas hydrate process for efficient industrial wastewater treatment, enhancing purity and sustainability.",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "wastewater",
-      "industrial wastewater",
-      "water treatment"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-07-13",
-    "specs": [],
-    "source": "Bing News Global Membrane Reuse",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a66f80add3f403f818295468f569232&url=https%3a%2f%2fwww.thehindubusinessline.com%2fbusiness-tech%2fiit-m-revives-forgotten-route-to-industrial-wastewater-treatment%2farticle71214890.ece&c=157392574798552026&mkt=en-us",
-    "score": 23,
-    "keywords": [
-      "wastewater",
-      "industrial wastewater",
-      "water treatment"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-07-27",
-    "title": "성남시, 판교수질복원센터 하수처리용량 하루 6만7000t으로 확대 - 성남시 시정소식지 비전성남",
-    "ko_title": "성남시, 판교수질복원센터 하수처리용량 하루 6만7000t으로 확대 - 성남시 시정소식지 비전성남",
-    "brief": "성남시, 판교수질복원센터 하수처리용량 하루 6만7000t으로 확대 성남시 시정소식지 비전성남",
-    "summary": "성남시, 판교수질복원센터 하수처리용량 하루 6만7000t으로 확대 성남시 시정소식지 비전성남",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [
-      "대한민국"
-    ],
-    "companies": [],
-    "technologies": [
-      "하수처리",
-      "수처리"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-07-27",
-    "specs": [],
-    "source": "Google News Korea 상하수도",
-    "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFBPWU5mSTJIdndXR1oxMGNneWg0ZFdaRmNFRVlNNHhOZ0FWeEFYeF9INjJvRkVoOEtJdTBHRXFweFZpU2RiV1RfYU93elg?oc=5",
-    "score": 18,
-    "keywords": [
-      "하수처리",
-      "수처리"
-    ],
-    "domestic": true,
-    "region": "domestic",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
     "date": "2026-07-27",
     "title": "판교 하수처리 ‘하루 2만t 여유’…개발 수요 받친다 - 공뉴스",
     "ko_title": "판교 하수처리 ‘하루 2만t 여유’…개발 수요 받친다 - 공뉴스",
@@ -50275,6 +50114,169 @@
       "water treatment",
       "expansion",
       "investment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-10-29",
+    "title": "Water and Wastewater Treatment Technologies Market - Global Forecast to 2036 | Market to Reach US$191.12 Billion as PFAS Rules, Membrane Filtration, and Digital Water Drive 5.8 ...",
+    "ko_title": "Water and Wastewater Treatment Technologies Market - Global Forecast to 2036 | Market to Reach US$191.12 Billion as PFAS Rules, Membrane Filtration, and Digital Water Drive 5.8 ...",
+    "brief": "Dublin, Oct. 29, 2026 (GLOBE NEWSWIRE) -- \"Water and Wastewater Treatment Technologies Market, - Global Forecast to 2036\" has been added to ResearchAndMarkets.com's offering. The g",
+    "summary": "Dublin, Oct. 29, 2026 (GLOBE NEWSWIRE) -- \"Water and Wastewater Treatment Technologies Market, - Global Forecast to 2036\" has been added to ResearchAndMarkets.com's offering. The global water and ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "PFAS/오염물",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "membrane",
+      "wastewater",
+      "water treatment",
+      "pfas"
+    ],
+    "policy_alert": "",
+    "date_context": "Oct. 29, 2026",
+    "specs": [
+      "191.12 Billion"
+    ],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ae94bfabf5f41b7a0ce8a9dd416b591&url=https%3a%2f%2ffinance.yahoo.com%2ftechnology%2farticles%2fwater-wastewater-treatment-technologies-market-161100681.html&c=13833927766061043742&mkt=en-ca",
+    "score": 33,
+    "keywords": [
+      "membrane",
+      "wastewater",
+      "water treatment",
+      "pfas"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-11-02",
+    "title": "Rising desalination and wastewater demand to drive global membrane biocides market growth through 2035",
+    "ko_title": "Rising desalination and wastewater demand to drive global membrane biocides market growth through 2035",
+    "brief": "The membrane biocides market is set for steady growth as desalination plants and industrial wastewater systems keep expanding. These chemicals help stop biofouling in membrane syst",
+    "summary": "The membrane biocides market is set for steady growth as desalination plants and industrial wastewater systems keep expanding. These chemicals help stop biofouling in membrane systems, and demand is ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "membrane",
+      "wastewater",
+      "industrial wastewater",
+      "biofouling"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-11-02",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ae94bfabf5f41b7a0ce8a9dd416b591&url=https%3a%2f%2fchemicals.economictimes.indiatimes.com%2fnews%2fspecialty-chemicals%2frising-desalination-and-wastewater-demand-to-drive-global-membrane-biocides-market-growth-through-2035%2f135450016&c=14347815639015675250&mkt=en-ca",
+    "score": 32,
+    "keywords": [
+      "membrane",
+      "wastewater",
+      "industrial wastewater",
+      "biofouling"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-10-23",
+    "title": "Water Treatment Market Research, Desalination Investments, Industrial Water Reuse and Smart Treatment Technologies: Market Forecast, Segment Shares, Pricing Trends and Business ...",
+    "ko_title": "Water Treatment Market Research, Desalination Investments, Industrial Water Reuse and Smart Treatment Technologies: Market Forecast, Segment Shares, Pricing Trends and Business ...",
+    "brief": "The global water treatment market is gaining strategic importance as water scarcity, industrial expansion, environmental regulations and infrastructure investment reshape demand fo",
+    "summary": "The global water treatment market is gaining strategic importance as water scarcity, industrial expansion, environmental regulations and infrastructure investment reshape demand for purification and ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "프로젝트/수주",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "water reuse",
+      "water treatment",
+      "expansion",
+      "investment"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-10-23",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ae94bfabf5f41b7a0ce8a9dd416b591&url=https%3a%2f%2ffinance.yahoo.com%2fenergy%2farticles%2fwater-treatment-market-research-desalination-133900385.html&c=6966049848330476122&mkt=en-ca",
+    "score": 25,
+    "keywords": [
+      "water reuse",
+      "water treatment",
+      "expansion",
+      "investment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-11-03",
+    "title": "Veolia to provide wastewater treatment for Arauco pulp mill in Brazil - Wastewater Digest",
+    "ko_title": "Veolia to provide wastewater treatment for Arauco pulp mill in Brazil - Wastewater Digest",
+    "brief": "Veolia to provide wastewater treatment for Arauco pulp mill in Brazil Wastewater Digest",
+    "summary": "Veolia to provide wastewater treatment for Arauco pulp mill in Brazil Wastewater Digest",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "기업동향",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "wastewater",
+      "water treatment",
+      "veolia"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-11-03",
+    "specs": [],
+    "source": "Google Company Veolia",
+    "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOTEl3bi1QeC1OVE9FeXdKYjREVWpOREtOUGZFemtpVjZxMkZjMmJwSFBta04wcnZuM0Z0V3BQRnljRnJyTnVxUm1qV25yRnJDZzVMaGtxZ0NPeUQ3SmVTbDg0bjhsVGt2bnN5WmFvaFA3aWt2YWFFUHkyelNrT1NaV1AtU2JXZU5ERk1lbE1qb19aWDZlMDhNclVCTHVETm41UlJOZk5mQkdLQ2RnU0tGaGNaT2h6NlZEc0p1N3RMeXE1a3UycHc?oc=5",
+    "score": 23,
+    "keywords": [
+      "wastewater",
+      "water treatment",
+      "veolia"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "search_rss",
+    "image": ""
+  },
+  {
+    "date": "2026-10-20",
+    "title": "Membrane technologies for wastewater treatment",
+    "ko_title": "Membrane technologies for wastewater treatment",
+    "brief": "This Collection supports and amplifies research related to SDG 6. This Scientific Reports Collection welcomes original research on Membrane technologies for wastewater treatment. N",
+    "summary": "This Collection supports and amplifies research related to SDG 6. This Scientific Reports Collection welcomes original research on Membrane technologies for wastewater treatment. Narrative review ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "membrane",
+      "wastewater",
+      "water treatment"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-10-20",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ae94bfabf5f41b7a0ce8a9dd416b591&url=https%3a%2f%2fwww.nature.com%2fcollections%2fbgcjeadehh&c=213331654076520490&mkt=en-ca",
+    "score": 23,
+    "keywords": [
+      "membrane",
+      "wastewater",
+      "water treatment"
     ],
     "domestic": false,
     "region": "global",
