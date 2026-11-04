@@ -1,327 +1,5 @@
 [
   {
-    "date": "2026-07-13",
-    "title": "IIT-M revives forgotten route to industrial wastewater treatment",
-    "ko_title": "IIT-M revives forgotten route to industrial wastewater treatment",
-    "brief": "IIT-M researchers develop a breakthrough gas hydrate process for efficient industrial wastewater treatment, enhancing purity and sustainability.",
-    "summary": "IIT-M researchers develop a breakthrough gas hydrate process for efficient industrial wastewater treatment, enhancing purity and sustainability.",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "wastewater",
-      "industrial wastewater",
-      "water treatment"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-07-13",
-    "specs": [],
-    "source": "Bing News Global Membrane Reuse",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a69e46e77c1466aaf6cd6f812bb7876&url=https%3a%2f%2fwww.thehindubusinessline.com%2fbusiness-tech%2fiit-m-revives-forgotten-route-to-industrial-wastewater-treatment%2farticle71214890.ece&c=157392574798552026&mkt=en-us",
-    "score": 23,
-    "keywords": [
-      "wastewater",
-      "industrial wastewater",
-      "water treatment"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-07-29",
-    "title": "\"집중호우에도 하수처리 멈춤 없다\", 서산시시설관리공단, 침수사고 대응 실전훈련, 재난 대응력 강화 - 중도일보",
-    "ko_title": "\"집중호우에도 하수처리 멈춤 없다\", 서산시시설관리공단, 침수사고 대응 실전훈련, 재난 대응력 강화 - 중도일보",
-    "brief": "\"집중호우에도 하수처리 멈춤 없다\", 서산시시설관리공단, 침수사고 대응 실전훈련, 재난 대응력 강화 중도일보",
-    "summary": "\"집중호우에도 하수처리 멈춤 없다\", 서산시시설관리공단, 침수사고 대응 실전훈련, 재난 대응력 강화 중도일보",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [
-      "대한민국"
-    ],
-    "companies": [],
-    "technologies": [
-      "하수처리",
-      "수처리"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-07-29",
-    "specs": [],
-    "source": "Google News Korea 상하수도",
-    "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1NbHpPVUpkQU9nd2xMTTZNVEItS3lJSXlKeTMzVzYxRUl6b2dmQWJ0Mm9ZSGhCSVpLZHZFVnJjOWpTQTh4akFoQUFEU1RHcUpRVjFoX012Z0E1Tm5IOTF1bXRfM1k?oc=5",
-    "score": 18,
-    "keywords": [
-      "하수처리",
-      "수처리"
-    ],
-    "domestic": true,
-    "region": "domestic",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-07-16",
-    "title": "PFAS buildup on RO membranes highlights end-of-life handling concerns",
-    "ko_title": "PFAS buildup on RO membranes highlights end-of-life handling concerns",
-    "brief": "Researchers at Texas A&M University have found that reverse osmosis (RO) membranes used in advanced wastewater treatment can accumulate significant ...",
-    "summary": "Researchers at Texas A&M University have found that reverse osmosis (RO) membranes used in advanced wastewater treatment can accumulate significant ...",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "PFAS/오염물",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "membrane",
-      "wastewater",
-      "water treatment",
-      "pfas"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-07-16",
-    "specs": [],
-    "source": "Bing News Global Membrane Reuse",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a6a1fb50fc942fe86a1f2ce63ac5145&url=https%3a%2f%2fwww.filtsep.com%2fcontent%2fnews%2fpfas-buildup-on-ro-membranes-highlights-end-of-life-handling-concerns&c=18099872806301638169&mkt=en-us",
-    "score": 33,
-    "keywords": [
-      "membrane",
-      "wastewater",
-      "water treatment",
-      "pfas"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-07-13",
-    "title": "IIT-M revives forgotten route to industrial wastewater treatment",
-    "ko_title": "IIT-M revives forgotten route to industrial wastewater treatment",
-    "brief": "IIT-M researchers develop a breakthrough gas hydrate process for efficient industrial wastewater treatment, enhancing purity and sustainability.",
-    "summary": "IIT-M researchers develop a breakthrough gas hydrate process for efficient industrial wastewater treatment, enhancing purity and sustainability.",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "wastewater",
-      "industrial wastewater",
-      "water treatment"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-07-13",
-    "specs": [],
-    "source": "Bing News Global Membrane Reuse",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a6a1fb50fc942fe86a1f2ce63ac5145&url=https%3a%2f%2fwww.thehindubusinessline.com%2fbusiness-tech%2fiit-m-revives-forgotten-route-to-industrial-wastewater-treatment%2farticle71214890.ece&c=157392574798552026&mkt=en-us",
-    "score": 23,
-    "keywords": [
-      "wastewater",
-      "industrial wastewater",
-      "water treatment"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-07-27",
-    "title": "성남시, 판교 하수처리용량 6만7000t으로 확대 - 뉴데일리 경기",
-    "ko_title": "성남시, 판교 하수처리용량 6만7000t으로 확대 - 뉴데일리 경기",
-    "brief": "성남시, 판교 하수처리용량 6만7000t으로 확대 뉴데일리 경기",
-    "summary": "성남시, 판교 하수처리용량 6만7000t으로 확대 뉴데일리 경기",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [
-      "대한민국"
-    ],
-    "companies": [],
-    "technologies": [
-      "하수처리",
-      "수처리"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-07-27",
-    "specs": [],
-    "source": "Google News Korea 상하수도",
-    "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE56Z21uSDZvbFp1NURFMHhlSmp3TUZCNlF4ZHJmOVJreTZLYjJTU1lVci1fbEtNUWZMN1EwX2NKY1prelNkc1NsVHI4YVd5ejM4MnZiQnNFOEdLdGhxM290SFhoNXBBcW1EdC1YYmNJYkNMSkdfMDF2dlRR0gF_QVVfeXFMTlRwVkdTRnY1QXlHWk1fcjhrZXRndDlDbXk5dlpfXzBMY1oydElpVkxnMDdhdEJaRGJabDdDTEdoSmZoQk1QenNvc0xWZXNRS1NFaXVwQ0xKOWxPb0JVdnBhelI3ZXJJOUdVaFNPdnZIakl6TXJaOTN2VEJaSjBDUQ?oc=5",
-    "score": 18,
-    "keywords": [
-      "하수처리",
-      "수처리"
-    ],
-    "domestic": true,
-    "region": "domestic",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-07-27",
-    "title": "성남시, 판교 하수처리시설 2만톤 증설…시운전 돌입 - 뉴스1",
-    "ko_title": "성남시, 판교 하수처리시설 2만톤 증설…시운전 돌입 - 뉴스1",
-    "brief": "성남시, 판교 하수처리시설 2만톤 증설…시운전 돌입 뉴스1",
-    "summary": "성남시, 판교 하수처리시설 2만톤 증설…시운전 돌입 뉴스1",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [
-      "대한민국"
-    ],
-    "companies": [],
-    "technologies": [
-      "하수처리",
-      "수처리"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-07-27",
-    "specs": [],
-    "source": "Google News Korea 상하수도",
-    "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5jdWZUNDhBTjFDaEM4cjByRDJnWnI0d2RWNUxkWUxaeUhCbUhJUWtEc0h3TXFldlJ3M0VYM2ZfRnFQZFMxeFpZcjdLNi1nOGp3WVRyNnVB?oc=5",
-    "score": 18,
-    "keywords": [
-      "하수처리",
-      "수처리"
-    ],
-    "domestic": true,
-    "region": "domestic",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-07-16",
-    "title": "PFAS buildup on RO membranes highlights end-of-life handling concerns",
-    "ko_title": "PFAS buildup on RO membranes highlights end-of-life handling concerns",
-    "brief": "Researchers at Texas A&M University have found that reverse osmosis (RO) membranes used in advanced wastewater treatment can accumulate significant ...",
-    "summary": "Researchers at Texas A&M University have found that reverse osmosis (RO) membranes used in advanced wastewater treatment can accumulate significant ...",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "PFAS/오염물",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "membrane",
-      "wastewater",
-      "water treatment",
-      "pfas"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-07-16",
-    "specs": [],
-    "source": "Bing News Global Membrane Reuse",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a6ae19b550246c797da6770e197c11e&url=https%3a%2f%2fwww.filtsep.com%2fcontent%2fnews%2fpfas-buildup-on-ro-membranes-highlights-end-of-life-handling-concerns&c=18099872806301638169&mkt=en-us",
-    "score": 33,
-    "keywords": [
-      "membrane",
-      "wastewater",
-      "water treatment",
-      "pfas"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-02-12",
-    "title": "DuPont Named Finalist in 2026 Edison Awards for FilmTec™ Fortilife™ XC160UHP Membrane for Wastewater Treatment and Reuse",
-    "ko_title": "DuPont Named Finalist in 2026 Edison Awards for FilmTec™ Fortilife™ XC160UHP Membrane for Wastewater Treatment and Reuse",
-    "brief": "WILMINGTON, Del., Feb. 12, 2026 /PRNewswire/ -- DuPont (NYSE: DD) is proud to announce that its FilmTec™ Fortilife™ XC160UHP reverse osmosis elements for industrial wastewater trea",
-    "summary": "WILMINGTON, Del., Feb. 12, 2026 /PRNewswire/ -- DuPont (NYSE: DD) is proud to announce that its FilmTec™ Fortilife™ XC160UHP reverse osmosis elements for industrial wastewater treatment and reuse, has ...",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "분리막/MBR",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "membrane",
-      "wastewater",
-      "industrial wastewater",
-      "water treatment",
-      "award",
-      "dupont",
-      "filmtec"
-    ],
-    "policy_alert": "",
-    "date_context": "Feb. 12, 2026",
-    "specs": [],
-    "source": "Bing News Global Membrane Reuse",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a6ae19b550246c797da6770e197c11e&url=https%3a%2f%2fwww.morningstar.com%2fnews%2fpr-newswire%2f20260212ph86055%2fdupont-named-finalist-in-2026-edison-awards-for-filmtec-fortilife-xc160uhp-membrane-for-wastewater-treatment-and-reuse&c=16560179987338129635&mkt=en-us",
-    "score": 50,
-    "keywords": [
-      "membrane",
-      "wastewater",
-      "industrial wastewater",
-      "water treatment",
-      "award",
-      "dupont",
-      "filmtec"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-07-13",
-    "title": "IIT-M revives forgotten route to industrial wastewater treatment",
-    "ko_title": "IIT-M revives forgotten route to industrial wastewater treatment",
-    "brief": "IIT-M researchers develop a breakthrough gas hydrate process for efficient industrial wastewater treatment, enhancing purity and sustainability.",
-    "summary": "IIT-M researchers develop a breakthrough gas hydrate process for efficient industrial wastewater treatment, enhancing purity and sustainability.",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "wastewater",
-      "industrial wastewater",
-      "water treatment"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-07-13",
-    "specs": [],
-    "source": "Bing News Global Membrane Reuse",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a6ae19b550246c797da6770e197c11e&url=https%3a%2f%2fwww.thehindubusinessline.com%2fbusiness-tech%2fiit-m-revives-forgotten-route-to-industrial-wastewater-treatment%2farticle71214890.ece&c=157392574798552026&mkt=en-us",
-    "score": 23,
-    "keywords": [
-      "wastewater",
-      "industrial wastewater",
-      "water treatment"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-07-30",
-    "title": "예산군, 관내 공공폐수처리시설 3개소 기술진단 - 굿모닝충청",
-    "ko_title": "예산군, 관내 공공폐수처리시설 3개소 기술진단 - 굿모닝충청",
-    "brief": "예산군, 관내 공공폐수처리시설 3개소 기술진단 굿모닝충청",
-    "summary": "예산군, 관내 공공폐수처리시설 3개소 기술진단 굿모닝충청",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [
-      "대한민국"
-    ],
-    "companies": [],
-    "technologies": [
-      "폐수처리",
-      "수처리"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-07-30",
-    "specs": [],
-    "source": "Google News Korea 상하수도",
-    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBtTW05UnVPNU5adnhQY2hFcWFBUTNSM1FfLVhzTjVsRzh4dkF0eHV6eE44aTBxeUJHd3dfWG1EdTlQbENINUViRm9TeGlUVGhEb1FtczBkR3JwemxtNjgzTmVrMDZEXzhPVXBSRnhrVFRkUQ?oc=5",
-    "score": 18,
-    "keywords": [
-      "폐수처리",
-      "수처리"
-    ],
-    "domestic": true,
-    "region": "domestic",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
     "date": "2026-07-30",
     "title": "예산군, 산업단지 내 폐수처리시설 개선 - 대전일보",
     "ko_title": "예산군, 산업단지 내 폐수처리시설 개선 - 대전일보",
@@ -50340,6 +50018,326 @@
     ],
     "domestic": false,
     "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-10-29",
+    "title": "Water and Wastewater Treatment Technologies Market - Global Forecast to 2036 | Market to Reach US$191.12 Billion as PFAS Rules, Membrane Filtration, and Digital Water Drive 5.8 ...",
+    "ko_title": "Water and Wastewater Treatment Technologies Market - Global Forecast to 2036 | Market to Reach US$191.12 Billion as PFAS Rules, Membrane Filtration, and Digital Water Drive 5.8 ...",
+    "brief": "Dublin, Oct. 29, 2026 (GLOBE NEWSWIRE) -- \"Water and Wastewater Treatment Technologies Market, - Global Forecast to 2036\" has been added to ResearchAndMarkets.com's offering. The g",
+    "summary": "Dublin, Oct. 29, 2026 (GLOBE NEWSWIRE) -- \"Water and Wastewater Treatment Technologies Market, - Global Forecast to 2036\" has been added to ResearchAndMarkets.com's offering. The global water and ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "PFAS/오염물",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "membrane",
+      "wastewater",
+      "water treatment",
+      "pfas"
+    ],
+    "policy_alert": "",
+    "date_context": "Oct. 29, 2026",
+    "specs": [
+      "191.12 Billion"
+    ],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aeb64a9d3534a3f88748f3a24efe133&url=https%3a%2f%2ffinance.yahoo.com%2ftechnology%2farticles%2fwater-wastewater-treatment-technologies-market-161100681.html&c=13833927766061043742&mkt=en-us",
+    "score": 33,
+    "keywords": [
+      "membrane",
+      "wastewater",
+      "water treatment",
+      "pfas"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-09-29",
+    "title": "QILEE Launches Advanced Buried Modular AO+MBR Integrated Wastewater Treatment System For Global Water Challenges",
+    "ko_title": "QILEE Launches Advanced Buried Modular AO+MBR Integrated Wastewater Treatment System For Global Water Challenges",
+    "brief": "The newly introduced system utilizes a comprehensive, multi-stage process flow: equalization and regulation, anoxic denitrification, aerobic biochemical treatment, membrane separat",
+    "summary": "The newly introduced system utilizes a comprehensive, multi-stage process flow: equalization and regulation, anoxic denitrification, aerobic biochemical treatment, membrane separation, and clear water ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "mbr",
+      "membrane",
+      "wastewater",
+      "water treatment"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-09-29",
+    "specs": [],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aeb64a9d3534a3f88748f3a24efe133&url=https%3a%2f%2fmenafn.com%2f1111730136%2fQILEE-Launches-Advanced-Buried-Modular-AOMBR-Integrated-Wastewater-Treatment-System-For-Global-Water-Challenges&c=7603165334902672784&mkt=en-us",
+    "score": 33,
+    "keywords": [
+      "mbr",
+      "membrane",
+      "wastewater",
+      "water treatment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-08-11",
+    "title": "Australia's Largest Inland Wastewater Treatment Facility Selects MemCor™ MBR System for Expansion",
+    "ko_title": "Australia's Largest Inland Wastewater Treatment Facility Selects MemCor™ MBR System for Expansion",
+    "brief": "The Lower Molonglo Water Quality Control Center will become the largest MBR plant in Australia with the addition of a new DuPont™ MemCor™ MBR system WILMINGTON, Del., Aug. 11, 2026",
+    "summary": "The Lower Molonglo Water Quality Control Center will become the largest MBR plant in Australia with the addition of a new DuPont™ MemCor™ MBR system WILMINGTON, Del., Aug. 11, 2026 /PRNewswire/ -- ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "mbr",
+      "wastewater",
+      "water treatment",
+      "expansion",
+      "dupont"
+    ],
+    "policy_alert": "",
+    "date_context": "Aug. 11, 2026",
+    "specs": [],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aeb64a9d3534a3f88748f3a24efe133&url=https%3a%2f%2fwww.prnewswire.com%2fnews-releases%2faustralias-largest-inland-wastewater-treatment-facility-selects-memcor-mbr-system-for-expansion-302846252.html&c=12856373631053607080&mkt=en-us",
+    "score": 37,
+    "keywords": [
+      "mbr",
+      "wastewater",
+      "water treatment",
+      "expansion",
+      "dupont"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-10-23",
+    "title": "Water Treatment Market Research, Desalination Investments, Industrial Water Reuse and Smart Treatment Technologies: Market Forecast, Segment Shares, Pricing Trends and Business ...",
+    "ko_title": "Water Treatment Market Research, Desalination Investments, Industrial Water Reuse and Smart Treatment Technologies: Market Forecast, Segment Shares, Pricing Trends and Business ...",
+    "brief": "The global water treatment market is gaining strategic importance as water scarcity, industrial expansion, environmental regulations and infrastructure investment reshape demand fo",
+    "summary": "The global water treatment market is gaining strategic importance as water scarcity, industrial expansion, environmental regulations and infrastructure investment reshape demand for purification and ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "프로젝트/수주",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "water reuse",
+      "water treatment",
+      "expansion",
+      "investment"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-10-23",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aeb64a95c1641329271aa0d14500e1e&url=https%3a%2f%2ffinance.yahoo.com%2fenergy%2farticles%2fwater-treatment-market-research-desalination-133900385.html&c=6966049848330476122&mkt=en-us",
+    "score": 25,
+    "keywords": [
+      "water reuse",
+      "water treatment",
+      "expansion",
+      "investment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-11-04",
+    "title": "나주시, 하수처리시설 활용한 환경교육 및 관광콘텐츠 확대 - 웹이코노미",
+    "ko_title": "나주시, 하수처리시설 활용한 환경교육 및 관광콘텐츠 확대 - 웹이코노미",
+    "brief": "나주시, 하수처리시설 활용한 환경교육 및 관광콘텐츠 확대 웹이코노미",
+    "summary": "나주시, 하수처리시설 활용한 환경교육 및 관광콘텐츠 확대 웹이코노미",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-11-04",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFB0UkwyNWhWbm9RNnk0WC1Zb3lCN2ZqcmpRRUdQWUhsV3IyZFFxT1Z3ak5rSFZzRUdYcDEzWmpyYW9nMjhTeEd4akFrVUhKbnhlRDN0czJWNlR5dndvdFBvckh4bXJwNlplSXlReU5FckNXZw?oc=5",
+    "score": 18,
+    "keywords": [
+      "하수처리",
+      "수처리"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-11-04",
+    "title": "[단독] 금산군 325억 원 하수처리 대행 둘러싸고 '비공개 심의' 유출·외압 논란 - 뉴스티앤티",
+    "ko_title": "[단독] 금산군 325억 원 하수처리 대행 둘러싸고 '비공개 심의' 유출·외압 논란 - 뉴스티앤티",
+    "brief": "[단독] 금산군 325억 원 하수처리 대행 둘러싸고 '비공개 심의' 유출·외압 논란 뉴스티앤티",
+    "summary": "[단독] 금산군 325억 원 하수처리 대행 둘러싸고 '비공개 심의' 유출·외압 논란 뉴스티앤티",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-11-04",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5rM0syM2RYNWYwdVlVQkMtVzgtVEVSeG5EeUF4ZGVKOGhEZVBQUWQ5MGE3RXhtU3lJc1hXdDE4eGNJOTZ6dDVtNnhVR3NSNWVRSlZTbGJJYXhGM0k0RDNQcjJmS3UwcVhGX3c?oc=5",
+    "score": 18,
+    "keywords": [
+      "하수처리",
+      "수처리"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-11-03",
+    "title": "[경주시] 자체 개발 하수처리 기술 사업화 본격 추진 - 워터저널",
+    "ko_title": "[경주시] 자체 개발 하수처리 기술 사업화 본격 추진 - 워터저널",
+    "brief": "[경주시] 자체 개발 하수처리 기술 사업화 본격 추진 워터저널",
+    "summary": "[경주시] 자체 개발 하수처리 기술 사업화 본격 추진 워터저널",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-11-03",
+    "specs": [],
+    "source": "Google Site WaterJournal",
+    "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1IS0VVemhwLXdIcUl3eVBPcFFiY01hamFIUXZvRW1SRkNLOFcxNUdoOFROV1Y4U1FCSXZiVUlBaUVQN1dnR3R4YlQtb05zWlJld2xPQURlNTRsb0kwc2tpZzltR0M4OEdRQWg0U1F0dDA0V0k3b0HSAXZBVV95cUxNSEtFVXpocC13SHFJd3lQT3BRYmNNYWphSFF2b0VtUkZDSzhXMTVHaDhUTldWOFNRQkl2YlVJQWlFUDdXZ0d0eGJULW9Oc1pSZXdsT0FEZTU0bG9JMHNraWc5bUdDODhHUUFoNFNRdHQwNFdJN29B?oc=5",
+    "score": 18,
+    "keywords": [
+      "하수처리",
+      "수처리"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "search_rss",
+    "image": ""
+  },
+  {
+    "date": "2026-11-03",
+    "title": "Membrane Bioreactor System Market Projected to Reach US$9.72 - openPR.com",
+    "ko_title": "Membrane Bioreactor System Market Projected to Reach US$9.72 - openPR.com",
+    "brief": "Membrane Bioreactor System Market Projected to Reach US$9.72 openPR.com",
+    "summary": "Membrane Bioreactor System Market Projected to Reach US$9.72 openPR.com",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "membrane bioreactor",
+      "membrane"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-11-03",
+    "specs": [],
+    "source": "Google Company Mitsubishi membrane",
+    "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQRzVjMXNoVkN6b1dvQ09LcFZhVGJ0aDh4WEFnMk5xbzJZbUVsbVZqWlRWb0xCc2pldGJzWmFkeXVTZFE1VWxMWmpfMy1SWlJ0VzlzdTludnlLTEtaNHlMZXVxLUlhc0tMWkxxNVpRLUphU2dVTW85d1lpM0hwOXdxQVBWYVNiVkZXNUpFMUR0R1hoR0hWM2ZFbWRZZFM?oc=5",
+    "score": 18,
+    "keywords": [
+      "membrane bioreactor",
+      "membrane"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "search_rss",
+    "image": ""
+  },
+  {
+    "date": "2026-11-02",
+    "title": "양산공공폐수처리시설, 범어119안전센터와 합동소방훈련 실시 - 양산타임스",
+    "ko_title": "양산공공폐수처리시설, 범어119안전센터와 합동소방훈련 실시 - 양산타임스",
+    "brief": "양산공공폐수처리시설, 범어119안전센터와 합동소방훈련 실시 양산타임스",
+    "summary": "양산공공폐수처리시설, 범어119안전센터와 합동소방훈련 실시 양산타임스",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "폐수처리",
+      "수처리"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-11-02",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5pUXlwSzRYQ0pGd3ZlTnFiM0toWnFGeVNJN041WTVBOE5aUzBqcU4wTkdBR194dnNxQktQSFdZeC02NU9CUXF2dlRTc0xvQmRYSWk4V3BhRmFQeU5WY19Hc1lIQ1dPdnU1?oc=5",
+    "score": 18,
+    "keywords": [
+      "폐수처리",
+      "수처리"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-10-31",
+    "title": "청주시, 공공하수처리시설 노후 설비 교체 완료 - 연합뉴스",
+    "ko_title": "청주시, 공공하수처리시설 노후 설비 교체 완료 - 연합뉴스",
+    "brief": "청주시, 공공하수처리시설 노후 설비 교체 완료 연합뉴스",
+    "summary": "청주시, 공공하수처리시설 노후 설비 교체 완료 연합뉴스",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-10-31",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5HSFFoRjZBaVFqbHIxREFxU2NsSXlkNExVcExBWlphdEVvTWV4SjBuZXhtcmxzX0VmVzA2dTd0T2NYdGZsZXhkR2oyNksyY0pXNVJ3YVlETnVCZG_SAWBBVV95cUxPYm14X2x4RzJMUnBiY1ZvUnpDZEpMS1NKWkYxXzcxSU5RYnpvLVlvX2hCaFJGemd3V0NDc3pkbmVGa2gwVzZpeFVyeHV3clRKdjVWZ3JJa2tpeWJ0bjYtOEo?oc=5",
+    "score": 18,
+    "keywords": [
+      "하수처리",
+      "수처리"
+    ],
+    "domestic": true,
+    "region": "domestic",
     "source_type": "rss",
     "image": ""
   }
