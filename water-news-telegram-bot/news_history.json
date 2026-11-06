@@ -1,269 +1,5 @@
 [
   {
-    "date": "2026-07-13",
-    "title": "IIT-M revives forgotten route to industrial wastewater treatment",
-    "ko_title": "IIT-M revives forgotten route to industrial wastewater treatment",
-    "brief": "IIT-M researchers develop a breakthrough gas hydrate process for efficient industrial wastewater treatment, enhancing purity and sustainability.",
-    "summary": "IIT-M researchers develop a breakthrough gas hydrate process for efficient industrial wastewater treatment, enhancing purity and sustainability.",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "wastewater",
-      "industrial wastewater",
-      "water treatment"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-07-13",
-    "specs": [],
-    "source": "Bing News Global Membrane Reuse",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a6c390654474174bcbb31a4c1aea20a&url=https%3a%2f%2fwww.thehindubusinessline.com%2fbusiness-tech%2fiit-m-revives-forgotten-route-to-industrial-wastewater-treatment%2farticle71214890.ece&c=157392574798552026&mkt=en-us",
-    "score": 23,
-    "keywords": [
-      "wastewater",
-      "industrial wastewater",
-      "water treatment"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-07-30",
-    "title": "예산군, 산업단지 공공폐수처리시설 정밀 점검…수질보전·기업활동 기반 강화 - v.daum.net",
-    "ko_title": "예산군, 산업단지 공공폐수처리시설 정밀 점검…수질보전·기업활동 기반 강화 - v.daum.net",
-    "brief": "예산군, 산업단지 공공폐수처리시설 정밀 점검…수질보전·기업활동 기반 강화 v.daum.net",
-    "summary": "예산군, 산업단지 공공폐수처리시설 정밀 점검…수질보전·기업활동 기반 강화 v.daum.net",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [
-      "대한민국"
-    ],
-    "companies": [],
-    "technologies": [
-      "폐수처리",
-      "수처리"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-07-30",
-    "specs": [],
-    "source": "Google News Korea 상하수도",
-    "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5IeGl3OHNla0pzcHpyZ1gzVG9ZWGtzbFMtS3JzeWVQakl5cDJ0ZUVRWDBYdU1pakp6RmIyZmJqaU11TXBWRGVzV181TTBsMW8?oc=5",
-    "score": 18,
-    "keywords": [
-      "폐수처리",
-      "수처리"
-    ],
-    "domestic": true,
-    "region": "domestic",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-07-16",
-    "title": "PFAS buildup on RO membranes highlights end-of-life handling concerns",
-    "ko_title": "PFAS buildup on RO membranes highlights end-of-life handling concerns",
-    "brief": "Researchers at Texas A&M University have found that reverse osmosis (RO) membranes used in advanced wastewater treatment can accumulate significant ...",
-    "summary": "Researchers at Texas A&M University have found that reverse osmosis (RO) membranes used in advanced wastewater treatment can accumulate significant ...",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "PFAS/오염물",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "membrane",
-      "wastewater",
-      "water treatment",
-      "pfas"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-07-16",
-    "specs": [],
-    "source": "Bing News Global Membrane Reuse",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a6c87f05706486d95167705d504c6e4&url=https%3a%2f%2fwww.filtsep.com%2fcontent%2fnews%2fpfas-buildup-on-ro-membranes-highlights-end-of-life-handling-concerns&c=18099872806301638169&mkt=en-us",
-    "score": 33,
-    "keywords": [
-      "membrane",
-      "wastewater",
-      "water treatment",
-      "pfas"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-02-12",
-    "title": "DuPont Named Finalist in 2026 Edison Awards for FilmTec™ Fortilife™ XC160UHP Membrane for Wastewater Treatment and Reuse",
-    "ko_title": "DuPont Named Finalist in 2026 Edison Awards for FilmTec™ Fortilife™ XC160UHP Membrane for Wastewater Treatment and Reuse",
-    "brief": "WILMINGTON, Del., Feb. 12, 2026 /PRNewswire/ -- DuPont (NYSE: DD) is proud to announce that its FilmTec™ Fortilife™ XC160UHP reverse osmosis elements for industrial wastewater trea",
-    "summary": "WILMINGTON, Del., Feb. 12, 2026 /PRNewswire/ -- DuPont (NYSE: DD) is proud to announce that its FilmTec™ Fortilife™ XC160UHP reverse osmosis elements for industrial wastewater treatment and reuse, has ...",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "분리막/MBR",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "membrane",
-      "wastewater",
-      "industrial wastewater",
-      "water treatment",
-      "award",
-      "dupont",
-      "filmtec"
-    ],
-    "policy_alert": "",
-    "date_context": "Feb. 12, 2026",
-    "specs": [],
-    "source": "Bing News Global Membrane Reuse",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a6c87f05706486d95167705d504c6e4&url=https%3a%2f%2fwww.morningstar.com%2fnews%2fpr-newswire%2f20260212ph86055%2fdupont-named-finalist-in-2026-edison-awards-for-filmtec-fortilife-xc160uhp-membrane-for-wastewater-treatment-and-reuse&c=16560179987338129635&mkt=en-us",
-    "score": 50,
-    "keywords": [
-      "membrane",
-      "wastewater",
-      "industrial wastewater",
-      "water treatment",
-      "award",
-      "dupont",
-      "filmtec"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-07-31",
-    "title": "진주시에도 마약이?... 하수처리장 조사에서 마약류 성분 검출 - 글로벌이코노믹",
-    "ko_title": "진주시에도 마약이?... 하수처리장 조사에서 마약류 성분 검출 - 글로벌이코노믹",
-    "brief": "진주시에도 마약이?... 하수처리장 조사에서 마약류 성분 검출 글로벌이코노믹",
-    "summary": "진주시에도 마약이?... 하수처리장 조사에서 마약류 성분 검출 글로벌이코노믹",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [
-      "대한민국"
-    ],
-    "companies": [],
-    "technologies": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-07-31",
-    "specs": [],
-    "source": "Google News Korea 재이용수 PFAS",
-    "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOaEQwMEtyR051X3ZZZzZIXzZuRmt4djUxWE96QVBUTmdrRGV2OEN6X1JkNXNhc3JCN2lpRzNJZzd1UTZKcXdQY3BZM1dTQW5pVVJxTzUyODVIb1dSSEpXbUFTR0xvRVg2bzhxcVdZOHZFbENINk54NUlOaWNTcG9JWFl4VFdvcEk3SlFj?oc=5",
-    "score": 26,
-    "keywords": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "domestic": true,
-    "region": "domestic",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-07-31",
-    "title": "대전시의회 복지환경위원회 매립장, 하수처리장 등 현장방문 실시 - 천지일보",
-    "ko_title": "대전시의회 복지환경위원회 매립장, 하수처리장 등 현장방문 실시 - 천지일보",
-    "brief": "대전시의회 복지환경위원회 매립장, 하수처리장 등 현장방문 실시 천지일보",
-    "summary": "대전시의회 복지환경위원회 매립장, 하수처리장 등 현장방문 실시 천지일보",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [
-      "대한민국"
-    ],
-    "companies": [],
-    "technologies": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-07-31",
-    "specs": [],
-    "source": "Google News Korea 재이용수 PFAS",
-    "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5MM2lUa0lYN2c2azVJZlZhR2c1d0dtN3JKOXZBSlpqVzNxUDJuNmt3RkYxM0RlQ3Z1XzZSZEZ1UjNuaUlmaHZpSlRhX05RN1B0Z2c4NG1Cd1ZVeVFnd0hrbUx3TTFyc1hNV2c?oc=5",
-    "score": 26,
-    "keywords": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "domestic": true,
-    "region": "domestic",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-07-31",
-    "title": "대전시의회 복지환경위원회, 매립장·하수처리장 등 주요 현장 점검 - 뉴스홈(newshome)",
-    "ko_title": "대전시의회 복지환경위원회, 매립장·하수처리장 등 주요 현장 점검 - 뉴스홈(newshome)",
-    "brief": "대전시의회 복지환경위원회, 매립장·하수처리장 등 주요 현장 점검 뉴스홈(newshome)",
-    "summary": "대전시의회 복지환경위원회, 매립장·하수처리장 등 주요 현장 점검 뉴스홈(newshome)",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [
-      "대한민국"
-    ],
-    "companies": [],
-    "technologies": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-07-31",
-    "specs": [],
-    "source": "Google News Korea 재이용수 PFAS",
-    "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE91UU50ZXppdVlUaF9qcU1GUWEzYkFZNVdjbGxCXy1ramYtNHZKa3pIQVAycmtnLVpRUG9iUThqWXlveVpjb2RzaS12bG55R1JieXU3dUNIS2VOMTFrTS03MWswTldYT0VKZThTVHNR?oc=5",
-    "score": 26,
-    "keywords": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "domestic": true,
-    "region": "domestic",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-07-13",
-    "title": "IIT-M revives forgotten route to industrial wastewater treatment",
-    "ko_title": "IIT-M revives forgotten route to industrial wastewater treatment",
-    "brief": "IIT-M researchers develop a breakthrough gas hydrate process for efficient industrial wastewater treatment, enhancing purity and sustainability.",
-    "summary": "IIT-M researchers develop a breakthrough gas hydrate process for efficient industrial wastewater treatment, enhancing purity and sustainability.",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "wastewater",
-      "industrial wastewater",
-      "water treatment"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-07-13",
-    "specs": [],
-    "source": "Bing News Global Membrane Reuse",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a6c87f05706486d95167705d504c6e4&url=https%3a%2f%2fwww.thehindubusinessline.com%2fbusiness-tech%2fiit-m-revives-forgotten-route-to-industrial-wastewater-treatment%2farticle71214890.ece&c=157392574798552026&mkt=en-us",
-    "score": 23,
-    "keywords": [
-      "wastewater",
-      "industrial wastewater",
-      "water treatment"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
     "date": "2026-07-31",
     "title": "과천시, 공공하수처리시설 현대화 사업 실시설계 본격 착수 - 의왕미디어저널",
     "ko_title": "과천시, 공공하수처리시설 현대화 사업 실시설계 본격 착수 - 의왕미디어저널",
@@ -50379,6 +50115,284 @@
       "water treatment",
       "expansion",
       "investment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-10-22",
+    "title": "QUA Expands Membrane Portfolio with EnviQ® RF 30, a Compact, Ready-to-Install MBR Technology for Decentralized Wastewater Treatment",
+    "ko_title": "QUA Expands Membrane Portfolio with EnviQ® RF 30, a Compact, Ready-to-Install MBR Technology for Decentralized Wastewater Treatment",
+    "brief": "EnviQ® RF 30 is a compact membrane module for membrane bioreactor and submerged ultrafiltration applications, enabling decentralized water and wastewater treatment, flexible deploy",
+    "summary": "EnviQ® RF 30 is a compact membrane module for membrane bioreactor and submerged ultrafiltration applications, enabling decentralized water and wastewater treatment, flexible deployment where space and ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane",
+      "ultrafiltration",
+      "wastewater",
+      "water treatment",
+      "membrane module"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-10-22",
+    "specs": [],
+    "source": "Bing News Global UF MF",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aed2cdf0e094ef29f02959f3f84b5dd&url=https%3a%2f%2fwww.prnewswire.com%2fnews-releases%2fqua-expands-membrane-portfolio-with-enviq-rf-30-a-compact-ready-to-install-mbr-technology-for-decentralized-wastewater-treatment-302917319.html&c=6561925453484023863&mkt=es-mx",
+    "score": 59,
+    "keywords": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane",
+      "ultrafiltration",
+      "wastewater",
+      "water treatment",
+      "membrane module"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "search_rss",
+    "image": ""
+  },
+  {
+    "date": "2026-10-27",
+    "title": "Europe Water and Wastewater Treatment Market Size, Share, and Trends - Forecast to 2036 | PFAS Compliance, Digitalization, and Water Reuse Propel Growth to USD 142.31 Billion ...",
+    "ko_title": "Europe Water and Wastewater Treatment Market Size, Share, and Trends - Forecast to 2036 | PFAS Compliance, Digitalization, and Water Reuse Propel Growth to USD 142.31 Billion ...",
+    "brief": "ROI opportunities center on PFAS removal, digital water, reuse and energy-efficient upgrades, while acquisitions, long-term contracts and financing drive competitive returnsDublin,",
+    "summary": "ROI opportunities center on PFAS removal, digital water, reuse and energy-efficient upgrades, while acquisitions, long-term contracts and financing drive competitive returnsDublin, Oct. 27, 2026 ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "PFAS/오염물",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "wastewater",
+      "water reuse",
+      "water treatment",
+      "pfas",
+      "contract",
+      "upgrade"
+    ],
+    "policy_alert": "",
+    "date_context": "Oct. 27, 2026",
+    "specs": [
+      "142.31 Billion"
+    ],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aed2ccba17d48b1a2c3aa9bca00c886&url=https%3a%2f%2fuk.finance.yahoo.com%2fnews%2feurope-water-wastewater-treatment-market-161100839.html&c=1026883332819992331&mkt=es-mx",
+    "score": 44,
+    "keywords": [
+      "wastewater",
+      "water reuse",
+      "water treatment",
+      "pfas",
+      "contract",
+      "upgrade"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-10-28",
+    "title": "Water and Wastewater Treatment Market Size, Share, Trends, and Industry Analysis - Global Forecast to 2036 | USD 738.56 Billion Opportunity Fueled by PFAS Rules, Water Reuse ...",
+    "ko_title": "Water and Wastewater Treatment Market Size, Share, Trends, and Industry Analysis - Global Forecast to 2036 | USD 738.56 Billion Opportunity Fueled by PFAS Rules, Water Reuse ...",
+    "brief": "Dublin, Oct. (GLOBE NEWSWIRE) -- \"Water and Wastewater Treatment Market Size, Share, and Industry Analysis - Global Forecast to 2036\" has been added to ResearchAndMarkets.com's off",
+    "summary": "Dublin, Oct. (GLOBE NEWSWIRE) -- \"Water and Wastewater Treatment Market Size, Share, and Industry Analysis - Global Forecast to 2036\" has been added to ResearchAndMarkets.com's offering. The global ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "PFAS/오염물",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "wastewater",
+      "water reuse",
+      "water treatment",
+      "pfas"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-10-28",
+    "specs": [
+      "738.56 Billion"
+    ],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aed2cccd02a4325b685323832c3d6fc&url=https%3a%2f%2ffinance.yahoo.com%2fenergy%2farticles%2fwater-wastewater-treatment-market-size-145400631.html&c=5888354476943453638&mkt=es-mx",
+    "score": 34,
+    "keywords": [
+      "wastewater",
+      "water reuse",
+      "water treatment",
+      "pfas"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-10-29",
+    "title": "Water and Wastewater Treatment Technologies Market - Global Forecast to 2036 | Market to Reach US$191.12 Billion as PFAS Rules, Membrane Filtration, and Digital Water Drive 5.8 ...",
+    "ko_title": "Water and Wastewater Treatment Technologies Market - Global Forecast to 2036 | Market to Reach US$191.12 Billion as PFAS Rules, Membrane Filtration, and Digital Water Drive 5.8 ...",
+    "brief": "Dublin, Oct. 29, 2026 (GLOBE NEWSWIRE) -- \"Water and Wastewater Treatment Technologies Market, - Global Forecast to 2036\" has been added to ResearchAndMarkets.com's offering. The g",
+    "summary": "Dublin, Oct. 29, 2026 (GLOBE NEWSWIRE) -- \"Water and Wastewater Treatment Technologies Market, - Global Forecast to 2036\" has been added to ResearchAndMarkets.com's offering. The global water and ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "PFAS/오염물",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "membrane",
+      "wastewater",
+      "water treatment",
+      "pfas"
+    ],
+    "policy_alert": "",
+    "date_context": "Oct. 29, 2026",
+    "specs": [
+      "191.12 Billion"
+    ],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aed2ccba17d48b1a2c3aa9bca00c886&url=https%3a%2f%2fuk.finance.yahoo.com%2fnews%2fwater-wastewater-treatment-technologies-market-161100271.html&c=7487300246396029162&mkt=es-mx",
+    "score": 33,
+    "keywords": [
+      "membrane",
+      "wastewater",
+      "water treatment",
+      "pfas"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-11-02",
+    "title": "Rising desalination and wastewater demand to drive global membrane biocides market growth through 2035",
+    "ko_title": "Rising desalination and wastewater demand to drive global membrane biocides market growth through 2035",
+    "brief": "The membrane biocides market is set for steady growth as desalination plants and industrial wastewater systems keep expanding. These chemicals help stop biofouling in membrane syst",
+    "summary": "The membrane biocides market is set for steady growth as desalination plants and industrial wastewater systems keep expanding. These chemicals help stop biofouling in membrane systems, and demand is ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "membrane",
+      "wastewater",
+      "industrial wastewater",
+      "biofouling"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-11-02",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aed2cccd02a4325b685323832c3d6fc&url=https%3a%2f%2fchemicals.economictimes.indiatimes.com%2fnews%2fspecialty-chemicals%2frising-desalination-and-wastewater-demand-to-drive-global-membrane-biocides-market-growth-through-2035%2f135450016&c=14347815639015675250&mkt=es-mx",
+    "score": 32,
+    "keywords": [
+      "membrane",
+      "wastewater",
+      "industrial wastewater",
+      "biofouling"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-10-23",
+    "title": "Water Treatment Market Research, Desalination Investments, Industrial Water Reuse and Smart Treatment Technologies: Market Forecast, Segment Shares, Pricing Trends and Business ...",
+    "ko_title": "Water Treatment Market Research, Desalination Investments, Industrial Water Reuse and Smart Treatment Technologies: Market Forecast, Segment Shares, Pricing Trends and Business ...",
+    "brief": "The global water treatment market is gaining strategic importance as water scarcity, industrial expansion, environmental regulations and infrastructure investment reshape demand fo",
+    "summary": "The global water treatment market is gaining strategic importance as water scarcity, industrial expansion, environmental regulations and infrastructure investment reshape demand for purification and ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "프로젝트/수주",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "water reuse",
+      "water treatment",
+      "expansion",
+      "investment"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-10-23",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aed2cccd02a4325b685323832c3d6fc&url=https%3a%2f%2ffinance.yahoo.com%2fenergy%2farticles%2fwater-treatment-market-research-desalination-133900385.html&c=6966049848330476122&mkt=es-mx",
+    "score": 25,
+    "keywords": [
+      "water reuse",
+      "water treatment",
+      "expansion",
+      "investment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-10-20",
+    "title": "Membrane technologies for wastewater treatment",
+    "ko_title": "Membrane technologies for wastewater treatment",
+    "brief": "This Collection supports and amplifies research related to SDG 6. This Scientific Reports Collection welcomes original research on Membrane technologies for wastewater treatment. N",
+    "summary": "This Collection supports and amplifies research related to SDG 6. This Scientific Reports Collection welcomes original research on Membrane technologies for wastewater treatment. Narrative review ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "membrane",
+      "wastewater",
+      "water treatment"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-10-20",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aed2cccd02a4325b685323832c3d6fc&url=https%3a%2f%2fwww.nature.com%2fcollections%2fbgcjeadehh&c=213331654076520490&mkt=es-mx",
+    "score": 23,
+    "keywords": [
+      "membrane",
+      "wastewater",
+      "water treatment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-11-06",
+    "title": "New York Awards More Than $249 Million for Wastewater, Drinking Water and Habitat Projects - Environmental Protection Online",
+    "ko_title": "New York Awards More Than $249 Million for Wastewater, Drinking Water and Habitat Projects - Environmental Protection Online",
+    "brief": "New York Awards More Than $249 Million for Wastewater, Drinking Water and Habitat Projects Environmental Protection Online",
+    "summary": "New York Awards More Than $249 Million for Wastewater, Drinking Water and Habitat Projects Environmental Protection Online",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "프로젝트/수주",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "wastewater",
+      "drinking water",
+      "award"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-11-06",
+    "specs": [
+      "249 Million"
+    ],
+    "source": "Google News Global Water",
+    "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPWjBobEJfanJZZEt0UDZRNDZEVVh6WXRSNmNYaUxXTVVhUFV6VThjLTNZSXRQYWFWdUJQUnMyZ1VCSjlSUmNUMUVDYTBTcTQ5WWowMVV2ZEZMbWdNSVhKNEZmSGsxUnRZdmxIYXU3RWxrWms2SVVnV2pEYk9EQWZlZ2xCanZTTmdzUngyVXd5d2tfRDR4bzJING53WmU0WGdzallpbXMzSFc5NFR2WjRNek9WcGc1LTd6OHl4YjlCRlgtcmxhamlwczc0YU82NkEw?oc=5",
+    "score": 18,
+    "keywords": [
+      "wastewater",
+      "drinking water",
+      "award"
     ],
     "domestic": false,
     "region": "global",
