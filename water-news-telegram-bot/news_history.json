@@ -1,236 +1,5 @@
 [
   {
-    "date": "2026-07-31",
-    "title": "[예산군] 산업단지 폐수처리 효율 높인다… 공공폐수처리시설 기술진단 실시 - 워터저널",
-    "ko_title": "[예산군] 산업단지 폐수처리 효율 높인다… 공공폐수처리시설 기술진단 실시 - 워터저널",
-    "brief": "[예산군] 산업단지 폐수처리 효율 높인다… 공공폐수처리시설 기술진단 실시 워터저널",
-    "summary": "[예산군] 산업단지 폐수처리 효율 높인다… 공공폐수처리시설 기술진단 실시 워터저널",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [
-      "대한민국"
-    ],
-    "companies": [],
-    "technologies": [
-      "폐수처리",
-      "수처리"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-07-31",
-    "specs": [],
-    "source": "Google News Korea 상하수도",
-    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBYZ2JOYVhmSnoyRnBaeVRlZURyTXp5UVJZUjhmSDNzVVI1Qkk0bmwtSU1ReFRsQWExQ3NTRDEtMGtVcGYtSXlUQ0EtRmVWX0pPU2x2TGNrQVg4TnUwZ21Jc1RPbGw5OHhoNVFJcGN0NXhuUdIBdkFVX3lxTE8yZTRodVkySktBX3lHdXE2dS1tN2hSYUdjZmtpZG04aURpYzF1QzlmMkR1X1BGY2ZscUhkU1pDaDhvcDh2UzB5NFN0b2tiTjRMdkl6RUF2b1lQQTBoZTFZdDFfbW9sRnpKS3M3bGFzM3hJdF9vUXc?oc=5",
-    "score": 18,
-    "keywords": [
-      "폐수처리",
-      "수처리"
-    ],
-    "domestic": true,
-    "region": "domestic",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-02-12",
-    "title": "DuPont Named Finalist in 2026 Edison Awards for FilmTec™ Fortilife™ XC160UHP Membrane for Wastewater Treatment and Reuse",
-    "ko_title": "DuPont Named Finalist in 2026 Edison Awards for FilmTec™ Fortilife™ XC160UHP Membrane for Wastewater Treatment and Reuse",
-    "brief": "WILMINGTON, Del., Feb. 12, 2026 /PRNewswire/ -- DuPont (NYSE: DD) is proud to announce that its FilmTec™ Fortilife™ XC160UHP reverse osmosis elements for industrial wastewater trea",
-    "summary": "WILMINGTON, Del., Feb. 12, 2026 /PRNewswire/ -- DuPont (NYSE: DD) is proud to announce that its FilmTec™ Fortilife™ XC160UHP reverse osmosis elements for industrial wastewater treatment and reuse, has ...",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "분리막/MBR",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "membrane",
-      "wastewater",
-      "industrial wastewater",
-      "water treatment",
-      "award",
-      "dupont",
-      "filmtec"
-    ],
-    "policy_alert": "",
-    "date_context": "Feb. 12, 2026",
-    "specs": [],
-    "source": "Bing News Global Membrane Reuse",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a7112357ca145948fede45f108d6595&url=https%3a%2f%2fwww.morningstar.com%2fnews%2fpr-newswire%2f20260212ph86055%2fdupont-named-finalist-in-2026-edison-awards-for-filmtec-fortilife-xc160uhp-membrane-for-wastewater-treatment-and-reuse&c=16560179987338129635&mkt=en-us",
-    "score": 50,
-    "keywords": [
-      "membrane",
-      "wastewater",
-      "industrial wastewater",
-      "water treatment",
-      "award",
-      "dupont",
-      "filmtec"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-07-13",
-    "title": "IIT-M revives forgotten route to industrial wastewater treatment",
-    "ko_title": "IIT-M revives forgotten route to industrial wastewater treatment",
-    "brief": "IIT-M researchers develop a breakthrough gas hydrate process for efficient industrial wastewater treatment, enhancing purity and sustainability.",
-    "summary": "IIT-M researchers develop a breakthrough gas hydrate process for efficient industrial wastewater treatment, enhancing purity and sustainability.",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "wastewater",
-      "industrial wastewater",
-      "water treatment"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-07-13",
-    "specs": [],
-    "source": "Bing News Global Membrane Reuse",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a7112357ca145948fede45f108d6595&url=https%3a%2f%2fwww.thehindubusinessline.com%2fbusiness-tech%2fiit-m-revives-forgotten-route-to-industrial-wastewater-treatment%2farticle71214890.ece&c=157392574798552026&mkt=en-us",
-    "score": 23,
-    "keywords": [
-      "wastewater",
-      "industrial wastewater",
-      "water treatment"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-08-04",
-    "title": "Local Government Commission to consider water requests for drinking and wastewater as well as PFAS treatment - Carolina Coast Online",
-    "ko_title": "Local Government Commission to consider water requests for drinking and wastewater as well as PFAS treatment - Carolina Coast Online",
-    "brief": "Local Government Commission to consider water requests for drinking and wastewater as well as PFAS treatment Carolina Coast Online",
-    "summary": "Local Government Commission to consider water requests for drinking and wastewater as well as PFAS treatment Carolina Coast Online",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "PFAS/오염물",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "wastewater",
-      "pfas"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-08-04",
-    "specs": [],
-    "source": "Google News Global Water",
-    "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNTWZicC1qUTAySWtwSDgybHBpdUpfZ0tCM1pPQS1HVV9sQnAtZ1hxWE1ld19wT3dxTDJFY0gyaEpwVHJhaVA0X3p0U2lOVTFzT0tmNjRGUUZtRE9oSXJnYTMyUTE0eGlWR3lhc1VNV2d3Z3lQTnFfVTNneG01NVNWM3NRVno3bkY0N0h1U0x0LUdUSk9vRzJqLTQ1Zjk?oc=5",
-    "score": 18,
-    "keywords": [
-      "wastewater",
-      "pfas"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-02-12",
-    "title": "DuPont Named Finalist in 2026 Edison Awards for FilmTec™ Fortilife™ XC160UHP Membrane for Wastewater Treatment and Reuse",
-    "ko_title": "DuPont Named Finalist in 2026 Edison Awards for FilmTec™ Fortilife™ XC160UHP Membrane for Wastewater Treatment and Reuse",
-    "brief": "WILMINGTON, Del., Feb. 12, 2026 /PRNewswire/ -- DuPont (NYSE: DD) is proud to announce that its FilmTec™ Fortilife™ XC160UHP reverse osmosis elements for industrial wastewater trea",
-    "summary": "WILMINGTON, Del., Feb. 12, 2026 /PRNewswire/ -- DuPont (NYSE: DD) is proud to announce that its FilmTec™ Fortilife™ XC160UHP reverse osmosis elements for industrial wastewater treatment and reuse, has ...",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "분리막/MBR",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "membrane",
-      "wastewater",
-      "industrial wastewater",
-      "water treatment",
-      "award",
-      "dupont",
-      "filmtec"
-    ],
-    "policy_alert": "",
-    "date_context": "Feb. 12, 2026",
-    "specs": [],
-    "source": "Bing News Global Membrane Reuse",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a717b07e84c49f285aaec6a7646df3b&url=https%3a%2f%2fwww.morningstar.com%2fnews%2fpr-newswire%2f20260212ph86055%2fdupont-named-finalist-in-2026-edison-awards-for-filmtec-fortilife-xc160uhp-membrane-for-wastewater-treatment-and-reuse&c=16560179987338129635&mkt=en-us",
-    "score": 50,
-    "keywords": [
-      "membrane",
-      "wastewater",
-      "industrial wastewater",
-      "water treatment",
-      "award",
-      "dupont",
-      "filmtec"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-08-04",
-    "title": "Council votes to terminate contract for wastewater treatment plant rebuild - Sioux City Journal",
-    "ko_title": "Council votes to terminate contract for wastewater treatment plant rebuild - Sioux City Journal",
-    "brief": "Council votes to terminate contract for wastewater treatment plant rebuild Sioux City Journal",
-    "summary": "Council votes to terminate contract for wastewater treatment plant rebuild Sioux City Journal",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "프로젝트/수주",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "wastewater",
-      "water treatment",
-      "contract"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-08-04",
-    "specs": [],
-    "source": "Google News Global Water",
-    "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQZ0s0b00tRkhNX2NlaE91YWpENC1EaEpTN2x0S2FSZVNac2dJcUU4NldOM0k0ZUlPaXZRU3phQ1lYYjBCMU1DMGhPVUpnUl9LeWNZQzlHT28yWW1KR1FNMGFZeEN6d2I2aFdjbThETWVTZzUyQm1wVWlTdDFVRjR6UXYzS1ZoX21ORktlLWRtOGpKclFMSGNJMk9GSFhpM1NwSjRscmRfV2dWUjRFTlE?oc=5",
-    "score": 20,
-    "keywords": [
-      "wastewater",
-      "water treatment",
-      "contract"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-07-13",
-    "title": "IIT-M revives forgotten route to industrial wastewater treatment",
-    "ko_title": "IIT-M revives forgotten route to industrial wastewater treatment",
-    "brief": "IIT-M researchers develop a breakthrough gas hydrate process for efficient industrial wastewater treatment, enhancing purity and sustainability.",
-    "summary": "IIT-M researchers develop a breakthrough gas hydrate process for efficient industrial wastewater treatment, enhancing purity and sustainability.",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "wastewater",
-      "industrial wastewater",
-      "water treatment"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-07-13",
-    "specs": [],
-    "source": "Bing News Global Membrane Reuse",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a717b07e84c49f285aaec6a7646df3b&url=https%3a%2f%2fwww.thehindubusinessline.com%2fbusiness-tech%2fiit-m-revives-forgotten-route-to-industrial-wastewater-treatment%2farticle71214890.ece&c=157392574798552026&mkt=en-us",
-    "score": 23,
-    "keywords": [
-      "wastewater",
-      "industrial wastewater",
-      "water treatment"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
     "date": "2026-02-12",
     "title": "DuPont Named Finalist in 2026 Edison Awards for FilmTec™ Fortilife™ XC160UHP Membrane for Wastewater Treatment and Reuse",
     "ko_title": "DuPont Named Finalist in 2026 Edison Awards for FilmTec™ Fortilife™ XC160UHP Membrane for Wastewater Treatment and Reuse",
@@ -50428,6 +50197,247 @@
     ],
     "domestic": true,
     "region": "domestic",
+    "source_type": "search_rss",
+    "image": ""
+  },
+  {
+    "date": "2026-10-22",
+    "title": "QUA Expands Membrane Portfolio with EnviQ® RF 30, a Compact, Ready-to-Install MBR Technology for Decentralized Wastewater Treatment",
+    "ko_title": "QUA Expands Membrane Portfolio with EnviQ® RF 30, a Compact, Ready-to-Install MBR Technology for Decentralized Wastewater Treatment",
+    "brief": "EnviQ® RF 30 is a compact membrane module for membrane bioreactor and submerged ultrafiltration applications, enabling decentralized water and wastewater treatment, flexible deploy",
+    "summary": "EnviQ® RF 30 is a compact membrane module for membrane bioreactor and submerged ultrafiltration applications, enabling decentralized water and wastewater treatment, flexible deployment where space and ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane",
+      "ultrafiltration",
+      "wastewater",
+      "water treatment",
+      "membrane module"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-10-22",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aef6c688a4a4ed5b31006ae17300a26&url=https%3a%2f%2fwww.prnewswire.com%2fnews-releases%2fqua-expands-membrane-portfolio-with-enviq-rf-30-a-compact-ready-to-install-mbr-technology-for-decentralized-wastewater-treatment-302917319.html&c=6561925453484023863&mkt=en-us",
+    "score": 59,
+    "keywords": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane",
+      "ultrafiltration",
+      "wastewater",
+      "water treatment",
+      "membrane module"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-10-30",
+    "title": "Republic, Missouri, expands wastewater treatment capacity to 5 MGD",
+    "ko_title": "Republic, Missouri, expands wastewater treatment capacity to 5 MGD",
+    "brief": "Republic, Missouri, marked completion of a Water Reclamation Facility expansion that raises treatment capacity to 5 MGD and features Missouri’s largest membrane bioreactor ...",
+    "summary": "Republic, Missouri, marked completion of a Water Reclamation Facility expansion that raises treatment capacity to 5 MGD and features Missouri’s largest membrane bioreactor ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "membrane bioreactor",
+      "membrane",
+      "wastewater",
+      "water treatment",
+      "expansion"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-10-30",
+    "specs": [
+      "5 MGD"
+    ],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aef6c73b25b4d0096fb27950d25e89f&url=https%3a%2f%2fwww.wwdmag.com%2futility-management%2fnews%2f55415567%2frepublic-missouri-expands-wastewater-treatment-capacity-to-5-mgd&c=9830702586172708060&mkt=en-us",
+    "score": 38,
+    "keywords": [
+      "membrane bioreactor",
+      "membrane",
+      "wastewater",
+      "water treatment",
+      "expansion"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "search_rss",
+    "image": ""
+  },
+  {
+    "date": "2026-10-29",
+    "title": "Water and Wastewater Treatment Technologies Market - Global Forecast to 2036 | Market to Reach US$191.12 Billion as PFAS Rules, Membrane Filtration, and Digital Water Drive 5.8 ...",
+    "ko_title": "Water and Wastewater Treatment Technologies Market - Global Forecast to 2036 | Market to Reach US$191.12 Billion as PFAS Rules, Membrane Filtration, and Digital Water Drive 5.8 ...",
+    "brief": "Dublin, Oct. 29, 2026 (GLOBE NEWSWIRE) -- \"Water and Wastewater Treatment Technologies Market, - Global Forecast to 2036\" has been added to ResearchAndMarkets.com's offering. The g",
+    "summary": "Dublin, Oct. 29, 2026 (GLOBE NEWSWIRE) -- \"Water and Wastewater Treatment Technologies Market, - Global Forecast to 2036\" has been added to ResearchAndMarkets.com's offering. The global water and ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "PFAS/오염물",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "membrane",
+      "wastewater",
+      "water treatment",
+      "pfas"
+    ],
+    "policy_alert": "",
+    "date_context": "Oct. 29, 2026",
+    "specs": [
+      "191.12 Billion"
+    ],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aef6c688a4a4ed5b31006ae17300a26&url=https%3a%2f%2ffinance.yahoo.com%2ftechnology%2farticles%2fwater-wastewater-treatment-technologies-market-161100681.html&c=13833927766061043742&mkt=en-us",
+    "score": 33,
+    "keywords": [
+      "membrane",
+      "wastewater",
+      "water treatment",
+      "pfas"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-08-11",
+    "title": "Australia's Largest Inland Wastewater Treatment Facility Selects MemCor™ MBR System for Expansion",
+    "ko_title": "Australia's Largest Inland Wastewater Treatment Facility Selects MemCor™ MBR System for Expansion",
+    "brief": "The Lower Molonglo Water Quality Control Center will become the largest MBR plant in Australia with the addition of a new DuPont™ MemCor™ MBR system WILMINGTON, Del., Aug. 11, 2026",
+    "summary": "The Lower Molonglo Water Quality Control Center will become the largest MBR plant in Australia with the addition of a new DuPont™ MemCor™ MBR system WILMINGTON, Del., Aug. 11, 2026 /PRNewswire/ -- ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "mbr",
+      "wastewater",
+      "water treatment",
+      "expansion",
+      "dupont"
+    ],
+    "policy_alert": "",
+    "date_context": "Aug. 11, 2026",
+    "specs": [],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aef6c73b25b4d0096fb27950d25e89f&url=https%3a%2f%2fwww.prnewswire.com%2fnews-releases%2faustralias-largest-inland-wastewater-treatment-facility-selects-memcor-mbr-system-for-expansion-302846252.html&c=12856373631053607080&mkt=en-us",
+    "score": 37,
+    "keywords": [
+      "mbr",
+      "wastewater",
+      "water treatment",
+      "expansion",
+      "dupont"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "search_rss",
+    "image": ""
+  },
+  {
+    "date": "2026-10-23",
+    "title": "Water Treatment Market Research, Desalination Investments, Industrial Water Reuse and Smart Treatment Technologies: Market Forecast, Segment Shares, Pricing Trends and Business ...",
+    "ko_title": "Water Treatment Market Research, Desalination Investments, Industrial Water Reuse and Smart Treatment Technologies: Market Forecast, Segment Shares, Pricing Trends and Business ...",
+    "brief": "The global water treatment market is gaining strategic importance as water scarcity, industrial expansion, environmental regulations and infrastructure investment reshape demand fo",
+    "summary": "The global water treatment market is gaining strategic importance as water scarcity, industrial expansion, environmental regulations and infrastructure investment reshape demand for purification and ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "프로젝트/수주",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "water reuse",
+      "water treatment",
+      "expansion",
+      "investment"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-10-23",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aef6c688a4a4ed5b31006ae17300a26&url=https%3a%2f%2ffinance.yahoo.com%2fenergy%2farticles%2fwater-treatment-market-research-desalination-133900385.html&c=6966049848330476122&mkt=en-us",
+    "score": 25,
+    "keywords": [
+      "water reuse",
+      "water treatment",
+      "expansion",
+      "investment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-11-07",
+    "title": "- 한국상하수도협회",
+    "ko_title": "- 한국상하수도협회",
+    "brief": "한국상하수도협회",
+    "summary": "한국상하수도협회",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "상하수도",
+      "상하수도협회"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-11-07",
+    "specs": [],
+    "source": "Google Site KWWA",
+    "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQTm1hQ0ZCbDB4c3JPdGNiamdHVDY0c1hKa0RNb1hVZGFST19oVzM0MDVGSGtraWpTVlgxRXJRWjlCay1FRlRfc2ZSNEIzc1pyT2pzVTZXUmRGemJ4dktZSF9zTW1JdjJmZXpqSG9waW9sZTN4RXFzWnBUdHpaYVBGZTRPZDJ4NDhJMjRfcFd6RjltVHhwX2F0RmJR?oc=5",
+    "score": 17,
+    "keywords": [
+      "상하수도",
+      "상하수도협회"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "search_rss",
+    "image": ""
+  },
+  {
+    "date": "2026-11-06",
+    "title": "Madhya Pradesh Releases Draft Wastewater Recycling Policy 2026, Targets 50% Treated Water Reuse by 2037 - Indianmasterminds",
+    "ko_title": "Madhya Pradesh Releases Draft Wastewater Recycling Policy 2026, Targets 50% Treated Water Reuse by 2037 - Indianmasterminds",
+    "brief": "Madhya Pradesh Releases Draft Wastewater Recycling Policy 2026, Targets 50% Treated Water Reuse by 2037 Indianmasterminds",
+    "summary": "Madhya Pradesh Releases Draft Wastewater Recycling Policy 2026, Targets 50% Treated Water Reuse by 2037 Indianmasterminds",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "재이용수",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "wastewater",
+      "water reuse"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-11-06",
+    "specs": [
+      "50%"
+    ],
+    "source": "Google News Global Water Reuse",
+    "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNZEFTLXdaV0JlUkNzTHNiRkRpcFg2UUU1cVZVb0l2bmdJTWpUamItQlI1THBVb2dMOFZJeU5EOVV2WmNLY2c1aEhKMF9DbTBua0hycVk5Y3pNdFdLUVRDU1kydm1hVlktcXI0cGRKX2hiZnk4dU1XMWlLNVFMdkp6ZDBIcjFQNjdVVTJLUnM4WHFiNDVHLWlsUVFyNjA?oc=5",
+    "score": 17,
+    "keywords": [
+      "wastewater",
+      "water reuse"
+    ],
+    "domestic": false,
+    "region": "global",
     "source_type": "search_rss",
     "image": ""
   }
