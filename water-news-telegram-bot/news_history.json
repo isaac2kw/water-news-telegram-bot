@@ -1,203 +1,5 @@
 [
   {
-    "date": "2026-08-26",
-    "title": "강남 하수처리장에 ‘미니 신도시’? - 채널A",
-    "ko_title": "강남 하수처리장에 ‘미니 신도시’? - 채널A",
-    "brief": "강남 하수처리장에 ‘미니 신도시’? 채널A",
-    "summary": "강남 하수처리장에 ‘미니 신도시’? 채널A",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [
-      "대한민국"
-    ],
-    "companies": [],
-    "technologies": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-08-26",
-    "specs": [],
-    "source": "Google News Korea 재이용수 PFAS",
-    "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE42VE9PQ3cwR1hSdEJCNkl2QlFxX2NNbjJrb0NpcGVIbFBZbkkxMllDYzJOZlhvODN5dW9NbmlPaTRaMVR2VTMtcUVLeE85V2c3aUtZUDFlalhsenBkOFRUNXpXQdIBY0FVX3lxTE42VE9PQ3cwR1hSdEJCNkl2QlFxX2NNbjJrb0NpcGVIbFBZbkkxMllDYzJOZlhvODN5dW9NbmlPaTRaMVR2VTMtcUVLeE85V2c3aUtZUDFlalhsenBkOFRUNXpXQQ?oc=5",
-    "score": 26,
-    "keywords": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "domestic": true,
-    "region": "domestic",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-08-27",
-    "title": "Wolong Electric To Showcase High-Efficiency Motor Solutions For Water and Wastewater Applications At WEFTEC 2026 - Automation World",
-    "ko_title": "Wolong Electric To Showcase High-Efficiency Motor Solutions For Water and Wastewater Applications At WEFTEC 2026 - Automation World",
-    "brief": "Wolong Electric To Showcase High-Efficiency Motor Solutions For Water and Wastewater Applications At WEFTEC 2026 Automation World",
-    "summary": "Wolong Electric To Showcase High-Efficiency Motor Solutions For Water and Wastewater Applications At WEFTEC 2026 Automation World",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "학회/전시회",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "wastewater",
-      "wef",
-      "weftec"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-08-27",
-    "specs": [],
-    "source": "Google News Global Water",
-    "link": "https://news.google.com/rss/articles/CBMihgJBVV95cUxOQ0NFcVBWY0ZWOVdKVURfUFV0Q0NuM1lTbWlvTjBDOGw5M3JwU0w4TnAySHNlekpoSG83NHBXRjdyS3JmQU5OWE5BRUJJS1gzemR3RXJkRnF0NUpKNDBobGNRcDU4YjA5U0YwQTJRaE5XcndOR2E2UUFEaFp6c0w0V01DbW8yRGd5d3FVUkdjLWZfYWdMZTVHSEdQZUNMMTVualBadXZIVkp5b1oxREFCSzRCXzc0UU9zd19JaWpNT1NGWjdoLS1qZ0E3emlMYW9jNVVGTFJoWWxHS0dwX0hDMlBXR2dFN0FlQjlaT3VUS3daQUIzR2hqRW5pbE14Z1NtVUplNDhn?oc=5",
-    "score": 22,
-    "keywords": [
-      "wastewater",
-      "wef",
-      "weftec"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-08-11",
-    "title": "LiqTech wins US wastewater reuse order for QureFlow system",
-    "ko_title": "LiqTech wins US wastewater reuse order for QureFlow system",
-    "brief": "LiqTech International has secured an order for a QureFlow QF-6 ceramic membrane filtration system for an industrial wastewater reuse application in the ...",
-    "summary": "LiqTech International has secured an order for a QureFlow QF-6 ceramic membrane filtration system for an industrial wastewater reuse application in the ...",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "분리막/MBR",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "membrane",
-      "wastewater",
-      "water reuse",
-      "industrial wastewater",
-      "ceramic membrane"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-08-11",
-    "specs": [],
-    "source": "Bing News Global Membrane Reuse",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a90395df9994fe798dd28fc61494e1f&url=https%3a%2f%2fwww.filtsep.com%2fcontent%2fnews%2fliqtech-wins-us-wastewater-reuse-order-for-qureflow-system&c=5512686614447114985&mkt=en-us",
-    "score": 41,
-    "keywords": [
-      "membrane",
-      "wastewater",
-      "water reuse",
-      "industrial wastewater",
-      "ceramic membrane"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-08-27",
-    "title": "'혐오시설' 하수처리장에 청년주택?···'탄천물재생센터' 용산공원 대안될까 - 여성경제신문",
-    "ko_title": "'혐오시설' 하수처리장에 청년주택?···'탄천물재생센터' 용산공원 대안될까 - 여성경제신문",
-    "brief": "'혐오시설' 하수처리장에 청년주택?···'탄천물재생센터' 용산공원 대안될까 여성경제신문",
-    "summary": "'혐오시설' 하수처리장에 청년주택?···'탄천물재생센터' 용산공원 대안될까 여성경제신문",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [
-      "대한민국"
-    ],
-    "companies": [],
-    "technologies": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-08-27",
-    "specs": [],
-    "source": "Google News Korea 상하수도",
-    "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5KZHlkR0NTbExuMF9ydUNTUGl5WS0zRmlvUFRheTdoMldTVTdfVy1oNElzUmE5dEF4NnBHaXZNRTFtcy1TV1pYWFBfbUFHQjU2NlIxdzFjSVN5LVhOMkhYcTl4SmNFbU9xaXpSY01LZXpiOXfSAXdBVV95cUxQZDBEZ09UeWs2OXF1TWNKTlJqVkp5MkVmZ1dzY1lDdk1qZmd1b2MwWlVtbGN1MUxQMGdBem90XzVWaFVuZUx5VEkyZ0JOVzdzMjBheHJxWFUwMEo4ckN6Ulo3RVlpRkhmdTFKZ1VoZEFLeGc0eE9qOA?oc=5",
-    "score": 26,
-    "keywords": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "domestic": true,
-    "region": "domestic",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-08-27",
-    "title": "용산 지키고 하수처리장 내준다?…與 “탄천 카드에 사실상 ‘대체지’ 선정 수요만 10년 걸릴 판” - 더퍼블릭",
-    "ko_title": "용산 지키고 하수처리장 내준다?…與 “탄천 카드에 사실상 ‘대체지’ 선정 수요만 10년 걸릴 판” - 더퍼블릭",
-    "brief": "용산 지키고 하수처리장 내준다?…與 “탄천 카드에 사실상 ‘대체지’ 선정 수요만 10년 걸릴 판” 더퍼블릭",
-    "summary": "용산 지키고 하수처리장 내준다?…與 “탄천 카드에 사실상 ‘대체지’ 선정 수요만 10년 걸릴 판” 더퍼블릭",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [
-      "대한민국"
-    ],
-    "companies": [],
-    "technologies": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-08-27",
-    "specs": [],
-    "source": "Google News Korea 상하수도",
-    "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5MNUpDT1BSdEFJSVlyWXBvQUlOVWVfdEFmX0JrMDZ2SV9pZk9JSjNVbEFtb1RYTzVvMXF6RGdLS045Z0hwQ2NpMk9XSnU1NUpLSXdSX2M0R1MtbWk5VGIxcTZuYktVVlM2Ukdn0gFvQVVfeXFMT3pKYU5Lb3hra19PdDNlUTZlZ1R1YWwyUkNadEEyT2JTWWtjcDd4em9KQ0RDN0Y2LWJZVk5rUVhrY2pjdHVJVUI4dVFfQWFrNEhkMGwtTUkzWm41eUJHbWczX0hvUmROY1lyWWFyWW1V?oc=5",
-    "score": 26,
-    "keywords": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "domestic": true,
-    "region": "domestic",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-08-27",
-    "title": "Kier awarded $39m contract for Blackburn wastewater upgrade works - World Construction Network",
-    "ko_title": "Kier awarded $39m contract for Blackburn wastewater upgrade works - World Construction Network",
-    "brief": "Kier awarded $39m contract for Blackburn wastewater upgrade works World Construction Network",
-    "summary": "Kier awarded $39m contract for Blackburn wastewater upgrade works World Construction Network",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "프로젝트/수주",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "wastewater",
-      "contract",
-      "award",
-      "upgrade"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-08-27",
-    "specs": [],
-    "source": "Google News Global Water",
-    "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOUHNFbzRwVF9MVWZfVVJwNzJFZmdJSkZhbmRzRGJydDV0ODU4RDZnUl9rcXNyb2lzRnZ4bmlUbDhXUVdtWUxFWkwyOF9xbVZER1VENUs3aHZpeHR6dnFLRkh3bER6MnBlV1ZqSTYxU0YyMDdMLTdzZDBIOWhCbmp5YXRkeC1QUVdhUkFQOFhPTWZDZw?oc=5",
-    "score": 23,
-    "keywords": [
-      "wastewater",
-      "contract",
-      "award",
-      "upgrade"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
     "date": "2026-08-10",
     "title": "LiqTech Secures U.S. Industrial Wastewater Reuse Order for QureFlow™ System",
     "ko_title": "LiqTech Secures U.S. Industrial Wastewater Reuse Order for QureFlow™ System",
@@ -50390,6 +50192,215 @@
     ],
     "domestic": false,
     "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-10-22",
+    "title": "QUA Expands Membrane Portfolio with EnviQ® RF 30, a Compact, Ready-to-Install MBR Technology for Decentralized Wastewater Treatment",
+    "ko_title": "QUA Expands Membrane Portfolio with EnviQ® RF 30, a Compact, Ready-to-Install MBR Technology for Decentralized Wastewater Treatment",
+    "brief": "EnviQ® RF 30 is a compact membrane module for membrane bioreactor and submerged ultrafiltration applications, enabling decentralized water and wastewater treatment, flexible deploy",
+    "summary": "EnviQ® RF 30 is a compact membrane module for membrane bioreactor and submerged ultrafiltration applications, enabling decentralized water and wastewater treatment, flexible deployment where space and ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane",
+      "ultrafiltration",
+      "wastewater",
+      "water treatment",
+      "membrane module"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-10-22",
+    "specs": [],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6afc383f53c9409fafca1f5e0da18ba1&url=https%3a%2f%2fwww.prnewswire.com%2fnews-releases%2fqua-expands-membrane-portfolio-with-enviq-rf-30-a-compact-ready-to-install-mbr-technology-for-decentralized-wastewater-treatment-302917319.html&c=6561925453484023863&mkt=en-us",
+    "score": 59,
+    "keywords": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane",
+      "ultrafiltration",
+      "wastewater",
+      "water treatment",
+      "membrane module"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-10-29",
+    "title": "Water And Wastewater Treatment Technologies Market - Global Forecast To 2036 Market To Reach US$191.12 Billion As PFAS Rules, Membrane Filtration, And Digital Water Drive 5.8% CAGR",
+    "ko_title": "Water And Wastewater Treatment Technologies Market - Global Forecast To 2036 Market To Reach US$191.12 Billion As PFAS Rules, Membrane Filtration, And Digital Water Drive 5.8% CAGR",
+    "brief": "(MENAFN- GlobeNewsWire - Nasdaq) Dublin, Oct. 29, 2026 (GLOBE NEWSWIRE) -- \"Water and Wastewater Treatment Technologies Market, - Global Forecast to 2036\" has been added to Researc",
+    "summary": "(MENAFN- GlobeNewsWire - Nasdaq) Dublin, Oct. 29, 2026 (GLOBE NEWSWIRE) -- \"Water and Wastewater Treatment Technologies Market, - Global Forecast to 2036\" has been added to ResearchAndMarkets.com's ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "PFAS/오염물",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "membrane",
+      "wastewater",
+      "water treatment",
+      "pfas"
+    ],
+    "policy_alert": "",
+    "date_context": "Oct. 29, 2026",
+    "specs": [
+      "191.12 Billion",
+      "5.8%"
+    ],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6afc383f53c9409fafca1f5e0da18ba1&url=https%3a%2f%2fmenafn.com%2f1111886115%2fWater-And-Wastewater-Treatment-Technologies-Market-Global-Forecast-To-2036-Market-To-Reach-US19112-Billion-As-PFAS-Rules-Membrane-Filtration-And-Digital-Water-Drive-58-CAGR&c=2150844900903370267&mkt=en-us",
+    "score": 33,
+    "keywords": [
+      "membrane",
+      "wastewater",
+      "water treatment",
+      "pfas"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-11-17",
+    "title": "경기도의회 임창열 의원, 구리하수처리장 노후화 심각...현대화·지하화 조속히 추진해야 - 뉴스파노라마",
+    "ko_title": "경기도의회 임창열 의원, 구리하수처리장 노후화 심각...현대화·지하화 조속히 추진해야 - 뉴스파노라마",
+    "brief": "경기도의회 임창열 의원, 구리하수처리장 노후화 심각...현대화·지하화 조속히 추진해야 뉴스파노라마",
+    "summary": "경기도의회 임창열 의원, 구리하수처리장 노후화 심각...현대화·지하화 조속히 추진해야 뉴스파노라마",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-11-17",
+    "specs": [],
+    "source": "Google News Korea 재이용수 PFAS",
+    "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBSVGtCelRzcEx4N2tOeVBNckJBSldKUmFNQTQ4WlE1dUhNV2cwdGgzMlBiZElrVjJsT0xkcEVQUnJRN2g4QkxYZVJfdjRmNTNWQTBUcHFUczdtR2VoRUY3X2l2ampMX3JPUzNZblRXUQ?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-08-11",
+    "title": "Australia's Largest Inland Wastewater Treatment Facility Selects MemCor™ MBR System for Expansion",
+    "ko_title": "Australia's Largest Inland Wastewater Treatment Facility Selects MemCor™ MBR System for Expansion",
+    "brief": "The Lower Molonglo Water Quality Control Center will become the largest MBR plant in Australia with the addition of a new DuPont™ MemCor™ MBR system WILMINGTON, Del., Aug. 11, 2026",
+    "summary": "The Lower Molonglo Water Quality Control Center will become the largest MBR plant in Australia with the addition of a new DuPont™ MemCor™ MBR system WILMINGTON, Del., Aug. 11, 2026 /PRNewswire/ -- ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "mbr",
+      "wastewater",
+      "water treatment",
+      "expansion",
+      "dupont"
+    ],
+    "policy_alert": "",
+    "date_context": "Aug. 11, 2026",
+    "specs": [],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6afc383f53c9409fafca1f5e0da18ba1&url=https%3a%2f%2fwww.prnewswire.com%2fnews-releases%2faustralias-largest-inland-wastewater-treatment-facility-selects-memcor-mbr-system-for-expansion-302846252.html&c=12856373631053607080&mkt=en-us",
+    "score": 37,
+    "keywords": [
+      "mbr",
+      "wastewater",
+      "water treatment",
+      "expansion",
+      "dupont"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-11-17",
+    "title": "Illinois EPA awards over $3 Million to public wastewater treatment plants - cnhinews.com",
+    "ko_title": "Illinois EPA awards over $3 Million to public wastewater treatment plants - cnhinews.com",
+    "brief": "Illinois EPA awards over $3 Million to public wastewater treatment plants cnhinews.com",
+    "summary": "Illinois EPA awards over $3 Million to public wastewater treatment plants cnhinews.com",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "프로젝트/수주",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "wastewater",
+      "water treatment",
+      "award"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-11-17",
+    "specs": [
+      "3 Million"
+    ],
+    "source": "Google News Global Water",
+    "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPeFEzTTVJYzhhc1l3eEJNY0h5V0kyRkNkTngzTk0tQmREbFhKN1hlUXZWR0xYbEczcTk2SlFqbURrVUcwR2dDcEJIQzdPQW5FVkVsR2N2Wm1JT3V2U1NsZWQxVU96YWVhWkdOLWFOTWxuTzlwQkVGS1FxQlItM2FYMThKeWZoRGlPWS1Z?oc=5",
+    "score": 20,
+    "keywords": [
+      "wastewater",
+      "water treatment",
+      "award"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-11-17",
+    "title": "에코시스텍, 파주 하수처리시설 AI 자율운전 실증···“전력 사용 15% 절감” - 시사저널e",
+    "ko_title": "에코시스텍, 파주 하수처리시설 AI 자율운전 실증···“전력 사용 15% 절감” - 시사저널e",
+    "brief": "에코시스텍, 파주 하수처리시설 AI 자율운전 실증···“전력 사용 15% 절감” 시사저널e",
+    "summary": "에코시스텍, 파주 하수처리시설 AI 자율운전 실증···“전력 사용 15% 절감” 시사저널e",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-11-17",
+    "specs": [
+      "15%"
+    ],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5jMnlHS2V0MGZZRGpGZG01YVJ6VHNzWjdIX1VzM1ZaMUlxVnFwS3g5NDBVbVlXZjBmQUIxcFU1T1BkNUZLLWVSN293cG96d1ZjY09fV3Foa3NBUzlOYTFBZjYyU1I5S29mQm5BT0R2dFVpUdIBdkFVX3lxTE9qdVUxaXIyNlFlejNuR0VkZ1owX0VYVnB4NlZPdWlfRTR1d0h6YUg2eE9fV1lSdTMtalhPejF1Qi1ZLUtOVGRtUW5VaFhGTXlxT09KMjM4ZnVrVVlyNkM5OXVXWFZ1T1J1T29BTTVFRlQ2cmtnOWc?oc=5",
+    "score": 18,
+    "keywords": [
+      "하수처리",
+      "수처리"
+    ],
+    "domestic": true,
+    "region": "domestic",
     "source_type": "rss",
     "image": ""
   }
