@@ -18,198 +18,6 @@
     "date_context": "Aug. 10, 2026",
     "specs": [],
     "source": "Bing News Global Membrane Reuse",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a91183d97304b5c9a78ce37de897bd4&url=https%3a%2f%2fuk.finance.yahoo.com%2fnews%2fliqtech-secures-u-industrial-wastewater-130000564.html&c=12508849670372883301&mkt=en-us",
-    "score": 25,
-    "keywords": [
-      "wastewater",
-      "water reuse",
-      "industrial wastewater"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-08-28",
-    "title": "Parkersburg moves closer to breaking ground on PFAS water treatment upgrade - WTAP",
-    "ko_title": "Parkersburg moves closer to breaking ground on PFAS water treatment upgrade - WTAP",
-    "brief": "Parkersburg moves closer to breaking ground on PFAS water treatment upgrade WTAP",
-    "summary": "Parkersburg moves closer to breaking ground on PFAS water treatment upgrade WTAP",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "PFAS/오염물",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "water treatment",
-      "pfas",
-      "upgrade"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-08-28",
-    "specs": [],
-    "source": "Google News Global Water",
-    "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQdllwSEZRZk5iYldMcWdSRmJkNGxtVFE1RjdKLTBaSTFZR3k0WXlwWDJpSVlWekdaUjRnMUFJT3FkUlliR3d2U3RWR2FSbi03cHZnSm40dUxBWW4wT0F2QWNxTlE5LWV6Qk1MbVptZHNDRXZmQzBwblV3ZGdvcGhZdjBoZk9MZlRhY3dvZTlnWFVqMktzWFE4Y1p4U1VONFdjZ3ZibdIBuAFBVV95cUxPTWVlVy1xV2Q4S1g0QW1rUEZJM2lKY25NSE9CWkxKYzFZVTktbjNBRkRRWFFYdHFHX0dINmFNOC02eDRFZGdyYzdxalh3NHFZQ3YyTFZxd2FVVG1KRzJaMXdaeVU2SHJXZmRNZjZnS1FleWtyOVowcmpjbExfdG5ocjJRMUk2OFl6S1hMb29KVzlvWGN1RkRyN3ROci1CQW0xRWxRaGlGY3g4UHlxb3N6eURlS1RfN2Vf?oc=5",
-    "score": 22,
-    "keywords": [
-      "water treatment",
-      "pfas",
-      "upgrade"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-08-28",
-    "title": "충주시 성내충인동, 아동 33명 하수처리장 견학…환경의식 키운다 - gukjenews.com",
-    "ko_title": "충주시 성내충인동, 아동 33명 하수처리장 견학…환경의식 키운다 - gukjenews.com",
-    "brief": "충주시 성내충인동, 아동 33명 하수처리장 견학…환경의식 키운다 gukjenews.com",
-    "summary": "충주시 성내충인동, 아동 33명 하수처리장 견학…환경의식 키운다 gukjenews.com",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [
-      "대한민국"
-    ],
-    "companies": [],
-    "technologies": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-08-28",
-    "specs": [
-      "33명"
-    ],
-    "source": "Google News Korea 상하수도",
-    "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBqYXBDRzNTVkp4dFhneDRHcTZ2NkVSZ3k2cE1kUjlTejRFQ3NheU9faldqSlVsRjFBdDByOHZLN01DNmtaS1hOX3lPcEtDekYtRzVCSHNDdzA0Nk84MHVjaXZXVXNuS1gzRS05SGhR?oc=5",
-    "score": 26,
-    "keywords": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "domestic": true,
-    "region": "domestic",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-08-10",
-    "title": "LiqTech Secures U.S. Industrial Wastewater Reuse Order for QureFlow™ System",
-    "ko_title": "LiqTech Secures U.S. Industrial Wastewater Reuse Order for QureFlow™ System",
-    "brief": "BALLERUP, Denmark, Aug. 10, 2026 (GLOBE NEWSWIRE) -- LiqTech International, Inc. (Nasdaq: LIQT), a clean technology company specializing in advanced ceramic filtration solutions, t",
-    "summary": "BALLERUP, Denmark, Aug. 10, 2026 (GLOBE NEWSWIRE) -- LiqTech International, Inc. (Nasdaq: LIQT), a clean technology company specializing in advanced ceramic filtration solutions, today announced that ...",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "재이용수",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "wastewater",
-      "water reuse",
-      "industrial wastewater"
-    ],
-    "policy_alert": "",
-    "date_context": "Aug. 10, 2026",
-    "specs": [],
-    "source": "Bing News Global Membrane Reuse",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a919e5a17b34c558366cec5894e97a2&url=https%3a%2f%2fuk.finance.yahoo.com%2fnews%2fliqtech-secures-u-industrial-wastewater-130000564.html&c=12508849670372883301&mkt=en-us",
-    "score": 25,
-    "keywords": [
-      "wastewater",
-      "water reuse",
-      "industrial wastewater"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-08-28",
-    "title": "Delhi Master Plan 2047 Targets Water Reuse And Sewage Upgrade - Construction World",
-    "ko_title": "Delhi Master Plan 2047 Targets Water Reuse And Sewage Upgrade - Construction World",
-    "brief": "Delhi Master Plan 2047 Targets Water Reuse And Sewage Upgrade Construction World",
-    "summary": "Delhi Master Plan 2047 Targets Water Reuse And Sewage Upgrade Construction World",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "프로젝트/수주",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "sewage",
-      "water reuse",
-      "upgrade"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-08-28",
-    "specs": [],
-    "source": "Google News Global Water Reuse",
-    "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPNmNqa085ZXpUc18xYnFWRUFMeWRqOVBpUjZoQTlkTERTU1BIemlaUzVOR1VzYzBBRkZpZWJQME04Qzd3b3ZVNElsZlNWWTUxdUg0RnoyUzR0MFh1c3Z4QVl5am9od3RwbHliN2dJaDlKN05IM1NJMVRCT24ySmdIaE5VYXBMMnhPU0wySG92cURqUkZCZE8xUnJKNnhRbDNQb213S3J4ZkQwckd5QXNidHhBSkV5WExnQUtZRDUxZTNpLWpoWDB5ank5R2FEQ2FFUEo2TW03aWo4R21PUUpDNkFWNDk2SXFM?oc=5",
-    "score": 22,
-    "keywords": [
-      "sewage",
-      "water reuse",
-      "upgrade"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "search_rss",
-    "image": ""
-  },
-  {
-    "date": "2026-08-28",
-    "title": "Pegram secures $2.4 million for wastewater treatment plant upgrade - The Tennessean",
-    "ko_title": "Pegram secures $2.4 million for wastewater treatment plant upgrade - The Tennessean",
-    "brief": "Pegram secures $2.4 million for wastewater treatment plant upgrade The Tennessean",
-    "summary": "Pegram secures $2.4 million for wastewater treatment plant upgrade The Tennessean",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "프로젝트/수주",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "wastewater",
-      "water treatment",
-      "upgrade"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-08-28",
-    "specs": [
-      "2.4 million"
-    ],
-    "source": "Google News Global Water",
-    "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPUFo5cVl0cnlJbkhVa0EweFc1QjY4ck5sU0FWNFBmMmxXLUZSNW5jdlVTbFdJZjZRMkFFZl9MWTdDclhFZ3RLbWpDVWRya2ZtdTdoMmV4LWp2MVNIOU1aWXI5MzJHNGh1ZWtnX3lEUkhmUV92THE0M3dQWk13SEhobzNtb2dGd0RONWZjVEk3bGRGSHVJaGNzN1dwNTU0T3c0Y1FtUTlDZGtfYzFlcmV6SC01Wjh0ek1DNlE?oc=5",
-    "score": 20,
-    "keywords": [
-      "wastewater",
-      "water treatment",
-      "upgrade"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-08-10",
-    "title": "LiqTech Secures U.S. Industrial Wastewater Reuse Order for QureFlow™ System",
-    "ko_title": "LiqTech Secures U.S. Industrial Wastewater Reuse Order for QureFlow™ System",
-    "brief": "BALLERUP, Denmark, Aug. 10, 2026 (GLOBE NEWSWIRE) -- LiqTech International, Inc. (Nasdaq: LIQT), a clean technology company specializing in advanced ceramic filtration solutions, t",
-    "summary": "BALLERUP, Denmark, Aug. 10, 2026 (GLOBE NEWSWIRE) -- LiqTech International, Inc. (Nasdaq: LIQT), a clean technology company specializing in advanced ceramic filtration solutions, today announced that ...",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "재이용수",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "wastewater",
-      "water reuse",
-      "industrial wastewater"
-    ],
-    "policy_alert": "",
-    "date_context": "Aug. 10, 2026",
-    "specs": [],
-    "source": "Bing News Global Membrane Reuse",
     "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a9216632ac44a2db87a3454e67208f4&url=https%3a%2f%2fuk.finance.yahoo.com%2fnews%2fliqtech-secures-u-industrial-wastewater-130000564.html&c=12508849670372883301&mkt=en-us",
     "score": 25,
     "keywords": [
@@ -50406,6 +50214,213 @@
     "specs": [],
     "source": "Bing News Global Membrane Reuse",
     "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6afc9b5ebd2e4db6b1c36aa53a9ebf48&url=https%3a%2f%2fwww.nature.com%2fnature-index%2ftopics%2fl4%2fmembrane-technologies-for-water-treatment-and-purification&c=5477425063516893123&mkt=en-us",
+    "score": 23,
+    "keywords": [
+      "membrane",
+      "microfiltration",
+      "water treatment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-10-22",
+    "title": "QUA Expands Membrane Portfolio with EnviQ® RF 30, a Compact, Ready-to-Install MBR Technology for Decentralized Wastewater Treatment",
+    "ko_title": "QUA Expands Membrane Portfolio with EnviQ® RF 30, a Compact, Ready-to-Install MBR Technology for Decentralized Wastewater Treatment",
+    "brief": "EnviQ® RF 30 is a compact membrane module for membrane bioreactor and submerged ultrafiltration applications, enabling decentralized water and wastewater treatment, flexible deploy",
+    "summary": "EnviQ® RF 30 is a compact membrane module for membrane bioreactor and submerged ultrafiltration applications, enabling decentralized water and wastewater treatment, flexible deployment where space and ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane",
+      "ultrafiltration",
+      "wastewater",
+      "water treatment",
+      "membrane module"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-10-22",
+    "specs": [],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6afccdb4ddbf4e5882a8a5c576b0f26e&url=https%3a%2f%2fwww.prnewswire.com%2fnews-releases%2fqua-expands-membrane-portfolio-with-enviq-rf-30-a-compact-ready-to-install-mbr-technology-for-decentralized-wastewater-treatment-302917319.html&c=6561925453484023863&mkt=en-us",
+    "score": 59,
+    "keywords": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane",
+      "ultrafiltration",
+      "wastewater",
+      "water treatment",
+      "membrane module"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-10-29",
+    "title": "Water And Wastewater Treatment Technologies Market - Global Forecast To 2036 Market To Reach US$191.12 Billion As PFAS Rules, Membrane Filtration, And Digital Water Drive 5.8% CAGR",
+    "ko_title": "Water And Wastewater Treatment Technologies Market - Global Forecast To 2036 Market To Reach US$191.12 Billion As PFAS Rules, Membrane Filtration, And Digital Water Drive 5.8% CAGR",
+    "brief": "(MENAFN- GlobeNewsWire - Nasdaq) Dublin, Oct. 29, 2026 (GLOBE NEWSWIRE) -- \"Water and Wastewater Treatment Technologies Market, - Global Forecast to 2036\" has been added to Researc",
+    "summary": "(MENAFN- GlobeNewsWire - Nasdaq) Dublin, Oct. 29, 2026 (GLOBE NEWSWIRE) -- \"Water and Wastewater Treatment Technologies Market, - Global Forecast to 2036\" has been added to ResearchAndMarkets.com's ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "PFAS/오염물",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "membrane",
+      "wastewater",
+      "water treatment",
+      "pfas"
+    ],
+    "policy_alert": "",
+    "date_context": "Oct. 29, 2026",
+    "specs": [
+      "191.12 Billion",
+      "5.8%"
+    ],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6afccdb4ddbf4e5882a8a5c576b0f26e&url=https%3a%2f%2fmenafn.com%2f1111886115%2fWater-And-Wastewater-Treatment-Technologies-Market-Global-Forecast-To-2036-Market-To-Reach-US19112-Billion-As-PFAS-Rules-Membrane-Filtration-And-Digital-Water-Drive-58-CAGR&c=2150844900903370267&mkt=en-us",
+    "score": 33,
+    "keywords": [
+      "membrane",
+      "wastewater",
+      "water treatment",
+      "pfas"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-11-18",
+    "title": "[종목 브리핑] 듀폰 OxyMem, 윈저 하수처리장 개보수에 선정 - 비건뉴스",
+    "ko_title": "[종목 브리핑] DuPont OxyMem, 윈저 하수처리장 개보수에 선정 - 비건뉴스",
+    "brief": "[종목 브리핑] DuPont OxyMem, 윈저 하수처리장 개보수에 선정 비건뉴스",
+    "summary": "[종목 브리핑] DuPont OxyMem, 윈저 하수처리장 개보수에 선정 비건뉴스",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-11-18",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBKaEZLUm40UUJ1dVl0MGVySHQxcnFpNEVvT0h3dERIb2RkZDVkQTBHTHNPTHd5bzhEUlVXbkVvRy1oa1Rmak9GVnRNSXlybUx4ZFBSTUJPYkt0MjZ0UWtDT3E4ay1Zdw?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-11-17",
+    "title": "승기하수처리장 지하화 내달 첫삽…2032년 하반기 준공 - 인천in 시민의 손으로 만드는 인터넷신문",
+    "ko_title": "승기하수처리장 지하화 내달 첫삽…2032년 하반기 준공 - 인천in 시민의 손으로 만드는 인터넷신문",
+    "brief": "승기하수처리장 지하화 내달 첫삽…2032년 하반기 준공 인천in 시민의 손으로 만드는 인터넷신문",
+    "summary": "승기하수처리장 지하화 내달 첫삽…2032년 하반기 준공 인천in 시민의 손으로 만드는 인터넷신문",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-11-17",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5OS01vbDk2RGdQUlFKT3g2a1BCVDJnQ2ZGajM4OVFjNTZKVzVqYmhKcFBUZTNrOTBSRmZoRmF3Vl9Zc3M5TnNKc2lNLTZRaDRtV2RJNG1DRUFyMWg5WG53NUZIajZyR0o5ZjdhTQ?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-08-11",
+    "title": "Australia's Largest Inland Wastewater Treatment Facility Selects MemCor™ MBR System for Expansion",
+    "ko_title": "Australia's Largest Inland Wastewater Treatment Facility Selects MemCor™ MBR System for Expansion",
+    "brief": "The Lower Molonglo Water Quality Control Center will become the largest MBR plant in Australia with the addition of a new DuPont™ MemCor™ MBR system WILMINGTON, Del., Aug. 11, 2026",
+    "summary": "The Lower Molonglo Water Quality Control Center will become the largest MBR plant in Australia with the addition of a new DuPont™ MemCor™ MBR system WILMINGTON, Del., Aug. 11, 2026 /PRNewswire/ -- ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "mbr",
+      "wastewater",
+      "water treatment",
+      "expansion",
+      "dupont"
+    ],
+    "policy_alert": "",
+    "date_context": "Aug. 11, 2026",
+    "specs": [],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6afccdb4ddbf4e5882a8a5c576b0f26e&url=https%3a%2f%2fwww.prnewswire.com%2fnews-releases%2faustralias-largest-inland-wastewater-treatment-facility-selects-memcor-mbr-system-for-expansion-302846252.html&c=12856373631053607080&mkt=en-us",
+    "score": 37,
+    "keywords": [
+      "mbr",
+      "wastewater",
+      "water treatment",
+      "expansion",
+      "dupont"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-10-14",
+    "title": "Membrane Technologies for Water Treatment and Purification",
+    "ko_title": "Membrane Technologies for Water Treatment and Purification",
+    "brief": "Membrane‐based processes have become central to addressing global water scarcity by enabling energy‐efficient separation of contaminants from water. Pressure‐driven methods such as",
+    "summary": "Membrane‐based processes have become central to addressing global water scarcity by enabling energy‐efficient separation of contaminants from water. Pressure‐driven methods such as microfiltration, ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "membrane",
+      "microfiltration",
+      "water treatment"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-10-14",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6afccdb415284d0e84e321ab4fe33ddb&url=https%3a%2f%2fwww.nature.com%2fnature-index%2ftopics%2fl4%2fmembrane-technologies-for-water-treatment-and-purification&c=5477425063516893123&mkt=en-us",
     "score": 23,
     "keywords": [
       "membrane",
