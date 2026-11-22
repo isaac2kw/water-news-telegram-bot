@@ -1,236 +1,5 @@
 [
   {
-    "date": "2026-09-04",
-    "title": "Case study: Dow integrates water reuse into Path2Zero processing plant expansion",
-    "ko_title": "Case study: Dow integrates water reuse into Path2Zero processing plant expansion",
-    "brief": "Xylem’s water-as-a-service treatment system will process river water and recover cooling-tower blowdown wastewater for ethylene production.",
-    "summary": "Xylem’s water-as-a-service treatment system will process river water and recover cooling-tower blowdown wastewater for ethylene production.",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "프로젝트/수주",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "wastewater",
-      "water reuse",
-      "expansion",
-      "xylem"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-09-04",
-    "specs": [],
-    "source": "Bing News Global Membrane Reuse",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aa438cf41a34508935ddeccfb15c49c&url=https%3a%2f%2fwww.plantservices.com%2fenergy%2fwater-management%2farticle%2f55403213%2fdow-integrates-water-reuse-into-path2zero-processing-plant-expansion&c=5087183445996730856&mkt=en-us",
-    "score": 30,
-    "keywords": [
-      "wastewater",
-      "water reuse",
-      "expansion",
-      "xylem"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-09-11",
-    "title": "안양시의회 도시교통위원회, 석수광역공공하수처리장 방문 - 경기평화신문",
-    "ko_title": "안양시의회 도시교통위원회, 석수광역공공하수처리장 방문 - 경기평화신문",
-    "brief": "안양시의회 도시교통위원회, 석수광역공공하수처리장 방문 경기평화신문",
-    "summary": "안양시의회 도시교통위원회, 석수광역공공하수처리장 방문 경기평화신문",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [
-      "대한민국"
-    ],
-    "companies": [],
-    "technologies": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-09-11",
-    "specs": [],
-    "source": "Google News Korea 상하수도",
-    "link": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE0zM0RXWDJVdUFZYlE1c3BZNGYya1ZQTTR2a3hQcEtkbUNHcHdHajJsdUJ5anJCdy1nM2thY1pzZVl2Z1J4amRrVFV3?oc=5",
-    "score": 26,
-    "keywords": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "domestic": true,
-    "region": "domestic",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-09-10",
-    "title": "[한국상하수도협회] AWWA·K-water와 손잡고 국내기업의 미국 물시장 진출 업무협약 체결 - 워터저널",
-    "ko_title": "[한국상하수도협회] AWWA·K-water와 손잡고 국내기업의 미국 물시장 진출 업무협약 체결 - 워터저널",
-    "brief": "[한국상하수도협회] AWWA·K-water와 손잡고 국내기업의 미국 물시장 진출 업무협약 체결 워터저널",
-    "summary": "[한국상하수도협회] AWWA·K-water와 손잡고 국내기업의 미국 물시장 진출 업무협약 체결 워터저널",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [
-      "대한민국"
-    ],
-    "companies": [],
-    "technologies": [
-      "상하수도",
-      "awwa",
-      "상하수도협회"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-09-10",
-    "specs": [],
-    "source": "Google News Korea 학회 전시회",
-    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE1faVljNHRZV3NtYmtWeHNaaDRFSkx5SWNDWVdNQ0ZhVU85eGxOdGJjZkJkakM1OFNyTTZiU2duZWJBSkR1TUI1VWpjaUJrejZheEhDS01LaF9SbmgxVERLN1BzMWl5Ql82S0lVVml3TVRUd9IBdkFVX3lxTE8tcHlSTmZ2TmpOX3RzVWtvQ19kWnFiMEZKRmhDdW04a0tsUzUzeGpSUTFEQWdhY05KNkdGTWRydy1NTnVXS1RkbTRCSDlwZXc2YkZ0cVpJaXloMkl6YlhXcU4wOF9JUHBobndfLTRadndRRG1PLUE?oc=5",
-    "score": 23,
-    "keywords": [
-      "상하수도",
-      "awwa",
-      "상하수도협회"
-    ],
-    "domestic": true,
-    "region": "domestic",
-    "source_type": "search_rss",
-    "image": ""
-  },
-  {
-    "date": "2026-09-02",
-    "title": "Hamworthy Launches Ultra Trident Membrane Bioreactor at SMM 2026",
-    "ko_title": "Hamworthy Launches Ultra Trident Membrane Bioreactor at SMM 2026",
-    "brief": "Hamworthy has introduced the Ultra Trident MBR, a compact membrane bioreactor offering biological and ultrafiltration treatment for vessel types ranging from cruise ships to offsho",
-    "summary": "Hamworthy has introduced the Ultra Trident MBR, a compact membrane bioreactor offering biological and ultrafiltration treatment for vessel types ranging from cruise ships to offshore support vessels.",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "분리막/MBR",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "mbr",
-      "membrane bioreactor",
-      "membrane",
-      "ultrafiltration"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-09-02",
-    "specs": [],
-    "source": "Bing News Global MBR",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aa489a006bb4b0685e73dff7c5db323&url=https%3a%2f%2foceannews.com%2fnews%2fscience-technology%2fhamworthy-launches-ultra-trident-membrane-bioreactor-at-smm-2026%2f&c=15651945408866912146&mkt=en-us",
-    "score": 36,
-    "keywords": [
-      "mbr",
-      "membrane bioreactor",
-      "membrane",
-      "ultrafiltration"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-09-10",
-    "title": "Water stewardship in the age of AI: Maximizing water reuse in data centers",
-    "ko_title": "Water stewardship in the age of AI: Maximizing water reuse in data centers",
-    "brief": "How data centers are adopting advanced water treatment solutions such as ultrafiltration membranes to enhance water reuse, reduce environmental impact and meet regulatory ...",
-    "summary": "How data centers are adopting advanced water treatment solutions such as ultrafiltration membranes to enhance water reuse, reduce environmental impact and meet regulatory ...",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "분리막/MBR",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "membrane",
-      "ultrafiltration",
-      "water reuse",
-      "water treatment"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-09-10",
-    "specs": [],
-    "source": "Bing News Global UF MF",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aa489afc7f040e89b26308b626be059&url=https%3a%2f%2fwww.watertechonline.com%2fwater-reuse%2farticle%2f55395695%2fwater-stewardship-in-the-age-of-ai-maximizing-water-reuse-in-data-centers&c=3325256638564411801&mkt=en-us",
-    "score": 32,
-    "keywords": [
-      "membrane",
-      "ultrafiltration",
-      "water reuse",
-      "water treatment"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "search_rss",
-    "image": ""
-  },
-  {
-    "date": "2026-09-11",
-    "title": "안양시의회 도시교통위원회, 석수광역공공하수처리장 방문 - 하나뉴스",
-    "ko_title": "안양시의회 도시교통위원회, 석수광역공공하수처리장 방문 - 하나뉴스",
-    "brief": "안양시의회 도시교통위원회, 석수광역공공하수처리장 방문 하나뉴스",
-    "summary": "안양시의회 도시교통위원회, 석수광역공공하수처리장 방문 하나뉴스",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [
-      "대한민국"
-    ],
-    "companies": [],
-    "technologies": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-09-11",
-    "specs": [],
-    "source": "Google News Korea 상하수도",
-    "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBvQUhCTUtxTU15WWcwcDBHN2FpTi04Z0RaQS1NNFRBN3VpenM5Y0d3d2N6RUd6SlF2MXVET1BOeUVGUUUwWTMyWmt2OGJ5eTEyVnVjMGlHeF82c2tiTWZ6QXBIYUh3b2pzZjFCOThR?oc=5",
-    "score": 26,
-    "keywords": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "domestic": true,
-    "region": "domestic",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-09-11",
-    "title": "안양시의회 도시교통위원회, 석수광역공공하수처리장 현장 점검 - webeconomy.co.kr",
-    "ko_title": "안양시의회 도시교통위원회, 석수광역공공하수처리장 현장 점검 - webeconomy.co.kr",
-    "brief": "안양시의회 도시교통위원회, 석수광역공공하수처리장 현장 점검 webeconomy.co.kr",
-    "summary": "안양시의회 도시교통위원회, 석수광역공공하수처리장 현장 점검 webeconomy.co.kr",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [
-      "대한민국"
-    ],
-    "companies": [],
-    "technologies": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-09-11",
-    "specs": [],
-    "source": "Google News Korea 재이용수 PFAS",
-    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBlYkJ4YzM2ZmNGU1U0Vkt2SGNkZW9Kc01nRnJxRzkzRDVSLUVrY3NKbUZMWUZud3NwWjlpR2RmRm1XNlhVVU0zRkRhNHFESlJkQnd2T1FxZUhWUmF1Rk96WFpwcEtpbzE4LWRxVndBd1NZZw?oc=5",
-    "score": 26,
-    "keywords": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "domestic": true,
-    "region": "domestic",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
     "date": "2026-09-02",
     "title": "Hamworthy Launches Ultra Trident Membrane Bioreactor at SMM 2026",
     "ko_title": "Hamworthy Launches Ultra Trident Membrane Bioreactor at SMM 2026",
@@ -50542,6 +50311,248 @@
     ],
     "domestic": false,
     "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-10-22",
+    "title": "QUA Expands Membrane Portfolio with EnviQ® RF 30, a Compact, Ready-to-Install MBR Technology for Decentralized Wastewater Treatment",
+    "ko_title": "QUA Expands Membrane Portfolio with EnviQ® RF 30, a Compact, Ready-to-Install MBR Technology for Decentralized Wastewater Treatment",
+    "brief": "EnviQ® RF 30 is a compact membrane module for membrane bioreactor and submerged ultrafiltration applications, enabling decentralized water and wastewater treatment, flexible deploy",
+    "summary": "EnviQ® RF 30 is a compact membrane module for membrane bioreactor and submerged ultrafiltration applications, enabling decentralized water and wastewater treatment, flexible deployment where space and ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane",
+      "ultrafiltration",
+      "wastewater",
+      "water treatment",
+      "membrane module"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-10-22",
+    "specs": [],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b02c42cd44e4500add6f78f789bd42e&url=https%3a%2f%2fwww.prnewswire.com%2fnews-releases%2fqua-expands-membrane-portfolio-with-enviq-rf-30-a-compact-ready-to-install-mbr-technology-for-decentralized-wastewater-treatment-302917319.html&c=6561925453484023863&mkt=en-us",
+    "score": 59,
+    "keywords": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane",
+      "ultrafiltration",
+      "wastewater",
+      "water treatment",
+      "membrane module"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-11-19",
+    "title": "Curtain-type dynamic membranes could make wastewater treatment more compact and cost-effective",
+    "ko_title": "Curtain-type dynamic membranes could make wastewater treatment more compact and cost-effective",
+    "brief": "A new curtain-type dynamic membrane design could reduce the footprint and capital costs of membrane bioreactor (MBR) systems, according to research ...",
+    "summary": "A new curtain-type dynamic membrane design could reduce the footprint and capital costs of membrane bioreactor (MBR) systems, according to research ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane",
+      "wastewater",
+      "water treatment"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-11-19",
+    "specs": [],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b02c42cd44e4500add6f78f789bd42e&url=https%3a%2f%2fwww.filtsep.com%2fcontent%2fnews%2fhigh-density-dynamic-membranes-could-make-wastewater-treatment-more-compact-and-cost-effective&c=3802522772753080482&mkt=en-us",
+    "score": 43,
+    "keywords": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane",
+      "wastewater",
+      "water treatment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-10-29",
+    "title": "Water and Wastewater Treatment Technologies Market - Global Forecast to 2036 | Market to Reach US$191.12 Billion as PFAS Rules, Membrane Filtration, and Digital Water Drive 5.8 ...",
+    "ko_title": "Water and Wastewater Treatment Technologies Market - Global Forecast to 2036 | Market to Reach US$191.12 Billion as PFAS Rules, Membrane Filtration, and Digital Water Drive 5.8 ...",
+    "brief": "Dublin, Oct. 29, 2026 (GLOBE NEWSWIRE)-- \"Water and Wastewater Treatment Technologies Market, - Global Forecast to 2036\" has been added to ResearchAndMarkets.com's offering. The gl",
+    "summary": "Dublin, Oct. 29, 2026 (GLOBE NEWSWIRE)-- \"Water and Wastewater Treatment Technologies Market, - Global Forecast to 2036\" has been added to ResearchAndMarkets.com's offering. The global water and ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "PFAS/오염물",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "membrane",
+      "wastewater",
+      "water treatment",
+      "pfas"
+    ],
+    "policy_alert": "",
+    "date_context": "Oct. 29, 2026",
+    "specs": [
+      "191.12 Billion"
+    ],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b02c42cd44e4500add6f78f789bd42e&url=https%3a%2f%2ffinance.yahoo.com%2ftechnology%2farticles%2fwater-wastewater-treatment-technologies-market-161100681.html&c=13833927766061043742&mkt=en-us",
+    "score": 33,
+    "keywords": [
+      "membrane",
+      "wastewater",
+      "water treatment",
+      "pfas"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-08-11",
+    "title": "Australia's Largest Inland Wastewater Treatment Facility Selects MemCor™ MBR System for Expansion",
+    "ko_title": "Australia's Largest Inland Wastewater Treatment Facility Selects MemCor™ MBR System for Expansion",
+    "brief": "The Lower Molonglo Water Quality Control Center will become the largest MBR plant in Australia with the addition of a new DuPont™ MemCor™ MBR system WILMINGTON, Del., Aug. 11, 2026",
+    "summary": "The Lower Molonglo Water Quality Control Center will become the largest MBR plant in Australia with the addition of a new DuPont™ MemCor™ MBR system WILMINGTON, Del., Aug. 11, 2026 /PRNewswire/ -- ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "mbr",
+      "wastewater",
+      "water treatment",
+      "expansion",
+      "dupont"
+    ],
+    "policy_alert": "",
+    "date_context": "Aug. 11, 2026",
+    "specs": [],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b02c42cd44e4500add6f78f789bd42e&url=https%3a%2f%2fwww.prnewswire.com%2fnews-releases%2faustralias-largest-inland-wastewater-treatment-facility-selects-memcor-mbr-system-for-expansion-302846252.html&c=12856373631053607080&mkt=en-us",
+    "score": 37,
+    "keywords": [
+      "mbr",
+      "wastewater",
+      "water treatment",
+      "expansion",
+      "dupont"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-11-18",
+    "title": "Top Key Players Veolia Environnement S.A., Xylem Inc., Water Treatment System Market to Reach USD 628.0 Billion by 2036",
+    "ko_title": "Top Key Players Veolia Environnement S.A., Xylem Inc., Water Treatment System Market to Reach USD 628.0 Billion by 2036",
+    "brief": "The global water treatment system market is projected to grow from USD 316.3 billion in 2026 to USD 628.0 billion by 2036, registering a compound annual growth rate (CAGR) of 7.1% ",
+    "summary": "The global water treatment system market is projected to grow from USD 316.3 billion in 2026 to USD 628.0 billion by 2036, registering a compound annual growth rate (CAGR) of 7.1% during the forecast ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "기업동향",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "water treatment",
+      "veolia",
+      "xylem"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-11-18",
+    "specs": [
+      "628.0 Billion",
+      "316.3 billion",
+      "628.0 billion",
+      "7.1%"
+    ],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b02c42d46a54f9c8cc46d953f55d2b0&url=https%3a%2f%2fwww.fmiblog.com%2f2026%2f11%2f18%2ftop-key-players-veolia-environnement-s-a-xylem-inc-water-treatment-system-market-to-reach-usd-628-0-billion-by-2036%2f&c=4969249984838957685&mkt=en-us",
+    "score": 23,
+    "keywords": [
+      "water treatment",
+      "veolia",
+      "xylem"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-11-22",
+    "title": "“둔산동, 도마·변동에 늘어날 하수처리 수요 감당해야” - 금강일보",
+    "ko_title": "“둔산동, 도마·변동에 늘어날 하수처리 수요 감당해야” - 금강일보",
+    "brief": "“둔산동, 도마·변동에 늘어날 하수처리 수요 감당해야” 금강일보",
+    "summary": "“둔산동, 도마·변동에 늘어날 하수처리 수요 감당해야” 금강일보",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-11-22",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBtbVJBaHBVUUJIck1od3p2SmZmNzFVV2tKNDdUWDRoTXhhUVJ6UjY1ZkJZc3VJR1cwdUV0czBNRzFFZXZONVRueGhpSXBOSXNETzBXUFV1b0E2VklMMmgyUV9rU2NsTkZyR3c?oc=5",
+    "score": 18,
+    "keywords": [
+      "하수처리",
+      "수처리"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-11-20",
+    "title": "한화 건설부문, 노후 하수처리시설 현대화 시장 공략 강화…종합 솔루션 경쟁력 확대 - 비즈트리뷴",
+    "ko_title": "한화 건설부문, 노후 하수처리시설 현대화 시장 공략 강화…종합 솔루션 경쟁력 확대 - 비즈트리뷴",
+    "brief": "한화 건설부문, 노후 하수처리시설 현대화 시장 공략 강화…종합 솔루션 경쟁력 확대 비즈트리뷴",
+    "summary": "한화 건설부문, 노후 하수처리시설 현대화 시장 공략 강화…종합 솔루션 경쟁력 확대 비즈트리뷴",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-11-20",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5FQ0xPeVV4LXF1X1pFRThwbWlleHNEM284YnNQX3JwT0VDT3RRTmN0WWVkOHgzcEoxTXNrZkxWVHFtaDlVUi1uaDVCVExWWEgtYm5DLW5wUXlodWpKN3VWaHhDN1NqRXVfYWFEWW9WRXE?oc=5",
+    "score": 18,
+    "keywords": [
+      "하수처리",
+      "수처리"
+    ],
+    "domestic": true,
+    "region": "domestic",
     "source_type": "rss",
     "image": ""
   }
