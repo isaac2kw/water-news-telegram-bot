@@ -1,236 +1,5 @@
 [
   {
-    "date": "2026-09-10",
-    "title": "Water stewardship in the age of AI: Maximizing water reuse in data centers",
-    "ko_title": "Water stewardship in the age of AI: Maximizing water reuse in data centers",
-    "brief": "How data centers are adopting advanced water treatment solutions such as ultrafiltration membranes to enhance water reuse, reduce environmental impact and meet regulatory ...",
-    "summary": "How data centers are adopting advanced water treatment solutions such as ultrafiltration membranes to enhance water reuse, reduce environmental impact and meet regulatory ...",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "분리막/MBR",
-    "countries": [],
-    "companies": [],
-    "technologies": [
-      "membrane",
-      "ultrafiltration",
-      "water reuse",
-      "water treatment"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-09-10",
-    "specs": [],
-    "source": "Bing News Global Membrane Reuse",
-    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ab15230e4dc45aeb55f7e0215cf9345&url=https%3a%2f%2fwww.watertechonline.com%2fwater-reuse%2farticle%2f55395695%2fwater-stewardship-in-the-age-of-ai-maximizing-water-reuse-in-data-centers&c=3325256638564411801&mkt=en-us",
-    "score": 32,
-    "keywords": [
-      "membrane",
-      "ultrafiltration",
-      "water reuse",
-      "water treatment"
-    ],
-    "domestic": false,
-    "region": "global",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-09-21",
-    "title": "제주 동부하수처리장 증설 완료…하루 처리용량 2배로 - yna.co.kr",
-    "ko_title": "제주 동부하수처리장 증설 완료…하루 처리용량 2배로 - yna.co.kr",
-    "brief": "제주 동부하수처리장 증설 완료…하루 처리용량 2배로 yna.co.kr",
-    "summary": "제주 동부하수처리장 증설 완료…하루 처리용량 2배로 yna.co.kr",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [
-      "대한민국"
-    ],
-    "companies": [],
-    "technologies": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-09-21",
-    "specs": [],
-    "source": "Google News Korea 상하수도",
-    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBfbDdmeEViMTNPZzhCQmZyV1JIMEk4SkdfNDc1WmxqOVdwcHc1MVZ2YjZWMUI4aUhmSmZ2LXdTYjdWYUg4cERFcFdsNExfZTVJSWg2NUtmc1pudW9mejB1btIBYEFVX3lxTFBfbDdmeEViMTNPZzhCQmZyV1JIMEk4SkdfNDc1WmxqOVdwcHc1MVZ2YjZWMUI4aUhmSmZ2LXdTYjdWYUg4cERFcFdsNExfZTVJSWg2NUtmc1pudW9mejB1bg?oc=5",
-    "score": 26,
-    "keywords": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "domestic": true,
-    "region": "domestic",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-09-21",
-    "title": "우여곡절 끝에 준공.. 2배 커진 동부하수처리장 - v.daum.net",
-    "ko_title": "우여곡절 끝에 준공.. 2배 커진 동부하수처리장 - v.daum.net",
-    "brief": "우여곡절 끝에 준공.. 2배 커진 동부하수처리장 v.daum.net",
-    "summary": "우여곡절 끝에 준공.. 2배 커진 동부하수처리장 v.daum.net",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [
-      "대한민국"
-    ],
-    "companies": [],
-    "technologies": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-09-21",
-    "specs": [],
-    "source": "Google News Korea 상하수도",
-    "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5fZXJQSW9tS0l6QURweDB5WTU3U252WW5kZkhKNFd6eUI1UHpfUjByRDEzQ09uc1J1WG8zZi0yTkYwZVNLVXpIOFl5bDl6M3c?oc=5",
-    "score": 26,
-    "keywords": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "domestic": true,
-    "region": "domestic",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-09-21",
-    "title": "제구실 못하는 덕동하수처리장 탓에 어민들 울상 - 경남도민일보",
-    "ko_title": "제구실 못하는 덕동하수처리장 탓에 어민들 울상 - 경남도민일보",
-    "brief": "제구실 못하는 덕동하수처리장 탓에 어민들 울상 경남도민일보",
-    "summary": "제구실 못하는 덕동하수처리장 탓에 어민들 울상 경남도민일보",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [
-      "대한민국"
-    ],
-    "companies": [],
-    "technologies": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-09-21",
-    "specs": [],
-    "source": "Google News Korea 상하수도",
-    "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9CaDJIOEdXOXhHVzZvM0NDLXlLOTE3blk0ckx4MWtfXzRzc3VPNHZCX0hoMDEyV3FRWDFRaDNnY2VhYTJ1U3BZWFpac0U2WWtTYjFxQlhodUh2ZEJ5eENucFR2UWxtR3RVMUE?oc=5",
-    "score": 26,
-    "keywords": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "domestic": true,
-    "region": "domestic",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-09-21",
-    "title": "수차례 멈춘 공사‥동부하수처리장 11년 만에 증설 - 제주MBC",
-    "ko_title": "수차례 멈춘 공사‥동부하수처리장 11년 만에 증설 - 제주MBC",
-    "brief": "수차례 멈춘 공사‥동부하수처리장 11년 만에 증설 제주MBC",
-    "summary": "수차례 멈춘 공사‥동부하수처리장 11년 만에 증설 제주MBC",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [
-      "대한민국"
-    ],
-    "companies": [],
-    "technologies": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-09-21",
-    "specs": [],
-    "source": "Google News Korea 상하수도",
-    "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5qY2xMTDExbUFMZ2FWaFBXN2VIaUxUUVA4SldndTRCdDVSeTJfVFdsaGVXRnN5VUdwcWEweEtIeTFUdVlPTFgwNTRBZkZpd0U?oc=5",
-    "score": 26,
-    "keywords": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "domestic": true,
-    "region": "domestic",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-09-21",
-    "title": "제주 동부하수처리장 증설사업 완료…처리용량 2배 늘어 - 제주노컷",
-    "ko_title": "제주 동부하수처리장 증설사업 완료…처리용량 2배 늘어 - 제주노컷",
-    "brief": "제주 동부하수처리장 증설사업 완료…처리용량 2배 늘어 제주노컷",
-    "summary": "제주 동부하수처리장 증설사업 완료…처리용량 2배 늘어 제주노컷",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [
-      "대한민국"
-    ],
-    "companies": [],
-    "technologies": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-09-21",
-    "specs": [],
-    "source": "Google News Korea 상하수도",
-    "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9xRjFGM3BNY3QzWk1SNFBYZGhreWVNQk80RVNJbnJEZkw1Ty1QeXpsUkJZY0JDdnRqaC0ySFpDVEdCNFFJUDdlc0NaVkR6bEhCNFpj?oc=5",
-    "score": 26,
-    "keywords": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "domestic": true,
-    "region": "domestic",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
-    "date": "2026-09-21",
-    "title": "‘포화 직전’ 제주 동부하수처리장, 처리능력 두 배로…생활하수 걱정 던다 - 뉴스N제주",
-    "ko_title": "‘포화 직전’ 제주 동부하수처리장, 처리능력 두 배로…생활하수 걱정 던다 - 뉴스N제주",
-    "brief": "‘포화 직전’ 제주 동부하수처리장, 처리능력 두 배로…생활하수 걱정 던다 뉴스N제주",
-    "summary": "‘포화 직전’ 제주 동부하수처리장, 처리능력 두 배로…생활하수 걱정 던다 뉴스N제주",
-    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
-    "category": "수처리 산업동향",
-    "countries": [
-      "대한민국"
-    ],
-    "companies": [],
-    "technologies": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "policy_alert": "",
-    "date_context": "기사 기준일: 2026-09-21",
-    "specs": [],
-    "source": "Google News Korea 상하수도",
-    "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9NMnltbVl1WmpHNTZsQ2JZWi16clRQTnRXSktCdmh5OU5rZ0tzVjdCVkRfZVh2SWxLMG9nUUtYQXdodjdxa2JIS20tc1VQUFNnVFA0XzREWmctb0Fvdld0RldNYlFYNFQzMHY0Yg?oc=5",
-    "score": 26,
-    "keywords": [
-      "하수처리",
-      "수처리",
-      "하수처리장"
-    ],
-    "domestic": true,
-    "region": "domestic",
-    "source_type": "rss",
-    "image": ""
-  },
-  {
     "date": "2026-09-21",
     "title": "6년 갈등·소송 끝… 제주 동부하수처리장 9년 만에 준공 - v.daum.net",
     "ko_title": "6년 갈등·소송 끝… 제주 동부하수처리장 9년 만에 준공 - v.daum.net",
@@ -50874,6 +50643,249 @@
     ],
     "domestic": true,
     "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-10-22",
+    "title": "QUA Expands Membrane Portfolio with EnviQ® RF 30, a Compact, Ready-to-Install MBR Technology for Decentralized Wastewater Treatment",
+    "ko_title": "QUA Expands Membrane Portfolio with EnviQ® RF 30, a Compact, Ready-to-Install MBR Technology for Decentralized Wastewater Treatment",
+    "brief": "EnviQ® RF 30 is a compact membrane module for membrane bioreactor and submerged ultrafiltration applications, enabling decentralized water and wastewater treatment, flexible deploy",
+    "summary": "EnviQ® RF 30 is a compact membrane module for membrane bioreactor and submerged ultrafiltration applications, enabling decentralized water and wastewater treatment, flexible deployment where space and ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane",
+      "ultrafiltration",
+      "wastewater",
+      "water treatment",
+      "membrane module"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-10-22",
+    "specs": [],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b0b0f1a4d924fa88abf8a8dd2062737&url=https%3a%2f%2fwww.prnewswire.com%2fnews-releases%2fqua-expands-membrane-portfolio-with-enviq-rf-30-a-compact-ready-to-install-mbr-technology-for-decentralized-wastewater-treatment-302917319.html&c=6561925453484023863&mkt=en-us",
+    "score": 59,
+    "keywords": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane",
+      "ultrafiltration",
+      "wastewater",
+      "water treatment",
+      "membrane module"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-11-27",
+    "title": "QUA streamlines decentralized wastewater treatment with new membrane system",
+    "ko_title": "QUA streamlines decentralized wastewater treatment with new membrane system",
+    "brief": "QUA, a global manufacturer of advanced membrane technologies for water and wastewater treatment, has launched EnviQ RF 30, a compact membrane unit for membrane bioreactor (MBR) and",
+    "summary": "QUA, a global manufacturer of advanced membrane technologies for water and wastewater treatment, has launched EnviQ RF 30, a compact membrane unit for membrane bioreactor (MBR) and submerged ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane",
+      "wastewater",
+      "water treatment"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-11-27",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b0b0f1aa4ce4a3eb5a9d7f64c957ce2&url=https%3a%2f%2finsights.globalspec.com%2farticle%2f25239%2fqua-streamlines-decentralized-wastewater-treatment-with-new-membrane-system&c=12904225969056844713&mkt=en-us",
+    "score": 43,
+    "keywords": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane",
+      "wastewater",
+      "water treatment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-11-19",
+    "title": "Curtain-type dynamic membranes could make wastewater treatment more compact and cost-effective",
+    "ko_title": "Curtain-type dynamic membranes could make wastewater treatment more compact and cost-effective",
+    "brief": "A new curtain-type dynamic membrane design could reduce the footprint and capital costs of membrane bioreactor (MBR) systems, according to research ...",
+    "summary": "A new curtain-type dynamic membrane design could reduce the footprint and capital costs of membrane bioreactor (MBR) systems, according to research ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane",
+      "wastewater",
+      "water treatment"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-11-19",
+    "specs": [],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b0b0f1a4d924fa88abf8a8dd2062737&url=https%3a%2f%2fwww.filtsep.com%2fcontent%2fnews%2fhigh-density-dynamic-membranes-could-make-wastewater-treatment-more-compact-and-cost-effective&c=3802522772753080482&mkt=en-us",
+    "score": 43,
+    "keywords": [
+      "mbr",
+      "membrane bioreactor",
+      "membrane",
+      "wastewater",
+      "water treatment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-10-29",
+    "title": "Water and Wastewater Treatment Technologies Market - Global Forecast to 2036 | Market to Reach US$191.12 Billion as PFAS Rules, Membrane Filtration, and Digital Water Drive 5.8 ...",
+    "ko_title": "Water and Wastewater Treatment Technologies Market - Global Forecast to 2036 | Market to Reach US$191.12 Billion as PFAS Rules, Membrane Filtration, and Digital Water Drive 5.8 ...",
+    "brief": "Dublin, Oct. 29, 2026 (GLOBE NEWSWIRE)-- \"Water and Wastewater Treatment Technologies Market, - Global Forecast to 2036\" has been added to ResearchAndMarkets.com's offering. The gl",
+    "summary": "Dublin, Oct. 29, 2026 (GLOBE NEWSWIRE)-- \"Water and Wastewater Treatment Technologies Market, - Global Forecast to 2036\" has been added to ResearchAndMarkets.com's offering. The global water and ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "PFAS/오염물",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "membrane",
+      "wastewater",
+      "water treatment",
+      "pfas"
+    ],
+    "policy_alert": "",
+    "date_context": "Oct. 29, 2026",
+    "specs": [
+      "191.12 Billion"
+    ],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b0b0f1a4d924fa88abf8a8dd2062737&url=https%3a%2f%2ffinance.yahoo.com%2ftechnology%2farticles%2fwater-wastewater-treatment-technologies-market-161100681.html&c=13833927766061043742&mkt=en-us",
+    "score": 33,
+    "keywords": [
+      "membrane",
+      "wastewater",
+      "water treatment",
+      "pfas"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-11-24",
+    "title": "곡성군, 삼기·겸면 통합하수처리장 설치 완료… 12월부터 시운전 돌입 - 프라임경제",
+    "ko_title": "곡성군, 삼기·겸면 통합하수처리장 설치 완료… 12월부터 시운전 돌입 - 프라임경제",
+    "brief": "곡성군, 삼기·겸면 통합하수처리장 설치 완료… 12월부터 시운전 돌입 프라임경제",
+    "summary": "곡성군, 삼기·겸면 통합하수처리장 설치 완료… 12월부터 시운전 돌입 프라임경제",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "수처리 산업동향",
+    "countries": [
+      "대한민국"
+    ],
+    "companies": [],
+    "technologies": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-11-24",
+    "specs": [],
+    "source": "Google News Korea 상하수도",
+    "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1qWFY5V3BoZGxkS3h5NFZFdVY3d2hFR1dMVW51ZVVyZTNHb3ZzTEd0OWdQUVFFaHloWVVZX192MTE2aHUtODl0QzQ5NktmcUpWcEo0TWFPN2h1Zm1YRzhKVjFMYw?oc=5",
+    "score": 26,
+    "keywords": [
+      "하수처리",
+      "수처리",
+      "하수처리장"
+    ],
+    "domestic": true,
+    "region": "domestic",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-11-27",
+    "title": "Solar-powered system targets fouling in complex wastewater treatment",
+    "ko_title": "Solar-powered system targets fouling in complex wastewater treatment",
+    "brief": "Researchers at the Xinjiang Technical Institute of Physics and Chemistry (XTIPC) of the Chinese Academy of Sciences (CAS) have developed a solar-powered electrocoagulation–membrane",
+    "summary": "Researchers at the Xinjiang Technical Institute of Physics and Chemistry (XTIPC) of the Chinese Academy of Sciences (CAS) have developed a solar-powered electrocoagulation–membrane filtration (SPEC-MF ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "membrane",
+      "wastewater",
+      "water treatment"
+    ],
+    "policy_alert": "",
+    "date_context": "기사 기준일: 2026-11-27",
+    "specs": [],
+    "source": "Bing News Global Membrane Reuse",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b0b0f1aa4ce4a3eb5a9d7f64c957ce2&url=https%3a%2f%2ftechxplore.com%2fnews%2f2026-11-solar-powered-fouling-complex-wastewater.html&c=415962061404079962&mkt=en-us",
+    "score": 23,
+    "keywords": [
+      "membrane",
+      "wastewater",
+      "water treatment"
+    ],
+    "domestic": false,
+    "region": "global",
+    "source_type": "rss",
+    "image": ""
+  },
+  {
+    "date": "2026-08-11",
+    "title": "Australia's Largest Inland Wastewater Treatment Facility Selects MemCor™ MBR System for Expansion",
+    "ko_title": "Australia's Largest Inland Wastewater Treatment Facility Selects MemCor™ MBR System for Expansion",
+    "brief": "The Lower Molonglo Water Quality Control Center will become the largest MBR plant in Australia with the addition of a new DuPont™ MemCor™ MBR system WILMINGTON, Del., Aug. 11, 2026",
+    "summary": "The Lower Molonglo Water Quality Control Center will become the largest MBR plant in Australia with the addition of a new DuPont™ MemCor™ MBR system WILMINGTON, Del., Aug. 11, 2026 /PRNewswire/ -- ...",
+    "why_important": "수처리 산업 관련 키워드가 포함되어 있어 모니터링 대상으로 분류되었습니다.",
+    "category": "분리막/MBR",
+    "countries": [],
+    "companies": [],
+    "technologies": [
+      "mbr",
+      "wastewater",
+      "water treatment",
+      "expansion",
+      "dupont"
+    ],
+    "policy_alert": "",
+    "date_context": "Aug. 11, 2026",
+    "specs": [],
+    "source": "Bing News Global MBR",
+    "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b0b0f1a4d924fa88abf8a8dd2062737&url=https%3a%2f%2fwww.prnewswire.com%2fnews-releases%2faustralias-largest-inland-wastewater-treatment-facility-selects-memcor-mbr-system-for-expansion-302846252.html&c=12856373631053607080&mkt=en-us",
+    "score": 37,
+    "keywords": [
+      "mbr",
+      "wastewater",
+      "water treatment",
+      "expansion",
+      "dupont"
+    ],
+    "domestic": false,
+    "region": "global",
     "source_type": "rss",
     "image": ""
   }
